@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aabad7a731bd0654468d7b9849d3b9a5bf6bead6
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 1f71eb48264570df384fce672b1ca895d98e1109
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353729"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636589"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutoriel : Créer des dispositions adaptatives
 
@@ -18,11 +18,11 @@ Cet article décrit les concepts de base des fonctionnalités de disposition ada
 
 Le programme de retouche d’images comporte deux pages. La _page principale_ présente une vue de galerie de photos ainsi que des informations sur chaque fichier image.
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![Capture d’écran de la page principale du Laboratoire photo.](../basics/images/xaml-basics/mainpage.png)
 
 La *page de détails* affiche une seule photo une fois qu’elle a été sélectionnée. Un menu d’édition volant permet de modifier la photo, de la renommer et de l’enregistrer.
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![Capture d’écran de la page de détails du Laboratoire photo.](../basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>Prérequis
 

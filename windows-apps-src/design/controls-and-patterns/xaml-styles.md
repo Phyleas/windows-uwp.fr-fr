@@ -10,12 +10,12 @@ label: XAML styles
 template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfb9c73eb6db0bb948714e1ce5e99a185b8dd3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6e4e69b87ba78134982032f9ceca826758c1a5ba
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173863"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829659"
 ---
 # <a name="xaml-styles"></a>Styles XAML
 
@@ -29,7 +29,7 @@ Vous pouvez personnaliser l’apparence de vos applications de nombreuses maniè
 
 Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3 boutons avec un style définissant les propriétés [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush), [BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) et [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
 
-![Boutons stylés](images/styles-rainbow-buttons.png)
+![Capture d’écran de trois boutons stylisés placés côte à côte.](images/styles-rainbow-buttons.png)
 
 Vous pouvez définir un style inline en langage XAML pour un contrôle ou sous la forme de ressource réutilisable. Vous définissez les ressources dans le fichier XAML d’une page individuelle, dans le fichier App.xaml ou dans le fichier XAML d’un dictionnaire de ressources distinct. Le fichier XAML d’un dictionnaire de ressources peut être partagé entre plusieurs applications et plusieurs dictionnaires de ressources peuvent être fusionnés dans une seule application. L’endroit où la ressource est définie détermine l’étendue (champ d’application) de son utilisation. Les ressources au niveau page sont uniquement disponibles dans la page où elles sont définies. Si des ressources sont définies avec la même clé à la fois dans App.xaml et dans une page, la ressource de la page remplace la ressource de App.xaml. Si une ressource est définie dans un fichier de dictionnaire de ressources distinct, son étendue est déterminée par l’endroit où le dictionnaire de ressources est référencé.
 
@@ -149,7 +149,7 @@ Pour appliquer rapidement des styles à vos contrôles, cliquez avec le bouton d
 
 Le remplacement des pinceaux système est généralement effectué au niveau de l’application ou de la page. Dans les deux cas, la substitution de la couleur s’appliquera à tous les contrôles qui font référence à ce pinceau (dans du code XAML, de nombreux contrôles peuvent référencer le même pinceau système).
 
-![Boutons stylés](images/LightweightStyling_ButtonStatesExample.png)
+![Capture d’écran de deux boutons : l’un au repos et l’autre avec un style léger.](images/LightweightStyling_ButtonStatesExample.png)
 
 ```XAML
 <Page.Resources>
@@ -173,7 +173,7 @@ Le fait de placer ces remplacements de pinceau au niveau **App.Resources** a pou
 
 Dans d’autres cas, il peut être souhaitable de modifier un seul contrôle sur une même page afin de lui affecter un style donné, sans altérer les autres versions de ce contrôle :
 
-![Boutons stylés](images/LightweightStyling_CheckboxExample.png)
+![Capture d’écran de trois boutons stylisés empilés.](images/LightweightStyling_CheckboxExample.png)
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>

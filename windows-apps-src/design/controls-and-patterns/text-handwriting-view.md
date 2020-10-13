@@ -1,5 +1,5 @@
 ---
-Description: Personnalisez la vue de l’écriture manuscrite intégrée en entrée de texte qui est prise en charge par les contrôles de texte Windows comme TextBox, RichEditBox et les contrôles tels qu’AutoSuggestBox qui fournissent une expérience d’entrée de texte similaire.
+description: Personnalisez la vue de l’écriture manuscrite intégrée en entrée de texte qui est prise en charge par les contrôles de texte Windows comme TextBox, RichEditBox et les contrôles tels qu’AutoSuggestBox qui fournissent une expérience d’entrée de texte similaire.
 title: Entrée de texte avec la vue de l’écriture manuscrite
 label: Text input with the handwriting view
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 64963128679f3bb50afe1ba4c939ec6367ad9561
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ca87dcebcb792bea7c79d32600111ebc51600cab
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218802"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829504"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Entrée de texte avec la vue de l’écriture manuscrite
 
@@ -194,11 +194,11 @@ Dans certains cas, vous devez vous assurer que le [HandwritingView](/uwp/api/win
 
 Ici, nous créons un TextBox qui prend en charge la dictée (implémenté en plaçant un TextBox et un bouton de dictée dans un StackPanel).
 
-![TextBox avec dictée](images/handwritingview/textbox-with-dictation.png)
+![Capture d’écran d’une zone de texte qui prend en charge la dictée](images/handwritingview/textbox-with-dictation.png)
 
 Comme le StackPanel est désormais plus grand que le TextBox, le [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) peut ne pas masquer tous les contrôles composites.
 
-![TextBox avec dictée](images/handwritingview/textbox-with-dictation-handwritingview.png)
+![Capture d’écran d’un contrôle HandwritingView qui occulte partiellement une zone de texte, et d’un autre contrôle qui est repositionné pour occulter entièrement la zone de texte](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
 Pour résoudre ce problème, affectez à la propriété PlacementTarget du [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) l’élément d’interface utilisateur sur lequel il doit être aligné.
 
@@ -231,11 +231,11 @@ Vous pouvez également définir la taille du [HandwritingView](/uwp/api/windows.
 
 Comme dans l’exemple précédent, nous créons un TextBox qui prend en charge la dictée (implémenté en plaçant un TextBox et un bouton de dictée dans un StackPanel).
 
-![TextBox avec dictée](images/handwritingview/textbox-with-dictation.png)
+![Capture d’écran d’une zone de texte qui prend en charge la dictée](images/handwritingview/textbox-with-dictation.png)
 
-Dans ce cas, nous voulons vérifier que le bouton de dictée est toujours visible.
+Dans ce cas, nous allons redimensionner HandwritingView pour que le bouton de dictée soit visible.
 
-![TextBox avec dictée](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
+![Capture d’écran d’un contrôle HandwritingView qui occulte le bouton de dictée, et d’un contrôle qui est redimensionné pour que le bouton de dictée soit visible](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
 
 Pour ce faire, nous lions la propriété MaxWidth du [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) à la largeur de l’élément d’interface utilisateur qu’il doit masquer.
 

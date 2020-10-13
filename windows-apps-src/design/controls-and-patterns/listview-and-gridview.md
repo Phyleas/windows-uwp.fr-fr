@@ -1,5 +1,5 @@
 ---
-Description: Utilisez les contrôles ListView et GridView pour afficher et manipuler des jeux de données, comme une galerie d’images ou un ensemble d’e-mails.
+description: Utilisez les contrôles ListView et GridView pour afficher et manipuler des jeux de données, comme une galerie d’images ou un ensemble d’e-mails.
 title: Affichage Liste et affichage Grille
 label: List view and grid view
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 988400ae16d19525acc1dc811c91fc5af9fd97d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 26f7e36d09857d37da4a0b4533cc8f65d2789e20
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172623"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829651"
 ---
 # <a name="list-view-and-grid-view"></a>Affichage Liste et affichage Grille
 
@@ -53,7 +53,7 @@ ListView et GridView sont des contrôles prêts à l’emploi qui permettent d�
 -   Utilisez ItemsRepeater si vous avez une interface utilisateur très personnalisée que vous ne pouvez pas créer à l’aide de ListView ou GridView, ou si vous avez une source de données qui nécessite un comportement très différent pour chaque élément.
 
 
-Pour en savoir plus sur ItemsRepeater, consultez ces [instructions](./items-repeater.md) et la [documentation sur l’API](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2).
+Pour en savoir plus sur ItemsRepeater, consultez ces [instructions](./items-repeater.md) et la [documentation sur l’API](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater).
 
 ## <a name="examples"></a>Exemples
 
@@ -121,7 +121,7 @@ FruitsPanel.Children.Add(Fruits);
 ```
 Les deux options ci-dessus génèrent le même ListView, comme indiqué ci-dessous :
 
-![Affichage de liste simple](images/listview-basic-code-example2.png)
+![Capture d’écran d’un ListView simple avec une liste de fruits.](images/listview-basic-code-example2.png)
 <br/>
 <u>Méthode 2 : Ajouter des éléments en définissant ItemsSource</u>
 
@@ -290,7 +290,7 @@ Pour plus d’informations et pour obtenir des exemples d’utilisation de modè
 Quand vous ajoutez des éléments à un ListView ou GridView, le contrôle encapsule automatiquement chaque élément dans un conteneur d’éléments, puis dispose tous les conteneurs d’éléments. La manière dont ces conteneurs d’éléments sont disposés dépend de l’élément [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) du contrôle.  
 - Par défaut, **ListView** utilise un élément [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel), ce qui donne une liste verticale, comme ceci.
 
-![Un affichage Liste simple](images/listview-simple.png)
+![Capture d’écran d’un ListView simple avec une liste d’éléments.](images/listview-simple.png)
 
 - **GridView** utilise un élément [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid), ce qui ajoute les éléments horizontalement, enveloppe et défile verticalement, comme ceci.
 

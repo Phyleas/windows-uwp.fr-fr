@@ -1,32 +1,32 @@
 ---
 description: Ce guide vous aide à créer des interfaces utilisateur UWP Fluent directement dans vos applications WPF et Windows Forms
-title: Contrôles UWP dans les applications de bureau
-ms.date: 03/23/2020
+title: Héberger des contrôles XAML WinRT dans les applications de bureau
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 019121441daa5c40157471d48be19cd29f2b3a77
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 752b02f4bbf6faaca1fd04007c85cfe41f6c28f9
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174173"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671548"
 ---
-# <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans des applications de bureau (XAML Islands)
+# <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML WinRT dans des applications de bureau (XAML Islands)
 
-À compter de Windows 10 version 1903, vous pouvez héberger des contrôles UWP dans des applications de bureau non conçues pour UWP à l’aide d’une fonctionnalité appelée *XAML Islands* (îles XAML). Vous pouvez ainsi améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++ existantes, mais aussi bénéficier des dernières nouveautés de l’interface utilisateur Windows 10 qui sont uniquement disponibles par le biais de contrôles UWP. Cela signifie que vous pouvez utiliser des fonctionnalités UWP telles que [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) et des contrôles prenant en charge le [système Fluent Design](/windows/uwp/design/fluent-design-system/index) dans vos applications WPF, Windows Forms et Win32 C++ existantes.
+À compter de Windows 10 version 1903, vous pouvez héberger des contrôles XAML WinRT dans des applications de bureau non conçues pour UWP à l’aide d’une fonctionnalité appelée *XAML Islands*. Vous pouvez ainsi améliorer l’apparence, le comportement et les fonctionnalités de vos applications WPF, Windows Forms et Win32 C++ existantes, mais aussi bénéficier des dernières nouveautés de l’interface utilisateur Windows 10 qui sont uniquement disponibles par le biais de contrôles XAML WinRT. Cela signifie que vous pouvez utiliser des fonctionnalités UWP telles que [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) et des contrôles prenant en charge le [système Fluent Design](/windows/uwp/design/fluent-design-system/index) dans vos applications WPF, Windows Forms et Win32 C++ existantes.
 
-Vous pouvez héberger n’importe quel contrôle UWP qui dérive de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), notamment :
+Vous pouvez héberger n’importe quel contrôle XAML WinRT qui dérive de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), notamment :
 
-* Tout contrôle UWP de première partie fourni par le SDK Windows.
-* Tout contrôle UWP personnalisé (par exemple, un contrôle utilisateur qui se compose de plusieurs contrôles UWP fonctionnant ensemble). Vous devez disposer du code source du contrôle personnalisé pour pouvoir le compiler avec votre application.
+* Tout contrôle XAML WinRT de première partie fourni par le SDK Windows ou la bibliothèque WinUI 2.x.
+* Tout contrôle XAML WinRT personnalisé (par exemple, un contrôle utilisateur qui se compose de plusieurs contrôles XAML WinRT fonctionnant ensemble). Vous devez disposer du code source du contrôle personnalisé pour pouvoir le compiler avec votre application.
 
 À la base, les îles XAML sont créées à l’aide de l’*API d’hébergement XAML UWP*. Cette API comprend plusieurs classes Windows Runtime et interfaces COM qui ont été introduites dans le SDK Windows 10 version 1903. Nous fournissons également dans le [Windows Community Toolkit](/windows/uwpcommunitytoolkit/) un ensemble de contrôles .NET XAML Island qui utilisent l’API d’hébergement XAML UWP en interne et qui offrent une expérience de développement plus pratique pour les applications WPF et Windows Forms.
 
-La façon dont vous utilisez XAML Islands dépend du type de votre application et des types de contrôles UWP que vous souhaitez héberger.
+La façon dont vous utilisez XAML Islands dépend du type de votre application et des types de contrôles XAML WinRT que vous souhaitez héberger.
 
 > [!NOTE]
 > Si vous avez des choses à nous dire sur XAML Islands, ouvrez un nouveau problème dans le [dépôt Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) et laissez-y vos commentaires. Si vous préférez que vos commentaires restent privés, envoyez-les à XamlIslandsFeedback@microsoft.com. Vos insights et vos scénarios sont très importants pour nous.
@@ -40,15 +40,18 @@ Les conditions requises du runtime pour XAML Islands sont les suivantes :
 
 ## <a name="wpf-and-windows-forms-applications"></a>Applications WPF et Windows Forms
 
-Nous recommandons que les applications WPF et Windows Forms utilisent les contrôles .NET XAML Island disponibles dans le Windows Community Toolkit. Ces contrôles fournissent un modèle objet qui imite les propriétés, méthodes et événements des contrôles UWP correspondants ou qui vous donne accès à ces éléments. Ils gèrent également des comportements tels que la navigation au clavier et les changements de disposition.
+Nous recommandons que les applications WPF et Windows Forms utilisent les contrôles .NET XAML Island disponibles dans le Windows Community Toolkit. Ces contrôles fournissent un modèle objet qui imite les propriétés, méthodes et événements des contrôles XAML WinRT correspondants ou qui vous donne accès à ces éléments. Ils gèrent également des comportements tels que la navigation au clavier et les changements de disposition.
 
 Il existe deux ensembles de contrôles XAML Island pour les applications WPF et Windows Forms : les *contrôles wrappés* et les *contrôles hôtes*. 
 
+> [!NOTE]
+> L’utilisation de XAML Islands pour héberger des contrôles XAML WinRT personnalisés est uniquement prise en charge dans les applications WPF et Windows Forms ciblant .NET Core 3.x. XAML Islands n’est pas pris en charge dans les applications qui ciblent le .NET Framework.
+
 ### <a name="wrapped-controls"></a>Contrôles wrappés
 
-Les applications WPF et Windows Forms peuvent utiliser une sélection de contrôles XAML Island qui wrappent l’interface et les fonctionnalités d’un contrôle UWP spécifique. Vous pouvez ajouter ces contrôles directement à l’aire de conception de votre projet WPF ou Windows Forms, puis les utiliser comme tout autre contrôle WPF ou Windows Forms dans le concepteur.
+Les applications WPF et Windows Forms peuvent utiliser une sélection de contrôles XAML Islands qui wrappent l’interface et les fonctionnalités d’un contrôle XAML WinRT spécifique. Vous pouvez ajouter ces contrôles directement à l’aire de conception de votre projet WPF ou Windows Forms, puis les utiliser comme tout autre contrôle WPF ou Windows Forms dans le concepteur.
 
-Les contrôles UWP wrappés suivants sont actuellement disponibles dans le Windows Community Toolkit. 
+Les contrôles XAML WinRT wrappés suivants sont actuellement disponibles dans le Windows Community Toolkit. 
 
 | Contrôler | Système d’exploitation minimal pris en charge | Description |
 |-----------------|-------------------------------|-------------|
@@ -56,7 +59,7 @@ Les contrôles UWP wrappés suivants sont actuellement disponibles dans le Windo
 | [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 version 1903 | Incorpore une vue qui diffuse en streaming du contenu multimédia tel que des vidéos dans votre application de bureau Windows Forms ou WPF. |
 | [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10 version 1903 | Permet d’afficher une carte symbolique ou photoréaliste dans votre application de bureau Windows Forms ou WPF. |
 
-Pour découvrir pas à pas comment utiliser les contrôles UWP wrappés, consultez [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md).
+Pour découvrir pas à pas comment utiliser les contrôles XAML WinRT wrappés, consultez [Héberger un contrôle XAML WinRT standard dans une application WPF](host-standard-control-with-xaml-islands.md).
 
 ### <a name="host-controls"></a>Contrôles hôtes
 
@@ -64,12 +67,9 @@ Pour les contrôles personnalisés et des scénarios autres que ceux couverts pa
 
 | Contrôler | Système d’exploitation minimal pris en charge | Description |
 |-----------------|-------------------------------|-------------|
-| [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10 version 1903 | Peut héberger n’importe quel contrôle UWP dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), notamment tout contrôle UWP de première partie fourni par le SDK Windows ainsi que des contrôles personnalisés. |
+| [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10 version 1903 | Peut héberger n’importe quel contrôle XAML WinRT dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), notamment tout contrôle XAML WinRT interne fourni par le SDK Windows, ainsi que des contrôles personnalisés. |
 
-Pour découvrir pas à pas comment utiliser le contrôle **WindowsXamlHost**, consultez [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md) et [Héberger un contrôle UWP personnalisé dans une application WPF avec XAML Islands](host-custom-control-with-xaml-islands.md).
-
-> [!NOTE]
-> L’utilisation du contrôle **WindowsXamlHost** pour héberger des contrôles UWP personnalisés est uniquement prise en charge dans les applications WPF et Windows Forms ciblant .NET Core 3. L’hébergement de contrôles UWP de première partie fournis par le SDK Windows est pris en charge dans les applications qui ciblent le .NET Framework ou .NET Core 3.
+Pour découvrir pas à pas comment utiliser le contrôle **WindowsXamlHost**, consultez [Héberger un contrôle XAML WinRT standard dans une application WPF](host-standard-control-with-xaml-islands.md) et [Héberger un contrôle XAML WinRT personnalisé dans une application WPF avec XAML Islands](host-custom-control-with-xaml-islands.md).
 
 <span id="requirements" />
 
@@ -79,14 +79,14 @@ Les contrôles .NET XAML Island nécessitent Windows 10 version 1903 ou ultér
 
 | Type de contrôle | Package NuGet  | Articles connexes |
 |-----------------|----------------|---------------------|
-| [Contrôles wrappés](#wrapped-controls) | Version 6.0.0 ou ultérieure de ces packages : <ul><li>WPF : [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms : [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md)  |
-| [Contrôle hôte](#host-controls) | Version 6.0.0 ou ultérieure de ces packages : <ul><li>WPF : [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms : [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Héberger un contrôle UWP standard dans une application WPF](host-standard-control-with-xaml-islands.md)<br/>[Héberger un contrôle UWP personnalisé dans une application WPF](host-custom-control-with-xaml-islands.md)  |
+| [Contrôles wrappés](#wrapped-controls) | Version 6.0.0 ou ultérieure de ces packages : <ul><li>WPF : [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms : [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Héberger un contrôle XAML WinRT standard dans une application WPF](host-standard-control-with-xaml-islands.md)  |
+| [Contrôle hôte](#host-controls) | Version 6.0.0 ou ultérieure de ces packages : <ul><li>WPF : [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms : [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Héberger un contrôle XAML WinRT standard dans une application WPF](host-standard-control-with-xaml-islands.md)<br/>[Héberger un contrôle XAML WinRT personnalisé dans une application WPF](host-custom-control-with-xaml-islands.md)  |
 
 Tenez compte des points suivants :
 
 * Les packages de contrôles hôtes sont également inclus dans les packages de contrôles wrappés. Vous pouvez installer les packages de contrôles wrappés si vous souhaitez utiliser les deux ensembles de contrôles.
 
-* Si vous hébergez un contrôle UWP personnalisé, votre projet WPF ou Windows Forms doit cibler .NET Core 3. L’hébergement de contrôles UWP personnalisés n’est pas pris en charge dans les applications qui ciblent le .NET Framework. Vous devrez également effectuer quelques étapes supplémentaires pour référencer le contrôle personnalisé. Pour plus d’informations, consultez [Héberger un contrôle UWP personnalisé dans une application WPF avec XAML Islands](host-custom-control-with-xaml-islands.md).
+* Si vous hébergez un contrôle XAML WinRT personnalisé, vous devrez également effectuer quelques étapes supplémentaires pour référencer le contrôle personnalisé. Pour plus d’informations, consultez [Héberger un contrôle XAML WinRT personnalisé dans une application WPF avec XAML Islands](host-custom-control-with-xaml-islands.md).
 
 ### <a name="web-view-controls"></a>Contrôles de vue web
 
@@ -106,11 +106,11 @@ Pour utiliser ces contrôles, installez l’un des packages NuGet suivants :
 
 Les contrôles .NET XAML Island ne sont pas pris en charge dans les applications Win32 C++. Ces applications doivent utiliser à la place l’*API d’hébergement XAML UWP* fournie par le SDK Windows 10 (versions 1903 et ultérieures).
 
-L’API d’hébergement XAML UWP se compose de plusieurs classes Windows Runtime et d’interfaces COM que votre application Win32 C++ peut utiliser pour héberger n’importe quel contrôle UWP dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement). Vous pouvez héberger des contrôles UWP dans n’importe quel élément d’interface utilisateur de votre application avec un handle de fenêtre (HWND) associé. Pour plus d’informations sur cette API, consultez les articles suivants.
+L’API d’hébergement XAML UWP se compose de plusieurs classes Windows Runtime et d’interfaces COM que votre application Win32 C++ peut utiliser pour héberger n’importe quel contrôle XAML WinRT dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement). Vous pouvez héberger des contrôles XAML WinRT dans n’importe quel élément d’interface utilisateur de votre application avec un handle de fenêtre (HWND) associé. Pour plus d’informations sur cette API, consultez les articles suivants.
 
 * [Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++](using-the-xaml-hosting-api.md)
-* [Héberger un contrôle UWP standard dans une application Win32 C++](host-standard-control-with-xaml-islands-cpp.md)
-* [Héberger un contrôle UWP personnalisé dans une application Win32 C++](host-custom-control-with-xaml-islands-cpp.md)
+* [Héberger un contrôle XAML WinRT standard dans une application Win32 C++](host-standard-control-with-xaml-islands-cpp.md)
+* [Héberger un contrôle XAML WinRT personnalisé dans une application Win32 C++](host-custom-control-with-xaml-islands-cpp.md)
 
 > [!NOTE]
 > Les contrôles wrappés et hôtes dans le Windows Community Toolkit utilisent l’API d’hébergement XAML UWP en interne et implémentent tous les comportements que vous devriez gérer vous-même si vous utilisiez cette API directement, comme la navigation au clavier et les changements de disposition. Pour les applications WPF et Windows Forms, nous vous recommandons vivement d’utiliser ces contrôles au lieu de l’API d’hébergement XAML UWP directement, car ils éliminent un grand nombre des détails d’implémentation associés à l’utilisation de l’API.
@@ -139,7 +139,7 @@ Les sections suivantes présentent les limitations et solutions de contournement
 
 ### <a name="not-supported"></a>Non prise en charge
 
-:no_entry_sign : Utilisation du contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles UWP tiers C# dans des applications WPF et Windows Forms ciblant le .NET Framework. Ce scénario est uniquement pris en charge dans les applications qui ciblent .NET Core 3.
+:no_entry_sign : Utilisation de XAML Islands dans les applications WPF et Windows Forms qui ciblent le .NET Framework. XAML Islands est pris en charge uniquement dans les applications qui ciblent .NET Core 3.x.
 
 :no_entry_sign : Le contenu XAML UWP dans XAML Islands ne répond pas aux modifications de thème Windows du mode sombre au mode clair, ou vice versa, au moment de l’exécution. Le contenu répond aux modifications de contraste élevé au moment de l’exécution.
 
@@ -159,7 +159,7 @@ Les sections suivantes présentent les limitations et solutions de contournement
 
 Quand vous hébergez XAML Islands dans une application de bureau, plusieurs arborescences de contenu XAML peuvent s’exécuter simultanément sur le même thread. Pour accéder à l’élément racine d’une arborescence de contenu XAML dans un XAML Islands et obtenir des informations connexes sur le contexte de son hébergement, utilisez la classe [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot). Les classes [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) et [Window](/uwp/api/windows.ui.xaml.window) ne fournissent pas les informations correctes pour XAML Islands. Les objets [CoreWindow](/uwp/api/windows.ui.core.corewindow) et [Window](/uwp/api/windows.ui.xaml.window) existent sur le thread et sont accessibles à votre application, mais ils ne retournent pas de limites ou de visibilité significatives (ils restent toujours invisibles et ont une taille de 1x1). Pour plus d’informations, consultez [Hôtes de fenêtrage](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
 
-Par exemple, pour obtenir le rectangle englobant de la fenêtre qui contient un contrôle UWP hébergé dans un XAML Island, utilisez la propriété [XamlRoot.Size](/uwp/api/windows.ui.xaml.xamlroot.size) du contrôle. Étant donné que chaque contrôle UWP qui peut être hébergé dans un XAML Island est dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), vous pouvez utiliser la propriété [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) du contrôle pour accéder à l’objet **XamlRoot**.
+Par exemple, pour obtenir le rectangle englobant de la fenêtre qui contient un contrôle XAML WinRT hébergé dans XAML Islands, utilisez la propriété [XamlRoot.Size](/uwp/api/windows.ui.xaml.xamlroot.size) du contrôle. Étant donné que chaque contrôle XAML WinRT qui peut être hébergé dans XAML Islands est dérivé de [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), vous pouvez utiliser la propriété [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) du contrôle pour accéder à l’objet **XamlRoot**.
 
 ```csharp
 Size windowSize = myUWPControl.XamlRoot.Size;
@@ -168,7 +168,7 @@ Size windowSize = myUWPControl.XamlRoot.Size;
 N’utilisez pas la propriété [CoreWindows.Bounds](/uwp/api/windows.ui.core.corewindow.bounds) pour obtenir le rectangle englobant.
 
 ```csharp
-// This will return incorrect information for a UWP control that is hosted in a XAML Island.
+// This will return incorrect information for a WinRT XAML control that is hosted in a XAML Island.
 Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
 ```
 
@@ -176,18 +176,10 @@ Pour avoir la liste des API de fenêtrage courantes à proscrire dans le context
 
 Pour obtenir un exemple qui illustre l’utilisation de cette interface dans une application WPF, consultez [l’exemple ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
 
-## <a name="feature-roadmap"></a>Feuille de route des fonctionnalités
-
-Voici l’état actuel des fonctionnalités liées à XAML Islands :
-
-* **Applications Win32 C++ :** l’API d’hébergement XAML UWP associée à Windows 10 version 1903 est considérée comme la version 1.0.
-* **Applications managées qui ciblent le .NET Framework 4.6.2 et ultérieur :** les contrôles XAML Island disponibles dans les [packages NuGet version 6.0.0](#configure-your-project-to-use-the-xaml-island-net-controls) sont considérés comme la version 1.0 pour les applications qui ciblent le .NET Framework 4.6.2 et ultérieur.
-* **Applications managées qui ciblent .NET Core 3.0 et ultérieur :** les contrôles disponibles dans les [packages NuGet version 6.0.0](#configure-your-project-to-use-the-xaml-island-net-controls) sont toujours en Developer Preview pour les applications qui ciblent .NET Core 3.0 et ultérieur. La version 1.0 de ces contrôles pour .NET Core 3.0 et ultérieur est prévue pour une future version.
-
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 Pour obtenir plus d’informations générales et des tutoriels sur l’utilisation de XAML Islands, consultez les articles et ressources suivants :
 
-* [Moderniser une application WPF](modernize-wpf-tutorial.md) : ce tutoriel fournit des instructions pas à pas pour utiliser des contrôles wrappés et hôtes dans le Windows Community Toolkit afin d’ajouter des contrôles UWP à une application métier WPF existante. Ce tutoriel comprend le code complet de l’application WPF ainsi que des instructions détaillées pour chaque étape du processus.
+* [Moderniser une application WPF](modernize-wpf-tutorial.md) : Ce tutoriel fournit des instructions pas à pas pour utiliser des contrôles wrappés et des contrôles hôtes dans le Windows Community Toolkit afin d’ajouter des contrôles XAML WinRT à une application métier WPF existante. Ce tutoriel comprend le code complet de l’application WPF ainsi que des instructions détaillées pour chaque étape du processus.
 * [Exemples de code XAML Islands](https://github.com/microsoft/Xaml-Islands-Samples) : Ce dépôt contient des exemples Windows Forms, WPF et C++/Win32 qui montrent comment utiliser XAML Islands.
 * [XAML Islands v1 - Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap) : ce billet de blog répond à de nombreuses questions courantes sur XAML Islands et propose une feuille de route détaillée pour le développement.

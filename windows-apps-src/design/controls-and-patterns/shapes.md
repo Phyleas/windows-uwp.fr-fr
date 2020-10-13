@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b02677cb6f38bc86d5123e835f658bedd83543de
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a33670f69d86a913288608ff07efb72edab8fd17
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173933"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829663"
 ---
 # <a name="draw-shapes"></a>Dessiner des formes
 
@@ -231,7 +231,7 @@ Le deuxième segment commence par une commande de ligne horizontale absolue « H
 
 Rendu de la forme [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) :
 
-![Rendu du tracé](images/shapes-path.jpg)
+![Capture d’écran d’un chemin simple.](images/shapes-path.jpg)
 
 L’exemple suivant montre l’utilisation de l’autre technique mentionnée : une classe [**GeometryGroup**](/uwp/api/windows.ui.xaml.media.geometrygroup) avec une classe [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry). Cet exemple utilise certains des types de géométrie contributeurs qui peuvent être utilisées en tant que partie d’une **PathGeometry** : [**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure) et les différents éléments qui peuvent être un segment dans [**PathFigure.Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments).
 
@@ -316,6 +316,6 @@ layoutRoot.Children.Add(path1);
 
 Rendu de la forme [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) :
 
-![Rendu du tracé](images/shapes-path-2.png)
+![Capture d’écran d’un chemin complexe.](images/shapes-path-2.png)
 
 L’utilisation de [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) peut être plus lisible que le remplissage d’une chaîne [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data). En revanche, [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) utilise une syntaxe compatible avec les définitions de chemin d’accès d’une image Scalable Vector Graphics (SVG) ; il peut donc être utile pour le portage des graphiques à partir de SVG, ou en tant que sortie à partir d’un outil comme Blend.

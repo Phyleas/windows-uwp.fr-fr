@@ -1,5 +1,5 @@
 ---
-description: Ce tutoriel montre comment ajouter des interfaces utilisateur XAML UWP, créer des packages MSIX et incorporer d’autres composants modernes dans votre application WPF.
+description: Ce tutoriel montre comment moderniser un exemple d’application de bureau WPF nommée Contoso Expenses.
 title: Créer un package et déployer avec MSIX
 ms.topic: article
 ms.date: 01/23/2020
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 18b89caa0de947d2b95b46c3deb11378912b6012
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2ab83b2c9253e8cdd9adc403909a1bd03db1ccda
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161423"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762978"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>Partie 5 : Créer un package et déployer avec MSIX
 

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 75d8dfe44c9296fbaf1d8caf5127db0244fc1d8d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d3179a553e0d30bd009765ec55640989720628c2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216512"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763084"
 ---
 # <a name="introduction-to-windows-app-design"></a>Introduction à la conception d’applications Windows
 
@@ -67,7 +67,7 @@ Puisque les applications UWP s'adaptent automatiquement à tous les appareils, l
 Lorsqu’une application UWP est lancée sur n’importe quel appareil Windows 10, elle se lance dans une [Fenêtre](/uwp/api/windows.ui.xaml.window) avec un [Cadre](/uwp/api/windows.ui.xaml.controls.frame), qui peut naviguer entre des instances de [Page](/uwp/api/windows.ui.xaml.controls.page).
     :::column-end:::
     :::column:::
-![Trame](images/frame.svg)
+![Capture d’écran de la fenêtre avec un cadre.](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,7 +78,7 @@ Vous pouvez considérer l’interface utilisateur de votre application comme une
 Pour découvrir comment organiser vos pages, consultez [Notions de base sur la navigation](navigation-basics.md).
     :::column-end:::
     :::column:::
-![Trame](images/collection-pages.svg)
+![Capture d’écran de la page de la collection.](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ Quel aspect doivent avoir ces pages ? La plupart des pages suivent une structur
 
 Pour en savoir plus sur l’implémentation de modèles d’application UWP courants, consultez l'article [Mise en Page](../layout/page-layout.md).
 
-Vous pouvez également utiliser [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) dans Visual Studio pour commencer une disposition pour votre application.
+Vous pouvez également utiliser [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio) dans Visual Studio pour commencer une disposition pour votre application.
 
 ## <a name="controls"></a>Contrôles
 
@@ -134,7 +134,7 @@ Les applications UWP disposent de quatre tailles de vignettes (petite, moyenne,
 Les applications UWP s’appuient sur des interactions intelligentes. Vous pouvez concevoir une fonction sur la base d’une interaction de clic sans savoir nécessairement si le clic provient d’un clic de la souris, d’un stylet ou d’une pression du doigt. Vous pouvez également concevoir vos applications pour des [modes de saisie spécifiques](../input/input-primer.md).
     :::column-end:::
     :::column:::
-![entrées](images/inputs.svg)
+![Capture d’écran des icônes qui désignent les différents modes d’entrée.](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 
@@ -146,7 +146,7 @@ De même, bien qu'UWP adapte automatiquement votre application à différents ap
 
 ## <a name="usability"></a>Facilité d'utilisation
 
-<img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
+:::image type="content" source="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb" alt-text="Brève vidéo montrant des personnages animés représentant des personnes avec des capacités différentes.":::
 
 Enfin, la facilité d'utilisation consiste à rendre l’expérience de votre application ouverte à tous les utilisateurs. Tout le monde peut bénéficier de l’expérience utilisateur véritablement inclusive. Pour voir comment rendre votre application facile à utiliser par tous, voir [Facilité d’utilisation pour les applications UWP](../usability/index.md).
 

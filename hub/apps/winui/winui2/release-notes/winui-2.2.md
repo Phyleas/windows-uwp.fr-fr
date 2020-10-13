@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.2
 description: Notes de publication de WinUI 2.2, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 4c200701e0d845d6c9b9f8797899d88cc72d8c1c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 603c2c439e47c82695c8bdf5cd16fceebc9bc068
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154903"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762935"
 ---
 # <a name="windows-ui-library-22"></a>Bibliothèque d’IU Windows 2.2
 
@@ -32,7 +32,7 @@ AOÛT 2019
 
 #### <a name="tabview"></a>TabView
 
-![Exemple](../images/tabview-gif.gif)
+![Brève vidéo présentant le comportement du contrôle TabView.](../images/tabview-gif.gif)
 
 #### <a name="description"></a>Description
 
@@ -46,7 +46,7 @@ https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui
 
 ##### <a name="a-navigationviews-back-button-update"></a>a) Mise à jour du bouton Précédent de NavigationView
 
-![Exemple](../images/navigationview-back-button.gif)
+![Brève vidéo présentant le comportement mis à jour du bouton Précédent du contrôle NavigationView.](../images/navigationview-back-button.gif)
 
 ##### <a name="description"></a>Description
 
@@ -54,7 +54,7 @@ En mode minimal de NavigationView, le bouton Précédent ne disparaît plus. Lor
 
 ##### <a name="b-navigationview---no-auto-padding"></a>b) NavigationView - Aucun remplissage automatique
 
-![Exemple](../images/navigationview-no-auto-padding.png)
+![Capture d’écran montrant le comportement du contrôle NavigationView sans remplissage automatique.](../images/navigationview-no-auto-padding.png)
 
 ##### <a name="description"></a>Description
 
@@ -68,7 +68,7 @@ https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationvi
 
 ##### <a name="a-corner-radius-update"></a>a) Mise à jour du rayon d’angle
 
-![Exemple](../images/corner-radius.png)
+![Capture d’écran montrant le style mis à jour du rayon d’angle.](../images/corner-radius.png)
 
 ##### <a name="description"></a>Description
 
@@ -80,7 +80,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/524
 
 ##### <a name="b-border-thickness-update"></a>b) Mise à jour de l’épaisseur de la bordure
 
-![Exemple](../images/border-thickness.png)
+![Capture d’écran montrant le style mis à jour de l’épaisseur de la bordure.](../images/border-thickness.png)
 
 ##### <a name="description"></a>Description
 
@@ -92,7 +92,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/835
 
 ##### <a name="c-button-visual-update"></a>c) Mise à jour du visuel de Button
 
-![Exemple](../images/button-hover-visual-update.png)
+![Capture d’écran montrant le style mis à jour du contrôle Button.](../images/button-hover-visual-update.png)
 
 ##### <a name="description"></a>Description : 
 Le visuel de Button par défaut a été mis à jour pour supprimer le contour qui apparaissait pendant le survol afin de lui donner un aspect plus clair.
@@ -102,7 +102,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/953
 
 ##### <a name="d-splitbutton-visual-update"></a>c) Mise à jour du visuel de SplitButton
 
-![Exemple](../images/splitbutton-visual-update.png)
+![Capture d’écran montrant le style mis à jour du contrôle SplitButton.](../images/splitbutton-visual-update.png)
 
 ##### <a name="description"></a>Description : 
 Le visuel de SplitButton par défaut a été mis à jour pour le différencier davantage de DropDownButton.
@@ -112,7 +112,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/986
 
 ##### <a name="e-toggleswitch-visual-update"></a>e) Mise à jour du visuel de ToggleSwitch
 
-![Exemple](../images/toggleswitch-update.png)
+![Capture d’écran montrant le style mis à jour du contrôle ToggleSwitch.](../images/toggleswitch-update.png)
 
 ##### <a name="description"></a>Description : 
 La largeur par défaut de ToggleSwitch a été réduite de 44 px à 40 px, afin qu’elle soit visuellement équilibrée tout en conservant sa facilité d’utilisation.
@@ -122,7 +122,7 @@ https://github.com/microsoft/microsoft-ui-xaml/issues/836
 
 ##### <a name="f-checkbox-and-radiobutton-visual-update"></a>f) Mise à jour des visuels de CheckBox et RadioButton
 
-![Exemple](../images/checkbox-radiobutton.png)
+![Capture d’écran montrant le style mis à jour des contrôles CheckBox et RadioButton](../images/checkbox-radiobutton.png)
 
 ##### <a name="description"></a>Description : 
 Les visuels de CheckBox et RadioButton ont été mis à jour pour être cohérents avec le reste du changement apporté aux styles visuels.
@@ -146,7 +146,7 @@ Des articles de procédures pour les contrôles de la bibliothèque d’interfac
 
 Les documents de référence sur les API se trouvent ici : [API de la bibliothèque d’interface utilisateur Windows](/uwp/api/overview/winui/).
 
-## <a name="microsoftuixaml-22-version-history"></a>Historique des versions de Microsoft.UI.Xaml 2.2
+## <a name="microsoftuixaml-22-prerelease-version-history"></a>Historique des versions de Microsoft.UI.Xaml 2.2-prerelease
 
 ### <a name="microsoftuixaml-22190702001-prerelease"></a>Microsoft.UI.Xaml 2.2.190702001-prerelease
 

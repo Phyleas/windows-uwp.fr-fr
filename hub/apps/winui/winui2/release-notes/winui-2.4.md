@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.4
 description: Notes de publication de WinUI 2.4, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 22fd028ba2059a092ee2f2be47a114fb2d618ce1
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 5e2ff23b3b0ea63002ad54a367e82e81ee1cd542
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492824"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762913"
 ---
 # <a name="windows-ui-library-24"></a>Bibliothèque d’IU Windows 2.4
 
@@ -28,7 +28,7 @@ Téléchargement du package NuGet : [Microsoft.UI.Xaml](https://www.nuget.org/p
 
 Un RadialGradientBrush est dessiné dans une ellipse qui est définie par les propriétés Center, RadiusX et RadiusY. Les couleurs du début du dégradé se trouvent au centre de l’ellipse et se terminent au niveau du rayon.
 
-![Pinceau dégradé radial](../images/radialgradientbrush.gif)<br>
+![Brève vidéo présentant le comportement du pinceau dégradé radial.](../images/radialgradientbrush.gif)<br>
 *Pinceau dégradé radial*
 
 [Indications d’utilisation](/windows/uwp/design/style/brushes#radial-gradient-brushes)
@@ -39,7 +39,7 @@ Un RadialGradientBrush est dessiné dans une ellipse qui est définie par les pr
 
 Le contrôle ProgressRing est utilisé pour les interactions modales, où l’utilisateur est bloqué jusqu’à la disparition de l’anneau de progression. Utilisez ce contrôle si une opération nécessite que la plupart des interactions avec l’application soit suspendue jusqu’à ce que l’opération soit terminée.
 
-![Contrôle ProgressRing](../images/progressring.gif)<br>
+![Brève vidéo présentant le comportement du contrôle ProgressRing.](../images/progressring.gif)<br>
 *Contrôle ProgressRing*
 
 [Indications d’utilisation](/windows/uwp/design/controls-and-patterns/progress-controls)
@@ -70,8 +70,8 @@ Quand le thème sombre est activé, la couleur d’arrière-plan des contrôles 
 
 | Avant | Après |
 | - | - |
-| ![Mises à jour du thème sombre TextBox (avant)](..\images\textbox-darkthemeupdates-before1.gif)<br>*Mises à jour du thème sombre TextBox (avant)* | ![Mises à jour du thème sombre TextBox (après)](..\images\textbox-darkthemeupdates-after1.gif)<br>*Mises à jour du thème sombre TextBox (après)* |
-| ![Mises à jour du thème sombre TextBox (avant)](..\images\textbox-darkthemeupdates-before2.gif)<br>*Mises à jour du thème sombre TextBox (avant)* | ![Mises à jour du thème sombre TextBox (après)](..\images\textbox-darkthemeupdates-after2.gif)<br>*Mises à jour du thème sombre TextBox (après)* |
+| ![Brève vidéo présentant le comportement du thème sombre de TextBox avant les mises à jour.](..\images\textbox-darkthemeupdates-before1.gif)<br>*Mises à jour du thème sombre TextBox (avant)* | ![Brève vidéo présentant le comportement du thème sombre de TextBox après les mises à jour.](..\images\textbox-darkthemeupdates-after1.gif)<br>*Mises à jour du thème sombre TextBox (après)* |
+| ![Court film présentant le comportement du thème sombre de TextBox avant les mises à jour.](..\images\textbox-darkthemeupdates-before2.gif)<br>*Mises à jour du thème sombre TextBox (avant)* | ![Court film présentant le comportement du thème sombre de TextBox après les mises à jour.](..\images\textbox-darkthemeupdates-after2.gif)<br>*Mises à jour du thème sombre TextBox (après)* |
 
 Voici quelques-uns des contrôles inclus dans la famille de contrôles TextBox :
 

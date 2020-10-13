@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: bb0f38c250d20780b301a925b24e3d1c36bda7e3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f7035017b1b1bfe878e4bd390fcefbe2bf3a6be5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216602"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636559"
 ---
 # <a name="color"></a>Couleur
 
@@ -216,7 +216,7 @@ Quand vous utilisez du texte en couleur sur un arrière-plan en couleur, vérifi
 
 Le graphique ci-dessous illustre un exemple des différentes nuances claires et foncées de la couleur d’accentuation. Il décrit également comment le type peut être appliqué sur une surface en couleur.
 
-![couleur sur couleur](images/color/color-on-color.png)
+![Capture d’écran de la couleur du graphique montrant un dégradé de couleur allant du bleu clair en haut au bleu foncé en bas.](images/color/color-on-color.png)
 
 Pour plus d’informations sur l’application de styles aux contrôles, voir [Styles XAML](../controls-and-patterns/xaml-styles.md).
 

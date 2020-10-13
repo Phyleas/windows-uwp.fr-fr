@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: c18cb3c5b8a979e7c7c6485e6989736d818613ba
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c21586bceef11b1a2c19900160796bf702578ffb
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220352"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763056"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -109,11 +109,11 @@ Pour les projets UWP C# et VB, vous noterez la présence d'un champ **Arguments 
 
 Dans le cas des projets UWP C++ et JS, le champ **Arguments de la ligne de commande** apparaît dans **Propriétés de débogage**.
 
-![Arguments de ligne de commande C++ et JS](images/command-line-arguments-cpp.png)
+![Capture d’écran des pages de propriétés d’App 4 avec l’option Propriétés de configuration > Débogage sélectionnée, et la propriété Arguments de ligne de commande dans le tableau.](images/command-line-arguments-cpp.png)
 
 Après avoir spécifié les arguments de ligne de commande, vous pouvez accéder à la valeur de l’argument dans la méthode **OnLaunched** de l’application. L’objet *args* de la classe [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) présente une propriété **Arguments** dont la valeur est définie sur le texte figurant dans le champ **Arguments de la ligne de commande**.
 
-![Arguments de ligne de commande C++ et JS](images/command-line-arguments-debugging.png)
+![Capture d’écran des arguments de ligne de commande pour C++ et JS.](images/command-line-arguments-debugging.png)
 
 ## <a name="authentication-modes"></a>Modes d’authentification
 

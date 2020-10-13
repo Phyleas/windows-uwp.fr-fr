@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 324512b4bd99ee651539c270219a6adc988ae77b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: caeb8fff9eccccc57219b84b0162db68b622bd97
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165763"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763007"
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>Effets de perspective 3D pour une interface utilisateur en XAML
 
@@ -172,6 +172,6 @@ Dans l’exemple suivant, la propriété [**GlobalOffsetX**](/uwp/api/windows.ui
 
 Dans cet exemple, l’objet ne change pas de course à mesure qu’il pivote. En effet, l’objet est déplacé le long de l’axe X de l’écran indépendamment de sa rotation.
 
-## <a name="positioning-an-object"></a>Positionnement d’un objet
+## <a name="more-complex-semi-3d-scenarios"></a>Scénarios semi-3D complexes
 
 Vous pouvez utiliser les types [**Matrix3DProjection**](/uwp/api/Windows.UI.Xaml.Media.Matrix3DProjection) et [**Matrix3D**](/uwp/api/Windows.UI.Xaml.Media.Media3D.Matrix3D) dans le cadre de scénarios 3D partiels plus complexes que permet l’objet [**PlaneProjection**](/uwp/api/Windows.UI.Xaml.Media.PlaneProjection). L’objet **Matrix3DProjection** met à votre disposition une matrice de transformation 3D complète que vous pouvez appliquer à n’importe quel objet [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement), ce qui vous permet d’appliquer aux éléments des matrices de perspective et des matrices de transformation de modèle arbitraires. Gardez à l’esprit que ces API sont minimales ; par conséquent, si vous les utilisez, vous devez écrire le code qui crée correctement les matrices de transformation 3D. Il est donc plus facile d’utiliser l’objet **PlaneProjection** pour des scénarios 3D simples.

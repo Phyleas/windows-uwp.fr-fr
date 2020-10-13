@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6fa0f8997db9a383097c7e0fece3d8a17d5875ab
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e144d369dccac6a14a32168bd073bb501275097f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220092"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763063"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Notions de base de la conception de la navigation dans les applications Windows
 
@@ -67,7 +67,7 @@ Un recours moins large aux éléments de navigation simplifie la prise de décis
 
 :::row:::
     :::column:::
-        ![exemple faire](images/nav/do.svg)
+        ![Première capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/nav/do.svg)
 
         ![bonne vue de navigation](images/nav/navview-good.svg)
 
@@ -86,7 +86,7 @@ Noyez les utilisateurs dans de nombreuses options de navigation.
 
 Des chemins d’accès clairs favorisent une navigation logique pour les utilisateurs. Le fait de rendre les options de navigation évidentes et de clarifier les relations entre les pages de navigation doit empêcher les utilisateurs de se perdre.
 
-![exemple faire](images/nav/clarity-image.svg)
+![Capture d’écran d’une fausse application montrant des chemins de navigation clairs pour un utilisateur.](images/nav/clarity-image.svg)
 
 > Les destinations sont clairement nommées pour que les utilisateurs sachent où ils sont.
 

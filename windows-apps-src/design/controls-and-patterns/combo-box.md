@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a6854eb361388fc1597816d31daf08bb5fe782
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bb903be202724927d60ee5bcd1edb9e16bc4c982
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217452"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829488"
 ---
 # <a name="combo-box-and-list-box"></a>Zone de liste modifiable et zone de liste
 
@@ -23,15 +23,23 @@ Utilisez une liste déroulante pour présenter à l’utilisateur une liste d’
 
 Quand la liste déroulante est fermée, elle affiche la sélection actuelle ou elle est vide si aucun élément n’est sélectionné. Quand l’utilisateur développe la liste déroulante, elle affiche la liste des éléments sélectionnables.
 
-![Exemple de liste déroulante à l’état compact](images/combo-box-expand.gif)
+![Brève vidéo montrant une liste déroulante dans sa forme compacte et sa forme développée.](images/combo-box-expand.gif)
 
 > _Zone de liste modifiable à l’état compact avec un en-tête_
 
 **Obtenir la bibliothèque d’interface utilisateur Windows**
 
-|  |  |
-| - | - |
-| ![Logo WinUI](images/winui-logo-64x64.png) | La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
+:::row:::
+   :::column:::
+      ![Logo WinUI](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      La bibliothèque d’interface utilisateur Windows version 2.2 ou ultérieure inclut pour ce contrôle un nouveau modèle qui utilise des angles arrondis. Pour plus d’informations, consultez [Rayons des angles](../style/rounded-corner.md). WinUI est un package NuGet qui contient de nouveaux contrôles et des fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **API de plateforme :** [classe ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [propriété IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [propriété Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [événement TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -60,7 +68,7 @@ Quand la liste déroulante est fermée, elle affiche la sélection actuelle ou e
 
 Une zone de liste déroulante en état compact peut afficher un en-tête.
 
-![Exemple de liste déroulante à l’état compact](images/combo_box_collapsed.png)
+![Capture d’écran d’une liste déroulante dans sa forme compacte.](images/combo_box_collapsed.png)
 
 Bien que les zones de listes déroulantes se développent pour prendre en charge des chaînes plus longues, évitez les chaînes excessivement longues qui rendent la lecture difficile.
 

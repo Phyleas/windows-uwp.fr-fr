@@ -822,7 +822,11 @@
             - name: Catégories de valeurs et références
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
     - name: C#/WinRT
-      href: ../csharp-winrt/index.md
+      items:
+        - name: Vue d’ensemble
+          href: ../csharp-winrt/index.md
+        - name: "Démonstration\_: Générer une projection .NET\_5.0 à partir d’un composant C++/WinRT"
+          href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
     - name: Sécurité
       href: ../security/index.md
       items:

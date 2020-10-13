@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 433f24ea6c4e2fd03faa652a041f3a1c1578652e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 319bf762d54ed341672a99d15d9e760c91d93cff
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217932"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829459"
 ---
 # <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
 
@@ -35,7 +35,7 @@ Dans cet article, nous utilisons les termes *liste*, *élément de liste*, et *i
 - *Élément de liste* fait référence à un élément sur lequel un utilisateur peut entreprendre une action dans une liste.
 - *Interface utilisateur imbriquée* fait référence aux éléments d’interface utilisateur au sein d’un élément de liste sur lesquels un utilisateur peut entreprendre une action indépendamment d’agir sur l’élément de liste lui-même.
 
-![Parties de l’interface utilisateur imbriquée](images/nested-ui-example-1.png)
+![Capture d’écran montrant les différentes parties d’une interface utilisateur imbriquée.](images/nested-ui-example-1.png)
 
 > REMARQUE&nbsp;&nbsp;ListView et GridView dérivent tous deux de la classe [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) ; ils ont donc les mêmes fonctionnalités, mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
 
@@ -107,7 +107,7 @@ Lorsque plusieurs actions sont imbriquées dans l’élément de liste, nous rec
 
 Si votre interface utilisateur de liste comportant des éléments imbriqués prend en charge des actions telles que l’appel, la sélection (d’un ou de plusieurs éléments), ou des opérations de glisser-déplacer, nous vous recommandons ces techniques de navigation à l’aide des flèches pour vous déplacer dans vos éléments d’interface imbriquée.
 
-![Parties de l’interface utilisateur imbriquée](images/nested-ui-navigation.png)
+![Capture d’écran montrant les éléments de l’interface utilisateur imbriquée étiquetés avec les lettres A, B, C et D.](images/nested-ui-navigation.png)
 
 **Boîtier de commande**
 
@@ -147,7 +147,7 @@ Vous pouvez utiliser un affichage Liste permettant la virtualisation et l’opti
 
 Ce type d’interface utilisateur a tendance à être beaucoup plus compliqué que les exemples précédents, dans la mesure où il comporte un grand nombre d’éléments imbriqués sur lesquels l’utilisateur peut agir.
 
-![Parties de l’interface utilisateur imbriquée](images/nested-ui-grouping.png)
+![Capture d’écran d’une interface utilisateur imbriquée montrant un grand nombre d’éléments imbriqués avec lesquels l’utilisateur peut interagir.](images/nested-ui-grouping.png)
 
 
 Pour terminer cette interface utilisateur, définissez les propriétés suivantes sur votre liste :

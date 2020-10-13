@@ -4,12 +4,12 @@ description: Découvrez-en plus sur les principes des angles arrondis, les appro
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, rayon d’angle, arrondi
-ms.openlocfilehash: 134a49ac57678eea0da718e93a14e3d0cf8896d5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 044ae628ffe397005113f658191398e06fd245f5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81001476"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636529"
 ---
 # <a name="corner-radius"></a>Rayon d’angle
 
@@ -115,11 +115,11 @@ Dans certains cas, les angles d’un contrôle ne doivent pas être arrondis (il
 
 - Quand un contrôle est hébergé dans un autre conteneur, comme la barre d’un ScrollBar et les boutons qui font partie du conteneur ScrollBar (qui fait également partie d’un ScrollViewer).
 
-![ScrollBar](images/rounded-corner/scrollbar.png)
+![Capture d’écran d’une barre de défilement verticale sans angles arrondis.](images/rounded-corner/scrollbar.png)
 
 - Quand un élément d’interface utilisateur de menu volant est connecté à une interface utilisateur qui appelle le menu volant d’un côté.
 
-![AutoSuggest](images/rounded-corner/autosuggest.png)
+![Capture d’écran d’un menu volant de suggestion automatique où certains angles ne sont pas arrondis.](images/rounded-corner/autosuggest.png)
 
 ### <a name="keyboard-focus-rectangle-and-shadow"></a>Rectangle et ombre du focus clavier
 

@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.1
 description: Notes de publication de WinUI 2.1, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 02e870209486a271e0455d61070cf5403333e1df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f5087e9f5059a568e92f972c04b25d8c618015f2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154883"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762877"
 ---
 # <a name="windows-ui-library-21"></a>Bibliothèque d’IU Windows 2.1
 
@@ -29,7 +29,7 @@ WinUI est un projet open source hébergé sur GitHub. Vous pouvez nous faire par
 ItemsRepeater permet de créer des expériences de collection personnalisées à l’aide d’un système de disposition flexible, de vues personnalisées et de la virtualisation.
 Contrairement à un ListView, le contrôle ItemsRepeater n’offre pas d’expérience d’utilisateur final complète. Il ne propose pas d’interface utilisateur par défaut et n’offre aucune stratégie autour du focus, de la sélection ou de l’interaction utilisateur. Il s’agit d’un bloc de construction dont vous pouvez vous servir pour créer vos propres expériences à base de collections uniques et vos propres contrôles personnalisés. Il prend en charge la création d’expériences plus riches et plus performantes.
 
-![Exemple](../images/ItemsRepeater%20-%20MSN%20News.gif)
+![Brève vidéo présentant le comportement du contrôle ItemsRepeater.](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
 [Documentation](/windows/uwp/design/controls-and-patterns/items-repeater)
 
@@ -37,7 +37,7 @@ Contrairement à un ListView, le contrôle ItemsRepeater n’offre pas d’expé
 
 AnimatedVisualPlayer héberge et contrôle la lecture des visuels animés, ce qui vous permet d’ajouter à votre application des graphiques de mouvement personnalisés hautes performances. Par exemple, AnimatedVisualPlayer est utilisé pour afficher et contrôler les animations Lottie.
 
-![Exemple](../images/AnimatedVisualPlayerUpdated.gif)
+![Brève vidéo présentant le comportement du contrôle AnimatedVisualPlayer.](../images/AnimatedVisualPlayerUpdated.gif)
 
 [Documentation](/windows/communitytoolkit/animations/lottie)
 
@@ -45,7 +45,7 @@ AnimatedVisualPlayer héberge et contrôle la lecture des visuels animés, ce qu
 
 TeachingTip fournit aux applications un moyen attrayant et de type Fluent pour guider et informer les utilisateurs avec des conseils non invasifs et riches en contenu. TeachingTip peut mettre en avant des fonctionnalités nouvelles ou importantes, apprendre aux utilisateurs à effectuer des tâches et améliorer le workflow en fournissant en direct des informations contextuellement pertinentes pour votre tâche.
 
-![Exemple](../images/TeachingTipUpdated.gif)
+![Brève vidéo présentant le comportement du contrôle TeachingTip.](../images/TeachingTipUpdated.gif)
 
 [Documentation](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
 
@@ -53,7 +53,7 @@ TeachingTip fournit aux applications un moyen attrayant et de type Fluent pour g
 
 Offre la possibilité d’avoir des options de style « case d’option » dans une barre de menus. Cela permet de regrouper des options avec des puces qui sont liées comme un groupe de cases d’option. La logique est gérée pour le développeur.
 
-![Exemple](../images/RadioMenuFlyoutItem1.png)
+![Capture d’écran montrant le comportement du contrôle RadioMenuFlyoutItem.](../images/RadioMenuFlyoutItem1.png)
 
 [Documentation](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
 
@@ -61,7 +61,7 @@ Offre la possibilité d’avoir des options de style « case d’option » dan
 
 Le mode compact permet aux développeurs de créer des expériences confortables pour un nombre quelconque de scénarios. Il vous suffit d’ajouter un dictionnaire de ressources pour que votre application puisse accueillir en moyenne 33 % d’IU en plus.
 
-![Exemple de densité compacte](../images/CompactDensityUpdated.png)
+![Capture d’écran montrant le comportement du contrôle CompactDensity.](../images/CompactDensityUpdated.png)
 
 [Documentation](/windows/uwp/design/style/spacing)
 

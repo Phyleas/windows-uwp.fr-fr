@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fb098cb247890dc1b3919f6123b76b54366d60f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c3cac3049dbd5d22c23716a2da38a41fb6000a71
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154323"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984495"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -35,7 +35,9 @@ Pour plus d’informations sur C#/WinRT, consultez le [dépôt GitHub C#/WinRT](
 
 ## <a name="create-an-interop-assembly"></a>Créer un assembly d’interopérabilité
 
-Les API WinRT sont définies dans les fichiers de métadonnées Windows (*. winmd). Le package NuGet C#/WinRT comprend le compilateur C#/WinRT, **cswinrt**, que vous pouvez utiliser pour traiter les fichiers de métadonnées Windows et générer du code C# .NET Standard 2.0. Vous pouvez compiler ces fichiers sources dans des assemblys d’interopérabilité, de la même façon que [C++/WinRT](../cpp-and-winrt-apis/index.md) génère des en-têtes pour une projection de langage C++. Vous pouvez alors distribuer les assemblys d’interopérabilité C#/WinRT pour les applications à référencer, en même temps que l’assembly de runtime C#/WinRT.
+Les API WinRT sont définies dans les fichiers de métadonnées Windows (*. winmd). Le package NuGet C#/WinRT ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) comprend le compilateur C#/WinRT, **cswinrt**, que vous pouvez utiliser pour traiter les fichiers de métadonnées Windows et générer du code C# .NET 5.0. Vous pouvez compiler ces fichiers sources dans des assemblys d’interopérabilité, de la même façon que [C++/WinRT](../cpp-and-winrt-apis/index.md) génère des en-têtes pour une projection de langage C++. Vous pouvez alors distribuer les assemblys d’interopérabilité C#/WinRT pour les applications à référencer, en même temps que l’assembly de runtime C#/WinRT.
+
+Pour une procédure pas à pas qui montre comment créer un assembly d’interopérabilité, consultez [Procédure pas à pas : Générer une projection .NET 5 à partir d’un composant C++/WinRT et mettre à jour le NuGet](net-projection-from-cppwinrt-component.md).
 
 ### <a name="invoke-cswinrtexe"></a>Appeler cswinrt.exe
 

@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.3
 description: Notes de publication de WinUI 2.3, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1043ae488342fc8396902c73c2f00eb5b19f584d
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154783"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636509"
 ---
 # <a name="windows-ui-library-23"></a>Bibliothèque d’IU Windows 2.3
 
@@ -56,7 +56,7 @@ Indique la progression d’une quantité de travail connue.
 
 **RadioButtons** est un nouveau contrôle conteneur qui vous permet de créer facilement des groupes d’éléments RadioButton associés, tout en prenant en charge correctement les fonctionnalités du clavier et du narrateur/lecteur d’écran.
 
-![RadioButtons](../images/RadioButtons.png)
+![Capture d’écran de trois cases d’option, avec la troisième case sélectionnée.](../images/RadioButtons.png)
 
 [Lien vers la documentation et des exemples](https://github.com/microsoft/microsoft-ui-xaml-specs/blob/c8d3d3668af546091656dfc37436b13cd062f52d/active/radiobuttons/RadioButtons_Spec.md)
 
@@ -67,8 +67,7 @@ L’exemple d’application de galerie de contrôles XAML contient des démonstr
 * Installez l’application XAML Controls Gallery à partir du [Microsoft Store](
 https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt).
 
-* XAML Controls Gallery est également [open source sur GitHub](
-https://github.com/Microsoft/Xaml-Controls-Gallery).
+* XAML Controls Gallery est également [open source sur GitHub](https://github.com/Microsoft/Xaml-Controls-Gallery).
 
 ## <a name="documentation"></a>Documentation
 

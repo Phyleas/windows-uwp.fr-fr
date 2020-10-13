@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3e9e9e501f1c4277121e7694e8213ccea51c5297
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bb0a6b48e9a9a01881955ae0ccb65e93b9cf2b6e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218132"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636539"
 ---
 # <a name="typography-in-windows-apps"></a>Typographie des applications Windows
 
@@ -29,7 +29,8 @@ Pour afficher les langues autres que l’anglais ou sélectionner une autre poli
 
 :::row:::
     :::column:::
-![à faire](images/do.svg) Sélectionner une seule police pour votre interface utilisateur.
+![Première capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Sélectionnez une seule police pour votre interface utilisateur.
     :::column-end:::
     :::column:::
 ![à ne pas faire](images/dont.svg) Utiliser plusieurs polices.
@@ -46,7 +47,8 @@ En raison du mode de fonctionnement du système de mise à l’échelle, la conc
 
 :::row:::
     :::column:::
-![à faire](images/do.svg) Suivre les tailles de la [gamme de caractères](#type-ramp) Windows.
+![Deuxième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Respectez les tailles de la [gamme de caractères](#type-ramp) Windows.
     :::column-end:::
     :::column:::
 ![à ne pas faire](images/dont.svg) Utiliser une taille de police inférieure à12 px.
@@ -93,7 +95,8 @@ Vous pouvez accéder aux niveaux de la gamme de caractères en tant que [ressour
 
 :::row:::
     :::column:::
-![à faire](images/do.svg)Utiliser « Corps » pour la majorité du texte.
+![Troisième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Utilisez le style « Body » pour la majeure partie du texte.
 
 Utilisez « Base » pour les titres lorsque l’espace est restreint.
     :::column-end:::
@@ -118,7 +121,8 @@ La valeur [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) par défaut es
 
 :::row:::
     :::column:::
-![à faire](images/do.svg) Utiliser des lignes de 50 à 60 caractères afin de faciliter la lecture.
+![[Quatrième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Utilisez des lignes de 50 à 60 caractères pour faciliter la lecture.
     :::column-end:::
     :::column:::
 ![à ne pas faire](images/dont.svg) Utiliser des lignes de moins de 20 caractères ou de plus de 60 caractères qui rendent la lecture difficile.
@@ -137,7 +141,8 @@ Lorsque la quantité de texte s’étend au-delà de l’espace disponible, nous
 
 :::row:::
     :::column:::
-![à faire](images/do.svg) Dérouter le texte et le renvoyer automatiquement à la ligne si plusieurs lignes sont activées.
+![[Cinquième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Détourez le texte et renvoyez-le automatiquement à la ligne si plusieurs lignes sont activées.
     :::column-end:::
     :::column:::
 ![à ne pas faire](images/dont.svg) Utiliser des ellipses pour éviter tout encombrement visuel.

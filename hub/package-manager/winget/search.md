@@ -4,12 +4,12 @@ description: Interroge les sources pour rechercher les applications disponibles 
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 7038f9b31c4c0446e3af56cac2d118598347d4d3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 30d519b5038dfa3d13e7c6f7ba3fead439ce9e3c
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493254"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636499"
 ---
 # <a name="search-command-winget"></a>search, commande (winget)
 
@@ -23,7 +23,7 @@ La commande **search** peut montrer toutes les applications disponibles, ou êtr
 
 `winget search [[-q] \<query>] [\<options>]`
 
-![rechercher](images\search.png)
+![Capture d’écran de la fenêtre Windows PowerShell avec les résultats de la recherche winget.](images\search.png)
 
 ## <a name="arguments"></a>Arguments
 

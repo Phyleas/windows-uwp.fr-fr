@@ -4,12 +4,12 @@ description: Guide pas à pas pour appliquer l’Optimisation guidée par profil
 ms.date: 02/08/2017
 ms.localizationpriority: medium
 ms.topic: article
-ms.openlocfilehash: c784812d2e070aba0857cb84e5729b1426717b8d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a606d87b309b130cd9bb0cdc90a2a8b3a3bcc717
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73062368"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762859"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>Exécution de l’optimisation guidée par profil sur des applications de plateforme Windows universelle 
  
@@ -17,7 +17,7 @@ Cette rubrique vous guide pas à pas dans l’application de l’optimisation gu
 
 Voici une procédure pas à pas de base pour appliquer la PGO au modèle d’application (UWP) DirectX 11 par défaut à l’aide de Visual Studio 2015 Update 3.
  
-Les captures d’écran incluses dans ce guide s’appuient sur le nouveau projet suivant : ![Boîte de dialogue Nouveau projet](images/pgo-001.png)
+Les captures d’écran incluses dans ce guide s’appuient sur le nouveau projet suivant : ![Capture d’écran montrant la boîte de dialogue Nouveau projet avec l’option Installé > Modèles > Visual C++ sélectionnée, et l’option Application DirectX 11 mise en évidence.](images/pgo-001.png)
 
 Pour appliquer la PGO au modèle d’application DirectX 11 :
 
@@ -35,7 +35,7 @@ Pour appliquer la PGO au modèle d’application DirectX 11 :
 
 4. Sélectionnez **Générer la solution**, puis **Déployer la solution**. 
 
- ![Boîte de dialogue Nouveau projet](images/pgo-005.png)
+ ![Capture d’écran montrant la liste déroulante Génération avec des flèches rouges pointant vers les options Générer la solution et Déployer la solution.](images/pgo-005.png)
  
  Vous pouvez vérifier que tout a correctement fonctionné en accédant à l’emplacement de sortie de la génération pour vérifier qu’un fichier .pgd a été généré. Dans cet exemple, cela signifie que le fichier suivant a été généré avec la sortie de génération :
  
@@ -49,11 +49,11 @@ Pour appliquer la PGO au modèle d’application DirectX 11 :
 
  Cette étape est nécessaire,car les applications UWP peuvent charger uniquement les bibliothèques qui existent au sein de leur package.
 
- ![Boîte de dialogue Nouveau projet](images/pgo-006.png)
+ ![Capture d’écran de la fenêtre Explorateur de fichiers montrant le contenu du dossier AppX.](images/pgo-006.png)
  
 6. Exécutez l’application à partir du menu Démarrer ou du menu **Déboguer** de Visual Studio avec l’option **Exécuter sans débogage**. 
 
- ![Boîte de dialogue Nouveau projet](images/pgo-007.png)
+ ![Capture d’écran montrant la liste déroulante Déboguer avec l’option Exécuter sans débogage mise en évidence.](images/pgo-007.png)
  
 7. La build qui s’exécute maintenant est instrumentée et génère des données PGO. À ce stade, vous devez exécuter l’application dans certains scénarios les plus courants que vous avez l’intention d’optimiser. Après l’exécution du programme dans les scénarios visés, recherchez l’outil pgosweep.exe situé dans le même dossier que celui où vous avez trouvé la version appropriée de `pgort140.dll`. Une invite de commandes des outils natifs Visual Studio (x86/x64) peut également déjà contenir la version appropriée dans son chemin. Pour collecter les données PGO, exécutez la commande suivante pendant que l’application est toujours en cours d’exécution afin de générer un fichier .pgc pour contenir les données de profilage :
  
@@ -77,7 +77,7 @@ Pour appliquer la PGO au modèle d’application DirectX 11 :
  
 9. Une fois que vous avez généré un ou plusieurs fichiers .pgc et que vous les avez placés à côté de votre fichier .pgd, ou que vous les avez fusionnés manuellement (étape 8), nous pouvons utiliser l’éditeur de liens pour créer la build finale optimisée. Retournez dans les propriétés de votre éditeur de liens (**Propriétés** > **Éditeur de liens** > **Optimisation**) et définissez la **génération de code durant l’édition de liens** sur **Optimisation guidée par profil - Optimisation (LTCG :PGOptimize)** , et vérifiez que **Base de données guidée par profil** pointe sur le fichier .pgd que vous voulez utiliser (si vous ne l’avez pas modifié, tout doit être en ordre).
 
- ![Boîte de dialogue Nouveau projet](images/pgo-009.png)
+ ![Capture d’écran de la boîte de dialogue « Pages de propriétés de App1 » avec l’option Propriétés de configuration > Éditeur de liens > Optimisation sélectionnée, et l’option Génération de code durant l’édition de liens et Optimisation guidée par profil - Optimisation LTCG : Options PGOptimize mises en évidence.](images/pgo-009.png)
  
 10. À présent que le projet est généré, l’éditeur de liens appelle pgomgr.exe pour fusionner tous les fichiers `<PGDName>!*.pgc` du fichier .pgd avec une pondération de 1 par défaut, et l’application résultante est optimisée en fonction des données de profilage.
 

@@ -1,21 +1,21 @@
 ---
-description: Cet article explique comment héberger un contrôle UWP personnalisé dans une application Win32 C++ à l’aide de l’API d’hébergement XAML.
-title: Héberger un contrôle UWP personnalisé dans une application C++ Win32 à l’aide de l’API d’hébergement XAML
-ms.date: 04/07/2020
+description: Cet article explique comment héberger un contrôle XAML WinRT personnalisé dans une application Win32 C++ à l’aide de l’API d’hébergement XAML.
+title: Héberger un contrôle XAML WinRT personnalisé dans une application C++ Win32 à l’aide de l’API d’hébergement XAML
+ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, contrôles personnalisés, contrôles utilisateur, contrôles hôtes
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c74e6fbb8907a25af6fe6e4ad6439dbaca425b84
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6cdeee0730a2fe68f671a41ea77b000ab13bc0cb
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216772"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671558"
 ---
-# <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Héberger un contrôle UWP personnalisé dans une application Win32 C++
+# <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>Héberger un contrôle XAML WinRT personnalisé dans une application Win32 C++
 
 Cet article explique comment utiliser l’[API d’hébergement XAML UWP](using-the-xaml-hosting-api.md) pour héberger un contrôle XAML UWP personnalisé dans une nouvelle application Win32 C++. Si vous disposez déjà d’un projet d’application Win32 C++, vous pouvez adapter ces étapes et exemples de code à votre projet.
 
@@ -44,8 +44,8 @@ Pour héberger un contrôle XAML UWP personnalisé, vous allez créer les projet
 
 4. Dans la fenêtre **Gérer les packages NuGet**, installez les packages NuGet supplémentaires suivants :
 
-    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (version 6.0.0 ou ultérieure). Ce package fournit plusieurs ressources de génération et d’exécution qui permettent à XAML Islands de fonctionner dans votre application.
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (version 6.0.0 ou ultérieure). Ce package définit la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), que vous utiliserez plus tard dans cette procédure pas à pas.
+    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (la dernière version stable). Ce package fournit plusieurs ressources de génération et d’exécution qui permettent à XAML Islands de fonctionner dans votre application.
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (la dernière version stable). Ce package définit la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), que vous utiliserez plus tard dans cette procédure pas à pas.
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
 
 5. Générez la solution et vérifiez qu’elle est correctement générée.
@@ -61,7 +61,7 @@ Ajoutez ensuite un projet d’application **UWP (C++/WinRT)** à votre solution 
 3. Installez le package NuGet [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) dans le projet **MyUWPApp**. Ce package définit la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication), que vous utiliserez plus tard dans cette procédure pas à pas.
 
     1. Cliquez avec le bouton droit sur le projet **MyUWPApp** et choisissez **Gérer les packages NuGet**.
-    2. Sélectionnez l’onglet **Parcourir**, recherchez le package [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication), puis installez la version 6.0.0 ou une version ultérieure de ce package.
+    2. Sélectionnez l’onglet **Parcourir**, recherchez le package [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication), puis installez la dernière version stable de ce package.
 
 4. Cliquez avec le bouton droit sur le nœud **MyUWPApp** et sélectionnez **Propriétés**. Sur la page **Propriétés communes** -> **C++/WinRT**, définissez la propriété **Verbosité** sur **normal**, puis cliquez sur **Appliquer**. Lorsque vous avez terminé, la page Propriétés devrait ressembler à ceci.
 
@@ -373,15 +373,13 @@ Mettez à jour le projet **MyDesktopWin32App** afin de définir une macro pour d
       <!-- End Section-->
     ```
 
-4. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **MyDesktopWin32App (déchargé)** , puis sélectionnez **Recharger le projet**.
+4. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur **MyDesktopWin32App (déchargé)** , puis sélectionnez **Recharger le projet**.
 
-5. Cliquez avec le bouton droit sur **MyDesktopWin32App**, sélectionnez **Propriétés**, puis cliquez sur le nœud **C/C++** dans le volet gauche. Vérifiez que la macro **Autres répertoires Include** a été définie à l’aide de la modification du fichier projet apportée à l’étape précédente.
-
-    ![Paramètres de projet C/C++](images/xaml-islands/xaml-island-cpp-7.png)
-
-6. Dans la boîte de dialogue **Pages de propriétés**, développez **Outil Manifeste** -> **Entrée et sortie**. Définissez la propriété **Prise en charge DPI** sur **Reconnaissant les résolutions élevées par moniteur**. Si vous ne définissez pas cette propriété, vous risquez de rencontrer une erreur de configuration de manifeste dans certains scénarios impliquant des résolutions élevées.
+5. Cliquez avec le bouton droit sur le projet **MyDesktopWin32App**, sélectionnez **Propriétés**, puis développez **Outil Manifeste** -> **Entrée et sortie** dans le volet gauche. Définissez la propriété **Prise en charge DPI** sur **Reconnaissant les résolutions élevées par moniteur**. Si vous ne définissez pas cette propriété, vous risquez de rencontrer une erreur de configuration de manifeste dans certains scénarios impliquant des résolutions élevées.
 
     ![Paramètres de projet C/C++](images/xaml-islands/xaml-island-cpp-8.png)
+
+6. Cliquez sur **OK** pour fermer la boîte de dialogue **Pages de propriétés**.
 
 ## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>Héberger le contrôle XAML UWP personnalisé dans le projet de bureau
 
@@ -512,16 +510,19 @@ Vous êtes enfin prêt à ajouter du code au projet **MyDesktopWin32App** pour h
 9. Enregistrez le fichier.
 10. Générez la solution et vérifiez qu’elle est correctement générée.
 
-## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Ajouter au contrôle personnalisé un contrôle de la bibliothèque WinUI
+## <a name="add-a-control-from-the-winui-2x-library-to-the-custom-control"></a>Ajouter au contrôle personnalisé un contrôle de la bibliothèque WinUI 2.x
 
-Traditionnellement, les contrôles UWP ont été publiés dans le cadre du système d’exploitation Windows 10 et mis à la disposition des développeurs via le SDK Windows. La [bibliothèque WinUI](/uwp/toolkits/winui/) est une autre approche, dans laquelle les versions mises à jour des contrôles UWP du SDK Windows sont distribuées dans un package NuGet qui n’est pas lié aux versions de SDK Windows. Cette bibliothèque comprend également de nouveaux contrôles qui ne font pas partie du SDK Windows et de la plateforme UWP par défaut. Pour plus d’informations, consultez notre [feuille de route de la bibliothèque WinUI](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+Traditionnellement, les contrôles XAML WinRT ont été publiés dans le cadre du système d’exploitation Windows 10 et mis à la disposition des développeurs via le SDK Windows. La [bibliothèque WinUI](/uwp/toolkits/winui/) est une autre approche, dans laquelle les versions mises à jour des contrôles XAML WinRT du SDK Windows sont distribuées dans un package NuGet qui n’est pas lié aux versions de SDK Windows. Cette bibliothèque comprend également de nouveaux contrôles qui ne font pas partie du SDK Windows et de la plateforme UWP par défaut. Pour plus d’informations, consultez notre [feuille de route de la bibliothèque WinUI](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
 
-Cette section montre comment ajouter un contrôle UWP de la bibliothèque WinUI à votre contrôle utilisateur.
+Cette section montre comment ajouter un contrôle XAML WinRT de la bibliothèque WinUI 2.x à votre contrôle utilisateur.
+
+> [!NOTE]
+> XAML Islands prend uniquement en charge l’hébergement des contrôles issus de la bibliothèque WinUI 2.x. La prise en charge de l’hébergement des contrôles de la bibliothèque WinUI 3 sera disponible dans une version ultérieure.
 
 1. Dans le projet **MyUWPApp**, installez la dernière version ou la dernière version préliminaire du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
 
-    > [!NOTE]
-    > Si votre application de bureau est empaquetée dans un [package MSIX](/windows/msix), vous pouvez utiliser une version prépubliée ou publiée du package NugGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Si votre application de bureau n’est pas empaquetée à l’aide de MSIX, vous devez installer une version préliminaire du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml).
+    * Si vous avez choisi d’[empaqueter le projet MyDesktopWin32App à l’aide de MSIX](#option-1-package-the-app-using-msix) précédemment dans cette procédure, vous pouvez installer la préversion ou la version finale du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Les applications de bureau empaquetées peuvent utiliser la préversion ou la version finale de ce package.
+    * Si vous avez choisi de ne pas empaqueter le projet **MyDesktopWin32App**, vous devez installer la préversion du package NuGet [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml). Les applications de bureau non empaquetées doivent utiliser la préversion de ce package.
 
 2. Dans le fichier pch.h de ce projet, ajoutez les instructions `#include` suivantes et enregistrez vos modifications. Ces instructions apportent un ensemble obligatoire d’en-têtes de projection depuis la bibliothèque WinUI vers votre projet. Cette étape est requise pour tout projet C++/WinRT qui utilise la bibliothèque WinUI. Pour plus d’informations, consultez [cet article](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
 
@@ -594,6 +595,6 @@ Pour plus d’informations sur la gestion de ces scénarios et des pointeurs ver
 
 * [Héberger des contrôles XAML UWP dans des applications de bureau (îlots XAML)](xaml-islands.md)
 * [Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++](using-the-xaml-hosting-api.md)
-* [Héberger un contrôle UWP standard dans une application Win32 C++](host-standard-control-with-xaml-islands-cpp.md)
+* [Héberger un contrôle XAML WinRT standard dans une application Win32 C++](host-standard-control-with-xaml-islands-cpp.md)
 * [Scénarios avancés pour XAML Islands dans les applications Win32 C++](advanced-scenarios-xaml-islands-cpp.md)
 * [Exemples de code d’îlots XAML](https://github.com/microsoft/Xaml-Islands-Samples)

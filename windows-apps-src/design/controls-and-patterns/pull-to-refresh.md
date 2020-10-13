@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1164113b4e4c6b64c6ee1e3d98e0bdc4c8b635ea
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 26b9d89d5c4a329cd08283c4ebe96d4de4bdc562
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942849"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763026"
 ---
 # <a name="pull-to-refresh"></a>Tirer pour actualiser
 
@@ -33,7 +33,7 @@ Utilisez la commande Tirer pour actualiser lorsque vous avez une liste ou une gr
 
 Vous pouvez également utiliser [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) pour créer une expérience cohérente d’actualisation appelée d’autres manières, par exemple par un bouton Actualiser.
 
-## <a name="examples"></a>Exemples
+## <a name="xaml-controls-gallery-examples"></a>Exemples de la Galerie de contrôles XAML
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>

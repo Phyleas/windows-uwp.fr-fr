@@ -6,12 +6,12 @@ ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df07995c2e4175bc9a67010a78c353cbd9d8cfa
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: b7c640e89f36dfcea6e0080cbbe3887e0231ddfc
+ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671498"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91958722"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 

@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 5473542019a4f8afa3e916b914127e41a4fe05d4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e4875e7d34f36104cb5ed64bb56ea289de2db92e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218622"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636569"
 ---
 # <a name="page-layout"></a>Mise en page
 
@@ -86,7 +86,7 @@ Les collections permettent aux utilisateurs de parcourir les groupes de contenu 
 Le modèle [maître/détails](../controls-and-patterns/master-details.md) se compose du mode Liste (maître) et d’une vue de contenu (détail). Ces deux volets sont figés et offrent un défilement vertical. Quand un élément dans l’affichage de liste est sélectionné, l’affichage du contenu est mis à jour en conséquence. 
 
 ## <a name="forms"></a>Formulaires
-![formulaire](images/form.svg)
+![Capture d’écran d’un formulaire où se trouvent une zone de texte vide et un bouton.](images/form.svg)
 
 Un [formulaire](../controls-and-patterns/forms.md) est un groupe de contrôles qui collectent des données auprès de l’utilisateur et les envoient. La plupart des applications, voire toutes, utilisent un formulaire pour les pages de paramètres, les portails de connexion, les hubs de commentaires, la création de compte, etc. 
 

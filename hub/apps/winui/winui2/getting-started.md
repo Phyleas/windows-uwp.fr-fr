@@ -4,12 +4,12 @@ description: Guide pratique pour installer et utiliser la bibliothèque d’inte
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources
-ms.openlocfilehash: 94c23ab9573df576af89d9211ced70938fd5105f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7b7b248ce166368d315dce42f27075d3933c0781
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174133"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762851"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Bien démarrer avec la bibliothèque d’IU Windows 2.x
 
@@ -33,9 +33,9 @@ La bibliothèque est disponible sous forme de package NuGet qui peuvent être aj
 Le package **Microsoft.UI.Xaml** contient des fonctionnalités et des contrôles Fluent adaptés à toutes les applications.  
 Vous pouvez éventuellement cocher la case « Inclure la version préliminaire » pour voir les dernières préversions qui incluent de nouvelles fonctionnalités expérimentales.
 
-    ![Packages NuGet](images/ManageNugetPackages.png "Image Gérer les packages NuGet")
+    ![Capture d’écran du panneau Explorateur de solutions, montrant l’utilisateur cliquant avec le bouton droit sur le projet, et l’option Gérer les packages NuGet mise en évidence.](images/ManageNugetPackages.png "Image Gérer les packages NuGet")
 
-    ![Packages NuGet](images/NugetPackages.png)
+    ![Capture d’écran de la boîte de dialogue Gestionnaire de package NuGet, avec l’onglet Parcourir et « winui » dans le champ de recherche.](images/NugetPackages.png)
 
 4. Ajoutez les ressources de thème d’IU Windows (WinUI) à vos ressources App.xaml. Il existe deux façons de procéder, selon que vous disposez ou non de ressources d’application supplémentaires.
 

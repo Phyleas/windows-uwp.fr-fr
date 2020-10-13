@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: ff94c34c61dee4de8450ed0f4f89a1dfc6537f83
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f0a91dd0370b8eda8763b63034d7c3ffaa1acd5
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173593"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763001"
 ---
 # <a name="device-portal-for-mobile"></a>Device Portal pour appareils mobiles
 
@@ -19,7 +19,7 @@ ms.locfileid: "89173593"
 
 Pour en savoir plus sur la façon d’activer le mode développeur, consultez [Activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
 
-![Paramètres de Device Portal](images/device-portal/mob-dev-mode-options.png)
+![Capture d’écran des paramètres de la découverte des appareils et du portail d’appareil.](images/device-portal/mob-dev-mode-options.png)
 
 ## <a name="set-up-device-portal-on-windows-phone"></a>Configurer Device Portal sur Windows Phone
 
@@ -59,7 +59,7 @@ Vous pouvez vous connecter à Device Portal de 3 façons : USB, hôte local et
 
 Voici la section Device Portal de la page des paramètres du développeur sur Windows Phone.
 
-![Paramètres de Device Portal](images/device-portal/mob-dev-mode-portal.png)
+![Capture d’écran de la page des paramètres du portail d’appareil sur Windows Phone.](images/device-portal/mob-dev-mode-portal.png)
 
 Si vous utilisez Device Portal dans un environnement protégé, comme un laboratoire de test, où vous faites confiance à tous les utilisateurs du réseau local, si aucune information personnelle n’est présente sur votre appareil et si vous présentez des exigences uniques, vous pouvez désactiver l’authentification. Cela permet une communication non chiffrée. Toute personne connaissant l’adresse IP de votre téléphone pourra le contrôler.
 

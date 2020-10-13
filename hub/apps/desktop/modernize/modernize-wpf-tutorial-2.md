@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 0b5250f1e01aece4f73d83dc7327f193a58f53cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 24fb2507dd8f5a83b5581ff08d44210b0f5146c3
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161493"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636449"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Partie 2 : Ajouter un contrôle InkCanvas UWP à l’aide d'îles XAML
 
@@ -147,7 +147,7 @@ Votre projet étant configuré pour utiliser des XAML Islands UWP, vous pouvez m
 
 13. Essayez maintenant de dessiner quelque chose dans l’espace de signature avec la souris. Cette fois, l’encre s’affiche à l’écran.
 
-    ![Signature](images/wpf-modernize-tutorial/Signature.png)
+    ![Capture d’écran des détails des dépenses avec l’espace de signature.](images/wpf-modernize-tutorial/Signature.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

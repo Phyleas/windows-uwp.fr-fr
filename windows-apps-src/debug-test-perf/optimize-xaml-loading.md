@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c6f9398a61865b014400bbf4a96c8a7ce8a231
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ce7344b810c3b6683050876dce38264be6f5c8b7
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154353"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762842"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimiser votre balisage XAML
 
@@ -81,11 +81,11 @@ Ici, ListView est chargé, mais il n’est pas visible car sa largeur est nulle.
 
 Arborescence visuelle dynamique avec ListView chargé. Le nombre total d’éléments de la page est 89.
 
-![Arborescence visuelle avec affichage liste](images/visual-tree-1.png)
+![Capture d’écran de l’arborescence d’éléments visuels avec l’affichage liste.](images/visual-tree-1.png)
 
 ListView et ses éléments enfants sont chargés en mémoire.
 
-![Arborescence visuelle avec affichage liste](images/memory-use-1.png)
+![Capture d’écran de la table « Managed Memory - TestApp1.exe » montrant ListView et ses enfants chargés en mémoire.](images/memory-use-1.png)
 
 #### <a name="option-2---better"></a>Option 2 - Meilleure
 
@@ -97,11 +97,11 @@ Ici, la propriété Visibility de ListView est définie sur Collapsed (l'autre c
 
 Arborescence visuelle dynamique avec ListView défini sur Collapsed. Le nombre total d’éléments de la page correspond à 46.
 
-![Arborescence visuelle avec affichage liste réduit](images/visual-tree-2.png)
+![Capture d’écran de l’arborescence d’éléments visuels avec ListView réduit.](images/visual-tree-2.png)
 
 ListView et ses éléments enfants sont chargés en mémoire.
 
-![Arborescence visuelle avec affichage liste](images/memory-use-1.png)
+![Capture d’écran mise à jour de la table « Managed Memory - TestApp1.exe » montrant ListView et ses enfants chargés en mémoire.](images/memory-use-1.png)
 
 #### <a name="option-3---most-efficient"></a>Option 3 - Efficacité optimale
 

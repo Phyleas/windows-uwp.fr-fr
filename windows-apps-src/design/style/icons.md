@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bb3eb985ab10bd4c28ca38f87aefe3d1fc7fd61e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 66f9d166d0e20f82f495f98b26deceff8e136cc5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216472"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636639"
 ---
 # <a name="icons-for-windows-apps"></a>Icônes pour les applications Windows
 
@@ -47,7 +47,8 @@ Les icônes permettent d'économiser de l’espace, mais quand faut-il les utili
 
 :::row:::
     :::column:::
-        ![](images/do.svg) ![Icônes - Image standard](images/icons/icons-standard.svg)<br>
+        ![Capture d’écran montrant les icônes Couper, Copier, Coller et Enregistrer.](images/do.svg)
+        ![Icônes - Image standard](images/icons/icons-standard.svg)<br>
 
 Utilisez une icône pour les actions, comme couper, copier, coller et enregistrer ou pour les éléments de navigation dans un menu de navigation.
     :::column-end:::
@@ -60,12 +61,14 @@ Utilisez une icône s’il en existe déjà une pour le concept que vous souhait
 
 :::row:::
     :::column:::
-        ![faire](images/do.svg) ![Icône - Panier d’achat](images/icons/icon-shopping-cart.svg)<br>
+        ![Capture d’écran d’une icône simple de panier d’achat.](images/do.svg)
+        ![Icône d’un panier d’achat](images/icons/icon-shopping-cart.svg)<br>
 
 Utilisez une icône s’il est facile pour l’utilisateur de comprendre ce que signifie l’icône et si elle est suffisamment simple pour être claire à taille réduite.
     :::column-end:::
     :::column:::
-        ![ne pas faire](images/dont.svg) ![Icônes - Image de concept](images/icons/icon-bad-example.png)<br>
+        ![Capture d’écran d’une icône complexe et inconnue de panier d’achat.](images/dont.svg)
+        ![Icônes - Image de concept](images/icons/icon-bad-example.png)<br>
 
 N’utilisez pas une icône si sa signification n’est pas évidente, ou si le fait de la rendre claire requiert une forme complexe.
     :::column-end:::

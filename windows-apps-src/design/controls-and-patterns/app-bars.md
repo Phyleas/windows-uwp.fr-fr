@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f507a325a89220e229b277a1ae08727054cc2a75
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2a84dcc209fa0fcd897668293cb136a5448e7254
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219102"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829521"
 ---
 # <a name="command-bar"></a>Barre de commandes
 
@@ -59,15 +59,15 @@ Une barre de commandes développée.
 
 Par défaut, la barre de commandes affiche une ligne de boutons d’icônes et un bouton « En savoir plus » facultatif, représentant des points de suspension \[•••\]. Voici la barre de commandes créée par l’exemple de code présenté plus loin. Elle est présentée à l’état compact et fermé.
 
-![Barre de commandes fermée](images/command-bar-compact.png)
+![Capture d’écran montrant une barre de commandes fermée.](images/command-bar-compact.png)
 
 La barre de commandes peut également être affichée à l’état fermé minimal comme ce qui suit : Voir la section [États ouvert et fermé](#open-and-closed-states) pour plus d’informations.
 
-![Barre de commandes fermée](images/command-bar-minimal.png)
+![Capture d’écran montrant une barre de commandes à l’état minimal fermé.](images/command-bar-minimal.png)
 
 Voici la même barre de commandes à l’état ouvert. Les étiquettes identifient les principales parties du contrôle.
 
-![Barre de commandes fermée](images/commandbar_anatomy_open.png)
+![Capture d’écran montrant une barre de commandes à l’état ouvert.](images/commandbar_anatomy_open.png)
 
 La barre de commandes est divisée en 4 zones principales :
 - La zone de contenu est alignée sur le côté gauche de la barre. Elle s’affiche si la propriété [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) est remplie.

@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4c2c8d52069bf074897ec09fa44f550066b28b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 942b2ff4af0fa093a0b343c37074185970f8209d
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160753"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829551"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutoriel : Créer une interface utilisateur
 
@@ -367,7 +367,7 @@ Pour ajouter un modèle de données à une vue Grille
 
 Exécutez maintenant l’application pour voir le contrôle `GridView` avec le modèle d’élément que vous venez de créer. Ensuite, vous allez changer la couleur d’arrière-plan et ajouter un espace entre les éléments de la grille.
 
-![Point de contrôle de l’interface utilisateur de l’application 3](images/xaml-basics/layout-1.png)
+![Capture d’écran de l’application Collection exécutée, avec le modèle d’élément.](images/xaml-basics/layout-1.png)
 
 ## <a name="part-4-modify-the-item-container-style"></a>Partie 4 : Modifier le style du conteneur d’éléments
 
@@ -455,7 +455,7 @@ Pour modifier le conteneur d’éléments
 
 Exécutez l’application et regardez à quoi elle ressemble désormais. Redimensionnez la fenêtre de l’application. Le contrôle `GridView` s’occupe de réorganiser les images pour vous mais, pour certaines largeurs, il reste beaucoup d’espace sur le côté droit de la fenêtre d’application. Il serait préférable de centrer les images. Vous allez vous en occuper après.
 
-![Point de contrôle de l’interface utilisateur de l’application 3](images/xaml-basics/layout-2.png)
+![Capture d’écran de l’application Collection en cours d’exécution, montrant le modèle d’élément avec un espace à droite de la fenêtre d’application.](images/xaml-basics/layout-2.png)
 
 > [!Note]
 > Si vous souhaitez faire des essais, essayez d’affecter aux propriétés `Background` et `Margin` des valeurs différentes pour en voir l’effet.

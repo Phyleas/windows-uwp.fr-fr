@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3d9e4be7c45d4d2b9b5063087a78556497dc9b
-ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
+ms.openlocfilehash: eb667c27b937b252f0fe3c883730646938bf19d9
+ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91376247"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646272"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Utiliser des API avec C++/WinRT
 
@@ -271,11 +271,11 @@ Dans votre projet d’application, référencez le fichier de métadonnées Wind
 Ensuite, comme pour un type d’espace de noms Windows, incluez un en-tête et construisez le type projeté via l’un de ses constructeurs. Le code de démarrage de votre projet d’application inscrit la classe runtime, et le constructeur du type projeté appelle [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) pour activer la classe runtime à partir du composant référencé.
 
 ```cppwinrt
-#include <winrt/BankAccountWRC.h>
+#include <winrt/ThermometerWRC.h>
 
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-    BankAccountWRC::BankAccount bankAccount;
+    ThermometerWRC::Thermometer thermometer;
     ...
 };
 ```
@@ -420,14 +420,14 @@ CurrencyFormatter currency = factory.CreateCurrencyFormatterCode(L"USD");
 using namespace winrt::Windows::Foundation;
 ...
 auto factory = winrt::get_activation_factory<Uri, IUriRuntimeClassFactory>();
-Uri account = factory.CreateUri(L"http://www.contoso.com");
+Uri uri = factory.CreateUri(L"http://www.contoso.com");
 ```
 
-Les classes dans les deux exemples ci-dessus sont des types provenant d’un espace de noms Windows. Dans l’exemple suivant, **BankAccountWRC::BankAccount** est un type personnalisé implémenté dans un composant Windows Runtime.
+Les classes dans les deux exemples ci-dessus sont des types provenant d’un espace de noms Windows. Dans l’exemple suivant, **ThermometerWRC::Thermometer** est un type personnalisé implémenté dans un composant Windows Runtime.
 
 ```cppwinrt
-auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
-BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
+auto factory = winrt::get_activation_factory<ThermometerWRC::Thermometer>();
+ThermometerWRC::Thermometer thermometer = factory.ActivateInstance<ThermometerWRC::Thermometer>();
 ```
 
 ## <a name="membertype-ambiguities"></a>Ambiguïtés membre/type

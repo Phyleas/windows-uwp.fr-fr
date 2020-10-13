@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 324aae957d53c7ec63817c8f0e80909d25dc1c0a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6665eaced6092242d1f5000de6e248044fda1ee0
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216622"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636439"
 ---
 # <a name="writing-style"></a>Style d’écriture
 
@@ -41,7 +41,8 @@ Les utilisateurs doivent pouvoir lire et comprendre votre texte d'un seul coup d
 
 :::row:::
     :::column:::
-![À faire](images/do.svg) Sélectionner des **filtres** pour ajouter des effets à votre image.
+![Première capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Sélectionnez des **filtres** pour ajouter des effets à votre image.
     :::column-end:::
     :::column:::
 ![À ne pas faire](images/dont.svg) Si vous souhaitez ajouter des effets visuels ou des modifications à votre image, sélectionnez **filtres.**
@@ -54,7 +55,8 @@ Les applications sont définies par des actions. Les utilisateurs agissent en ut
 
 :::row:::
     :::column:::
-![À faire](images/do.svg) Relancer l’application pour voir vos modifications.
+![Deuxième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Relancez l’application pour voir vos modifications.
     :::column-end:::
     :::column:::
 ![À ne pas faire](images/dont.svg) Les modifications seront appliquées lors du redémarrage de l’application.
@@ -67,7 +69,8 @@ Les utilisateurs survolent le texte et en ignorent souvent des blocs entiers. Ne
 
 :::row:::
     :::column:::
-![À faire](images/do.svg) Nous n’avons pas pu charger l’avatar. Si cela se produit à nouveau, essayez de relancer l’application. Mais ne vous inquiétez pas : vous retrouverez votre avatar à votre retour.
+![Troisième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Nous n’avons pas pu charger l’image. Si cela se produit à nouveau, essayez de relancer l’application. Mais ne vous inquiétez pas : vous retrouverez votre avatar à votre retour.
     :::column-end:::
     :::column:::
 ![À ne pas faire](images/dont.svg) Une erreur s’est produite et nous n’avons pas pu charger l’avatar. Veuillez réessayer et, si vous rencontrez à nouveau ce problème, vous devrez peut-être relancer l’application. Mais ne vous inquiétez pas : nous avons enregistré votre travail en local et vous y aurez accès à votre retour.
@@ -87,7 +90,8 @@ Parlez directement à l’utilisateur.
 
 :::row:::
     :::column:::
-![À faire](images/do.svg) Nous n’avons pas pu enregistrer votre fichier à cet emplacement.
+![Quatrième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Impossible d’enregistrer votre fichier à cet emplacement.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -103,7 +107,8 @@ Parlez directement à l’utilisateur.
 
 :::row:::
     :::column:::
-![À faire](images/do.svg) Le guide de conception d’application Windows est une ressource destinée à vous aider à concevoir et créer de belles applications abouties. Grâce aux fonctionnalités de conception incluses dans chaque application Windows, vous pouvez créer des interfaces utilisateur qui s’adaptent à toute une gamme d’appareils.
+![Cinquième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Le guide de conception d’application Windows est une ressource destinée à vous aider à concevoir et créer de belles applications abouties. Grâce aux fonctionnalités de conception incluses dans chaque application Windows, vous pouvez créer des interfaces utilisateur qui s’adaptent à toute une gamme d’appareils.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -117,7 +122,8 @@ Les lecteurs ont l'habitude des contractions et s'attendent à en trouver. En le
 
 :::row:::
     :::column:::
-![À faire](images/do.svg) Lorsque vous êtes satisfait de votre image, sélectionnez **Enregistrer** pour l’ajouter à votre galerie. Vous pourrez ensuite la partager avec vos amis.
+![Sixième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+Lorsque vous êtes satisfait de votre image, sélectionnez **Enregistrer** pour l’ajouter à votre galerie. Vous pourrez ensuite la partager avec vos amis.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -131,7 +137,7 @@ Les lecteurs ont l'habitude des contractions et s'attendent à en trouver. En le
 
 :::row:::
     :::column:::
-![À faire](images/do.svg)
+![Septième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
 <b>Vous n’êtes pas connecté.</b>
 * Vérifiez que vos câbles réseau sont bien branchés.
 * Vérifiez que vous n’êtes pas en mode Avion.
@@ -150,8 +156,8 @@ Les majuscules sont importantes, mais il est facile d’en abuser.
 
 :::row:::
     :::column:::
-![À faire](images/do.svg)
-<b>Quelle partie vous pose problème ?</b>
+![Huitième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+<b>Quelle partie vous pose des problèmes ?</b>
 * J’ai oublié mon mot de passe.
 * Le mot de passe n’est pas accepté.
 * Une autre personne utilise peut-être mon compte.
@@ -174,7 +180,7 @@ Avant tout, il est important que votre message d’erreur ne blâme pas l’util
 
 :::row:::
     :::column:::
-![À faire](images/do.svg)
+![Neuvième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
 <b>Vous n’êtes pas connecté.</b>
 * Vérifiez que vos câbles réseau sont bien branchés.
 * Vérifiez que vous n’êtes pas en mode Avion.
@@ -194,8 +200,8 @@ La plupart des conseils fournis pour écrire des messages d’erreur s’appliqu
 Mais le plus important est « la question et la réponse » entre le titre d’une boîte de dialogue et ses boutons. Vérifiez que vos boutons sont des réponses claires à la question posée par le titre, et que leur format est cohérent dans l’ensemble de votre application.
     :::column-end:::
     :::column:::
-![À faire](images/do.svg)
-<b>Quelle partie vous pose problème ?</b>
+![Dixième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+<b>Quelle partie vous pose des problèmes ?</b>
 1. J’ai oublié mon mot de passe
 2. Mon mot de passe n’est pas accepté
 3. Une autre personne utilise peut-être mon compte
@@ -210,7 +216,7 @@ Le texte des boutons doit être suffisamment concis pour que les utilisateurs pu
 Lorsque vous écrivez le texte des boutons, gardez à l’esprit que chaque bouton représente une action. Veillez à utiliser la *voix active* dans le texte du bouton et à utiliser des mots qui représentent des actions plutôt que des réactions.
     :::column-end:::
     :::column:::
-![Pratiques conseillées](images/do.svg)
+![Onzième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
 * Installer maintenant
 * Partage
     :::column-end:::
