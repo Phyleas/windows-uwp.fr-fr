@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dea3eebc253f46f5de888a0a37fea9d3ad1ac3df
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: a49d771b7efdbb7e787db0cbadea45c255a1120e
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860116"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984595"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Notifications de badge pour les applications Windows
 
@@ -32,99 +32,29 @@ Les badges de notification apparaissent sur l’icône de la barre des tâches d
 
 ## <a name="numeric-badges"></a>Badges numériques
 
-<table>
-    <tr>
-        <th>Valeur</th>
-        <th>Badge</th>
-        <th>XML</th>
-    </tr>
-    <tr>
-        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucuneˆ» et efface le badge.</td>
-        <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
-        <td>`<badge value="1"/>`</td>
-    </tr>
-    <tr>
-        <td>N’importe quel nombre supérieur à 99</td>
-        <td><img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td></td>
-        <td>`<badge value="100"/>`</td>
-    </tr>    
-</table>
+Value | Badge | XML
+--|--|--
+Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucuneˆ» et efface le badge. | <img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /> | `<badge value="1"/>`
+N’importe quel nombre supérieur à 99 | <img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td> | `<badge value="100"/>`
 
 ## <a name="glyph-badges"></a>Badges de glyphe
 Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d’état non extensibles. 
 
-<table>
-<tr>
-    <th>Statut</th>
-    <th>Glyphe</th>
-    <th>XML</th>
-</tr>
-<tr>
-    <td>Aucun</td>
-    <td>(Aucun badge affiché)</td>
-    <td>`<badge value="none"/>`</td>
-</tr>
-<tr>
-    <td>activity</td>
-    <td><img src="images/badges/badge-activity.png" alt="Screenshot of the activity glyph." /></td>
-    <td>`<badge value="activity"/>`</td>
-</tr>
-<tr>
-    <td>alarme</td>
-    <td><img src="images/badges/badge-alarm.png" alt="Screenshot of the alarm glyph." /></td>
-    <td>`<badge value="alarm"/>`</td>
-</tr>
-<tr>
-    <td>alerte</td>
-    <td><img src="images/badges/badge-alert.png" alt="Screenshot of the alert glyph." /></td>
-    <td>`<badge value="alert"/>`</td>
-</tr>
-<tr>
-    <td>attention</td>
-    <td><img src="images/badges/badge-attention.png" alt="Screenshot of the attention glyph." /></td>
-    <td>`<badge value="attention"/>`</td>
-</tr>
-<tr>
-    <td>disponible</td>
-    <td><img src="images/badges/badge-available.png" alt="Screenshot of the available glyph." /></td>
-    <td>`<badge value="available"/>`</td>
-</tr>
-<tr>
-    <td>absent</td>
-    <td><img src="images/badges/badge-away.png" alt="Screenshot of the away glyph." /></td>
-    <td>`<badge value="away"/>`</td>
-</tr>
-<tr>
-    <td>occupé</td>
-    <td><img src="images/badges/badge-busy.png" alt="Screenshot of the busy glyph." /></td>
-    <td>`<badge value="busy"/>`</td>
-</tr>
-<tr>
-    <td>error</td>
-    <td><img src="images/badges/badge-error.png" alt="Screenshot of the error glyph." /></td>
-    <td>`<badge value="error"/>`</td>
-</tr>
-<tr>
-    <td>nouveau message</td>
-    <td><img src="images/badges/badge-newMessage.png" alt="Screenshot of the new message glyph." /></td>
-    <td>`<badge value="newMessage"/>`</td>
-</tr>
-<tr>
-    <td>en pause</td>
-    <td><img src="images/badges/badge-paused.png" alt="Screenshot of the paused glyph." /></td>
-    <td>`<badge value="paused"/>`</td>
-</tr>
-<tr>
-    <td>lecture en cours</td>
-    <td><img src="images/badges/badge-playing.png" alt="Screenshot of the playing glyph." /></td>
-    <td>`<badge value="playing"/>`</td>
-</tr>
-<tr>
-    <td>non disponible</td>
-    <td><img src="images/badges/badge-unavailable.png" alt="Screenshot of the unavailable glyph" /></td>
-    <td>`<badge value="unavailable"/>`</td>
-</tr>
-</table>
+Statut | Glyphe | XML
+--|--|--
+Aucun | (Aucun badge affiché) | `<badge value="none"/>`
+activity | <img src="images/badges/badge-activity.png" alt="Glyph" /> | `<badge value="activity"/>`
+alarme | <img src="images/badges/badge-alarm.png" alt="Glyph" /> | `<badge value="alarm"/>`
+alerte | <img src="images/badges/badge-alert.png" alt="Glyph" /> | `<badge value="alert"/>`
+attention | <img src="images/badges/badge-attention.png" alt="Glyph" /> | `<badge value="attention"/>`
+disponible | <img src="images/badges/badge-available.png" alt="Glyph" /> | `<badge value="available"/>`
+absent | <img src="images/badges/badge-away.png" alt="Glyph" /> | `<badge value="away"/>`
+occupé | <img src="images/badges/badge-busy.png" alt="Glyph" /> | `<badge value="busy"/>`
+error | <img src="images/badges/badge-error.png" alt="Glyph" /> | `<badge value="error"/>`
+nouveau message | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<badge value="newMessage"/>`
+en pause | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
+lecture en cours | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
+non disponible | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
 
 ## <a name="create-a-badge"></a>Créer un badge
 

@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, vignettes secondaires, code confidentiel, épinglage, démarrage rapide, exemple de code, exemple, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc83fca642ae75404180edf5fad177b92153e35
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: dc65768eb90ca51a86db51dd0add00d9542df24e
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220382"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984675"
 ---
 # <a name="pin-secondary-tiles-to-start"></a>Épingler les vignettes secondaires au menu Démarrer
 
@@ -110,7 +110,7 @@ Vous pouvez améliorer votre vignette secondaire pour Windows Mixed Reality en a
 Enfin, demandez à épingler la vignette. Notez que ce doit être appelé à partir d’un thread d’interface utilisateur. Sur le bureau, une boîte de dialogue s’affiche pour demander à l’utilisateur de confirmer s’il souhaite épingler la vignette.
 
 > [!IMPORTANT]
-> Si vous êtes une application de bureau Windows à l’aide du pont Desktop, vous devez d’abord effectuer une étape supplémentaire comme décrit dans [Épingler à partir de l’application de bureau](secondary-tiles-desktop-pinning.md) .
+> Si vous êtes une application Win32 qui utilise le pont de bureau, vous devez d’abord effectuer une étape supplémentaire comme décrit dans [Épingler des applications Win32](secondary-tiles-desktop-pinning.md) .
 
 ```csharp
 // Pin the tile

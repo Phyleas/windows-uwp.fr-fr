@@ -1,83 +1,83 @@
 ---
-Description: Les vignettes secondaires permettent aux utilisateurs d’épingler du contenu spécifique et des liens ciblés à partir de votre application sur le menu Démarrer pour faciliter l’accès au contenu depuis votre application.
+Description: Les vignettes secondaires permettent aux utilisateurs d’épingler du contenu spécifique et des liens détaillés à partir de votre application dans leur menu Démarrer, ce qui facilite l’accès au contenu au sein de votre application.
 title: Vignettes secondaires
 label: Secondary tiles
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
-keywords: Windows 10, uwp, vignettes secondaires
+keywords: vignettes Windows 10, UWP et secondaires
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a4cd65093e9969531c3de683064973aab58b1680
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653184"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984665"
 ---
 # <a name="secondary-tiles"></a>Vignettes secondaires
 
 
-Les vignettes secondaires permettent aux utilisateurs d’épingler du contenu spécifique et des liens ciblés à partir de votre application sur le menu Démarrer pour faciliter l’accès au contenu depuis votre application.
+Les vignettes secondaires permettent aux utilisateurs d’épingler du contenu spécifique et des liens détaillés à partir de votre application dans leur menu Démarrer, ce qui facilite l’accès au contenu au sein de votre application.
 
-![Capture d’écran de vignettes secondaires](images/secondarytiles.png)
+![Capture d’écran des vignettes secondaires](images/secondarytiles.png)
 
-Par exemple, les utilisateurs peuvent épingler la météo de plusieurs lieux spécifiques sur leur menu Démarrer, ce qui leur permet d’accéder (1) d’un simple coup d’œil aux informations météorologiques actuelles grâce aux vignettes dynamiques et (2) rapidement à la météo de la ville qui les intéressent. Les utilisateurs peuvent également épingler des actions spécifiques, des articles d’actualité et autres éléments qui sont importants pour eux.
+Par exemple, les utilisateurs peuvent épingler la météo pour de nombreux emplacements spécifiques dans leur menu Démarrer, ce qui fournit (1) des informations plus faciles à visualiser sur la météo actuelle grâce aux vignettes dynamiques et (2) un point d’entrée rapide à la météo de la ville spécifique. Les utilisateurs peuvent également épingler des actions spécifiques, des articles d’actualité et d’autres éléments importants pour eux.
 
-En ajoutant des vignettes secondaires à votre application, vous permettez à l’utilisateur de se réengager rapidement et efficacement dans votre application, en l’incitant à revenir plus souvent grâce à la simplicité d’accès qu’offrent les vignettes secondaires.
+En ajoutant des vignettes secondaires à votre application, vous aidez l’utilisateur à effectuer une nouvelle tentative rapidement et efficacement avec votre application, en l’encourageant à revenir plus souvent grâce à la facilité d’accès fournie par les vignettes secondaires.
 
-**Seuls les utilisateurs peuvent épingler une vignette secondaire ; les applications ne peuvent pas épingler de vignettes secondaires par programme sans l’approbation de l’utilisateur** . L’utilisateur doit explicitement cliquer sur un bouton « Épingler » au sein de votre application, moment auquel vous utilisez ensuite l’API à demander pour créer une vignette secondaire. Ensuite, le système affiche une boîte de dialogue demandant à l’utilisateur de confirmer s’il souhaite que la vignette soit épinglée.
+**Seuls les utilisateurs peuvent épingler une vignette secondaire ; les applications ne peuvent pas épingler des vignettes secondaires par programmation sans l’approbation**de l’utilisateur. L’utilisateur doit cliquer explicitement sur un bouton « épingler » dans votre application, puis utiliser l’API pour demander la création d’une vignette secondaire, puis le système affiche une boîte de dialogue demandant à l’utilisateur de confirmer si la vignette doit être épinglée.
 
 ## <a name="quick-links"></a>Liens rapides
 
 | Article | Description |
 | --- | --- |
-| [Obtenir des conseils sur les vignettes secondaires](secondary-tiles-guidance.md) | Découvrez quand et où vous devez utiliser les vignettes secondaires. |
-| [Épingler des vignettes secondaires](secondary-tiles-pinning.md) | Découvrez comment épingler une vignette secondaire. |
-| [Épingler à partir de l’application de bureau](secondary-tiles-desktop-pinning.md) | Les applications de bureau Windows peuvent épingler des vignettes secondaires grâce au Pont du bureau ! |
+| [Aide sur les vignettes secondaires](secondary-tiles-guidance.md) | En savoir quand et où vous devez utiliser des vignettes secondaires. |
+| [Épingler les vignettes secondaires](secondary-tiles-pinning.md) | Découvrez comment épingler une vignette secondaire. |
+| [Épingler à partir d’applications Win32](secondary-tiles-desktop-pinning.md) | Les applications Win32 peuvent épingler des vignettes secondaires grâce au pont de bureau ! |
 
 
-## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>Vignettes secondaires associées aux vignettes principales
+## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>Vignettes secondaires par rapport aux vignettes principales
 
-Les vignettes secondaires sont associées à une application parente unique. Elles sont épinglées au menu Démarrer pour offrir à un utilisateur un moyen cohérent et efficace de lancer directement une zone fréquemment utilisée de l’application parente. Il peut s’agir d’une sous-section générale de l’application parente qui contient du contenu fréquemment mis à jour ou un lien ciblé vers une zone spécifique de l’application.
+Les vignettes secondaires sont associées à une seule application parente. Elles sont épinglées au menu Démarrer pour fournir à un utilisateur un moyen cohérent et efficace de lancer directement dans une zone fréquemment utilisée de l’application parente. Il peut s’agir d’une sous-section générale de l’application parente qui contient du contenu fréquemment mis à jour ou d’un lien profond vers une zone spécifique de l’application.
 
-Voici quelques exemples de scénarios de vignettes secondaires :
+Voici quelques exemples de scénarios de vignette secondaire :
 
-* Un bulletin météorologique actualisé selon la ville dans l’application Météo
-* Un récapitulatif des événements à venir dans une application de calendrier
-* L’état et les mises à jour d’un contact important dans une application de réseaux sociaux
-* Des flux spécifiques dans un lecteur RSS
-* Une playlist
+* Mises à jour météorologiques pour une ville spécifique dans une application météorologique
+* Résumé des événements à venir dans une application de calendrier
+* État et mises à jour à partir d’un contact important dans une application sociale
+* Flux spécifiques dans un lecteur RSS
+* Une sélection musicale
 * Un blog
 
-Tout contenu soumis à des modifications fréquentes qu’un utilisateur souhaite suivre peut faire l’objet d’une vignette secondaire. Une fois la vignette secondaire épinglée, les utilisateurs peuvent recevoir des mises à jour rapides par le biais de la vignette et l’utiliser pour accéder directement à l’application parente.
+Tout contenu fréquemment modifié qu’un utilisateur souhaite surveiller est un bon candidat pour une vignette secondaire. Une fois que la vignette secondaire est épinglée, les utilisateurs peuvent recevoir des mises à jour en un clin d’œil via la vignette et l’utiliser pour lancer directement dans l’application parente.
 
-Les vignettes secondaires sont semblables aux vignettes principales à de nombreux égards :
+Les vignettes secondaires sont similaires aux vignettes principales de plusieurs façons :
 
-* Elles utilisent les notifications par vignette pour afficher du contenu enrichi.
-* Elles doivent inclure un logo de 150 x 150 pixels pour le contenu de vignette par défaut.
-* Elles peuvent inclure éventuellement les tailles d’autres logos pour s’adapter aux tailles de vignettes plus importantes.
-* Elles peuvent afficher des notifications et des badges.
-* Elles peuvent être réorganisées dans le menu Démarrer.
-* Elles sont automatiquement supprimées lorsque l’application est désinstallée.
-* Le texte relatif à l’état détaillé de leur verrouillage ou de leur badge peut s’afficher au verrouillage.
+* Ils utilisent des notifications par vignette pour afficher du contenu riche.
+* Ils doivent inclure un logo de pixel 150 x 150 pour le contenu de la mosaïque par défaut.
+* Ils peuvent éventuellement inclure les autres tailles de logo pour permettre des tailles de vignettes plus grandes.
+* Ils peuvent afficher des notifications et des badges.
+* Ils peuvent être réorganisés dans le menu Démarrer.
+* Elles sont automatiquement supprimées lors de la désinstallation de l’application.
+* Leurs libellés de badge et de statut détaillé de verrouillage peuvent être affichés sur Lock.
 
-Toutefois, les vignettes secondaires diffèrent des vignettes principales à plusieurs égards :
+Toutefois, les vignettes secondaires diffèrent des vignettes principales d’une manière visible :
 
 * Les utilisateurs peuvent supprimer leurs vignettes secondaires à tout moment sans supprimer l’application parente.
-* Les vignettes secondaires peuvent être créées en cours d’exécution. Les vignettes d’application peuvent être créées uniquement lors de l’installation.
-* Un menu volant invite l’utilisateur à confirmer l’ajout d’une vignette secondaire.
-* Elles ne peuvent pas être sélectionnées par programmation pour l’écran de verrouillage par le biais d’une demande faite à l’utilisateur. L’utilisateur doit ajouter manuellement de la vignette secondaire via la page Personnaliser dans les paramètres du PC.
+* Les vignettes secondaires peuvent être créées au moment de l’exécution. Les vignettes d’application ne peuvent être créées qu’au cours de l’installation.
+* Un lanceur invite l’utilisateur à confirmer l’ajout d’une vignette secondaire.
+* Ils ne peuvent pas être sélectionnés par programmation pour l’écran de verrouillage par le biais d’une demande adressée à l’utilisateur. L’utilisateur doit ajouter manuellement la vignette secondaire via la page Personnaliser dans les paramètres du PC.
 
-Pour envoyer des notifications, des méthodes spécifiques sont fournies pour les outils de mises à jour par vignette et badge et les canaux de notification Push utilisés avec les vignettes secondaires. Celles-ci mettent en parallèle les versions utilisées avec les vignettes secondaires. Par exemple, CreateBadgeUpdaterForApplication Visual Studio. CreateBadgeUpdaterForSecondaryTile.
+Pour envoyer des notifications, des méthodes spécifiques sont fournies pour les mises à jour de vignettes et de badges et les canaux de notification push utilisés avec les vignettes secondaires. Ces versions sont parallèles à celles utilisées avec les vignettes principales. Par exemple, CreateBadgeUpdaterForApplication et CreateBadgeUpdaterForSecondaryTile.
 
 
-## <a name="guidance-on-secondary-tiles"></a>Instructions relatives aux vignettes secondaires
-Pour découvrir quand et où vous devez utiliser les vignettes secondaires et d’autres instructions relatives à leur utilisation, consultez [Instructions relatives aux vignettes secondaires](secondary-tiles-guidance.md)
+## <a name="guidance-on-secondary-tiles"></a>Aide sur les vignettes secondaires
+Pour savoir quand et comment utiliser des vignettes secondaires, ainsi que d’autres instructions d’utilisation, consultez les [conseils sur les vignettes secondaires](secondary-tiles-guidance.md) .
 
 
 ## <a name="pinning-secondary-tiles"></a>Épingler des vignettes secondaires
 Pour savoir comment épingler des vignettes secondaires, consultez [Épingler des vignettes secondaires](secondary-tiles-pinning.md).
 
 
-## <a name="desktop-applications-and-secondary-tiles"></a>Applications de bureau et vignettes secondaires
-Pour savoir comment utiliser des vignettes secondaires à partir de votre application de bureau via le Pont du bureau, consultez [Épingler des vignettes secondaires à partir d’une application de bureau](secondary-tiles-desktop-pinning.md).
+## <a name="win32-applications-and-secondary-tiles"></a>Applications Win32 et vignettes secondaires
+Pour savoir comment utiliser des vignettes secondaires à partir de votre application Win32 via le pont de bureau, consultez [Épingler des vignettes secondaires à partir d’applications Win32](secondary-tiles-desktop-pinning.md).

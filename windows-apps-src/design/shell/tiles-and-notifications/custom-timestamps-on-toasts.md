@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: Windows 10, UWP, toast, horodateur personnalisé, horodatage, notification, centre de maintenance
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d9064d39d4e8ecd74229afc4eee325297f246b
-ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
+ms.openlocfilehash: 23e5337fe2ce30e1172aedc034a8b4eb3821a615
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238304"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984425"
 ---
 # <a name="custom-timestamps-on-toasts"></a>Horodateurs personnalisés sur les toasts
 
@@ -27,19 +27,23 @@ Vous pouvez éventuellement remplacer l’horodatage par vos propres date et heu
 
 Pour utiliser un horodateur personnalisé, affectez simplement la propriété **DisplayTimestamp** sur votre **ToastContent**.
 
+#### <a name="builder-syntax"></a>[Syntaxe du générateur](#tab/builder-syntax)
+
 ```csharp
-ToastContent toastContent = new ToastContent()
-{
-    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
-    ...
-};
+var content = new ToastContent()
+    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc))
+    ...
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
   ...
 </toast>
 ```
+
+---
 
 Si vous utilisez XML, la date doit être au format [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).
 

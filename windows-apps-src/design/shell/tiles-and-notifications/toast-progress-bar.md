@@ -7,12 +7,12 @@ ms.date: 12/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, toast, barre de progression, barre de progression Toast, notification, liaison de données Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 4219154a3fe3241b9c1871c07a1fbbb2b63f2348
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8df76af7dd26792d8d1af0fa8641d76e007ef8e3
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174603"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984525"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Barre de progression Toast et liaison de données
 
@@ -37,37 +37,26 @@ L’image ci-dessous montre une barre de progression qui se termine avec toutes 
 | **Titre** | chaîne ou [BindableString](toast-schema.md#bindablestring) | false | Obtient ou définit une chaîne de titre facultative. Prend en charge la liaison de données. |
 | **Valeur** | double ou [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) ou [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | Obtient ou définit la valeur de la barre de progression. Prend en charge la liaison de données. La valeur par défaut est 0. Peut être une valeur double comprise entre 0,0 et 1,0, `AdaptiveProgressBarValue.Indeterminate` ou `new BindableProgressBarValue("myProgressValue")` . |
 | **ValueStringOverride** | chaîne ou [BindableString](toast-schema.md#bindablestring) | false | Obtient ou définit une chaîne facultative à afficher à la place de la chaîne de pourcentage par défaut. Si cette valeur n’est pas fournie, un nom similaire à « 70% » s’affiche. |
-| **Statut** | chaîne ou [BindableString](toast-schema.md#bindablestring) | true | Obtient ou définit une chaîne d’État (obligatoire), qui s’affiche sous la barre de progression sur la gauche. Cette chaîne doit refléter l’état de l’opération, par exemple « téléchargement... » ou « installation... » |
+| **État** | chaîne ou [BindableString](toast-schema.md#bindablestring) | true | Obtient ou définit une chaîne d’État (obligatoire), qui s’affiche sous la barre de progression sur la gauche. Cette chaîne doit refléter l’état de l’opération, par exemple « téléchargement... » ou « installation... » |
 
 
 Voici comment générer la notification illustrée ci-dessus...
 
+#### <a name="builder-syntax"></a>[Syntaxe du générateur](#tab/builder-syntax)
+
 ```csharp
-ToastContent content = new ToastContent()
-{
-    Visual = new ToastVisual()
+new ToastContentBuilder()
+    .AddText("Downloading your weekly playlist...")
+    .AddVisualChild(new AdaptiveProgressBar()
     {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Downloading your weekly playlist..."
-                },
- 
-                new AdaptiveProgressBar()
-                {
-                    Title = "Weekly playlist",
-                    Value = 0.6,
-                    ValueStringOverride = "15/26 songs",
-                    Status = "Downloading..."
-                }
-            }
-        }
-    }
-};
+        Title = "Weekly playlist",
+        Value = 0.6,
+        ValueStringOverride = "15/26 songs",
+        Status = "Downloading..."
+    });
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast>
@@ -83,6 +72,8 @@ ToastContent content = new ToastContent()
     </visual>
 </toast>
 ```
+
+---
 
 Toutefois, vous devez mettre à jour dynamiquement les valeurs de la barre de progression pour qu’elles soient réellement « actives ». Pour ce faire, vous pouvez utiliser la liaison de données pour mettre à jour le Toast.
 
@@ -110,30 +101,16 @@ public void SendUpdatableToastWithProgress()
     string group = "downloads";
  
     // Construct the toast content with data bound fields
-    var content = new ToastContent()
-    {
-        Visual = new ToastVisual()
+    var content = new ToastContentBuilder()
+        .AddText("Downloading your weekly playlist...")
+        .AddVisualChild(new AdaptiveProgressBar()
         {
-            BindingGeneric = new ToastBindingGeneric()
-            {
-                Children =
-                {
-                    new AdaptiveText()
-                    {
-                        Text = "Downloading your weekly playlist..."
-                    },
-    
-                    new AdaptiveProgressBar()
-                    {
-                        Title = "Weekly playlist",
-                        Value = new BindableProgressBarValue("progressValue"),
-                        ValueStringOverride = new BindableString("progressValueString"),
-                        Status = new BindableString("progressStatus")
-                    }
-                }
-            }
-        }
-    };
+            Title = "Weekly playlist",
+            Value = new BindableProgressBarValue("progressValue"),
+            ValueStringOverride = new BindableString("progressValueString"),
+            Status = new BindableString("progressStatus")
+        })
+        .GetToastContent();
  
     // Generate the toast notification
     var toast = new ToastNotification(content.GetXml());

@@ -7,12 +7,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: Windows 10, UWP, toast, mise à jour en attente, pendingupdate, interactivité en plusieurs étapes, interactions avec plusieurs étapes
 ms.localizationpriority: medium
-ms.openlocfilehash: 00551414fbefe5591813731337653964bd2524f3
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: bc77e41ad144c76af4452b2a9a87c183ae84422c
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054539"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984575"
 ---
 # <a name="toast-with-pending-update-activation"></a>Toast avec activation de mise à jour en attente
 
@@ -32,7 +32,7 @@ Cet article suppose une connaissance du fonctionnement de...
 - [Envoi d’un toast et gestion de l’activation en arrière-plan](send-local-toast.md)
 
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Pour implémenter un toast qui utilise la mise à jour en attente comme son comportement d’activation après...
 
@@ -49,25 +49,47 @@ Pour implémenter un toast qui utilise la mise à jour en attente comme son comp
 
 Sur les boutons d’activation en arrière-plan, définissez **AfterActivationBehavior** sur **PendingUpdate**. Notez que cela ne fonctionne que pour les boutons qui ont un **ActivationType** de l' **arrière-plan**.
 
-```csharp
-new ToastButton("Yes", "action=orderLunch")
-{
-    ActivationType = ToastActivationType.Background,
+#### <a name="builder-syntax"></a>[Syntaxe du générateur](#tab/builder-syntax)
 
-    ActivationOptions = new ToastActivationOptions()
+```csharp
+new ToastContentBuilder()
+
+    .AddText("Would you like to order lunch today?")
+
+    .AddButton(new ToastButton("Yes", "action=orderLunch")
     {
-        AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
-    }
-}
+        ActivationType = ToastActivationType.Background,
+
+        ActivationOptions = new ToastActivationOptions()
+        {
+            AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
+        }
+    });
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
-<action
-    content='Yes'
-    arguments='action=orderLunch'
-    activationType='background'
-    afterActivationBehavior='pendingUpdate' />
+<toast>
+  
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Would you like to order lunch today?</text>
+    </binding>
+  </visual>
+
+  <actions>
+    <action
+      content="Yes"
+      arguments="action=orderLunch"
+      activationType="background"
+      afterActivationBehavior="pendingUpdate"/>
+  </actions>
+  
+</toast>
 ```
+
+---
 
 
 ## <a name="use-a-tag-on-the-notification"></a>Utiliser une balise dans la notification

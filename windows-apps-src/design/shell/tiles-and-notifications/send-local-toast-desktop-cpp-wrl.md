@@ -1,25 +1,25 @@
 ---
 Description: Découvrez comment les applications Win32 C++ WRL peuvent envoyer des notifications Toast locales et gérer l’utilisateur en cliquant sur le Toast.
-title: Envoyer une notification toast locale depuis des applications WRL de bureau en C++
-label: Send a local toast notification from desktop C++ WRL apps
+title: Envoyer une notification Toast locale à partir d’applications Win32 C++ WRL
+label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, package fragmenté, C++, CPP, Cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: f90733cb4b549b7b8f088d6ecfa652941b0769b1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a227ccbc52aa3c1dd8c0cd9c61cdecf140375fe2
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220142"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984655"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Envoyer une notification toast locale depuis des applications WRL de bureau en C++
+# <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>Envoyer une notification Toast locale à partir d’applications Win32 C++ WRL
 
-Les applications de bureau (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas MSIX ou un package fragmenté.
+Les applications Win32 (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives, tout comme les applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications Win32 en raison des différents schémas d’activation et de l’absence potentielle d’identité du package si vous n’utilisez pas MSIX ou un package fragmenté.
 
 > [!IMPORTANT]
-> Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langues du bureau, consultez [Desktop C#](send-local-toast-desktop.md).
+> Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langages Win32, consultez [Win32 C#](send-local-toast-desktop.md).
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>Étape 1 : activer le kit de développement logiciel (SDK) Windows 10
@@ -372,7 +372,7 @@ Si votre application n’est pas en cours d’exécution :
 
 
 ### <a name="foreground-vs-background-activation"></a>Activation au premier plan et en arrière-plan
-Pour les applications de bureau, le premier plan et l’activation en arrière-plan sont gérés de la même façon : votre activateur COM est appelé. Il s’agit du code de votre application pour décider s’il faut afficher une fenêtre ou simplement effectuer un travail, puis quitter. Par conséquent, la spécification d’un **activationType** de l' **arrière-plan** dans votre contenu Toast ne change pas le comportement.
+Pour les applications Win32, le premier plan et l’activation en arrière-plan sont gérés de la même façon : votre activateur COM est appelé. Il s’agit du code de votre application pour décider s’il faut afficher une fenêtre ou simplement effectuer un travail, puis quitter. Par conséquent, la spécification d’un **activationType** de l' **arrière-plan** dans votre contenu Toast ne change pas le comportement.
 
 
 ## <a name="step-9-remove-and-manage-notifications"></a>Étape 9 : supprimer et gérer les notifications
@@ -444,5 +444,5 @@ Problème **résolu : l’application ne devient pas focalisée après avoir cl
 ## <a name="resources"></a>Ressources
 
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Notifications toast à partir d’applications de bureau](toast-desktop-apps.md)
+* [Notifications toast à partir d’applications Win32](toast-desktop-apps.md)
 * [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)

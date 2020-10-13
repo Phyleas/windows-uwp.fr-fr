@@ -1,30 +1,30 @@
 ---
-Description: Les applications de bureau Windows peuvent épingler des vignettes secondaires grâce au pont de bureau !
-title: Épingler les vignettes secondaires à partir de l’application de bureau
-label: Pin secondary tiles from desktop application
+Description: Les applications Win32 peuvent épingler des vignettes secondaires grâce au pont de bureau !
+title: Épingler des vignettes secondaires à partir d’applications Win32
+label: Pin secondary tiles from Win32 apps
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, Desktop Bridge, vignettes secondaires, pin, épinglage, démarrage rapide, exemple de code, exemple, secondarytile, application de bureau, Win32, WinForms, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: 111d66e69ddb9cff56f36a26bd8094429fe808ef
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e45fedbb981c26945d3127d7f1c01bfc08d221f0
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172373"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984725"
 ---
-# <a name="pin-secondary-tiles-from-desktop-application"></a>Épingler les vignettes secondaires à partir de l’application de bureau
+# <a name="pin-secondary-tiles-from-win32-apps"></a>Épingler des vignettes secondaires à partir d’applications Win32
 
 
-Grâce au [pont Desktop](https://developer.microsoft.com/windows/bridges/desktop), les applications de bureau Windows (telles que Win32, Windows Forms et WPF) peuvent épingler des vignettes secondaires.
+Grâce au [pont de bureau](https://developer.microsoft.com/windows/bridges/desktop), les applications Win32 (comme Windows Forms et WPF) peuvent épingler des vignettes secondaires !
 
 ![Capture d’écran des vignettes secondaires](images/secondarytiles.png)
 
 > [!IMPORTANT]
 > **Nécessite la mise à jour des créateurs**de la place : vous devez cibler le kit de développement logiciel 16299 et exécuter Build 16299 ou version ultérieure pour épingler des vignettes secondaires à partir d’applications Desktop Bridge.
 
-L’ajout d’une vignette secondaire à partir de votre application WPF ou WinForms est très similaire à une application UWP pure. La seule différence est que vous devez spécifier votre handle de fenêtre principale (HWND). En effet, lors de l’épinglage d’une vignette, Windows affiche une boîte de dialogue modale demandant à l’utilisateur de confirmer s’il souhaite épingler la vignette. Si l’application de bureau ne configure pas l’objet SecondaryTile à l’aide de la fenêtre propriétaire, Windows ne sait pas où dessiner la boîte de dialogue et l’opération échoue.
+L’ajout d’une vignette secondaire à partir de votre application WPF ou WinForms est très similaire à une application UWP pure. La seule différence est que vous devez spécifier votre handle de fenêtre principale (HWND). En effet, lors de l’épinglage d’une vignette, Windows affiche une boîte de dialogue modale demandant à l’utilisateur de confirmer s’il souhaite épingler la vignette. Si l’application Win32 ne configure pas l’objet SecondaryTile à l’aide de la fenêtre propriétaire, Windows ne sait pas où dessiner la boîte de dialogue et l’opération échoue.
 
 
 ## <a name="package-your-app-with-desktop-bridge"></a>Empaqueter votre application avec Desktop Bridge
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>Assigner le handle de fenêtre
 
-Il s’agit de l’étape clé pour les applications de bureau. Effectuez un cast de l’objet en objet [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) . Ensuite, appelez la méthode [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) et transmettez le descripteur de la fenêtre qui doit être le propriétaire de la boîte de dialogue modale. L’exemple C# suivant montre comment passer le handle de la fenêtre principale de votre application à la méthode.
+Il s’agit de l’étape clé pour les applications Win32. Effectuez un cast de l’objet en objet [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) . Ensuite, appelez la méthode [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) et transmettez le descripteur de la fenêtre qui doit être le propriétaire de la boîte de dialogue modale. L’exemple C# suivant montre comment passer le handle de la fenêtre principale de votre application à la méthode.
 
 ```csharp
 // Assign the window handle

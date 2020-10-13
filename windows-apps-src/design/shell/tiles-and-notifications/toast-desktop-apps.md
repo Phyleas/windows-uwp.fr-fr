@@ -1,22 +1,22 @@
 ---
 Description: Découvrez les différentes options disponibles pour les applications de bureau Win32 pour l’envoi de notifications Toast
-title: Notifications toast à partir d’applications de bureau
-label: Toast notifications from desktop apps
+title: Notifications toast à partir d’applications Win32
+label: Toast notifications from Win32 apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, Desktop Bridge, msix, package Sparse, options pour envoyer des toasts, serveur com, activateur com, com, com factice, com, sans com, envoyer un toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c478fa6892e4b61ac1a7d6e22089720e96ca7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6f02bc7c615643ba0d2ca0ed1b43ecf13641c1c5
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220071"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984545"
 ---
-# <a name="toast-notifications-from-desktop-apps"></a>Notifications toast à partir d’applications de bureau
+# <a name="toast-notifications-from-win32-apps"></a>Notifications toast à partir d’applications Win32
 
-Les applications de bureau (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe différentes options pour les applications de bureau en raison des différents schémas d’activation.
+Les applications Win32 (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives, tout comme les applications Windows. Toutefois, il existe différentes options pour les applications Win32 en raison des différents schémas d’activation.
 
 Dans cet article, nous répertorions les options dont vous disposez pour envoyer une notification Toast sur Windows 10. Toutes les options prennent entièrement en charge...
 
@@ -26,9 +26,9 @@ Dans cet article, nous répertorions les options dont vous disposez pour envoyer
 
 ## <a name="all-options"></a>Toutes les options
 
-Le tableau ci-dessous illustre vos options de prise en charge des toasts dans votre application de bureau et les fonctionnalités prises en charge correspondantes. Vous pouvez utiliser le tableau pour sélectionner la meilleure option pour votre scénario.<br/><br/>
+Le tableau ci-dessous illustre vos options de prise en charge des toasts dans votre application Win32 et les fonctionnalités prises en charge correspondantes. Vous pouvez utiliser le tableau pour sélectionner la meilleure option pour votre scénario.<br/><br/>
 
-| Option | Objets visuels | Actions | Entrées | Active in-process |
+| Option | Visuels | Actions | Entrées | Active in-process |
 | -- | -- | -- | -- | -- |
 | [Activateur COM](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Aucun CLSID COM/stub](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
@@ -36,9 +36,9 @@ Le tableau ci-dessous illustre vos options de prise en charge des toasts dans vo
 
 ## <a name="preferred-option---com-activator"></a>Option préférée-activateur COM
 
-Il s’agit de l’option recommandée qui fonctionne pour les applications de bureau et prend en charge toutes les fonctionnalités de notification. N’hésitez pas à utiliser l’activateur COM. Nous disposons d’une bibliothèque [pour les applications C#](send-local-toast-desktop.md) et [C++](send-local-toast-desktop-cpp-wrl.md) , ce qui est très simple, même si vous n’avez jamais écrit de serveur com auparavant.<br/><br/>
+Il s’agit de l’option recommandée qui fonctionne pour les applications Win32 et prend en charge toutes les fonctionnalités de notification. N’hésitez pas à utiliser l’activateur COM. Nous disposons d’une bibliothèque [pour les applications C#](send-local-toast-desktop.md) et [C++](send-local-toast-desktop-cpp-wrl.md) , ce qui est très simple, même si vous n’avez jamais écrit de serveur com auparavant.<br/><br/>
 
-| Objets visuels | Actions | Entrées | Active in-process |
+| Visuels | Actions | Entrées | Active in-process |
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ✔️ | ✔️ |
 
@@ -54,14 +54,14 @@ Avec l’option COM Activator, vous pouvez utiliser les modèles de notification
 > [!NOTE]
 > Si vous ajoutez l’activateur COM à votre application de package MSIX/Sparse existante, le premier plan/l’arrière-plan et les activations de notification héritées activent désormais votre activateur COM au lieu de votre ligne de commande.
 
-Pour savoir comment utiliser cette option, consultez [Envoyer une notification Toast locale à partir d’applications Desktop C#](send-local-toast-desktop.md) ou [Envoyer une notification Toast locale à partir d’applications Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
+Pour savoir comment utiliser cette option, consultez [Envoyer une notification Toast locale à partir d’applications Win32 C#](send-local-toast-desktop.md) ou [Envoyer une notification Toast locale à partir d’applications Win32 C++ WRL](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>Option alternative-aucun CLSID COM/stub
 
 Il s’agit d’une autre option si vous ne pouvez pas implémenter un activateur COM. Toutefois, vous allez sacrifier quelques fonctionnalités, telles que la prise en charge des entrées (zones de texte sur les toasts) et l’activation in-process.<br/><br/>
 
-| Objets visuels | Actions | Entrées | Active in-process |
+| Visuels | Actions | Entrées | Active in-process |
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ❌ | ❌ |
 
@@ -81,6 +81,6 @@ Pour les applications Win32 classiques, configurez le identifiant AUMID afin de 
 
 ## <a name="resources"></a>Ressources
 
-* [Envoyer une notification toast locale à partir d’applications de bureau en C#](send-local-toast-desktop.md)
-* [Envoyer une notification toast locale depuis des applications WRL de bureau en C++](send-local-toast-desktop-cpp-wrl.md)
+* [Envoyer une notification Toast locale à partir d’applications Win32 C#](send-local-toast-desktop.md)
+* [Envoyer une notification Toast locale à partir d’applications Win32 C++ WRL](send-local-toast-desktop-cpp-wrl.md)
 * [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)

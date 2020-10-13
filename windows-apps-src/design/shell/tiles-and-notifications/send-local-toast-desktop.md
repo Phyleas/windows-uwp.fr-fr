@@ -1,33 +1,33 @@
 ---
 Description: Découvrez comment les applications Win32 C# peuvent envoyer des notifications Toast locales et gérer l’utilisateur en cliquant sur le Toast.
-title: Envoyer une notification toast locale à partir d’applications de bureau en C#
+title: Envoyer une notification Toast locale à partir d’applications Win32 C#
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from desktop C# apps
+label: Send a local toast notification from Win32 C# apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: 'Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, packages épars, C#, C Sharp, Toast notification, WPF, envoyer une notification Toast, WPF, envoyer une notification Toast, envoyer une notification Toast c#, envoyer une notification, WPF, envoyer une notification Toast, notification Toast, WPF, notification Toast C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4f78d689352f0278f814a2e89db6f92df52b99
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b13927bbd12a5cb306018ca02cd8730f580182cd
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220122"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984645"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification toast locale à partir d’applications de bureau en C#
+# <a name="send-a-local-toast-notification-from-win32-c-apps"></a>Envoyer une notification Toast locale à partir d’applications Win32 C#
 
-Les applications de bureau (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité du package et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives comme des applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
+Les applications Win32 (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives, tout comme les applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications Win32 en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
 
 > [!IMPORTANT]
-> Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langages du bureau, consultez [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
+> Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langages de bureau, veuillez consulter [Win32 C++ WRL](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## <a name="step-1-install-the-notifications-library"></a>Étape 1 : installer la bibliothèque de notifications
 
 Installez le `Microsoft.Toolkit.Uwp.Notifications` [package NuGet](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) dans votre projet.
 
-Cette [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) ajoute le code de bibliothèque de compatibilité pour l’utilisation des notifications toast à partir d’applications de bureau. Elle fait également référence aux kits de développement logiciel (SDK) UWP et vous permet de créer des notifications à l’aide de C# au lieu de XML brut. Le reste de ce guide de démarrage rapide dépend de la bibliothèque de notifications.
+Cette [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) ajoute le code de bibliothèque de compatibilité pour l’utilisation des notifications toast à partir d’applications Win32. Elle fait également référence aux kits de développement logiciel (SDK) UWP et vous permet de créer des notifications à l’aide de C# au lieu de XML brut. Le reste de ce guide de démarrage rapide dépend de la bibliothèque de notifications.
 
 
 ## <a name="step-2-implement-the-activator"></a>Étape 2 : implémenter l’activateur
@@ -320,7 +320,7 @@ Si votre application n’est pas en cours d’exécution :
 
 
 ### <a name="foreground-vs-background-activation"></a>Activation au premier plan et en arrière-plan
-Pour les applications de bureau, le premier plan et l’activation en arrière-plan sont gérés de la même façon : votre activateur COM est appelé. Il s’agit du code de votre application pour décider s’il faut afficher une fenêtre ou simplement effectuer un travail, puis quitter. Par conséquent, la spécification d’un **ActivationType** de l' **arrière-plan** dans votre contenu Toast ne change pas le comportement.
+Pour les applications Win32, le premier plan et l’activation en arrière-plan sont gérés de la même façon : votre activateur COM est appelé. Il s’agit du code de votre application pour décider s’il faut afficher une fenêtre ou simplement effectuer un travail, puis quitter. Par conséquent, la spécification d’un **ActivationType** de l' **arrière-plan** dans votre contenu Toast ne change pas le comportement.
 
 
 ## <a name="step-7-remove-and-manage-notifications"></a>Étape 7 : supprimer et gérer les notifications
@@ -357,5 +357,5 @@ Problème **résolu : l’application ne devient pas focalisée après avoir cl
 ## <a name="resources"></a>Ressources
 
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Notifications toast à partir d’applications de bureau](toast-desktop-apps.md)
+* [Notifications toast à partir d’applications Win32](toast-desktop-apps.md)
 * [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)
