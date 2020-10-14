@@ -2,13 +2,6 @@
   href: index.md
 - name: "Qu’est-ce qu’une application Windows\_?"
   href: ../get-started/universal-application-platform-guide.md
-- name: Se préparer
-  href: ../get-started/get-set-up.md
-  items:
-    - name: Activer votre appareil pour le développement
-      href: ../get-started/enable-your-device-for-development.md
-    - name: Créer un compte de développeur
-      href: ../get-started/sign-up.md
 - name: Commencer à développer
   href: ../get-started/create-uwp-apps.md
   items:
@@ -29,8 +22,6 @@
           href: ../get-started/create-a-basic-windows-10-app-in-cppwinrt.md
         - name: 'Application "Hello, World!" en C++/CX'
           href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-        - name: 'Application "Hello, World!" en JavaScript'
-          href: ../get-started/create-a-hello-world-app-js-uwp.md
     - name: Génération d’une application complexe
       href: ../get-started/plan-your-app.md
 - name: Obtenir des exemples d’application Windows
