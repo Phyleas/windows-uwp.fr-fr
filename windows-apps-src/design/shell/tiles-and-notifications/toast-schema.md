@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c095e48e24a06caf9e31066b21f9e2b023ed51cf
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 6399cb3aa6c22e188ed84941c3209632511d90e4
+ms.sourcegitcommit: 8b01b9ab7293dad1259da32d1459fdd454796e12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878472"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92020169"
 ---
 # <a name="toast-content-schema"></a>Schéma du contenu de notification toast
 
@@ -21,7 +21,7 @@ ms.locfileid: "91878472"
 
 Les éléments suivants décrivent toutes les propriétés et tous les éléments du contenu Toast.
 
-Si vous préférez utiliser du code XML brut au lieu de la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), consultez [le schéma XML]().
+Si vous préférez utiliser du code XML brut au lieu de la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), consultez [le schéma XML](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/schema-root).
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
@@ -132,7 +132,7 @@ Style de texte contrôle la taille de police, le poids et l’opacité. Une opac
 | **BodySubtle** | Identique au corps, mais avec une opacité subtile. |
 | **Base** | Taille de police des paragraphes, épaisseur gras. Fondamentalement la version en gras du corps. |
 | **BaseSubtle** | Identique à la base, mais avec une opacité subtile. |
-| **Apparaître** | Taille de police de H4. |
+| **Sous-titre** | Taille de police de H4. |
 | **SubtitleSubtle** | Identique au sous-titre, mais avec une opacité subtile. |
 | **Titre** | Taille de police H3. |
 | **TitleSubtle** | Identique au titre, mais avec une opacité subtile. |
