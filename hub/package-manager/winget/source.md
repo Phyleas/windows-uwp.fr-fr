@@ -4,12 +4,12 @@ description: Gère les dépôts auxquels le Gestionnaire de package Windows acc�
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d383dfc4e66c75c993210d382b674508ad3cef4
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 08af76389627bb8c21bf7a4ddb856d09119dc917
+ms.sourcegitcommit: 837ef4b2c2375d023ee85204f72a029f9ec8f4ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334485"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079274"
 ---
 # <a name="source-command-winget"></a>source, commande (winget)
 
@@ -128,7 +128,7 @@ La sous-commande **update** associée à l’option **--name** peut cibler et me
 
 La sous-commande **remove** supprime une source. Avec cette sous-commande, l’option **--name** et l’**argument name** sont obligatoires pour identifier la source.
 
-Utilisation : `winget source add [-n, --name] \<name>`
+Utilisation : `winget source remove [-n, --name] \<name>`
 
 Par exemple : `winget source remove --name Contoso`
 

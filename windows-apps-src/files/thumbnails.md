@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df0d2364762d75793f3f00856b06e8ae506cb327
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3bf624373a4b9a3c99a8c4c0a8a44e2410788487
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165595"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860134"
 ---
 # <a name="thumbnail-images"></a>Images miniatures
 
@@ -151,11 +151,11 @@ Sinon, aucune miniature n'est récupérée.</td>
 <tr>
 <td>Groupe de fichiers</td>
 <td>Si le dossier contient un fichier d'image, la miniature de l'image est utilisée.<br />
-<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode"/> <br /> Sinon, aucune miniature n'est récupérée. </td>
+<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode."/> <br /> Sinon, aucune miniature n'est récupérée. </td>
 <td>S'il existe un fichier doté d'une pochette d'album parmi les fichiers du groupe, la miniature correspond à cette pochette. <br />
 <img src="images/thumbnail-grp-doclistmusic-modes.png" alt="File group thumbnail in documents, music or list mode"/> <br />Sinon, aucune miniature n'est récupérée. </td>
 <td>S'il existe un fichier doté d'une pochette d'album parmi les fichiers du groupe, la miniature correspond à cette pochette et utilise les proportions d'origine du fichier. <br />
-<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in picture or video mode"/> <br />Sinon, la miniature est une icône qui représente un groupe de fichiers. <br />
+<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in documents, music or list mode using the original aspect ratio of the file."/> <br />Sinon, la miniature est une icône qui représente un groupe de fichiers. <br />
 <img src="images/thumbnail-grp2-single-mode.png" alt="File group icon in single mode"/> 
 </td>
 </tr>
