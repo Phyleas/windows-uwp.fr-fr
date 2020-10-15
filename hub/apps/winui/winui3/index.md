@@ -3,12 +3,12 @@ title: WinUI 3 Preview 2 (juillet 2020)
 description: Vue d’ensemble de la version WinUI 3 Preview 2.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 11c7ff587c7c237c19ad627587f082be84e68bf8
-ms.sourcegitcommit: 337f31b3fe3ff434dbc2c232fb84c3b22ebd4be8
+ms.openlocfilehash: ec4a112eceef7053244d676b6070784174291ed1
+ms.sourcegitcommit: 8b01b9ab7293dad1259da32d1459fdd454796e12
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804573"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92020159"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Bibliothèque d’interface utilisateur Windows 3 Preview 2 (juillet 2020)
 
@@ -99,7 +99,7 @@ Les modèles d’élément suivants sont disponibles pour être utilisés dans u
 |----------|----------|-------------|
 | Page vierge (WinUI) | C# et C++ | Ajoute un fichier XAML et un fichier de code qui définit une nouvelle page dérivée de la classe **Microsoft.UI.Xaml.Controls.Page** de la bibliothèque WinUI. |
 | Fenêtre vide (WinUI dans les applications de bureau) | C# et C++ | Ajoute un fichier XAML et un fichier de code qui définit une nouvelle fenêtre dérivée de la classe **Microsoft.UI.Xaml.Window** de la bibliothèque WinUI. |
-| Contrôle personnalisé (WinUI) | C# et C++ | Ajoute un fichier de code pour créer un contrôle basé sur un modèle avec un style par défaut. Le contrôle basé sur un modèle dérive de la classe **Microsoft.UI.Xaml.Controls.Control** de la bibliothèque WinUI.<p></p>Pour obtenir une procédure pas à pas qui montre comment utiliser ce modèle d’élément, consultez [Contrôles XAML basés sur un modèle pour les applications UWP et WinUI 3 avec C++/WinRT](xaml-templated-controls-cppwinrt-winui3.md). Pour plus d’informations sur les contrôles basés sur des modèles, consultez [Contrôles XAML personnalisés](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+| Contrôle personnalisé (WinUI) | C# et C++ | Ajoute un fichier de code pour créer un contrôle basé sur un modèle avec un style par défaut. Le contrôle basé sur un modèle dérive de la classe **Microsoft.UI.Xaml.Controls.Control** de la bibliothèque WinUI.<p></p>Pour obtenir une procédure pas à pas qui montre comment utiliser ce modèle d’élément, consultez [Contrôles XAML basés sur un modèle pour les applications UWP et WinUI 3 avec C++/WinRT](xaml-templated-controls-cppwinrt-winui-3.md) et [Contrôles XAML basés sur un modèle pour les applications WinUI 3 avec C#](xaml-templated-controls-csharp-winui-3.md). Pour plus d’informations sur les contrôles basés sur des modèles, consultez [Contrôles XAML personnalisés](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
 | Dictionnaire de ressources (WinUI) | C# et C++ | Ajouter une collection à clé et vide de ressources XAML. Pour plus d’informations, consultez [Informations de référence sur les ressources ResourceDictionary et XAML](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references). |
 | Fichier de ressources (WinUI) | C# et C++ | Ajoute un fichier dans lequel stocker les ressources de type chaîne et les ressources conditionnelles de votre application. Vous pouvez utiliser cet élément pour faciliter la localisation de votre application. Pour plus d’informations, consultez [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](/windows/uwp/app-resources/localize-strings-ui-manifest). |
 | Contrôle utilisateur (WinUI) | C# et C++ | Ajoute un fichier XAML et un fichier de code pour la création d’un contrôle utilisateur dérivé de la classe **Microsoft.UI.Xaml.Controls.UserControl** de la bibliothèque WinUI. En général, un contrôle utilisateur encapsule des contrôles existants associés et fournit sa propre logique.<p></p>Pour plus d’informations sur les contrôles utilisateur, consultez [Contrôles XAML personnalisés](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
