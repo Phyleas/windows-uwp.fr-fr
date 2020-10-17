@@ -1,27 +1,27 @@
 ---
-Description: Découvrez comment envoyer une notification Toast locale et gérer l’utilisateur en cliquant sur le Toast.
-title: Envoyer une notification toast locale
+Description: Découvrez comment envoyer une notification Toast locale à partir d’applications UWP et gérer l’utilisateur en cliquant sur le Toast.
+title: Envoyer une notification Toast locale à partir d’applications UWP
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification
+label: Send a local toast notification from UWP apps
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, envoyer des notifications Toast, notifications, envoyer des notifications, Toast notifications, guide pratique, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 566a1093fc576751bdd2428c2349428a5d2ef626
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 7b669ad3c846fec0b60ae01134b80a6d87586c62
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984697"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100287"
 ---
-# <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
+# <a name="send-a-local-toast-notification-from-uwp-apps"></a>Envoyer une notification Toast locale à partir d’applications UWP
 
 
 Une notification Toast est un message qu’une application peut construire et remettre à l’utilisateur alors qu’elle ne se trouve pas actuellement à l’intérieur de votre application. Ce guide de démarrage rapide vous guide tout au long des étapes de création, de distribution et d’affichage d’une notification Toast Windows 10 avec les nouveaux modèles adaptatifs et les actions interactives. Ces actions sont illustrées par une notification locale, qui est la notification la plus simple à implémenter.
 
 > [!IMPORTANT]
-> Les applications Win32 (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications Win32 non empaquetées classiques) ont des étapes différentes pour l’envoi de notifications et la gestion de l’activation. Pour savoir comment implémenter des toasts, consultez la documentation [Win32 Apps](toast-desktop-apps.md) .
+> Les applications de bureau (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications de bureau non packagées classiques) présentent des étapes différentes pour l’envoi de notifications et la gestion de l’activation. Pour savoir comment implémenter des toasts, consultez la documentation sur les [applications de bureau](toast-desktop-apps.md) .
 
 > **API importantes**: [classe ToastNotification](/uwp/api/Windows.UI.Notifications.ToastNotification), [classe ToastNotificationActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
@@ -192,7 +192,7 @@ Vous pouvez ajouter du contenu riche aux notifications. Nous allons ajouter une 
 > Les images peuvent être utilisées à partir du package de l’application, du stockage local de l’application ou du Web. À compter de la mise à jour des créateurs de automne, les images Web peuvent atteindre jusqu’à 3 Mo sur des connexions normales et 1 Mo sur les connexions limitées. Sur les appareils qui n’exécutent pas encore la mise à jour des créateurs de automne, les images Web ne doivent pas dépasser 200 Ko.
 
 > [!IMPORTANT]
-> Les images http sont uniquement prises en charge dans les applications UWP/MSIX/épars qui disposent de la fonctionnalité Internet dans leur manifeste. Les applications Win32 non MSIX/épars ne prennent pas en charge les images http ; vous devez télécharger l’image dans vos données d’application locales et la référencer localement.
+> Les images http sont uniquement prises en charge dans les applications UWP/MSIX/épars qui disposent de la fonctionnalité Internet dans leur manifeste. Les applications de bureau non-MSIX/épars ne prennent pas en charge les images http ; vous devez télécharger l’image dans vos données d’application locales et la référencer localement.
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 

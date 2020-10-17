@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bb0a6b48e9a9a01881955ae0ccb65e93b9cf2b6e
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 5f06d5e804d41b1751c72af4d07224fa346323b2
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636539"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860106"
 ---
 # <a name="typography-in-windows-apps"></a>Typographie des applications Windows
 
@@ -23,7 +23,7 @@ En tant que représentation visuelle du langage, la typographie a pour mission p
 
 Vous devez utiliser une police dans toute l’interface utilisateur de votre application, et nous vous recommandons d’utiliser la police par défaut pour les applications Windows, **Segoe UI**. Elle est conçue pour conserver une lisibilité optimale, quelles que soient les tailles et les densités en pixels. Elle se caractérise par une esthétique nette, légère et aérée en parfaite harmonie avec le contenu du système.
 
-![Exemple de texte dans la police Segoe UI](images/type/segoe-sample.svg)
+![Exemple de texte dans la police Segoe UI.](images/type/segoe-sample.svg)
 
 Pour afficher les langues autres que l’anglais ou sélectionner une autre police pour votre application, consultez [Langues](#languages) et [Polices](#fonts) afin de connaître nos polices recommandées pour les applications Windows.
 
@@ -41,7 +41,7 @@ Sélectionnez une seule police pour votre interface utilisateur.
 
 Les tailles de police utilisées dans les applications UWP sont automatiquement mises à l’échelle sur tous les appareils. L’algorithme de mise à l’échelle garantit qu’une police de 24 pixels sur un appareil Surface Hub placé à une distance de 3 mètres est aussi lisible qu’une police de 24 pixels sur un téléphone doté d’un écran 5 pouces distant de quelques centimètres.
 
-![distances d’affichage des différents appareils](images/type/scaling-chart.svg)
+![Distances d’affichage des différents appareils.](images/type/scaling-chart.svg)
 
 En raison du mode de fonctionnement du système de mise à l’échelle, la conception est effectuée en pixels effectifs, et non en pixels physiques réels. En outre, il n’est pas nécessaire de modifier les tailles de police pour différentes tailles ou résolutions d’écran.
 
@@ -62,7 +62,7 @@ Respectez les tailles de la [gamme de caractères](#type-ramp) Windows.
 Les utilisateurs s’appuient sur la hiérarchie visuelle lors de l’analyse d’une page : les en-têtes résument le contenu et le texte du corps fournit d’autres informations. Pour créer une hiérarchie visuelle précise dans votre application, suivez la gamme de caractères Windows.
     :::column-end:::
     :::column:::
-![Styles de bloc de texte](images/type/type-hierarchy.svg)
+![Capture d’écran de trois lignes de texte où la taille de police devient plus petite d’une ligne à l’autre.](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -70,18 +70,13 @@ Les utilisateurs s’appuient sur la hiérarchie visuelle lors de l’analyse d�
 
 La gamme de caractères Windows établit des relations cruciales entre les styles de caractère sur une page, afin d’aider les utilisateurs à lire facilement le contenu. Toutes les tailles sont exprimées en pixels effectifs et sont optimisées pour les applications UWP s’exécutant sur tous les appareils.
 
-![Gamme de caractères](images/type/type-ramp.png)
+![Gamme de caractères Windows.](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>Utilisation de la gamme de caractères
 
 :::row:::
     :::column:::
-Vous pouvez accéder aux niveaux de la gamme de caractères en tant que [ressources statiques](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) XAML. Les styles suivent la convention `*TextBlockStyle` d’attribution de noms.
-    :::column-end:::
-    :::column:::
-![Styles de bloc de texte](images/type/text-block-type-ramp.svg)
-    :::column-end:::
-:::row-end:::
+Vous pouvez accéder aux niveaux de la gamme de caractères en tant que [ressources statiques](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) XAML. Les styles suivent la convention de nommage `*TextBlockStyle` présentée ici.
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -92,6 +87,13 @@ Vous pouvez accéder aux niveaux de la gamme de caractères en tant que [ressour
 <TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
+    :::column-end:::
+    :::column:::
+![Capture d’écran des styles de texte Header, Subheader, Title, Subtitle, Base, Body et Caption.](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
+
+
 
 :::row:::
     :::column:::
@@ -133,7 +135,7 @@ Utilisez des lignes de 50 à 60 caractères pour faciliter la lecture.
 
 Lorsque la quantité de texte s’étend au-delà de l’espace disponible, nous vous recommandons de dérouter le texte, ce qui correspond au comportement par défaut de la plupart des [contrôles de texte UWP](../controls-and-patterns/text-controls.md).
 
-![Cadre d’appareil avec détourage de texte](images/type/clipping.svg)
+![Cadre d’appareil avec détourage de texte.](images/type/clipping.svg)
 
 ```xaml
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>

@@ -2,16 +2,16 @@
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Créer votre première application
 description: Créez une application de plateforme Windows universelle (UWP) pour Windows 10 à l’aide de votre langage de programmation favori.
-ms.date: 01/25/2017
+ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: dba3541c5c7e942b4d157d5d7a331f2cb6c93c38
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7a5491ef0e57399c9465697f933aa8fff92664cd
+ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158903"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011371"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 
@@ -35,7 +35,7 @@ Si vous souhaitez découvrir les notions de base ou simplement vous rafraîchir 
 
 Tirez parti de votre expertise en programmation en C++ standard pour générer des applications en utilisant C++/WinRT avec XAML (eXtensible Application Markup Language).
 
-* [Créer une application « Hello, World! » en utilisant C++/WinRT](./create-a-basic-windows-10-app-in-cppwinrt.md)
+* [Créer une application « Hello, World! » en utilisant C++/WinRT](create-a-basic-windows-10-app-in-cppwinrt.md)
 
 Découvrez-en plus sur C++/WinRT.
 
@@ -52,32 +52,16 @@ Découvrez-en plus sur C++ ici.
 * [C++ pour les applications UWP](/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
 * [C++ pour les applications de bureau](/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
 
-## <a name="javascript-and-html"></a>JavaScript et HTML
-
-Valorisez vos compétences web afin de développer des applications à l’aide de HTML5, CSS3 et JavaScript.
-
-* [Créer une application « Hello World » en utilisant HTML et JavaScript](create-a-hello-world-app-js-uwp.md)
-
-Étendez vos compétences en JavaScript et HTML au-delà d’UWP pour créer des applications web, ou explorez la réalité virtuelle sur le web avec WebVR
-
-* [Documentation pour développeurs Microsoft Edge](/microsoft-edge/)
-* [Utiliser WebVR avec Microsoft Edge](/microsoft-edge/webvr/)
-
-Les applications web peuvent être facilement empaquetées dans l’infrastructure UWP en tant qu’applications web hébergées et promues sur le Microsoft Store.
-
-* [Applications web hébergées](https://developer.microsoft.com/windows/pwa)
-* [Convertir votre application web en application UWP](/microsoft-edge/progressive-web-apps-chromium/)
-
 ## <a name="next-steps"></a>Étapes suivantes
 
 Quand vous vous sentez prêt à essayer quelque chose de plus amusant que « Hello, World! », suivez ces tutoriels.
 
 * [Tutoriel : Créer une interface utilisateur](../design/basics/xaml-basics-ui.md)
-* [Un jeu UWP simple en 2D pour le Microsoft Store, écrit en C# et MonoGame](get-started-tutorial-game-mg2d.md)
+* [Applications Windows sur Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=windows)
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Commencer le codage](create-uwp-apps.md)
 * [Qu’est-ce qu’une application UWP ?](universal-application-platform-guide.md)
-* [Se préparer](get-set-up.md)
-* [Créer un compte Windows](sign-up.md)
+* [Se préparer](/windows/apps/get-started/get-set-up.md)
+* [Créer un compte Windows](/windows/apps/get-started/sign-up.md)

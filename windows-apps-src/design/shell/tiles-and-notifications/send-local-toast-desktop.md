@@ -1,23 +1,23 @@
 ---
-Description: Découvrez comment les applications Win32 C# peuvent envoyer des notifications Toast locales et gérer l’utilisateur en cliquant sur le Toast.
-title: Envoyer une notification Toast locale à partir d’applications Win32 C#
+Description: Découvrez comment les applications de bureau C# peuvent envoyer des notifications Toast locales et gérer l’utilisateur qui clique sur le Toast.
+title: Envoyer une notification toast locale à partir d’applications de bureau en C#
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from Win32 C# apps
+label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
-keywords: 'Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, packages épars, C#, C Sharp, Toast notification, WPF, envoyer une notification Toast, WPF, envoyer une notification Toast, envoyer une notification Toast c#, envoyer une notification, WPF, envoyer une notification Toast, notification Toast, WPF, notification Toast C #'
+keywords: 'Windows 10, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, packages éparpillés, C#, C Sharp, Toast notification, WPF, envoyer une notification Toast, WPF, envoyer une notification Toast, envoyer une notification Toast, c#, envoyer une notification, WPF, envoyer une notification Toast, notification Toast WPF, notification Toast C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: b13927bbd12a5cb306018ca02cd8730f580182cd
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 1fa6b23e775beee993051b23b828c59316ac1382
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984645"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100297"
 ---
-# <a name="send-a-local-toast-notification-from-win32-c-apps"></a>Envoyer une notification Toast locale à partir d’applications Win32 C#
+# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification toast locale à partir d’applications de bureau en C#
 
-Les applications Win32 (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives, tout comme les applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications Win32 en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
+Les applications de bureau (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications de bureau non packagées classiques) peuvent envoyer des notifications de Toast interactif comme les applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications de bureau en raison des différents schémas d’activation et de l’absence potentielle d’identité de package si vous n’utilisez pas de packages MSIX ou épars.
 
 > [!IMPORTANT]
 > Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langages de bureau, veuillez consulter [Win32 C++ WRL](send-local-toast-desktop-cpp-wrl.md).
@@ -27,7 +27,7 @@ Les applications Win32 (y compris les applications [MSIX](/windows/msix/desktop/
 
 Installez le `Microsoft.Toolkit.Uwp.Notifications` [package NuGet](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) dans votre projet.
 
-Cette [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) ajoute le code de bibliothèque de compatibilité pour l’utilisation des notifications toast à partir d’applications Win32. Elle fait également référence aux kits de développement logiciel (SDK) UWP et vous permet de créer des notifications à l’aide de C# au lieu de XML brut. Le reste de ce guide de démarrage rapide dépend de la bibliothèque de notifications.
+Cette [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) ajoute le code de bibliothèque de compatibilité pour l’utilisation des notifications toast à partir d’applications de bureau. Elle fait également référence aux kits de développement logiciel (SDK) UWP et vous permet de créer des notifications à l’aide de C# au lieu de XML brut. Le reste de ce guide de démarrage rapide dépend de la bibliothèque de notifications.
 
 
 ## <a name="step-2-implement-the-activator"></a>Étape 2 : implémenter l’activateur
@@ -55,7 +55,7 @@ public class MyNotificationActivator : NotificationActivator
 
 ## <a name="step-3-register-with-notification-platform"></a>Étape 3 : s’inscrire auprès de la plateforme de notification
 
-Ensuite, vous devez vous inscrire auprès de la plateforme de notification. Différentes étapes varient selon que vous utilisez des packages MSIX/épars ou Win32 classique. Si vous prenez en charge les deux, vous devez effectuer les deux étapes (Toutefois, vous n’avez pas besoin de répliquer votre code, notre bibliothèque le gère pour vous !).
+Ensuite, vous devez vous inscrire auprès de la plateforme de notification. Différentes étapes varient selon que vous utilisez des packages MSIX/épars ou un bureau classique. Si vous prenez en charge les deux, vous devez effectuer les deux étapes (Toutefois, vous n’avez pas besoin de répliquer votre code, notre bibliothèque le gère pour vous !).
 
 
 #### <a name="msixsparse-packages"></a>[Packages MSIX/Sparse](#tab/msix-sparse)
@@ -104,11 +104,11 @@ Si vous utilisez un package [MSIX](/windows/msix/desktop/source-code-overview) o
 ```
 
 
-#### <a name="classic-win32"></a>[Win32 classique](#tab/classic)
+#### <a name="unpackaged"></a>[Désassemblées](#tab/classic)
 
-Si vous utilisez Win32 classique (ou si vous prenez en charge les deux), vous devez déclarer l’ID de modèle utilisateur de l’application (identifiant AUMID) et le CLSID de l’activateur Toast (le GUID à partir de l’étape #2) sur le raccourci de votre application dans Démarrer.
+Si vous n’utilisez pas MSIX/Sparse (ou si vous prenez en charge les deux), vous devez déclarer l’ID de modèle utilisateur de l’application (identifiant AUMID) et le CLSID de l’activateur Toast (le GUID à partir de l’étape #2) sur le raccourci de votre application dans Démarrer.
 
-Choisissez un identifiant AUMID unique qui identifie votre application Win32. Il se présente généralement sous la forme [CompanyName]. [AppName], mais vous voulez vous assurer qu’il est unique pour toutes les applications (n’hésitez pas à ajouter des chiffres à la fin).
+Choisissez un identifiant AUMID unique qui identifie votre application de bureau. Il se présente généralement sous la forme [CompanyName]. [AppName], mais vous voulez vous assurer qu’il est unique pour toutes les applications (n’hésitez pas à ajouter des chiffres à la fin).
 
 ### <a name="step-31-wix-installer"></a>Étape 3,1 : programme d’installation de WiX
 
@@ -141,7 +141,7 @@ Ensuite, quel que soit votre programme d’installation, dans le code de démarr
 DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivator>("YourCompany.YourApp");
 ```
 
-Si vous prenez en charge à la fois le package MSIX/Sparse et le Win32 classique, n’hésitez pas à appeler cette méthode, quelle que soit la valeur. Si vous exécutez dans un package MSIX/Sparse, cette méthode sera simplement retournée immédiatement. Vous n’avez pas besoin de dupliquer votre code.
+Si vous prenez en charge à la fois le package MSIX/Sparse et le bureau classique, n’hésitez pas à appeler cette méthode, quelle que soit la valeur. Si vous exécutez dans un package MSIX/Sparse, cette méthode sera simplement retournée immédiatement. Vous n’avez pas besoin de dupliquer votre code.
 
 Cette méthode vous permet d’appeler les API de compatibilité pour envoyer et gérer des notifications sans avoir à fournir constamment vos identifiant AUMID. Elle insère la clé de registre LocalServer32 pour le serveur COM.
 
@@ -150,7 +150,7 @@ Cette méthode vous permet d’appeler les API de compatibilité pour envoyer et
 
 ## <a name="step-4-register-com-activator"></a>Étape 4 : inscrire l’activateur COM
 
-Pour le package MSIX/Sparse et les applications Win32 classiques, vous devez inscrire votre type d’activateur de notification, afin de pouvoir gérer les activations Toast.
+Pour le package MSIX/Sparse et les applications de bureau classiques, vous devez inscrire votre type d’activateur de notification, afin de pouvoir gérer les activations Toast.
 
 Dans le code de démarrage de votre application, appelez la méthode **RegisterActivator** suivante, en transmettant votre implémentation de la classe **NotificationActivator** que vous avez créée à l’étape #2. Cette méthode doit être appelée pour que vous puissiez recevoir des activations Toast.
 
@@ -162,7 +162,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 
 ## <a name="step-5-send-a-notification"></a>Étape 5 : envoyer une notification
 
-L’envoi d’une notification est identique aux applications UWP, sauf que vous allez utiliser la classe **DesktopNotificationManagerCompat** pour créer un **ToastNotifier**. La bibliothèque de compatibilité gère automatiquement la différence entre le package MSIX/Sparse et le Win32 classique, ce qui vous permet de ne pas avoir à dupliquer votre code. Pour le Win32 classique, la bibliothèque de compatibilité met en cache votre identifiant AUMID que vous avez fournie lors de l’appel de **RegisterAumidAndComServer** afin que vous n’ayez pas à vous soucier du moment auquel fournir ou ne pas fournir le identifiant aumid.
+L’envoi d’une notification est identique aux applications UWP, sauf que vous allez utiliser la classe **DesktopNotificationManagerCompat** pour créer un **ToastNotifier**. La bibliothèque de compatibilité gère automatiquement la différence entre le package MSIX/Sparse et le bureau classique, ce qui vous permet de ne pas avoir à dupliquer votre code. Pour le bureau classique, la bibliothèque de compatibilité met en cache votre identifiant AUMID que vous avez fournie lors de l’appel de **RegisterAumidAndComServer** afin que vous n’ayez pas à vous soucier du moment auquel fournir ou ne pas fournir le identifiant aumid.
 
 > [!NOTE]
 > Installez la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) afin de pouvoir créer des notifications à l’aide de C#, comme indiqué ci-dessous, au lieu d’utiliser des données XML brutes.
@@ -170,7 +170,7 @@ L’envoi d’une notification est identique aux applications UWP, sauf que vous
 Veillez à utiliser le **ToastContent** présenté ci-dessous (ou le modèle ToastGeneric si vous créez un fichier XML), car les modèles de notification Windows 8.1 Toast hérités n’activeront pas votre activateur de notification com que vous avez créé à l’étape #2.
 
 > [!IMPORTANT]
-> Les images http sont uniquement prises en charge dans les applications de package MSIX/Sparse qui disposent de la fonctionnalité Internet dans leur manifeste. Les applications Win32 classiques ne prennent pas en charge les images http ; vous devez télécharger l’image dans vos données d’application locales et la référencer localement.
+> Les images http sont uniquement prises en charge dans les applications de package MSIX/Sparse qui disposent de la fonctionnalité Internet dans leur manifeste. Les applications de bureau classiques ne prennent pas en charge les images http ; vous devez télécharger l’image dans vos données d’application locales et la référencer localement.
 
 ```csharp
 // Construct the visuals of the toast (using Notifications library)
@@ -187,7 +187,7 @@ DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 ```
 
 > [!IMPORTANT]
-> Les applications Win32 classiques ne peuvent pas utiliser les modèles Toast hérités (comme ToastText02). L’activation des modèles hérités échouera lorsque le CLSID COM sera spécifié. Vous devez utiliser les modèles ToastGeneric Windows 10 comme indiqué ci-dessus.
+> Les applications de bureau classiques ne peuvent pas utiliser les modèles Toast hérités (comme ToastText02). L’activation des modèles hérités échouera lorsque le CLSID COM sera spécifié. Vous devez utiliser les modèles ToastGeneric Windows 10 comme indiqué ci-dessus.
 
 
 ## <a name="step-6-handling-activation"></a>Étape 6 : gestion de l’activation
@@ -320,12 +320,12 @@ Si votre application n’est pas en cours d’exécution :
 
 
 ### <a name="foreground-vs-background-activation"></a>Activation au premier plan et en arrière-plan
-Pour les applications Win32, le premier plan et l’activation en arrière-plan sont gérés de la même façon : votre activateur COM est appelé. Il s’agit du code de votre application pour décider s’il faut afficher une fenêtre ou simplement effectuer un travail, puis quitter. Par conséquent, la spécification d’un **ActivationType** de l' **arrière-plan** dans votre contenu Toast ne change pas le comportement.
+Pour les applications de bureau, le premier plan et l’activation en arrière-plan sont gérés de la même façon : votre activateur COM est appelé. Il s’agit du code de votre application pour décider s’il faut afficher une fenêtre ou simplement effectuer un travail, puis quitter. Par conséquent, la spécification d’un **ActivationType** de l' **arrière-plan** dans votre contenu Toast ne change pas le comportement.
 
 
 ## <a name="step-7-remove-and-manage-notifications"></a>Étape 7 : supprimer et gérer les notifications
 
-La suppression et la gestion des notifications sont identiques aux applications UWP. Toutefois, nous vous recommandons d’utiliser notre bibliothèque de compatibilité pour obtenir un **DesktopNotificationHistoryCompat** . vous n’avez donc pas à vous soucier de la fourniture de identifiant aumid si vous utilisez le Win32 classique.
+La suppression et la gestion des notifications sont identiques aux applications UWP. Toutefois, nous vous recommandons d’utiliser notre bibliothèque de compatibilité pour obtenir un **DesktopNotificationHistoryCompat** . vous n’avez donc pas à vous soucier de la fourniture de identifiant aumid si vous utilisez le bureau classique.
 
 ```csharp
 // Remove the toast with tag "Message2"
@@ -340,13 +340,13 @@ DesktopNotificationManagerCompat.History.Clear();
 
 Pour déployer et déboguer votre application MSIX, consultez [exécuter, déboguer et tester une application de bureau empaquetée](/windows/msix/desktop/desktop-to-uwp-debug).
 
-Pour déployer et déboguer votre application Win32 classique, vous devez installer votre application par le biais du programme d’installation avant de déboguer normalement, afin que le raccourci de démarrage avec votre identifiant AUMID et CLSID soit présent. Une fois le raccourci de démarrage présent, vous pouvez déboguer à l’aide de la touche F5 à partir de Visual Studio.
+Pour déployer et déboguer votre application de bureau classique, vous devez installer votre application par le biais du programme d’installation avant de déboguer normalement, afin que le raccourci de démarrage avec vos identifiant AUMID et CLSID soit présent. Une fois le raccourci de démarrage présent, vous pouvez déboguer à l’aide de la touche F5 à partir de Visual Studio.
 
-Si vos notifications ne s’affichent pas dans votre application Win32 classique (et qu’aucune exception n’est levée), cela signifie probablement que le raccourci de démarrage n’est pas présent (installer votre application via le programme d’installation), ou que le identifiant AUMID que vous avez utilisé dans le code ne correspond pas à identifiant AUMID dans votre raccourci de début.
+Si vos notifications ne s’affichent pas dans votre application de bureau classique (et qu’aucune exception n’est levée), cela signifie probablement que le raccourci de démarrage n’est pas présent (installer votre application via le programme d’installation), ou que le identifiant AUMID que vous avez utilisé dans le code ne correspond pas à identifiant AUMID dans votre raccourci de démarrage.
 
 Si vos notifications s’affichent mais ne sont pas conservées dans le centre de maintenance (disparition après la fermeture de la fenêtre contextuelle), cela signifie que vous n’avez pas implémenté correctement l’activateur COM.
 
-Si vous avez installé à la fois votre package MSIX/Sparse et l’application Win32 classique, Notez que l’application de package MSIX/Sparse remplace l’application Win32 classique lors du traitement des activations Toast. Cela signifie que les toasts de l’application Win32 classique continueront de lancer l’application de package MSIX/Sparse quand vous cliquez dessus. La désinstallation de l’application de package MSIX/Sparse repasse l’activation à l’application Win32 classique.
+Si vous avez installé à la fois votre package MSIX/Sparse et l’application de bureau Classic, Notez que l’application de package MSIX/Sparse remplace l’application de bureau classique lors du traitement des activations de Toast. Cela signifie que les toasts de l’application de bureau classique lanceront toujours l’application de package MSIX/Sparse quand vous cliquez dessus. La désinstallation de l’application de package MSIX/Sparse repasse l’activation à l’application de bureau classique.
 
 
 ## <a name="known-issues"></a>Problèmes connus
@@ -357,5 +357,5 @@ Problème **résolu : l’application ne devient pas focalisée après avoir cl
 ## <a name="resources"></a>Ressources
 
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Notifications toast à partir d’applications Win32](toast-desktop-apps.md)
+* [Notifications toast à partir d’applications de bureau](toast-desktop-apps.md)
 * [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)

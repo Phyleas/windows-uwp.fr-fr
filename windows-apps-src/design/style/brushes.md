@@ -6,12 +6,12 @@ ms.date: 04/28/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e70c76f3ed659a46dd9834442049849dd3b7761
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1bf42e75ed8bb6d22fe8d4829aa6df32fa130230
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175523"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860044"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Utilisation des pinceaux pour peindre des arrière-plans, des premiers plans et des contours
 
@@ -106,7 +106,7 @@ Cet exemple crée un dégradé linéaire avec quatre couleurs et l’utilise pou
 
 La couleur de chaque point entre les extrémités est interpolée de façon linéaire sous la forme d’une combinaison de la couleur spécifiée par les deux points de dégradé. L’image suivante met en évidence les points de dégradés de l’exemple précédent. Les cercles indiquent la position des points de dégradé, tandis que la ligne en pointillés représente l’axe de dégradé.
 
-![Points de dégradé](images/linear-gradients-stops.png)
+![Diagramme montrant les points de dégradé 1 à 4 en partant de l’angle supérieur gauche du diagramme et en descendant vers la droite jusqu’au coin inférieur droit du diagramme.](images/linear-gradients-stops.png)
 
 *Combinaison de couleurs spécifiée par les deux points de dégradé englobants*
 
@@ -160,7 +160,7 @@ Cet exemple crée un dégradé linéaire avec quatre couleurs et l’utilise pou
 
 La couleur de chaque point entre les extrémités est interpolée de façon radiale sous la forme d’une combinaison de la couleur spécifiée par les deux points de dégradé englobants. L’image suivante met en évidence les points de dégradés de l’exemple précédent. 
 
-![Points de dégradé](images/radial-gradient.png)
+![Capture d’écran d’un dégradé radial.](images/radial-gradient.png)
 
 *Points de dégradé*
 

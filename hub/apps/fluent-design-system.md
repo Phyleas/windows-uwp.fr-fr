@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: 8a05a0a9aeb3a31e76c0510eef70b5ee3036d2f7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f5d1829d9fca4f5805a52ed34a1218723897c13d
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216831"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932990"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Système Fluent Design pour créateurs d’applications Windows
 
@@ -69,7 +69,7 @@ Comment faire pour qu’une application semble naturelle sur un grand nombre d�
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/thumbnail-size-classes.jpg)
+        ![Image illustrant la conception pour les points d’arrêt appropriés.](images/fluent/thumbnail-size-classes.jpg)
     :::column-end:::
     :::column span="2":::
 **Concevez pour les points d’arrêt appropriés**
@@ -82,7 +82,7 @@ Au lieu de concevoir une application pour chaque taille d’écran, le fait de s
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/rspd-resize.gif)
+        ![Brève vidéo illustrant une disposition dynamique.](images/fluent/rspd-resize.gif)
     :::column-end:::
     :::column span="2":::
 **Créez une disposition dynamique**
@@ -95,7 +95,7 @@ Pour qu’une application paraisse naturelle, elle doit adapter sa disposition �
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/devices.jpg)
+        ![Image illustrant la conception pour un large éventail d’appareils.](images/fluent/devices.jpg)
     :::column-end:::
     :::column span="2":::
 **Concevez pour un large éventail d’appareils**
@@ -107,7 +107,7 @@ Les applications UWP peuvent s’exécuter sur un large éventail d’appareils 
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/keyboard-shortcuts.jpg)
+        ![Image illustrant l’optimisation pour la sortie appropriée.](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
     :::column span="2":::
 **Optimisez pour l’entrée appropriée**
@@ -127,7 +127,7 @@ Les expériences Fluent utilisent des contrôles et des modèles de façon cohé
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/thumbnail-navview.png)
+        ![Image illustrant comment fournir la navigation appropriée.](images/fluent/thumbnail-navview.png)
     :::column-end:::
     :::column span="2":::
 **Fournissez la navigation appropriée**
@@ -139,7 +139,7 @@ Créez une expérience intuitive en utilisant la structure d’application et le
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/thumbnail-commanding.png)
+        ![Image montrant comment être interactif.](images/fluent/thumbnail-commanding.png)
     :::column-end:::
     :::column span="2":::
 **Soyez interactif**
@@ -151,7 +151,7 @@ Les boutons, les barres de commandes, les raccourcis clavier et les menus contex
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/thumbnail-controls-2.jpg)
+        ![Image illustrant l’utilisation du contrôle approprié pour le travail.](images/fluent/thumbnail-controls-2.jpg)
     :::column-end:::
     :::column span="2":::
 **Utilisez les contrôles appropriés pour la tâche**
@@ -183,7 +183,7 @@ Ajoutez de la lumière à votre application UWP :
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/Nav_Reveal_Animation.gif)
+        ![Brève vidéo illustrant l’effet Révéler.](images/fluent/Nav_Reveal_Animation.gif)
     :::column-end:::
     :::column span="2":::
 **Effet Révéler**
@@ -193,7 +193,7 @@ L’effet [Révéler](/windows/uwp/design/style/reveal) utilise la lumière pour
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/traveling-focus-fullscreen-light-rf.gif)
+        ![Brève vidéo illustrant l’effet Révéler focus.](images/fluent/traveling-focus-fullscreen-light-rf.gif)
     :::column-end:::
     :::column span="2":::
 **Révéler focus**
@@ -209,7 +209,7 @@ Ajoutez de la profondeur à votre application UWP :
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/_parallax_v2.gif)
+        ![Brève vidéo illustrant le défilement parallaxe.](images/fluent/_parallax_v2.gif)
     :::column-end:::
     :::column span="2":::
 **Parallaxe**
@@ -241,7 +241,7 @@ Ajoutez de la matière à votre application UWP :
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/acrylic_lighttheme_base.png)
+        ![Image illustrant une couche acrylique.](images/fluent/acrylic_lighttheme_base.png)
     :::column-end:::
     :::column span="2":::
 **Acrylique**
@@ -255,7 +255,7 @@ Vous voulez commencer à créer vos propres applications avec Fluent Design ? N
 
 :::row:::
     :::column:::
-        ![image fpo](images/fluent/thumbnail-toolkits.jpg)
+        ![Capture d’écran de la page Kits de ressources et exemples de conception.](images/fluent/thumbnail-toolkits.jpg)
     :::column-end:::
     :::column span="2":::
 **Page Kits de ressources et exemples de conception**

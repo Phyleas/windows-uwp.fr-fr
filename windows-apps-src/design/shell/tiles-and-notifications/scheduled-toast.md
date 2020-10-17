@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: Windows 10, UWP, notification Toast planifiée, scheduledtoastnotification, Guide de démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 04bbf3da388bf065b2b96684cf3f27cd7534ff51
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 8ef849490df82d7677e19d1f1619d98111611be3
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984735"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100307"
 ---
 # <a name="schedule-a-toast-notification"></a>Planifier une notification Toast
 
@@ -21,7 +21,7 @@ Les notifications Toast planifiées vous permettent de planifier l’affichage d
 Notez que les notifications Toast planifiées ont une fenêtre de remise de 5 minutes. Si l’ordinateur est éteint pendant l’heure de remise planifiée et reste inactif pendant plus de 5 minutes, la notification est « supprimée », car elle n’est plus pertinente pour l’utilisateur. Si vous avez besoin de garantir la remise des notifications, quelle que soit la durée de l’arrêt de l’ordinateur, nous vous recommandons d’utiliser une tâche en arrière-plan avec un déclencheur de temps, comme illustré dans [cet exemple de code](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off).
 
 > [!IMPORTANT]
-> Les applications Win32 (packages MSIX/Sparse et Win32 classique) présentent des étapes légèrement différentes pour l’envoi de notifications et la gestion de l’activation. Suivez les instructions ci-dessous, mais remplacez `ToastNotificationManager` par la `DesktopNotificationManagerCompat` classe de la documentation [Win32 Apps](toast-desktop-apps.md) .
+> Les applications de bureau (packages MSIX/Sparse et bureau classique) présentent des étapes légèrement différentes pour l’envoi de notifications et la gestion de l’activation. Suivez les instructions ci-dessous, mais remplacez `ToastNotificationManager` par la `DesktopNotificationManagerCompat` classe de la documentation sur les [applications de bureau](toast-desktop-apps.md) .
 
 > **API importantes**: [classe ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 

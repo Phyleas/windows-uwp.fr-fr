@@ -1,16 +1,16 @@
 ---
 title: Animations basées sur les relations
 description: Découvrez comment utiliser ExpressionAnimations pour créer des animations basées sur les relations lorsque Motion dépend d’une propriété d’un autre objet.
-ms.date: 10/10/2017
+ms.date: 10/16/2020
 ms.topic: article
 keywords: Windows 10, UWP, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 75adcd2f762fd4314d7b852811760d523ef522aa
+ms.sourcegitcommit: fe21402578a1f434769866dd3c78aac63dbea5ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166363"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152409"
 ---
 # <a name="relation-based-animations"></a>Animations basées sur les relations
 
@@ -52,10 +52,10 @@ Les expressions prennent également en charge un ensemble de mots clés (express
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>Création d’expressions avec ExpressionBuilder
 
-Il existe deux options pour créer des expressions dans leur application UWP :
+Il existe deux options pour créer des expressions dans votre application UWP :
 
-1. Génération de l’équation sous forme de chaîne via l’API publique officielle.
-1. Génération de l’équation dans un modèle objet de type sécurisé via l’outil ExpressionBuilder Open source. Consultez la [source et la documentation GitHub](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
+1. Générez l’équation sous forme de chaîne via l’API publique officielle.
+1. Générez l’équation dans un modèle objet de type sécurisé via l’outil ExpressionBuilder inclus dans le kit de développement de la [communauté Windows](/windows/communitytoolkit/animations/expressions).
 
 Pour les besoins de ce document, nous allons définir nos expressions à l’aide de ExpressionBuilder.
 
@@ -79,7 +79,7 @@ KeyFrameAnimation.InsertExpressionKeyFrame(Single, ExpressionNode)
 
 Toutefois, contrairement à ExpressionAnimations, les ExpressionKeyFrames ne sont évalués qu’une seule fois lorsque le KeyFrameAnimation est démarré. N’oubliez pas que vous ne transmettez pas un ExpressionAnimation en tant que valeur de l’image clé, plutôt qu’une chaîne (ou un ExpressionNode, si vous utilisez ExpressionBuilder).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Passons maintenant en revue un exemple d’utilisation d’expressions, en particulier l’exemple PropertySet de la Galerie d’exemples d’interfaces utilisateur Windows. Nous allons examiner l’expression qui gère le comportement de mouvement orbite de la boule bleue.
 
@@ -112,7 +112,9 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` est une notation « using » abrégée pour définir ExpressionBuilder. ExpressionFunctions.
+> `EF` est une notation « using » abrégée pour définir ExpressionFunctions.
+>
+> `using EF = Microsoft.Toolkit.Uwp.UI.Animations.Expressions.ExpressionFunctions;`
 
 Enfin, Combinez ces composants et référencez la position de la boule rouge pour définir la relation mathématique.
 

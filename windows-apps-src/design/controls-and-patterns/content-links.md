@@ -10,16 +10,19 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a35e065a44eb55b84f6b70f5833c8652188a8c9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 867ece1f3517b2b34836dc87ab4e6545ba3d3bbc
+ms.sourcegitcommit: 837ef4b2c2375d023ee85204f72a029f9ec8f4ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174643"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079284"
 ---
 # <a name="content-links-in-text-controls"></a>Liens de contenu dans les contrôles de texte
 
 Les liens de contenu offrent un moyen d'incorporer des données enrichies dans vos contrôles de texte, ce qui permet à l’utilisateur de trouver et d’utiliser plus d’informations sur une personne ou un lieu, sans quitter le contexte de votre application.
+
+> [!IMPORTANT]
+> Les fonctionnalités Windows qui autorisent les liens de contenu ne sont pas disponibles dans les versions de Windows postérieures à Windows 10 version 1903. Les liens de contenu pour les contrôles de texte XAML ne fonctionnent pas dans les versions de Windows ultérieures à la version 1903.
 
 Lorsque l’utilisateur préfixe une entrée avec le symbole (@) dans un contrôle RichEditBox, une liste de suggestions de personnes et/ou de lieux correspondant à l’entrée s'affiche. Si, par exemple, l’utilisateur sélectionne un lieu, un lien de type ContentLink vers ce lieu est inséré dans le texte. Si l’utilisateur appelle le lien de contenu dans le contrôle RichEditBox, un menu volant s’affiche avec une carte et des informations supplémentaires sur le lieu en question.
 

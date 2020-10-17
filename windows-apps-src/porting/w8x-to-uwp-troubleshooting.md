@@ -1,17 +1,17 @@
 ---
-description: Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet.
+description: Résoudre les problèmes que vous pouvez rencontrer lors du Portage de Windows Runtime 8. x vers UWP
 title: Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e9d2ba97ece396cbec3c0b1f1cf9941b91f261aa
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b0e915aec7f37600ce821f1a097a8aa5ac7ca76b
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162193"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133102"
 ---
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
 

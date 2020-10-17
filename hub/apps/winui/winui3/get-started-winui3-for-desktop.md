@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 2b946047602013704b27fb5c5565155d38dbb7f8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 164ae035d3b9dda24137bcb09dd208e718db0319
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154823"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933100"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>Bien démarrer avec WinUI 3 pour les applications de bureau
 
@@ -31,7 +31,7 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
 3. Sélectionnez le type de projet **Blank App, Packaged (WinUI in Desktop)** , puis cliquez sur **Suivant**.
 
-    ![Modèle de projet d’application vide](images/WinUI-csharp-newproject.png)
+    ![Capture d’écran de l’Assistant Créer un projet avec l’option Blank App, Packaged (WinUI in Desktop) mise en surbrillance.](images/WinUI-csharp-newproject.png)
 
 4. Entrez un nom de projet, choisissez d’autres options si vous le souhaitez, puis cliquez sur **Créer**.
 
@@ -43,15 +43,15 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
     * ***Nom du projet* (Desktop)**  : ce projet contient le code de votre application. Le fichier de code **App.xaml.cs** définit une classe `Application` qui représente l’instance de votre application, et le fichier de code **MainWindow.xaml.cs** définit une classe `MainWindow` qui représente la fenêtre principale affichée par votre application. Ces classes dérivent de types dans l’espace de noms **Microsoft.UI.Xaml** fourni par WinUI.
 
-        ![Ajouter un projet](images/WinUI-csharp-appproject.png)
+        ![Capture d’écran de Visual Studio montrant le volet Explorateur de solutions et le contenu du fichier MainPage.xaml.cs.](images/WinUI-csharp-appproject.png)
 
     * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un [package MSIX](/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Ce projet contient le [manifeste du package](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
 
-        ![Ajouter un projet](images/WinUI-csharp-packageproject.png)
+        ![Capture d’écran de Visual Studio montrant le volet Explorateur de solutions et le contenu du fichier Package.appxmanifest.](images/WinUI-csharp-packageproject.png)
 
 7. Pour ajouter un nouvel élément à votre projet d’application, cliquez avec le bouton droit sur le nœud du projet ***Nom du projet* (Desktop)** dans l’**Explorateur de solutions** et sélectionnez **Ajouter** -> **Nouvel élément**. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez l’onglet **WinUI**, choisissez l’élément que vous souhaitez ajouter, puis cliquez sur **Ajouter**. Pour plus d’informations sur les éléments disponibles, consultez [cette section](index.md#item-templates-for-winui-3).
 
-    ![Nouvel élément](images/WinUI-csharp-newitem.png)
+    ![Capture d’écran de la boîte de dialogue Ajouter un nouvel élément avec l’option Installé > Éléments Visual C# > WinUI sélectionnée et l’option Page vierge mise en surbrillance.](images/WinUI-csharp-newitem.png)
 
 8. Générez et exécutez votre solution pour vérifier que l’application s’exécute sans erreur.
 
@@ -63,7 +63,7 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
 3. Sélectionnez le type de projet **Blank App, Packaged (WinUI in Desktop)** , puis cliquez sur **Suivant**.
 
-    ![Modèle de projet d’application vide](images/WinUI-cpp-newproject.png)
+    ![Autre capture d’écran de l’Assistant Créer un projet avec l’option Blank App, Packaged (WinUI in Desktop) mise en surbrillance.](images/WinUI-cpp-newproject.png)
 
 4. Entrez un nom de projet, choisissez d’autres options si vous le souhaitez, puis cliquez sur **Créer**.
 
@@ -75,11 +75,11 @@ Pour utiliser les modèles de projet WinUI 3 pour applications de bureau décri
 
     * ***Nom du projet* (Desktop)**  : ce projet contient le code de votre application. Le fichier de code **App.xaml.cs** et différents fichiers de code **App** définissent une classe `Application` qui représente l’instance de votre application, et le fichier de code **MainWindow.xaml** et différents fichiers de code **MainWindow** définissent une classe `MainWindow` qui représente la fenêtre principale affichée par votre application. Ces classes dérivent de types dans l’espace de noms **Microsoft.UI.Xaml** fourni par WinUI.
 
-        ![Ajouter un projet](images/WinUI-cpp-appproject.png)
+        ![Capture d’écran de Visual Studio montrant le volet Explorateur de solutions et le contenu du fichier MainPage.xaml.](images/WinUI-cpp-appproject.png)
 
     * ***Nom du projet* (Package)**  : il s’agit d’un [Projet de création de packages d’applications Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) configuré pour générer l’application dans un [package MSIX](/windows/msix/overview). Vous bénéficiez ainsi d’une expérience de déploiement moderne, de la possibilité de l’intégrer aux fonctionnalités de Windows 10 par le biais d’extensions de package et bien plus encore. Ce projet contient le [manifeste du package](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) pour votre application, et il s’agit du projet de démarrage de votre solution par défaut.
 
-        ![Projet du package](images/WinUI-cpp-packageproject.png)
+        ![Autre capture d’écran de Visual Studio montrant le volet Explorateur de solutions et le contenu du fichier Package.appxmanifest.](images/WinUI-cpp-packageproject.png)
 
 7. Pour ajouter un nouvel élément à votre projet d’application, cliquez avec le bouton droit sur le nœud du projet ***Nom du projet* (Desktop)** dans l’**Explorateur de solutions** et sélectionnez **Ajouter** -> **Nouvel élément**. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez l’onglet **WinUI**, choisissez l’élément que vous souhaitez ajouter, puis cliquez sur **Ajouter**. Pour plus d’informations sur les éléments disponibles, consultez [cette section](index.md#item-templates-for-winui-3).
 

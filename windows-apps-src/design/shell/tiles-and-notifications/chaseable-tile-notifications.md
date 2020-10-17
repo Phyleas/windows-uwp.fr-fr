@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, vignettes chaseables, vignettes dynamiques, notifications de vignettes Chase
 ms.localizationpriority: medium
-ms.openlocfilehash: 770c3f13d701de622c4f6ea8075dfef5f6b1afc8
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 951dc891fb34ae4be7551c08ff47eabc19ae9eb6
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984455"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100277"
 ---
 # <a name="chaseable-tile-notifications"></a>Notifications par vignette pouvant être suivies
 
@@ -140,14 +140,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
-### <a name="accessing-onlaunched-from-win32-applications"></a>Accès à OnLaunched à partir d’applications Win32
+### <a name="accessing-onlaunched-from-desktop-applications"></a>Accès à OnLaunched à partir d’applications de bureau
 
-Les applications Win32 (comme WPF, etc.) à l’aide du [pont de bureau](https://developer.microsoft.com/windows/bridges/desktop)peuvent également utiliser des vignettes chaseuses ! La seule différence est l’accès aux arguments OnLaunched. Notez que vous devez [d’abord empaqueter votre application avec le pont Desktop](/windows/msix/desktop/source-code-overview).
+Les applications de bureau (comme WPF, etc.) à l’aide du [pont de bureau](https://developer.microsoft.com/windows/bridges/desktop)peuvent également utiliser des vignettes chaseuses ! La seule différence est l’accès aux arguments OnLaunched. Notez que vous devez [d’abord empaqueter votre application avec le pont Desktop](/windows/msix/desktop/source-code-overview).
 
 > [!IMPORTANT]
 > **Nécessite la mise à jour du 2018 octobre**: pour utiliser l' `AppInstance.GetActivatedEventArgs()` API, vous devez cibler le kit de développement logiciel (SDK) 17763 et exécuter Build 17763 ou une version ultérieure.
 
-Pour les applications Win32, pour accéder aux arguments de lancement, procédez comme suit...
+Pour les applications de bureau, pour accéder aux arguments de lancement, procédez comme suit...
 
 ```csharp
 

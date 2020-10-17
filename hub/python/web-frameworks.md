@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python sur windows, application web python avec wsl, application web python avec un sous-système windows pour linux, développement web python sur windows, application flask sur windows, application django sur windows, application web python, développement web flask sur windows, développement web django sur windows, développement web windows avec python et développement web de code python, extension wsl-remote, ubuntu, wsl, venv, pip, extension python microsoft, exécuter python sur windows, utiliser python sur windows, création avec python sur windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: fedfb42e4c1604b3570c2b4db21b12926bea3762
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 187195133dd614818d3c68473cc53b71a0b32333
+ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174563"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91958742"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Bien démarrer avec Python pour le développement web sur Windows
 
@@ -83,7 +83,7 @@ L’utilisation d’environnements virtuels est une bonne pratique recommandée 
     ![Créer un environnement virtuel](../images/wsl-venv.png)
 
 > [!TIP]
-> Nous vous recommandons de créer l’environnement virtuel dans le répertoire dans lequel vous prévoyez d’installer votre projet. Étant donné que chaque projet doit avoir son propre répertoire distinct, chacun d’eux aura son propre environnement virtuel ; il n’est donc pas nécessaire de lui attribuer un nom unique. Nous vous suggérons d’utiliser le nom **.venv** pour suivre la convention Python. Certains outils (tels que pipenv) ont également ce nom par défaut si vous les installez dans le répertoire de votre projet. Évitez d’utiliser **.env**, car cet élément entre en conflit avec les fichiers de définition de variable d’environnement. En règle générale, nous ne recommandons pas les noms ne commençant pas par un point, car vous n’avez pas besoin que le paramètre `ls` vous rappelle en permanence que le répertoire existe. Nous vous recommandons également d’ajouter **.venv** à votre fichier .gitignore. (voici le [modèle gitignore par défaut de GitHub pour Python](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106), à titre de référence.) Pour en savoir plus sur l’utilisation des environnements virtuels dans VS Code, consultez la section relative à [l’utilisation d’environnements Python dans VS Code](https://code.visualstudio.com/docs/python/environments).
+> Nous vous recommandons de créer l’environnement virtuel dans le répertoire dans lequel vous prévoyez d’installer votre projet. Étant donné que chaque projet doit avoir son propre répertoire distinct, chacun aura son propre environnement virtuel ; il n’est donc pas nécessaire de lui attribuer un nom unique. Nous vous suggérons d’utiliser le nom **.venv** pour suivre la convention Python. Certains outils (tels que pipenv) ont également ce nom par défaut si vous les installez dans le répertoire de votre projet. Évitez d’utiliser **.env**, car cet élément entre en conflit avec les fichiers de définition de variable d’environnement. En règle générale, nous ne recommandons pas les noms ne commençant pas par un point, car vous n’avez pas besoin que le paramètre `ls` vous rappelle en permanence que le répertoire existe. Nous vous recommandons également d’ajouter **.venv** à votre fichier .gitignore. (voici le [modèle gitignore par défaut de GitHub pour Python](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106), à titre de référence.) Pour en savoir plus sur l’utilisation des environnements virtuels dans VS Code, consultez la section relative à [l’utilisation d’environnements Python dans VS Code](https://code.visualstudio.com/docs/python/environments).
 
 ## <a name="open-a-wsl---remote-window"></a>Ouvrir une fenêtre WSL-Remote
 

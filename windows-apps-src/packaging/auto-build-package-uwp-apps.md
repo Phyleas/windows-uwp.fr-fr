@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7f0e1d460ca52c659401bbb291deafa5746b7bb6
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158223"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933110"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -73,12 +73,12 @@ Pour charger un certificat pour votre build automatisée
 1. Dans Azure Pipelines, développez **Pipelines** dans le volet de navigation et cliquez sur **Bibliothèque**.
 2. Cliquez sur l’onglet **Fichiers sécurisés**, puis sur **+ Fichier sécurisé**.
 
-    ![Charger un fichier sécurisé](images/secure-file1.png)
+    ![Capture d’écran d’Azure avec l’option Bibliothèque mise en surbrillance montrant la page Fichiers sécurisés.](images/secure-file1.png)
 
 3. Recherchez le fichier de certificat et cliquez sur **OK**.
 4. Une fois le certificat chargé, sélectionnez-le pour afficher ses propriétés. Sous **Autorisations des pipelines**, activez l’option **Autoriser l’utilisation dans tous les pipelines**.
 
-    ![Charger un fichier sécurisé](images/secure-file2.png)
+    ![Capture d’écran de la section Autorisations des pipelines, avec l’option Autoriser l’utilisation dans tous les pipelines sélectionnée.](images/secure-file2.png)
 
 5. Si la clé privée dans le certificat a un mot de passe, nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) puis de le lier à un [groupe de variables](/azure/devops/pipelines/library/variable-groups). Vous pouvez utiliser la variable pour accéder au mot de passe à partir du pipeline. Notez qu’un mot de passe est pris en charge uniquement pour la clé privée. L’utilisation d’un fichier de certificat qui est lui-même protégé par mot de passe n’est pas prise en charge actuellement.
 

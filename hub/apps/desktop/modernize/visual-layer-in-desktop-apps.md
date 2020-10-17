@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 33a5f0bc31a8fe1421f7ab0de5f229d2feb77915
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 8fc9b3ea0f085a12be769e9733b3f92b2700dc16
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730136"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932940"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>Utilisation de la couche visuelle dans les applications de bureau
 
@@ -22,7 +22,7 @@ Dans beaucoup de scénarios, vous pouvez utiliser les [îlots XAML](xaml-islands
 
 La couche visuelle fournit une API en mode retenu très performante pour les graphismes, les effets et les animations. Elle est la base de l’interface utilisateur sur les appareils Windows 10. Les contrôles XAML UWP sont basés sur la couche visuelle, ce qui permet de gérer de nombreux aspects du [système Fluent Design](/windows/uwp/design/fluent-design-system/index), tels que la lumière, la profondeur, le mouvement, la matière et la mise à l’échelle.
 
-![Interface utilisateur créée avec la couche visuelle](images/visual-layer-interop/pull-to-animate.gif)
+![Brève vidéo présentant une interface utilisateur créée avec la couche visuelle.](images/visual-layer-interop/pull-to-animate.gif)
 
 > _Interface utilisateur créée avec la couche visuelle_
 
@@ -54,7 +54,7 @@ Les [effets de composition](/windows/uwp/composition/composition-effects) inclue
 
 Les [animations de composition](/windows/uwp/composition/composition-animation) s’exécutent directement dans le processus du compositeur, indépendamment du thread d’interface utilisateur. Cela garantit la fluidité et la mise à l’échelle des animations quand vous exécutez simultanément un grand nombre d’animations explicites. En plus des animations d’images clés familières pour gérer les modifications de propriétés dans le temps, vous pouvez utiliser des expressions pour établir des relations mathématiques entre les différentes propriétés, y compris les entrées utilisateur. Avec les animations basées sur des entrées, vous créez une interface utilisateur qui répond de manière dynamique et fluide aux entrées utilisateur, ce qui favorise l’engagement de l’utilisateur.
 
-![Interface utilisateur créée avec la couche visuelle](images/visual-layer-interop/swipe-scroller.gif)
+![Brève vidéo d’une autre interface utilisateur créée avec la couche visuelle.](images/visual-layer-interop/swipe-scroller.gif)
 
 > _Mouvement illustré dans la [Galerie d’exemples de composition d’interface utilisateur Windows](https://github.com/Microsoft/WindowsCompositionSamples/tree/master/SampleGallery)._
 

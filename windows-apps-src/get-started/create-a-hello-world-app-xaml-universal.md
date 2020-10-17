@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dda1c0f9a7b61c13965ff2f71c8100a8e771bd7d
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175253"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860077"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application « Hello, World! » (XAML)
 
@@ -61,11 +61,11 @@ Vous allez apprendre à effectuer les opérations suivantes :
 
 5.  La boîte de dialogue Version cible/Version minimale s’affiche. Les paramètres par défaut étant appropriés pour ce didacticiel, sélectionnez **OK** pour créer le projet.
 
-    ![Fenêtre Explorateur de solutions](images/win10-cs-02.png)
+    ![Capture d’écran de la boîte de dialogue Nouveau projet Windows universel.](images/win10-cs-02.png)
 
 6.  Votre nouveau projet s’ouvre en affichant ses fichiers dans le volet **Explorateur de solutions**, à droite. Vous devrez peut-être choisir l’onglet **Explorateur de solutions** à la place de l’onglet **Propriétés** pour voir vos fichiers.
 
-    ![Fenêtre Explorateur de solutions](images/win10-cs-03.png)
+    ![Capture d’écran du panneau Explorateur de solutions, avec l’application Hello World (Windows universel) mise en évidence.](images/win10-cs-03.png)
 
 Même si le modèle **Application vide (Windows universel)** est dépouillé, il contient cependant de nombreux fichiers. Ces fichiers sont indispensables pour toutes les applications UWP en C#. Ils se trouvent dans tous les projets que vous créez dans Visual Studio.
 
@@ -110,15 +110,15 @@ Ajoutons un bouton à la page. Dans ce didacticiel, vous n’utilisez qu’une p
 
     Vous remarquerez dans la partie supérieure de l’écran la présence d’un affichage graphique et en dessous celle d’un affichage de code XAML. Même si les deux peuvent être modifiés, nous n’utiliserons pour le moment que l’affichage graphique.
 
-    ![Fenêtre Explorateur de solutions](images/win10-cs-04.png)
+    ![Capture d’écran de Visual Studio montrant MainPage.xaml en mode Création.](images/win10-cs-04.png)
 
 2.  Cliquez sur l’onglet vertical **Boîte à outils** à gauche pour ouvrir la liste des contrôles d’interface utilisateur. (Vous pouvez cliquer sur l’épingle dans sa barre de titre pour qu’elle reste visible.)
 
-    ![Fenêtre Explorateur de solutions](images/win10-cs-05.png)
+    ![Capture d’écran du volet Boîte à outils avec une flèche rouge pointant sur l’icône d’épingle.](images/win10-cs-05.png)
 
 3.  Développez **Contrôles XAML communs** et faites glisser le contrôle **Button** jusqu’au milieu de l’aire de conception.
 
-    ![Fenêtre Explorateur de solutions](images/win10-cs-06.png)
+    ![Capture d’écran du volet Boîte à outils et de MainPage.xaml en mode Création, avec l’option Button mise en surbrillance dans le volet Boîte à outils et un contrôle Button affiché en mode Création.](images/win10-cs-06.png)
 
     Si vous regardez dans la fenêtre de code XAML, vous constaterez que le contrôle Button y a été aussi ajouté :
 
@@ -136,7 +136,7 @@ Ajoutons un bouton à la page. Dans ce didacticiel, vous n’utilisez qu’une p
 
 Le bouton figurant dans l’aire de conception est alors mis à jour pour présenter le nouveau texte.
 
-![Fenêtre Explorateur de solutions](images/win10-cs-07.png)
+![Capture d’écran du bouton Hello, world, avec un cadre rouge autour de lui et le code-behind du bouton.](images/win10-cs-07.png)
 
 ## <a name="step-3-start-the-app"></a>Étape 3 : Démarrer l’application
 

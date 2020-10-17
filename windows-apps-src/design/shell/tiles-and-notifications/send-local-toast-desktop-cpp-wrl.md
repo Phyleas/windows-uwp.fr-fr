@@ -7,19 +7,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, package fragmenté, C++, CPP, Cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: a227ccbc52aa3c1dd8c0cd9c61cdecf140375fe2
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: e1e8aedd867dfdcabd382ebde1dd4c96a94d1001
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984655"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100317"
 ---
 # <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>Envoyer une notification Toast locale à partir d’applications Win32 C++ WRL
 
 Les applications Win32 (y compris les applications [MSIX](/windows/msix/desktop/source-code-overview) empaquetées, les applications qui utilisent des [packages éparss](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) pour obtenir l’identité des packages et les applications Win32 non empaquetées classiques) peuvent envoyer des notifications de Toast interactives, tout comme les applications Windows. Toutefois, il existe quelques étapes spéciales pour les applications Win32 en raison des différents schémas d’activation et de l’absence potentielle d’identité du package si vous n’utilisez pas MSIX ou un package fragmenté.
 
 > [!IMPORTANT]
-> Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langages Win32, consultez [Win32 C#](send-local-toast-desktop.md).
+> Si vous écrivez une application UWP, consultez la [documentation UWP](send-local-toast.md). Pour les autres langues du bureau, consultez [Desktop C#](send-local-toast-desktop.md).
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>Étape 1 : activer le kit de développement logiciel (SDK) Windows 10

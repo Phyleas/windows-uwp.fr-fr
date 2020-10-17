@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: vignettes Windows 10, UWP et secondaires
 ms.localizationpriority: medium
-ms.openlocfilehash: a4cd65093e9969531c3de683064973aab58b1680
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: ecafd52be36b34c83d9b11757ccd733e796fd727
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984665"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100337"
 ---
 # <a name="secondary-tiles"></a>Vignettes secondaires
 
@@ -33,7 +33,7 @@ En ajoutant des vignettes secondaires à votre application, vous aidez l’utili
 | --- | --- |
 | [Aide sur les vignettes secondaires](secondary-tiles-guidance.md) | En savoir quand et où vous devez utiliser des vignettes secondaires. |
 | [Épingler les vignettes secondaires](secondary-tiles-pinning.md) | Découvrez comment épingler une vignette secondaire. |
-| [Épingler à partir d’applications Win32](secondary-tiles-desktop-pinning.md) | Les applications Win32 peuvent épingler des vignettes secondaires grâce au pont de bureau ! |
+| [Épingler à partir d’applications de bureau](secondary-tiles-desktop-pinning.md) | Les applications de bureau peuvent épingler des vignettes secondaires grâce au pont de bureau. |
 
 
 ## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>Vignettes secondaires par rapport aux vignettes principales
@@ -79,5 +79,5 @@ Pour savoir quand et comment utiliser des vignettes secondaires, ainsi que d’a
 Pour savoir comment épingler des vignettes secondaires, consultez [Épingler des vignettes secondaires](secondary-tiles-pinning.md).
 
 
-## <a name="win32-applications-and-secondary-tiles"></a>Applications Win32 et vignettes secondaires
-Pour savoir comment utiliser des vignettes secondaires à partir de votre application Win32 via le pont de bureau, consultez [Épingler des vignettes secondaires à partir d’applications Win32](secondary-tiles-desktop-pinning.md).
+## <a name="desktop-applications-and-secondary-tiles"></a>Applications de bureau et vignettes secondaires
+Pour savoir comment utiliser des vignettes secondaires à partir de votre application de bureau via le pont Desktop Bridge, consultez [Épingler des vignettes secondaires à partir d’applications de bureau](secondary-tiles-desktop-pinning.md).

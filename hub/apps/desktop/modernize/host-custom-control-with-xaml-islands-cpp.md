@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6cdeee0730a2fe68f671a41ea77b000ab13bc0cb
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 3f12c3d16cabcbe834ca9bb55a437e3f932bbf78
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671558"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933050"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>Héberger un contrôle XAML WinRT personnalisé dans une application Win32 C++
 
@@ -377,7 +377,7 @@ Mettez à jour le projet **MyDesktopWin32App** afin de définir une macro pour d
 
 5. Cliquez avec le bouton droit sur le projet **MyDesktopWin32App**, sélectionnez **Propriétés**, puis développez **Outil Manifeste** -> **Entrée et sortie** dans le volet gauche. Définissez la propriété **Prise en charge DPI** sur **Reconnaissant les résolutions élevées par moniteur**. Si vous ne définissez pas cette propriété, vous risquez de rencontrer une erreur de configuration de manifeste dans certains scénarios impliquant des résolutions élevées.
 
-    ![Paramètres de projet C/C++](images/xaml-islands/xaml-island-cpp-8.png)
+    ![Capture d’écran des paramètres de projet C/ C++.](images/xaml-islands/xaml-island-cpp-8.png)
 
 6. Cliquez sur **OK** pour fermer la boîte de dialogue **Pages de propriétés**.
 
