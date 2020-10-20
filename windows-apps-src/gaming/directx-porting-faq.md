@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 81fc8e9cd762c5fc0bb602e32907c40ca5c60e46
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bc6e1c2053b6ab3afe6eb42ed8b5223feb8ffb65
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163133"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192989"
 ---
 # <a name="directx-11-porting-faq"></a>Portage DirectX 11 : FAQ
 
@@ -54,7 +54,7 @@ La série d’Articles de Chuck Walbourn intitulée [techniques de codage à dou
 
 Il existe deux chemins d’API pour le chargement d’image :
 
--   Le pipeline de contenu convertit les images en fichiers DDS utilisés comme ressources de texture Direct3D. Voir [Utilisation de composants 3D dans votre jeu ou application](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
+-   Le pipeline de contenu convertit les images en fichiers DDS utilisés comme ressources de texture Direct3D. Voir [Utilisation de composants 3D dans votre jeu ou application](/visualstudio/designers/using-3-d-assets-in-your-game-or-app).
 -   Le [composant Imagerie Windows](/windows/desktop/wic/-wic-lh) peut servir à charger des images de plusieurs formats et convient aussi bien aux bitmaps Direct2D qu’aux ressources de texture Direct3D.
 
 Vous pouvez aussi utiliser DDSTextureLoader et WICTextureLoader, à partir du [DirectXTK](https://github.com/Microsoft/DirectXTK) ou [DirectXTex](https://github.com/Microsoft/DirectXTex).
@@ -116,12 +116,12 @@ Consultez les rubriques suivantes :
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>Quel autre format de fichier puis-je utiliser pour remplacer le format .x de mes modèles ?
 
 
-Il n’existe pas de format de remplacement officiel pour les fichiers .x, mais bon nombre des exemples utilisent le format SDKMesh. Visual Studio comprend aussi un [pipeline de contenu](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015) qui compile plusieurs formats courants en fichiers CMO. Ces fichiers peuvent être chargés avec du code à partir du starter kit 3D de Visual Studio, ou à l’aide du [DirectXTK](https://github.com/Microsoft/DirectXTK).
+Bien que nous n’ayons pas de remplacement officiel du format de fichier. x, la plupart des exemples utilisent le format SDKMesh. Visual Studio comprend aussi un [pipeline de contenu](/visualstudio/designers/using-3-d-assets-in-your-game-or-app) qui compile plusieurs formats courants en fichiers CMO. Ces fichiers peuvent être chargés avec du code à partir du starter kit 3D de Visual Studio, ou à l’aide du [DirectXTK](https://github.com/Microsoft/DirectXTK).
 
 ## <a name="how-do-i-debug-my-shaders"></a>Comment déboguer mes nuanceurs ?
 
 
-Microsoft Visual Studio 2015 inclut des outils de diagnostic pour les graphiques DirectX. Voir [Débogage des graphiques DirectX](/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
+Microsoft Visual Studio comprend des outils de diagnostic pour DirectX Graphics. Voir [Débogage des graphiques DirectX](/visualstudio/debugger/visual-studio-graphics-diagnostics).
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>Quel est l’équivalent Direct3D 11 de la fonction *x* ?
 

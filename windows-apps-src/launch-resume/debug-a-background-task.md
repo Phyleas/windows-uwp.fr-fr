@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d008a6956c3acd22dcb99e6bf4e1cda1442545
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 5696d3c5ffb28ee8dc6ebd51e678894ee78ae420
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750165"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192979"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
@@ -91,12 +91,12 @@ L’activation de la tâche en arrière-plan dépend de trois éléments :
 
 ## <a name="background-tasks-and-visual-studio-package-deployment"></a>Tâches en arrière-plan et déploiement du package Visual Studio
 
-Si vous déployez une application utilisant des tâches en arrière-plan à l’aide de Visual Studio et si vous mettez ensuite à jour la version (majeure et/ou mineure) précisée dans le concepteur du manifeste, le redéploiement de l’application avec Visual Studio qui s’ensuivra peut entraîner un blocage des tâches en arrière-plan de l’application. Vous pouvez remédier à ce problème de la manière suivante.
+Si une application qui utilise des tâches en arrière-plan est déployée à l’aide de Visual Studio et que la version (major et/ou minor) spécifiée dans le concepteur de manifeste est ensuite mise à jour, le redéploiement de l’application avec Visual Studio peut entraîner le blocage des tâches en arrière-plan de l’application. Vous pouvez remédier à ce problème de la manière suivante.
 
 -   Utilisez Windows PowerShell pour déployer l’application mise à jour (plutôt que Visual Studio). Pour cela, exécutez le script généré avec le package.
--   Si vous avez déjà déployé l’application à l’aide de Visual Studio et si ses tâches en arrière-plan sont maintenant bloquées, redémarrez ou bien déconnectez-vous et reconnectez-vous afin de relancer l’exécution des tâches en arrière-plan de l’application.
+-   Si vous avez déjà déployé l’application à l’aide de Visual Studio et que ses tâches en arrière-plan sont désormais bloquées, redémarrez ou déconnectez-vous pour que les tâches en arrière-plan de l’application fonctionnent à nouveau.
 -   Vous pouvez sélectionner l’option de débogage « Toujours réinstaller mon package » pour éviter cela dans des projets C#.
--   Patientez jusqu’à ce que l’application soit prête pour un déploiement final avant d’incrémenter la version du package (ne la changez pas pendant le débogage).
+-   Attendez que l’application soit prête pour le déploiement final afin d’incrémenter la version du package (ne la modifiez pas pendant le débogage).
 
 ## <a name="remarks"></a>Notes
 
@@ -104,7 +104,7 @@ Si vous déployez une application utilisant des tâches en arrière-plan à l’
 -   Si la tâche en arrière-plan requiert un accès à l’écran de verrouillage, veillez à placer l’application sur l’écran de verrouillage avant d’essayer de déboguer la tâche en arrière-plan. Pour plus d’informations sur la spécification des options de manifeste pour les applications compatibles avec l’écran de verrouillage, consultez [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 -   Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-Pour plus d’informations sur l’utilisation de VS pour déboguer une tâche en arrière-plan [, consultez Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans les applications UWP](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
+Pour plus d’informations sur l’utilisation de VS pour déboguer une tâche en arrière-plan [, consultez Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans les applications UWP](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -113,7 +113,7 @@ Pour plus d’informations sur l’utilisation de VS pour déboguer une tâche e
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Comment déclencher des événements d’interruption, de reprise et d’arrière-plan dans des applications UWP](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [Comment déclencher des événements d’interruption, de reprise et d’arrière-plan dans des applications UWP](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  

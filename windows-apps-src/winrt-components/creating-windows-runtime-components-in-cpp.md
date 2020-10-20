@@ -4,14 +4,14 @@ description: Cette rubrique explique comment utiliser C++/CX pour créer un comp
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.date: 05/14/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2965eb3196f2a19f7d5351ee422013c6c22ba88a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 288795b2dc189dae7b350a30446410b40044d08f
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174303"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192949"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>Composants Windows Runtime avec C++/CX
 
@@ -24,7 +24,7 @@ Il existe plusieurs raisons pour créer un composant Windows Runtime en C++.
 - obtenir les avantages en termes de performances qu’offre C++ dans les opérations complexes ou nécessitant de nombreuses ressources de calcul ;
 - réutiliser le code déjà écrit et testé.
 
-Lorsque vous générez une solution qui contient un projet JavaScript ou .NET et un projet de composant Windows Runtime, les fichiers projet JavaScript et la DLL compilée sont fusionnés dans un package qui peut être débogué en local dans le simulateur, ou à distance sur un périphérique attaché. Le projet seul peut aussi être distribué en tant que kit de développement logiciel (SDK) de l’extension. Pour plus d’informations, consultez [Création d’un SDK](/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015).
+Lorsque vous générez une solution qui contient un projet JavaScript ou .NET et un projet de composant Windows Runtime, les fichiers projet JavaScript et la DLL compilée sont fusionnés dans un package qui peut être débogué en local dans le simulateur, ou à distance sur un périphérique attaché. Le projet seul peut aussi être distribué en tant que kit de développement logiciel (SDK) de l’extension. Pour plus d’informations, consultez [Création d’un SDK](/visualstudio/extensibility/creating-a-software-development-kit).
 
 En général, lorsque vous codez votre composant C++/CX, utilisez la bibliothèque C++ normale et les types intégrés, sauf à la limite ABI (Abstract Binary Interface) où vous passez des données vers et à partir du code dans un autre package. winmd. À partir de là, utilisez les types de Windows Runtime et la syntaxe spéciale prise en charge par C++/CX pour créer et manipuler ces types. En outre, dans votre code C++/CX, utilisez des types tels que Delegate et Event pour implémenter des événements qui peuvent être déclenchés à partir de votre composant et gérés en JavaScript, Visual Basic, C++ ou C#. Pour plus d’informations sur la syntaxe C++/CX, consultez [Référence du langage Visual C++ (c++/CX)](/cpp/cppcx/visual-c-language-reference-c-cx).
 
@@ -185,7 +185,7 @@ public:
 };
 ```
 
-Mais il ne peut pas faire la différence entre celles-ci :
+Mais il ne peut pas indiquer la différence entre les éléments suivants :
 
 ```cpp
 int GetNumber(int i);

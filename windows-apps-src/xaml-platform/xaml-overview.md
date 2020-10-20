@@ -4,19 +4,19 @@ title: Vue d’ensemble du langage XAML
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
 ms.date: 07/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 792712256e36b40cd376f0e378bb110ab33bc0fb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c4e61cb04aaefdc0aeef05ce0c61ca549019791b
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173733"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192959"
 ---
 # <a name="xaml-overview"></a>Vue d’ensemble du langage XAML
 
@@ -256,4 +256,4 @@ Une fois que l’application s’exécute pour de bon, les erreurs d’analyse X
 > [!NOTE]
 > Les applications qui utilisent C++/CX pour le code n’obtiennent pas le [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0)spécifique. Toutefois, le message dans l’exception est explicite quant au fait que la source de l’erreur est liée à XAML et comprend des informations contextuelles telles que les numéros de ligne d’un fichier XAML, à l’image de l’objet **XamlParseException**.
 
-Pour plus d’informations sur le débogage d’une application Windows Runtime, voir [Démarrer une session de débogage](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml?view=vs-2015).
+Pour plus d’informations sur le débogage d’une application Windows Runtime, consultez [Démarrer une session de débogage](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).
