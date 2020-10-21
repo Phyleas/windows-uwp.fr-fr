@@ -1,22 +1,19 @@
 ---
-Description: Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
+description: Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
 title: Recommandations pour les applications avec la géolocalisation
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, emplacement, carte, géolocalisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 2178a8812a4c900c59c370e52e7e5a5b3e0a9182
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: af9ea1a214bb3cb49dd65a77d1fde30e4bb3a064
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158663"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297742"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications avec la géolocalisation
-
-
-
 
 **API importantes**
 
@@ -54,7 +51,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
     -   Si l’utilisateur réactive l’accès à la géolocalisation après l’avoir désactivé, aucune notification n’est communiquée à l’application. La propriété [**status**](/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) ne change pas et aucun événement [**statusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged) ne se produit. Votre application doit créer un objet [**géolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) et appeler [**getGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) pour essayer d’obtenir des données d’emplacement mises à jour, ou s’abonner à nouveau aux événements [**positionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) . Si l’état indique ensuite que la géolocalisation a été réactivée, effacez tout élément d’interface utilisateur précédemment affiché par votre application pour avertir l’utilisateur que les services de localisation étaient désactivés et répondez de manière appropriée au nouvel état.
     -   Votre application doit également tenter à nouveau de se procurer des données de géolocalisation au moment de l’activation, lorsque l’utilisateur tente explicitement d’utiliser la fonctionnalité qui fait appel à des informations de géolocalisation ou à tout autre moment adapté au scénario.
 
-**Niveau de performance**
+**Performances**
 
 -   Utilisez des demandes de localisation ponctuelles si votre application n’a pas besoin de recevoir des mises à jour de localisation. Par exemple, une application qui ajoute une balise de géolocalisation à une photo n’a pas besoin de recevoir d’événements de mise à jour géographique. Elle doit plutôt demander la géolocalisation via la méthode [**getGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync), comme décrit dans [Obtenir l’emplacement actuel](./get-location.md).
 
@@ -163,7 +160,7 @@ La géolocalisation d’un utilisateur correspond à des informations d’identi
 
 * [Configurer une limite géographique](./set-up-a-geofence.md)
 * [Obtenir l’emplacement actuel](./get-location.md)
-* [Afficher des cartes avec des vues 2D, 3D et Streetside](./display-maps.md)
+* [Affichage des cartes avec les vues 2D, 3D et Streetside](./display-maps.md)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [Exemple de géolocalisation UWP (géolocalisation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  

@@ -2,21 +2,21 @@
 description: Consultez les instructions et meilleures pratiques pour l’utilisation de géoclôtures pour fournir des expériences contextuelles géographiquement dans votre application.
 title: Recommandations concernant la clôture virtuelle des applications
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, carte, emplacement, géoclôture
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cbedaef76ff1403e1d6718c96303da6ad2ee67
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e4d033673acbb4a8b7fd558d9e6c4f8329d79bf5
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162533"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297716"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>Recommandations concernant la clôture virtuelle des applications
 
-
-
+> [!NOTE]
+> [**Collection MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services cartographiques ont une clé d’authentification Maps appelée [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
 **API importantes**
 
