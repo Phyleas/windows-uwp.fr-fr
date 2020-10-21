@@ -2,23 +2,22 @@
 title: Vue d’ensemble des cartes et des localisations
 description: Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher un lieu et configurer une limite géographique dans votre application. Cette section vous montre aussi comment lancer l’application Cartes Windows pour une carte, un itinéraire ou un ensemble de directions détaillées spécifique.
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, carte, emplacement, services de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: c67312fe54492e20b6bb9a8b2d1cb07b5fc77c80
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 61b36aa8299d98544c44039abb138f4422e0a164
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171773"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297662"
 ---
 # <a name="maps-and-location-overview"></a>Vue d’ensemble des cartes et des localisations
 
-
-
-
 Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher un lieu et configurer une limite géographique dans votre application. Cette section vous montre aussi comment lancer l’application Cartes Windows pour une carte, un itinéraire ou un ensemble de directions détaillées spécifique.
+
+[**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services de carte nécessitent une clé d’authentification de cartes appelée [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
 > [!TIP]
 > Pour en savoir plus sur l’utilisation des cartes et de l’emplacement dans votre application, téléchargez les exemples suivants à partir du [dépôt Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples) sur GitHub :
