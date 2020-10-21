@@ -2,18 +2,21 @@
 title: Effectuer un géocodage et un géocodage inverse
 description: Ce guide vous montre comment convertir des adresses postales en emplacements géographiques (géocodage) et convertir des emplacements géographiques en adresses postales (le géocodage inversé) en appelant les méthodes de la classe MapLocationFinder dans l’espace de noms Windows. services. Maps.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.date: 07/02/2018
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, géocodage, carte, emplacement
 ms.localizationpriority: medium
-ms.openlocfilehash: 011a901e2baa9ff4b8f4a5bd8018b9b7790b1852
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 992a9902081f0655885383ef90ea02ed1e79f13a
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162563"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297705"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>Effectuer un géocodage et un géocodage inverse
+
+> [!NOTE]
+> [**Collection MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services cartographiques ont une clé d’authentification Maps appelée [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
 Ce guide vous montre comment convertir des adresses postales en emplacements géographiques (géocodage) et convertir des emplacements géographiques en adresses postales (le géocodage inversé) en appelant les méthodes de la classe [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) dans l’espace de noms [**Windows. services. Maps**](/uwp/api/Windows.Services.Maps) .
 

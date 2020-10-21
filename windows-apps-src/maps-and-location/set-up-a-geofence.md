@@ -2,21 +2,21 @@
 title: Configurer une limite géographique
 description: Configurez une Geofence dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, carte, emplacement, limite géographique, notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b991930ba37cfaec333146bf7a95b4c9a9c8b98
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ca6dad1a96f37e3a308ad10c84293a8d49fb0329
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171703"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297589"
 ---
 # <a name="set-up-a-geofence"></a>Configurer une limite géographique
 
-
-
+> [!NOTE]
+> [**Collection MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services cartographiques ont une clé d’authentification Maps appelée [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
 Configurez une [**limite géographique**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) dans votre application et apprenez à gérer les notifications au premier plan et en arrière-plan.
 
@@ -313,7 +313,7 @@ Pour écouter un événement de limite géographique en arrière-plan
 
 ### <a name="step-1-register-for-geofence-state-change-events"></a>Étape 1 : inscrire les événements de changement d’état de limite géographique
 
-Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour cela :
+Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour ce faire :
 
 -   Ajoutez une déclaration de type **Tâches en arrière-plan**.
 -   Définissez une tâche de propriété de type **Emplacement**.

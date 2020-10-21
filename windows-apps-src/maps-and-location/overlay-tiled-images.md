@@ -2,18 +2,21 @@
 title: Superposer des images sous forme de vignettes sur une carte
 description: Superposez des images vignette tierces ou personnalisées sur une carte à l’aide de sources vignette. Utilisez des sources vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
-ms.date: 07/19/2018
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, carte, emplacement, images, superposition
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a93ac408232e71c2a5ec2bc79f99388e24e5df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8d4a8e3f8a8566fbaae64d44fe876808f094bdd5
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171733"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297635"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Superposer des images sous forme de vignettes sur une carte
+
+> [!NOTE]
+> [**Collection MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services cartographiques ont une clé d’authentification Maps appelée [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
 Superposez des images vignette tierces ou personnalisées sur une carte à l’aide de sources vignette. Utilisez des sources vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut.
 

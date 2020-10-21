@@ -1,19 +1,22 @@
 ---
-Description: Découvrez comment utiliser la puissante fonctionnalité de suivi des visites pour rendre plus pratique le suivi de l’emplacement.
+description: Découvrez comment utiliser la puissante fonctionnalité de suivi des visites pour rendre plus pratique le suivi de l’emplacement.
 title: Instructions pour l’utilisation du suivi des visites
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
-ms.date: 05/18/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, carte, emplacement, géoséjour, géoséjours
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b1766d0f883fa42b005908dcc63102e97ff0d4f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bdca33832b4dfadb52dca45c7a060de4f05c500c
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162513"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297732"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>Instructions pour l’utilisation du suivi des visites
+
+> [!NOTE]
+> [**Collection MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services cartographiques ont une clé d’authentification Maps appelée [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
 La fonctionnalité de visites rationalise le processus de suivi des emplacements afin de la rendre plus efficace pour les besoins pratiques de nombreuses applications. Une visite est définie comme une zone géographique significative que l’utilisateur entre et quitte. Les visites sont similaires aux [limites géographiques](guidelines-for-geofencing.md) dans la mesure où elles permettent à l’application d’être notifiée uniquement lorsque l’utilisateur entre ou quitte certaines zones d’intérêt, éliminant ainsi la nécessité d’un suivi de l’emplacement continu, qui peut constituer un drain sur la durée de vie de la batterie. Toutefois, contrairement aux limites géographiques, les zones de visite sont identifiées de manière dynamique au niveau de la plateforme et n’ont pas besoin d’être définies explicitement par des applications individuelles. En outre, la sélection des visites d’une application est gérée par un seul paramètre de granularité, plutôt que par l’abonnement à des emplacements individuels.
 

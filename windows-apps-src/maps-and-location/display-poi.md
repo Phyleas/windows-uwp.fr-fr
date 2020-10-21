@@ -2,18 +2,21 @@
 title: Afficher des centres d’intérêt sur une carte
 description: Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.date: 08/11/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, carte, emplacement, clics-infos
 ms.localizationpriority: medium
-ms.openlocfilehash: c27132c0728c85238b80e710c62d2e733ee1dd5d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: feaf5edc4a25ebbc6dd3e3b7eb484ff63f8b1a23
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155803"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297772"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Afficher les points d’intérêt sur une carte
+
+> [!NOTE]
+> [**Collection MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et les services cartographiques ont une clé d’authentification Maps appelée [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
 Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML. Un point d’intérêt est un point spécifique sur la carte, qui représente un élément intéressant. Il peut s’agir, par exemple, de l’emplacement d’une entreprise, d’une localité ou d’un ami.
 
