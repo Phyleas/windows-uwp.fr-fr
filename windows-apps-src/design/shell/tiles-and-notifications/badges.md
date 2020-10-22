@@ -6,14 +6,14 @@ label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a49d771b7efdbb7e787db0cbadea45c255a1120e
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 64d5595bcc315b24228401ff23a1a59d29282eae
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984595"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344963"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Notifications de badge pour les applications Windows
 
@@ -32,7 +32,7 @@ Les badges de notification apparaissent sur l’icône de la barre des tâches d
 
 ## <a name="numeric-badges"></a>Badges numériques
 
-Value | Badge | XML
+Valeur | Badge | XML
 --|--|--
 Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucuneˆ» et efface le badge. | <img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /> | `<badge value="1"/>`
 N’importe quel nombre supérieur à 99 | <img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td> | `<badge value="100"/>`
@@ -42,19 +42,19 @@ Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d�
 
 Statut | Glyphe | XML
 --|--|--
-Aucun | (Aucun badge affiché) | `<badge value="none"/>`
-activity | <img src="images/badges/badge-activity.png" alt="Glyph" /> | `<badge value="activity"/>`
-alarme | <img src="images/badges/badge-alarm.png" alt="Glyph" /> | `<badge value="alarm"/>`
-alerte | <img src="images/badges/badge-alert.png" alt="Glyph" /> | `<badge value="alert"/>`
-attention | <img src="images/badges/badge-attention.png" alt="Glyph" /> | `<badge value="attention"/>`
-disponible | <img src="images/badges/badge-available.png" alt="Glyph" /> | `<badge value="available"/>`
-absent | <img src="images/badges/badge-away.png" alt="Glyph" /> | `<badge value="away"/>`
-occupé | <img src="images/badges/badge-busy.png" alt="Glyph" /> | `<badge value="busy"/>`
-error | <img src="images/badges/badge-error.png" alt="Glyph" /> | `<badge value="error"/>`
-nouveau message | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<badge value="newMessage"/>`
-en pause | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
-lecture en cours | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
-non disponible | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
+aucun | (Aucun badge affiché) | `<badge value="none"/>`
+activity | :::image type="icon" source="images/badges/badge-activity.png"::: | `<badge value="activity"/>`
+alarme | :::image type="icon" source="images/badges/badge-alarm.png"::: | `<badge value="alarm"/>`
+alerte | :::image type="icon" source="images/badges/badge-alert.png"::: | `<badge value="alert"/>`
+attention | :::image type="icon" source="images/badges/badge-attention.png"::: | `<badge value="attention"/>`
+disponible | :::image type="icon" source="images/badges/badge-available.png"::: | `<badge value="available"/>`
+absent | :::image type="icon" source="images/badges/badge-away.png"::: | `<badge value="away"/>`
+occupé | :::image type="icon" source="images/badges/badge-busy.png"::: | `<badge value="busy"/>`
+error | :::image type="icon" source="images/badges/badge-error.png"::: | `<badge value="error"/>`
+nouveau message | :::image type="icon" source="images/badges/badge-newMessage.png"::: | `<badge value="newMessage"/>`
+en pause | :::image type="icon" source="images/badges/badge-paused.png"::: | `<badge value="paused"/>`
+lecture en cours | :::image type="icon" source="images/badges/badge-playing.png"::: | `<badge value="playing"/>`
+non disponible | :::image type="icon" source="images/badges/badge-unavailable.png"::: | `<badge value="unavailable"/>`</td>
 
 ## <a name="create-a-badge"></a>Créer un badge
 
