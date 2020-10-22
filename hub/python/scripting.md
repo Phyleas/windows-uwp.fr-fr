@@ -9,11 +9,11 @@ keywords: python, windows 10, microsoft, administration de système python, auto
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79208994"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253676"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Bien démarrer avec Python pour l’écriture de scripts et l’automatisation sur Windows
 

@@ -1,5 +1,4 @@
 ---
-author: knicholasa
 description: La profondeur z, ou profondeur relative, et l’ombre sont deux façons d’incorporer la profondeur dans votre application pour aider les utilisateurs à se concentrer de manière naturelle et efficace.
 title: Profondeur z et ombre pour les applications Windows
 template: detail.hbs
@@ -9,12 +8,12 @@ ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: ffabb494d10f802668e57ebb9cfd122ac5304d46
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 72cffc86d71b34de2c4c9292221889ee4f0bc1d5
+ms.sourcegitcommit: 5684340ad29a81939c6a93017b5a39ccbe1f6040
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219382"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92184211"
 ---
 # <a name="z-depth-and-shadow"></a>Profondeur Z et ombre
 
