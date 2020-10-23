@@ -1,15 +1,15 @@
 ---
 title: Utiliser l’outil winget pour installer et gérer des applications
 description: Avec l’outil en ligne de commande winget, les développeurs peuvent découvrir, installer, mettre à niveau, supprimer et configurer des applications sur des ordinateurs Windows 10.
-ms.date: 04/28/2020
+ms.date: 10/22/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c918dccb2873f47a16669c195c47180e2129476
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0dbd2aa76fa6a9b787e73c0bbd5ce7e56b5e6a4a
+ms.sourcegitcommit: c105eb358bf693d34dfdd7a44255af69c1d5a3cd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168743"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434459"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>Utiliser l’outil winget pour installer et gérer des applications
 
@@ -106,6 +106,10 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 ## <a name="missing-tools"></a>Outils manquants
 
 Si le [dépôt de la communauté](../package/repository.md) ne contient pas votre outil ou application, envoyez un package dans notre [dépôt](https://github.com/microsoft/winget-pkgs). Une fois votre outil favori ajouté, il sera mis à la disposition de tous les utilisateurs, vous compris.
+
+## <a name="customize-winget-settings"></a>Personnaliser les paramètres winget
+
+Vous pouvez configurer l’expérience de ligne de commande **winget** en modifiant le fichier **settings.json**. Pour plus d’informations, consultez [https://aka.ms/winget-settings](https://aka.ms/winget-settings). Notez que les paramètres sont toujours dans un état expérimental et qu’ils n’ont pas encore été finalisés pour la préversion de l’outil.
 
 ## <a name="open-source-details"></a>Détails sur l’open source
 
