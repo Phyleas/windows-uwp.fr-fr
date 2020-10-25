@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4ab2ac5a611d310abc177126cc92b88f9e3b8e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fb7229d977f2d2f32b251a524e101a8acf2b2524
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165153"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92193012"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Création d’une application de plateforme Windows universelle (UWP) complexe
 
@@ -52,7 +52,7 @@ Cette liste de points forts peut orienter un grand nombre de décisions et d’a
 
 **L’entonnoir de conception**
 
-Il est très tentant (après avoir eu une idée intéressante) de se lancer et de la développer, et peut-être même de l’amener à un stade avancé en matière de production. Mais admettons que les choses se passent ainsi, quand soudain une autre idée intéressante se présente. Il est naturel que vous soyez tenté de vous en tenir à l’idée dans laquelle vous vous êtes investi, indépendamment des mérites que peuvent avoir ces deux idées. Si seulement vous aviez pensé plus tôt à cette autre idée au cours du processus ! Justement, l’entonnoir de conception est une technique qui vous aide à découvrir vos meilleures idées le plus tôt possible.
+Il est très tentant (après avoir eu une idée intéressante) de se lancer et de la développer, et peut-être même de l’amener à un stade avancé en matière de production. Mais admettons que les choses se passent ainsi, quand soudain une autre idée intéressante se présente. Il est naturel que vous soyez tenté de vous en tenir à l’idée dans laquelle vous vous êtes investi, indépendamment des mérites que peuvent avoir ces deux idées. Si seulement vous aviez pensé plus tôt à cette autre idée au cours du processus ! Justement, l’entonnoir de conception est une technique qui vous aide à découvrir vos meilleures idées le plus tôt possible.
 
 Le terme « entonnoir » provient de la forme de cette technique. À l’extrémité large de l’entonnoir, de nombreuses idées sont injectées, chacune étant représentée par un artefact de conception peu précis (via un croquis, peut-être, ou un paragraphe de texte). Au fur et à mesure que cet ensemble d’idées circule jusqu’à l’extrémité étroite de l’entonnoir, le nombre d’idées baisse alors que la précision des artefacts qui représentent ces idées augmente. Chaque artefact doit cibler uniquement les informations nécessaires pour comparer les idées ou pour répondre à une question particulière telle que « est-ce utilisable ? » ou « est-ce intuitif ? ». *N’y consacrez pas plus de temps et d’efforts que nécessaire*. Vous abandonnerez certaines idées en les testant, ce qui est une bonne chose, car vous n’aurez pas à vous investir davantage dans ces dernières. Les idées qui continuent leur chemin dans l’entonnoir seront prises en considération de manière plus fine. Au final, il restera un seul artefact de conception qui représentera l’idée gagnante. Il s’agit de l’idée qui gagne en raison de ses mérites, et pas simplement parce qu’elle vous est venue en premier. Ainsi, vous concevrez la meilleure application possible.
 
@@ -238,4 +238,4 @@ Gardez à l’esprit ce que vous voulez que vos utilisateurs pensent, ressentent
 
 Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. À chaque fonctionnalité correspondent des recommandations d’expérience utilisateur pour vous aider à perfectionner votre application, et des conditions à remplir pour la publication de votre application dans le Microsoft Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) pour tester la conformité technique aux exigences du Windows Store. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
 
-Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://developer.microsoft.com/windows/apps/design) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](/visualstudio/profiling/profiling-tools?view=vs-2015) pour analyser les performances de chacun des scénarios de votre application.
+Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://developer.microsoft.com/windows/apps/design) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](/visualstudio/profiling/profiling-feature-tour) pour analyser les performances de chacun des scénarios de votre application.

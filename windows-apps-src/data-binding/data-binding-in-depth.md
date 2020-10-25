@@ -1,7 +1,7 @@
 ---
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Présentation détaillée de la liaison de données
-description: La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
+description: Découvrez comment utiliser la liaison des données dans les applications de plateforme Windows universelle (UWP).
 ms.date: 10/05/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: a12fb133aed8706385480254f0371508c324107f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a4fc9244c84b955b925fef9c3527778bdb3ab2ea
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170093"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133062"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 

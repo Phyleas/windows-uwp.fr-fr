@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 60cbf422b5417dc62ff261cf2e7ba02f25840032
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 5acf1a017a55ddf75520eccf22b1a3b00ee8084b
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671518"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253600"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>Héberger un contrôle XAML WinRT standard dans une application Win32 C++
 
@@ -36,10 +36,7 @@ Cet article explique comment utiliser l’[API d’hébergement XAML UWP](using-
     > [!NOTE]
     > Pour les nouveaux projets, vous pouvez également installer l’[Extension Visual Studio (VSIX) C++/WinRT](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) et utiliser l’un des modèles de projet C++/WinRT inclus dans cette extension. Pour plus d’informations, consultez [cet article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-4. Installez le package NuGet [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) :
-
-    1. Dans la fenêtre **Gestionnaire de package NuGet**, assurez-vous que l’option **Inclure la version préliminaire** est activée.
-    2. Sélectionnez l’onglet **Parcourir**, recherchez le package **Microsoft.Toolkit.Win32.UI.SDK**, puis installez la dernière version stable de ce package. Ce package fournit plusieurs ressources de génération et d’exécution qui permettent aux îlots XAML Islands de fonctionner dans votre application.
+4. Sous l’onglet **Parcourir** du **Gestionnaire de package NuGet**, recherchez le package NuGet [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) et installez la dernière version stable de ce package. Ce package fournit plusieurs ressources de génération et d’exécution qui permettent aux îlots XAML Islands de fonctionner dans votre application.
 
 5. Définissez la valeur `maxVersionTested` dans votre [manifeste d’application](/windows/desktop/SbsCs/application-manifests) pour spécifier que votre application est compatible avec Windows 10, version 1903 ou ultérieure.
 

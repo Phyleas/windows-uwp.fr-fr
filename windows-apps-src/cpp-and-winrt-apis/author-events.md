@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
-ms.openlocfilehash: c70ad8efcb8bb84272a044824d8058813ed30def
-ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
+ms.openlocfilehash: 66691b1cd75a27e683261c12b7a3056c53160079
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646232"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297627"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
@@ -146,7 +146,7 @@ Tenez compte de la modification de la méthode **OnPointerPressed**. À présent
 
 Si votre événement doit être accessible via une interface binaire d'application (ABI)&mdash;par exemple entre un composant et son application consommatrice&mdash;votre événement doit utiliser un type de délégué Windows Runtime. L’exemple ci-dessus utilise le type de délégué Windows Runtime [**Windows::Foundation::EventHandler\<T\>** ](/uwp/api/windows.foundation.eventhandler). [**TypedEventHandler\<TSender, TResult\>** ](/uwp/api/windows.foundation.eventhandler) est un autre exemple de type de délégué Windows Runtime.
 
-Comme les paramètres de type pour ces deux types de délégués doivent traverser l'ABI, ils doivent donc aussi être de type Windows Runtime. Cela inclut les classes runtime Windows et tierces ainsi que les types primitifs tels que les nombres et les chaînes. Le compilateur vous aide en affichant une erreur « *must be WinRT type* » (doit être de type WinRT) si vous oubliez cette contrainte.
+Comme les paramètres de type pour ces deux types de délégués doivent traverser l'ABI, ils doivent donc aussi être de type Windows Runtime. Cela inclut les classes runtime Windows et tierces ainsi que les types primitifs tels que les nombres et les chaînes. Le compilateur vous aide en affichant une erreur « *T must be WinRT type* » (T doit être de type WinRT) si vous oubliez cette contrainte.
 
 Vous trouverez ci-dessous un exemple sous forme de listes de code. Commencez par les projets **ThermometerWRC** et **ThermometerCoreApp** que vous avez créés précédemment dans cette rubrique, puis modifiez le code de ces projets en reproduisant le code figurant dans ces listes.
 

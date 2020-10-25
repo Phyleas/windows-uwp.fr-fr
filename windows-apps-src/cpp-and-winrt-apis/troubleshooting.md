@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, projection, résolution des problèmes, HRESULT, erreur
 ms.localizationpriority: medium
-ms.openlocfilehash: 94cfb51d9fd832a29c71049a2255e35c4bc6f484
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 268792dfe8053feca8c1e6fcb486bede4b26ee6a
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219962"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297726"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Résolution des problèmes liés à C++/WinRT
 
@@ -39,8 +39,9 @@ Si votre application s’arrête et que vous savez simplement qu’une exception
 | Le compilateur C++ génère l’erreur suivante : « *Impossible de convertir 'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' en 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*  ».|Cela peut se produire quand vous passez un std::vector de winrt::hstring à une API Windows Runtime asynchrone qui attend une collection, et que vous n’avez ni copié, ni déplacé le vecteur vers l’appelé asynchrone. Pour plus d’informations, consultez [Types de données C++ standard et C++/WinRT](std-cpp-data-types.md).|
 | Quand vous ouvrez un projet, Visual Studio génère l’erreur suivante : « *L’application du projet n’est pas installée* ».|Si vous ne l’avez pas déjà fait, installez les **outils Windows universels pour développer en C++** à partir de la boîte de dialogue **Nouveau projet** de Visual Studio. Si cela ne résout pas le problème, le projet peut dépendre de l’extension Visual Studio (VSIX) C++/WinRT (consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).|
 | Les tests du Kit de certification des applications Windows génèrent une erreur indiquant que l’une de vos classes runtime « *ne dérive pas d’une classe de base Windows. Toutes les classes composables doivent en définitive dériver d’un type de l’espace de noms Windows* ».|Toute classe runtime (que vous déclarez dans votre application) qui dérive d’une classe de base est appelée classe *composable*. La classe de base ultime d’une classe composable doit être un type provenant d’un espace de noms Windows.*, par exemple [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). Pour plus d’informations, consultez [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md).|
-| Le compilateur C++ génère une erreur « *doit être de type WinRT* » pour une spécialisation de délégué EventHandler ou TypedEventHandler.|Utilisez **winrt::delegate&lt;...T&gt;** à la place. Consultez [Créer des événements en C++/WinRT](author-events.md).|
-| Le compilateur C++ génère une erreur « *doit être de type WinRT* » pour une spécialisation d’opération asynchrone Windows Runtime.|Retournez une [**tâche**](/cpp/parallel/concrt/reference/task-class) PPL (Parallel Patterns Library) à la place. Consultez [Opérations concurrentes et asynchrones](concurrency.md).|
+| Le compilateur C++ génère une erreur « *T must be WinRT type* » (T doit être de type WinRT) pour une spécialisation de délégué EventHandler ou TypedEventHandler.|Utilisez **winrt::delegate&lt;...T&gt;** à la place. Consultez [Créer des événements en C++/WinRT](author-events.md).|
+| Le compilateur C++ génère une erreur « *T must be WinRT type* » (T doit être de type WinRT) pour une spécialisation d’opération asynchrone Windows Runtime.|Retournez une [**tâche**](/cpp/parallel/concrt/reference/task-class) PPL (Parallel Patterns Library) à la place. Consultez [Opérations concurrentes et asynchrones](concurrency.md).|
+| Le compilateur C++ génère une erreur « *T must be WinRT type* » (T doit être de type WinRT) quand vous appelez [**winrt::xaml_typename**](/uwp/cpp-ref-for-winrt/xaml-typename).|Utilisez le type projeté avec **winrt::xaml_typename** (par exemple, utilisez **BgLabelControlApp::BgLabelControl**), et non le type d’implémentation (par exemple, n’utilisez pas **BgLabelControlApp::implementation::BgLabelControl**). Consultez [Contrôles XAML personnalisés (basés sur un modèle)](xaml-cust-ctrl.md).|
 | Le compilateur C++ génère l’« *erreur C2220 : avertissement traité en tant qu’erreur - aucun fichier 'object' généré* ».|Corrigez l’avertissement ou affectez à **C/C++**  > **Général** > **Considérer les avertissements comme des erreurs** la valeur **Non (/WX-)** .|
 | Votre application plante, car un gestionnaire d’événements dans votre objet C++/WinRT est appelé après la destruction de l’objet.|Consultez [accès sécurisé au pointeur *this* avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).|
 | Le compilateur C++ génère l’« *erreur C2338 : ceci est réservé à la prise en charge des références faibles* ».|Vous demandez une référence faible pour un type qui a passé le struct de marqueur **winrt::no_weak_ref** en tant qu’argument de modèle à sa classe de base. Consultez [Refus de la prise en charge des références faibles](weak-references.md#opting-out-of-weak-reference-support).|

@@ -1,5 +1,5 @@
 ---
-description: Ce tutoriel montre comment ajouter des interfaces utilisateur XAML UWP, créer des packages MSIX et incorporer d’autres composants modernes dans votre application WPF.
+description: Ce tutoriel montre comment ajouter des fonctionnalités d’activité et de notification à l’application.
 title: Ajouter des activités et des notifications utilisateur Windows 10
 ms.topic: article
 ms.date: 06/27/2019
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 30b41cf0d22d8f8c2c4ce7f774eab9d2aa479d78
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3acc5638115932f6536eccb3be5e7222ef53fbb7
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161463"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133052"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>Partie 4 : Ajouter des activités et des notifications utilisateur Windows 10
 

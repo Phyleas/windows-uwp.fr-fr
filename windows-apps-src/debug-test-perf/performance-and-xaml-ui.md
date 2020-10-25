@@ -1,17 +1,17 @@
 ---
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: Performances
-description: Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie.
+description: Découvrez comment organiser votre flux de travail de performances, corriger les problèmes d’animation et de fréquence d’images, et régler le temps de démarrage, la durée de navigation par page et l’utilisation de la mémoire.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 23548ada603e21e9230ccc3e8c63630e81b1a8ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f81052336985eee866fec6ae370d2795e8001859
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154143"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133092"
 ---
 # <a name="performance"></a>Performances
 

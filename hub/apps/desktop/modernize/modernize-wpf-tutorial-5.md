@@ -1,5 +1,5 @@
 ---
-description: Ce tutoriel montre comment moderniser un exemple d’application de bureau WPF nommée Contoso Expenses.
+description: Ce tutoriel montre comment créer un package et déployer l’application avec MSIX.
 title: Créer un package et déployer avec MSIX
 ms.topic: article
 ms.date: 01/23/2020
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 2ab83b2c9253e8cdd9adc403909a1bd03db1ccda
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: d13971e62a6684bdb440bd0e0f68ddea606336cc
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762978"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133022"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>Partie 5 : Créer un package et déployer avec MSIX
 

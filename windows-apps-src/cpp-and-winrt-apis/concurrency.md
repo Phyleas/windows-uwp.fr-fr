@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: a10962740d3f723a855914595ea02d0688ff9707
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8dc98176e61ea6e03b1d822e05f8e0656a34e4b3
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170373"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297753"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Opérations concurrentes et asynchrones avec C++/WinRT
 
@@ -158,7 +158,7 @@ int main()
 
 Dans l’exemple ci-dessus, **RetrieveBlogFeedAsync** retourne un **IAsyncOperationWithProgress**, qui a une progression et une valeur de retour. Nous pouvons effectuer d’autres tâches pendant que **RetrieveBlogFeedAsync** effectue le traitement et récupère le flux. Ensuite, nous allons appeler **get** sur cet objet d’opération asynchrone à bloquer, attendre qu’il se termine et obtenir les résultats de l’opération.
 
-Si vous retournez de façon asynchrone un type Windows Runtime, vous devez retourner un [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation-1) ou un [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2). Toute classe runtime interne ou tierce est appropriée, ou tout type qui peut être transmis vers ou à partir d’une fonction Windows Runtime (par exemple `int` ou **winrt::hstring**). Le compilateur vous aidera en affichant une erreur « *must be WinRT type* » (doit être de type WinRT) si vous essayez d’utiliser l’un de ces types d’opérations asynchrones avec un type non-Windows Runtime.
+Si vous retournez de façon asynchrone un type Windows Runtime, vous devez retourner un [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation-1) ou un [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2). Toute classe runtime interne ou tierce est appropriée, ou tout type qui peut être transmis vers ou à partir d’une fonction Windows Runtime (par exemple `int` ou **winrt::hstring**). Le compilateur vous aidera en affichant une erreur « *T must be WinRT type* » (T doit être de type WinRT) si vous essayez d’utiliser l’un de ces types d’opérations asynchrones avec un type non-Windows Runtime.
 
 Si une coroutine ne possède pas au moins une instruction `co_await`, pour être appropriée en tant que coroutine elle doit avoir au moins une instruction `co_return` ou `co_yield`. Il y aura des cas où votre coroutine peut retourner une valeur sans présenter de comportement asynchrone et donc sans blocage ni changement de contexte. Voici un exemple qui le fait (au deuxième appel et aux suivants) en mettant une valeur en cache.
 

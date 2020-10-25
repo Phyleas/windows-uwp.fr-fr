@@ -1,5 +1,5 @@
 ---
-Description: Les icônes de qualité s’harmonisent efficacement avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent seulement les informations nécessaires, aussi rapidement et simplement que possible.
+description: Les icônes de qualité s’harmonisent efficacement avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent seulement les informations nécessaires, aussi rapidement et simplement que possible.
 title: Icônes
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 66f9d166d0e20f82f495f98b26deceff8e136cc5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 75de051bd569981d7dca6b33e8e7389c3186a09d
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636639"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344990"
 ---
 # <a name="icons-for-windows-apps"></a>Icônes pour les applications Windows
 
@@ -47,13 +47,12 @@ Les icônes permettent d'économiser de l’espace, mais quand faut-il les utili
 
 :::row:::
     :::column:::
-        ![Capture d’écran montrant les icônes Couper, Copier, Coller et Enregistrer.](images/do.svg)
-        ![Icônes - Image standard](images/icons/icons-standard.svg)<br>
+        ![Première image d’une barre verte avec une coche verte montrant ce qu’il faut faire](images/do.svg) ![Capture d’écran montrant les icônes Couper, Copier, Coller et Enregistrer](images/icons/icons-standard.svg)<br>
 
 Utilisez une icône pour les actions, comme couper, copier, coller et enregistrer ou pour les éléments de navigation dans un menu de navigation.
     :::column-end:::
     :::column:::
-        ![ne pas faire](images/dont.svg) ![Icônes - Image de concept](images/icons/icons-concept.svg)<br>
+        ![Première image d’une barre rouge avec un X rouge montrant ce qu’il ne faut pas faire](images/dont.svg) ![Capture d’écran montrant les icônes Éducation, Saisie tactile et Calendrier](images/icons/icons-concept.svg)<br>
 
 Utilisez une icône s’il en existe déjà une pour le concept que vous souhaitez représenter. (Pour voir si une icône existe, vérifiez la liste d’icônes Segoe.)
     :::column-end:::
@@ -61,14 +60,12 @@ Utilisez une icône s’il en existe déjà une pour le concept que vous souhait
 
 :::row:::
     :::column:::
-        ![Capture d’écran d’une icône simple de panier d’achat.](images/do.svg)
-        ![Icône d’un panier d’achat](images/icons/icon-shopping-cart.svg)<br>
+        ![Deuxième image d’une barre verte avec une coche verte montrant ce qu’il faut faire](images/do.svg) ![Capture d’écran d’une icône simple et familière représentant un panier d’achat](images/icons/icon-shopping-cart.svg)<br>
 
 Utilisez une icône s’il est facile pour l’utilisateur de comprendre ce que signifie l’icône et si elle est suffisamment simple pour être claire à taille réduite.
     :::column-end:::
     :::column:::
-        ![Capture d’écran d’une icône complexe et inconnue de panier d’achat.](images/dont.svg)
-        ![Icônes - Image de concept](images/icons/icon-bad-example.png)<br>
+        ![Deuxième image d’une barre rouge avec un X rouge montrant ce qu’il ne faut pas faire](images/dont.svg) ![Capture d’écran d’une icône complexe et inconnue représentant un panier d’achat](images/icons/icon-bad-example.png)<br>
 
 N’utilisez pas une icône si sa signification n’est pas évidente, ou si le fait de la rendre claire requiert une forme complexe.
     :::column-end:::

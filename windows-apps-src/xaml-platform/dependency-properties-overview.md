@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7633ff363a00c90a576ad5799ef0d2b048cd5cdd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 769d786078edd68af2e1e57bdb869e7aa4099405
+ms.sourcegitcommit: 88f3992462c88a0c5c6e85b942705bae5e4a1aac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166853"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499604"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -30,7 +30,7 @@ Le but des propriétés de dépendance est de fournir un moyen systémique pour 
 - modèles à utilisation multiples tels que ressources et styles ;
 - valeurs connues par le biais de relations parent-enfant avec d’autres éléments dans l’arborescence d’objets.
 
-Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour définir une application Windows Runtime avec XAML pour l’interface utilisateur et les extensions de composant C#, Microsoft Visual Basic ou Visual C++ (C++/CX) pour le code. Voici quelques fonctionnalités :
+Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour définir une application Windows Runtime avec XAML pour l’interface utilisateur et les extensions de composant C#, Microsoft Visual Basic ou Visual C++ (C++/CX) pour le code. Ces fonctionnalités sont les suivantes :
 
 - Liaison de données
 - Styles
@@ -205,9 +205,9 @@ Les aspects de Threading de [**DependencyObject**](/uwp/api/Windows.UI.Xaml.Depe
 - [Propriétés de dépendance personnalisées](custom-dependency-properties.md)
 - [Vue d’ensemble des propriétés jointes](attached-properties-overview.md)
 - [Présentation détaillée de la liaison de données](../data-binding/data-binding-in-depth.md)
-- [Animations dans une table de montage séquentiel](../design/motion/storyboarded-animations.md)
+- [Animations de Storyboard](../design/motion/storyboarded-animations.md)
 - [Création de composants Windows Runtime](/previous-versions/windows/apps/hh441572(v=vs.140))
-- [Exemple de contrôles personnalisés et utilisateur XAML](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [Exemple de contrôles personnalisés et utilisateur XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
 
 ## <a name="apis-related-to-dependency-properties"></a>API liées aux propriétés de dépendance
 

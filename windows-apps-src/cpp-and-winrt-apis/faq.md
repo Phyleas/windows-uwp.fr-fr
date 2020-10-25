@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b402a1f140126314bc10f69880a9f01af2b2a4
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: b1a05dbb666b33739a083c517395359a64fee9df
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643809"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297650"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
@@ -186,7 +186,7 @@ Le modèle recommandé ci-dessus s’applique non seulement à C++/WinRT, mais a
 
 Le fichier d’en-tête `winrt/Windows.UI.Xaml.Media.Animation.h` déclare une méthode nommée **GetCurrentTime**, tandis que `windows.h` (par le biais de `winbase.h`) définit une macro nommée **GetCurrentTime**. Quand les deux entrent en conflit, le compilateur C++ génère « *Erreur C4002 : trop d’arguments pour l’appel de macro de type fonction GetCurrentTime* ».
 
-De même, `winrt/Windows.Globalization.h` déclare une méthode nommée **TRY**, tandis que `afx.h` définit une macro nommée **GetCurrentTime**. Quand un conflit se produit, le compilateur C++ génère « *Erreur C2334 : jetons inattendus avant '{' ; corps apparent de la fonction ignoré* ».
+De même, `winrt/Windows.Globalization.h` déclare une méthode nommée **TRY**, tandis que `afx.h` définit une macro nommée **TRY**. Quand un conflit se produit, le compilateur C++ génère « *Erreur C2334 : jetons inattendus avant '{' ; corps apparent de la fonction ignoré* ».
 
 Pour résoudre l’un de ces problèmes ou les deux, procédez comme suit.
 
