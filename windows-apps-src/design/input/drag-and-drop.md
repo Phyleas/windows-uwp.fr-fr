@@ -6,18 +6,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab8d696ddb1a4ef9e3dc3549754cbf51fc91374
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 9a0005ecf7d51cc6b08bc5cc61350489839d568f
+ms.sourcegitcommit: 047004e2bf100e319d134c18518062bf7f3efb5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220542"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92763103"
 ---
 # <a name="drag-and-drop"></a>Glisser-déplacer
 
 Le glisser-déplacer est un moyen intuitif pour transférer des données dans une application ou entre des applications sur le bureau Windows. La fonction glisser-déplacer permet à l’utilisateur de transférer des données entre des applications ou au sein d’une application à l’aide d’un mouvement standard (appuyez sur la pression et le panoramique avec le doigt ou la pression et le panoramique avec une souris ou un stylet).
 
-> **API importantes**: [propriété CanDrag](/uwp/api/windows.ui.xaml.uielement.candrag), [propriété AllowDrop](/uwp/api/windows.ui.xaml.uielement.allowdrop) 
+> **API importantes** : [propriété CanDrag](/uwp/api/windows.ui.xaml.uielement.candrag), [propriété AllowDrop](/uwp/api/windows.ui.xaml.uielement.allowdrop) 
 
 La source de glissement, qui est l’application ou la zone dans laquelle le mouvement de glissement est déclenché, fournit les données à transférer en remplissant un objet de package de données qui peut contenir des formats de données standard, notamment du texte, du RTF, du HTML, des bitmaps, des éléments de stockage ou des formats de données personnalisés. La source indique également le type d’opérations qu’elle prend en charge : copie, déplacement ou liaison. Lorsque le pointeur est relâché, Drop se produit. La cible de déplacement, qui est l’application ou la zone située sous le pointeur, traite le package de données et retourne le type de l’opération effectuée.
 
@@ -37,7 +37,7 @@ Voici une vue d’ensemble de ce que vous devez faire pour activer le glisser-d�
 
 ## <a name="enable-dragging"></a>Activer le glissement
 
-Pour activer le glissement sur un élément, affectez à sa propriété [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) la **valeur true**. Cela rend l’élément et les éléments qu’il contient, dans le cas de collections comme ListView--glisseable.
+Pour activer le glissement sur un élément, affectez à sa propriété [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) la **valeur true** . Cela rend l’élément et les éléments qu’il contient, dans le cas de collections comme ListView, à déplacer.
 
 Soyez précis sur ce qui peut être glissé. Les utilisateurs ne veulent pas faire glisser tout dans votre application, mais uniquement certains éléments, tels que des images ou du texte. 
 
@@ -96,11 +96,17 @@ Vous pouvez spécifier un contrôle [**ListViewItem**](/uwp/api/Windows.UI.Xaml.
 
 Le système montre automatiquement les animations appropriées pour le déplacement dans un dossier plutôt que dans un élément autre qu’un dossier. Votre code d’application doit continuer à gérer l’événement de [**déplacement**](/uwp/api/windows.ui.xaml.uielement.drop) sur l’élément de dossier (ainsi que sur l’élément qui n’est pas un dossier) afin de mettre à jour la source de données et d’ajouter l’élément déplacé dans le dossier cible.
 
+## <a name="enable-drag-and-drop-reordering-within-listviews"></a>Activer la réorganisation par glisser-déplacer dans les ListView
+
+Les [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)s prennent en charge la réorganisation par glissement prête à l’emploi, à l’aide d’une API très similaire à l’API **CanDrop** décrite dans cet article. Au minimum, vous ajoutez les propriétés **AllowDrop** et **CanReorderItems** .
+
+Pour plus d’informations, consultez [**ListViewBase. CanReorderItems**](/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) .
+
 ## <a name="implementing-custom-drag-and-drop"></a>Implémentation du glisser-déplacer personnalisé
 
 La classe [UIElement](/uwp/api/windows.ui.xaml.uielement) effectue la plupart des tâches d’implémentation du glisser-déplacer pour vous. Toutefois, si vous le souhaitez, vous pouvez implémenter votre propre version à l’aide des API de l' [espace de noms Windows. ApplicationModel. datatransfer. DragDrop. Core](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
 
-| Fonctionnalités | API WinRT |
+| Fonctionnalité | API WinRT |
 | --- | --- |
 |  Activer le glissement | [CoreDragOperation](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 |  Créer un package de données | [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
