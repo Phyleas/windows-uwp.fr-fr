@@ -1,5 +1,5 @@
 ---
-Description: Cet article aborde les quatre options de notification&\# 8212, local, planifié, périodique et push&\# 8212 ; qui fournissent des mises à jour de vignettes et de badges et du contenu de notification Toast.
+description: Cet article aborde les quatre options de notification&\# 8212, local, planifié, périodique et push&\# 8212 ; qui fournissent des mises à jour de vignettes et de badges et du contenu de notification Toast.
 title: Choisir une méthode de remise de notification
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f85918eb0c8f936cc5be393217cd47d66a8b7ff5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219152"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034002"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Choisir une méthode de remise de notification
 
@@ -79,7 +79,7 @@ Ce tableau récapitule les types de remise des notifications.
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Envoi de données (push)</td>
+<td align="left">Envoi (push)</td>
 <td align="left">Vignette, badge, toast, brut</td>
 <td align="left">Notifications envoyées depuis un serveur cloud, même si votre application n’est pas en cours d’exécution.</td>
 <td align="left"><ul>
@@ -92,7 +92,7 @@ Ce tableau récapitule les types de remise des notifications.
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="local-notifications"></a>Notifications locales
 
@@ -168,6 +168,6 @@ Pour plus d'informations, consultez les pages suivantes :
 * [Vue d’ensemble des notifications périodiques](periodic-notification-overview.md)
 * [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
 * [Exemples de code de notification d’application Windows sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
- 
+ 
 
- 
+ 

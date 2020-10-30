@@ -1,5 +1,5 @@
 ---
-Description: Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter.
+description: Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter.
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: Modèles de contrôle et interfaces
 label: Control patterns and interfaces
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: adbe1556f48e2f9b362faa303be52586714c73d5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92f2337848f3689aa8f2f6f73dd92dbbe1313257
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157023"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032532"
 ---
 # <a name="control-patterns-and-interfaces"></a>Modèles de contrôle et interfaces  
 
@@ -36,7 +36,7 @@ Quand vous implémentez un modèle de contrôle, vous devez aussi consulter la d
 | **ExpandCollapse** | [**IExpandCollapseProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider) | Utilisé pour prendre en charge les contrôles qui se développent visuellement pour afficher plus de contenu et qui se réduisent pour masquer du contenu. |
 | **Grid** | [**IGridProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IGridProvider) | Utilisées pour les contrôles qui prennent en charge des fonctionnalités de grille telles que le dimensionnement et le déplacement vers une cellule spécifiée. La grille proprement dite n’implémente pas ce modèle, car bien qu’elle fournisse la disposition, il ne s’agit pas d’un contrôle. |
 | **GridItem** | [**IGridItemProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IGridItemProvider) | Utilisées pour les contrôles dont les grilles contiennent des cellules. |
-| **Appeler** | [**IInvokeProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider) | Utilisé pour les contrôles qui peuvent être appelés, tels qu’un  [**bouton**](/uwp/api/Windows.UI.Xaml.Controls.Button). |
+| **Déclenché** | [**IInvokeProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider) | Utilisé pour les contrôles qui peuvent être appelés, tels qu’un  [**bouton**](/uwp/api/Windows.UI.Xaml.Controls.Button). |
 | **ItemContainer** | [**IItemContainerProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IItemContainerProvider) | Permet aux applications de rechercher un élément dans un conteneur, tel qu’une liste virtualisée. |
 | **MultipleView** | [**IMultipleViewProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IMultipleViewProvider) | Utilisées pour les contrôles qui peuvent basculer entre plusieurs représentations du même ensemble d’informations, de données ou d’enfants. |
 | **ObjectModel** | [**IObjectModelProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IObjectModelProvider) | Utilisé pour exposer un pointeur à un modèle objet sous-jacent d’un document. |
@@ -52,7 +52,7 @@ Quand vous implémentez un modèle de contrôle, vous devez aussi consulter la d
 | **Table** | [**ITableProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ITableProvider) | Utilisées pour les contrôles qui disposent d’une grille ainsi que d’informations d’en-tête. Par exemple, un contrôle de calendrier tabulaire. |
 | **TableItem** | [**ITableItemProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ITableItemProvider) | Utilisées pour les éléments d’une table. |
 | **Text** | [**ITextProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ITextProvider) | Utilisées pour les contrôles d’édition et les documents qui exposent des informations textuelles. Voir aussi [**ITextRangeProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider) et [**ITextProvider2**](/uwp/api/windows.ui.xaml.automation.provider.itextprovider2). |
-| **TextChild** | [**ITextChildProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextchildprovider) | Utilisé pour accéder à l’ancêtre le plus proche d’un élément qui prend en charge le modèle de contrôle **Text**. |
+| **TextChild** | [**ITextChildProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextchildprovider) | Utilisé pour accéder à l’ancêtre le plus proche d’un élément qui prend en charge le modèle de contrôle **Text** . |
 | **TextEdit** | Aucune classe managée disponible | Fournit l’accès à un contrôle qui modifie du texte, par exemple un contrôle qui effectue une correction automatique ou permet une composition d’entrée via un éditeur de méthode d’entrée (IME). |
 | **TextRange** | [**ITextRangeProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider) | Fournit l’accès à une étendue de texte continu au sein d’un conteneur de texte qui implémente [**ITextProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextprovider). Voir aussi [**ITextRangeProvider2**](/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider2). |
 | **Bascule** | [**IToggleProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IToggleProvider) | Utilisées pour les contrôles dont l’état peut être activé et désactivé. Par exemple, [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) et les éléments de menu qui peuvent être activés. |
@@ -65,7 +65,7 @@ Quand vous implémentez un modèle de contrôle, vous devez aussi consulter la d
 > Vous ne trouverez pas nécessairement des implémentations de tous ces modèles dans les contrôles XAML existants. Certains de ces modèles ont des interfaces uniquement pour prendre en charge la parité avec la définition de l’infrastructure UI Automation générale des modèles, ainsi que pour prendre en charge des scénarios d’homologues d’automation qui nécessiteront une implémentation purement personnalisée pour prendre en charge ce modèle.
 
 > [!NOTE]
-> Les applications du Windows Phone Store ne prennent pas en charge tous les modèles de contrôle UI Automation répertoriés ici. **Annotation**, **Dock**, **Drag**, **DropTarget** et **ObjectModel** font partie des modèles non pris en charge.
+> Les applications du Windows Phone Store ne prennent pas en charge tous les modèles de contrôle UI Automation répertoriés ici. **Annotation** , **Dock** , **Drag** , **DropTarget** et **ObjectModel** font partie des modèles non pris en charge.
 
 <span id="related_topics"/>
 

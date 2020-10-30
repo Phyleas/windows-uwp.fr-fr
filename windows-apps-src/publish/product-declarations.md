@@ -1,17 +1,17 @@
 ---
-Description: Les déclarations de produit permettent de s’assurer que votre application est affichée de manière appropriée dans le Microsoft Store et proposée à l’ensemble de clients approprié.
+description: Les déclarations de produit permettent de s’assurer que votre application est affichée de manière appropriée dans le Microsoft Store et proposée à l’ensemble de clients approprié.
 title: Déclarations de produit
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c4e8677a27128e6a33a844f5a887e921ca9ced3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3469992a73a4e90e25ce34883319343ad6986d75
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167363"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034612"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 
@@ -40,7 +40,7 @@ Lorsque vous déclarez votre application comme étant accessible, vous certifiez
 Pour plus d’informations, consultez [accessibilité](../design/accessibility/accessibility.md), [test d’accessibilité](../design/accessibility/accessibility-testing.md)et [accessibilité dans le Windows Store](../design/accessibility/accessibility-in-the-store.md).
 
 > [!IMPORTANT]
-> Ne répertoriez pas votre application comme accessible, sauf si vous l’avez spécifiquement conçue et testée à cet effet. Si votre application est déclarée comme étant accessible, mais qu’elle ne prend pas réellement en charge l’accessibilité, vous allez probablement recevoir des commentaires négatifs de la part de la communauté.
+> Ne répertoriez pas votre application comme accessible, sauf si vous l’avez spécifiquement conçue et testée à cet effet. Si votre application est déclarée comme étant accessible, mais qu’elle ne prend pas réellement en charge l’accessibilité, vous allez probablement recevoir des commentaires négatifs de la part de la communauté.
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>Les clients peuvent installer cette application sur d'autres disques ou dispositifs de stockage amovible.
 
@@ -62,8 +62,8 @@ Si votre application utilise des données Kinect et les envoie à un service ext
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 

@@ -1,5 +1,5 @@
 ---
-Description: Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
+description: Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Accessibilité du clavier
 label: Keyboard accessibility
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c6fc039ad29fc7c29e609788983274c5342951c2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 79dd977cda50d8573cfeab2628ab6227cc9309c0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174003"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032502"
 ---
 # <a name="keyboard-accessibility"></a>Accessibilité du clavier  
 
@@ -59,7 +59,7 @@ Tout élément qui peut avoir le focus est généralement dans l’ordre de tabu
 Que vous ajustiez les valeurs [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) ou que vous utilisiez l’ordre par défaut, les règles suivantes s’appliquent :
 
 * Les éléments d’interface utilisateur dont la valeur [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) est égale à 0 sont ajoutés à l’ordre de tabulation en fonction de l’ordre de déclaration dans les collections XAML ou enfants.
-* Les éléments d’interface utilisateur pour lesquels l’élément [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) est supérieur à 0 sont ajoutés à l’ordre de tabulation en fonction de la valeur **tabIndex**.
+* Les éléments d’interface utilisateur pour lesquels l’élément [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) est supérieur à 0 sont ajoutés à l’ordre de tabulation en fonction de la valeur **tabIndex** .
 * Les éléments d’interface utilisateur avec [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) inférieur à 0 sont ajoutés à l’ordre de tabulation et apparaissent avant toute valeur nulle. Cela peut potentiellement différer de la gestion de l’attribut **tabindex** en HTML (par ailleurs, les spécifications HTML antérieures ne prenaient pas en charge un attribut **tabindex** négatif).
 
 <span id="keyboard_navigation_within_a_UI_element"/>
@@ -155,7 +155,7 @@ Pour obtenir de l’aide supplémentaire sur l’implémentation de touches de r
 <span id="IMPLEMENTING_A_KEY_EVENT_HANDLER"/>
 
 ### <a name="implementing-a-key-event-handler"></a>Implémentation d’un gestionnaire d’événements de touche  
-Les événements d’entrée tels que les événements de touche utilisent un concept d’événement appelé *événements routés*. Un événement routé peut se propager à travers les éléments enfants d’un contrôle composite, de telle sorte qu’un parent de contrôle commun peut gérer des événements pour plusieurs éléments enfants. Ce modèle d’événement est pratique pour définir des actions de touches de raccourci pour un contrôle qui contient plusieurs parties composites qui, de par leur conception, ne peuvent pas avoir le focus ou faire partie de l’ordre de tabulation.
+Les événements d’entrée tels que les événements de touche utilisent un concept d’événement appelé *événements routés* . Un événement routé peut se propager à travers les éléments enfants d’un contrôle composite, de telle sorte qu’un parent de contrôle commun peut gérer des événements pour plusieurs éléments enfants. Ce modèle d’événement est pratique pour définir des actions de touches de raccourci pour un contrôle qui contient plusieurs parties composites qui, de par leur conception, ne peuvent pas avoir le focus ou faire partie de l’ordre de tabulation.
 
 Pour obtenir un exemple de code qui illustre l’écriture d’un gestionnaire d’événements de touche incluant la vérification de modificateurs tels que la touche Ctrl, voir [Interactions avec le clavier](../input/keyboard-interactions.md).
 
@@ -173,7 +173,7 @@ En général, vous implémentez la gestion des clés personnalisées pour les co
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
 
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>Exemple d’un état visuel pour un indicateur de focus  
-Nous avons précédemment indiqué que tout contrôle personnalisé qui permet à l’utilisateur d’ajouter un focus doit être doté d’un indicateur de focus visuel. Généralement, cet indicateur de focus se matérialise simplement par le dessin d’une forme rectangulaire dans le proche contour du rectangle de délimitation normal du contrôle. L’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) du focus visuel est un élément homologue par rapport au reste de la composition du contrôle dans un modèle de contrôle, mais à l’origine, la valeur **Collapsed** est affectée à la propriété [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) car le contrôle n’a pas encore le focus. Ensuite, lorsque le contrôle reçoit le focus, un état visuel est appelé. Ce dernier affecte **Visible** spécifiquement à la propriété **Visibility** de l’état visuel du focus. Une fois que le focus est déplacé ailleurs, un autre état visuel est appelé, et la propriété **Visibility** devient **Collapsed**.
+Nous avons précédemment indiqué que tout contrôle personnalisé qui permet à l’utilisateur d’ajouter un focus doit être doté d’un indicateur de focus visuel. Généralement, cet indicateur de focus se matérialise simplement par le dessin d’une forme rectangulaire dans le proche contour du rectangle de délimitation normal du contrôle. L’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) du focus visuel est un élément homologue par rapport au reste de la composition du contrôle dans un modèle de contrôle, mais à l’origine, la valeur **Collapsed** est affectée à la propriété [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) car le contrôle n’a pas encore le focus. Ensuite, lorsque le contrôle reçoit le focus, un état visuel est appelé. Ce dernier affecte **Visible** spécifiquement à la propriété **Visibility** de l’état visuel du focus. Une fois que le focus est déplacé ailleurs, un autre état visuel est appelé, et la propriété **Visibility** devient **Collapsed** .
 
 Les contrôles XAML par défaut affichent tous un indicateur de focus visuel approprié lorsqu’ils ont le focus (s’ils peuvent recevoir le focus). Ils peuvent aussi avoir des apparences différentes selon le thème sélectionné par l’utilisateur (en particulier si ce dernier utilise un mode de contraste élevé). Si vous utilisez les contrôles XAML dans votre interface utilisateur et que vous ne remplacez pas les modèles de contrôle, aucune opération supplémentaire n’est requise pour obtenir les indicateurs de focus visuels sur les contrôles qui se comportent et qui s’affichent correctement. Mais si vous avez l’intention de redéfinir le modèle d’un contrôle ou si vous souhaitez savoir comment les contrôles XAML fournissent leurs indicateurs de focus visuels, le reste de cette section examine ce qui se passe dans le code XAML et dans la logique des contrôles.
 
@@ -232,14 +232,14 @@ XAML
 </ControlTemplate>
 ```
 
-Notez que seul l’un des états nommés règle la propriété [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) directement tandis que les autres semblent vides. La façon dont les États visuels fonctionnent est que dès que le contrôle utilise un autre État du même [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup), toutes les animations appliquées par l’état précédent sont immédiatement annulées. Le rectangle n’apparaîtra pas car la propriété **Visibility** par défaut à partir de la composition a la valeur **Collapsed**. La logique de contrôle le vérifie en écoutant les événements de focus comme [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus) et en modifiant les états à l’aide de la méthode [**GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate). Souvent, cette modification est déjà gérée pour vous si vous utilisez un contrôle par défaut ou effectuez une personnalisation en fonction d’un contrôle qui possède déjà ce comportement.
+Notez que seul l’un des états nommés règle la propriété [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) directement tandis que les autres semblent vides. La façon dont les États visuels fonctionnent est que dès que le contrôle utilise un autre État du même [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup), toutes les animations appliquées par l’état précédent sont immédiatement annulées. Le rectangle n’apparaîtra pas car la propriété **Visibility** par défaut à partir de la composition a la valeur **Collapsed** . La logique de contrôle le vérifie en écoutant les événements de focus comme [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus) et en modifiant les états à l’aide de la méthode [**GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate). Souvent, cette modification est déjà gérée pour vous si vous utilisez un contrôle par défaut ou effectuez une personnalisation en fonction d’un contrôle qui possède déjà ce comportement.
 
 <span id="Keyboard_accessibility_and_Windows_Phone"/>
 <span id="keyboard_accessibility_and_windows_phone"/>
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
 
 ## <a name="keyboard-accessibility-and-windows-phone"></a>Accessibilité du clavier et Windows Phone
-En règle générale, un appareil Windows Phone ne possède pas de clavier matériel dédié. Toutefois, un clavier virtuel (SIP, Soft Input Panel) peut prendre en charge plusieurs scénarios d’accessibilité du clavier. Les lecteurs d’écran peuvent lire une entrée texte à partir du clavier virtuel **texte**, y compris les annonces de suppressions. Les utilisateurs peuvent savoir à quel endroit se trouvent leurs doigts, car le lecteur d’écran peut détecter la navigation de l’utilisateur parmi les touches, qu’il lit à haute voix une à une. En outre, certains concepts d’accessibilité orientée clavier peuvent être associés à des comportements de technologies d’assistance connexes qui n’utilisent pas du tout de clavier. Par exemple, même si un clavier virtuel ne comprend pas de touche Tabulation, le Narrateur prend en charge un mouvement tactile équivalent à l’appui de la touche Tabulation. Ainsi, le fait de disposer d’un ordre de tabulation pratique dans les contrôles d’une interface utilisateur est un principe d’accessibilité important. L’utilisation des touches de direction pour naviguer entre les parties de contrôles complexes est également prise en charge via les mouvements tactiles du Narrateur. Une fois que le focus a atteint un contrôle qui ne sert pas à entrer du texte, le Narrateur prend en charge un mouvement qui appelle l’action de ce contrôle.
+En règle générale, un appareil Windows Phone ne possède pas de clavier matériel dédié. Toutefois, un clavier virtuel (SIP, Soft Input Panel) peut prendre en charge plusieurs scénarios d’accessibilité du clavier. Les lecteurs d’écran peuvent lire une entrée texte à partir du clavier virtuel **texte** , y compris les annonces de suppressions. Les utilisateurs peuvent savoir à quel endroit se trouvent leurs doigts, car le lecteur d’écran peut détecter la navigation de l’utilisateur parmi les touches, qu’il lit à haute voix une à une. En outre, certains concepts d’accessibilité orientée clavier peuvent être associés à des comportements de technologies d’assistance connexes qui n’utilisent pas du tout de clavier. Par exemple, même si un clavier virtuel ne comprend pas de touche Tabulation, le Narrateur prend en charge un mouvement tactile équivalent à l’appui de la touche Tabulation. Ainsi, le fait de disposer d’un ordre de tabulation pratique dans les contrôles d’une interface utilisateur est un principe d’accessibilité important. L’utilisation des touches de direction pour naviguer entre les parties de contrôles complexes est également prise en charge via les mouvements tactiles du Narrateur. Une fois que le focus a atteint un contrôle qui ne sert pas à entrer du texte, le Narrateur prend en charge un mouvement qui appelle l’action de ce contrôle.
 
 En règle générale, les raccourcis clavier ne concernent pas les applications Windows Phone, car un clavier virtuel ne comporte pas de touche Ctrl ou Alt.
 

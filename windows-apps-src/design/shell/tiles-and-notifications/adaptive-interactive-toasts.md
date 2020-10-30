@@ -1,5 +1,5 @@
 ---
-Description: Les notifications toast adaptatives et interactives contextuelles et flexibles (plus de contenu, des images incluses/une interaction utilisateur facultatives).
+description: Les notifications toast adaptatives et interactives contextuelles et flexibles (plus de contenu, des images incluses/une interaction utilisateur facultatives).
 title: Contenu des toasts
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
@@ -8,18 +8,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, notifications Toast, toasts interactifs, toasts adaptatifs, contenu Toast, charge utile Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: ed801d07991c4faa186bc0164dbf0d1323537a20
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: f148938f8c8e3bb5ac305a82d1863545005fd802
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984605"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034292"
 ---
 # <a name="toast-content"></a>Contenu des toasts
 
 Les notifications Toast adaptatives et interactives vous permettent de créer des notifications flexibles avec du texte, des images et des boutons/entrées.
 
-> **API importantes** : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **API importantes**  : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
 > Pour afficher les modèles hérités de Windows 8.1 et Windows Phone 8,1, consultez le [catalogue de modèles Toast hérité](/previous-versions/windows/apps/hh761494(v=win.10)).
@@ -39,13 +39,13 @@ Pour savoir comment envoyer une notification, consultez [Envoyer un toast local]
 
 ## <a name="toast-notification-structure"></a>Structure de notification toast
 
-Les notifications Toast sont une combinaison de certaines propriétés de données telles que la balise/le groupe (qui vous permettent d’identifier la notification) et le *contenu du Toast*.
+Les notifications Toast sont une combinaison de certaines propriétés de données telles que la balise/le groupe (qui vous permettent d’identifier la notification) et le *contenu du Toast* .
 
 Les principaux composants du contenu Toast sont...
-* **Launch**: définit les arguments qui seront retransmis à votre application quand l’utilisateur clique sur votre toast, ce qui vous permet d’établir un lien vers le contenu correct affiché par le Toast. Pour plus d’informations, consultez [Envoyer un toast local](send-local-toast.md).
-* **visuel**: partie visuelle du Toast, y compris la liaison générique qui contient le texte et les images.
-* **actions**: partie interactive du Toast, y compris les entrées et les actions.
-* **audio**: contrôle le son joué lorsque le toast est présenté à l’utilisateur.
+* **Launch** : définit les arguments qui seront retransmis à votre application quand l’utilisateur clique sur votre toast, ce qui vous permet d’établir un lien vers le contenu correct affiché par le Toast. Pour plus d’informations, consultez [Envoyer un toast local](send-local-toast.md).
+* **visuel** : partie visuelle du Toast, y compris la liaison générique qui contient le texte et les images.
+* **actions** : partie interactive du Toast, y compris les entrées et les actions.
+* **audio** : contrôle le son joué lorsque le toast est présenté à l’utilisateur.
 
 Le contenu Toast est défini dans du code XML brut, mais vous pouvez utiliser notre [bibliothèque NuGet](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) pour obtenir un modèle objet C# (ou C++) afin de construire le contenu Toast. Cet article documente tout ce qui se passe dans le contenu du Toast.
 
@@ -64,17 +64,17 @@ new ToastContentBuilder()
 ```xml
 <toast launch="app-defined-string">
 
-  <visual>
-    <binding template="ToastGeneric">
-      ...
-    </binding>
-  </visual>
+  <visual>
+    <binding template="ToastGeneric">
+      ...
+    </binding>
+  </visual>
 
-  <actions>
-    ...
-  </actions>
+  <actions>
+    ...
+  </actions>
 
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
+  <audio src="ms-winsoundevent:Notification.Reminder"/>
 
 </toast>
 ```
@@ -86,7 +86,7 @@ Voici une représentation visuelle du contenu du Toast :
 ![structure de notification toast](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>Élément visuel
+## <a name="visual"></a>Éléments visuels
 
 Chaque toast doit spécifier un visuel, où vous devez fournir une liaison Toast générique, qui peut contenir du texte, des images et bien plus encore. Ces éléments sont affichés sur différents appareils Windows, y compris les ordinateurs de bureau, les téléphones, les tablettes et les Xbox.
 
@@ -105,7 +105,7 @@ Chaque toast doit avoir au moins un élément de texte et peut contenir deux él
 
 <img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
 
-Depuis la mise à jour anniversaire de Windows 10, vous pouvez contrôler le nombre de lignes de texte affichées à l’aide de la propriété **HintMaxLines** sur le texte. La valeur par défaut (et maximum) est de 2 lignes de texte pour le titre, et jusqu’à 4 lignes (combinées) pour les deux éléments de description supplémentaires (le deuxième et le troisième **AdaptiveText**).
+Depuis la mise à jour anniversaire de Windows 10, vous pouvez contrôler le nombre de lignes de texte affichées à l’aide de la propriété **HintMaxLines** sur le texte. La valeur par défaut (et maximum) est de 2 lignes de texte pour le titre, et jusqu’à 4 lignes (combinées) pour les deux éléments de description supplémentaires (le deuxième et le troisième **AdaptiveText** ).
 
 #### <a name="builder-syntax"></a>[Syntaxe du générateur](#tab/builder-syntax)
 
@@ -161,7 +161,7 @@ new ToastContentBuilder()
 
 ## <a name="hero-image"></a>Image de héros
 
-**Nouveauté de la mise à jour anniversaire**: les toasts peuvent afficher une image de héros, qui est un [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) présenté de manière visible dans la bannière Toast et dans le centre de maintenance. Les dimensions de l’image sont 364x180 pixels à 100% de mise à l’échelle.
+**Nouveauté de la mise à jour anniversaire** : les toasts peuvent afficher une image de héros, qui est un [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) présenté de manière visible dans la bannière Toast et dans le centre de maintenance. Les dimensions de l’image sont 364x180 pixels à 100% de mise à l’échelle.
 
 <img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
 
@@ -232,7 +232,7 @@ Si une image dépasse la taille du fichier ou ne peut pas être téléchargée, 
 
 ## <a name="attribution-text"></a>Texte de l’attribution
 
-**Nouveauté de la mise à jour anniversaire**: Si vous devez référencer la source de votre contenu, vous pouvez utiliser le texte de l’attribution. Ce texte est toujours affiché au bas de votre notification, avec l’identité de votre application ou l’horodateur de la notification.
+**Nouveauté de la mise à jour anniversaire** : Si vous devez référencer la source de votre contenu, vous pouvez utiliser le texte de l’attribution. Ce texte est toujours affiché au bas de votre notification, avec l’identité de votre application ou l’horodateur de la notification.
 
 Dans les versions antérieures de Windows qui ne prennent pas en charge le texte de l’attribution, le texte sera simplement affiché sous la forme d’un autre élément de texte (en supposant que vous n’avez pas encore le maximum de trois éléments de texte).
 
@@ -261,7 +261,7 @@ new ToastContentBuilder()
 
 ## <a name="custom-timestamp"></a>Horodateur personnalisé
 
-**Nouveautés de Creators Update**: vous pouvez désormais remplacer l’horodateur fourni par le système par votre propre horodateur qui représente avec précision le moment où le message/les informations/le contenu a été généré. Cet horodateur est visible dans le centre de maintenance.
+**Nouveautés de Creators Update** : vous pouvez désormais remplacer l’horodateur fourni par le système par votre propre horodateur qui représente avec précision le moment où le message/les informations/le contenu a été généré. Cet horodateur est visible dans le centre de maintenance.
 
 <img alt="Toast with custom timestamp" src="images/toast-customtimestamp.jpg" width="396"/>
 
@@ -280,7 +280,7 @@ new ToastContentBuilder()
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+  ...
 </toast>
 ```
 
@@ -289,16 +289,16 @@ new ToastContentBuilder()
 
 ## <a name="progress-bar"></a>Barre de progression
 
-**Nouveautés de Creators Update**: vous pouvez fournir une barre de progression sur votre notification toast pour informer l’utilisateur de la progression des opérations telles que les téléchargements.
+**Nouveautés de Creators Update** : vous pouvez fournir une barre de progression sur votre notification toast pour informer l’utilisateur de la progression des opérations telles que les téléchargements.
 
 <img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
 
 Pour en savoir plus sur l’utilisation d’une barre de progression, consultez [barre de progression Toast](toast-progress-bar.md).
 
 
-## <a name="headers"></a>headers
+## <a name="headers"></a>En-têtes
 
-**Nouveautés de Creators Update**: vous pouvez regrouper les notifications sous les en-têtes dans le centre de maintenance. Par exemple, vous pouvez regrouper des messages d’une conversation de groupe sous un en-tête, ou des notifications de groupe d’un thème commun sous un en-tête, ou plus.
+**Nouveautés de Creators Update** : vous pouvez regrouper les notifications sous les en-têtes dans le centre de maintenance. Par exemple, vous pouvez regrouper des messages d’une conversation de groupe sous un en-tête, ou des notifications de groupe d’un thème commun sous un en-tête, ou plus.
 
 <img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
 
@@ -307,7 +307,7 @@ Pour en savoir plus sur l’utilisation des en-têtes, consultez [en-têtes Toas
 
 ## <a name="adaptive-content"></a>Contenu adaptatif
 
-**Nouveauté de la mise à jour anniversaire**: en plus du contenu indiqué ci-dessus, vous pouvez également afficher du contenu adaptatif supplémentaire qui est visible lorsque le toast est développé.
+**Nouveauté de la mise à jour anniversaire** : en plus du contenu indiqué ci-dessus, vous pouvez également afficher du contenu adaptatif supplémentaire qui est visible lorsque le toast est développé.
 
 Ce contenu supplémentaire est spécifié à l’aide de Adaptive, qui vous permet d’en savoir plus sur en lisant la documentation sur les [vignettes adaptatives](create-adaptive-tiles.md).
 
@@ -316,7 +316,7 @@ Notez que tout contenu adaptatif doit être contenu dans un [**AdaptiveGroup**](
 
 ### <a name="columns-and-text-elements"></a>Colonnes et éléments de texte
 
-Voici un exemple d’utilisation de colonnes et de certains éléments de texte adaptatif avancés. Étant donné que les éléments de texte se trouvent dans un **AdaptiveGroup**, ils prennent en charge toutes les propriétés de style adaptatif riches.
+Voici un exemple d’utilisation de colonnes et de certains éléments de texte adaptatif avancés. Étant donné que les éléments de texte se trouvent dans un **AdaptiveGroup** , ils prennent en charge toutes les propriétés de style adaptatif riches.
 
 <img alt="Toast with additional text" src="images/toast-additionaltext.jpg" width="364"/>
 
@@ -480,7 +480,7 @@ new ToastContentBuilder()
 
 ### <a name="buttons-with-pending-update-activation"></a>Boutons avec activation de mise à jour en attente
 
-**Nouveautés de la mise à jour des créateurs de automne**: sur les boutons d’activation en arrière-plan, vous pouvez utiliser un comportement d’activation après activation de **PendingUpdate** pour créer des interactions à plusieurs étapes dans vos notifications Toast. Quand l’utilisateur clique sur le bouton, votre tâche en arrière-plan est activée et le toast est placé dans un État « mise à jour en attente », où il reste à l’écran jusqu’à ce que votre tâche en arrière-plan remplace le Toast par un nouveau Toast.
+**Nouveautés de la mise à jour des créateurs de automne** : sur les boutons d’activation en arrière-plan, vous pouvez utiliser un comportement d’activation après activation de **PendingUpdate** pour créer des interactions à plusieurs étapes dans vos notifications Toast. Quand l’utilisateur clique sur le bouton, votre tâche en arrière-plan est activée et le toast est placé dans un État « mise à jour en attente », où il reste à l’écran jusqu’à ce que votre tâche en arrière-plan remplace le Toast par un nouveau Toast.
 
 Pour savoir comment implémenter cela, consultez [mise à jour en attente de Toast](toast-pending-update.md).
 
@@ -489,7 +489,7 @@ Pour savoir comment implémenter cela, consultez [mise à jour en attente de Toa
 
 ### <a name="context-menu-actions"></a>Actions du menu contextuel
 
-**Nouveauté de la mise à jour anniversaire**: vous pouvez ajouter des actions de menu contextuel supplémentaires au menu contextuel existant qui apparaît lorsque l’utilisateur clique avec le bouton droit sur votre toast dans le centre de maintenance. Notez que ce menu s’affiche uniquement quand l’utilisateur clique avec le bouton droit dans le centre de maintenance. Il n’apparaît pas quand vous cliquez avec le bouton droit sur une bannière de message Toast.
+**Nouveauté de la mise à jour anniversaire** : vous pouvez ajouter des actions de menu contextuel supplémentaires au menu contextuel existant qui apparaît lorsque l’utilisateur clique avec le bouton droit sur votre toast dans le centre de maintenance. Notez que ce menu s’affiche uniquement quand l’utilisateur clique avec le bouton droit dans le centre de maintenance. Il n’apparaît pas quand vous cliquez avec le bouton droit sur une bannière de message Toast.
 
 > [!NOTE]
 > Sur les appareils plus anciens, ces actions de menu contextuel supplémentaires s’affichent simplement comme des boutons normaux sur votre toast.
@@ -735,25 +735,25 @@ new ToastContentBuilder()
 
 ```xml
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
-   
-  ...
- 
-  <actions>
-     
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
- 
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-    <action activationType="system" arguments="dismiss" content=""/>
-     
-  </actions>
-   
+   
+  ...
+ 
+  <actions>
+     
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+ 
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+ 
+    <action activationType="system" arguments="dismiss" content=""/>
+     
+  </actions>
+   
 </toast>
 ```
 
@@ -764,12 +764,12 @@ Pour utiliser les actions système répéter et ignorer :
 -   Spécifiez un **ToastButtonSnooze** ou un **ToastButtonDismiss**
 -   Spécifiez éventuellement une chaîne de contenu personnalisée :
     -   Si vous ne fournissez pas de chaîne, nous utiliserons automatiquement les chaînes localisées pour « répéter » et « ignorer ».
--   Spécifiez éventuellement le **SelectionBoxId**:
+-   Spécifiez éventuellement le **SelectionBoxId** :
     -   Si vous ne voulez pas que l’utilisateur sélectionne un intervalle de répétition, mais souhaitez simplement que votre notification se répète une seule fois pendant un intervalle de temps défini par le système (et cohérent dans l’ensemble du système d’exploitation), ne construisez aucun élément &lt;input&gt;.
     -   Si vous voulez fournir des sélections d’intervalle de répétition :
         -   Spécifier **SelectionBoxId** dans l’action de répétition
         -   Correspond à l’ID de l’entrée avec le **SelectionBoxId** de l’action de répétition
-        -   Spécifiez la valeur de **ToastSelectionBoxItem**en tant que nonNegativeInteger qui représente l’intervalle de répétition en minutes.
+        -   Spécifiez la valeur de **ToastSelectionBoxItem** en tant que nonNegativeInteger qui représente l’intervalle de répétition en minutes.
 
 
 
@@ -816,9 +816,9 @@ Pour créer des alarmes, des rappels et des notifications d’appels entrants, i
 > [!IMPORTANT]
 > Lorsque vous utilisez le rappel ou l’alarme, vous devez fournir au moins un bouton sur votre notification Toast. Dans le cas contraire, le Toast sera traité comme un toast normal.
 
-* **Rappel**: la notification reste à l’écran jusqu’à ce que l’utilisateur la ignore ou effectue une action. Sur Windows Mobile, le Toast s’affichera également en préversion. Un rappel sera émis.
-* **Alarme**: en plus des comportements de rappel, les alarmes effectuent en outre une boucle audio avec un son d’alarme par défaut.
-* **IncomingCall**: les notifications d’appel entrantes sont affichées en mode plein écran sur les périphériques Windows Mobile. Dans le cas contraire, ils ont les mêmes comportements que les alarmes, sauf qu’ils utilisent l’audio de sonnerie et que leurs boutons ont un style différent.
+* **Rappel** : la notification reste à l’écran jusqu’à ce que l’utilisateur la ignore ou effectue une action. Sur Windows Mobile, le Toast s’affichera également en préversion. Un rappel sera émis.
+* **Alarme** : en plus des comportements de rappel, les alarmes effectuent en outre une boucle audio avec un son d’alarme par défaut.
+* **IncomingCall** : les notifications d’appel entrantes sont affichées en mode plein écran sur les périphériques Windows Mobile. Dans le cas contraire, ils ont les mêmes comportements que les alarmes, sauf qu’ils utilisent l’audio de sonnerie et que leurs boutons ont un style différent.
 
 #### <a name="builder-syntax"></a>[Syntaxe du générateur](#tab/builder-syntax)
 
@@ -848,7 +848,7 @@ Vos mosaïques et toasts peuvent charger des chaînes et des images adaptées à
 
 ## <a name="handling-activation"></a>Gestion de l’activation
 Pour savoir comment gérer les activations de Toast (l’utilisateur qui clique sur votre toast ou sur les boutons du Toast), consultez [Envoyer un toast local](send-local-toast.md).
- 
+ 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Envoyer un toast local et gérer l’activation](send-local-toast.md)

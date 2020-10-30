@@ -1,17 +1,17 @@
 ---
-Description: Si votre application affiche des publicités à l’aide du kit de développement logiciel (SDK) Microsoft Advertising, utilisez la page ADS dans l’application de l’espace partenaires pour gérer votre utilisation des publicités.
+description: Si votre application affiche des publicités à l’aide du kit de développement logiciel (SDK) Microsoft Advertising, utilisez la page ADS dans l’application de l’espace partenaires pour gérer votre utilisation des publicités.
 title: Publicités dans l’application
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 724a9b6bc34d38a5addfd0e0123f26e1d98c9caf
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: c0951a26f0475d9565e783720263a6c6be9f2f08
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878592"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033932"
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -34,16 +34,16 @@ Pour plus d’informations sur l’intégration de ces kits de développement lo
 
 Pour créer une unité ad pour une [bannière](../monetize/banner-ads.md)publicitaire, une publicité [interstitielle](../monetize/interstitial-ads.md)ou une [publicité Native](../monetize/native-ads.md) dans votre application :
 
-1.  Accédez à la page **monétis** &gt; **in-app ADS** dans l’espace partenaires, puis cliquez sur **Create ad Unit**.
+1.  Accédez à la page **monétis** &gt; **in-app ADS** dans l’espace partenaires, puis cliquez sur **Create ad Unit** .
 2.  Dans la liste déroulante nom de l' **application** , sélectionnez l’application dans laquelle votre unité ad sera utilisée.
 3.  Dans le champ nom de l' **unité ad** , entrez un nom pour l’unité ad. Il peut s’agir de n’importe quelle chaîne descriptive que vous souhaitez utiliser pour identifier l’unité ad à des fins de création de rapports.
 4.  Dans la liste déroulante **type d’unité ad** , sélectionnez le type de publicité.
 
-    * Si vous utilisez une bannière publicitaire dans votre application, sélectionnez **bannière**.
+    * Si vous utilisez une bannière publicitaire dans votre application, sélectionnez **bannière** .
     * Si vous affichez une publicité de vidéo interstitielle ou une publicité de bannière interstitielle dans votre application, sélectionnez une **vidéo** ou une **bannière** (veillez à sélectionner l’option appropriée pour le type de publicité interstitielle que vous souhaitez afficher).
-    * Si vous montrez une publicité native dans votre application, sélectionnez **natif**.
+    * Si vous montrez une publicité native dans votre application, sélectionnez **natif** .
 
-5. Dans la liste déroulante **famille d’appareils** , sélectionnez la famille d’appareils ciblée par l’application dans laquelle votre unité ad sera utilisée. Les options disponibles sont les suivantes : **UWP (Windows 10)**, **PC/tablette (Windows 8.1)** ou **mobile (Windows Phone 8. x)**.
+5. Dans la liste déroulante **famille d’appareils** , sélectionnez la famille d’appareils ciblée par l’application dans laquelle votre unité ad sera utilisée. Les options disponibles sont les suivantes : **UWP (Windows 10)** , **PC/tablette (Windows 8.1)** ou **mobile (Windows Phone 8. x)** .
 
 6. Configurez les paramètres supplémentaires suivants comme vous le souhaitez :
 
@@ -51,7 +51,7 @@ Pour créer une unité ad pour une [bannière](../monetize/banner-ads.md)publici
     * Si vous sélectionnez la famille d’appareils **PC/tablette (Windows 8.1)** ou **mobile (Windows Phone 8. x)** pour une unité publicitaire à bannière, vous pouvez éventuellement sélectionner **afficher les publicités de la Communauté dans votre application** pour vous abonner aux publicités de la [communauté](../monetize/index.md).
 
 7.  Si vous n’avez pas encore défini la compatibilité COPPA pour l’application sélectionnée, choisissez une option dans la section conformité de la réglementation [Coppa](#coppa) .
-8.  Cliquez sur **Créer une publicité**.
+8.  Cliquez sur **Créer une publicité** .
 
 Une fois que vous avez créé la nouvelle unité ad, elle apparaît dans la table des unités ad disponibles dans la page **monétis** &gt; **in-app ADS** .
 
@@ -73,7 +73,7 @@ Une fois que vous avez créé des unités AD pour une ou plusieurs applications 
 Pour modifier les [paramètres de médiation](#mediation) pour une unité ad UWP ou la conformité à la réglementation [Coppa](#coppa) pour l’application dans laquelle l’unité ad est utilisée, cliquez sur le nom de l’unité ad.
 
 > [!NOTE]
-> Si une unité ad n’a pas d’activité au cours des six derniers mois, nous l’étiqueterons comme **inactive**et, par la suite, elle est supprimée de l’espace partenaires. Vous pouvez utiliser des filtres pour afficher uniquement les unités **Active Directory actives** ou **inactives** . Si vous voyez des unités ad que vous pensez être marquées comme **inactives**, [Contactez le support technique](https://developer.microsoft.com/windows/support).
+> Si une unité ad n’a pas d’activité au cours des six derniers mois, nous l’étiqueterons comme **inactive** et, par la suite, elle est supprimée de l’espace partenaires. Vous pouvez utiliser des filtres pour afficher uniquement les unités **Active Directory actives** ou **inactives** . Si vous voyez des unités ad que vous pensez être marquées comme **inactives** , [Contactez le support technique](https://developer.microsoft.com/windows/support).
 
 <span id="mediation" />
 
@@ -90,15 +90,15 @@ Pour configurer les paramètres de médiation AD pour une unité ad UWP dans vot
 2. Dans la page **annonces dans l’application** , accédez à la section **paramètres de médiation** et configurez vos paramètres.
 
     * Par défaut, la case à cocher **laisser Microsoft optimiser mes paramètres** est activée. Nous vous recommandons d’utiliser cette option. Cette option utilise des algorithmes d’apprentissage automatique pour choisir automatiquement les paramètres de médiation AD pour votre application afin de vous aider à maximiser vos revenus Active Directory sur les marchés pris en charge par votre application. Lorsque vous utilisez cette option, vous pouvez également choisir les réseaux Active Directory que vous souhaitez utiliser dans la configuration. Décochez les réseaux Active Directory que vous ne souhaitez pas faire partie de la configuration et notre algorithme garantira que votre application reçoit uniquement les annonces des réseaux Active Directory sélectionnés.
-    * Si vous souhaitez choisir vos propres paramètres de médiation ad, choisissez **modifier les paramètres par défaut**.
+    * Si vous souhaitez choisir vos propres paramètres de médiation ad, choisissez **modifier les paramètres par défaut** .
 
     > [!NOTE]
-    > Les étapes restantes de cette section s’appliquent uniquement si vous choisissez **modifier les paramètres par défaut**.
+    > Les étapes restantes de cette section s’appliquent uniquement si vous choisissez **modifier les paramètres par défaut** .
 
 3. Dans la liste déroulante **cible** , choisissez **ligne de base** pour configurer la configuration par défaut de vos paramètres de médiation ad. Cette configuration par défaut sera appliquée à tous les marchés, à l’exception des marchés où vous définissez des configurations spécifiques au marché.
-4. Ensuite, spécifiez le taux de publicités que vous souhaitez afficher dans votre contrôle à partir de réseaux payants (qui paient vos revenus pour les impressions) et d’autres réseaux Active Directory (qui ne paient pas de revenu pour les impressions). Pour ce faire, entrez une valeur comprise entre 0 et 100 dans les champs **poids** des **réseaux Active Directory payants** et d' **autres réseaux Active Directory**.  
+4. Ensuite, spécifiez le taux de publicités que vous souhaitez afficher dans votre contrôle à partir de réseaux payants (qui paient vos revenus pour les impressions) et d’autres réseaux Active Directory (qui ne paient pas de revenu pour les impressions). Pour ce faire, entrez une valeur comprise entre 0 et 100 dans les champs **poids** des **réseaux Active Directory payants** et d' **autres réseaux Active Directory** .  
 5. Dans la section **réseaux ad payants** , activez la case à cocher dans la colonne **actif** pour chaque [réseau payant](#paid-networks) que vous souhaitez utiliser, puis utilisez les flèches de la colonne **classement** pour classer les réseaux par rang (cela indique la fréquence à laquelle chaque réseau doit être utilisé par votre contrôle).
-6. Si vous avez sélectionné une unité publicitaire **bannière** ou **bannière** , vous verrez également une section intitulée **autres réseaux Active Directory**. Les réseaux de cette section ne vous sont pas facturés pour l’impression des publicités. Au lieu de cela, ces réseaux affichent des publicités provenant de sources telles que des campagnes de promotion d’applications.
+6. Si vous avez sélectionné une unité publicitaire **bannière** ou **bannière** , vous verrez également une section intitulée **autres réseaux Active Directory** . Les réseaux de cette section ne vous sont pas facturés pour l’impression des publicités. Au lieu de cela, ces réseaux affichent des publicités provenant de sources telles que des campagnes de promotion d’applications.
 
     Dans la section **autres réseaux Active Directory** , activez la case à cocher dans la colonne **actif** pour chaque [autre réseau](#other-networks) que vous souhaitez utiliser, puis utilisez les flèches de la colonne **classement** pour classer les réseaux par rang (spécifie la fréquence à laquelle chaque réseau doit être utilisé par votre contrôle). Les autres réseaux suivants sont actuellement pris en charge :
 
@@ -113,7 +113,7 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 
 |  Réseau ad  |  Description  |  Types ad pris en charge  |
 |--------------|---------------|---------------------|
-| Serment et AppNexus |  Il s’agit d’un réseau ad géré par Microsoft qui fournit des publicités via nos réseaux partenaires, serment et AppNexus.<p/>**Remarque**: serment et AppNexus sont toujours classés en premier dans la liste des **réseaux ad payants** pour les unités publicitaires de bannières, et il n’est pas possible de les remplacer par un classement plus bas pour ces types de publicités. | Bannière, vidéo |
+| Serment et AppNexus |  Il s’agit d’un réseau ad géré par Microsoft qui fournit des publicités via nos réseaux partenaires, serment et AppNexus.<p/>**Remarque** : serment et AppNexus sont toujours classés en premier dans la liste des **réseaux ad payants** pour les unités publicitaires de bannières, et il n’est pas possible de les remplacer par un classement plus bas pour ces types de publicités. | Bannière, vidéo |
 | AppNexus (direct) | Sélectionnez cette option pour fournir des publicités à partir de [AppNexus](https://www.appnexus.com). | Vidéo, en mode natif  |
 | Annonces d’installation d’applications Microsoft | Sélectionnez cette option pour traiter les publicités d’installation d’application ou les publicités de réengagement d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes publicitaires promotionnelles pour leurs applications](../monetize/index.md).  |  Bannière, interstitiel de bannière, Native  |
 | Recommandations relatives au contenu MSN |  Sélectionnez cette option pour traiter les publicités des recommandations du contenu MSN. |  Bannière, bannière  |

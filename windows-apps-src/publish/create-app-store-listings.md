@@ -1,17 +1,17 @@
 ---
-Description: La section répertorier les listes du processus d’envoi de l’application vous permet de fournir le texte et les images que les clients verront lors de l’affichage de la liste de votre application dans la Microsoft Store.
+description: La section répertorier les listes du processus d’envoi de l’application vous permet de fournir le texte et les images que les clients verront lors de l’affichage de la liste de votre application dans la Microsoft Store.
 title: Créer des annonces d’application dans le Windows Store
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, UWP, liste, description, page Store, notes de publication, title
 ms.localizationpriority: medium
-ms.openlocfilehash: 6124ea17d8c1c348e9093882df901c829f2cd90e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cb895dcabcc72361575f2d160b10fade03905d9a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164193"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033292"
 ---
 # <a name="create-app-store-listings"></a>Créer des annonces d’application dans le Windows Store
 
@@ -31,9 +31,9 @@ Vous devez remplir la page **Description dans le Windows Store** dans une langue
 > [!NOTE]
 > Si votre soumission contient déjà des packages, nous afficherons les [langues](supported-languages.md) prises en charge dans vos packages sur la page vue d’ensemble de la soumission (sauf si vous les supprimez).
 
-Pour ajouter ou supprimer des langues pour les annonces de votre boutique, cliquez sur **Ajouter/supprimer des langues** dans la page vue d’ensemble de la soumission. Si vous avez déjà chargé des packages, leurs langues sont répertoriées dans la section **Langues prises en charge par vos packages**. Pour supprimer une ou plusieurs de ces langues, cliquez sur **Supprimer**. Si vous décidez plus tard d’inclure une langue précédemment supprimée de cette section, vous pouvez cliquer sur **Ajouter**.
+Pour ajouter ou supprimer des langues pour les annonces de votre boutique, cliquez sur **Ajouter/supprimer des langues** dans la page vue d’ensemble de la soumission. Si vous avez déjà chargé des packages, leurs langues sont répertoriées dans la section **Langues prises en charge par vos packages** . Pour supprimer une ou plusieurs de ces langues, cliquez sur **Supprimer** . Si vous décidez plus tard d’inclure une langue précédemment supprimée de cette section, vous pouvez cliquer sur **Ajouter** .
 
-Dans la section **Langues supplémentaires de description dans le Windows Store**, vous pouvez cliquer sur **Gérer les langues supplémentaires** pour ajouter ou supprimer des langues qui ne sont *pas* incluses dans vos packages. Cochez les cases pour les langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour**. Les langues que vous avez sélectionnées s’afficheront dans la section **Langues supplémentaires de description dans le Windows Store**. Pour supprimer une ou plusieurs de ces langues, cliquez sur **Supprimer** (ou cliquez sur **Gérer les langues supplémentaires** et décochez la case pour les langues que vous souhaitez supprimer).
+Dans la section **Langues supplémentaires de description dans le Windows Store** , vous pouvez cliquer sur **Gérer les langues supplémentaires** pour ajouter ou supprimer des langues qui ne sont *pas* incluses dans vos packages. Cochez les cases pour les langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour** . Les langues que vous avez sélectionnées s’afficheront dans la section **Langues supplémentaires de description dans le Windows Store** . Pour supprimer une ou plusieurs de ces langues, cliquez sur **Supprimer** (ou cliquez sur **Gérer les langues supplémentaires** et décochez la case pour les langues que vous souhaitez supprimer).
 
 Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de présentation de la soumission.
 
@@ -64,11 +64,11 @@ Pour obtenir des conseils sur la rédaction d’une description attrayante, cons
 
 ## <a name="whats-new-in-this-version"></a>Nouveautés de cette version
 
-Si c’est la première fois que vous envoyez votre application, laissez ce champ vide. Pour une mise à jour d’une application existante, c’est là que vous pouvez permettre aux clients de savoir ce qui a changé dans la dernière version. Ce champ est limité à 1 500 caractères. (Auparavant, ce champ était appelé **notes de publication**).
+Si c’est la première fois que vous envoyez votre application, laissez ce champ vide. Pour une mise à jour d’une application existante, c’est là que vous pouvez permettre aux clients de savoir ce qui a changé dans la dernière version. Ce champ est limité à 1 500 caractères. (Auparavant, ce champ était appelé **notes de publication** ).
 
 ## <a name="product-features"></a>Fonctionnalités du produit
 
-Il s’agit de courts résumés des principales fonctionnalités de votre application. Ils sont affichés au client sous la forme d’une liste à puces dans la section **fonctionnalités** de la liste des boutiques de votre application, en plus de la **Description**. Chacune de ces informations est limitée à 200 caractères. Vous pouvez spécifier jusqu’à 20 fonctionnalités.
+Il s’agit de courts résumés des principales fonctionnalités de votre application. Ils sont affichés au client sous la forme d’une liste à puces dans la section **fonctionnalités** de la liste des boutiques de votre application, en plus de la **Description** . Chacune de ces informations est limitée à 200 caractères. Vous pouvez spécifier jusqu’à 20 fonctionnalités.
 
 > [!NOTE]
 > Ces fonctionnalités apparaîtront à puces dans la liste de votre boutique. n’ajoutez donc pas vos propres puces.
@@ -130,7 +130,7 @@ Pour de meilleurs résultats, conservez votre brève description sous 270 caract
 
 Si nécessaire, vous pouvez décrire les configurations matérielles requises par votre application pour fonctionner correctement (en plus des informations fournies dans la section **Configuration système requise** de [Propriétés de l’application](enter-app-properties.md#system-requirements). Ces informations sont particulièrement importantes si votre application nécessite du matériel qui peut ne pas être présent sur tous les ordinateurs. Par exemple, si votre application fonctionne correctement avec un matériel USB externe tel qu’une imprimante ou un microcontrôleur 3D, nous vous suggérons de les entrer ici. Les informations que vous entrez s’affichent pour les clients qui affichent le Listing de votre application sur Windows 10, version 1607 ou ultérieure (y compris la Xbox), ainsi que les conditions que vous avez indiquées sur la page de propriétés du produit.
 
-Vous pouvez entrer jusqu’à 11 éléments pour les deux champs **Matériel minimum** et **Matériel recommandé**. Celles-ci sont présentées au client sous la forme d’une liste à puces dans votre liste de boutiques. Chacune de ces informations est limitée à 200 caractères.
+Vous pouvez entrer jusqu’à 11 éléments pour les deux champs **Matériel minimum** et **Matériel recommandé** . Celles-ci sont présentées au client sous la forme d’une liste à puces dans votre liste de boutiques. Chacune de ces informations est limitée à 200 caractères.
 
 > [!NOTE]
 > Votre configuration requise supplémentaire apparaîtra à la liste de votre boutique, donc n’ajoutez pas vos propres puces.
@@ -139,7 +139,7 @@ Vous pouvez entrer jusqu’à 11 éléments pour les deux champs **Matériel mi
 
 ## <a name="additional-information"></a>Informations supplémentaires
 
-Les éléments décrits ci-dessous aident les clients à découvrir et à comprendre votre produit. (Anciennement appelée **champs partagés**).
+Les éléments décrits ci-dessous aident les clients à découvrir et à comprendre votre produit. (Anciennement appelée **champs partagés** ).
 
 ### <a name="search-terms"></a>Termes de recherche
 
@@ -155,7 +155,7 @@ Si vous voulez fournir des informations supplémentaires de droits d’auteur et
 
 Laissez ce champ vide si vous voulez que votre application possède une licence conforme aux **Termes du contrat de licence d’application standard** (vers lesquels pointe un lien situé dans le [Contrat du développeur de l’application](/legal/windows/agreements/app-developer-agreement)).
 
-Si vos termes de contrat de licence diffèrent de ceux du **Contrat de licence d’application standard**, entrez-les ici.
+Si vos termes de contrat de licence diffèrent de ceux du **Contrat de licence d’application standard** , entrez-les ici.
 
 Si vous entrez une URL dans ce champ, elle apparaît aux clients sous la forme d’un lien sur lequel ces derniers peuvent cliquer pour lire les termes supplémentaires du contrat de licence. Ceci est utile si les termes supplémentaires de votre contrat de licence sont très longs, ou si vous souhaitez inclure des liens hypertexte fonctionnels ou une mise en forme dans les termes supplémentaires de votre contrat de licence.
 
@@ -170,4 +170,4 @@ Ce champ a une limite de 255 caractères.
 <a name="privacy-policy"></a>
 
 > [!NOTE]
-> Les **champs stratégie de confidentialité**, **site Web**et **informations de contact du support technique** se trouvent maintenant dans la page [Propriétés](enter-app-properties.md) .
+> Les **champs stratégie de confidentialité** , **site Web** et **informations de contact du support technique** se trouvent maintenant dans la page [Propriétés](enter-app-properties.md) .

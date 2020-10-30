@@ -1,17 +1,17 @@
 ---
-Description: Vos mosaïques et toasts peuvent charger des chaînes et des images adaptées à la langue d’affichage, au facteur d’échelle d’affichage, au contraste élevé et à d’autres contextes d’exécution.
+description: Vos mosaïques et toasts peuvent charger des chaînes et des images adaptées à la langue d’affichage, au facteur d’échelle d’affichage, au contraste élevé et à d’autres contextes d’exécution.
 title: Prise en charge des notifications par vignette et toast pour la langue, la mise à l’échelle et le contraste élevé
 template: detail.hbs
 ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 88bcd5d6ce59d0561e76f46f6291f58ad03ddf3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0048da25cd1e775391c2523e37cb936243b7308c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156733"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033112"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Prise en charge des notifications par vignette et toast pour la langue, la mise à l’échelle et le contraste élevé
 

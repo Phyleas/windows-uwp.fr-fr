@@ -1,5 +1,5 @@
 ---
-Description: Une application localisée est une application qui peut être localisée sur d’autres marchés, langues ou régions sans dévoiler les défauts fonctionnels de l’application. La propriété la plus essentielle d’une application localisable est que son code exécutable a été séparé proprement de ses ressources localisables.
+description: Une application localisée est une application qui peut être localisée sur d’autres marchés, langues ou régions sans dévoiler les défauts fonctionnels de l’application. La propriété la plus essentielle d’une application localisable est que son code exécutable a été séparé proprement de ses ressources localisables.
 title: Rendre votre application localisable
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b914c0a2bcfae630b8b491ed702b237ce0eaaee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8dfae2f80706edcc4462960e396f228c2829600b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172533"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034362"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -72,7 +72,7 @@ Pour résoudre ce problème, localisez la phrase entière, plutôt qu’un mot i
 
 Évitez les colloquialisms et les métaphores dans les chaînes que vous créez dans votre langue par défaut. La langue propre à un groupe démographique, telle que la culture et l’âge, peut être difficile à comprendre ou à traduire, car seules les personnes de ce groupe démographique utilisent cette langue. De la même façon, les métaphores peuvent avoir un sens pour une personne, mais ne rien évoquer pour une autre. Par exemple, &quot;vendanger&quot; a un sens précis dans le jargon du football, qui échappe aux non-initiés.
 
-N’utilisez pas de jargon, d’abréviations ni d’acronymes. Un langage technique aura moins de chances d’être compris d’un public non initié ou de personnes issues d’autres cultures ou régions et il sera difficile à traduire. Ce vocabulaire n’est pas utilisé dans les conversations de tous les jours. La langue technique apparaît souvent dans les messages d’erreur pour identifier les problèmes matériels et logiciels, mais vous ne devez utiliser des chaînes *qui ne sont techniques que si l’utilisateur a besoin de ce niveau d’informations et peut l’agir d’une action ou d’une personne qui peut y accéder*.
+N’utilisez pas de jargon, d’abréviations ni d’acronymes. Un langage technique aura moins de chances d’être compris d’un public non initié ou de personnes issues d’autres cultures ou régions et il sera difficile à traduire. Ce vocabulaire n’est pas utilisé dans les conversations de tous les jours. La langue technique apparaît souvent dans les messages d’erreur pour identifier les problèmes matériels et logiciels, mais vous ne devez utiliser des chaînes *qui ne sont techniques que si l’utilisateur a besoin de ce niveau d’informations et peut l’agir d’une action ou d’une personne qui peut y accéder* .
 
 L’utilisation d’une voix ou d’un ton informel dans vos chaînes est un choix valide. Vous pouvez utiliser des commentaires dans votre fichier de ressources par défaut (. resw) pour indiquer cette intention.
 
@@ -95,9 +95,9 @@ Désactivez la génération automatique du package. appxbundle en affectant à l
 
 1. Dans Visual Studio, cliquez avec le bouton droit sur le nom du projet
 2. Sélectionnez **stocker**  ->  **créer des packages d’application...**
-3. Dans la boîte de dialogue **créer vos packages** , sélectionnez **je souhaite créer des packages à charger sur le Microsoft Store à l’aide d’un nouveau nom d’application** , puis cliquez sur **suivant**.
+3. Dans la boîte de dialogue **créer vos packages** , sélectionnez **je souhaite créer des packages à charger sur le Microsoft Store à l’aide d’un nouveau nom d’application** , puis cliquez sur **suivant** .
 4. Dans la boîte de dialogue **Sélectionner un nom d’application** , sélectionnez/Créez un nom d’application pour votre package.
-5. Dans la boîte de dialogue **Sélectionner et configurer des packages** , affectez à **générer un bundle d’applications** la valeur **jamais**.
+5. Dans la boîte de dialogue **Sélectionner et configurer des packages** , affectez à **générer un bundle d’applications** la valeur **jamais** .
 
 ## <a name="geopolitical-awareness"></a>Sensibilisation géopolitique
 

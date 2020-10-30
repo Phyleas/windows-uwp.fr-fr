@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment créer des notifications efficaces et orientées utilisateur qui rendent vos utilisateurs productifs et heureux.
+description: Découvrez comment créer des notifications efficaces et orientées utilisateur qui rendent vos utilisateurs productifs et heureux.
 title: Conseils sur Toast UX
 label: Toast UX Guidance
 template: detail.hbs
@@ -7,17 +7,17 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP, notification, collection, groupe, expérience utilisateur, conseils, conseils, action, toast, centre de maintenance, notifications non interinterrompues, notifications efficaces, notifications non intrusives, action possible, gérer, organiser
 ms.localizationpriority: medium
-ms.openlocfilehash: 9879d052882532e4d47c27c0b636f728293311cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6ad253ccfa744864caa8d0229d09ba40d066771
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169173"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033042"
 ---
 # <a name="toast-notification-ux-guidance"></a>Guide d’expérience utilisateur des notifications Toast
 Les notifications sont un élément essentiel de la vie moderne ; ils aident les utilisateurs à être plus productifs et à être engagés avec des applications et des sites Web, et à rester à jour avec toutes les mises à jour. Toutefois, les notifications peuvent rapidement devenir utiles pour se décharger et intrusives si elles ne sont pas conçues de façon centrée sur l’utilisateur. Vos notifications sont accessibles par un clic droit à l’extérieur et il est peu probable qu’elles soient désactivées. elles sont réactivées.  Par conséquent, assurez-vous que vos notifications respectent l’espace et l’heure de l’écran de l’utilisateur, ce qui vous permet de garder ce canal d’engagement ouvert.
 
-> **API importantes**: [package NuGet des notifications de la communauté Windows](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **API importantes** : [package NuGet des notifications de la communauté Windows](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 Nous avons analysé nos données de télémétrie Windows, ainsi que d’autres études de cas de première et tierces, afin de mettre en place quatre règles concernant ce qui constitue un excellent scénario de notification.  Nous sommes convaincus que ces règles sont universellement applicables, quelle que soit la plate-forme, et qui aideront vos notifications à avoir un impact positif sur vos utilisateurs.
 

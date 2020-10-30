@@ -1,5 +1,5 @@
 ---
-Description: Concevez votre application pour qu’elle fonctionne correctement et fonctionne bien dans la réalité mixte.
+description: Concevez votre application pour qu’elle fonctionne correctement et fonctionne bien dans la réalité mixte.
 title: Conception pour la réalité mixte
 ms.assetid: ''
 label: Designing for Mixed Reality
@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: c0b1ae069959e74239234ae5c9ba409fe7a65f23
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 225b91b20f35c974fca865cc4e94a96efceda84d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165973"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034372"
 ---
 # <a name="designing-for-mixed-reality"></a>Conception pour la réalité mixte
 
@@ -40,7 +40,7 @@ Une application immersive prend la totalité de l’écran visible par l’utili
 
 Si vous créez des applications immersifs, visitez le centre de [développement Windows Mixed Reality Center](https://developer.microsoft.com/mixed-reality) pour plus d’informations.
 
-Une application 2D s’exécute en tant que fenêtre plate classique dans la vue de l’utilisateur. Sur le HoloLens, cela signifie qu’une vue a été épinglée au mur ou à un point dans l’espace dans les utilisateurs, qu’il s’agissait d’un salon ou d’un bureau réel. Dans un casque Windows Mixed Reality, l’application est épinglée à un mur dans la [réalité mixte](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (parfois appelée *maison*de la falaise).
+Une application 2D s’exécute en tant que fenêtre plate classique dans la vue de l’utilisateur. Sur le HoloLens, cela signifie qu’une vue a été épinglée au mur ou à un point dans l’espace dans les utilisateurs, qu’il s’agissait d’un salon ou d’un bureau réel. Dans un casque Windows Mixed Reality, l’application est épinglée à un mur dans la [réalité mixte](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (parfois appelée *maison* de la falaise).
 
 ![Plusieurs applications s’exécutant en réalité mixte](images/MR-multiple.png)
 
@@ -113,9 +113,9 @@ Lorsque vous créez une application UWP qui sera potentiellement utilisée sur u
 
 ![Le texte affiché dans les applications de réalité mixte doit être volumineux.](images/MR-text.png)
 
-* [Votre point de regard est votre souris](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). Lorsque l’utilisateur Regarde un objet, il joue le rôle d’un événement de **pointage tactile** . par conséquent, la simple consultation d’un objet peut déclencher une fenêtre contextuelle par inadvertance ou une autre interaction indésirable. Vous devrez peut-être détecter si l’application est en cours d’exécution en réalité mixte et modifier ce comportement. Consultez **prise en charge du runtime**, ci-dessous. 
+* [Votre point de regard est votre souris](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). Lorsque l’utilisateur Regarde un objet, il joue le rôle d’un événement de **pointage tactile** . par conséquent, la simple consultation d’un objet peut déclencher une fenêtre contextuelle par inadvertance ou une autre interaction indésirable. Vous devrez peut-être détecter si l’application est en cours d’exécution en réalité mixte et modifier ce comportement. Consultez **prise en charge du runtime** , ci-dessous. 
 
-* Lorsqu’un utilisateur fait un regard sur un contrôleur de mouvement, un événement de **pointage tactile** se produit. Il s’agit d’un **PointerPoint** où **PointerType** est **Touch**, mais **IsInContact** a la **valeur false**. Quand une certaine forme de validation se produit (par exemple, un bouton de sélection est enfoncé, un appareil de l’utilisateur clique sur un déclencheur de mouvement enfoncé ou des têtes de reconnaissance vocale « Select »), une pression **tactile** se produit, avec la **valeur**de **PointerPoint** avec **IsInContact** . Pour plus d’informations sur ces événements d’entrée, consultez [interactions tactiles](../input/touch-interactions.md) .
+* Lorsqu’un utilisateur fait un regard sur un contrôleur de mouvement, un événement de **pointage tactile** se produit. Il s’agit d’un **PointerPoint** où **PointerType** est **Touch** , mais **IsInContact** a la **valeur false** . Quand une certaine forme de validation se produit (par exemple, un bouton de sélection est enfoncé, un appareil de l’utilisateur clique sur un déclencheur de mouvement enfoncé ou des têtes de reconnaissance vocale « Select »), une pression **tactile** se produit, avec la **valeur** de **PointerPoint** avec **IsInContact** . Pour plus d’informations sur ces événements d’entrée, consultez [interactions tactiles](../input/touch-interactions.md) .
 
 * N’oubliez pas que le point de regard n’est pas aussi précis que le pointage de la souris. Des cibles de souris ou des boutons plus petits peuvent causer des frustrations pour vos utilisateurs, si bien que les contrôles sont redimensionnés en conséquence. S’ils sont conçus pour la saisie tactile, ils fonctionnent en réalité mixte, mais vous pouvez décider d’agrandir certains boutons lors de l’exécution. Consultez [mise à jour de votre application universelle existante pour Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens).
 

@@ -1,16 +1,16 @@
 ---
-Description: Découvrez les différentes façons dont vous pouvez permettre aux clients d’évaluer et de passer en revue votre application par programmation.
+description: Découvrez les différentes façons dont vous pouvez permettre aux clients d’évaluer et de passer en revue votre application par programmation.
 title: Demander des évaluations et des révisions pour votre application
 ms.date: 01/22/2019
 ms.topic: article
 keywords: Windows 10, UWP, évaluations, revues
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a668ac66f48e386a6299a64e5bcc18cec4fccc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9dbc33eaaf3adcb05a6ad37e2f54ceec4769f530
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158373"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034402"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Demander des évaluations et des révisions pour votre application
 
@@ -110,8 +110,8 @@ Une fois que vous avez envoyé la demande pour afficher la boîte de dialogue é
 L’exemple suivant illustre la valeur de retour de cette demande après que le client a envoyé une évaluation ou une évaluation.
 
 ```json
-{ 
-  "status": "success", 
+{ 
+  "status": "success", 
   "data": {
     "updated": false
   },
@@ -122,8 +122,8 @@ L’exemple suivant illustre la valeur de retour de cette demande après que le 
 L’exemple suivant illustre la valeur de retour de cette demande après que le client a choisi de ne pas soumettre une évaluation ou une révision.
 
 ```json
-{ 
-  "status": "aborted", 
+{ 
+  "status": "aborted", 
   "errorDetails": "Navigation was unsuccessful"
 }
 ```
@@ -132,8 +132,8 @@ Le tableau suivant décrit les champs de la chaîne de données au format JSON.
 
 | Champ          | Description                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *statut*       | Chaîne qui indique si le client a envoyé une évaluation ou une révision. Les valeurs prises en charge sont **réussite** et **abandon**. |
-| *data*         | Objet qui contient une valeur booléenne unique nommée *updated*. Cette valeur indique si le client a mis à jour une évaluation ou une révision existante. L’objet de *données* est inclus uniquement dans les réponses de réussite. |
+| *statut*       | Chaîne qui indique si le client a envoyé une évaluation ou une révision. Les valeurs prises en charge sont **réussite** et **abandon** . |
+| *data*         | Objet qui contient une valeur booléenne unique nommée *updated* . Cette valeur indique si le client a mis à jour une évaluation ou une révision existante. L’objet de *données* est inclus uniquement dans les réponses de réussite. |
 | *errorDetails* | Chaîne qui contient les détails de l’erreur de la demande.                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Lancer la page évaluation et vérification de votre application dans le Store

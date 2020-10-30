@@ -1,17 +1,17 @@
 ---
-Description: Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
+description: Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
 title: Activer les achats de produits in-app
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: UWP, modules complémentaires, achats dans l’application, IAPs, Windows. ApplicationModel. Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6fc8a6ac39c106e3d5d593a36595097c4bde45
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b24a48034585411af5edfb0950fc4f96b189519f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364112"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033472"
 ---
 # <a name="enable-in-app-product-purchases"></a>Activer les achats de produits in-app
 
@@ -58,7 +58,7 @@ Pour chaque fonctionnalité que vous voulez proposer par le biais d’un produit
 
     Vous devez placer dans un bloc conditionnel le code de chaque fonctionnalité associée à un produit dans l’application. Ce bloc vérifie si le client possède une licence lui permettant d’utiliser cette fonctionnalité.
 
-    Voici un exemple indiquant comment vous pouvez coder une fonctionnalité de produit nommée **featureName** dans le bloc conditionnel propre à une licence. La chaîne, **NomFonctionnalité**, est le jeton qui identifie de façon unique ce produit dans l’application et est également utilisé pour l’identifier dans le magasin.
+    Voici un exemple indiquant comment vous pouvez coder une fonctionnalité de produit nommée **featureName** dans le bloc conditionnel propre à une licence. La chaîne, **NomFonctionnalité** , est le jeton qui identifie de façon unique ce produit dans l’application et est également utilisé pour l’identifier dans le magasin.
 
     > [!div class="tabbedCodeSnippets"]
     :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="CodeFeature":::
@@ -83,7 +83,7 @@ Dans l’espace partenaires, accédez à votre application et [créez un module 
   > [!NOTE]
   > Le jeton d’offre dans l’application que vous utilisez dans votre code doit correspondre à la valeur d' [ID de produit](../publish/set-your-add-on-product-id.md#product-id) que vous spécifiez pour le module complémentaire correspondant dans l’espace partenaires.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Si vous envisagez de fournir à vos clients des options de produits consommables intégrés à l’application (éléments pouvant être achetés, utilisés, puis rachetés si nécessaire), passez à la rubrique [Activer les achats de produits consommables intégrés à l’application](enable-consumable-in-app-product-purchases.md).
 
@@ -92,7 +92,7 @@ Si vous avez besoin de reçus pour vérifier que l’utilisateur a bien effectu�
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Activer les achats de produits consommables in-app](enable-consumable-in-app-product-purchases.md)
+* [Activer les achats de produits dans l’application consommables](enable-consumable-in-app-product-purchases.md)
 * [Gérer un vaste catalogue de produits in-app](manage-a-large-catalog-of-in-app-products.md)
 * [Utiliser des reçus pour vérifier les achats de produits](use-receipts-to-verify-product-purchases.md)
 * [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)

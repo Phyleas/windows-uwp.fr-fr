@@ -1,5 +1,5 @@
 ---
-Description: Fournit une liste de vérification pour vous aider à vous assurer que votre application Windows est accessible.
+description: Fournit une liste de vérification pour vous aider à vous assurer que votre application Windows est accessible.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Liste de vérification de l’accessibilité
 label: Accessibility checklist
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b9340f55064ff89c0b047cbb6d7407574da3d6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: fd16c93b3914987741a486e4f40d4b60e0b274ee
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216392"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032712"
 ---
 # <a name="accessibility-checklist"></a>Liste de vérification de l’accessibilité
 
@@ -43,8 +43,8 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
     * Windows comprend différents outils et paramètres d’accessibilité dont les utilisateurs peuvent tirer parti et s’adapter à leurs propres besoins et préférences pour lire du texte. Elles incluent notamment :
         * L’outil loupe, qui agrandit la zone sélectionnée de l’interface utilisateur. Vous devez vous assurer que la disposition du texte dans votre application ne complique pas l’utilisation de la loupe pour la lecture.
-        * Les paramètres de mise à l’échelle et de résolution globaux dans **paramètres->>système d’affichage->de l’échelle et de la disposition**. Les options de dimensionnement disponibles peuvent varier en fonction des capacités du périphérique d’affichage.
-        * Paramètres de taille du texte dans **paramètres->facilité d’accès->affichage**. Ajustez le paramètre **agrandir le texte** pour spécifier uniquement la taille du texte dans les contrôles de prise en charge pour l’ensemble des applications et écrans (tous les contrôles de texte UWP prennent en charge l’expérience de mise à l’échelle du texte sans personnalisation ni création de modèles).
+        * Les paramètres de mise à l’échelle et de résolution globaux dans **paramètres->>système d’affichage->de l’échelle et de la disposition** . Les options de dimensionnement disponibles peuvent varier en fonction des capacités du périphérique d’affichage.
+        * Paramètres de taille du texte dans **paramètres->facilité d’accès->affichage** . Ajustez le paramètre **agrandir le texte** pour spécifier uniquement la taille du texte dans les contrôles de prise en charge pour l’ensemble des applications et écrans (tous les contrôles de texte UWP prennent en charge l’expérience de mise à l’échelle du texte sans personnalisation ni création de modèles).
         > [!NOTE]
         > Le paramètre **rendre tout** le plus grand permet à un utilisateur de spécifier la taille préférée du texte et des applications en général sur leur écran principal uniquement.
 

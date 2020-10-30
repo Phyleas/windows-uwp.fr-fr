@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment créer une application hébergée qui hérite de l’exécutable, du point d’entrée et des attributs d’exécution d’une application hôte.
+description: Découvrez comment créer une application hébergée qui hérite de l’exécutable, du point d’entrée et des attributs d’exécution d’une application hôte.
 title: Créer des applications hébergées
 ms.date: 04/23/2020
 ms.topic: article
@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3424b7a0ead3d4a3abeebc6286aebe935d09eab2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 205f17227b13b2da4177f42fb7773b6779bc02cb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172993"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032912"
 ---
 # <a name="create-hosted-apps"></a>Créer des applications hébergées
 
-À compter de Windows 10, version 2004, vous pouvez créer des *applications hébergées*. Une application hébergée partage le même exécutable et la même définition qu’une application *hôte* parent, mais elle se présente comme une application distincte sur le système.
+À compter de Windows 10, version 2004, vous pouvez créer des *applications hébergées* . Une application hébergée partage le même exécutable et la même définition qu’une application *hôte* parent, mais elle se présente comme une application distincte sur le système.
 
 Les applications hébergées sont utiles dans les scénarios où vous souhaitez qu’un composant (tel qu’un fichier exécutable ou un fichier de script) se comporte comme une application Windows 10 autonome, alors que ce composant nécessite un processus hôte pour pouvoir s’exécuter. Par exemple, un script PowerShell ou python peut être fourni sous la forme d’une application hébergée nécessitant l’installation d’un hôte pour pouvoir s’exécuter. Une application hébergée peut avoir une vignette de démarrage et une identité qui lui sont propres, tout en intégrant étroitement des fonctionnalités Windows 10, telles que les tâches en arrière-plan, les notifications, les vignettes et les cibles de partage.
 
@@ -25,7 +25,7 @@ La fonctionnalité applications hébergées est prise en charge par plusieurs é
 
 ## <a name="define-a-host"></a>Définir un hôte
 
-L' *hôte* est le principal processus exécutable ou d’exécution pour l’application hébergée. Actuellement, les seuls hôtes pris en charge sont les applications de bureau (.NET ou C++/Win32) qui ont une *identité de package*. Pour le moment, les applications UWP ne sont pas prises en charge en tant qu’hôtes. Il existe plusieurs façons pour une application de bureau d’avoir une identité de package :
+L' *hôte* est le principal processus exécutable ou d’exécution pour l’application hébergée. Actuellement, les seuls hôtes pris en charge sont les applications de bureau (.NET ou C++/Win32) qui ont une *identité de package* . Pour le moment, les applications UWP ne sont pas prises en charge en tant qu’hôtes. Il existe plusieurs façons pour une application de bureau d’avoir une identité de package :
 
 * La méthode la plus courante pour accorder l’identité d’un package à une application de bureau consiste à l' [empaqueter dans un package MSIX](/windows/msix).
 * Dans certains cas, vous pouvez également choisir d’accorder l’identité du package en créant un [package fragmenté](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). Cette option est utile si vous ne pouvez pas adopter l’empaquetage MSIX pour le déploiement de votre application de bureau.
@@ -53,12 +53,12 @@ Prenez note de ces informations importantes sur les éléments suivants.
 
 | Élément              | Détails |
 |----------------------|-------|
-| [**uap10:Extension**](/wp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) | La `windows.hostRuntime` catégorie déclare une extension au niveau du package qui définit les informations d’exécution à utiliser lors de l’activation d’une application hébergée. Une application hébergée s’exécute avec les définitions déclarées dans l’extension. Quand vous utilisez l’application hôte déclarée dans l’exemple précédent, une application hébergée s’exécute en tant que **PyScriptEngine.exe** exécutable au niveau de confiance **mediumIL** .<br/><br/>Les attributs **executable**, **uap10 : RuntimeBehavior**et **uap10 : TrustLevel** spécifient le nom du fichier binaire du processus hôte dans le package et comment les applications hébergées s’exécutent. Par exemple, une application hébergée utilisant les attributs dans l’exemple précédent s’exécutera en tant que PyScriptEngine.exe exécutable au niveau de confiance mediumIL. |
-| [**uap10:HostRuntime**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) | L’attribut **ID** déclare l’identificateur unique de cette application hôte spécifique dans le package. Un package peut avoir plusieurs applications hôtes, et chacune doit avoir un élément **uap10 : HostRuntime** avec un **ID**unique.
+| [**uap10:Extension**](/wp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) | La `windows.hostRuntime` catégorie déclare une extension au niveau du package qui définit les informations d’exécution à utiliser lors de l’activation d’une application hébergée. Une application hébergée s’exécute avec les définitions déclarées dans l’extension. Quand vous utilisez l’application hôte déclarée dans l’exemple précédent, une application hébergée s’exécute en tant que **PyScriptEngine.exe** exécutable au niveau de confiance **mediumIL** .<br/><br/>Les attributs **executable** , **uap10 : RuntimeBehavior** et **uap10 : TrustLevel** spécifient le nom du fichier binaire du processus hôte dans le package et comment les applications hébergées s’exécutent. Par exemple, une application hébergée utilisant les attributs dans l’exemple précédent s’exécutera en tant que PyScriptEngine.exe exécutable au niveau de confiance mediumIL. |
+| [**uap10:HostRuntime**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) | L’attribut **ID** déclare l’identificateur unique de cette application hôte spécifique dans le package. Un package peut avoir plusieurs applications hôtes, et chacune doit avoir un élément **uap10 : HostRuntime** avec un **ID** unique.
 
 ## <a name="declare-a-hosted-app"></a>Déclarer une application hébergée
 
-Une *application hébergée* déclare une dépendance de package sur un *hôte*. L’application hébergée utilise l’ID de l’hôte (autrement dit, l’attribut **ID** de l’extension **uap10 : HostRuntime** dans le package hôte) pour l’activation au lieu de spécifier un exécutable de point d’entrée dans son propre package. L’application hébergée contient généralement du contenu, des ressources visuelles, des scripts ou des fichiers binaires qui sont accessibles par l’hôte. La valeur [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans le package d’application hébergé doit cibler la même valeur que l’hôte.
+Une *application hébergée* déclare une dépendance de package sur un *hôte* . L’application hébergée utilise l’ID de l’hôte (autrement dit, l’attribut **ID** de l’extension **uap10 : HostRuntime** dans le package hôte) pour l’activation au lieu de spécifier un exécutable de point d’entrée dans son propre package. L’application hébergée contient généralement du contenu, des ressources visuelles, des scripts ou des fichiers binaires qui sont accessibles par l’hôte. La valeur [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans le package d’application hébergé doit cibler la même valeur que l’hôte.
 
 Les packages d’application hébergée peuvent être signés ou non signés :
 
@@ -101,7 +101,7 @@ Prenez note de ces informations importantes sur les éléments suivants.
 | [**Identité**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) | Étant donné que le package d’application hébergé dans cet exemple n’est pas signé, l’attribut **Publisher** doit inclure la `OID.2.25.311729368913984317654407730594956997722=1` chaîne. Cela permet de s’assurer que le package non signé ne peut pas usurper l’identité d’un package signé. |
 | [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) | L’attribut **MinVersion** doit spécifier 10.0.19041.0 ou une version ultérieure du système d’exploitation. |
 | [**uap10:HostRuntimeDependency**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntimedependency)  | Cet élément d’élément déclare une dépendance sur le package d’application hôte. Cela se compose du **nom** et de l' **éditeur** du package hôte, ainsi que de la **MinVersion** dont il dépend. Ces valeurs se trouvent sous l’élément [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans le package hôte. |
-| [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) | L’attribut **uap10 : HostID** exprime la dépendance sur l’hôte. Le package d’application hébergé doit déclarer cet attribut à la place des attributs d' **exécutable** et de **point d’entrée** habituels pour une [**application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) ou un élément d' [**extension**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) . Par conséquent, l’application hébergée hérite des attributs **executable**, **entryPoint** et Runtime de l’hôte avec la valeur **HostID** correspondante.<br/><br/>L’attribut **uap10 : Parameters** spécifie les paramètres qui sont passés à la fonction de point d’entrée de l’exécutable hôte. Étant donné que l’hôte doit savoir quoi faire avec ces paramètres, il existe un contrat implicite entre l’hôte et l’application hébergée. |
+| [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) | L’attribut **uap10 : HostID** exprime la dépendance sur l’hôte. Le package d’application hébergé doit déclarer cet attribut à la place des attributs d' **exécutable** et de **point d’entrée** habituels pour une [**application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) ou un élément d' [**extension**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) . Par conséquent, l’application hébergée hérite des attributs **executable** , **entryPoint** et Runtime de l’hôte avec la valeur **HostID** correspondante.<br/><br/>L’attribut **uap10 : Parameters** spécifie les paramètres qui sont passés à la fonction de point d’entrée de l’exécutable hôte. Étant donné que l’hôte doit savoir quoi faire avec ces paramètres, il existe un contrat implicite entre l’hôte et l’application hébergée. |
 
 ## <a name="register-an-unsigned-hosted-app-package-at-run-time"></a>Inscrire un package d’application hébergé non signé au moment de l’exécution
 
@@ -114,7 +114,7 @@ Utilisez les méthodes suivantes de la classe [**packagemanager**](/uwp/api/wind
 
 ### <a name="requirements-for-unsigned-hosted-apps"></a>Configuration requise pour les applications hébergées non signées
 
-* Les éléments d' [**application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) ou d' [**extension**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) du manifeste du package ne peuvent pas contenir de données d’activation telles que les attributs **executable**, **entryPoint**ou **trustLevel** . Au lieu de cela, ces éléments peuvent uniquement contenir un attribut **uap10 : HostID** qui exprime la dépendance sur l’hôte et un attribut **Uap10 : Parameters** .
+* Les éléments d' [**application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) ou d' [**extension**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) du manifeste du package ne peuvent pas contenir de données d’activation telles que les attributs **executable** , **entryPoint** ou **trustLevel** . Au lieu de cela, ces éléments peuvent uniquement contenir un attribut **uap10 : HostID** qui exprime la dépendance sur l’hôte et un attribut **Uap10 : Parameters** .
 * Le package doit être un package principal. Il ne peut pas s’agir d’un bundle, d’un package d’infrastructure, d’une ressource ou d’un package facultatif.
 
 ### <a name="requirements-for-a-host-that-installs-and-registers-an-unsigned-hosted-app-package"></a>Configuration requise pour un ordinateur hôte qui installe et inscrit un package d’application hébergé non signé
@@ -138,9 +138,9 @@ Pour obtenir un exemple d’application entièrement fonctionnel qui déclare lu
 
 ### <a name="the-host"></a>Hôte
 
-L’hôte est nommé **PyScriptEngine**. Il s’agit d’un wrapper écrit en C# qui exécute des scripts Python. Lorsqu’il est exécuté avec le `-Register` paramètre, le moteur de script installe une application hébergée contenant un script Python. Lorsqu’un utilisateur tente de lancer l’application hébergée récemment installée, l’ordinateur hôte est lancé et exécute le script Python **NumberGuesser** .
+L’hôte est nommé **PyScriptEngine** . Il s’agit d’un wrapper écrit en C# qui exécute des scripts Python. Lorsqu’il est exécuté avec le `-Register` paramètre, le moteur de script installe une application hébergée contenant un script Python. Lorsqu’un utilisateur tente de lancer l’application hébergée récemment installée, l’ordinateur hôte est lancé et exécute le script Python **NumberGuesser** .
 
-Le manifeste du package pour l’application hôte (le fichier Package. appxmanifest dans le dossier PyScriptEnginePackage) contient une extension **uap10 : HostRuntime** qui déclare l’application en tant qu’hôte avec l’ID **PythonHost** et le **PyScriptEngine.exe**exécutable.  
+Le manifeste du package pour l’application hôte (le fichier Package. appxmanifest dans le dossier PyScriptEnginePackage) contient une extension **uap10 : HostRuntime** qui déclare l’application en tant qu’hôte avec l’ID **PythonHost** et le **PyScriptEngine.exe** exécutable.  
 
 > [!NOTE]
 > Dans cet exemple, le manifeste du package est nommé Package. appxmanifest et il fait partie d’un [projet de packaging des applications Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). Lorsque ce projet est généré, il [génère un manifeste nommé AppxManifest.xml](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) et génère le package MSIX pour l’application hôte.
@@ -161,7 +161,7 @@ L’exemple requiert la version 10.0.19041.0 ou ultérieure de Windows 10 et le 
 1. Téléchargez l' [exemple](https://aka.ms/hostedappsample) dans un dossier sur votre ordinateur de développement.
 2. Ouvrez la solution PyScriptEngine. sln dans Visual Studio et définissez le projet **PyScriptEnginePackage** comme projet de démarrage.
 3. Générez le projet **PyScriptEnginePackage** .
-4. Dans Explorateur de solutions, cliquez avec le bouton droit sur le projet **PyScriptEnginePackage** et choisissez **déployer**.
+4. Dans Explorateur de solutions, cliquez avec le bouton droit sur le projet **PyScriptEnginePackage** et choisissez **déployer** .
 5. Ouvrez une fenêtre d’invite de commandes dans le répertoire où vous avez copié les exemples de fichiers et exécutez la commande suivante pour inscrire l’exemple d’application **NumberGuesser** (l’application hébergée). Remplacez `D:\repos\HostedApps` par le chemin d’accès où vous avez copié les exemples de fichiers.
 
     ```CMD

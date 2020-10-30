@@ -1,31 +1,31 @@
 ---
-Description: Pour exécuter une expérience dans votre app. de plateforme Windows universelle (UWP) avec des tests A/B, vous devez code l’expérience dans votre application.
+description: Pour exécuter une expérience dans votre app. de plateforme Windows universelle (UWP) avec des tests A/B, vous devez code l’expérience dans votre application.
 title: Coder votre application à des fins d’expérimentation
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, kit de développement logiciel (SDK) Microsoft Store services, tests A/B, expériences
 ms.localizationpriority: medium
-ms.openlocfilehash: dbdd95ab0d4ecde5fbe5cfb8d84d2d328b4c5a24
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: a5229be4d0ea2ce98ec10530458fe29af10fa7f0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363662"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033602"
 ---
 # <a name="code-your-app-for-experimentation"></a>Coder votre application à des fins d’expérimentation
 
 Une fois que vous avez [créé un projet et défini des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), vous êtes prêt à mettre à jour le code de votre application plateforme Windows universelle (UWP) pour effectuer les opérations suivantes :
 * Recevoir des valeurs de variables distantes à partir de l’espace partenaires.
 * utiliser des variables distantes pour configurer des expériences d’application pour vos utilisateurs ;
-* Consignez les événements dans l’espace partenaires qui indiquent le moment où les utilisateurs ont consulté votre expérience et effectué une action souhaitée (également appelée *conversion*).
+* Consignez les événements dans l’espace partenaires qui indiquent le moment où les utilisateurs ont consulté votre expérience et effectué une action souhaitée (également appelée *conversion* ).
 
 Pour ajouter ce comportement à votre application, vous allez utiliser les API fournies par le Microsoft Store Services SDK.
 
 Les sections suivantes décrivent le processus général d’obtention de variations pour votre expérience et de journalisation des événements dans l’espace partenaires. Une fois que vous avez codé votre application pour l’expérimentation, vous pouvez [définir une expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md). Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 > [!NOTE]
-> Certaines des API d’expérimentation dans le kit de développement logiciel (SDK) Microsoft Store services utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer des données de l’espace partenaires. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
+> Certaines des API d’expérimentation dans le kit de développement logiciel (SDK) Microsoft Store services utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer des données de l’espace partenaires. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async** .
 
 ## <a name="configure-your-project"></a>Configurer votre projet
 
@@ -33,9 +33,9 @@ Pour commencer, installez le Kit de développement logiciel Microsoft Store Serv
 
 1. [Installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk).
 2. Ouvrez votre projet dans Visual Studio.
-3. Dans l’Explorateur de solutions, développez votre nœud de projet, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
-3. Dans le **Gestionnaire de références**, développez **Windows universel**, puis cliquez sur **Extensions**.
-4. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK**.
+3. Dans l’Explorateur de solutions, développez votre nœud de projet, cliquez avec le bouton droit sur **Références** , puis sélectionnez **Ajouter une référence** .
+3. Dans le **Gestionnaire de références** , développez **Windows universel** , puis cliquez sur **Extensions** .
+4. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK** .
 
 > [!NOTE]
 > Les exemples de code de cet article partent du principe que votre fichier de code **utilise** des instructions pour les espaces de noms **System. Threading. Tasks** et **Microsoft. services. Store. engagement** .
@@ -80,7 +80,7 @@ Les étapes suivantes décrivent les éléments importants de ce processus en d�
 
 7. Enfin, consignez l' [événement d’affichage](run-app-experiments-with-a-b-testing.md#terms) de votre expérience dans le service de test A/B de l’espace partenaires. Initialisez le champ ```logger``` sur un objet [StoreServicesCustomEventLogger](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) et appelez la méthode [LogForVariation](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation). Transmettez l’objet [StoreServicesExperimentVariation](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) qui représente l’attribution de variation actuelle (cet objet fournit le contexte relatif à l’événement à l’espace partenaires) et le nom de l’événement d’affichage de votre expérience. Celui-ci doit correspondre au nom de l’événement d’affichage que vous entrez pour votre expérience dans l’espace partenaires. Votre code doit consigner l’événement d’affichage lorsque l’utilisateur commence à visualiser une variante faisant partie intégrante de votre expérience.
 
-    L’exemple suivant montre comment consigner un événement d’affichage nommé **userViewedButton**. Dans cet exemple, l’objectif est d’inciter l’utilisateur à cliquer sur un bouton dans l’application, afin de consigner l’événement d’affichage une fois que l’application a récupéré les données de variante (en l’occurrence, le texte du bouton) et lui a attribué le contenu du bouton.
+    L’exemple suivant montre comment consigner un événement d’affichage nommé **userViewedButton** . Dans cet exemple, l’objectif est d’inciter l’utilisateur à cliquer sur un bouton dans l’application, afin de consigner l’événement d’affichage une fois que l’application a récupéré les données de variante (en l’occurrence, le texte du bouton) et lui a attribué le contenu du bouton.
 
     :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet7":::
 

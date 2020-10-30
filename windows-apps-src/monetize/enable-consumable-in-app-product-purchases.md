@@ -1,17 +1,17 @@
 ---
-Description: Proposez des produits dans l’application&\# 8212 ; qui peuvent être achetés, utilisés et achetés à nouveau&\# 8212 ; via la plate-forme commerciale du Store, afin de fournir à vos clients une expérience d’achat fiable et fiable.
+description: Proposez des produits dans l’application&\# 8212 ; qui peuvent être achetés, utilisés et achetés à nouveau&\# 8212 ; via la plate-forme commerciale du Store, afin de fournir à vos clients une expérience d’achat fiable et fiable.
 title: Activer les achats de produits consommables in-app
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
 keywords: UWP, consommable, modules complémentaires, achats dans l’application, IAPs, Windows. ApplicationModel. Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb4119296b11e805fa72ff027383d13e6fb43818
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: fdd09fdb0d80f7811014dc910772175e152505d0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363692"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033541"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>Activer les achats de produits consommables in-app
 
@@ -37,7 +37,7 @@ L’exemple suivant représente une demande d’achat de produits consommables d
 
 ## <a name="step-2-tracking-local-fulfillment-of-the-consumable"></a>Étape 2 : Suivi de l’acquisition locale du consommable
 
-Quand vous accordez à votre client un accès au produit in-app consommable, il est important de garder une trace du produit acquis (*productId*) et de chaque transaction associée à cette acquisition (*transactionId*).
+Quand vous accordez à votre client un accès au produit in-app consommable, il est important de garder une trace du produit acquis ( *productId* ) et de chaque transaction associée à cette acquisition ( *transactionId* ).
 
 > [!IMPORTANT]
 > Votre application est chargée de signaler avec précision la satisfaction au magasin. Cette étape est essentielle pour assurer une expérience d’achat fiable et juste à vos clients.
@@ -79,6 +79,6 @@ L’exemple suivant montre comment la méthode [GetUnfulfilledConsumablesAsync](
 * [Activer les achats de produits in-app](enable-in-app-product-purchases.md)
 * [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [Windows.ApplicationModel.Store](/uwp/api/Windows.ApplicationModel.Store)
- 
+ 
 
- 
+ 

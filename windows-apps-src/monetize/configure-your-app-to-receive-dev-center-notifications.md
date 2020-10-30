@@ -1,17 +1,17 @@
 ---
-Description: Découvrez comment inscrire votre application UWP pour recevoir des notifications push que vous envoyez à partir de l’espace partenaires.
+description: Découvrez comment inscrire votre application UWP pour recevoir des notifications push que vous envoyez à partir de l’espace partenaires.
 title: Configurer votre application pour les notifications Push ciblées
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, kit de développement logiciel (SDK) Microsoft Store services, notifications push ciblées, espace partenaires
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
-ms.openlocfilehash: abb901c1b067dcf3609cbfb5c4cf3f81c9dc465c
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 2296ae29ddcfd868e31c294f8859d4f4b925fca8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364132"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033532"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Configurer votre application pour les notifications Push ciblées
 
@@ -25,9 +25,9 @@ Avant d’écrire du code, suivez ces étapes afin d’ajouter une référence a
 
 1. Si vous ne l’avez pas encore fait, [Installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) sur votre ordinateur de développement. 
 2. Ouvrez votre projet dans Visual Studio.
-3. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le nœud **Références**, puis sélectionnez **Ajouter une référence**.
-4. Dans le **Gestionnaire de références**, développez **Windows universel**, puis cliquez sur **Extensions**.
-5. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK**.
+3. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le nœud **Références** , puis sélectionnez **Ajouter une référence** .
+4. Dans le **Gestionnaire de références** , développez **Windows universel** , puis cliquez sur **Extensions** .
+5. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK** .
 
 ## <a name="register-for-push-notifications"></a>Inscription aux notifications Push
 
@@ -57,7 +57,7 @@ Pour inscrire votre application afin de recevoir des notifications push ciblées
 
 ### <a name="how-targeted-push-notifications-are-routed-to-customers"></a>Comment les notifications push ciblées sont routées vers les clients
 
-Lorsque votre application appelle **RegisterNotificationChannelAsync**, cette méthode collecte les compte Microsoft du client qui est actuellement connecté à l’appareil. Plus tard, lorsque vous envoyez une notification push ciblée à un segment qui comprend ce client, l’espace partenaires envoie la notification aux appareils associés à la compte Microsoft de ce client.
+Lorsque votre application appelle **RegisterNotificationChannelAsync** , cette méthode collecte les compte Microsoft du client qui est actuellement connecté à l’appareil. Plus tard, lorsque vous envoyez une notification push ciblée à un segment qui comprend ce client, l’espace partenaires envoie la notification aux appareils associés à la compte Microsoft de ce client.
 
 Si le client qui a démarré votre application envoie son appareil à une autre personne pour qu’il l’utilise alors qu’il est toujours connecté à l’appareil avec son compte Microsoft, sachez que l’autre personne peut voir la notification ciblée sur le client d’origine. Cela peut avoir des conséquences inattendues, en particulier pour les applications qui offrent des services que les clients peuvent utiliser pour se connecter. Pour empêcher d’autres utilisateurs de voir vos notifications ciblées dans ce scénario, appelez la méthode [UnregisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) lorsque les clients se déconnectent de votre application. Pour plus d’informations, consultez [Annuler l’inscription aux notifications push](#unregister) plus loin dans cet article.
 
@@ -83,7 +83,7 @@ La façon dont vous appelez cette méthode dépend du type d’activation de la 
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/App.xaml.cs" id="OnActivated":::
 
-* Si la notification Push présente un type d’activation en arrière-plan, appelez cette méthode depuis la méthode [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) de votre [tâche en arrière-plan](../launch-resume/support-your-app-with-background-tasks.md) et transmettez les arguments qui sont disponibles dans l’objet [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) transmis à cette méthode. L’exemple de code suivant suppose que votre fichier de code contient des instructions **using** pour les espaces de noms **Microsoft.Services.Store.Engagement**, **Windows.ApplicationModel.Background** et **Windows.UI.Notifications**.
+* Si la notification Push présente un type d’activation en arrière-plan, appelez cette méthode depuis la méthode [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) de votre [tâche en arrière-plan](../launch-resume/support-your-app-with-background-tasks.md) et transmettez les arguments qui sont disponibles dans l’objet [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) transmis à cette méthode. L’exemple de code suivant suppose que votre fichier de code contient des instructions **using** pour les espaces de noms **Microsoft.Services.Store.Engagement** , **Windows.ApplicationModel.Background** et **Windows.UI.Notifications** .
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="Run":::
 
@@ -95,7 +95,7 @@ Si vous souhaitez que votre application cesse de recevoir des notifications push
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="UnregisterNotificationChannelAsync":::
 
-Notez que cette méthode invalide le canal utilisé pour les notifications et donc que l’application ne reçoit plus de notifications Push d’*aucun* service. Une fois fermé, le canal ne peut plus être réutilisé pour aucun service, y compris les notifications push ciblées de l’espace partenaires et d’autres notifications utilisant WNS. Pour réactiver l’envoi des notifications Push à cette application, l’application doit demander un nouveau canal.
+Notez que cette méthode invalide le canal utilisé pour les notifications et donc que l’application ne reçoit plus de notifications Push d’ *aucun* service. Une fois fermé, le canal ne peut plus être réutilisé pour aucun service, y compris les notifications push ciblées de l’espace partenaires et d’autres notifications utilisant WNS. Pour réactiver l’envoi des notifications Push à cette application, l’application doit demander un nouveau canal.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

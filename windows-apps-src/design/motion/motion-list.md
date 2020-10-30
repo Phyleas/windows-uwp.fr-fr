@@ -1,5 +1,5 @@
 ---
-Description: Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
+description: Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
 title: Ajout et suppression d’animations
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 105b2fe5f7f267d8a5a82473332747584b02316c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: cb01cbf3dab1ae8f1cdb055ad3fc04b94b1ff510
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220372"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034202"
 ---
 # <a name="add-and-delete-animations"></a>Ajout et suppression d’animations
 
@@ -21,7 +21,7 @@ ms.locfileid: "91220372"
 
 Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
 
-> **API importantes**: [ **classe AddDeleteThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+> **API importantes** : [ **classe AddDeleteThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -43,6 +43,6 @@ Les animations de liste vous permettent d’insérer ou de supprimer un ou plusi
 * [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](/previous-versions/windows/apps/hh452703(v=win.10))
 * [**Classe AddDeleteThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
- 
+ 
 
- 
+ 

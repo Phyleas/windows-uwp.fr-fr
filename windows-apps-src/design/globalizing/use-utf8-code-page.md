@@ -1,17 +1,17 @@
 ---
-Description: Utilisez l’encodage de caractères UTF-8 pour une compatibilité optimale entre les applications Web et d’autres \* plateformes Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
+description: Utilisez l’encodage de caractères UTF-8 pour une compatibilité optimale entre les applications Web et d’autres \* plateformes Nix (UNIX, Linux et variantes), réduisez les bogues de localisation et réduisez la charge de test.
 title: Utiliser la page de codes Windows UTF-8
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e422ee3e1a911658b2fe4957967aeba116c353
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8aefe7bc45bc7c41347fe8fc4b8192347c3e4354
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173463"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034302"
 ---
 # <a name="use-the-utf-8-code-page"></a>Utiliser la page de codes UTF-8
 

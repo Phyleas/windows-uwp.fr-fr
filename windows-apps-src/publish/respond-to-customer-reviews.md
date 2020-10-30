@@ -1,24 +1,24 @@
 ---
-Description: Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires.
+description: Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires.
 title: Répondre aux avis des clients
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, réponse, examen
 ms.localizationpriority: medium
-ms.openlocfilehash: 792d78b93a66b9dd7da2b2c69480bfbd324dd045
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c47e7771f6a76cde451c88ab8e2d9ed26e003f9c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161873"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034602"
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
 
 Vous pouvez répondre aux révisions de votre application pour permettre aux clients de savoir que vous écoutez leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vos réponses seront affichées dans le Microsoft Store pour que tous les clients Windows 10 les voient. Vous pouvez également choisir d’envoyer votre réponse par courrier électronique au client (s’il n’a pas choisi d’utiliser un appareil exécutant Windows 10, version 1803 ou ultérieure).
 
-Pour afficher les critiques de votre application et fournir des réponses, recherchez l’application dans l' [espace partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d'afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **répondre à la révision** pour fournir votre réponse.
+Pour afficher les critiques de votre application et fournir des réponses, recherchez l’application dans l' [espace partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, développez **Analyse** , puis cliquez sur **Avis** afin d'afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **répondre à la révision** pour fournir votre réponse.
 
 > [!TIP]
 > Outre l’utilisation de l’espace partenaires pour répondre aux révisions, vous pouvez répondre aux révisions [par programme](../monetize/submit-responses-to-app-reviews.md).
@@ -32,7 +32,7 @@ Si vous ne souhaitez pas que votre réponse apparaisse dans le magasin et que vo
 Lorsque vous répondez à l’avis d’un clients, respectez les consignes suivantes : Elles s’appliquent à toutes les réponses, qu’elles soient publiques ou non.
 
 > [!IMPORTANT]
-> Vous ne pouvez pas modifier les réponses que vous publiez dans le magasin (sauf si le client révise la révision d’origine). vous devez donc examiner votre réponse avec soin. Si un client révise la révision d’origine, votre réponse sera supprimée de la page de liste de la boutique de l’application. Vous avez ensuite la possibilité de soumettre une nouvelle réponse à la révision révisée en sélectionnant **mettre à jour votre réponse**.
+> Vous ne pouvez pas modifier les réponses que vous publiez dans le magasin (sauf si le client révise la révision d’origine). vous devez donc examiner votre réponse avec soin. Si un client révise la révision d’origine, votre réponse sera supprimée de la page de liste de la boutique de l’application. Vous avez ensuite la possibilité de soumettre une nouvelle réponse à la révision révisée en sélectionnant **mettre à jour votre réponse** .
 
 -   Les réponses ne peuvent pas comporter plus de 1000 caractères.
 -   Vous ne pouvez proposer aux utilisateurs aucun type de rémunération, y compris sous forme d'éléments d'application numériques, afin de les inciter à modifier leur évaluation de l'application. Nous vous rappelons que toute tentative de manipulation des évaluations est proscrite, conformément au [Contrat du développeur de l'application](/legal/windows/agreements/app-developer-agreement).

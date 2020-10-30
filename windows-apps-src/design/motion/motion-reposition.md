@@ -1,5 +1,5 @@
 ---
-Description: Utilisez l’animation de repositionnement pour déplacer un ou des éléments à un autre endroit.
+description: Utilisez l’animation de repositionnement pour déplacer un ou des éléments à un autre endroit.
 title: Animations de repositionnement
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 95d8d69bdd289a8ff5d995995f71cfbd8688ae9b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 1048763756c272ea9a8e94e1ae3adfe92d624a34
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217712"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034112"
 ---
 # <a name="reposition-animations"></a>Animations de repositionnement
 
@@ -21,7 +21,7 @@ ms.locfileid: "91217712"
 
 Utilisez l’animation de repositionnement pour déplacer un ou des éléments à un autre endroit.
 
-> **API importantes**: [**classe RepositionThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation), [**classe RepositionThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
+> **API importantes** : [**classe RepositionThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation), [**classe RepositionThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
@@ -38,4 +38,4 @@ Utilisez l’animation de repositionnement pour déplacer un ou des éléments �
 * [**Classe RepositionThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 
- 
+ 

@@ -1,5 +1,5 @@
 ---
-Description: Notifications Visualizer est une nouvelle application Windows du Store qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10.
+description: Notifications Visualizer est une nouvelle application Windows du Store qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b50dc41a52d478afc9ed2fc9cf94d94dedb18ef4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 55ab7e22dc011555a8d98fd863b7dd9ff67de5fa
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219922"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033672"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 
@@ -30,13 +30,13 @@ Cette capture d’écran à partir de l’application montre la charge utile XML
 
 ![Capture d’écran de l’éditeur d’application Notifications Visualizer avec le code et les vignettes](images/notif-visualizer-001.png)
 
- 
+ 
 
 Avec le visualiseur de notifications, vous pouvez créer et tester des charges utiles de vignette et de Toast adaptatives sans avoir à modifier et déployer votre propre application. Une fois que vous avez créé une charge utile avec des résultats visuels idéaux, vous pouvez l’intégrer à votre application. Consultez [Envoyer une notification de vignette locale](sending-a-local-tile-notification.md) et [Envoyer un toast local](send-local-toast.md) pour en savoir plus.
 
-**Remarque**    La simulation du menu Démarrer et des notifications Toast du visualiseur de notifications n’est pas toujours entièrement exacte et ne prend pas en charge certaines propriétés de charge utile avancées. Lorsque vous avez la vignette ou le Toast souhaité, testez-le en épinglant la vignette ou en dépilant le toast pour vérifier qu’il s’affiche comme vous le souhaitez.
+**Remarque**   La simulation du menu Démarrer et des notifications Toast du visualiseur de notifications n’est pas toujours entièrement exacte et ne prend pas en charge certaines propriétés de charge utile avancées. Lorsque vous avez la vignette ou le Toast souhaité, testez-le en épinglant la vignette ou en dépilant le toast pour vérifier qu’il s’affiche comme vous le souhaitez.
 
- 
+ 
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -50,7 +50,7 @@ Cette capture d’écran de l’application montre l’éditeur de vignettes :
 
 ![Capture d’écran de l’éditeur Notifications Visualizer avec les vignettes](images/notif-visualizer-004.png)
 
- 
+ 
 
 ## <a name="related-topics"></a>Rubriques connexes
 

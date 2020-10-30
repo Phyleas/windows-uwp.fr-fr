@@ -1,17 +1,17 @@
 ---
-Description: Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un utilisateur appuie sur un élément.
+description: Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un utilisateur appuie sur un élément.
 title: Animations de clic avec le pointeur
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d429f55b6c8004ea0b5e16f842f5c7ee492d754d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 1f2d6367ebd8e87cbb32f7a12a829dba7fa38ace
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218846"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034182"
 ---
 # <a name="pointer-click-animations"></a>Animations de clic avec le pointeur
 
@@ -20,7 +20,7 @@ ms.locfileid: "91218846"
 Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un utilisateur appuie sur un élément. L’animation de pointeur vers le bas réduit et incline légèrement l’élément sélectionné. Elle est lue lorsque l’utilisateur appuie pour la première fois sur un élément. L’animation de pointeur vers le haut, qui restaure l’élément à sa position d’origine, est lue quand l’utilisateur relâche le pointeur.
 
 
-> **API importantes**: [**classe PointerUpThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [**classe PointerDownThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
+> **API importantes** : [**classe PointerUpThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [**classe PointerDownThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -35,6 +35,6 @@ Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un ut
 * [**Classe PointerUpThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation)
 * [**PointerDownThemeAnimation, classe**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
- 
+ 
 
- 
+ 

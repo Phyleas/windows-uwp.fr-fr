@@ -1,5 +1,5 @@
 ---
-Description: Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre.
+description: Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre.
 title: Animations de glissement
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a51f60fdbc8d616bd4db360190c8e329e10709e8
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: acc193f0851e2f04113e33aa470e9aa784337921
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220162"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034282"
 ---
 # <a name="drag-animations"></a>Animations de glissement
 
@@ -22,7 +22,7 @@ ms.locfileid: "91220162"
 
 Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre.
 
-> **API importantes**: [ **classe DragItemThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
+> **API importantes** : [ **classe DragItemThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -65,4 +65,4 @@ Utilisez les animations de glisser-déplacer lors du déplacement d’objets par
 * [**Classe DragOverThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation)
 
 
- 
+ 

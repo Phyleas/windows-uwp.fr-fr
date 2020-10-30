@@ -1,37 +1,37 @@
 ---
-Description: La première étape de la création d’une nouvelle application dans l’espace partenaires consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour choisir un nom exceptionnel pour votre application.
+description: La première étape de la création d’une nouvelle application dans l’espace partenaires consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour choisir un nom exceptionnel pour votre application.
 title: Créer votre application en réservant un nom
 keywords: Windows 10, UWP, réservation de nom, nom de l’application, noms des applications, noms, nom du produit, attribution de noms, nom réservé, titre, noms, titres
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e2b95e30faa64ce6507de5a57b350ec59ca683e1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6f9a91bf15f665dec604aacc32c12026756d9c4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164173"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032832"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Créer votre application en réservant un nom
 
-La première étape de la création d’une nouvelle application dans l' [espace partenaires](https://partner.microsoft.com/dashboard) consiste à réserver un nom d’application. Chaque nom réservé (parfois appelé *titre*de votre application) doit être unique dans l’ensemble du Microsoft Store.
+La première étape de la création d’une nouvelle application dans l' [espace partenaires](https://partner.microsoft.com/dashboard) consiste à réserver un nom d’application. Chaque nom réservé (parfois appelé *titre* de votre application) doit être unique dans l’ensemble du Microsoft Store.
 
 Vous pouvez réserver un nom pour votre application même si vous n’avez pas encore commencé à générer votre application. Nous vous recommandons de le faire dès que possible, afin que personne d’autre ne puisse utiliser le nom. Notez que vous devrez soumettre l’application dans un délai de trois mois afin de conserver ce nom réservé à votre utilisation.
 
 Lorsque vous [Téléchargez les packages de votre application](upload-app-packages.md), la valeur [**Package/Properties/DisplayName**](/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) doit correspondre au nom que vous avez réservé pour votre application. Si vous utilisez Microsoft Visual Studio pour créer le package de votre application, cet attribut est rempli automatiquement.
 
 > [!IMPORTANT]
-> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser l’une d’entre elles dans la version publiée de votre application au lieu de celle que vous réservez lors de la création de votre application dans l’espace partenaires. Toutefois, gardez à l’esprit que le prénom que vous entrez ici sera utilisé dans les détails de l' [identité](view-app-identity-details.md)de votre application, tels que le nom de la **famille de packages (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peuvent pas être modifiées. Assurez-vous que le nom que vous réservez est approprié pour cette utilisation.
+> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser l’une d’entre elles dans la version publiée de votre application au lieu de celle que vous réservez lors de la création de votre application dans l’espace partenaires. Toutefois, gardez à l’esprit que le prénom que vous entrez ici sera utilisé dans les détails de l' [identité](view-app-identity-details.md)de votre application, tels que le nom de la **famille de packages (PFN)** . Ces valeurs peuvent être visibles par certains utilisateurs et ne peuvent pas être modifiées. Assurez-vous que le nom que vous réservez est approprié pour cette utilisation.
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>Création de votre application en réservant un nouveau nom
 
 La réservation d’un nom est la première étape de la création d’une application dans l’espace partenaires. 
 
-1.  Dans la page **vue d’ensemble** , cliquez sur **créer une application**.
-2.  Dans la zone de texte, entrez le nom que vous souhaitez utiliser, puis sélectionnez **Vérifier la disponibilité**. Si ce nom est disponible, une coche verte apparaît. (Si le nom que vous avez entré est déjà réservé ou en cours d'utilisation par un autre développeur, vous obtenez un message indiquant que ce nom n'est pas disponible.)
-3.  Cliquez sur **réserver un nom de produit**.
+1.  Dans la page **vue d’ensemble** , cliquez sur **créer une application** .
+2.  Dans la zone de texte, entrez le nom que vous souhaitez utiliser, puis sélectionnez **Vérifier la disponibilité** . Si ce nom est disponible, une coche verte apparaît. (Si le nom que vous avez entré est déjà réservé ou en cours d'utilisation par un autre développeur, vous obtenez un message indiquant que ce nom n'est pas disponible.)
+3.  Cliquez sur **réserver un nom de produit** .
 
 Le nom est maintenant réservé pour vous, et vous pouvez commencer à travailler sur votre [soumission](app-submissions.md) chaque fois que vous êtes prêt. 
 
@@ -64,6 +64,6 @@ Dans cette page, vous pouvez également supprimer des noms que vous avez réserv
 
 Pour plus d’informations, voir [Gestion des noms d’application](manage-app-names.md).
 
- 
+ 
 
- 
+ 

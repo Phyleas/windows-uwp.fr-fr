@@ -1,5 +1,5 @@
 ---
-Description: Cette rubrique décrit la nouvelle interface utilisateur Windows permettant de sélectionner et manipuler du texte, des images et des contrôles, et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ces nouveaux mécanismes de sélection et de manipulation dans votre application Windows.
+description: Cette rubrique décrit la nouvelle interface utilisateur Windows permettant de sélectionner et manipuler du texte, des images et des contrôles, et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ces nouveaux mécanismes de sélection et de manipulation dans votre application Windows.
 title: Sélection de texte et d’images
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,19 +8,19 @@ keywords: clavier, texte, entrées, interactions avec l’utilisateur
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 179eeffd014cb614fb5314826068d9690fc29807
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0b7954ec21b2282700352b94e7a84bf6914d7f9c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216972"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032852"
 ---
 # <a name="selecting-text-and-images"></a>Sélection de texte et d’images
 
 
 Cet article décrit la sélection et la manipulation de texte, d’images et de contrôles, et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ces mécanismes dans vos applications.
 
-> **API importantes**: [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input)
+> **API importantes** : [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input)
  
 
 
@@ -78,9 +78,9 @@ Les images suivantes montrent comment appeler le menu contextuel en appuyant dan
 
 ![Appuyez (ou effectuez un appui prolongé) dans la sélection ou sur un symbole de sélection/redimensionnement pour appeler le menu contextuel.](images/textselection-show-context.png)
 
-**Remarque**    Ces interactions varient quelque peu dans le cas d’un mot mal orthographié. L’appui sur un mot qui est marqué comme incorrectement orthographié entraîne la mise en surbrillance de la totalité du mot et l’appel du menu contextuel d’orthographe suggérée.
+**Remarque**  Ces interactions varient quelque peu dans le cas d’un mot mal orthographié. L’appui sur un mot qui est marqué comme incorrectement orthographié entraîne la mise en surbrillance de la totalité du mot et l’appel du menu contextuel d’orthographe suggérée.
 
- 
+ 
 
 **Contenu non modifiable**
 

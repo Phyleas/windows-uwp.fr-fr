@@ -1,5 +1,5 @@
 ---
-Description: Présente les concepts d’accessibilité liés aux applications Windows.
+description: Présente les concepts d’accessibilité liés aux applications Windows.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibilité
 label: Accessibility
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67f98db338d201dd4ef80c7b5f265aba3f6fbfd4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f49c784dcd6ed8872753bf4aedd9e79718ccfd99
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216372"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032603"
 ---
 # <a name="accessibility"></a>Accessibilité  
 

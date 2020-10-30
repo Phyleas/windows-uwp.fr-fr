@@ -1,5 +1,5 @@
 ---
-Description: Concevez et développez votre application de façon à ce qu’elle fonctionne correctement sur les systèmes avec des configurations de langue et de culture différentes.
+description: Concevez et développez votre application de façon à ce qu’elle fonctionne correctement sur les systèmes avec des configurations de langue et de culture différentes.
 Search.Refinement.TopicID: 180
 title: Directives relatives à la globalisation
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: d71cf2289654860b47aef18c117ac9d6d36fab0a
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f97408596750c2f9a8d2ad61ad2754627e23426f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493244"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033712"
 ---
 # <a name="guidelines-for-globalization"></a>Directives relatives à la globalisation
 
@@ -35,7 +35,7 @@ Concevez et développez votre application de façon à ce qu’elle fonctionne c
 | Affichez correctement le texte et les polices. | Les paramètres optimaux de police, taille de police et direction du texte varient entre les différents marchés. Pour plus d’informations, consultez [**ajuster la disposition et les polices, et prendre en charge**](adjust-layout-and-fonts--and-support-rtl.md) les polices RTL et [international](loc-international-fonts.md). |
 
 ## <a name="important-apis"></a>API importantes
- 
+ 
 * [Globalisation](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
 * [Language. CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)

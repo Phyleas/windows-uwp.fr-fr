@@ -1,5 +1,5 @@
 ---
-Description: Utilisez l’API Windows. Globalization. DateTimeFormatting avec des modèles et des modèles personnalisés pour afficher les dates et les heures exactement au format de votre choix.
+description: Utilisez l’API Windows. Globalization. DateTimeFormatting avec des modèles et des modèles personnalisés pour afficher les dates et les heures exactement au format de votre choix.
 title: Utiliser des modèles de format des dates et heures
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: da4d9b2c7380a085efdcb234ad210eafca40b1c3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: dbabbcaccd88b187a03c83909bcb38d5f64b30bb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493604"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034312"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Utiliser des modèles de format des dates et heures
 
@@ -25,7 +25,7 @@ La classe [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatt
 
 Toutefois, lorsque vous voulez encore plus de contrôle sur l’ordre et le format des composants de l’objet [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) que vous souhaitez afficher, vous pouvez passer un modèle de format à l’argument *formatTemplate* du constructeur. Un modèle de format utilise une syntaxe spéciale, qui vous permet d’obtenir des composants individuels d’un objet **DateTime** &mdash; uniquement le nom du mois, ou simplement la valeur de l’année, par exemple pour les &mdash; afficher au format personnalisé de votre choix. En outre, il est possible de localiser le modèle pour l’adapter à d’autres langues et régions.
 
-**Remarque**    Il s’agit uniquement d’une vue d’ensemble des modèles de format. Pour consulter une description plus complète des modèles et types de formats, voir la section « Remarques » de la classe [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live).
+**Remarque**  Il s’agit uniquement d’une vue d’ensemble des modèles de format. Pour consulter une description plus complète des modèles et types de formats, voir la section « Remarques » de la classe [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live).
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>La différence entre les modèles de format et les modèles de format
 
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString`est un identificateur de ressource qui fait référence à une ressource localisable dans un fichier de ressources (. resw). Pour une langue par défaut de l’anglais (États-Unis), cette valeur est définie sur « {0} | {1} » avec un commentaire indiquant que « {0} » est la date et « {1} » est l’heure. De cette façon, les traducteurs peuvent ajuster les éléments de mise en forme en fonction des besoins. Par exemple, ils peuvent modifier l’ordre des éléments s’il semble plus naturel dans une langue ou une région que l’heure précède la date. Ils peuvent également remplacer le caractère « | » par tout autre caractère de séparation.
+`CustomDateTimeFormatString` est un identificateur de ressource qui fait référence à une ressource localisable dans un fichier de ressources (. resw). Pour une langue par défaut de l’anglais (États-Unis), cette valeur est définie sur « {0} | {1} » avec un commentaire indiquant que « {0} » est la date et « {1} » est l’heure. De cette façon, les traducteurs peuvent ajuster les éléments de mise en forme en fonction des besoins. Par exemple, ils peuvent modifier l’ordre des éléments s’il semble plus naturel dans une langue ou une région que l’heure précède la date. Ils peuvent également remplacer le caractère « | » par tout autre caractère de séparation.
 
 Une autre façon d’implémenter cet exemple consiste à interroger les deux formateurs pour leurs modèles de format, à les concaténer ensemble, puis à construire un troisième formateur à partir du modèle de format résultant.
 

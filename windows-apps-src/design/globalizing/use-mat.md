@@ -1,17 +1,17 @@
 ---
-Description: Multilingual App Toolkit (MAT) 4,0 s’intègre à Microsoft Visual Studio 2019 pour fournir aux applications Windows une prise en charge de la traduction, la gestion des fichiers de traduction et des outils d’édition.
+description: Multilingual App Toolkit (MAT) 4,0 s’intègre à Microsoft Visual Studio 2019 pour fournir aux applications Windows une prise en charge de la traduction, la gestion des fichiers de traduction et des outils d’édition.
 title: Utiliser le kit de ressources pour application multilingue
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 4759be8b4e386620243cd587df1ac0bd3e6b0033
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 912a92e0eaabbefb4bf3e6f1ac3596d6a2919234
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217102"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034332"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Utiliser le Kit de ressources Multilingual App Toolkit 4.0
 
@@ -30,7 +30,7 @@ Multilingual App Toolkit (MAT) 4,0 s’intègre à Microsoft Visual Studio 2019 
 
 Avant de pouvoir utiliser le fond efficacement, votre application doit être localisable. Plus précisément, votre projet doit contenir un ou plusieurs fichiers de ressources (. resw) contenant les chaînes de votre application dans la langue par défaut. Pour plus d’informations, consultez [localiser des chaînes dans votre interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md). Une fois que vous avez terminé, le Toolkit facilite et simplifie l’ajout de langues supplémentaires.
 
-Pour obtenir la proposition de valeur de globalisation et de localisation, ainsi &mdash; que les définitions des termes de **globalisation**, d' **adaptabilité**et de **localisation**, &mdash; consultez [globalisation et localisation](globalizing-portal.md).
+Pour obtenir la proposition de valeur de globalisation et de localisation, ainsi &mdash; que les définitions des termes de **globalisation** , d' **adaptabilité** et de **localisation** , &mdash; consultez [globalisation et localisation](globalizing-portal.md).
 
 Consultez également [les instructions pour la globalisation](guidelines-and-checklist-for-globalizing-your-app.md) et [rendre votre application localisable](prepare-your-app-for-localization.md).
 
@@ -49,7 +49,7 @@ Pour que vous puissiez commencer à localiser l’application, vous devez active
 
 - Ouvrez la solution de projet dans Visual Studio.
 - Sélectionnez le projet souhaité dans Explorateur de solutions.
-- Dans le menu **Outils** , sélectionnez **Pack d’outils d’application multilingue**  >  **activer la sélection**. 
+- Dans le menu **Outils** , sélectionnez **Pack d’outils d’application multilingue**  >  **activer la sélection** . 
 
 Dans la fenêtre sortie (affichage de la sortie de la boîte à outils d’application multilingue), observez le message `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>` . Si ce message s’affiche, le tapis est prêt à être utilisé.
 
@@ -58,7 +58,7 @@ Dans la fenêtre sortie (affichage de la sortie de la boîte à outils d’appli
 Procédez comme suit pour ajouter des langues à votre projet.
 
 1. Cliquez avec le bouton droit sur le nœud du projet dans l'Explorateur de solutions.
-2. Cliquez sur **boîte à outils d’application multilingue**  >  **Ajouter des langues de traduction...**.
+2. Cliquez sur **boîte à outils d’application multilingue**  >  **Ajouter des langues de traduction...** .
 3. Dans la boîte de dialogue langues de traduction, sélectionnez la ou les langues que vous souhaitez prendre en charge, puis cliquez sur OK.
 
 Le Toolkit effectue ces actions en réponse.
@@ -73,7 +73,7 @@ Des fournisseurs de traduction installés &mdash; tels que le [portail linguisti
 
 Dans la boîte de dialogue langues de traduction, la zone de sélection de tous les langages. XLF existants détectés par la boîte à outils est précochée pour indiquer que la langue est déjà incluse dans le projet.
 
-Une fois qu’une langue est ajoutée au projet, elle ne peut pas être supprimée en désactivant la case à cocher dans la boîte de dialogue langues de traduction. Pour supprimer une langue, cliquez avec le bouton droit sur le fichier. XLF spécifique à une langue, puis sélectionnez **supprimer**. Si vous confirmez, cette opération supprimera également le fichier de ressources correspondant (. resw).
+Une fois qu’une langue est ajoutée au projet, elle ne peut pas être supprimée en désactivant la case à cocher dans la boîte de dialogue langues de traduction. Pour supprimer une langue, cliquez avec le bouton droit sur le fichier. XLF spécifique à une langue, puis sélectionnez **supprimer** . Si vous confirmez, cette opération supprimera également le fichier de ressources correspondant (. resw).
 
 ### <a name="step-5-test-your-app-using-pseudo-language"></a>Étape 5. Tester votre application à l’aide de Pseudo-langage
 
@@ -82,11 +82,11 @@ Le Pseudo-langage est une modification artificielle du produit logiciel destiné
 Procédez comme suit pour Pseudo-localiser et tester votre projet.
 
 1. Utilisez la boîte de dialogue langues de traduction pour ajouter le Pseudo-langage (Pseudo) [RPS-Ploc] à votre projet.
-2. Dans Explorateur de solutions, cliquez avec le bouton droit sur le `<project-name>.qps-ploc.xlf` fichier, puis cliquez sur **boîte à outils d’application multilingue**  >  **générer des traductions de machine**.
-3. Dans **paramètres**de l'  >  **heure & langue**  >  **&**  >  **langues**, cliquez sur **Ajouter une langue**.
+2. Dans Explorateur de solutions, cliquez avec le bouton droit sur le `<project-name>.qps-ploc.xlf` fichier, puis cliquez sur **boîte à outils d’application multilingue**  >  **générer des traductions de machine** .
+3. Dans **paramètres** de l'  >  **heure & langue**  >  **&**  >  **langues** , cliquez sur **Ajouter une langue** .
 5. Dans la zone de recherche, tapez `qps-ploc`.
 6. Cliquez `English (qps-ploc)` pour l’ajouter.
-7. Dans la liste langue, sélectionnez, `English (qps-ploc)` puis cliquez sur **définir par défaut**.
+7. Dans la liste langue, sélectionnez, `English (qps-ploc)` puis cliquez sur **définir par défaut** .
 8. Testez votre application Pseudo-localisée. Par exemple, recherchez les problèmes de disposition de l’interface utilisateur où la totalité d’une chaîne n’est pas affichée (la chaîne est tronquée) ou les chaînes qui ne sont pas traduites (mais à code dur).
 
 Outre le remplacement et l’expansion de caractères, le Pseudo-moteur fournit un identificateur de suivi unique pour chaque ressource. Ce dispositif de suivi est ajouté au début de chaque chaîne et placé entre crochets `[xxxxx]` . Vous pouvez utiliser ces suivis pendant le test d’inspection de l’interface utilisateur de Visual. Ils peuvent faciliter le suivi des ressources spécifiques dans le produit, en particulier si plusieurs ressources ont un texte similaire ou dupliqué.
@@ -105,8 +105,8 @@ Une fois que vous avez testé votre application à l’aide de Pseudo-langage, v
 Vous pouvez utiliser l’éditeur multilingue pour traduire des chaînes individuellement. Comme mentionné précédemment, cela est inclus dans [le programme d’installation. msi](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit).
 
 - Cliquez avec le bouton droit sur le fichier. XLF que vous souhaitez traduire.
-- Cliquez sur **Ouvrir avec...** , puis sélectionnez Éditeur multilingue. Vous pouvez éventuellement cliquer sur **définir comme valeur par défaut**.
-- Pour chaque chaîne, **source** affiche la chaîne d’origine dans la langue par défaut. Dans **traduction**, tapez la chaîne traduite dans la langue appropriée pour le fichier. XLF que vous modifiez.
+- Cliquez sur **Ouvrir avec...** , puis sélectionnez Éditeur multilingue. Vous pouvez éventuellement cliquer sur **définir comme valeur par défaut** .
+- Pour chaque chaîne, **source** affiche la chaîne d’origine dans la langue par défaut. Dans **traduction** , tapez la chaîne traduite dans la langue appropriée pour le fichier. XLF que vous modifiez.
 - Lorsque vous avez terminé, enregistrez et fermez le fichier.
 
 Régénérez votre projet pour que les chaînes traduites soient copiées dans le fichier de ressources (. resw) qui correspond au fichier. XLF que vous venez de modifier.
@@ -115,11 +115,11 @@ Vous pouvez également lancer l’éditeur multilingue comme celui-ci. Accédez 
 
 #### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>Option 2. Envoyer les fichiers. XLF à un tiers pour la traduction
 
-Pour répartir le travail de traduction et de modification sur les localisateurs, sélectionnez les fichiers. XLF souhaités dans Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur la **boîte à outils d’application multilingue**  >  **Exporter les traductions...**.
+Pour répartir le travail de traduction et de modification sur les localisateurs, sélectionnez les fichiers. XLF souhaités dans Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur la **boîte à outils d’application multilingue**  >  **Exporter les traductions...** .
 
-Sélectionnez **sortie : destinataire du courrier** dans la boîte de dialogue Exporter les ressources de chaîne, puis cliquez sur OK. vos fichiers sont compressés et joints à un nouvel e-mail. Sélectionnez **sortie : emplacement du dossier de fichiers**, navigateur pour un dossier, cliquez sur OK, choisissez éventuellement pour les fichiers à compresser, cliquez à nouveau sur OK. vos fichiers seront (zippés et) enregistrés à l’emplacement que vous avez choisi, à l’intérieur d’un nouveau dossier nommé pour votre projet.
+Sélectionnez **sortie : destinataire du courrier** dans la boîte de dialogue Exporter les ressources de chaîne, puis cliquez sur OK. vos fichiers sont compressés et joints à un nouvel e-mail. Sélectionnez **sortie : emplacement du dossier de fichiers** , navigateur pour un dossier, cliquez sur OK, choisissez éventuellement pour les fichiers à compresser, cliquez à nouveau sur OK. vos fichiers seront (zippés et) enregistrés à l’emplacement que vous avez choisi, à l’intérieur d’un nouveau dossier nommé pour votre projet.
 
-Une fois que vos localisateurs ont terminé le travail de traduction et vous a envoyé les fichiers. XLF traduits, vous pouvez les importer dans votre projet. Sélectionnez les fichiers. XLF souhaités dans Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur **multilingue application Toolkit**  >  **Importer/recycler les traductions...**. Cliquez sur **Ajouter**, accédez aux fichiers. XLF ou. zip, puis cliquez sur **Importer**.
+Une fois que vos localisateurs ont terminé le travail de traduction et vous a envoyé les fichiers. XLF traduits, vous pouvez les importer dans votre projet. Sélectionnez les fichiers. XLF souhaités dans Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur **multilingue application Toolkit**  >  **Importer/recycler les traductions...** . Cliquez sur **Ajouter** , accédez aux fichiers. XLF ou. zip, puis cliquez sur **Importer** .
 
 **Remarque** Le processus d’importation effectue une validation de base avant l’importation. Cela permet de s’assurer que les informations de culture cible dans les fichiers importés correspondent à celles des fichiers. XLF existants.
 
@@ -141,7 +141,7 @@ Ces fournisseurs tiers offrent des services de localisation et peuvent être en 
 
 Les services de traduction sont intégrés à l’IDE de Visual Studio, ainsi qu’à l’éditeur multilingue. Cela permet d’accéder facilement aux services de traduction tout en développant votre produit et en localisé vos ressources. Pour ce service, vous avez besoin d’un abonnement à un compte Azure, comme décrit dans [Microsoft Translator pour passer au portail Azure](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898-microsoft-translator-moves-to-the-azure-portal).
 
-Pour accéder aux services de traduction à l’intérieur de Visual Studio, sélectionnez et cliquez avec le bouton droit sur un ou plusieurs fichiers. XLF dans Explorateur de solutions, puis cliquez sur **générer des traductions d’ordinateurs**.
+Pour accéder aux services de traduction à l’intérieur de Visual Studio, sélectionnez et cliquez avec le bouton droit sur un ou plusieurs fichiers. XLF dans Explorateur de solutions, puis cliquez sur **générer des traductions d’ordinateurs** .
 
 L’éditeur multilingue fournit la même prise en charge de traduction, ainsi que l’ajout de suggestions de traduction interactives, qui vous permettent de sélectionner la traduction qui correspond le mieux à vos chaînes de ressources. Une fois la suggestion de traduction fournie, vous pouvez ajuster la chaîne pour votre style de traduction.
 
@@ -150,7 +150,7 @@ Deux fournisseurs sont fournis avec le kit d’outils d’application multilingu
 - Le fournisseur du [portail de langage Microsoft](https://www.microsoft.com/Language/) permet la prise en charge de la traduction et du recyclage en fonction des traductions du texte de l’interface utilisateur pour les produits et services Microsoft.
 - Le fournisseur [Microsoft Translator](https://www.microsofttranslator.com/) active les services de traduction automatique à la demande.
 
-Vous et vos traducteurs pouvez gérer l’état des traductions dans l’éditeur multilingue pour revoir ultérieurement les traductions incertaines. Vous pouvez définir l’état de chaque chaîne sous l’onglet **Propriétés** . Les valeurs d’État sont les suivantes : **nouveau**, **révision**, **traduction**, **final**et **approuvé**. L’indicateur à gauche de la ligne indique l’État. Lorsque toutes les lignes affichent le vert dans l’éditeur multilingue, votre travail de traduction est terminé.
+Vous et vos traducteurs pouvez gérer l’état des traductions dans l’éditeur multilingue pour revoir ultérieurement les traductions incertaines. Vous pouvez définir l’état de chaque chaîne sous l’onglet **Propriétés** . Les valeurs d’État sont les suivantes : **nouveau** , **révision** , **traduction** , **final** et **approuvé** . L’indicateur à gauche de la ligne indique l’État. Lorsque toutes les lignes affichent le vert dans l’éditeur multilingue, votre travail de traduction est terminé.
 
 Régénérez votre projet pour que les chaînes traduites soient copiées dans le ou les fichiers de ressources (. resw) qui correspondent au (x) fichier (s). XLF que vous venez de modifier.
 

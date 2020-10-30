@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment les applications Win32 C++ WRL peuvent envoyer des notifications Toast locales et gérer l’utilisateur en cliquant sur le Toast.
+description: Découvrez comment les applications Win32 C++ WRL peuvent envoyer des notifications Toast locales et gérer l’utilisateur en cliquant sur le Toast.
 title: Envoyer une notification Toast locale à partir d’applications Win32 C++ WRL
 label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, package fragmenté, C++, CPP, Cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e8aedd867dfdcabd382ebde1dd4c96a94d1001
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 1913eef17ac768b8d7e1f047ac318da9aa1b2925
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100317"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034492"
 ---
 # <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>Envoyer une notification Toast locale à partir d’applications Win32 C++ WRL
 
@@ -29,13 +29,13 @@ Si vous n’avez pas activé le kit de développement logiciel (SDK) Windows 10 
 1. Ajouter `runtimeobject.lib` aux **dépendances supplémentaires**
 2. Cibler le kit de développement logiciel (SDK) Windows 10
 
-Cliquez avec le bouton droit sur votre projet et sélectionnez **Propriétés**.
+Cliquez avec le bouton droit sur votre projet et sélectionnez **Propriétés** .
 
 Dans le menu de **configuration** supérieur, sélectionnez **toutes les configurations** afin que la modification suivante soit appliquée à la fois au débogage et à la mise en version.
 
-Sous **éditeur de liens-> entrée**, ajoutez `runtimeobject.lib` aux **dépendances supplémentaires**.
+Sous **éditeur de liens-> entrée** , ajoutez `runtimeobject.lib` aux **dépendances supplémentaires** .
 
-Ensuite, sous **général**, assurez-vous que la **version de SDK Windows** est définie sur une valeur supérieure ou égale à 10,0 (non Windows 8.1).
+Ensuite, sous **général** , assurez-vous que la **version de SDK Windows** est définie sur une valeur supérieure ou égale à 10,0 (non Windows 8.1).
 
 
 ## <a name="step-2-copy-compat-library-code"></a>Étape 2 : copier le code de bibliothèque de compatibilité
@@ -94,7 +94,7 @@ Ensuite, vous devez vous inscrire auprès de la plateforme de notification. Diff
 
 ### <a name="msixsparse-package"></a>Package MSIX/Sparse
 
-Si vous utilisez [MSIX](/windows/msix/desktop/source-code-overview) ou un [package fragmenté](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest**, ajoutez :
+Si vous utilisez [MSIX](/windows/msix/desktop/source-code-overview) ou un [package fragmenté](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest** , ajoutez :
 
 1. Déclaration pour **xmlns : com**
 2. Déclaration pour **xmlns : Desktop**
@@ -193,7 +193,7 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## <a name="step-7-send-a-notification"></a>Étape 7 : envoyer une notification
 
-L’envoi d’une notification est identique aux applications UWP, sauf que vous allez utiliser **DesktopNotificationManagerCompat** pour créer un **ToastNotifier**. La bibliothèque de compatibilité gère automatiquement la différence entre le package MSIX/Sparse et le Win32 classique, ce qui vous permet de ne pas avoir à dupliquer votre code. Pour le Win32 classique, la bibliothèque de compatibilité met en cache votre identifiant AUMID que vous avez fournie lors de l’appel de **RegisterAumidAndComServer** afin que vous n’ayez pas à vous soucier du moment auquel fournir ou ne pas fournir le identifiant aumid.
+L’envoi d’une notification est identique aux applications UWP, sauf que vous allez utiliser **DesktopNotificationManagerCompat** pour créer un **ToastNotifier** . La bibliothèque de compatibilité gère automatiquement la différence entre le package MSIX/Sparse et le Win32 classique, ce qui vous permet de ne pas avoir à dupliquer votre code. Pour le Win32 classique, la bibliothèque de compatibilité met en cache votre identifiant AUMID que vous avez fournie lors de l’appel de **RegisterAumidAndComServer** afin que vous n’ayez pas à vous soucier du moment auquel fournir ou ne pas fournir le identifiant aumid.
 
 Veillez à utiliser la liaison **ToastGeneric** comme indiqué ci-dessous, car les modèles de notification Windows 8.1 Toast hérités n’activeront pas votre activateur de notification com que vous avez créé à l’étape #4.
 
@@ -438,7 +438,7 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>Problèmes connus
 
-Problème **résolu : l’application ne devient pas focalisée après avoir cliqué sur Toast**: dans les builds 15063 et antérieures, les droits de premier plan n’ont pas été transférés à votre application lorsque nous avons activé le serveur com. Par conséquent, votre application clignoterait simplement quand vous avez essayé de la déplacer au premier plan. Il n’existe aucune solution de contournement pour ce problème. Nous avons résolu ce problème dans les versions 16299 et supérieures.
+Problème **résolu : l’application ne devient pas focalisée après avoir cliqué sur Toast** : dans les builds 15063 et antérieures, les droits de premier plan n’ont pas été transférés à votre application lorsque nous avons activé le serveur com. Par conséquent, votre application clignoterait simplement quand vous avez essayé de la déplacer au premier plan. Il n’existe aucune solution de contournement pour ce problème. Nous avons résolu ce problème dans les versions 16299 et supérieures.
 
 
 ## <a name="resources"></a>Ressources

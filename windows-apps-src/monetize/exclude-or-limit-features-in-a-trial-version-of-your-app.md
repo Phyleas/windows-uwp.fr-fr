@@ -1,17 +1,17 @@
 ---
-Description: Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
+description: Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation.
 title: Exclure ou limiter des fonctionnalités de la version d’évaluation
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
 keywords: Windows 10, UWP, version d’évaluation, achat dans l’application, IAP, Windows. ApplicationModel. Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0ecc6a6d219262513508114cee226d72d91e386
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 701769386f9637574cfb7f38f7458a1434796730
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362742"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033972"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Exclure ou limiter des fonctionnalités de la version d’évaluation
 
@@ -61,9 +61,9 @@ Si vous voulez détecter la modification de la licence et exécuter une action q
 
 ## <a name="step-2-initialize-the-license-info"></a>Étape 2 : Initialisation des informations de licence
 
-Lors de l’initialisation de votre application, recherchez l’objet [LicenseInformation](/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) de votre application, comme indiqué dans cet exemple. Nous supposons que **licenseInformation** est une variable globale ou un champ global de type **LicenseInformation**.
+Lors de l’initialisation de votre application, recherchez l’objet [LicenseInformation](/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) de votre application, comme indiqué dans cet exemple. Nous supposons que **licenseInformation** est une variable globale ou un champ global de type **LicenseInformation** .
 
-Pour le moment, vous obtenez des informations de licence simulées, en utilisant [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) à la place de [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Avant de soumettre la version finale de votre application au **Windows Store**, vous devez remplacer tous les références **CurrentAppSimulator** par des références **CurrentApp** dans votre code.
+Pour le moment, vous obtenez des informations de licence simulées, en utilisant [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) à la place de [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Avant de soumettre la version finale de votre application au **Windows Store** , vous devez remplacer tous les références **CurrentAppSimulator** par des références **CurrentApp** dans votre code.
 
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTest":::
@@ -99,7 +99,7 @@ Si ce chemin d’accès et ce fichier n’existent pas, vous devez les créer lo
 
 ## <a name="step-6-replace-the-simulated-license-api-methods-with-the-actual-api"></a>Étape 6 : Remplacement des méthodes d’API de licence simulées par l’API réelle
 
-Après avoir testé votre application à l’aide du serveur de licences simulées et avant d’envoyer votre application à un Windows Store à des fins de certification, remplacez **CurrentAppSimulator** par **CurrentApp**, comme indiqué dans l’exemple de code suivant.
+Après avoir testé votre application à l’aide du serveur de licences simulées et avant d’envoyer votre application à un Windows Store à des fins de certification, remplacez **CurrentAppSimulator** par **CurrentApp** , comme indiqué dans l’exemple de code suivant.
 
 > [!IMPORTANT]
 > Votre application doit utiliser l’objet **CurrentApp** lorsque vous soumettez votre application à un magasin, ou la certification échouera.
@@ -119,6 +119,6 @@ Pour plus d’informations sur la description de votre application, voir [Créer
 * [Définir la tarification et la disponibilité d’une application](../publish/set-app-pricing-and-availability.md)
 * [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp)
 * [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator)
- 
+ 
 
- 
+ 

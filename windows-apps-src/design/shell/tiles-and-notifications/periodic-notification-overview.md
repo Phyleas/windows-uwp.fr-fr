@@ -1,5 +1,5 @@
 ---
-Description: Les notifications périodiques, également appelées notifications interrogées, mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud.
+description: Les notifications périodiques, également appelées notifications interrogées, mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud.
 title: Vue d’ensemble des notifications périodiques
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9936fd6b7210298bdce042b7848a75be8e044040
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5860c4e45a25b0d141e1b2c57421dd2640d5fbb4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175503"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033782"
 ---
 # <a name="periodic-notification-overview"></a>Vue d’ensemble des notifications périodiques
  
@@ -25,9 +25,9 @@ Les notifications périodiques, également appelées notifications interrogées,
 
 Les notifications périodiques permettent à votre application d’obtenir des mises à jour de vignettes dynamiques avec un minimum d’intervention du service cloud et d’investissement client. Les notifications périodiques sont une bonne méthode de distribution du même contenu à un large public.
 
-**Remarque**    Vous pouvez en savoir plus en téléchargeant l' [exemple notifications push et périodiques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) pour Windows 8.1 et réutiliser son code source dans votre application Windows 10.
+**Remarque**   Vous pouvez en savoir plus en téléchargeant l' [exemple notifications push et périodiques](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) pour Windows 8.1 et réutiliser son code source dans votre application Windows 10.
 
- 
+ 
 
 ## <a name="how-it-works"></a>Fonctionnement
 
@@ -106,4 +106,4 @@ Vous devez fournir un URI unique pour chaque notification que Windows doit tél�
 * [Recommandations en matière de notifications périodiques]()
 * [Comment configurer des notifications périodiques pour les badges](/previous-versions/windows/apps/hh761476(v=win.10))
 * [Comment configurer des notifications périodiques pour des vignettes](/previous-versions/windows/apps/hh761476(v=win.10))
- 
+ 

@@ -1,16 +1,16 @@
 ---
-Description: Gérez les options d’envoi, telles que les options de conservation de la publication, les notes pour la certification, et bien plus encore.
+description: Gérez les options d’envoi, telles que les options de conservation de la publication, les notes pour la certification, et bien plus encore.
 title: Gérer les options de soumission
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, publication en attente, date de publication, envoi d’envoi pour publication, approbation de fonctionnalité restreinte
 ms.localizationpriority: medium
-ms.openlocfilehash: c2548ddd35fc50f62727d986d2d934d2346eb7b5
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 0044ac362cb67d356707c7eaaf12a10c5a31ed1b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253790"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034742"
 ---
 # <a name="manage-submission-options"></a>Gérer les options de soumission
 
@@ -26,12 +26,12 @@ Par défaut, nous publierons votre envoi dès qu’il passera la certification (
 
 **Publiez cette soumission dès qu’elle réussit la certification (ou que les dates que vous avez sélectionnées dans la section planification)** est la sélection par défaut et signifie que votre envoi commence le processus de publication dès qu’il réussit la certification, sauf si vous avez configuré des dates dans la section [planification](configure-precise-release-scheduling.md) de la page **tarification et disponibilité** .   
 
-Pour la plupart des soumissions, nous vous recommandons de laisser la section **options de conservation de publication** définie sur cette option. Si vous souhaitez spécifier certaines dates pour la publication de votre envoi, utilisez l' **option publier cette soumission dès qu’elle transmet la certification (ou selon les dates que vous avez sélectionnées dans la section planification)**. Si vous laissez cette section à l’option par défaut, l’envoi n’est pas publié avant la date ou les dates que vous avez définies dans la section **planification** . Les dates que vous avez sélectionnées dans la section **planification** sont utilisées pour déterminer à quel moment votre produit devient disponible pour les clients du Store.
+Pour la plupart des soumissions, nous vous recommandons de laisser la section **options de conservation de publication** définie sur cette option. Si vous souhaitez spécifier certaines dates pour la publication de votre envoi, utilisez l' **option publier cette soumission dès qu’elle transmet la certification (ou selon les dates que vous avez sélectionnées dans la section planification)** . Si vous laissez cette section à l’option par défaut, l’envoi n’est pas publié avant la date ou les dates que vous avez définies dans la section **planification** . Les dates que vous avez sélectionnées dans la section **planification** sont utilisées pour déterminer à quel moment votre produit devient disponible pour les clients du Store.
 
 
 ### <a name="publish-your-submission-manually"></a>Publier votre soumission manuellement
 
-Si vous ne souhaitez pas encore définir une date de publication et que vous préférez que votre envoi reste non publié jusqu’à ce que vous décidiez de démarrer le processus de publication manuellement, vous pouvez choisir **ne pas publier cette soumission tant que je n’ai pas sélectionné publier maintenant**. Si vous choisissez cette option, votre soumission ne sera pas publiée tant que vous n’aurez pas indiqué qu’elle devrait l’être. Une fois que votre envoi est certifié, vous pouvez le publier en sélectionnant **publier maintenant** dans la page État de la certification, ou en sélectionnant une date spécifique de la même manière que celle décrite ci-dessous.
+Si vous ne souhaitez pas encore définir une date de publication et que vous préférez que votre envoi reste non publié jusqu’à ce que vous décidiez de démarrer le processus de publication manuellement, vous pouvez choisir **ne pas publier cette soumission tant que je n’ai pas sélectionné publier maintenant** . Si vous choisissez cette option, votre soumission ne sera pas publiée tant que vous n’aurez pas indiqué qu’elle devrait l’être. Une fois que votre envoi est certifié, vous pouvez le publier en sélectionnant **publier maintenant** dans la page État de la certification, ou en sélectionnant une date spécifique de la même manière que celle décrite ci-dessous.
 
 
 ### <a name="start-publishing-your-submission-on-a-certain-date"></a>Commencez la publication de votre envoi à une date donnée

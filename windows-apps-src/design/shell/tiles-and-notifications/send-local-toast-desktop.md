@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment les applications de bureau C# peuvent envoyer des notifications Toast locales et gérer l’utilisateur qui clique sur le Toast.
+description: Découvrez comment les applications de bureau C# peuvent envoyer des notifications Toast locales et gérer l’utilisateur qui clique sur le Toast.
 title: Envoyer une notification toast locale à partir d’applications de bureau en C#
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: 'Windows 10, Win32, Desktop, notifications Toast, envoyer un toast, envoyer un toast local, Desktop Bridge, msix, packages éparpillés, C#, C Sharp, Toast notification, WPF, envoyer une notification Toast, WPF, envoyer une notification Toast, envoyer une notification Toast, c#, envoyer une notification, WPF, envoyer une notification Toast, notification Toast WPF, notification Toast C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa6b23e775beee993051b23b828c59316ac1382
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: cb91a76db38623b533a925ea1df4728bc0fead78
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100297"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034472"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification toast locale à partir d’applications de bureau en C#
 
@@ -60,7 +60,7 @@ Ensuite, vous devez vous inscrire auprès de la plateforme de notification. Diff
 
 #### <a name="msixsparse-packages"></a>[Packages MSIX/Sparse](#tab/msix-sparse)
 
-Si vous utilisez un package [MSIX](/windows/msix/desktop/source-code-overview) ou [Sparse](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest**, ajoutez :
+Si vous utilisez un package [MSIX](/windows/msix/desktop/source-code-overview) ou [Sparse](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (ou si vous prenez en charge les deux), dans votre **Package. appxmanifest** , ajoutez :
 
 1. Déclaration pour **xmlns : com**
 2. Déclaration pour **xmlns : Desktop**
@@ -162,7 +162,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 
 ## <a name="step-5-send-a-notification"></a>Étape 5 : envoyer une notification
 
-L’envoi d’une notification est identique aux applications UWP, sauf que vous allez utiliser la classe **DesktopNotificationManagerCompat** pour créer un **ToastNotifier**. La bibliothèque de compatibilité gère automatiquement la différence entre le package MSIX/Sparse et le bureau classique, ce qui vous permet de ne pas avoir à dupliquer votre code. Pour le bureau classique, la bibliothèque de compatibilité met en cache votre identifiant AUMID que vous avez fournie lors de l’appel de **RegisterAumidAndComServer** afin que vous n’ayez pas à vous soucier du moment auquel fournir ou ne pas fournir le identifiant aumid.
+L’envoi d’une notification est identique aux applications UWP, sauf que vous allez utiliser la classe **DesktopNotificationManagerCompat** pour créer un **ToastNotifier** . La bibliothèque de compatibilité gère automatiquement la différence entre le package MSIX/Sparse et le bureau classique, ce qui vous permet de ne pas avoir à dupliquer votre code. Pour le bureau classique, la bibliothèque de compatibilité met en cache votre identifiant AUMID que vous avez fournie lors de l’appel de **RegisterAumidAndComServer** afin que vous n’ayez pas à vous soucier du moment auquel fournir ou ne pas fournir le identifiant aumid.
 
 > [!NOTE]
 > Installez la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) afin de pouvoir créer des notifications à l’aide de C#, comme indiqué ci-dessous, au lieu d’utiliser des données XML brutes.
@@ -351,7 +351,7 @@ Si vous avez installé à la fois votre package MSIX/Sparse et l’application d
 
 ## <a name="known-issues"></a>Problèmes connus
 
-Problème **résolu : l’application ne devient pas focalisée après avoir cliqué sur Toast**: dans les builds 15063 et antérieures, les droits de premier plan n’ont pas été transférés à votre application lorsque nous avons activé le serveur com. Par conséquent, votre application clignoterait simplement quand vous avez essayé de la déplacer au premier plan. Il n’existe aucune solution de contournement pour ce problème. Nous avons résolu ce problème dans les versions 16299 et supérieures.
+Problème **résolu : l’application ne devient pas focalisée après avoir cliqué sur Toast** : dans les builds 15063 et antérieures, les droits de premier plan n’ont pas été transférés à votre application lorsque nous avons activé le serveur com. Par conséquent, votre application clignoterait simplement quand vous avez essayé de la déplacer au premier plan. Il n’existe aucune solution de contournement pour ce problème. Nous avons résolu ce problème dans les versions 16299 et supérieures.
 
 
 ## <a name="resources"></a>Ressources

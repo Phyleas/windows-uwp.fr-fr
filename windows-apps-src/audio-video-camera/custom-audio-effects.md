@@ -1,17 +1,17 @@
 ---
-Description: Cet article explique comment créer un composant Windows Runtime implémentant l’interface IBasicAudioEffect pour créer des effets personnalisés de flux audio.
+description: Cet article explique comment créer un composant Windows Runtime implémentant l’interface IBasicAudioEffect pour créer des effets personnalisés de flux audio.
 title: Effets audio personnalisés
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: e52aa4ebde6f988daad9c1712845e07ee553d7a2
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b5b9613dc9d480a4193dbff0dbb236929d9ed54a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363962"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033172"
 ---
 # <a name="custom-audio-effects"></a>Effets audio personnalisés
 
@@ -24,12 +24,12 @@ Un effet audio personnalisé est défini dans une classe qui implémente l’int
 
 **Ajouter un composant Windows Runtime pour votre effet audio**
 
-1.  Dans Microsoft Visual Studio, quand votre solution est ouverte, accédez au menu **Fichier**, sélectionnez **Ajouter-&gt;Nouveau projet.**
-2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)**.
-3.  Pour cet exemple, nommez le projet *AudioEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
-4.  Cliquez sur **OK**.
-5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
-6.  Renommez le fichier *ExampleAudioEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
+1.  Dans Microsoft Visual Studio, quand votre solution est ouverte, accédez au menu **Fichier** , sélectionnez **Ajouter-&gt;Nouveau projet.**
+2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)** .
+3.  Pour cet exemple, nommez le projet *AudioEffectComponent* . Ce nom sera référencé dans le code ultérieurement.
+4.  Cliquez sur **OK** .
+5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions** , cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer** .
+6.  Renommez le fichier *ExampleAudioEffect.cs* . Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui** .
 7.  Ouvrez **ExampleAudioEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicAudioEffect**](/uwp/api/Windows.Media.Effects.IBasicAudioEffect).
 
 
@@ -63,7 +63,7 @@ La méthode [**SetProperties**](/uwp/api/windows.media.imediaextension.setproper
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetSetProperties":::
 
-Cet exemple simple permet de mixer l’échantillon audio actuel avec une valeur issue du tampon de retard, en fonction de la valeur de la propriété **Mix**. Une propriété est déclarée et TryGetValue est utilisé pour obtenir la valeur définie par l’application d’appel. Si aucune valeur n’a été définie, la valeur par défaut .5 est utilisée. Notez que cette propriété est en lecture seule. La valeur de propriété doit être définie à l’aide de **SetProperties**.
+Cet exemple simple permet de mixer l’échantillon audio actuel avec une valeur issue du tampon de retard, en fonction de la valeur de la propriété **Mix** . Une propriété est déclarée et TryGetValue est utilisé pour obtenir la valeur définie par l’application d’appel. Si aucune valeur n’a été définie, la valeur par défaut .5 est utilisée. Notez que cette propriété est en lecture seule. La valeur de propriété doit être définie à l’aide de **SetProperties** .
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetMixProperty":::
 
@@ -77,13 +77,13 @@ L’accès à la mémoire tampon de données d’une **AudioFrame** nécessite u
 
 > [!NOTE]
 > Dans la mesure où cette technique accède à une mémoire tampon d’image native non gérée, vous devez configurer votre projet pour autoriser du code unsafe.
-> 1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet AudioEffectComponent et sélectionnez **Propriétés**.
+> 1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet AudioEffectComponent et sélectionnez **Propriétés** .
 > 2.  Sélectionnez l’onglet **Build** .
 > 3.  Activez la case à cocher **autoriser le code unsafe** .
 
- 
+ 
 
-Vous pouvez maintenant ajouter l’implémentation de la méthode **ProcessFrame** à votre effet. Tout d’abord, cette méthode obtient un objet [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer) à partir des trames audio en entrée et en sortie. Notez que la trame en sortie est ouverte pour l’écriture, et que la trame en entrée l’est pour la lecture. Ensuite, un [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference) est obtenu pour chaque tampon en appelant [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference). Ensuite, le tampon de données réel est obtenu en transtypant les objets **IMemoryBufferReference** en tant qu’interface d’interopérabilité COM définie ci-dessus, **IMemoryByteAccess**, puis en appelant **GetBuffer**.
+Vous pouvez maintenant ajouter l’implémentation de la méthode **ProcessFrame** à votre effet. Tout d’abord, cette méthode obtient un objet [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer) à partir des trames audio en entrée et en sortie. Notez que la trame en sortie est ouverte pour l’écriture, et que la trame en entrée l’est pour la lecture. Ensuite, un [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference) est obtenu pour chaque tampon en appelant [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference). Ensuite, le tampon de données réel est obtenu en transtypant les objets **IMemoryBufferReference** en tant qu’interface d’interopérabilité COM définie ci-dessus, **IMemoryByteAccess** , puis en appelant **GetBuffer** .
 
 Maintenant que les tampons de données ont été obtenus, vous pouvez lire à partir du tampon en entrée et écrire sur le tampon en sortie. Pour chaque échantillon contenu dans le tampon en entrée, la valeur est obtenue et multipliée par 1 - **Mix** pour définir la valeur sèche de l’effet. Un échantillon est ensuite récupéré à partir de la position actuelle dans la mémoire tampon d’écho et multiplié par **Mix** pour définir la valeur humide de l’effet. L’échantillon de sortie est défini comme étant égal à la somme des valeurs sèche et humide. Pour finir, chaque échantillon d’entrée est stocké dans la mémoire tampon d’écho ; l’index d’échantillons actuel est alors incrémenté.
 
@@ -121,8 +121,8 @@ Affectez à la propriété [**UseInputFrameForOutput**](/uwp/api/windows.media.e
 
 Pour utiliser votre effet audio dans votre application, vous devez ajouter une référence au projet d’effet à votre application.
 
-1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
-2.  Développez l’onglet **Projets**, sélectionnez **Solution**, puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *AudioEffectComponent*.
+1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références** , puis sélectionnez **Ajouter une référence** .
+2.  Développez l’onglet **Projets** , sélectionnez **Solution** , puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *AudioEffectComponent* .
 3.  Cliquez sur **OK**
 
 Si votre classe d’effet audio est déclarée dans un autre espace de noms, veillez à inclure cet espace de noms dans votre fichier de code.
@@ -130,11 +130,11 @@ Si votre classe d’effet audio est déclarée dans un autre espace de noms, vei
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetUsingAudioEffectComponent":::
 
 ### <a name="add-your-custom-effect-to-an-audiograph-node"></a>Ajout de l’effet personnalisé à un nœud AudioGraph
-Pour obtenir des informations générales sur l’utilisation de graphiques audio, voir [Graphiques audio](audio-graphs.md). L’extrait de code suivant montre comment ajouter à un nœud de graphiques audio l’exemple d’effet d’écho illustré dans cet article. Un [**PropertySet**](/uwp/api/Windows.Foundation.Collections.PropertySet) est tout d’abord créé et une valeur est affectée à la propriété **Mix**, définie par l’effet. Le constructeur [**AudioEffectDefinition**](/uwp/api/Windows.Media.Effects.AudioEffectDefinition) est ensuite appelé, ce qui permet de transmettre le nom de classe complet du type d’effet personnalisé et du jeu de propriétés. Enfin, la définition de l’effet est ajoutée à la propriété [**EffectDefinitions**](/uwp/api/windows.media.audio.audiofileinputnode.effectdefinitions) d’un [**FileInputNode**](/uwp/api/windows.media.audio.createaudiofileinputnoderesult.fileinputnode)existant, ce qui entraîne le traitement de l’audio émis par l’effet personnalisé. 
+Pour obtenir des informations générales sur l’utilisation de graphiques audio, voir [Graphiques audio](audio-graphs.md). L’extrait de code suivant montre comment ajouter à un nœud de graphiques audio l’exemple d’effet d’écho illustré dans cet article. Un [**PropertySet**](/uwp/api/Windows.Foundation.Collections.PropertySet) est tout d’abord créé et une valeur est affectée à la propriété **Mix** , définie par l’effet. Le constructeur [**AudioEffectDefinition**](/uwp/api/Windows.Media.Effects.AudioEffectDefinition) est ensuite appelé, ce qui permet de transmettre le nom de classe complet du type d’effet personnalisé et du jeu de propriétés. Enfin, la définition de l’effet est ajoutée à la propriété [**EffectDefinitions**](/uwp/api/windows.media.audio.audiofileinputnode.effectdefinitions) d’un [**FileInputNode**](/uwp/api/windows.media.audio.createaudiofileinputnoderesult.fileinputnode)existant, ce qui entraîne le traitement de l’audio émis par l’effet personnalisé. 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddCustomEffect":::
 
-Une fois ajouté à un nœud, l’effet personnalisé peut être désactivé en appelant la méthode [**DisableEffectsByDefinition**](/uwp/api/windows.media.audio.audiofileinputnode.disableeffectsbydefinition) et en transmettant l’objet **AudioEffectDefinition**. Pour plus d’informations sur l’utilisation de graphiques audio dans votre application, voir [Graphiques audio](audio-graphs.md).
+Une fois ajouté à un nœud, l’effet personnalisé peut être désactivé en appelant la méthode [**DisableEffectsByDefinition**](/uwp/api/windows.media.audio.audiofileinputnode.disableeffectsbydefinition) et en transmettant l’objet **AudioEffectDefinition** . Pour plus d’informations sur l’utilisation de graphiques audio dans votre application, voir [Graphiques audio](audio-graphs.md).
 
 ### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Ajouter un effet personnalisé à un clip dans une composition multimédia
 
@@ -150,4 +150,4 @@ L’extrait de code suivant illustre l’ajout de l’effet audio personnalisé 
 * [Documentation Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Lecture de contenu multimédia](media-playback.md)
 
- 
+ 

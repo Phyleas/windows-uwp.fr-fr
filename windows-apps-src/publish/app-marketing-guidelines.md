@@ -1,17 +1,17 @@
 ---
-Description: Découvrez comment promouvoir vos applications et votre contenu dans le Microsoft Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
+description: Découvrez comment promouvoir vos applications et votre contenu dans le Microsoft Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
 title: Microsoft Store les instructions marketing pour les applications
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 64da05c3c3caed204e33890e88222e9a75be3ae0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 753b60cf3da6400d3df695c2f390c0b47c7a9e68
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162053"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033962"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store les instructions marketing pour les applications
 
@@ -37,7 +37,7 @@ Vous pouvez également télécharger l’ensemble des images de badge (aux forma
 
 Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous disposons d’une variété d’images de châssis de périphérique, parmi lesquelles des téléphones, des tablettes, des ordinateurs portables et des PC. Les pratiques recommandées et les spécifications techniques relatives à l’utilisation de ces images sont disponibles dans les [instructions Marketing Microsoft Store](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf).
 
-[ ![ Bouton de téléchargement](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip)image de l' **appareil Windows**
+[ ![ Bouton de téléchargement](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip) image de l' **appareil Windows**
 
 ## <a name="license-to-microsoft-marks"></a>Licence d’utilisation des marques Microsoft
 
@@ -53,6 +53,6 @@ Pour promouvoir votre application, vous pouvez afficher son aspect lors de son e
 
 Microsoft est l’unique propriétaire des Marques Microsoft et de son actif incorporel associé, et l’unique bénéficiaire de l’actif incorporel associé à votre utilisation des Marques Microsoft. Microsoft peut à tout moment révoquer cette licence, à sa seule discrétion.
 
- 
+ 
 
- 
+ 

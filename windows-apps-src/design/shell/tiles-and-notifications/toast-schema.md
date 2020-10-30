@@ -1,5 +1,5 @@
 ---
-Description: L’article suivant décrit toutes les propriétés et tous les éléments contenus dans Toast content.
+description: L’article suivant décrit toutes les propriétés et tous les éléments contenus dans Toast content.
 title: Schéma du contenu de notification toast
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Toast content schema
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6399cb3aa6c22e188ed84941c3209632511d90e4
-ms.sourcegitcommit: 8b01b9ab7293dad1259da32d1459fdd454796e12
+ms.openlocfilehash: 7116f1aa6f06eda1351183963ea8169625a8df70
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92020169"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033022"
 ---
 # <a name="toast-content-schema"></a>Schéma du contenu de notification toast
 
@@ -41,7 +41,7 @@ ToastContent est l’objet de niveau supérieur qui décrit le contenu d’une n
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
 | **Lancer**| string | false | Chaîne transmise à l’application lorsqu’elle est activée par le Toast. L’application définit le format et le contenu de cette chaîne pour son propre usage. Lorsque l’utilisateur appuie ou clique sur le toast pour lancer l’application associée, la chaîne de lancement fournit le contexte à l’application qui lui permet de montrer à l’utilisateur une vue pertinente pour le contenu du Toast, plutôt que de le lancer par défaut. |
-| **Élément visuel** | [ToastVisual](#toastvisual) | true | Décrit la partie visuelle de la notification Toast. |
+| **Éléments visuels** | [ToastVisual](#toastvisual) | true | Décrit la partie visuelle de la notification Toast. |
 | **Actions** | [IToastActions](#itoastactions) | false | Créez éventuellement des actions personnalisées avec des boutons et des entrées. |
 | **Audio** | [ToastAudio](#toastaudio) | false | Décrit la partie audio de la notification Toast. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Spécifie le type d’activation qui sera utilisé lorsque l’utilisateur cliquera sur le corps de ce Toast. |
@@ -316,7 +316,7 @@ Créez vos propres actions et entrées personnalisées à l’aide de contrôles
 |---|---|---|---|
 | **Entrées** | IList<[IToastInput](#itoastinput)> | false | Entrées comme des zones de texte et des entrées de sélection. Seules 5 entrées sont autorisées. |
 | **Boutons** | IList<[IToastButton](#itoastbutton)> | false | Les boutons s’affichent après toutes les entrées (ou adjacentes à une entrée si le bouton est utilisé comme un bouton de réponse rapide). Seuls les boutons jusqu’à 5 sont autorisés (ou moins si vous avez également des éléments de menu contextuel). |
-| **ContextMenuItems** | IList<[ToastContextMenuItem](#toastcontextmenuitem)> | false | Nouveauté de la mise à jour anniversaire : éléments de menu contextuel personnalisés, fournissant des actions supplémentaires si l’utilisateur clique avec le bouton droit sur la notification. Vous pouvez *combiner*jusqu’à 5 boutons et éléments de menu contextuel. |
+| **ContextMenuItems** | IList<[ToastContextMenuItem](#toastcontextmenuitem)> | false | Nouveauté de la mise à jour anniversaire : éléments de menu contextuel personnalisés, fournissant des actions supplémentaires si l’utilisateur clique avec le bouton droit sur la notification. Vous pouvez *combiner* jusqu’à 5 boutons et éléments de menu contextuel. |
 
 
 ## <a name="itoastinput"></a>IToastInput
@@ -402,7 +402,7 @@ Nouveautés de Creators Update : options supplémentaires relatives à l’acti
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
 | **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | Nouveautés de la mise à jour des créateurs de automne : Obtient ou définit le comportement que le Toast doit utiliser lorsque l’utilisateur appelle cette action. Cela fonctionne uniquement sur le bureau, pour [ToastButton](#toastbutton) et [ToastContextMenuItem](#toastcontextmenuitem). |
-| **ProtocolActivationTargetApplicationPfn** | string | false | Si vous utilisez *ToastActivationType. Protocol*, vous pouvez éventuellement spécifier le PFN cible, de sorte que si plusieurs applications sont inscrites pour gérer le même URI de protocole, l’application souhaitée sera toujours lancée. |
+| **ProtocolActivationTargetApplicationPfn** | string | false | Si vous utilisez *ToastActivationType. Protocol* , vous pouvez éventuellement spécifier le PFN cible, de sorte que si plusieurs applications sont inscrites pour gérer le même URI de protocole, l’application souhaitée sera toujours lancée. |
 
 
 ### <a name="toastafteractivationbehavior"></a>ToastAfterActivationBehavior

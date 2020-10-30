@@ -1,5 +1,5 @@
 ---
-Description: Concevez votre application pour qu’elle soit prête à l’international en mettant en forme de manière appropriée les dates, les heures, les nombres, les numéros de téléphone et les devises. Vous pourrez ensuite adapter votre application à des cultures, régions et langues supplémentaires sur le marché mondial.
+description: Concevez votre application pour qu’elle soit prête à l’international en mettant en forme de manière appropriée les dates, les heures, les nombres, les numéros de téléphone et les devises. Vous pourrez ensuite adapter votre application à des cultures, régions et langues supplémentaires sur le marché mondial.
 title: Globaliser vos formats de date/heure/chiffres
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 798199269a4fd02eebef7dcd46cd5781ba561250
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8c3bacbfbbe944cddfe014fcd34038ca9a56c36e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493424"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034342"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>Globaliser vos formats de date/heure/chiffres
 
@@ -24,7 +24,7 @@ Lors de la création de votre application, si vous pensez plus largement qu’un
 
 Les différentes régions et cultures utilisent des formats de date et d’heure différents. Celles-ci incluent des conventions pour l’ordre des jours et des mois de la date, pour la séparation des heures et des minutes dans le temps, et même pour la ponctuation utilisée comme séparateur. En outre, les dates peuvent être affichées dans différents formats longs (« mercredi 28 mars, 2012 ») ou des formats courts (« 3/28/12 »), qui varient d’une culture à l’autre. Et, bien sûr, les noms et les abréviations des jours de la semaine et les mois de l’année diffèrent entre les langues.
 
-Vous pouvez afficher un aperçu des formats utilisés pour les différentes langues. Accédez à **paramètres**  >  **heure &** langue  >  **& langue**, puis cliquez sur **date, heure, & paramètres régionaux**  >  **modifier les formats de date, d’heure ou de nombre**. Sous l’onglet **formats** , sélectionnez une langue dans la liste déroulante **format** et affichez un aperçu des formats des **exemples**.
+Vous pouvez afficher un aperçu des formats utilisés pour les différentes langues. Accédez à **paramètres**  >  **heure &** langue  >  **& langue** , puis cliquez sur **date, heure, & paramètres régionaux**  >  **modifier les formats de date, d’heure ou de nombre** . Sous l’onglet **formats** , sélectionnez une langue dans la liste déroulante **format** et affichez un aperçu des formats des **exemples** .
 
 Cette rubrique utilise les termes « liste des langues du profil utilisateur », « liste des langues du manifeste de l’application » et « liste des langues du runtime de l’application ». Pour plus d’informations sur ce que signifient ces termes et sur la manière d’accéder à leurs valeurs, consultez [comprendre les langages de profil utilisateur et les langages du manifeste d’application](manage-language-and-region.md).
 
@@ -52,7 +52,7 @@ Si vous devez afficher des dates ou des heures vous-même, vous pouvez utiliser 
 Vous pouvez tester le code ci-dessus sur votre propre ordinateur comme celui-ci.
 
 - Assurez-vous que votre projet contient des fichiers de ressources qualifiés pour « en-US » et « de-DE » (consultez [adapter vos ressources pour connaître la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)).
-- Modifiez votre liste de langues de profil utilisateur dans **paramètres**  >  **heure & langue langue**  >  **&**  >  **langues**. Ajoutez allemand (Allemagne), définissez-le comme valeur par défaut, puis réexécutez le code.
+- Modifiez votre liste de langues de profil utilisateur dans **paramètres**  >  **heure & langue langue**  >  **&**  >  **langues** . Ajoutez allemand (Allemagne), définissez-le comme valeur par défaut, puis réexécutez le code.
 
 ## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>Mettre en forme les dates et les heures de la liste des langues du profil utilisateur
 
@@ -104,7 +104,7 @@ Cet exemple montre comment afficher les devises à la fois par profil utilisateu
                     "Formatted Euro (fr-FR defaults): " + currencyValueEuroFR;
 ```
 
-Vous pouvez tester le code ci-dessus sur votre propre PC en modifiant le pays ou la région dans **paramètres**  >  **heure & langue**  >  **&**  >  **pays ou région**de langue. Choisissez un pays ou une région (peut-être Islande) et réexécutez le code.
+Vous pouvez tester le code ci-dessus sur votre propre PC en modifiant le pays ou la région dans **paramètres**  >  **heure & langue**  >  **&**  >  **pays ou région** de langue. Choisissez un pays ou une région (peut-être Islande) et réexécutez le code.
 
 ## <a name="use-a-culturally-appropriate-calendar"></a>Utiliser un calendrier adapté à la culture
 
@@ -151,7 +151,7 @@ L’exemple ci-dessous montre comment utiliser **PhoneNumberFormatter** pour for
     }
 ```    
 
-Vous pouvez tester le code ci-dessus sur votre propre PC en modifiant le pays ou la région dans **paramètres**  >  **heure & langue**  >  **&**  >  **pays ou région**de langue. Choisissez un pays ou une région (par exemple, Nouvelle-Zélande pour confirmer que les formats correspondent), puis réexécutez le code. Pour les données de test, vous pouvez effectuer une recherche sur le Web pour le numéro de téléphone d’une entreprise en Nouvelle-Zélande.
+Vous pouvez tester le code ci-dessus sur votre propre PC en modifiant le pays ou la région dans **paramètres**  >  **heure & langue**  >  **&**  >  **pays ou région** de langue. Choisissez un pays ou une région (par exemple, Nouvelle-Zélande pour confirmer que les formats correspondent), puis réexécutez le code. Pour les données de test, vous pouvez effectuer une recherche sur le Web pour le numéro de téléphone d’une entreprise en Nouvelle-Zélande.
 
 ## <a name="the-users-language-and-cultural-preferences"></a>Les préférences de langue et de culture de l’utilisateur
 

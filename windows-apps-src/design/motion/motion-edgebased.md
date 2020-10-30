@@ -1,5 +1,5 @@
 ---
-Description: Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran.
+description: Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran.
 title: Animations latérales de l’interface utilisateur
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b36f609308d559f5f0cbb56c90420f2381fb8e53
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a49277a82a3bfffffb478496ab01d353c169463f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220172"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034232"
 ---
 # <a name="edge-based-ui-animations"></a>Animations latérales de l’interface utilisateur
 
@@ -23,7 +23,7 @@ ms.locfileid: "91220172"
 
 Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran. L’utilisateur ou l’application peut initier les actions d’affichage ou de masquage. L’interface utilisateur peut se superposer à l’application ou intégrer sa surface principale. Si l’élément d’interface utilisateur fait partie de la surface principale, un redimensionnement du reste de l’application peut être nécessaire pour l’accueillir.
 
-> **API importantes**: [ **classe EdgeUIThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **API importantes** : [ **classe EdgeUIThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -53,6 +53,6 @@ Les animations latérales affichent ou masquent l’interface utilisateur qui pa
 * [Animation de fondus](/previous-versions/windows/apps/jj649429(v=win.10))
 * [Animation de repositionnements](/previous-versions/windows/apps/jj649434(v=win.10))
 
- 
+ 
 
- 
+ 

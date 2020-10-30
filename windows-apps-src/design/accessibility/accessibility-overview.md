@@ -1,5 +1,5 @@
 ---
-Description: Cet article est une vue d’ensemble des concepts et technologies liés aux scénarios d’accessibilité des applications Windows.
+description: Cet article est une vue d’ensemble des concepts et technologies liés aux scénarios d’accessibilité des applications Windows.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Vue d’ensemble de l’accessibilité
 label: Accessibility overview
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 525f8d3170d94b035648841edca5f903450bf871
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e772cfb6df47cebe9f1b0229f54ea40a2a1da28d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216482"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032682"
 ---
 # <a name="accessibility-overview"></a>Vue d’ensemble de l’accessibilité
 
@@ -33,7 +33,7 @@ Il existe de nombreuses invalidités et handicaps, notamment des limitations rel
 * la prise en charge de la personnalisation utilisateur, y compris les paramètres de police, de zoom (loupe), de couleur et de contraste élevé ;
 * des alternatives ou suppléments pour des parties de votre interface utilisateur.
 
-Les contrôles XAML fournissent une prise en charge intégrée du clavier et prennent en charge les lecteurs d’écran, qui tirent parti d’infrastructures d’accessibilité qui prennent déjà en charge les applications UWP, HTML et d’autres technologies d’interface utilisateur. Cette prise en charge intégrée offre un niveau d’accessibilité de base que vous pouvez personnaliser avec très peu de travail, en définissant uniquement quelques propriétés. Si vous créez vos propres contrôles et composants XAML personnalisés, vous pouvez également ajouter une prise en charge similaire à ces contrôles en faisant appel au concept d’*homologue d’automation*.
+Les contrôles XAML fournissent une prise en charge intégrée du clavier et prennent en charge les lecteurs d’écran, qui tirent parti d’infrastructures d’accessibilité qui prennent déjà en charge les applications UWP, HTML et d’autres technologies d’interface utilisateur. Cette prise en charge intégrée offre un niveau d’accessibilité de base que vous pouvez personnaliser avec très peu de travail, en définissant uniquement quelques propriétés. Si vous créez vos propres contrôles et composants XAML personnalisés, vous pouvez également ajouter une prise en charge similaire à ces contrôles en faisant appel au concept d’ *homologue d’automation* .
 
 De plus, les fonctionnalités de liaison de données, de style et de modèle simplifient l’implémentation de la prise en charge des modifications dynamiques des paramètres d’affichage et du texte pour d’autres interfaces utilisateur.
 
@@ -107,7 +107,7 @@ Trois principaux aspects du texte sont pertinents en ce qui concerne l’accessi
 
 * Des outils doivent déterminer si le texte doit être lu dans le cadre d’une traversée de séquence de tabulation ou uniquement dans le cadre d’une représentation de document globale. Vous pouvez aider à contrôler cette détermination en choisissant l’élément approprié pour l’affichage du texte ou en ajustant les propriétés de ces éléments de texte. Chaque élément de texte disponible remplit une fonction donnée, souvent associée à un rôle UI Automation particulier. L’utilisation de l’élément incorrect peut entraîner le signalement du rôle incorrect à UI Automation et la création d’une expérience confuse pour un utilisateur de technologie d’assistance.
 * De nombreux utilisateurs souffrent de limitations visuelles qui font que le texte est difficile à lire en cas d’insuffisance du contraste par rapport à l’arrière-plan. L’impact sur l’utilisateur est délicat à évaluer pour un concepteur d’application qui ne souffre pas de la même limitation visuelle. Par exemple, un choix des couleurs inapproprié lors de la conception peut empêcher certains utilisateurs daltoniens de pouvoir lire le texte. Les recommandations en matière d’accessibilité effectuées initialement pour le contenu Web définissent des normes de contraste qui peuvent éviter ces problèmes également dans les applications. Pour plus d’informations, consultez la rubrique [Exigences de texte accessible](accessible-text-requirements.md).
-* De nombreux utilisateurs éprouvent des difficultés à lire du texte trop petit. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que le texte de l’interface utilisateur de votre application soit suffisamment grand en premier lieu. Toutefois, ceci est difficile avec les applications qui affichent une grande quantité de texte ou du texte combiné à d’autres éléments visuels. Dans les cas de ce type, assurez-vous que l’application interagit correctement avec les fonctionnalités système qui peuvent agrandir l’affichage ainsi que le texte qu’elle contient. (Certains utilisateurs modifient les valeurs ppp comme option d’accessibilité.) (Cette option est disponible dans la zone **Agrandir les éléments affichés à l’écran** de la fenêtre **Options d’ergonomie**, qui redirige l’utilisateur vers une interface utilisateur du **Panneau de configuration** pour les options **Apparence et personnalisation** / **Affichage**.)
+* De nombreux utilisateurs éprouvent des difficultés à lire du texte trop petit. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que le texte de l’interface utilisateur de votre application soit suffisamment grand en premier lieu. Toutefois, ceci est difficile avec les applications qui affichent une grande quantité de texte ou du texte combiné à d’autres éléments visuels. Dans les cas de ce type, assurez-vous que l’application interagit correctement avec les fonctionnalités système qui peuvent agrandir l’affichage ainsi que le texte qu’elle contient. (Certains utilisateurs modifient les valeurs ppp comme option d’accessibilité.) (Cette option est disponible dans la zone **Agrandir les éléments affichés à l’écran** de la fenêtre **Options d’ergonomie** , qui redirige l’utilisateur vers une interface utilisateur du **Panneau de configuration** pour les options **Apparence et personnalisation** / **Affichage** .)
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>

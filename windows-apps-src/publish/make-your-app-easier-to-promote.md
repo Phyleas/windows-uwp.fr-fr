@@ -1,17 +1,17 @@
 ---
-Description: Faites en sorte que votre application soit remarquée ! En plus de rendre votre application le mieux possible, vous pouvez le faire pour que les Microsoft Store et d’autres sites présentent facilement votre application et l’aident à attirer l’attention.
+description: Faites en sorte que votre application soit remarquée ! En plus de rendre votre application le mieux possible, vous pouvez le faire pour que les Microsoft Store et d’autres sites présentent facilement votre application et l’aident à attirer l’attention.
 title: Faciliter la promotion de votre application
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, promotion, promotion, proposé, vitrine, boutique
 ms.localizationpriority: medium
-ms.openlocfilehash: c2503dbd6d585452c8bfec0ac217e2144a4da384
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea42ff2d4aa7f953ed98813de3d4b2ead1547b16
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161903"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033892"
 ---
 # <a name="make-your-app-easier-to-promote"></a>Faciliter la promotion de votre application
 
@@ -43,4 +43,4 @@ Le Microsoft Store présente différentes applications regroupées par catégori
 
 
 
- 
+ 

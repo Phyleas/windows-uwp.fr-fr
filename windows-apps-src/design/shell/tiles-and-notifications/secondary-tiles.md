@@ -1,5 +1,5 @@
 ---
-Description: Les vignettes secondaires permettent aux utilisateurs d’épingler du contenu spécifique et des liens détaillés à partir de votre application dans leur menu Démarrer, ce qui facilite l’accès au contenu au sein de votre application.
+description: Les vignettes secondaires permettent aux utilisateurs d’épingler du contenu spécifique et des liens détaillés à partir de votre application dans leur menu Démarrer, ce qui facilite l’accès au contenu au sein de votre application.
 title: Vignettes secondaires
 label: Secondary tiles
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: vignettes Windows 10, UWP et secondaires
 ms.localizationpriority: medium
-ms.openlocfilehash: ecafd52be36b34c83d9b11757ccd733e796fd727
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 066a6dcb3683e2e55f7452b1f09bb834157aee62
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100337"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034502"
 ---
 # <a name="secondary-tiles"></a>Vignettes secondaires
 
@@ -25,7 +25,7 @@ Par exemple, les utilisateurs peuvent épingler la météo pour de nombreux empl
 
 En ajoutant des vignettes secondaires à votre application, vous aidez l’utilisateur à effectuer une nouvelle tentative rapidement et efficacement avec votre application, en l’encourageant à revenir plus souvent grâce à la facilité d’accès fournie par les vignettes secondaires.
 
-**Seuls les utilisateurs peuvent épingler une vignette secondaire ; les applications ne peuvent pas épingler des vignettes secondaires par programmation sans l’approbation**de l’utilisateur. L’utilisateur doit cliquer explicitement sur un bouton « épingler » dans votre application, puis utiliser l’API pour demander la création d’une vignette secondaire, puis le système affiche une boîte de dialogue demandant à l’utilisateur de confirmer si la vignette doit être épinglée.
+**Seuls les utilisateurs peuvent épingler une vignette secondaire ; les applications ne peuvent pas épingler des vignettes secondaires par programmation sans l’approbation** de l’utilisateur. L’utilisateur doit cliquer explicitement sur un bouton « épingler » dans votre application, puis utiliser l’API pour demander la création d’une vignette secondaire, puis le système affiche une boîte de dialogue demandant à l’utilisateur de confirmer si la vignette doit être épinglée.
 
 ## <a name="quick-links"></a>Liens rapides
 

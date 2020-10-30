@@ -1,19 +1,19 @@
 ---
-Description: Vous pouvez utiliser la méthode SendRequestAsync pour envoyer des requêtes à la Microsoft Store pour les opérations qui n’ont pas encore d’API disponible dans le SDK Windows.
-title: Envoyer des demandes au Microsoft Store
+description: Vous pouvez utiliser la méthode SendRequestAsync pour envoyer des requêtes à la Microsoft Store pour les opérations qui n’ont pas encore d’API disponible dans le SDK Windows.
+title: Envoyer des requêtes au Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: a02be93a56d6066ebd4d9547c8cc9ea1a96c9e09
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 53b525617ac72aec67349645430bc5995253460f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164493"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034662"
 ---
-# <a name="send-requests-to-the-microsoft-store"></a>Envoyer des demandes au Microsoft Store
+# <a name="send-requests-to-the-microsoft-store"></a>Envoyer des requêtes au Microsoft Store
 
 À compter de Windows 10, la version 1607, le SDK Windows fournit des API pour les opérations liées aux magasins (telles que les achats dans l’application) dans l’espace de noms [Windows. services. Store](/uwp/api/windows.services.store) . Toutefois, bien que les services qui prennent en charge le magasin soient constamment mis à jour, étendus et améliorés entre les versions du système d’exploitation, les nouvelles API sont généralement ajoutées au SDK Windows uniquement pendant les versions majeures du système d’exploitation.
 
@@ -34,7 +34,7 @@ public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
@@ -77,12 +77,12 @@ Cette requête récupère les variables distantes du groupe de vol le plus élev
 |  *requestKind*                   |  Spécifiez 7 pour renvoyer le groupe de vol le plus élevé de l’appareil, ou spécifiez 8 pour retourner le groupe de vol le plus élevé pour l’utilisateur actuel et l’appareil. Nous vous recommandons d’utiliser la valeur 8 pour le paramètre *requestKind* , car cette valeur renverra le groupe de vols le plus élevé dans l’appartenance pour l’utilisateur actuel et l’appareil.  |
 |  *parametersAsJson*                   |  Transmettez une chaîne au format JSON qui contient les données affichées dans l’exemple ci-dessous.  |
 
-L’exemple suivant montre le format des données JSON à passer à *parametersAsJson*. Le champ de *type* doit être affecté à la chaîne *GetRemoteVariables*. Affectez le champ *ProjectId* à l’ID du projet dans lequel vous avez défini les variables distantes dans l’espace partenaires.
+L’exemple suivant montre le format des données JSON à passer à *parametersAsJson* . Le champ de *type* doit être affecté à la chaîne *GetRemoteVariables* . Affectez le champ *ProjectId* à l’ID du projet dans lequel vous avez défini les variables distantes dans l’espace partenaires.
 
 ```json
-{ 
-    "type": "GetRemoteVariables", 
-    "parameters": "{ \"projectId\": \"your project ID\" }" 
+{ 
+    "type": "GetRemoteVariables", 
+    "parameters": "{ \"projectId\": \"your project ID\" }" 
 }
 ```
 
@@ -97,8 +97,8 @@ Une fois cette demande envoyée, la propriété [Response](/uwp/api/windows.serv
 L’exemple suivant illustre une valeur de retour pour cette requête.
 
 ```json
-{ 
-  "anonymous": false, 
+{ 
+  "anonymous": false, 
   "name": "Insider Slow",
   "settings":
   {
@@ -120,12 +120,12 @@ Pour envoyer cette demande, transmettez les informations suivantes aux paramètr
 |  *requestKind*                   |  Spécifiez 7 pour ajouter l’appareil à un groupe de vol, ou spécifiez 8 pour ajouter l’utilisateur actuellement connecté au magasin à un groupe de vol.  |
 |  *parametersAsJson*                   |  Transmettez une chaîne au format JSON qui contient les données affichées dans l’exemple ci-dessous.  |
 
-L’exemple suivant montre le format des données JSON à passer à *parametersAsJson*. Le champ de *type* doit être affecté à la chaîne *AddToFlightGroup*. Affectez le champ *flightGroupId* à l’ID du groupe de vols auquel vous souhaitez ajouter l’appareil ou l’utilisateur.
+L’exemple suivant montre le format des données JSON à passer à *parametersAsJson* . Le champ de *type* doit être affecté à la chaîne *AddToFlightGroup* . Affectez le champ *flightGroupId* à l’ID du groupe de vols auquel vous souhaitez ajouter l’appareil ou l’utilisateur.
 
 ```json
-{ 
-    "type": "AddToFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "AddToFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 
@@ -143,12 +143,12 @@ Pour envoyer cette demande, transmettez les informations suivantes aux paramètr
 |  *requestKind*                   |  Spécifiez 7 pour supprimer l’appareil d’un groupe de vol, ou spécifiez 8 pour supprimer l’utilisateur actuellement connecté au magasin à partir d’un groupe de vol.  |
 |  *parametersAsJson*                   |  Transmettez une chaîne au format JSON qui contient les données affichées dans l’exemple ci-dessous.  |
 
-L’exemple suivant montre le format des données JSON à passer à *parametersAsJson*. Le champ de *type* doit être affecté à la chaîne *RemoveFromFlightGroup*. Affectez le champ *flightGroupId* à l’ID du groupe de vols duquel vous souhaitez supprimer l’appareil ou l’utilisateur.
+L’exemple suivant montre le format des données JSON à passer à *parametersAsJson* . Le champ de *type* doit être affecté à la chaîne *RemoveFromFlightGroup* . Affectez le champ *flightGroupId* à l’ID du groupe de vols duquel vous souhaitez supprimer l’appareil ou l’utilisateur.
 
 ```json
-{ 
-    "type": "RemoveFromFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "RemoveFromFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 

@@ -1,5 +1,5 @@
 ---
-Description: Apprenez à concevoir et optimiser vos applications Windows afin qu’elles fournissent la meilleure expérience possible pour les utilisateurs du clavier et pour ceux qui ont des handicaps et d’autres exigences en matière d’accessibilité.
+description: Apprenez à concevoir et optimiser vos applications Windows afin qu’elles fournissent la meilleure expérience possible pour les utilisateurs du clavier et pour ceux qui ont des handicaps et d’autres exigences en matière d’accessibilité.
 title: Interactions avec le clavier
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 005ec4883eeb52a84e458ba917439d093ab0041f
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 6fba6654913f481faba98c598e4c683d62b09adf
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763075"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034802"
 ---
 # <a name="keyboard-interactions"></a>Interactions avec le clavier
 
@@ -28,13 +28,13 @@ Sur les appareils, l’entrée au clavier est un élément important de l’exp�
 
 ![image de clavier et de manette](images/keyboard/keyboard-gamepad.jpg)
 
-***Les modèles d’interaction courants sont partagés entre le clavier et le boîtier***
+***Les modèles d’interaction courants sont partagés entre le clavier et le boîtier**
 
 Dans cette rubrique, nous nous concentrons spécifiquement sur la conception d’applications Windows pour les entrées au clavier sur les PC. Toutefois, une expérience de clavier bien conçue est importante pour la prise en charge d’outils d’accessibilité tels que le narrateur Windows, à l’aide de [claviers logiciels](#software-keyboard) tels que le clavier tactile et le clavier visuel (OSK), ainsi que pour la gestion d’autres types de périphériques d’entrée, tels que le boîtier de commande Xbox et le contrôle à distance.
 
 La plupart des instructions et recommandations présentées ici, y compris les éléments [visuels de focus](#focus-visuals), les [clés d’accès](#access-keys)et la [navigation dans l’interface utilisateur](#navigation), s’appliquent également à ces autres scénarios.
 
-**Remarque**  Alors que les claviers matériels et logiciels sont utilisés pour l’entrée de texte, l’objectif de cette rubrique est la navigation et l’interaction.
+_ *Remarque* * alors que les claviers matériels et logiciels sont utilisés pour l’entrée de texte, l’objectif de cette rubrique est la navigation et l’interaction.
 
 ## <a name="built-in-support"></a>Prise en charge intégrée
 
@@ -44,7 +44,7 @@ Tous les contrôles UWP incluent une prise en charge intégrée de riches expér
 
 ![clavier avec une image de téléphone](images/keyboard/keyboard-phone.jpg)
 
-***UWP prend en charge le clavier avec n’importe quel appareil***
+**_UWP prend en charge le clavier avec n’importe quel appareil_* _
 
 ## <a name="basic-experiences"></a>Expériences de base
 ![Appareils basés sur le focus](images/keyboard/focus-based-devices.jpg)
@@ -83,15 +83,15 @@ Un visuel de Focus :
 - Aide un utilisateur à naviguer dans l’interface utilisateur d’une application sans se perdre
 - Peut être personnalisé pour votre application (voir [visuels de focus de visibilité élevée](guidelines-for-visualfeedback.md#high-visibility-focus-visuals))
 
-**Remarque** Le visuel de focus UWP n’est pas le même que le rectangle de focus du narrateur.
+_ *Remarque* * le visuel de focus UWP n’est pas le même que le rectangle de focus du narrateur.
 
 ### <a name="tab-stops"></a>Taquets de tabulation
 
 Pour utiliser un contrôle (y compris des éléments de navigation) avec le clavier, il faut que le focus de celui-ci soit positionné sur le contrôle. Pour qu’un contrôle puisse recevoir le focus clavier, vous pouvez le rendre accessible via la navigation par onglets en l’identifiant sous la forme d’un taquet de tabulation dans l’ordre de tabulation de votre application.
 
-Pour qu’un contrôle soit inclus dans l’ordre de tabulation, la propriété [IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) doit avoir la valeur **true** et la propriété [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) doit avoir la valeur **true**.
+Pour qu’un contrôle soit inclus dans l’ordre de tabulation, la propriété [IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) doit avoir la valeur **true** et la propriété [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) doit avoir la valeur **true** .
 
-Pour exclure spécifiquement un contrôle de l’ordre de tabulation, affectez la valeur **false**à la propriété [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) .
+Pour exclure spécifiquement un contrôle de l’ordre de tabulation, affectez la valeur **false** à la propriété [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) .
 
 Par défaut, l’ordre de tabulation reflète l’ordre dans lequel les éléments d’interface utilisateur sont créés. Par exemple, si un `StackPanel` contient un `Button` , un `Checkbox` et un `TextBox` , l’ordre de tabulation est `Button` , `Checkbox` et `TextBox` .
 
@@ -158,7 +158,7 @@ Par exemple, le `ContentDialog` contrôle présenté ici fournit par défaut une
 
 ![exemple de dialogue](images/keyboard/dialog.png)
 
-***L’interaction avec une collection de boutons associés est facilitée grâce à la navigation par touche de direction***
+*L' *_interaction avec une collection de boutons associés est facilitée grâce à la navigation dans les touches de direction_* _
 
 Si les éléments sont affichés dans une seule colonne, la touche de direction haut/bas parcourt les éléments. Si les éléments sont affichés sur une seule ligne, la touche de direction droite/gauche parcourt les éléments. Si les éléments sont de plusieurs colonnes, les quatre touches de direction se défilent.
 
@@ -174,7 +174,7 @@ Par exemple, les images suivantes montrent deux contrôles empilés `ListView` .
   <td><img src="images/keyboard/arrow-only.png" alt="arrow only" /></td>
 </table>
 
-***L’interaction avec deux contrôles ListView empilés peut être facilitée et plus efficace en éliminant le taquet de tabulation et en naviguant avec les touches de direction.***
+_*_L’interaction avec deux contrôles ListView empilés peut être facilitée et plus efficace en éliminant le taquet de tabulation et en naviguant avec les touches de direction._*_
 
 Consultez la section [groupe de contrôle](#control-group) pour savoir comment appliquer les exemples d’optimisation à l’interface utilisateur de votre application.
 
@@ -184,7 +184,7 @@ Une fois qu’un contrôle a le focus, un utilisateur peut interagir avec lui et
 
 #### <a name="text-entry"></a>Entrée de texte
 
-Pour les contrôles spécifiquement conçus pour l’entrée de texte, tels que `TextBox` et `RichEditBox` , toute entrée au clavier est utilisée pour l’entrée ou la navigation dans du texte, qui est prioritaire par rapport à d’autres commandes du clavier. Par exemple, le menu déroulant d’un `AutoSuggestBox` contrôle ne reconnaît pas la clé d' **espace** comme une commande de sélection.
+Pour les contrôles spécifiquement conçus pour l’entrée de texte, tels que `TextBox` et `RichEditBox` , toute entrée au clavier est utilisée pour l’entrée ou la navigation dans du texte, qui est prioritaire par rapport à d’autres commandes du clavier. Par exemple, le menu déroulant d’un `AutoSuggestBox` contrôle ne reconnaît pas la touche _ *Space* * en tant que commande de sélection.
 
 ![entrée de texte](images/keyboard/text-entry.png)
 
@@ -377,7 +377,7 @@ Le bouton de recherche pour le `AutoSuggestBox` n’est pas accessible à la nav
 
 ![suggestion automatique du focus clavier](images/keyboard/auto-suggest-keyboard.png)
 
-*Avec le clavier, les utilisateurs appuient sur la* touche ***entrée*** *pour envoyer une requête de recherche*
+*Avec le*  * clavier, les utilisateurs appuient sur **Entrez** _ _Key pour envoyer une requête de recherche *
 
 <table>
   <tr>
@@ -446,21 +446,21 @@ L’exemple suivant montre un groupe d’éléments de liste, d’éléments de 
 
 ![navigation dans la touche de direction d’une seule colonne](images/keyboard/single-column-arrow.png)
 
-***Navigation dans la touche de direction d’une seule colonne***
+**_Navigation dans une seule colonne_* de la touche de direction _
 
 ![navigation sur une seule touche de flèche d’une seule ligne](images/keyboard/single-row-arrow.png)
 
-***Navigation sur une seule touche de flèche d’une seule ligne***
+_*_Navigation sur une seule touche de flèche d’une seule ligne_*_
 
 ![navigation sur plusieurs flèches de colonne et de ligne](images/keyboard/multiple-column-and-row-navigation.png)
 
-***Navigation entre les touches de direction sur plusieurs colonnes/lignes***
+_*_Navigation entre les touches de direction sur plusieurs colonnes/lignes_*_
 
 #### <a name="wrapping-homogeneous-list-and-grid-view-items"></a>Encapsulation d’éléments de liste et de vue de grille homogènes
 
 La navigation directionnelle n’est pas toujours la manière la plus efficace de parcourir plusieurs lignes et colonnes d’éléments de liste et GridView.
 
-**Remarque** Les éléments de menu sont généralement des listes de colonnes uniques, mais des règles de focus spéciales peuvent s’appliquer dans certains cas (consultez [interface utilisateur contextuelle](#popup-ui)).
+_ *Remarque* * les éléments de menu sont généralement des listes de colonnes uniques, mais des règles de focus spéciales peuvent s’appliquer dans certains cas (consultez [l’interface utilisateur contextuelle](#popup-ui)).
 
 Les objets de liste et de grille peuvent être créés avec plusieurs lignes et colonnes. Celles-ci sont généralement dans la ligne principale (où les éléments remplissent la ligne entière avant de remplir la ligne suivante) ou colonne-principal (où les éléments remplissent la colonne tout d’abord avant de remplir la colonne suivante). L’ordre majeur des lignes ou des colonnes dépend de la direction de défilement et vous devez vous assurer que l’ordre des éléments n’est pas en conflit avec cette direction.
 
@@ -523,13 +523,13 @@ Le clavier logiciel est un clavier qui s’affiche à l’écran que l’utilisa
 
 ![Clavier tactile Windows 10](images/keyboard/default.png)
 
-***Clavier tactile Windows 10***
+***Clavier tactile Windows 10** _
 
 ![Clavier Xbox One à l’écran](images/keyboard/xbox-onscreen-keyboard.png)
 
-***Clavier Xbox One à l’écran***
+_*_Clavier Xbox One à l’écran_*_
 
-En fonction de l’appareil, le clavier logiciel apparaît lorsqu’un champ de texte ou un autre contrôle de texte modifiable est activé, ou lorsque l’utilisateur l’active manuellement par le biais du **Centre de notifications**:
+En fonction de l’appareil, le clavier logiciel apparaît lorsqu’un champ de texte ou un autre contrôle de texte modifiable est activé, ou lorsque l’utilisateur l’active manuellement par le biais du _ * Centre de notification * * :
 
 ![icône du clavier tactile dans le Centre de notification](images/keyboard/touch-keyboard-notificationcenter.png)
 
@@ -549,22 +549,22 @@ Voici la liste des contrôles autres que d’édition qui peuvent recevoir le fo
 -   Barre de menus
 -   Élément de menu
 -   Barre d’outils
--   Liste
+-   List
 -   Élément de liste
 
 Voici quelques exemples des différents modes disponibles pour le clavier tactile. La première image représente la disposition classique, la seconde représente la disposition ergonomique (qui n’est pas forcément disponible dans toutes les langues).
 
 ![clavier tactile en mode de disposition classique](images/keyboard/default.png)
 
-***Clavier tactile en mode de disposition par défaut***
+**_Clavier tactile en mode de disposition par défaut_* _
 
 ![clavier tactile en mode de disposition étendue](images/keyboard/extendedview.png)
 
-***Clavier tactile en mode de disposition développé***
+_*_Clavier tactile en mode de disposition développé_*_
 
 Des interactions réussies avec le clavier permettent aux utilisateurs d’accomplir des scénarios d’application de base uniquement à l’aide du clavier. Autrement dit, les utilisateurs peuvent atteindre tous les éléments interactifs et activer leur fonctionnalité par défaut. Plusieurs facteurs peuvent affecter le degré de réussite, tels que la navigation à l’aide du clavier, les touches d’accès pour l’accessibilité et les touches d’accès rapide (ou de raccourci) pour les utilisateurs expérimentés.
 
-**Remarque**    Le clavier tactile ne prend pas en charge le basculement et la plupart des commandes système.
+_ *Remarque* * le clavier tactile ne prend pas en charge le basculement et la plupart des commandes système.
 
 #### <a name="on-screen-keyboard"></a>Clavier visuel
 À l’instar du clavier logiciel, le clavier visuel est un clavier visuel et logiciel que vous pouvez utiliser au lieu du clavier physique pour taper et entrer des données à l’aide de la fonction tactile, de la souris, du stylet/du stylet ou d’un autre dispositif de pointage (un écran tactile n’est pas nécessaire). Le Clavier visuel est fourni pour les systèmes qui ne possèdent pas de clavier physique ou pour les utilisateurs qui connaissent des problèmes de mobilité les empêchant d’utiliser les périphériques d’entrée physiques classiques. Le clavier visuel émule la plupart, sinon la totalité, des fonctionnalités d’un clavier matériel.
@@ -575,6 +575,6 @@ Il peut être activé depuis la page Clavier dans Paramètres &gt; Options d’e
 
 ![clavier visuel](images/keyboard/osk.png)
 
-***Clavier visuel***
+**_Clavier visuel_**
 
 Visitez la [page du clavier visuel](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) pour plus d’informations sur le clavier visuel.

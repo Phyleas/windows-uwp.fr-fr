@@ -1,17 +1,17 @@
 ---
-Description: Suivez ces instructions pour préparer les packages de votre application à envoyer au Microsoft Store.
+description: Suivez ces instructions pour préparer les packages de votre application à envoyer au Microsoft Store.
 title: Exigences relatives aux packages d’application
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, spécifications du package, packages, format de package, version prise en charge, envoyer
 ms.localizationpriority: medium
-ms.openlocfilehash: 848adbab20765a65ef4673219c55dfbf076e47e0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 464714388f9e998bace3af45c580f2a4a7638b27
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219772"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034392"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives aux packages d’application
 
@@ -26,7 +26,7 @@ Veillez à [tester votre application à l’aide du Kit de certification des app
 Si vous utilisez Visual Studio comme environnement de développement, vous disposez déjà d’outils intégrés pour créer rapidement et facilement un package d’application. Pour plus d’informations, consultez [Empaquetage d’applications](../packaging/index.md).
 
 > [!NOTE]
-> Assurez-vous que tous vos noms de fichiers utilisent ANSI. 
+> Assurez-vous que tous vos noms de fichiers utilisent ANSI. 
 
 Quand vous créez votre package dans Visual Studio, vérifiez que vous êtes connecté au même compte que celui associé à votre compte de développeur. Les informations contenues dans certaines parties du manifeste du package font référence à votre compte. Ces informations sont automatiquement détectées et ajoutées. Si les informations supplémentaires ne sont pas ajoutées au manifeste, vous risquez de rencontrer des échecs de chargement de package. 
 
@@ -40,7 +40,7 @@ Il n’est pas nécessaire que les packages de votre application soient signés 
 Pour les applications UWP, Visual Studio peut générer un bundle d’applications (. msixbundle ou. appxbundle) pour réduire la taille de l’application que les utilisateurs téléchargent. Cela peut être utile si vous avez défini des ressources propres à une langue, plusieurs ressources de mise à l’échelle d’images ou encore des ressources qui s’appliquent à des versions spécifiques de Microsoft DirectX.
 
 > [!NOTE]
-> Une offre groupée d'applications peut contenir vos packages pour toutes les architectures.
+> Une offre groupée d'applications peut contenir vos packages pour toutes les architectures.
 
 Avec un ensemble d’applications, un utilisateur ne télécharge que les fichiers pertinents, et non toutes les ressources disponibles. Pour plus d’informations sur les offres groupées d’applications, consultez [empaquetage d’applications](../packaging/index.md) et [empaqueter une application UWP avec Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
@@ -54,13 +54,13 @@ Pour obtenir des détails complets et les conditions requises concernant le mani
 Votre manifeste doit inclure des informations spécifiques concernant votre compte et votre application. Pour trouver ces informations, consultez [Visualiser les détails d’identité d’application](view-app-identity-details.md) dans la section **Gestion de l’application** de la page de présentation de votre application, dans le tableau de bord.
 
 > [!NOTE]
-> Les valeurs dans le manifeste respectent la casse. Les espaces et autres symboles de ponctuation doivent également correspondre. Saisissez les valeurs correctement et vérifiez-les pour vous assurer qu’elles sont correctes.
+> Les valeurs dans le manifeste respectent la casse. Les espaces et autres symboles de ponctuation doivent également correspondre. Saisissez les valeurs correctement et vérifiez-les pour vous assurer qu’elles sont correctes.
 
 
 Les offres groupées d’applications (. msixbundle ou. appxbundle) utilisent un autre manifeste. Pour obtenir les détails et conditions requises concernant les manifestes d’offres groupées d’applications, consultez la documentation relative au [manifeste d’offre groupée](/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans un fichier. msixbundle ou. appxbundle, le manifeste de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
 
 > [!TIP]
-> Veillez à exécuter le [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
+> Veillez à exécuter le [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
 
 
 ## <a name="package-format-requirements"></a>Exigences relatives au format des packages
@@ -88,6 +88,6 @@ Les versions actuellement prises en charge sont les suivantes :
 
 Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut être inclus dans les packages d’application. Son objectif est d’activer des fonctionnalités, telles que la déclaration de votre application en tant qu’application d’appareil Microsoft Store ou la déclaration d’exigences dont dépend un package pour s’appliquer à un appareil, que le manifeste du package ne couvre pas. S’il est utilisé, StoreManifest.xml est soumis avec le package d’application et doit se trouver dans le dossier racine du projet principal de votre application. Pour plus d’informations, voir [Schéma StoreManifest](/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
- 
+ 
 
- 
+ 

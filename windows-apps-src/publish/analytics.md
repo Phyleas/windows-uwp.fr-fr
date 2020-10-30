@@ -1,17 +1,17 @@
 ---
-Description: Bénéficiez d’une analytique détaillée pour vos applications Windows, dans l’espace partenaires ou via d’autres méthodes.
+description: Bénéficiez d’une analytique détaillée pour vos applications Windows, dans l’espace partenaires ou via d’autres méthodes.
 title: Analyser le niveau de performance de l’application
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, analytique, rapports, tableau de bord, applications, données, métriques
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b14ee776b31e21fbb8a0ee1d66b933648549b69
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08ee9c5ddf729ac7a9026c36bc9fbddad0af5dc5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162083"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032982"
 ---
 # <a name="analyze-app-performance"></a>Analyser le niveau de performance de l’application
 
@@ -21,7 +21,7 @@ Vous pouvez afficher les rapports analytiques directement dans l’espace parten
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>Afficher l’analytique des clés pour toutes vos applications
 
-Pour afficher l’analytique clé de vos applications les plus téléchargées, développez **analyse** et sélectionnez **vue d’ensemble**. Par défaut, la page vue d’ensemble affiche des informations sur les cinq applications qui ont le plus de durées d’acquisition. Pour choisir différentes applications publiées à afficher, sélectionnez **filtres**.
+Pour afficher l’analytique clé de vos applications les plus téléchargées, développez **analyse** et sélectionnez **vue d’ensemble** . Par défaut, la page vue d’ensemble affiche des informations sur les cinq applications qui ont le plus de durées d’acquisition. Pour choisir différentes applications publiées à afficher, sélectionnez **filtres** .
 
 ## <a name="view-individual-reports-for-each-app"></a>Afficher des rapports individuels pour chaque application
 

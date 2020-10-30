@@ -1,5 +1,5 @@
 ---
-Description: Procédures de test à suivre pour vous assurer que votre application Windows est accessible.
+description: Procédures de test à suivre pour vous assurer que votre application Windows est accessible.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Test de l’accessibilité
 label: Accessibility testing
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1da900732257babc0d53453fa4b9b2c9196e7e6d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 1cb4807f551f79d488cc56d71513745d22c43d27
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216412"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032672"
 ---
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
@@ -29,7 +29,7 @@ Vous pouvez lancer les outils de test d’accessibilité à partir d’une invit
   
 ### <a name="accscope"></a>**Visionneuse de l’étendue de l’ergonomie (AccScope)**  
 
-L’outil [**AccScope**](/windows/desktop/WinAuto/accscope) permet aux développeurs et testeurs d’évaluer l’accessibilité de leur application pendant sa conception et son développement, potentiellement dans les premières phases de prototype, plutôt que dans les dernières phases de test du cycle de développement de l’application. Il est en particulier destiné à tester les scénarios d’accessibilité du Narrateur avec votre application.
+L’outil [**AccScope**](/windows/desktop/WinAuto/accscope) permet aux développeurs et aux testeurs d’évaluer l’accessibilité de leur application pendant le développement et la conception de l’application, éventuellement dans des phases de prototype antérieures, plutôt que dans les phases de test tardive du cycle de développement d’une application. Il est en particulier destiné à tester les scénarios d’accessibilité du Narrateur avec votre application.
 
 ### <a name="inspect"></a>**Inspecter**  
 
@@ -41,11 +41,11 @@ L’image suivante illustre l’outil [**Inspect**](/windows/desktop/WinAuto/ins
 
 ### <a name="ui-accessibility-checker"></a>Vérificateur d’accessibilité de l’interface utilisateur
 
-**UI Accessibility Checker (AccChecker)** vous permet d’identifier les problèmes d’accessibilité au moment de l’exécution. Lorsque votre interface utilisateur est complète et fonctionnelle, utilisez **AccChecker** pour tester différents scénarios, vérifier l’exactitude des informations d’accessibilité à l’exécution et identifier les problèmes à l’exécution. Vous pouvez exécuter **AccChecker** en mode d’interface utilisateur ou de ligne de commande. Pour exécuter l’outil en mode d’interface utilisateur, ouvrez le répertoire **AccChecker** dans le répertoire bin du Kit de développement logiciel (SDK) Windows, exécutez acccheckui.exe, puis cliquez sur le menu **Aide**.
+**UI Accessibility Checker (AccChecker)** vous permet d’identifier les problèmes d’accessibilité au moment de l’exécution. Lorsque votre interface utilisateur est complète et fonctionnelle, utilisez **AccChecker** pour tester différents scénarios, vérifier l’exactitude des informations d’accessibilité à l’exécution et identifier les problèmes à l’exécution. Vous pouvez exécuter **AccChecker** en mode d’interface utilisateur ou de ligne de commande. Pour exécuter l’outil en mode d’interface utilisateur, ouvrez le répertoire **AccChecker** dans le répertoire bin du Kit de développement logiciel (SDK) Windows, exécutez acccheckui.exe, puis cliquez sur le menu **Aide** .
 
 ### <a name="ui-automation-verify"></a>UI Automation Verify
 
-**UI Automation Verify (UIA Verify)** est une infrastructure de vérification et de test automatisée pour les implémentations UI Automation. **UIA Verify** peut être intégré au code de test et effectuer des tests réguliers et automatisés ou des vérifications ponctuelles de scénarios UI Automation. Pour exécuter **UIA Verify**, exécutez VisualUIAVerifyNative.exe à partir du sous-répertoire UIAVerify.
+**UI Automation Verify (UIA Verify)** est une infrastructure de vérification et de test automatisée pour les implémentations UI Automation. **UIA Verify** peut être intégré au code de test et effectuer des tests réguliers et automatisés ou des vérifications ponctuelles de scénarios UI Automation. Pour exécuter **UIA Verify** , exécutez VisualUIAVerifyNative.exe à partir du sous-répertoire UIAVerify.
 
 ### <a name="accessible-event-watcher"></a>Accessible Event Watcher
 
@@ -56,7 +56,7 @@ L' [**Observateur d’événements accessible (AccEvent)**](/windows/desktop/Win
 
 ## <a name="test-keyboard-accessibility"></a>Tester l’accessibilité du clavier
 
-Le meilleur moyen de tester l’accessibilité de votre clavier consiste à débrancher la souris et à utiliser le Clavier visuel si vous utilisez une tablette. Testez la navigation de l’accessibilité du clavier à l’aide de la touche _Tab_. Vous devez pouvoir parcourir tous les éléments d’interface utilisateur interactifs à l’aide de la touche _Tab_. Pour les éléments d’interface utilisateur composites, vérifiez que vous pouvez naviguer entre les parties des éléments à l’aide des touches de direction. Par exemple, vous devriez pouvoir naviguer parmi des listes d’éléments à l’aide des touches du clavier. Pour finir, vérifiez que vous pouvez appeler tous les éléments d’interface utilisateur interactifs avec le clavier une fois que ces éléments ont le focus, généralement à l’aide de la touche Entrée ou Espace.
+Le meilleur moyen de tester l’accessibilité de votre clavier consiste à débrancher la souris et à utiliser le Clavier visuel si vous utilisez une tablette. Testez la navigation de l’accessibilité du clavier à l’aide de la touche _Tab_ . Vous devez pouvoir parcourir tous les éléments d’interface utilisateur interactifs à l’aide de la touche _Tab_ . Pour les éléments d’interface utilisateur composites, vérifiez que vous pouvez naviguer entre les parties des éléments à l’aide des touches de direction. Par exemple, vous devriez pouvoir naviguer parmi des listes d’éléments à l’aide des touches du clavier. Pour finir, vérifiez que vous pouvez appeler tous les éléments d’interface utilisateur interactifs avec le clavier une fois que ces éléments ont le focus, généralement à l’aide de la touche Entrée ou Espace.
 
 ## <a name="verify-the-contrast-ratio-of-visible-text"></a>Vérifier le coefficient de contraste du texte visible
 
@@ -71,7 +71,7 @@ Utilisez votre application lorsqu’un thème à contraste élevé est actif pou
 
 ## <a name="verify-your-app-with-display-settings"></a>Vérifier votre application avec des paramètres d’affichage  
 
-Utilisez les options d’affichage système qui ajustent la valeur en haute résolution de l’affichage et assurez-vous que l’interface utilisateur de votre application est correctement mise à l’échelle lorsque cette valeur est modifiée. (Certains utilisateurs modifient les valeurs ppp en tant qu’option d’accessibilité. Celle-ci est disponible dans **Options d’ergonomie**, ainsi que les propriétés d’affichage.) Si vous détectez des problèmes, suivez [Recommandations en matière d’expérience utilisateur pour la disposition et la mise à l’échelle](https://developer.microsoft.com/windows/apps/design) et fournissez des ressources supplémentaires pour les différents facteurs de mise à l’échelle.
+Utilisez les options d’affichage système qui ajustent la valeur en haute résolution de l’affichage et assurez-vous que l’interface utilisateur de votre application est correctement mise à l’échelle lorsque cette valeur est modifiée. (Certains utilisateurs modifient les valeurs ppp en tant qu’option d’accessibilité. Celle-ci est disponible dans **Options d’ergonomie** , ainsi que les propriétés d’affichage.) Si vous détectez des problèmes, suivez [Recommandations en matière d’expérience utilisateur pour la disposition et la mise à l’échelle](https://developer.microsoft.com/windows/apps/design) et fournissez des ressources supplémentaires pour les différents facteurs de mise à l’échelle.
 
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>Vérifier les scénarios d’application principaux à l’aide du Narrateur
 
@@ -81,16 +81,16 @@ Utilisez le narrateur pour tester l’expérience de lecture d’écran pour vot
 
 **Procédez comme suit pour tester votre application à l’aide du Narrateur avec une souris et le clavier :**
 
-1. Démarrez le narrateur en appuyant sur la _touche Windows + Ctrl + Entrée_. Dans les versions antérieures à la version 1607 de Windows 10, utilisez la _touche Windows + entrée_ pour démarrer le narrateur.
-2. Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
+1. Démarrez le narrateur en appuyant sur la _touche Windows + Ctrl + Entrée_ . Dans les versions antérieures à la version 1607 de Windows 10, utilisez la _touche Windows + entrée_ pour démarrer le narrateur.
+2. Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_ , les touches de direction et la _touche Verr. maj + les touches de direction_ .
 3. À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants :
     - Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (coché, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
-    - Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_.
+    - Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_ .
     - Pour chaque tableau, vérifiez que le Narrateur lit correctement le nom du tableau, sa description (le cas échéant) et les en-têtes de lignes et de colonnes.
 4. Appuyez sur _Verr. maj + Maj + Entrée_ pour effectuer des recherches dans votre application et vérifier que tous vos contrôles apparaissent dans la liste de recherche, et que les noms des contrôles sont localisés et lisibles.
-5. Éteignez votre moniteur et essayez d’accomplir les scénarios d’application principaux en utilisant uniquement le clavier et le Narrateur. Pour obtenir la liste complète des commandes et des raccourcis du Narrateur, appuyez sur _Verr. maj + F1_.
+5. Éteignez votre moniteur et essayez d’accomplir les scénarios d’application principaux en utilisant uniquement le clavier et le Narrateur. Pour obtenir la liste complète des commandes et des raccourcis du Narrateur, appuyez sur _Verr. maj + F1_ .
 
-À compter de Windows 10 version 1607, nous avons introduit un nouveau mode développeur dans le Narrateur. Activez le mode développeur quand Narrator est déjà en cours d’exécution en appuyant sur _Ctrl + Maj + F12_. Quand le mode développeur est activé, l’écran est masqué et met en évidence uniquement les objets accessibles et le texte associé exposé par programmation au Narrateur. Vous avez ainsi une bonne représentation visuelle des informations qui sont exposées au Narrateur.
+À compter de Windows 10 version 1607, nous avons introduit un nouveau mode développeur dans le Narrateur. Activez le mode développeur quand Narrator est déjà en cours d’exécution en appuyant sur _Ctrl + Maj + F12_ . Quand le mode développeur est activé, l’écran est masqué et met en évidence uniquement les objets accessibles et le texte associé exposé par programmation au Narrateur. Vous avez ainsi une bonne représentation visuelle des informations qui sont exposées au Narrateur.
 
 **Procédez comme suit pour tester votre application à l’aide du mode tactile du Narrateur :**
 
@@ -98,10 +98,10 @@ Utilisez le narrateur pour tester l’expérience de lecture d’écran pour vot
 > Le Narrateur passe automatiquement en mode tactile sur les appareils qui prennent en charge les contacts 4+. Le Narrateur ne prend pas en charge les scénarios à plusieurs moniteurs ou les numériseurs d’interaction tactile multipoint sur l’écran principal.
 
 1. Familiarisez-vous avec l’interface utilisateur et explorez la disposition.
-    - **Naviguez dans l’interface utilisateur en effectuant des mouvements de balayage à l’aide d’un seul doigt.** Effectuez des mouvements de balayage vers la gauche ou la droite pour naviguer entre les éléments et vers le haut ou le bas pour changer la catégorie des éléments parmi lesquels vous naviguez. Les catégories incluent tous les éléments, liens, tableaux, en-têtes, etc. La navigation par mouvements de balayage à l’aide d’un seul doigt est similaire à la navigation avec _Verr. maj + les touches de direction_.
+    - **Naviguez dans l’interface utilisateur en effectuant des mouvements de balayage à l’aide d’un seul doigt.** Effectuez des mouvements de balayage vers la gauche ou la droite pour naviguer entre les éléments et vers le haut ou le bas pour changer la catégorie des éléments parmi lesquels vous naviguez. Les catégories incluent tous les éléments, liens, tableaux, en-têtes, etc. La navigation par mouvements de balayage à l’aide d’un seul doigt est similaire à la navigation avec _Verr. maj + les touches de direction_ .
     - **Utilisez les mouvements d’insertion d’une tabulation pour naviguer entre les éléments pouvant être actifs.** Un balayage à trois doigts vers la droite ou la gauche est équivalent à l’utilisation de la touche _Tab_ et des touches _Maj + Tab_ sur un clavier.
     - **Explorez spatialement l’interface utilisateur à l’aide d’un seul doigt.** Déplacez un seul doigt vers le haut et le bas, ou la gauche et la droite, pour que le Narrateur lise les éléments placés sous votre doigt. Vous pouvez utiliser la souris comme alternative, car elle utilise la même logique de test de positionnement avancé que le déplacement d’un seul doigt.
-    - **Lisez la fenêtre entière et tout son contenu en balayant l’écran vers le haut avec trois doigts**. Ceci est équivalent à l’utilisation de _Verr. maj + W_.
+    - **Lisez la fenêtre entière et tout son contenu en balayant l’écran vers le haut avec trois doigts** . Ceci est équivalent à l’utilisation de _Verr. maj + W_ .
 
     Si des éléments d’interface utilisateur importants sont inaccessibles, il s’agit peut-être d’un problème d’accessibilité.
 

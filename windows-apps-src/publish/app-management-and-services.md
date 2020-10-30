@@ -1,23 +1,23 @@
 ---
-Description: Gérez et affichez les détails relatifs à chacune de vos applications dans l’espace partenaires, et configurez les services tels que les tests et cartes A/B.
+description: Gérez et affichez les détails relatifs à chacune de vos applications dans l’espace partenaires, et configurez les services tels que les tests et cartes A/B.
 title: Gestion des applications et services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e34a4d87ae3df23f8641a09d1558b8c8606667fa
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e973e9b3a8f3c9ba63a091f4e542e36a84c26128
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164283"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032752"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
 Vous pouvez gérer et afficher les détails relatifs à chacune de vos applications dans l' [espace partenaires](https://partner.microsoft.com/dashboard), et configurer des services tels que les notifications, les tests A/B et les mappages.
 
-Lorsque vous utilisez une application dans l’espace partenaires, vous verrez des sections dans le menu de navigation gauche pour la gestion des **services** et des **applications**. Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
+Lorsque vous utilisez une application dans l’espace partenaires, vous verrez des sections dans le menu de navigation gauche pour la gestion des **services** et des **applications** . Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
 
 ## <a name="services"></a>Services
 
@@ -39,7 +39,7 @@ Pour plus d’informations, voir [Exécuter des expériences d’application ave
 
 Pour utiliser les services de carte dans les applications ciblant Windows 10 ou Windows 8. x, visitez le [Centre de développement Bing Maps](https://www.bingmapsportal.com/). Pour plus d’informations sur la façon de demander une clé d’authentification Maps à partir du centre de développement Bing Maps et de l’ajouter à votre application, consultez [demander une clé d’authentification par mappages](../maps-and-location/authentication-key.md) pour plus d’informations. 
 
-Utilisez la page **mappages** uniquement pour les applications précédemment publiées pour Windows Phone 8,1 et versions antérieures. Pour utiliser les services de mappage dans ces applications, vous devez demander un ID d’application de service cartographique et un jeton à inclure dans le code de votre application. Lorsque vous cliquez sur **obtenir un jeton**, nous générons un ID d’application de service cartographique (**ApplicationID**) et un jeton d’authentification de service de mappage (**AuthenticationToken**) pour votre application. Veillez à ajouter ces valeurs à votre code avant d’empaqueter et d’envoyer votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](/previous-versions/windows/apps/jj207033(v=vs.105)).
+Utilisez la page **mappages** uniquement pour les applications précédemment publiées pour Windows Phone 8,1 et versions antérieures. Pour utiliser les services de mappage dans ces applications, vous devez demander un ID d’application de service cartographique et un jeton à inclure dans le code de votre application. Lorsque vous cliquez sur **obtenir un jeton** , nous générons un ID d’application de service cartographique ( **ApplicationID** ) et un jeton d’authentification de service de mappage ( **AuthenticationToken** ) pour votre application. Veillez à ajouter ces valeurs à votre code avant d’empaqueter et d’envoyer votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](/previous-versions/windows/apps/jj207033(v=vs.105)).
 
 ## <a name="product-collections-and-purchases"></a>Collections et achats de produits
 
@@ -78,7 +78,7 @@ Cette page propose des informations détaillées sur tous vos packages publiés.
 
 Nous affichons le nom, la version et l’architecture de chaque package. Cliquez sur **Détails** pour accéder à des informations complémentaires comme la langue prise en charge, les fonctionnalités de l’application et les tailles de fichier. Les informations affichées pour chaque package peuvent varier en fonction du système d’exploitation ciblé et d’autres facteurs. 
 
-Les développeurs ayant des autorisations OEM peuvent également [générer des packages de préinstallation](generate-preinstall-packages-for-oems.md) depuis la page **Packages actuels**.
+Les développeurs ayant des autorisations OEM peuvent également [générer des packages de préinstallation](generate-preinstall-packages-for-oems.md) depuis la page **Packages actuels** .
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 
@@ -94,6 +94,6 @@ En fonction du type de package de votre application et de ses exigences spécifi
 -   **Microsoft Azure Mobile Apps** vous permet d’envoyer des notifications Push, d’authentifier et de gérer les utilisateurs des applications et de stocker les données des applications dans le cloud. Pour plus d’informations, voir la [documentation sur les applications mobiles](/azure/app-service-mobile/).
 
 -   Le **service de notifications push Microsoft (MPNS)** peut être utilisé avec des packages. xap précédemment publiés pour Windows Phone. Vous pouvez envoyer un nombre limité de notifications non authentifiées sans intervenir sur la configuration, bien que nous vous recommandons d’utiliser des notifications authentifiées pour éviter les seuils de limitation. Si vous utilisez MPNS, vous devez télécharger un certificat dans le champ fourni sur la page **WNS/MPNs** . Pour plus d’informations, voir [Configuration d’un service web authentifié pour envoyer des notifications Push pour Windows Phone 8](/previous-versions/windows/apps/ff941099(v=vs.105)).
- 
+ 
 
- 
+ 
