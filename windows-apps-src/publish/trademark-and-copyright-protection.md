@@ -1,17 +1,17 @@
 ---
-Description: Découvrez ce que vous pouvez faire lorsque vous pensez qu’une autre application viole vos droits de propriété intellectuelle.
+description: Découvrez ce que vous pouvez faire lorsque vous pensez qu’une autre application viole vos droits de propriété intellectuelle.
 title: Protection de la marque et du copyright
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.date: 06/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14dae80876e1e7a77151f4e814a8dcd06e039645
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d3ae8467143dd1c254db20c237316e3984573242
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259897"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034972"
 ---
 # <a name="trademark-and-copyright-protection"></a>Protection de la marque et du copyright
 
@@ -21,7 +21,7 @@ Découvrez ce que vous pouvez faire lorsque vous pensez qu’une autre applicati
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Comment puis-je signaler une violation de mes droits de propriété intellectuelle au sein d’une application Windows ?
 
 
-Utilisez le [formulaire](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0) suivant pour soumettre une plainte pour violation des droits d’auteur, de marque ou de publicité sur une application Windows. Pour les violations de droits d’auteur, de marque ou de publicité sur plusieurs applications, envoyez votre demande à mktlegal@microsoft.com. Si vous avez besoin d’informations supplémentaires sur la stratégie DMCA de Microsoft, visitez le site : [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx).
+Utilisez le [formulaire](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0) suivant pour soumettre une plainte pour violation des droits d’auteur, de marque ou de publicité sur une application Windows. Pour les droits d’auteur, de marque ou de publicité qui sont soumis à des plaintes sur plusieurs applications, envoyez votre demande à mktlegal@microsoft.com . Si vous avez besoin d’informations supplémentaires sur la stratégie DMCA de Microsoft, consultez le site : [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx) .
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. J’ai créé mon application pour qu’elle fonctionne avec un produit/service Microsoft. Puis-je utiliser le nom du produit/service Microsoft dans le nom de mon application ?
 
@@ -63,9 +63,9 @@ Non, pas sans autorisation. Bien que le droit d'auteur ne protège pas l'idée d
 
 Lisez attentivement l’avis de Microsoft, et suivez les instructions. L’avis de Microsoft peut inclure des étapes spécifiques que vous pouvez suivre pour nous informer de ce que vous avez fait pour corriger le problème, que vous n’êtes pas d’accord avec le demandeur, et/ou que vous souhaitez soumettre à nouveau votre application sur le Store.
 
- 
+ 
 
- 
+ 
 
 
 

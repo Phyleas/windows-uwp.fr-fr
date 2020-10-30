@@ -1,17 +1,17 @@
 ---
-Description: Si vous devez fournir un numéro d’identification de TVA pendant le processus d’inscription de l’espace partenaires, voici quelques informations pour vous aider à démarrer.
+description: Si vous devez fournir un numéro d’identification de TVA pendant le processus d’inscription de l’espace partenaires, voici quelques informations pour vous aider à démarrer.
 title: Informations sur la TVA
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8521ef2988e2108dbbd619812bfde26cecc81b
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: bd863210fad66d9494d9d71115966656ccbb8893
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545079"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034922"
 ---
 # <a name="vat-info"></a>Informations sur la TVA
 
@@ -29,7 +29,7 @@ Un numéro de TVA (taxe sur la valeur ajoutée) est un identificateur utilisé p
 Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant est fourni uniquement à titre indicatif. Si ces conseils ne vous suffisent pas pour indiquer un numéro de TVA à Microsoft, consultez votre administration fiscale locale pour savoir si des changements récents ont été opérés.
 
 <table Responsive="true">
-<tr><th>Pays/Région</th><th>Informations sur la TVA</th></tr>
+<tr><th>Pays/région</th><th>Informations sur la TVA</th></tr>
 <tr><td data-th="Country/region">Autriche
 </td><td data-th="VAT info">
 <ul>
@@ -70,7 +70,7 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 <li>Exemple : 12345678, 123456789 ou 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Czechia</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Tchéquie</td><td data-th="VAT info">
 <ul>
 <li>Format du numéro de TVA : 8, 9 ou 10 chiffres</li>
 <li>Code pays/région : CZ</li>
@@ -106,7 +106,7 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 <li>Remarques : peut inclure tout caractère alphabétique à l'exception de I ou Q comme premier ou deuxième caractère, ou comme premier et deuxième caractère, suivi de 9 chiffres.</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Allemagne</td><td data-th="VAT info">
 <ul>
 <li>Format du numéro de TVA : 9 chiffres</li>
 <li>Code pays/région : DE</li>
@@ -245,9 +245,9 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 </table>
                                                                                                                                                                   
 
- 
+ 
 
- 
+ 
 
 
 

@@ -1,17 +1,17 @@
 ---
-Description: Pour comprendre vos motifs fiscaux pour la sélection des prix, les implications en termes de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous.
+description: Pour comprendre vos motifs fiscaux pour la sélection des prix, les implications en termes de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous.
 title: Détails des taxes
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, UWP, taxes, taxes d’application, exigences fiscales, expansion commerce, taux d’imposition
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d78a5a6af362a52b55830f279b3fffc1fb74346
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6f201cf62cdf01d9c39f01b91d5934da72dbc41f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170873"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034992"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Détails fiscaux pour les développeurs d’applications/jeux Windows et les éditeurs de la place de marché Azure
 
@@ -32,7 +32,7 @@ Pour comprendre vos considérations fiscales relatives à la sélection du prix 
 
 
 
- 
+ 
 
 | Pays/région                   | Motif fiscal pour la sélection des prix                                                                                                             | Implication de paiement                    | Responsabilité fiscale |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------------|
@@ -280,7 +280,7 @@ Les éléments suivants s’appliquent uniquement aux éditeurs de la Place de m
 ## <a name="mixed-remittance-countriesregions-for-windows-appgame-developers"></a>Pays/régions de remise mixte pour les développeurs d’applications/jeux Windows
 
 
-Certains partenaires de facturation Microsoft peuvent recueillir et verser les taxes sur les ventes, la consommation, les biens et services, la valeur ajoutée ou des taxes similaires éventuellement applicables à l’acquisition par les Clients de vos Applications ou Produits dans l’application par l’intermédiaire du Store dans les pays/régions listés ci-dessous. Les [rapports](payout-summary.md#export-data-page) que 0Microsoft met à votre disposition vous permettront d’identifier les transactions pour lesquelles un partenaire de facturation a collecté les ventes, l’utilisation, les biens et services, la valeur ajoutée ou les taxes similaires applicables à l’acquisition de vos applications ou produits dans l’application dans le magasin. À l’exception des transactions décrites dans ces rapports, ni Microsoft ni ses fournisseurs de services de facturation ne pourront verser des taxes sur les ventes, la consommation, les biens et services, la valeur ajoutée ou des taxes similaires liées à l’acquisition par les Clients de vos Applications ou Produits dans l’application dans ces pays. Il vous appartient de réviser les rapports qui vous sont fournis ainsi que de déterminer et d’honorer vos obligations éventuelles en matière d’enregistrement, de collecte et de versement de taxes liées aux transactions impliquant vos Applications ou Produits dans l’application.
+Certains partenaires de facturation Microsoft peuvent recueillir et verser les taxes sur les ventes, la consommation, les biens et services, la valeur ajoutée ou des taxes similaires éventuellement applicables à l’acquisition par les Clients de vos Applications ou Produits dans l’application par l’intermédiaire du Store dans les pays/régions listés ci-dessous. Les [rapports](payout-summary.md#export-data-page) que 0Microsoft met à votre disposition identifient les transactions pour lesquelles un partenaire de facturation a collecté les ventes, l’utilisation, les biens et services, la valeur ajoutée ou les taxes similaires applicables à l’acquisition de vos applications ou In-App produits par le biais du magasin. À l’exception des transactions décrites dans ces rapports, ni Microsoft ni ses fournisseurs de services de facturation ne pourront verser des taxes sur les ventes, la consommation, les biens et services, la valeur ajoutée ou des taxes similaires liées à l’acquisition par les Clients de vos Applications ou Produits dans l’application dans ces pays. Il vous appartient de réviser les rapports qui vous sont fournis ainsi que de déterminer et d’honorer vos obligations éventuelles en matière d’enregistrement, de collecte et de versement de taxes liées aux transactions impliquant vos Applications ou Produits dans l’application.
 
 | Pays/régions de versement mixte |
 |------------------------------------|
@@ -306,4 +306,4 @@ Les éléments suivants s’appliquent uniquement aux éditeurs de la Place de m
 | Mexique (uniquement pour les achats effectués par le biais du scénario d’achat client Contrat Entreprise) |
 
 
- 
+ 

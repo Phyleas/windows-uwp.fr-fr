@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
+description: Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
 title: Répondre à la présence du clavier tactile
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: clavier, accessibilité, navigation, Focus, texte, entrée, interactions de l’utilisateur
 ms.date: 09/24/2020
 ms.topic: article
-ms.openlocfilehash: 4af7e7533ebd985a22eedd2e11f35d8bf5f5dc8a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c3431fcafb86428ce5eddb8ea7a6b0187b64a5e5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216902"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035082"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Répondre à la présence du clavier tactile
 
@@ -54,7 +54,7 @@ Voici quelques recommandations de base concernant les contrôles de saisie de te
 
 - Affichez le clavier tactile tout au long de l’interaction avec votre formulaire.
 
-- Assurez-vous que vos contrôles personnalisés possèdent le [AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) d’automatisation d’interface utilisateur approprié pour le clavier lorsque le focus se déplace d’un champ d’entrée de texte dans le contexte d’une entrée de texte. Par exemple, si vous avez un menu qui est ouvert au milieu d’un scénario d’entrée de texte et que vous souhaitez que le clavier reste affiché, le menu doit avoir le **AutomationControlType** de Menu.
+- Assurez-vous que vos contrôles personnalisés ont le [AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) UI Automation approprié pour que le clavier reste affiché quand un champ d’entrée de texte perd le focus dans le contexte d’une entrée de texte. Par exemple, si vous avez un menu qui est ouvert au milieu d’un scénario d’entrée de texte et que vous souhaitez que le clavier reste affiché, le menu doit avoir le **AutomationControlType** de Menu.
 
 - Ne manipulez pas les propriétés UI Automation pour contrôler le clavier tactile. D’autres outils d’accessibilité reposent sur la précision des propriétés UI Automation.
 
@@ -66,7 +66,7 @@ Voici quelques recommandations de base concernant les contrôles de saisie de te
 
     ![formulaire avec et sans clavier tactile apparent](images/touch-keyboard-pan1.png)
 
-    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Exemple :
+    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple :
 
     ![formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
 

@@ -1,5 +1,5 @@
 ---
-Description: Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de sorte qu’elle corresponde au type de données attendu de la part de l’utilisateur.
+description: Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de sorte qu’elle corresponde au type de données attendu de la part de l’utilisateur.
 MS-HAID: dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ template: detail.hbs
 keywords: clavier, accessibilité, navigation, focus, texte, entrées, interaction utilisateur
 ms.date: 02/08/2017
 ms.topic: article
-ms.openlocfilehash: e6e140a1967ca3ffe7775f427ccae7a7e07c5ca6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9b274d7cafd179157571a51db1122153a33d846e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165813"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035072"
 ---
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>Utiliser l’étendue des entrées pour modifier le clavier tactile
 
@@ -25,9 +25,9 @@ Pour faciliter la saisie de données par les utilisateurs au moyen du clavier ta
 - [InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)
 
 
-Le clavier tactile permet d’entrer du texte quand l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé quand l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un **[contrôle TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** ou **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)**. Vous pouvez le rendre plus rapide et plus facile pour les utilisateurs d’entrer des données dans votre application en définissant l' *étendue des entrées* du contrôle de texte pour qu’elles correspondent au type de données que l’utilisateur doit entrer. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
+Le clavier tactile permet d’entrer du texte quand l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé quand l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un **[contrôle TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** ou **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** . Vous pouvez le rendre plus rapide et plus facile pour les utilisateurs d’entrer des données dans votre application en définissant l' *étendue des entrées* du contrôle de texte pour qu’elles correspondent au type de données que l’utilisateur doit entrer. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
 
-Par exemple, si une zone de texte est utilisée uniquement pour entrer un code PIN à 4 chiffres, définissez la propriété [**InputScope**](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) sur **nombre**. Ceci indique au système qu’il doit afficher la disposition du pavé numérique, ce qui permet à l’utilisateur d’entrer plus facilement le code PIN.
+Par exemple, si une zone de texte est utilisée uniquement pour entrer un code PIN à 4 chiffres, définissez la propriété [**InputScope**](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) sur **nombre** . Ceci indique au système qu’il doit afficher la disposition du pavé numérique, ce qui permet à l’utilisateur d’entrer plus facilement le code PIN.
 
 > [!IMPORTANT]
 > - Ces informations s’appliquent uniquement au clavier virtuel. Elles ne concernent pas les claviers matériels ou visuels figurant dans les Options d’ergonomie de Windows.
@@ -35,7 +35,7 @@ Par exemple, si une zone de texte est utilisée uniquement pour entrer un code P
 
 ## <a name="changing-the-input-scope-of-a-text-control"></a>Modification de l’étendue des entrées d’un contrôle de texte
 
-Les étendues d’entrée qui sont disponibles pour votre application sont membres de l’énumération **[InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** . Vous pouvez attribuer l’une de ces valeurs à la propriété **InputScope** d’un élément **[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** ou **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)**.
+Les étendues d’entrée qui sont disponibles pour votre application sont membres de l’énumération **[InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** . Vous pouvez attribuer l’une de ces valeurs à la propriété **InputScope** d’un élément **[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** ou **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** .
 
 > [!IMPORTANT]
 > La propriété **[InputScope](/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** de **[PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** ne prend en charge que les valeurs **de mot de passe** et **NumericPin** . Toute autre valeur est ignorée.
@@ -121,11 +121,11 @@ Les contrôles [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) et [**Ri
 
 -   [**IsSpellCheckEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled) : lorsque la vérification orthographique est activée pour un contrôle de texte, le contrôle interagit avec le moteur de vérification orthographique du système pour signaler les mots qui ne sont pas reconnus. Vous pouvez appuyer sur un mot pour afficher une liste de suggestions de corrections. La vérification orthographique est activée par défaut.
 
-    Pour l’étendue d’entrée **Default**, cette propriété permet également la mise en majuscules automatique du premier mot dans une phrase, ainsi que la correction automatique des mots au fur et à mesure de la saisie. Ces fonctionnalités de correction automatique peuvent être désactivées dans les autres zones d’entrées. Pour en savoir plus, consultez les tableaux présentés plus loin dans cette rubrique.
+    Pour l’étendue d’entrée **Default** , cette propriété permet également la mise en majuscules automatique du premier mot dans une phrase, ainsi que la correction automatique des mots au fur et à mesure de la saisie. Ces fonctionnalités de correction automatique peuvent être désactivées dans les autres zones d’entrées. Pour en savoir plus, consultez les tableaux présentés plus loin dans cette rubrique.
 
 -   [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled): lorsque la prédiction de texte est activée pour un contrôle de texte, le système affiche une liste de mots que vous pouvez commencer à taper. Vous pouvez sélectionner un élément dans la liste. Ainsi, vous n’avez pas besoin de saisir le mot entier. La prédiction de texte est activée par défaut.
 
-    La prédiction de texte peut être désactivée si l’étendue des entrées est différente de **Default**, même si la propriété [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) présente la valeur **true**. Pour en savoir plus, consultez les tableaux présentés plus loin dans cette rubrique.
+    La prédiction de texte peut être désactivée si l’étendue des entrées est différente de **Default** , même si la propriété [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) présente la valeur **true** . Pour en savoir plus, consultez les tableaux présentés plus loin dans cette rubrique.
 
 -   [**PreventKeyboardDisplayOnProgrammaticFocus**](/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus) : définissez cette propriété sur **true** pour empêcher l’affichage du panneau de saisie quand le focus est défini par programme sur un contrôle de texte. Au lieu de cela, le clavier s’affiche uniquement lorsque l’utilisateur interagit avec le contrôle.
 
@@ -143,10 +143,10 @@ Ces tableaux affichent les dispositions du panneau de saisie (SIP) Windows pour 
 Le clavier tactile Windows par défaut.
 
 ![Clavier tactile Windows par défaut](images/input-scopes/default.png)
-- Vérification orthographique : activée si **IsSpellCheckEnabled**  =  **true**, désactivé si **IsSpellCheckEnabled**  =  **false**
-- Correction automatique : activé si **IsSpellCheckEnabled**  =  **true**, désactivé si **IsSpellCheckEnabled**  =  **false**
-- Mise en majuscule automatique : activé si **IsSpellCheckEnabled**  =  **true**, désactivé si **IsSpellCheckEnabled**  =  **false**
-- Prédiction de texte : activée si **IsTextPredictionEnabled**  =  **true**, Disabled si **IsTextPredictionEnabled**  =  **false**
+- Vérification orthographique : activée si **IsSpellCheckEnabled**  =  **true** , désactivé si **IsSpellCheckEnabled**  =  **false**
+- Correction automatique : activé si **IsSpellCheckEnabled**  =  **true** , désactivé si **IsSpellCheckEnabled**  =  **false**
+- Mise en majuscule automatique : activé si **IsSpellCheckEnabled**  =  **true** , désactivé si **IsSpellCheckEnabled**  =  **false**
+- Prédiction de texte : activée si **IsTextPredictionEnabled**  =  **true** , Disabled si **IsTextPredictionEnabled**  =  **false**
 
 ### <a name="currencyamountandsymbol"></a>CurrencyAmountAndSymbol
 
@@ -168,8 +168,8 @@ Disposition de clavier numérique et symbolique par défaut
 
 ![Clavier tactile Windows pour les URL](images/input-scopes/url.png)
 
-- Inclut les touches **.com** et ![touche OK](images/input-scopes/kbdgokey.png) (OK). Appuyez sur la touche **. com** et maintenez-la enfoncée pour afficher des options supplémentaires (**. org**, **.net**et des suffixes spécifiques à une région)
-- Comprend les **clés :**, **-** et **/**
+- Inclut les touches **.com** et ![touche OK](images/input-scopes/kbdgokey.png) (OK). Appuyez sur la touche **. com** et maintenez-la enfoncée pour afficher des options supplémentaires ( **. org** , **.net** et des suffixes spécifiques à une région)
+- Comprend les **clés :** , **-** et **/**
 - Vérification orthographique : désactivée par défaut ; peut être activée
 - Correction automatique : désactivée par défaut ; peut être activée
 - Mise en majuscules automatique : désactivée par défaut ; peut être activée
@@ -181,7 +181,7 @@ Disposition de clavier numérique et symbolique par défaut
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
 ![Clavier tactile Windows pour les adresses de messagerie](images/input-scopes/emailsmtpaddress.png)
-- Comprend les **@** clés et **. com** . Appuyez sur la touche **. com** et maintenez-la enfoncée pour afficher des options supplémentaires (**. org**, **.net**et des suffixes spécifiques à une région)
+- Comprend les **@** clés et **. com** . Appuyez sur la touche **. com** et maintenez-la enfoncée pour afficher des options supplémentaires ( **. org** , **.net** et des suffixes spécifiques à une région)
 - Comprend les **touches _** et **-**
 - Vérification orthographique : désactivée par défaut ; peut être activée
 - Correction automatique : désactivée par défaut ; peut être activée
@@ -209,7 +209,7 @@ Disposition de clavier numérique et symbolique par défaut
 - Mise en majuscules automatique : toujours désactivée
 - Prédiction de texte : activée par défaut ; peut être désactivée
 
-### <a name="search"></a>Recherche
+### <a name="search"></a>Rechercher
 
 `<TextBox InputScope="Search"/>`
 

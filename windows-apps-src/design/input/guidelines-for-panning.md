@@ -1,5 +1,5 @@
 ---
-Description: Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au sein d’une vue unique pour afficher le contenu de la vue qui ne tient pas entièrement dans la fenêtre d’affichage. Parmi les exemples de vues figurent la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo.
+description: Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au sein d’une vue unique pour afficher le contenu de la vue qui ne tient pas entièrement dans la fenêtre d’affichage. Parmi les exemples de vues figurent la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo.
 title: Mouvement panoramique
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 596a9f2f3f234ba90b799eae982523c3a9de9732
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 0a989a6a96ac42b1eb790b6ac0dd223bd55b1bb8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749935"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035122"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 
 
 Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au sein d’une vue unique pour afficher le contenu de la vue qui ne tient pas entièrement dans la fenêtre d’affichage. Parmi les exemples de vues figurent la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo.
 
-> **API importantes**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **API importantes** : [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -32,9 +32,9 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
 -   Affichez les indicateurs panoramiques et les barres de défilement pour fournir des indications sur l’emplacement et la taille. Masquez-les si vous fournissez une fonctionnalité de navigation personnalisée.
 
-    **Remarque**    Contrairement aux barres de défilement standard, les indicateurs panoramiques sont purement informatifs. Ils ne sont pas exposés aux périphériques d’entrée et ne peuvent pas être manipulés de quelque manière que ce soit.
+    **Remarque** Contrairement aux barres de défilement standard, les indicateurs de mouvement panoramique ont un caractère purement informatif. Ils ne sont pas exposés aux périphériques d’entrée et ne peuvent pas être manipulés de quelque manière que ce soit.
 
-     
+     
 
 **Mouvement panoramique sur un seul axe (dépassement unidimensionnel)**
 
@@ -115,9 +115,9 @@ Il existe deux modes d’affichage du mouvement panoramique qui dépendent du p
 -   Des indicateurs de mouvement panoramique pour l’interaction tactile.
 -   Des barres de défilement pour d’autres périphériques d’entrée comme la souris, le pavé tactile, le clavier et le stylet.
 
-**Remarque**    Les indicateurs panoramiques sont visibles uniquement lorsque le contact tactile est dans la région pannable. De même, la barre de défilement est seulement visible quand le curseur de la souris, le curseur du stylo/stylet ou le focus du clavier se trouve dans la région de défilement.
+**Remarque**  Les indicateurs panoramiques sont visibles uniquement lorsque le contact tactile est dans la région pannable. De même, la barre de défilement est seulement visible quand le curseur de la souris, le curseur du stylo/stylet ou le focus du clavier se trouve dans la région de défilement.
 
- 
+ 
 
 **Indicateurs de mouvement panoramique** Les indicateurs de mouvement panoramique sont semblables à la case de défilement d’une barre de défilement. Ils indiquent la proportion de contenu affichée par rapport à l’intégralité de la zone de mouvement panoramique et la position relative du contenu affiché dans cette zone.
 

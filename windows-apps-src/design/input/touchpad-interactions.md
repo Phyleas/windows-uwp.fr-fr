@@ -1,5 +1,5 @@
 ---
-Description: Créez des applications Windows avec des expériences d’interaction utilisateur intuitives et distinctives, optimisées pour le pavé tactile, mais fonctionnellement cohérentes sur les appareils d’entrée.
+description: Créez des applications Windows avec des expériences d’interaction utilisateur intuitives et distinctives, optimisées pour le pavé tactile, mais fonctionnellement cohérentes sur les appareils d’entrée.
 title: Interactions du pavé tactile
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,19 +8,19 @@ keywords: pavé tactile, PTP, entrées tactiles, pointeur, entrées, interaction
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c47a3a510f6ed0d865064e8d140c47c8dd9f78
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6b0e0a7e45ee63d845a1d5b0057d00da11e01c18
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220432"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035092"
 ---
 # <a name="touchpad-design-guidelines"></a>Recommandations en matière de conception pour le pavé tactile
 
 
 Concevez votre application afin que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Grâce à cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
 
- 
+ 
 
 ![pavé tactile](images/input-patterns/input-touchpad.jpg)
 
@@ -114,12 +114,12 @@ Voici quelques exemples de mouvements optimisés pour le pavé tactile qui perme
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="hardware"></a>Matériel
 
 
-Interrogez les fonctionnalités de la souris ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) pour identifier les aspects de l’interface utilisateur de votre application auxquels le pavé tactile peut accéder directement. Nous vous conseillons de fournir une interface utilisateur pour les entrées tactiles et de la souris.
+Interrogez les fonctionnalités de la souris ( [**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) pour identifier les aspects de l’interface utilisateur de votre application auxquels le pavé tactile peut accéder directement. Nous vous conseillons de fournir une interface utilisateur pour les entrées tactiles et de la souris.
 
 Pour plus d’informations concernant l’interrogation des fonctionnalités du périphérique, voir [Identifier des périphériques d’entrée](identify-input-devices.md).
 

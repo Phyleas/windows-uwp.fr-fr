@@ -1,17 +1,17 @@
 ---
-Description: Le rapport d’utilisation de l’espace partenaires vous permet de voir comment les clients utilisent votre application.
+description: Le rapport d’utilisation de l’espace partenaires vous permet de voir comment les clients utilisent votre application.
 title: Rapport d’utilisation
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
-ms.openlocfilehash: a794018b2fcdd07017ee3441e65c6200e7436304
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7eafc102ca1720aaa14c697fcbff3825436343f9
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220202"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034942"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -25,9 +25,9 @@ Près du haut de la page, vous pouvez sélectionner la période pour laquelle vo
 
 Vous pouvez également développer des **filtres** pour filtrer les données sur cette page par version de package, marché et/ou type de périphérique.
 
--   **Version du package** : la valeur par défaut de ce filtre est **Toutes**. Si votre application comporte plusieurs packages, vous pouvez en choisir un ici.
--   **Marché**: le filtre par défaut est **tous les marchés**, mais vous pouvez limiter les données à un ou plusieurs marchés.
--   **Type d’appareil**: le paramètre par défaut est tout, mais vous pouvez choisir d’afficher **les**données pour un seul type d’appareil spécifique (PC, console, tablette, etc.).
+-   **Version du package**  : la valeur par défaut de ce filtre est **Toutes** . Si votre application comporte plusieurs packages, vous pouvez en choisir un ici.
+-   **Marché** : le filtre par défaut est **tous les marchés** , mais vous pouvez limiter les données à un ou plusieurs marchés.
+-   **Type d’appareil** : le paramètre par défaut est tout, mais vous pouvez choisir d’afficher **les** données pour un seul type d’appareil spécifique (PC, console, tablette, etc.).
 
 Les informations de tous les graphiques répertoriés ci-dessous reflètent la plage de dates et les filtres que vous avez sélectionnés (à l’exception des **nouveaux utilisateurs** dans le graphique d' **utilisation** , qui ne s’affichent pas si des filtres sont sélectionnés). Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
@@ -41,13 +41,13 @@ Le graphique **utilisation** affiche des détails sur la façon dont vos clients
 
 Ce graphique comporte des onglets distincts que vous pouvez afficher en indiquant l’utilisation par jour ou par semaine (selon la durée sélectionnée).
 
-- **Utilisateurs**: affiche le nombre total de **sessions utilisateur** sur la période sélectionnée. Chaque session utilisateur représente une période distincte, en commençant à la fin de l’exécution de l’application (démarrer le processus) et jusqu’à la fin de la procédure (fin du processus) ou après une période d’inactivité. Pour cette raison, un seul client peut avoir plusieurs sessions utilisateur au cours du même jour ou de la même semaine. Le nombre total d' **utilisateurs actifs** (n’importe quel client utilisant l’application le jour ou la semaine) et les **nouveaux utilisateurs** (un client qui a utilisé votre application pour la première fois ce jour ou cette semaine) sont également affichés. Notez que si vous avez appliqué des filtres à la page, vous ne verrez pas de **nouveaux utilisateurs** dans ce graphique.
-- **Appareils**: affiche le nombre d’appareils quotidiens utilisés pour interagir avec votre application par tous les utilisateurs.
-- **Durée**: affiche le nombre total d’heures d’engagement (heures où un utilisateur utilise activement votre application).
-- **Engagement**: affiche le nombre moyen de minutes d’engagement par utilisateur (durée moyenne de toutes les sessions utilisateur). 
-- **Rétention**: affiche le nombre total de **UAQ/Mau** (utilisateurs actifs quotidiens/utilisateurs actifs mensuels) sur la période sélectionnée.
+- **Utilisateurs** : affiche le nombre total de **sessions utilisateur** sur la période sélectionnée. Chaque session utilisateur représente une période distincte, en commençant à la fin de l’exécution de l’application (démarrer le processus) et jusqu’à la fin de la procédure (fin du processus) ou après une période d’inactivité. Pour cette raison, un seul client peut avoir plusieurs sessions utilisateur au cours du même jour ou de la même semaine. Le nombre total d' **utilisateurs actifs** (n’importe quel client utilisant l’application le jour ou la semaine) et les **nouveaux utilisateurs** (un client qui a utilisé votre application pour la première fois ce jour ou cette semaine) sont également affichés. Notez que si vous avez appliqué des filtres à la page, vous ne verrez pas de **nouveaux utilisateurs** dans ce graphique.
+- **Appareils** : affiche le nombre d’appareils quotidiens utilisés pour interagir avec votre application par tous les utilisateurs.
+- **Durée** : affiche le nombre total d’heures d’engagement (heures où un utilisateur utilise activement votre application).
+- **Engagement** : affiche le nombre moyen de minutes d’engagement par utilisateur (durée moyenne de toutes les sessions utilisateur). 
+- **Rétention** : affiche le nombre total de **UAQ/Mau** (utilisateurs actifs quotidiens/utilisateurs actifs mensuels) sur la période sélectionnée.
 
-Lorsque la période **30D** est sélectionnée, vous pouvez voir des marqueurs de cercle quand vous affichez les onglets **utilisateurs**, **appareils**ou **durée** . Celles-ci représentent une augmentation ou une diminution significatives d’une valeur donnée que nous pensons avoir à connaître. La date à laquelle le cercle apparaît représente la fin de la semaine au cours de laquelle nous avons détecté une augmentation ou une diminution significative par rapport à la semaine qui précède. Pour obtenir plus de détails sur les modifications, pointez sur le cercle.  
+Lorsque la période **30D** est sélectionnée, vous pouvez voir des marqueurs de cercle quand vous affichez les onglets **utilisateurs** , **appareils** ou **durée** . Celles-ci représentent une augmentation ou une diminution significatives d’une valeur donnée que nous pensons avoir à connaître. La date à laquelle le cercle apparaît représente la fin de la semaine au cours de laquelle nous avons détecté une augmentation ou une diminution significative par rapport à la semaine qui précède. Pour obtenir plus de détails sur les modifications, pointez sur le cercle.  
 
 > [!TIP]
 > Vous pouvez afficher plus d’informations relatives aux modifications importantes au cours des 30 derniers jours dans le [rapport Insights](insights-report.md).
@@ -87,4 +87,4 @@ Pour chaque événement, vous verrez le nom de l’événement et un nombre d’
 
 
 
- 
+ 

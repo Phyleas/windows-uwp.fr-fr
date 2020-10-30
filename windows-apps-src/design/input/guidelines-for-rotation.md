@@ -1,5 +1,5 @@
 ---
-Description: Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application Windows.
+description: Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application Windows.
 title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 135f7773a94491e1e6470c84ad428265273bc79d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 755386b8cffa5c546d20cd561693da5d21b30799
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217002"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035102"
 ---
 # <a name="rotation"></a>Rotation
 
 
 Cet article décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des instructions d’expérience utilisateur qui doivent être prises en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application Windows.
 
-> **API importantes**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **API importantes** : [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
@@ -44,7 +44,8 @@ Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directemen
 
 ![schéma des différentes positions de doigts prises en charge par la rotation.](images/ux-rotate-positions.png)
 
-**Remarque**    Intuitivement, et dans la plupart des cas, le point de rotation est l’un des deux points tactiles, à moins que l’utilisateur ne puisse spécifier un point de rotation non lié aux points de contact (par exemple, dans une application de dessin ou de disposition). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
+**Remarque**  
+Instinctivement, et dans la plupart des cas, le point de rotation est l’un des deux points tactiles, à moins que l’utilisateur ne spécifie un point de rotation qui n’est pas lié aux points de contact (par exemple, dans une application de dessin ou de mise en page). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
 
 Cette première image montre le premier (le pouce) et le deuxième (l’index) points tactiles : l’index touche un arbre et le pouce touche un rondin de bois.
 
@@ -59,7 +60,7 @@ Dans ce dernier dessin, le centre de la rotation a été défini par l’applica
 
 ![image du dessin pivoté avec le point de rotation contraint au centre le plus à gauche du dessin et non à l’un des deux premiers points tactiles.](images/ux-rotate-points4.png)
 
- 
+ 
 
 Windows 10 prend en charge trois types de rotation : gratuit, restreint et combiné.
 
@@ -88,10 +89,10 @@ Windows 10 prend en charge trois types de rotation : gratuit, restreint et comb
 <td align="left">Rotation combinée</td>
 <td align="left"><p>La rotation combinée prend en charge la rotation libre avec des zones (semblables aux rails dans les <a href="guidelines-for-panning.md">Recommandations en matière de mouvement panoramique</a>) à chacun des points d’ancrage à 90 degrés appliqués par la rotation contrainte. Si l’utilisateur relâche l’objet en dehors de l’une des zones à 90 degrés, l’objet reste dans cette position ; sinon, il pivote automatiquement vers un point d’ancrage.</p>
 <div class="alert">
-<strong>Remarque</strong>    Une glissière d’interface utilisateur est une fonctionnalité dans laquelle une zone autour d’une cible limite le mouvement vers une valeur ou un emplacement spécifique pour influencer sa sélection.
+<strong>Remarque</strong>  Une glissière d’interface utilisateur est une fonctionnalité dans laquelle une zone autour d’une cible limite le mouvement vers une valeur ou un emplacement spécifique pour influencer sa sélection.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>

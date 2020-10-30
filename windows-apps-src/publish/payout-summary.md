@@ -1,23 +1,23 @@
 ---
-Description: Les rapports de paiement affichent des informations sur l’argent que vous avez obtenu avec vos applications et modules complémentaires. Elle vous permet également de savoir quand vous recevrez des paiements et le montant que vous allez percevoir.
+description: Les rapports de paiement affichent des informations sur l’argent que vous avez obtenu avec vos applications et modules complémentaires. Elle vous permet également de savoir quand vous recevrez des paiements et le montant que vous allez percevoir.
 title: Rapports de revenu
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10, UWP, Résumé du paiement, relevé, paiements, bénéfices, versements, paiement, frais
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eab86cc1856f5ad206aa8bbceb2f2e04f5410d2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 11d83031702a642fa21a711edfdbaff69661c853
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763106"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035022"
 ---
 # <a name="payout-reports"></a>Rapports de revenu
 
 Le **Résumé du paiement** vous donne des détails sur l’argent que vous avez obtenu auprès de Microsoft. Elle vous permet également de savoir quand vous recevrez des paiements et le montant que vous allez percevoir.
 
-Si vous vendez des produits dans la place de marché Azure, vous verrez également des informations sur les versements réussis dans le **Résumé du paiement**. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](/legal/marketplace/participation-policy) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
+Si vous vendez des produits dans la place de marché Azure, vous verrez également des informations sur les versements réussis dans le **Résumé du paiement** . Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](/legal/marketplace/participation-policy) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
 
 > [!NOTE]
 > Pour être éligible au paiement, votre produit doit atteindre le [seuil de paiement](payment-thresholds-methods-and-timeframes.md) de 50 $. Pour plus d’informations sur le seuil de paiement, consultez cette page et examinez le contrat du développeur de l’application.
@@ -225,5 +225,5 @@ L’historique des transactions antérieures au 1er juillet 2019 est traité sé
 | Devise de paiement        | Devise dans laquelle votre paiement a été effectué.                                                                                                                                       |
 | Paiement converti       | Montant du paiement converti en devise du paiement à l’aide du taux de change.                                                                                                         |
 | Modèle de paiement des taxes         | Tiers responsable du versement des taxes (ventes, consommation, ou TVA/GST).                                                                                                   |
-| Date et heure d’éligibilité   | Date et heure auxquelles le produit de la transaction devient éligible au paiement (UTC). Lorsqu’un paiement est créé, il inclut les revenus de transactions dont la date et l’heure d’admissibilité sont antérieures à la date de création du paiement. (Inclus uniquement dans le fichier .csv **Réservé**) |
-| Charges                 | Ventilation détaillée de tous les frais agrégés dans la colonne Montant de transaction. (Uniquement pour Microsoft Azure Marketplace ; non inclus dans le fichier .csv **Réservé**) |
+| Date et heure d’éligibilité   | Date et heure auxquelles le produit de la transaction devient éligible au paiement (UTC). Lorsqu’un paiement est créé, il inclut les revenus de transactions dont la date et l’heure d’admissibilité sont antérieures à la date de création du paiement. (Inclus uniquement dans le fichier .csv **Réservé** ) |
+| Charges                 | Ventilation détaillée de tous les frais agrégés dans la colonne Montant de transaction. (Uniquement pour Microsoft Azure Marketplace ; non inclus dans le fichier .csv **Réservé** ) |

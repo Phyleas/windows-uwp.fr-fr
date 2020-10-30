@@ -1,17 +1,17 @@
 ---
-Description: Affichez les détails relatifs à l’identité unique assignée à votre application par le Microsoft Store et recevez un lien vers la liste des boutiques de votre application.
+description: Affichez les détails relatifs à l’identité unique assignée à votre application par le Microsoft Store et recevez un lien vers la liste des boutiques de votre application.
 title: Affichage des détails d’identité de l’application
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9232acbf83659c661e1b1f3c35a7fb7ad546e819
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11984d1aa5f8da20b529ab485615bd1f760cc2cd
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157923"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034902"
 ---
 # <a name="view-app-identity-details"></a>Affichage des détails d’identité de l’application
 
@@ -46,12 +46,12 @@ Les valeurs supplémentaires ci-après font référence à la famille de package
 
 Le lien direct vers la page de votre application peut être partagé pour aider vos clients à trouver l’application dans le Windows Store. Ce lien est au format **`https://www.microsoft.com/store/apps/<your app's Store ID>`** . Quand un client clique sur ce lien, il ouvre la page de liste Web pour votre application. Sur les appareils Windows, l’application du Windows Store lancera et affichera également la liste de votre application.
 
-L’**ID Windows Store** de votre application figure également dans cette section. Cet ID Windows Store peut être utilisé pour [générer des badges Windows Store](https://developer.microsoft.com/store/badges) ou pour identifier votre application.
+L’ **ID Windows Store** de votre application figure également dans cette section. Cet ID Windows Store peut être utilisé pour [générer des badges Windows Store](https://developer.microsoft.com/store/badges) ou pour identifier votre application.
 
 Le **lien de protocole du magasin** peut être utilisé pour établir une liaison directe avec votre application dans le magasin sans ouvrir de navigateur, par exemple quand vous effectuez une liaison à partir d’une application. Pour plus d’informations, consultez [lien vers votre application](link-to-your-app.md).
 
 
 
- 
+ 
 
- 
+ 

@@ -1,5 +1,5 @@
 ---
-Description: Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications Windows Runtime.
+description: Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications Windows Runtime.
 title: Ciblage
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 64142b1ec35040ded890d837245ecae36e03fdc1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a8b6113294d3f3c0c98946f0fed407e36de8a563
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216982"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035062"
 ---
 # <a name="guidelines-for-touch-targets"></a>Instructions pour les cibles tactiles
 
@@ -25,7 +25,7 @@ Tous les contrôles UWP ont été conçus avec des formats et des mises en page 
 
 Dans cette rubrique, nous décrivons ces comportements par défaut afin que vous puissiez concevoir votre application pour une utilisation maximale à l’aide de contrôles de plateforme et de contrôles personnalisés (si votre application en a besoin).
 
-> **API importantes**: [**Windows. UI. Core**](/uwp/api/Windows.UI.Core), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **API importantes** : [**Windows. UI. Core**](/uwp/api/Windows.UI.Core), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Xaml. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Taille Fluent Standard
 
@@ -38,7 +38,7 @@ La *taille Fluent Standard* a été créée pour fournir un équilibre entre le 
 
 ## <a name="fluent-compact-sizing"></a>Taille Fluent Compact
 
-Les applications peuvent afficher un plus haut niveau de densité des informations avec un *dimensionnement compact Fluent*. Le dimensionnement compact aligne les éléments d’interface utilisateur sur une cible 32 x 32 EPX, ce qui permet aux éléments d’interface utilisateur de s’aligner sur une grille plus étroite et de les mettre à l’échelle de manière appropriée en fonction de la mise à l’échelle du
+Les applications peuvent afficher un plus haut niveau de densité des informations avec un *dimensionnement compact Fluent* . Le dimensionnement compact aligne les éléments d’interface utilisateur sur une cible 32 x 32 EPX, ce qui permet aux éléments d’interface utilisateur de s’aligner sur une grille plus étroite et de les mettre à l’échelle de manière appropriée en fonction de la mise à l’échelle du
 
 ### <a name="examples"></a>Exemples
 

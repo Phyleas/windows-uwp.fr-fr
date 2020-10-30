@@ -1,17 +1,17 @@
 ---
-Description: Le Microsoft Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans différentes versions de système d’exploitation.
+description: Le Microsoft Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans différentes versions de système d’exploitation.
 title: Numérotation des versions de packages
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b09c5688fd8a043d1a4ca1783af046398b504050
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 18b4d6b8a901e68ea1e8513b7076a951e939f028
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219732"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035032"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
@@ -21,7 +21,7 @@ Chaque package que vous fournissez doit avoir un numéro de version (fourni sous
 > Cette rubrique fait référence aux « packages », mais sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers. msix/. AppX et. msixbundle/. appxbundle.
 
 
-## <a name="version-numbering-for-windows10-packages"></a>Numérotation des versions pour les packages Windows 10
+## <a name="version-numbering-for-windows-10-packages"></a>Numérotation des versions pour les packages Windows 10
 
 > [!IMPORTANT]
 > Pour les packages Windows 10 (UWP), la dernière section (quatrième) du numéro de version est réservée à l’utilisation du magasin et doit être laissée sur 0 lorsque vous générez votre package (même si le magasin peut modifier la valeur de cette section). Les autres sections doivent être définies sur un entier compris entre 0 et 65535 (à l’exception de la première section, qui ne peut pas être 0).
@@ -47,10 +47,10 @@ Vous pouvez utiliser les règles de contrôle de version du package pour amener 
 | 1          | -Version du package : 1.1.10.0 <br> -Famille d’appareils : Windows. Desktop, minVersion 10.0.10240.0 <br> <br> -Version du package : 1.1.0.0 <br> -Famille d’appareils : Windows. mobile, minVersion 10.0.10240.0     | -Les appareils sur Windows 10 Desktop Build 10.0.10240.0 et versions ultérieures obtiendront 1.1.10.0 <br> -Les appareils sur Windows 10 Mobile Build 10.0.10240.0 et versions ultérieures obtiendront 1.1.0.0 <br> -Les autres familles d’appareils ne seront pas en mesure d’acheter et d’installer l’application |
 | 2          | -Version du package : 1.1.10.0 <br> -Famille d’appareils : Windows. Desktop, minVersion 10.0.10240.0 <br> <br> -Version du package : 1.1.0.0 <br> -Famille d’appareils : Windows. mobile, minVersion 10.0.10240.0 <br> <br> -Version du package : 1.0.0.0 <br> -Famille d’appareils : Windows. Universal, minVersion 10.0.10240.0    | -Les appareils sur Windows 10 Desktop Build 10.0.10240.0 et versions ultérieures obtiendront 1.1.10.0 <br> -Les appareils sur Windows 10 Mobile Build 10.0.10240.0 et versions ultérieures obtiendront 1.1.0.0 <br> -Les autres familles d’appareils (autres que les ordinateurs de bureau, non mobiles) quand elles sont introduites obtiennent 1.0.0.0 <br> -Les appareils mobiles et de bureau sur lesquels l’application est déjà installée ne voient aucune mise à jour (car ils disposent déjà de la meilleure version disponible, 1.1.10.0 et 1.1.0.0 sont supérieurs à 1.0.0.0) |
 | 3          | -Version du package : 1.1.10.0 <br> -Famille d’appareils : Windows. Desktop, minVersion 10.0.10240.0 <br> <br> -Version du package : 1.1.5.0 <br> -Famille d’appareils : Windows. Universal, minVersion 10.0.10250.0 <br> <br> -Version du package : 1.0.0.0 <br> -Famille d’appareils : Windows. Universal, minVersion 10.0.10240.0    | -Les appareils sur Windows 10 Desktop Build 10.0.10240.0 et versions ultérieures obtiendront 1.1.10.0 <br> -Les appareils sur Windows 10 Mobile Build 10.0.10250.0 et versions ultérieures obtiendront 1.1.5.0 <br> -Les appareils sur Windows 10 Mobile Build >= 10.0.10240.0 et < 10.010250.0 obtiendront 1.1.0.0 
-| 4          | -Version du package : 2.0.0.0 <br> -Famille d’appareils : Windows. Universal, minVersion 10.0.10240.0   | -Tous les clients sur toutes les familles d’appareils sur Windows 10 Build v 10.0.10240.0 et versions ultérieures obtiendront le package 2.0.0.0 | 
+| 4          | -Version du package : 2.0.0.0 <br> -Famille d’appareils : Windows. Universal, minVersion 10.0.10240.0   | -Tous les clients sur toutes les familles d’appareils sur Windows 10 Build v 10.0.10240.0 et versions ultérieures obtiendront le package 2.0.0.0 | 
 
 > [!NOTE]
->  Dans tous les cas, les appareils clients recevront le package avec le numéro de version le plus élevé possible. Par exemple, dans la troisième soumission ci-dessus, tous les appareils de bureau recevront le package v1.1.10.0, même si leur système d’exploitation est de la version 10.0.10250.0 ou supérieure, et pourraient donc également accepter le package v1.1.5.0. Étant donné que le package 1.1.10.0 est celui dont le numéro de version est le plus élevé à leur disposition, ils obtiendront ce package.
+>  Dans tous les cas, les appareils clients recevront le package avec le numéro de version le plus élevé possible. Par exemple, dans la troisième soumission ci-dessus, tous les appareils de bureau recevront le package v1.1.10.0, même si leur système d’exploitation est de la version 10.0.10250.0 ou supérieure, et pourraient donc également accepter le package v1.1.5.0. Étant donné que le package 1.1.10.0 est celui dont le numéro de version est le plus élevé à leur disposition, ils obtiendront ce package.
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>Utilisation de la numérotation des versions pour revenir à un package livré précédemment pour de nouvelles acquisitions
 
@@ -61,7 +61,7 @@ Pour ce faire, créez une nouvelle [soumission](app-submissions.md). Supprimez l
 Pour résoudre le problème pour les clients qui ont déjà reçu le package problématique, vous pouvez envoyer un nouveau package Windows 10 avec un numéro de version plus élevé que le package incorrect dès que possible. Une fois cette soumission certifiée, tous les clients seront mis à jour vers le nouveau package, car celui-ci aura un numéro de version supérieur.
 
 
-## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>Numérotation des versions des packages pour Windows 8.1 (et versions antérieures) et Windows Phone 8.1
+## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Numérotation des versions des packages pour Windows 8.1 (et versions antérieures) et Windows Phone 8.1
 
 > [!IMPORTANT]
 > Vous ne pouvez plus charger de nouveaux packages XAP générés à l’aide du ou des kits de développement logiciel (SDK) Windows Phone 8. x. Les applications qui sont déjà dans Store avec des packages XAP continuent de fonctionner sur les appareils Windows 10 mobile. Pour plus d’informations, consultez ce billet de [blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
@@ -79,11 +79,11 @@ Voici quelques exemples de ce qui se passe dans les différents scénarios de mi
 
 | Version de votre application dans le Store  | Version transférée | Une fois la nouvelle version dans le magasin, elle est installée dans une nouvelle acquisition | Une fois la nouvelle version dans le magasin, elle est mise à jour si un client a déjà l’application |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
-| Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 sur les ordinateurs x86 et x64                                                | Rien. |
-| x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 pour l’architecture de l’ordinateur du client                                                   | Rien. Les numéros de version sont les mêmes. |
-| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 pour les clients possédant un ordinateur x86 <br> v1.0.0.1 pour les clients possédant un ordinateur x64                 | Rien pour les clients exécutant l’application sur un ordinateur x86. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant l’application sur un ordinateur x64. <br> **Remarque**    Si la version x86 de l’application s’exécute sur un ordinateur x64, l’application n’est pas mise à jour vers la version x64, à moins que le client ne soit désinstallé et réinstallé. |
-| Nothing                                     | neutre, v1.0.0.1           | neutre, v1.0.0.1 sur tous les ordinateurs                                                         | Rien. |
-| neutre, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 pour l’architecture de l’ordinateur du client.          | Rien. Les clients qui possèdent la version neutre v1.0.0.1 de l’application continuent de l’utiliser. |
+| Rien                                     | x86, v1.0.0.0               | x86, v1.0.0.0 sur les ordinateurs x86 et x64                                                | Nothing. |
+| x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 pour l’architecture de l’ordinateur du client                                                   | Nothing. Les numéros de version sont les mêmes. |
+| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 pour les clients possédant un ordinateur x86 <br> v1.0.0.1 pour les clients possédant un ordinateur x64                 | Rien pour les clients exécutant l’application sur un ordinateur x86. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant l’application sur un ordinateur x64. <br> **Remarque**  Si la version x86 de l’application s’exécute sur un ordinateur x64, l’application n’est pas mise à jour vers la version x64, à moins que le client ne soit désinstallé et réinstallé. |
+| Rien                                     | neutre, v1.0.0.1           | neutre, v1.0.0.1 sur tous les ordinateurs                                                         | Nothing. |
+| neutre, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 pour l’architecture de l’ordinateur du client.          | Nothing. Les clients qui possèdent la version neutre v1.0.0.1 de l’application continuent de l’utiliser. |
 | neutre, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 pour l’architecture de l’ordinateur du client. | Rien pour les clients qui exécutent la version neutre v1.0.0.1 de l’application. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant la version v1.0.0.0 de l’application générée pour l’architecture de leur ordinateur. |
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 pour l’architecture de l’ordinateur du client.  | Mise à jour de v1.0.0.1 vers v1.0.0.2 pour les clients exécutant la version v1.0.0.1 de l’application générée pour l’architecture de leur ordinateur. |
 

@@ -1,21 +1,21 @@
 ---
-Description: Lorsque vous avez terminé la création de la soumission de votre application et que vous cliquez sur envoyer au magasin, la soumission passe à l’étape de certification.
+description: Lorsque vous avez terminé la création de la soumission de votre application et que vous cliquez sur envoyer au magasin, la soumission passe à l’étape de certification.
 title: Processus de certification des applications
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, publication, prétraitement, certification, version, en attente, envoyer, publier, État, heure
 ms.localizationpriority: medium
-ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 414a182074f03256c3c66492eab21e574e1a960c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253799"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034982"
 ---
 # <a name="the-app-certification-process"></a>Processus de certification des applications
 
-Lorsque vous avez terminé la création de la soumission de votre application et que vous cliquez sur **Envoyer au magasin**, la soumission passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois trois journées ouvrables entières. Une fois que votre envoi est certifié, il peut s’écouler jusqu’à 24 heures avant que les clients puissent voir la liste de l’application pour une nouvelle soumission, ou pour une soumission mise à jour avec les modifications apportées aux packages. Si votre mise à jour ne modifie que la liste des détails, le processus de publication sera effectué en moins d’une heure.  Vous serez informé de la publication de votre envoi et de l’état de l’application dans le tableau de **bord.**
+Lorsque vous avez terminé la création de la soumission de votre application et que vous cliquez sur **Envoyer au magasin** , la soumission passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois trois journées ouvrables entières. Une fois que votre envoi est certifié, il peut s’écouler jusqu’à 24 heures avant que les clients puissent voir la liste de l’application pour une nouvelle soumission, ou pour une soumission mise à jour avec les modifications apportées aux packages. Si votre mise à jour ne modifie que la liste des détails, le processus de publication sera effectué en moins d’une heure.  Vous serez informé de la publication de votre envoi et de l’état de l’application dans le tableau de **bord.**
 
 ## <a name="preprocessing"></a>Prétraitement
 
@@ -37,7 +37,7 @@ Lorsque votre application passe la certification, elle est prête à passer au p
 
 - Si vous avez indiqué que votre soumission doit être publiée dès que possible (option par défaut), le processus de publication commence immédiatement.
 - S’il s’agit de la première fois que vous publiez l’application et que vous avez spécifié une **Date de publication** dans la section [planification](configure-precise-release-scheduling.md#release) , l’application devient disponible en fonction de vos sélections de **Date de publication** .
-- Si vous avez utilisé les [options de conservation](manage-submission-options.md#publishing-hold-options) de la publication pour spécifier qu’elle ne doit pas être libérée avant une certaine date, nous attendons jusqu’à cette date pour commencer le processus de publication, sauf si vous sélectionnez Modifier la **Date**de publication.
+- Si vous avez utilisé les [options de conservation](manage-submission-options.md#publishing-hold-options) de la publication pour spécifier qu’elle ne doit pas être libérée avant une certaine date, nous attendons jusqu’à cette date pour commencer le processus de publication, sauf si vous sélectionnez Modifier la **Date** de publication.
 - Si vous avez utilisé les [options de conservation](manage-submission-options.md#publishing-hold-options) de la publication pour spécifier que vous souhaitez publier l’envoi manuellement, nous ne démarrerons pas le processus de publication tant que vous n’avez pas sélectionné **publier maintenant** (ou sélectionné **modifier la date** de publication et choisi une date spécifique).
 
 
@@ -47,20 +47,20 @@ Les packages de votre application sont signés numériquement pour être protég
 
 Pour les nouvelles applications et les mises à jour qui incluent des modifications apportées aux packages de l’application, le processus de publication se termine dans les 24 heures. Pour les mises à jour qui modifient uniquement les options telles que les détails de la liste des magasins, mais ne modifient pas les packages de l’application, le processus de publication prendra moins d’une heure.
 
-Pendant que votre application se trouve dans la phase de publication, le lien **afficher les détails** dans la colonne État de l’envoi de votre application vous permet de savoir quand vos nouveaux packages et les détails de la liste des magasins sont disponibles pour les clients sur chacune de vos versions de système d’exploitation prises en charge. Les étapes qui n’ont pas encore été effectuées s’affichent **en attente**. Votre application restera dans la phase de publication jusqu’à ce que le processus soit terminé, ce qui signifie que les nouveaux packages et/ou les détails de la liste sont disponibles pour tous les clients potentiels de votre application.
+Pendant que votre application se trouve dans la phase de publication, le lien **afficher les détails** dans la colonne État de l’envoi de votre application vous permet de savoir quand vos nouveaux packages et les détails de la liste des magasins sont disponibles pour les clients sur chacune de vos versions de système d’exploitation prises en charge. Les étapes qui n’ont pas encore été effectuées s’affichent **en attente** . Votre application restera dans la phase de publication jusqu’à ce que le processus soit terminé, ce qui signifie que les nouveaux packages et/ou les détails de la liste sont disponibles pour tous les clients potentiels de votre application.
 
 ## <a name="in-the-store"></a>Dans le Windows Store 
 
-Après avoir correctement effectué les étapes ci-dessus, l’état de la soumission passe de **Publication** à **Dans le Windows Store**. Votre envoi sera ensuite disponible dans le Microsoft Store que les clients pourront télécharger (sauf si vous avez choisi une autre option de [découverte](choose-visibility-options.md#discoverability) ). 
+Après avoir correctement effectué les étapes ci-dessus, l’état de la soumission passe de **Publication** à **Dans le Windows Store** . Votre envoi sera ensuite disponible dans le Microsoft Store que les clients pourront télécharger (sauf si vous avez choisi une autre option de [découverte](choose-visibility-options.md#discoverability) ). 
 
 > [!NOTE]
 > Nous effectuons également des contrôles ponctuels des applications une fois qu’elles ont été publiées afin que nous puissions identifier les problèmes potentiels et vous assurer que votre application est conforme à toutes les [stratégies de Microsoft Store](store-policies.md). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du Windows Store.
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

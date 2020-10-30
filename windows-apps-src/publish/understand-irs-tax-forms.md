@@ -1,17 +1,17 @@
 ---
-Description: Prenez connaissance des déclarations fiscales envoyées par Microsoft, notamment à qui elles sont envoyées et à quelle date.
+description: Prenez connaissance des déclarations fiscales envoyées par Microsoft, notamment à qui elles sont envoyées et à quelle date.
 title: Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, fiscalité, IRS, Internal Revenue Service, taxes, impôt sur les revenus, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 6493e20dbc0e38405a7cd30fc22acb9973098431
-ms.sourcegitcommit: 97002cc3e5942f43ab0f14f4ad70543a63db0c03
+ms.openlocfilehash: 05d038aca0670c31f1d8ed10250e3a905e6bfe3b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91128978"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034962"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -23,11 +23,11 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
 
 | Déclaration fiscale de l’IRS | Description | Disponibilité |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | Concerne les ventes réalisées et/ou les paiements reçus dans le cadre de vos activités sur les places de marché Microsoft. | Les formulaires imprimés feront l’objet d’un cachet au plus **tard le 31 janvier**et les copies. pdf seront disponibles dans l' [espace partenaires](https://partner.microsoft.com/dashboard) (dans les paramètres de développeur de l' **espace partenaires** sous **paiement et taxes > les profils de paiement et de taxes**) en même temps. |
-|1042-S | Liés aux paiements qui font l’objet de États-Unis impôt à la retenue | Les formulaires imprimés feront l’objet d’un cachet ou avant le **15 mars**, et les copies. pdf seront disponibles dans l’espace partenaires (dans les paramètres de développeur de l' **espace partenaires** sous **paiement et taxes > les profils de paiement et de taxes**) en même temps.  |
+|1099-MISC, 1099-K | Concerne les ventes réalisées et/ou les paiements reçus dans le cadre de vos activités sur les places de marché Microsoft. | Les formulaires imprimés feront l’objet d’un cachet au plus **tard le 31 janvier** et les copies. pdf seront disponibles dans l' [espace partenaires](https://partner.microsoft.com/dashboard) (dans les paramètres de développeur de l' **espace partenaires** sous **paiement et taxes > les profils de paiement et de taxes** ) en même temps. |
+|1042-S | Liés aux paiements qui font l’objet de États-Unis impôt à la retenue | Les formulaires imprimés feront l’objet d’un cachet ou avant le **15 mars** , et les copies. pdf seront disponibles dans l’espace partenaires (dans les paramètres de développeur de l' **espace partenaires** sous **paiement et taxes > les profils de paiement et de taxes** ) en même temps.  |
 
 > [!NOTE]
-> L’adresse que nous utilisons sur les formulaires fiscaux de l’IRS provient de l’adresse de votre [Profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
+> L’adresse que nous utilisons sur les formulaires fiscaux de l’IRS provient de l’adresse de votre [Profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal** .
 
 Les formulaires fiscaux vous seront envoyés à partir des adresses suivantes :
 
@@ -70,7 +70,7 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   </tr>
   <tr>
     <td valign="top">Aucun des deux ne s’applique.</td>
-    <td valign="top">None</td>
+    <td valign="top">Aucun</td>
   </tr>
   <tr>
     <td valign="top">&nbsp;</td>
@@ -86,7 +86,7 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>moins de $600 de paiements</b> des publicités dans les applications de l’année fiscale en vigueur</td>
-     <td valign="top">None</td>
+     <td valign="top">Aucun</td>
   </tr>
 </table>
 
@@ -129,4 +129,4 @@ J’ai reçu au moins $600 paiements non liés aux ventes d’applications de Mi
 
 
 > [!NOTE]
-> Si vous avez d’autres questions ou des préoccupations liées aux **formulaires fiscaux**de l’IRS, veuillez créer un [ticket de support](https://developer.microsoft.com/windows/support). Microsoft n’est pas en mesure de répondre aux questions relatives à votre situation fiscale spécifique. Pour les questions de cet ordre, consultez votre conseiller fiscal.
+> Si vous avez d’autres questions ou des préoccupations liées aux **formulaires fiscaux** de l’IRS, veuillez créer un [ticket de support](https://developer.microsoft.com/windows/support). Microsoft n’est pas en mesure de répondre aux questions relatives à votre situation fiscale spécifique. Pour les questions de cet ordre, consultez votre conseiller fiscal.

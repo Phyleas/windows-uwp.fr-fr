@@ -1,6 +1,6 @@
 ---
 title: Interactions avec pointage du regard
-Description: Découvrez comment concevoir et optimiser vos applications Windows pour offrir la meilleure expérience possible aux utilisateurs qui reposent sur une entrée de regard de l’œil et des têtes de trace.
+description: Découvrez comment concevoir et optimiser vos applications Windows pour offrir la meilleure expérience possible aux utilisateurs qui reposent sur une entrée de regard de l’œil et des têtes de trace.
 label: Gaze interactions
 template: detail.hbs
 keywords: regard, suivi oculaire, suivi des têtes, point de regard, entrée, interaction utilisateur, accessibilité, convivialité
@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fa08cb65afc46069e48263344270e1e3b1a3d5f5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7799c95642b412d67b69c87dba54bf5c68ab9761
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217022"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035132"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Interactions de regard et suivi oculaire dans les applications Windows
 
@@ -27,7 +27,7 @@ Fournir un support pour le suivi du regard, de l’attention et de la présence 
 > [!NOTE]
 > Pour les entrées de regard dans [Windows Mixed Reality](/windows/mixed-reality/), consultez le point de [regard](/windows/mixed-reality/gaze).
 
-**API importantes**: [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview), [GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**API importantes** : [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview), [GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -36,7 +36,7 @@ Le point d’entrée en regard est un moyen puissant d’interagir et d’utilis
 En outre, le point d’entrée de regard offre des opportunités aussi attrayantes pour les jeux (y compris l’acquisition et le suivi cibles) et les applications de productivité traditionnelles, les bornes et d’autres scénarios interactifs dans lesquels les périphériques d’entrée traditionnels (clavier, souris, Touch) ne sont pas disponibles
 
 > [!NOTE]
-> La prise en charge du matériel de suivi oculaire a été introduite dans **Windows 10 automne Creators Update** avec le [contrôle oculaire](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), une fonctionnalité intégrée qui vous permet d’utiliser vos yeux pour contrôler le pointeur sur l’écran, taper avec le clavier visuel et communiquer avec des personnes utilisant la conversion de texte par synthèse vocale. Un ensemble d’API Windows Runtime ([Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview)) pour la création d’applications pouvant interagir avec le matériel de suivi visuel est disponible avec la **mise à jour 2018 de Windows 10 avril (version 1803, Build 17134)** et les versions ultérieures.
+> La prise en charge du matériel de suivi oculaire a été introduite dans **Windows 10 automne Creators Update** avec le [contrôle oculaire](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), une fonctionnalité intégrée qui vous permet d’utiliser vos yeux pour contrôler le pointeur sur l’écran, taper avec le clavier visuel et communiquer avec des personnes utilisant la conversion de texte par synthèse vocale. Un ensemble d’API Windows Runtime ( [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview)) pour la création d’applications pouvant interagir avec le matériel de suivi visuel est disponible avec la **mise à jour 2018 de Windows 10 avril (version 1803, Build 17134)** et les versions ultérieures.
 
 ## <a name="privacy"></a>Confidentialité
 
@@ -44,13 +44,13 @@ En raison des données personnelles potentiellement sensibles collectées par le
 
 En outre, si votre application collecte, stocke ou transfère des données de suivi oculaire, vous devez la décrire dans la déclaration de confidentialité de votre application et respecter toutes les autres exigences relatives aux **informations personnelles** dans le [contrat de développement d’application](/legal/windows/agreements/app-developer-agreement) et les stratégies de [Microsoft Store](/legal/windows/agreements/store-policies).
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Pour utiliser les API de saisie en regard de votre application Windows, vous devez : 
 
 - Spécifiez la `gazeInput` fonctionnalité dans le manifeste de l’application.
 
-    Ouvrez le fichier **Package. appxmanifest** avec le concepteur de manifeste Visual Studio, ou ajoutez la fonctionnalité manuellement en sélectionnant **afficher le code**, puis en insérant le code suivant `DeviceCapability` dans le `Capabilities` nœud :
+    Ouvrez le fichier **Package. appxmanifest** avec le concepteur de manifeste Visual Studio, ou ajoutez la fonctionnalité manuellement en sélectionnant **afficher le code** , puis en insérant le code suivant `DeviceCapability` dans le `Capabilities` nœud :
 
     ```xaml
     <Capabilities>

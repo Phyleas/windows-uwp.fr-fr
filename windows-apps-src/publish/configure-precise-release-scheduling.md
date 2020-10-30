@@ -1,16 +1,16 @@
 ---
-Description: Vous pouvez définir la date et l’heure précises auxquelles votre application doit être disponible dans le magasin, ce qui vous offre une plus grande flexibilité et la possibilité de personnaliser des dates pour différents marchés.
+description: Vous pouvez définir la date et l’heure précises auxquelles votre application doit être disponible dans le magasin, ce qui vous offre une plus grande flexibilité et la possibilité de personnaliser des dates pour différents marchés.
 title: Configurer une planification précise de la publication
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, planification, date de publication, dates, lancement
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ad59071b6a7298cbb6d896bb7dd60a9a5ee0451
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bf9fe34eb36cab57677ba8ef22397c9c345ecb40
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171143"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035172"
 ---
 # <a name="configure-precise-release-scheduling"></a>Configurer une planification précise de la publication
 
@@ -34,7 +34,7 @@ Notez que vous ne pourrez pas configurer de dates dans la section **planificatio
 
 Les sélections que vous effectuez pour la planification de base s’appliquent à tous les marchés dans lesquels votre application est disponible, sauf si vous ajoutez ultérieurement des dates pour des marchés spécifiques (ou des groupes de marché) en sélectionnant [Personnaliser pour des marchés spécifiques](#customize-the-schedule-for-specific-markets).
 
-Deux options s’affichent ici : **mise en sortie** et arrêt de l' **acquisition**.
+Deux options s’affichent ici : **mise en sortie** et arrêt de l' **acquisition** .
 
 ## <a name="release"></a>Libérer
 
@@ -44,11 +44,11 @@ Dans la liste déroulante **version** , vous pouvez définir le moment où vous 
 > Une fois que votre application a été publiée et qu’elle est disponible dans le Store, vous ne pourrez plus sélectionner une date de **publication** (puisque l’application aura déjà été publiée).
 
 Voici les options que vous pouvez configurer pour le calendrier de **publication** d’un produit :
-- dès **que possible**: le produit sera publié dès qu’il sera certifié et publié. Il s'agit de l'option par défaut.
-- **à**: le produit est publié à la date et à l’heure que vous sélectionnez. Vous avez également deux options :
-   - **UTC**: l’heure que vous sélectionnez sera l’heure UTC (Universal Coordinated Time), afin que l’application se libère en même temps.
-   - **Local**: l’heure que vous sélectionnez sera utilisée dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plus d’un fuseau horaire, un seul fuseau horaire de ce marché sera utilisé. Pour le États-Unis, le fuseau horaire est utilisé. Une liste complète des fuseaux horaires s’affiche plus loin dans cette page.)
-- **non planifié**: l’application ne sera pas disponible dans le Store. Si vous choisissez cette option, vous pouvez rendre l’application disponible dans le Store plus tard en créant une nouvelle soumission et en choisissant l’une des autres options.
+- dès **que possible** : le produit sera publié dès qu’il sera certifié et publié. Il s'agit de l'option par défaut.
+- **à** : le produit est publié à la date et à l’heure que vous sélectionnez. Vous avez également deux options :
+   - **UTC** : l’heure que vous sélectionnez sera l’heure UTC (Universal Coordinated Time), afin que l’application se libère en même temps.
+   - **Local** : l’heure que vous sélectionnez sera utilisée dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plus d’un fuseau horaire, un seul fuseau horaire de ce marché sera utilisé. Pour le États-Unis, le fuseau horaire est utilisé. Une liste complète des fuseaux horaires s’affiche plus loin dans cette page.)
+- **non planifié** : l’application ne sera pas disponible dans le Store. Si vous choisissez cette option, vous pouvez rendre l’application disponible dans le Store plus tard en créant une nouvelle soumission et en choisissant l’une des autres options.
 
 ## <a name="stop-acquisition"></a>Arrêter l’acquisition
 
@@ -59,17 +59,17 @@ Par défaut, l’option **arrêter l’acquisition** est définie sur jamais. Po
 Il est important de comprendre que cette option a le même impact que la sélection de **rendre cette application détectable, mais non disponible** dans la section [visibilité](choose-visibility-options.md#discoverability) et que vous choisissez **arrêter l’acquisition : tout client disposant d’un lien direct peut voir le Listing Store du produit, mais il ne peut le télécharger que s’il en a déjà détenu le produit ou s’il utilise un appareil Windows 10.** Pour arrêter complètement l’offre d’une application aux nouveaux clients, cliquez sur **rendre l’application indisponible** dans la page vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 > [!TIP]
-> Si vous sélectionnez une date pour **arrêter l’acquisition**et décidez ultérieurement que vous souhaitez rendre l’application à nouveau disponible, vous pouvez créer une nouvelle soumission et modifier **arrêter l’acquisition** en **n'** importe quel type. L’application sera à nouveau disponible après la publication de votre soumission mise à jour.
+> Si vous sélectionnez une date pour **arrêter l’acquisition** et décidez ultérieurement que vous souhaitez rendre l’application à nouveau disponible, vous pouvez créer une nouvelle soumission et modifier **arrêter l’acquisition** en **n'** importe quel type. L’application sera à nouveau disponible après la publication de votre soumission mise à jour.
 
 ## <a name="customize-the-schedule-for-specific-markets"></a>Personnaliser la planification pour des marchés spécifiques
 
-Par défaut, les options que vous sélectionnez ci-dessus s’appliquent à tous les marchés dans lesquels votre application est proposée. Pour personnaliser le prix de marchés spécifiques, cliquez sur **Personnaliser pour des marchés spécifiques**. La fenêtre contextuelle de **sélection du marché** s’affiche, répertoriant tous les marchés dans lesquels vous avez choisi de rendre votre application disponible. Si vous avez exclu un marché dans la section [Markets](./define-market-selection.md) , ces marchés ne seront pas affichés.
+Par défaut, les options que vous sélectionnez ci-dessus s’appliquent à tous les marchés dans lesquels votre application est proposée. Pour personnaliser le prix de marchés spécifiques, cliquez sur **Personnaliser pour des marchés spécifiques** . La fenêtre contextuelle de **sélection du marché** s’affiche, répertoriant tous les marchés dans lesquels vous avez choisi de rendre votre application disponible. Si vous avez exclu un marché dans la section [Markets](./define-market-selection.md) , ces marchés ne seront pas affichés.
 
-Pour ajouter une planification pour un marché, sélectionnez-la, puis cliquez sur **Enregistrer**. Vous voyez alors les mêmes options de **mise en sortie** et d' **arrêt** que celles décrites ci-dessus, mais les sélections que vous effectuez ne s’appliquent qu’à ce marché.
+Pour ajouter une planification pour un marché, sélectionnez-la, puis cliquez sur **Enregistrer** . Vous voyez alors les mêmes options de **mise en sortie** et d' **arrêt** que celles décrites ci-dessus, mais les sélections que vous effectuez ne s’appliquent qu’à ce marché.
 
-Pour ajouter une planification qui s’appliquera à plusieurs marchés, vous allez créer un *groupe de marché*. Pour ce faire, sélectionnez les marchés que vous souhaitez inclure, puis entrez un nom pour le groupe. (Ce nom est destiné à votre référence uniquement et n’est pas visible pour les clients.) Par exemple, si vous souhaitez créer un groupe de marché pour Amérique du Nord, vous pouvez sélectionner **Canada**, **Mexique**et **États-Unis**, puis le nommer **Amérique du Nord** ou un autre nom que vous choisissez. Lorsque vous avez terminé de créer votre groupe de marché, cliquez sur **Enregistrer**. Vous voyez alors les mêmes options de **mise en sortie** et d' **arrêt** que celles décrites ci-dessus, mais les sélections que vous effectuez ne s’appliquent qu’à ce groupe de marché.
+Pour ajouter une planification qui s’appliquera à plusieurs marchés, vous allez créer un *groupe de marché* . Pour ce faire, sélectionnez les marchés que vous souhaitez inclure, puis entrez un nom pour le groupe. (Ce nom est destiné à votre référence uniquement et n’est pas visible pour les clients.) Par exemple, si vous souhaitez créer un groupe de marché pour Amérique du Nord, vous pouvez sélectionner **Canada** , **Mexique** et **États-Unis** , puis le nommer **Amérique du Nord** ou un autre nom que vous choisissez. Lorsque vous avez terminé de créer votre groupe de marché, cliquez sur **Enregistrer** . Vous voyez alors les mêmes options de **mise en sortie** et d' **arrêt** que celles décrites ci-dessus, mais les sélections que vous effectuez ne s’appliquent qu’à ce groupe de marché.
 
-Pour ajouter une planification personnalisée pour un marché supplémentaire, ou un groupe de marché supplémentaire, cliquez simplement sur **Personnaliser pour des marchés spécifiques** et répétez ces étapes. Pour modifier les marchés inclus dans un groupe de marché, sélectionnez son nom. Pour supprimer le calendrier personnalisé pour un groupe de marché (ou un marché individuel), cliquez sur **supprimer**.
+Pour ajouter une planification personnalisée pour un marché supplémentaire, ou un groupe de marché supplémentaire, cliquez simplement sur **Personnaliser pour des marchés spécifiques** et répétez ces étapes. Pour modifier les marchés inclus dans un groupe de marché, sélectionnez son nom. Pour supprimer le calendrier personnalisé pour un groupe de marché (ou un marché individuel), cliquez sur **supprimer** .
 
 > [!NOTE]
 > Un marché ne peut pas appartenir à plus d’un des groupes de marché que vous utilisez dans la section **planification** .

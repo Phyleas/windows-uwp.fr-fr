@@ -1,5 +1,5 @@
 ---
-Description: Cette rubrique décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
+description: Cette rubrique décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
 title: Recommandations en matière de zoom optique et de redimensionnement
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5864be7a4a7f80e376439e8db387e2b2853dfd7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1cf62546efd95c3a4d26ad3ca6f16990b832611c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172483"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035112"
 ---
 # <a name="optical-zoom-and-resizing"></a>Zoom optique et redimensionnement
 
@@ -21,7 +21,7 @@ ms.locfileid: "89172483"
 
 Cet article décrit les éléments de zoom et de redimensionnement Windows. Il fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
 
-> **API importantes**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**entrée (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
+> **API importantes** : [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**entrée (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
 
 Le zoom optique permet à l’utilisateur d’agrandir la vue du contenu au sein d’une zone de contenu (l’interaction s’effectue sur la zone de contenu elle-même), tandis que le redimensionnement permet de modifier la taille relative d’un ou de plusieurs objets sans modifier la vue dans la zone de contenu (dans ce cas, l’interaction s’effectue sur les objets figurant dans la zone de contenu).
 
@@ -29,19 +29,20 @@ Les interactions de zoom optique et de redimensionnement s’effectuent à l’a
 
 Les schémas suivants montrent les différences entre le redimensionnement et le zoom optique.
 
-**Zoom optique** : l’utilisateur sélectionne une zone, puis effectue un zoom sur la totalité de la zone.
+**Zoom optique**  : l’utilisateur sélectionne une zone, puis effectue un zoom sur la totalité de la zone.
 
 ![resserrez les doigts pour faire un zoom avant et écartez-les pour faire un zoom arrière.](images/areazoom.png)
 
-**Redimensionnement** : l’utilisateur sélectionne un objet au sein d’une zone et le redimensionne.
+**Redimensionnement**  : l’utilisateur sélectionne un objet au sein d’une zone et le redimensionne.
 
 ![resserrer les doigts pour rétrécir un objet et les écarter pour l’agrandir](images/objectresize.png)
 
-**Remarque**    Le zoom optique ne doit pas être confondu avec le [Zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deux interactions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
+**Remarque**  
+Ne confondez pas le zoom optique avec le [zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deux interactions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
 
- 
+ 
 
-## <a name="dos-and-donts"></a>Choses à faire et à ne pas faire
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
 Pour les applications prenant en charge le redimensionnement ou le zoom optique, tenez compte des recommandations suivantes :
@@ -55,7 +56,7 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 
     -   De proximité : lorsque l’utilisateur met fin au contact, un point d’ancrage est sélectionné si l’inertie s’arrête au sein du seuil de distance du point d’ancrage. Les points d’ancrage de proximité permettent à un zoom ou à un redimensionnement de se terminer entre des points d’ancrage.
     -   Obligatoire : le point d’ancrage sélectionné est celui qui précède ou qui suit immédiatement le dernier point d’ancrage rencontré avant que l’utilisateur ait mis fin au contact (en fonction de la direction et de la vitesse du mouvement). Une manipulation doit prendre fin sur un point d’ancrage obligatoire.
--   Utilisez les principes d’inertie, Ces options en question sont les suivantes :
+-   Utilisez les principes d’inertie, Elles sont associées aux limitations suivantes :
     -   Décélération : se produit dès que l’utilisateur arrête le pincement ou l’étirement. Cette action s’apparente à glisser sur une surface glissante jusqu’à l’arrêt.
     -   Rebond : un léger effet de rebond se produit lorsqu’une limite ou une contrainte de taille est dépassée.
 -   Espacez les contrôles conformément aux [Recommandations en matière de ciblage](guidelines-for-targeting.md).
@@ -65,7 +66,8 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
     -   Applications de dessin dans lesquelles des éléments redimensionnables peuvent s’afficher sur une zone de dessin ou un carton redimensionnable.
     -   Pages web comportant un objet incorporé, tel qu’une carte.
 
-    **Remarque**    Dans tous les cas, la zone de contenu est redimensionnée, sauf si tous les points tactiles se trouvent dans l’objet redimensionnable.
+    **Remarque**  
+    Dans tous les cas, la zone de contenu sera redimensionnée, sauf si tous les points tactiles figurent dans l’objet redimensionnable.
 
 ## <a name="related-articles"></a>Articles connexes
 

@@ -1,17 +1,17 @@
 ---
-Description: La page Propriétés de l’application du processus de soumission d’application vous permet de définir la catégorie de votre application, ainsi que les préférences matérielles ou d’autres déclarations.
+description: La page Propriétés de l’application du processus de soumission d’application vous permet de définir la catégorie de votre application, ainsi que les préférences matérielles ou d’autres déclarations.
 title: Entrer les propriétés d’une application
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, paramètres de jeu, mode d’affichage, configuration requise, configuration matérielle requise, matériel minimal, matériel recommandé, politique de confidentialité, informations de contact du support, site Web d’application, informations de support
 ms.localizationpriority: medium
-ms.openlocfilehash: f945b9908a86d660bde9713ca353f1f3a438bf90
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e02e92d8ae005e5906179f96598805f64e7c7ff
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167403"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035142"
 ---
 # <a name="enter-app-properties"></a>Entrer les propriétés d’une application
 
@@ -33,10 +33,10 @@ Cette section vous permet de fournir des informations pour aider les clients à 
 
 Vous êtes tenu de vous assurer que votre application est conforme aux lois et réglementations en matière de confidentialité, et de fournir une URL de politique de confidentialité valide ici, si nécessaire.
 
-Dans cette section, vous devez indiquer si votre application accède à, collecte ou transmet des [informations personnelles](/legal/windows/agreements/store-policies#105-personal-information). Si vous répondez **Oui**, une URL de politique de confidentialité est requise. Dans le cas contraire, il est facultatif (Cependant, si nous déterminons que votre application nécessite une stratégie de confidentialité et que vous n’en avez pas fourni, votre soumission risque d’échouer).
+Dans cette section, vous devez indiquer si votre application accède à, collecte ou transmet des [informations personnelles](/legal/windows/agreements/store-policies#105-personal-information). Si vous répondez **Oui** , une URL de politique de confidentialité est requise. Dans le cas contraire, il est facultatif (Cependant, si nous déterminons que votre application nécessite une stratégie de confidentialité et que vous n’en avez pas fourni, votre soumission risque d’échouer).
 
 > [!NOTE]
-> Si nous détectons que vos packages déclarent des [capacités](../packaging/app-capability-declarations.md) qui pourraient permettre l’accès, la transmission ou la collecte d’informations personnelles, nous allons marquer cette question comme **Oui**et vous devrez entrer une URL de politique de confidentialité.
+> Si nous détectons que vos packages déclarent des [capacités](../packaging/app-capability-declarations.md) qui pourraient permettre l’accès, la transmission ou la collecte d’informations personnelles, nous allons marquer cette question comme **Oui** et vous devrez entrer une URL de politique de confidentialité.
 
 Pour vous aider à déterminer si votre application requiert une stratégie de confidentialité, consultez le [contrat de développement d’application](/legal/windows/agreements/app-developer-agreement) et les stratégies de [Microsoft Store](/legal/windows/agreements/store-policies#105-personal-information). 
 
@@ -86,9 +86,9 @@ Pour plus d’informations, consultez [déclarations de produits](./product-decl
 
 Cette section vous permet d’indiquer si certaines fonctionnalités matérielles sont requises ou recommandées pour exécuter votre application et interagir avec cette dernière. Lorsque vous souhaitez spécifier **Matériel minimum** et/ou **Matériel recommandé** pour un composant matériel, activez la case à cocher (ou indiquez l’option appropriée).
 
-Si vous effectuez des sélections pour **Matériel recommandé**, ces composants sont affichés dans la description du produit sur le Windows Store en tant que matériel recommandé pour les clients utilisant Windows 10, version 1607 ou ultérieure. Les clients utilisant des versions antérieures du système d’exploitation ne voient pas ces informations.
+Si vous effectuez des sélections pour **Matériel recommandé** , ces composants sont affichés dans la description du produit sur le Windows Store en tant que matériel recommandé pour les clients utilisant Windows 10, version 1607 ou ultérieure. Les clients utilisant des versions antérieures du système d’exploitation ne voient pas ces informations.
 
-Si vous effectuez des sélections pour **Matériel minimum**, ces composants sont affichés dans la description du produit sur le Windows Store en tant que matériel minimum requis pour les clients utilisant Windows 10, version 1607 ou ultérieure. Les clients utilisant des versions antérieures du système d’exploitation ne voient pas ces informations. Le Windows Store peut également afficher un avertissement pour les clients qui consultent la description de votre application sur un appareil ne disposant pas du matériel requis. Les clients peuvent quand même télécharger votre application sur des appareils non équipés du matériel nécessaire, mais ils ne sont pas en mesure d’évaluer ou de commenter votre application sur ces appareils. 
+Si vous effectuez des sélections pour **Matériel minimum** , ces composants sont affichés dans la description du produit sur le Windows Store en tant que matériel minimum requis pour les clients utilisant Windows 10, version 1607 ou ultérieure. Les clients utilisant des versions antérieures du système d’exploitation ne voient pas ces informations. Le Windows Store peut également afficher un avertissement pour les clients qui consultent la description de votre application sur un appareil ne disposant pas du matériel requis. Les clients peuvent quand même télécharger votre application sur des appareils non équipés du matériel nécessaire, mais ils ne sont pas en mesure d’évaluer ou de commenter votre application sur ces appareils. 
 
 Le comportement des clients varie selon les configurations requises spécifiques et la version de Windows du client :
 
@@ -97,9 +97,9 @@ Le comportement des clients varie selon les configurations requises spécifiques
      - Le Windows Store vérifie la configuration minimale requise et affiche un avertissement si l’appareil du client ne satisfait pas ces exigences.
 - **Pour les clients utilisant des versions antérieures de Windows 10 :**
      - Pour la plupart des clients, la configuration matérielle minimale requise et recommandée s’affiche dans la description au sein du Windows Store (toutefois les clients utilisant une version antérieure du client Windows Store voient seulement la configuration matérielle minimale requise).
-     - Le Windows Store tente de vérifier les composants que vous spécifiez dans **Matériel minimum**, à l’exception de **Mémoire**, **DirectX**, **Mémoire vidéo**, **Carte graphique** et **Processeur**. Aucun de ces composants n’est vérifié, et les clients ne voient aucun avertissement sur les appareils qui ne satisfont pas ces exigences. 
+     - Le Windows Store tente de vérifier les composants que vous spécifiez dans **Matériel minimum** , à l’exception de **Mémoire** , **DirectX** , **Mémoire vidéo** , **Carte graphique** et **Processeur** . Aucun de ces composants n’est vérifié, et les clients ne voient aucun avertissement sur les appareils qui ne satisfont pas ces exigences. 
 - **Pour les clients utilisant Windows 8.x et des versions antérieures ou Windows Phone 8.x et des versions antérieures :**
-     - Si vous activez la case à cocher **Matériel minimum** pour **Écran tactile**, cette configuration requise s’affiche dans la description de votre application sur le Windows Store, et les clients dont les appareils n’ont pas d’écran tactile voient un avertissement s’ils tentent de télécharger l’application. Aucune autre configuration requise n’est vérifiée ou affichée dans votre description au sein du Windows Store.
+     - Si vous activez la case à cocher **Matériel minimum** pour **Écran tactile** , cette configuration requise s’affiche dans la description de votre application sur le Windows Store, et les clients dont les appareils n’ont pas d’écran tactile voient un avertissement s’ils tentent de télécharger l’application. Aucune autre configuration requise n’est vérifiée ou affichée dans votre description au sein du Windows Store.
 
 Nous vous recommandons également d’ajouter des vérifications d’exécution pour le matériel spécifié dans votre application, car il peut arriver que le Windows Store ne puisse pas détecter que l’appareil d’un client ne dispose pas des fonctionnalités sélectionnées. Dans ce cas, le client peut toujours télécharger votre application, même si un avertissement s’affiche. Si vous souhaitez empêcher complètement le téléchargement de votre application UWP sur un appareil qui ne répond pas à la configuration minimale requise pour la mémoire ou le niveau DirectX, vous pouvez indiquer la configuration minimale requise dans un [fichier XML StoreManifest](/uwp/schemas/storemanifest/storemanifestschema2015/schema-root).
 

@@ -1,17 +1,17 @@
 ---
-Description: Le délai estimé pour transférer les paiements, les seuils de paiement applicables et les places de marché Microsoft à partir desquelles vous pouvez recevoir des paiements peuvent varier en fonction de votre pays/région et du type de compte de paiement.
+description: Le délai estimé pour transférer les paiements, les seuils de paiement applicables et les places de marché Microsoft à partir desquelles vous pouvez recevoir des paiements peuvent varier en fonction de votre pays/région et du type de compte de paiement.
 title: Délais, méthodes et seuils de paiement
 ms.date: 03/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 686ed66622efa9c73aa0ed7de64a719d7c441eb4
-ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+ms.openlocfilehash: 2f9114b7f6dc80928c399fe4863bf6c95e0d916b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746759"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035012"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Délais, méthodes et seuils de paiement
 
@@ -44,14 +44,14 @@ Pour voir les pays/régions dans lesquels ces modes de paiement sont utilisés p
 
 | Pays ou région                          | Place de marché Azure | Store, publicité, Mixer et Minecraft | Office | Paiements PayPal |
 |----------------------------------|-------------------|------------------------------------------|--------|-----------------|
-| Afghanistan                      | Oui               | Oui                                      | Non      | Non              |
+| Afghanistan                      | Oui               | Oui                                      | Non     | Non              |
 | Albanie                          | Oui               | Oui                                      | Oui    | Oui             |
 | Algérie                          | Oui               | Oui                                      | Oui    | Oui             |
 | Andorre                          | Non                | Non                                       | Oui    | Oui             |
 | Angola                           | Oui               | Oui                                      | Oui    | Non              |
 | Antigua-et-Barbuda              | Oui               | Oui                                      | Non     | Oui             |
 | Argentine                        | Oui               | Oui                                      | Oui    | Oui             |
-| Arménie                          | Oui               | Oui                                      | Non      | Non              |
+| Arménie                          | Oui               | Oui                                      | Non     | Non              |
 | Australie                        | Oui               | Oui                                      | Oui    | Oui             |
 | Autriche                          | Oui               | Oui                                      | Oui    | Oui             |
 | Azerbaïdjan                       | Oui               | Oui                                      | Oui    | Non              |
@@ -75,7 +75,7 @@ Pour voir les pays/régions dans lesquels ces modes de paiement sont utilisés p
 | Chili                            | Oui               | Oui                                      | Oui    | Oui             |
 | Chine                            | Non                | Oui                                      | Oui    | Oui             |
 | Colombie                         | Oui               | Oui                                      | Oui    | Oui             |
-| Comores                          | Oui               | Oui                                      | Non      | Non              |
+| Comores                          | Oui               | Oui                                      | Non     | Non              |
 | Congo (RDC)                      | Oui               | Oui                                      | Oui    | Non              |
 | République du Congo               | Oui               | Oui                                      | Oui    | Non              |
 | Costa Rica                       | Oui               | Oui                                      | Oui    | Oui             |
@@ -92,7 +92,7 @@ Pour voir les pays/régions dans lesquels ces modes de paiement sont utilisés p
 | Érythrée                          | Oui               | Oui                                      | Oui    | Non              |
 | Estonie                          | Oui               | Oui                                      | Oui    | Oui             |
 | Éthiopie                         | Oui               | Oui                                      | Oui    | Non              |
-| Îles Fidji                     | Oui               | Oui                                      | Non      | Non              |
+| Îles Fidji                     | Oui               | Oui                                      | Non     | Non              |
 | Finlande                          | Oui               | Oui                                      | Oui    | Oui             |
 | France                           | Oui               | Oui                                      | Oui    | Oui             |
 | Géorgie                          | Oui               | Oui                                      | Oui    | Oui             |
@@ -108,7 +108,7 @@ Pour voir les pays/régions dans lesquels ces modes de paiement sont utilisés p
 | Islande                          | Oui               | Oui                                      | Oui    | Non              |
 | Inde                            | Oui               | Oui                                      | Oui    | Oui             |
 | Indonésie                        | Oui               | Oui                                      | Oui    | Oui             |
-| Irak                             | Oui               | Oui                                      | Non      | Non              |
+| Irak                             | Oui               | Oui                                      | Non     | Non              |
 | Irlande                          | Oui               | Oui                                      | Oui    | Oui             |
 | Israël                           | Oui               | Oui                                      | Oui    | Oui             |
 | Italie                            | Oui               | Oui                                      | Oui    | Oui             |
@@ -122,7 +122,7 @@ Pour voir les pays/régions dans lesquels ces modes de paiement sont utilisés p
 | Kirghizistan                       | Non                | Non                                       | Oui    | Non              |
 | Laos                             | Oui               | Oui                                      | Oui    | Non              |
 | Lettonie                           | Oui               | Oui                                      | Oui    | Non              |
-| Liban                          | Oui               | Oui                                      | Non      | Non              |
+| Liban                          | Oui               | Oui                                      | Non     | Non              |
 | Liberia                          | Oui               | Oui                                      | Oui    | Non              |
 | Liechtenstein                    | Oui               | Oui                                      | Oui    | Oui             |
 | Lituanie                        | Oui               | Oui                                      | Oui    | Non              |
@@ -134,7 +134,7 @@ Pour voir les pays/régions dans lesquels ces modes de paiement sont utilisés p
 | Malte                            | Oui               | Oui                                      | Oui    | Oui             |
 | Maurice (île)                        | Oui               | Oui                                      | Non     | Oui             |
 | Mexique                           | Oui               | Oui                                      | Oui    | Oui             |
-| Monaco                           | Oui               | Oui                                      | Non      | Non              |
+| Monaco                           | Oui               | Oui                                      | Non     | Non              |
 | Mongolie                         | Oui               | Oui                                      | Oui    | Non              |
 | Monténégro                       | Oui               | Oui                                      | Oui    | Non              |
 | Maroc                          | Oui               | Oui                                      | Oui    | Non              |
@@ -160,7 +160,7 @@ Pour voir les pays/régions dans lesquels ces modes de paiement sont utilisés p
 | Roumanie                          | Oui               | Oui                                      | Oui    | Non              |
 | Russie                           | Oui               | Oui                                      | Non     | Oui             |
 | Rwanda                           | Oui               | Oui                                      | Oui    | Non              |
-| Saint-Vincent-et-les-Grenadines | Non                | Oui                                      | Non      | Non               |
+| Saint-Vincent-et-les-Grenadines | Non                | Oui                                      | Non     | Non              |
 | Arabie Saoudite                     | Oui               | Oui                                      | Oui    | Oui             |
 | Sénégal                          | Oui               | Oui                                      | Oui    | Non              |
 | Serbie                           | Oui               | Oui                                      | Oui    | Non              |
@@ -175,23 +175,23 @@ Pour voir les pays/régions dans lesquels ces modes de paiement sont utilisés p
 | Suède                           | Oui               | Oui                                      | Oui    | Oui             |
 | Suisse                      | Oui               | Oui                                      | Oui    | Non              |
 | Taïwan                           | Non                | Oui                                      | Oui    | Oui             |
-| Tadjikistan                       | Oui               | Oui                                      | Non      | Non              |
+| Tadjikistan                       | Oui               | Oui                                      | Non     | Non              |
 | Tanzanie                         | Oui               | Oui                                      | Oui    | Non              |
 | Thaïlande                         | Oui               | Oui                                      | Oui    | Oui             |
 | Timor-Leste                      | Oui               | Oui                                      | Oui    | Non              |
 | Togo                             | Oui               | Oui                                      | Oui    | Non              |
-| Tonga                            | Oui               | Oui                                      | Non      | Non              |
+| Tonga                            | Oui               | Oui                                      | Non     | Non              |
 | Trinité-et-Tobago              | Oui               | Oui                                      | Oui    | Oui             |
 | Tunisie                          | Oui               | Oui                                      | Oui    | Non              |
 | Turquie                           | Oui               | Oui                                      | Oui    | Non              |
-| Turkménistan                     | Oui               | Oui                                      | Non      | Non              |
+| Turkménistan                     | Oui               | Oui                                      | Non     | Non              |
 | Ouganda                           | Oui               | Oui                                      | Oui    | Non              |
-| Ukraine                          | Oui               | Oui                                      | Non      | Non              |
+| Ukraine                          | Oui               | Oui                                      | Non     | Non              |
 | Émirats Arabes Unis             | Oui               | Oui                                      | Oui    | Oui             |
 | Royaume-Uni                   | Oui               | Oui                                      | Oui    | Oui             |
 | États-Unis                    | Oui               | Oui                                      | Oui    | Oui             |
 | Uruguay                          | Oui               | Oui                                      | Oui    | Oui             |
-| Ouzbékistan                       | Oui               | Oui                                      | Non      | Non              |
+| Ouzbékistan                       | Oui               | Oui                                      | Non     | Non              |
 | Venezuela                        | Oui               | Oui                                      | Oui    | Oui             |
 | Vietnam                          | Oui               | Oui                                      | Oui    | Oui             |
 | Zambie                           | Oui               | Oui                                      | Oui    | Non              |

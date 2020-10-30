@@ -1,16 +1,16 @@
 ---
-Description: Ciblez des segments spécifiques de vos clients avec un contenu personnalisé pour augmenter l’engagement, la rétention et la monétisation.
+description: Ciblez des segments spécifiques de vos clients avec un contenu personnalisé pour augmenter l’engagement, la rétention et la monétisation.
 title: Utiliser des offres ciblées pour optimiser l’engagement et les conversions
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, offres ciblées, offres, notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: ff2c3049154ffcc18164b8084bc9e34a9121905d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 744ea22f741cd3f8a0e43d3eb88b1a7c6f4ce68b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155303"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034932"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Utiliser des offres ciblées pour optimiser l’engagement et les conversions
 
@@ -32,7 +32,7 @@ Une fois ces étapes terminées, les clients qui utilisent votre application ver
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>Pour créer et envoyer une offre ciblée
 
-1.  Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), développez **engagement** dans le menu de navigation gauche, puis sélectionnez **offres ciblées**.
+1.  Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), développez **engagement** dans le menu de navigation gauche, puis sélectionnez **offres ciblées** .
 2.  Sur la page **offres ciblées** , passez en revue les offres disponibles. Sélectionnez **créer une offre** pour toute offre que vous souhaitez implémenter.
 
     > [!NOTE]
@@ -40,7 +40,7 @@ Une fois ces étapes terminées, les clients qui utilisent votre application ver
 
 3.  Dans la nouvelle ligne qui s’affiche sous les offres disponibles, choisissez le produit (l’application) dans lequel l’offre sera disponible. Sélectionnez ensuite le module complémentaire que vous souhaitez associer à l’offre.
 4.  Répétez les étapes 2 et 3 Si vous souhaitez créer des offres supplémentaires. Vous pouvez implémenter le même type d’offre plusieurs fois pour la même application, à condition de sélectionner différents modules complémentaires pour chaque offre. En outre, vous pouvez associer le même module complémentaire à plusieurs types d’offres.
-5.  Lorsque vous avez terminé de créer des offres, cliquez sur **Enregistrer**.
+5.  Lorsque vous avez terminé de créer des offres, cliquez sur **Enregistrer** .
 
 Une fois que vous avez implémenté vos offres, vous pouvez revenir à la page **offres ciblées** dans l’espace partenaires pour afficher les conversions totales pour chaque offre.
 

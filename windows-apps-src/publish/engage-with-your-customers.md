@@ -1,16 +1,16 @@
 ---
-Description: Stimulez l’implication et la satisfaction de vos clients en utilisant des fonctionnalités telles que les notifications, les offres ciblées, les réponses aux avis et commentaires, et bien davantage.
+description: Améliorez l’engagement et la satisfaction des clients en utilisant des fonctionnalités telles que les notifications, les offres ciblées, la réponse aux avis et les commentaires, et bien plus encore.
 title: Impliquer vos clients
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e03e698a7c74dc6c3a9abec30d471a0a16427650
-ms.sourcegitcommit: 2dba9b4e81151d14ca90d36341274a3b59926197
+ms.openlocfilehash: 827001cda13b6335f9aaae06d8138c5223dbbb84
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057602"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034842"
 ---
 # <a name="engage-with-your-customers"></a>Impliquer vos clients
 
@@ -38,7 +38,7 @@ Utilisez le tableau de bord pour définir des segments de clients de votre appli
     :::column span="2":::
 **Offres ciblées**
 
-Affichez un contenu attrayant et personnalisé à des segments spécifiques de votre clientèle pour optimiser l’engagement, la rétention et la monétisation.
+Affichez un contenu attrayant et personnalisé à des segments spécifiques de votre clientèle pour optimiser l’implication, la rétention et la monétisation.
 
 [Promouvoir les offres](use-targeted-offers-to-maximize-engagement-and-conversions.md)
     :::column-end:::
@@ -53,7 +53,7 @@ Affichez un contenu attrayant et personnalisé à des segments spécifiques de v
 
 Utilisez le tableau de bord pour créer et envoyer des notifications Push à des segments de clients de votre application, en personnalisant chaque notification en fonction du public.
 
-[Envoyer des notifications](send-push-notifications-to-your-apps-customers.md)
+[Envoi de notifications](send-push-notifications-to-your-apps-customers.md)
     :::column-end:::
 :::row-end:::
 
@@ -105,6 +105,6 @@ Assurez une communication et tenez vos clients informés en répondant à leurs 
 Conservez les onglets de vos activités d’engagement client à l’aide de ces fonctionnalités et rapports.
 
 - [Créer des groupes de clients](create-customer-groups.md)
-- [Rapport Avis](reviews-report.md)
-- [Rapport Commentaires](feedback-report.md)
+- [Rapport sur les révisions](reviews-report.md)
+- [Rapport sur les commentaires](feedback-report.md)
 - [Extraire des données d’analyse à l’aide de notre API REST](../monetize/access-analytics-data-using-windows-store-services.md)
