@@ -1,5 +1,5 @@
 ---
-Description: Une bonne connaissance des appareils qui prennent en charge les applications Windows peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
+description: Une bonne connaissance des appareils qui prennent en charge les applications Windows peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme.
 title: Considérations relatives à l’interface utilisateur des appareils Windows
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
@@ -8,12 +8,12 @@ keywords: appareil, entrées, interactions
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d32fd2ba2ee35c19aeaa66d2c6b2c1f81be2a59
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2267a0a704d0f637b60e38cdaa50b1afa2ec3f9a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217832"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030542"
 ---
 #  <a name="ui-considerations-for-windows-devices"></a>Considérations relatives à l’interface utilisateur des appareils Windows
 
@@ -94,7 +94,7 @@ Fonctionnalités de l’appareil type
 
 ## <a name="xbox-and-tv"></a>Xbox et télévision
 
-L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le « **10-foot experience** » Ce nom vient du fait que l’utilisateur se trouve généralement à 3 mètres (10 pieds) de l’écran. Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience « *2-foot experience* » ou lors d’interactions avec un PC. Si vous développez une application pour Xbox One ou tout autre appareil connecté à un écran de télévision et susceptible d’utiliser une télécommande ou un boîtier de commande comme périphérique d’entrée, vous devez toujours garder ceci à l’esprit.
+L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le «  **10-foot experience**  » Ce nom vient du fait que l’utilisateur se trouve généralement à 3 mètres (10 pieds) de l’écran. Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience «  *2-foot experience*  » ou lors d’interactions avec un PC. Si vous développez une application pour Xbox One ou tout autre appareil connecté à un écran de télévision et susceptible d’utiliser une télécommande ou un boîtier de commande comme périphérique d’entrée, vous devez toujours garder ceci à l’esprit.
 
 Concevoir une application Windows pour l’expérience « 10-foot » est très différent de concevoir une application pour les autres catégories d’appareils décrites ici. Pour plus d’informations, consultez [Conception pour Xbox et télévision](designing-for-tv.md).
 
@@ -131,7 +131,7 @@ Fonctionnalités de l’appareil type
 
 Appareils informatiques parmi les plus utilisés actuellement, les téléphones peuvent proposer de nombreuses fonctions, malgré un espace à l’écran réduit et des commandes d’entrée limitées. Les téléphones sont disponibles dans différentes tailles. Les téléphones de grande taille sont appelés des phablettes. L’expérience liée à l’utilisation de l’application sur une phablette est similaire à celle que propose un téléphone, mais l’espace disponible sur l’écran d’une phablette permet d’apporter des modifications significatives au comportement de consommation du contenu de l’utilisateur.
 
-Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un écran et même à une souris et un clavier pour les utiliser comme un ordinateur portable. (Pour plus d’informations, voir l’article [Continuum pour téléphones](/windows-hardware/design/device-experiences/continuum-phone).)
+Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un moniteur et même à une souris et un clavier pour les utiliser comme un ordinateur portable. (Pour plus d’informations, voir l’article [Continuum pour téléphones](/windows-hardware/design/device-experiences/continuum-phone).)
 
 Tailles d’écran
 -   De 4 à 5 pouces pour les téléphones
@@ -164,7 +164,7 @@ Fonctionnalités de l’appareil type
 -   Capteurs de mouvement
 -   Capteurs d’emplacement
 
- 
+ 
 
 ## <a name="surface-hub-devices"></a>Appareils Surface Hub
 
@@ -197,7 +197,7 @@ Fonctionnalités de l’appareil type
 -   Appareil photo
 -   Microphone
 
- 
+ 
 
 ## <a name="windows-iot-devices"></a>Appareil Windows IoT
 

@@ -1,17 +1,17 @@
 ---
-Description: Ajoutez des interfaces utilisateur XAML modernes, créez des packages MSIX et incorporez d’autres composants modernes dans votre application de bureau.
+description: Ajoutez des interfaces utilisateur XAML modernes, créez des packages MSIX et incorporez d’autres composants modernes dans votre application de bureau.
 title: Moderniser vos applications de bureau pour Windows
 ms.topic: article
 ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b7c640e89f36dfcea6e0080cbbe3887e0231ddfc
-ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
+ms.openlocfilehash: 99bb68ff7d990b0b633df0c4efa2d8eafad759cd
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91958722"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031062"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -55,7 +55,7 @@ Pour plus d’informations, consultez [Utiliser des API Windows Runtime dans les
 
 ## <a name="host-winrt-xaml-controls-xaml-islands"></a>Héberger des contrôles XAML WinRT (XAML Islands)
 
-À partir de Windows 10, version 1903, vous pouvez ajouter des [contrôles XAML UWP](/windows/uwp/design/controls-and-patterns/controls-by-function) directement dans n’importe quel élément d’interface utilisateur d’une application WPF, Windows Forms ou Win32 C++ qui est associé à un handle de fenêtre (HWND). Cela vous permet d’intégrer entièrement les dernières fonctionnalités UWP comme [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) et les contrôles qui prennent en charge le [système Fluent Design](/windows/uwp/design/fluent-design-system/index) dans les fenêtres et autres aires d’affichage dans vos applications de bureau. Ce scénario de développement est parfois appelé *XAML Islands*.
+À partir de Windows 10, version 1903, vous pouvez ajouter des [contrôles XAML UWP](/windows/uwp/design/controls-and-patterns/controls-by-function) directement dans n’importe quel élément d’interface utilisateur d’une application WPF, Windows Forms ou Win32 C++ qui est associé à un handle de fenêtre (HWND). Cela vous permet d’intégrer entièrement les dernières fonctionnalités UWP comme [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) et les contrôles qui prennent en charge le [système Fluent Design](/windows/uwp/design/fluent-design-system/index) dans les fenêtres et autres aires d’affichage dans vos applications de bureau. Ce scénario de développement est parfois appelé *XAML Islands* .
 
 Pour plus d’informations, consultez [Contrôles XAML WinRT dans les applications de bureau](xaml-islands.md).
 
@@ -82,7 +82,7 @@ Que vous développiez une application UWP ciblant exclusivement la famille d’a
 
 | Contrôler |  Description |
 |------ |--------------|
-| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Fournit un moyen rapide et simple d’exposer un ensemble de commandes dans les applications nécessitant un niveau d’organisation et de regroupement plus avancé que celui fourni par **CommandBar**. |
+| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Fournit un moyen rapide et simple d’exposer un ensemble de commandes dans les applications nécessitant un niveau d’organisation et de regroupement plus avancé que celui fourni par **CommandBar** . |
 | [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Affiche une flèche permettant de développer un menu volant attaché qui contient des options supplémentaires.  |
 | [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | Fournit un bouton à deux composants, qui peuvent être appelés séparément. Un composant se comporte comme un bouton standard et appelle une action immédiate. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.|
 | [ToggleSplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | Fournit un bouton à deux composants, qui peuvent être appelés séparément. Un composant se comporte comme un bouton bascule qui peut être activé ou désactivé. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur. |

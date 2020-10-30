@@ -1,5 +1,5 @@
 ---
-Description: Les boîtes de dialogue et les menus volants affichent des éléments temporaires d’interface utilisateur quand l’utilisateur les sollicite ou quand un événement nécessite une notification ou une approbation.
+description: Les boîtes de dialogue et les menus volants affichent des éléments temporaires d’interface utilisateur quand l’utilisateur les sollicite ou quand un événement nécessite une notification ou une approbation.
 title: Boîtes de dialogue et menus volants
 template: detail.hbs
 ms.date: 07/06/2018
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c61d1478c38df315a3fe3c20151de8c2bfbca4e2
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: bf4746a6d3a024fec31045bbf9c63d3b11315b8c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81123562"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033842"
 ---
 # <a name="dialogs-and-flyouts"></a>Boîtes de dialogue et menus volants
 
@@ -24,7 +24,7 @@ Les boîtes de dialogue et les menus volants sont des éléments temporaires d�
 
 > **API de plateforme :** [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [classe Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-**Boîtes de dialogue**
+**Dialogues**
 
 ![Exemple de boîte de dialogue](../images/dialogs/dialog_RS2_delete_file.png)
 
@@ -48,7 +48,7 @@ Une fois que vous avez déterminé que vous voulez utiliser une boîte de dialog
 
    <p><b>Utilisez une boîte de dialogue pour...</b> <br/>
 <ul>
-<li>Afficher des informations importantes que l’utilisateur <b>doit</b> lire et accepter avant de poursuivre. Exemples :
+<li>Afficher des informations importantes que l’utilisateur <b>doit</b> lire et accepter avant de poursuivre. Voici quelques exemples :
 <ul>
   <li>Utilisez ce type de contrôle pour indiquer à l’utilisateur toute situation d’atteinte possible à la sécurité.</li>
   <li>Utilisez ce type de contrôle pour signaler à l’utilisateur qu’il s’apprête à modifier de manière irrémédiable un élément utile.</li>

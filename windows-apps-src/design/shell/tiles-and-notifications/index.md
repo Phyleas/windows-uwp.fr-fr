@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
+description: Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
 title: Vignettes, badges et notifications
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 580edca578a0d518d89b5d2fdb30c9304be35cef
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: dbcc4138c0f09d3ad620e4d1c192dd63bb522052
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636619"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033682"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Vignettes, badges et notifications pour les applications Windows
  
 
 Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
 
-> **API importantes** : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **API importantes**  : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
 Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application Windows a une vignette. Vous pouvez activer différentes tailles de vignettes (petite, moyenne, large et grande).</p>
@@ -32,7 +32,7 @@ Une vignette est la représentation d’une application dans le menu Démarrer. 
 <p>Une <em>notification toast</em> est une notification que votre application envoie à l’utilisateur via un élément d’interface utilisateur contextuel appelé <em>toast</em> (ou <em>bannière</em>). La notification est visible, que l’utilisateur se trouve dans votre application ou non.</p>
 <p>Une <em>notification Push</em>, ou <em>notification brute</em>, est une notification envoyée à votre application à partir du service de notifications Push Windows (WNS) ou d’une tâche en arrière-plan. Votre application peut répondre à ces notifications soit en informant l’utilisateur qu’un événement l’intéressant s’est produit (par le biais d’une mise à jour de badge, d’une mise à jour de vignette ou d’un toast), soit de la manière de votre choix.</p>
 
- 
+ 
 ## <a name="tiles"></a>Vignettes
 | Article | Description |
 | --- | --- |

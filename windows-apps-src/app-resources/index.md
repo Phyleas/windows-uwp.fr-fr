@@ -1,5 +1,5 @@
 ---
-Description: Cette section vous montre comment créer, mettre en package et utiliser les ressources de chaîne, d’image et de fichier de votre application.
+description: Cette section vous montre comment créer, mettre en package et utiliser les ressources de chaîne, d’image et de fichier de votre application.
 title: Ressources d’application et système de gestion des ressources
 label: Intro
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: cb64294710ca1d28c11308161665e72e37342193
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3d6b23284c24de4b611301668c52894b57ed2500
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174093"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031802"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>Ressources d’application et système de gestion des ressources
 
