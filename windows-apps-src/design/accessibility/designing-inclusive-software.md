@@ -1,5 +1,5 @@
 ---
-Description: En savoir plus sur l’évolution de la conception inclusive avec les applications Windows pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
+description: En savoir plus sur l’évolution de la conception inclusive avec les applications Windows pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Conception de logiciels inclusifs dans Windows 10
 label: Designing inclusive software
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 795344a7a03344c5f8aeea26252e1e0610d9d8c3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 20a168fa9073aaf09055481be836799b4a3f00e7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219862"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029882"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Conception de logiciels inclusifs pour Windows 10  
 
@@ -30,13 +30,13 @@ La conception inclusive crée de meilleurs produits pour tout le monde. Il s’a
 ## <a name="inclusive-design-principles"></a>Principes de conception inclusive.  
 Les 4 principes suivants guident la transition de Microsoft vers la conception inclusive :
 
-**Universalité** : nous mettons l’accent sur ce qui unifie les humains : leurs motivations, leurs relations et leurs capacités. Cela nous oblige également de prendre en compte l’impact social élargi de notre travail. Le résultat obtenu constitue une expérience à laquelle tout le monde peut participer de manière différente.
+**Universalité**  : nous mettons l’accent sur ce qui unifie les humains : leurs motivations, leurs relations et leurs capacités. Cela nous oblige également de prendre en compte l’impact social élargi de notre travail. Le résultat obtenu constitue une expérience à laquelle tout le monde peut participer de manière différente.
 
-**Personnalisation** : ensuite, nous nous efforçons de créer des liens émotionnels. Les interactions humaines peuvent inspirer une meilleure interaction entre la technologie et les hommes. La situation unique d’une personne peut améliorer la conception pour tout le monde. Le résultat obtenu constitue une expérience donnant l’impression d’avoir été créée sur mesure pour tous.
+**Personnalisation**  : ensuite, nous nous efforçons de créer des liens émotionnels. Les interactions humaines peuvent inspirer une meilleure interaction entre la technologie et les hommes. La situation unique d’une personne peut améliorer la conception pour tout le monde. Le résultat obtenu constitue une expérience donnant l’impression d’avoir été créée sur mesure pour tous.
 
-**Simplicité** : pour nous, la simplicité est le principal fédérateur. Avec un affichage plus clair, nos utilisateurs se sentent plus à l’aise. Les espaces épurés, clairs et ouverts renforcent leur confiance. Nous offrons une expérience honnête, intemporelle.
+**Simplicité**  : pour nous, la simplicité est le principal fédérateur. Avec un affichage plus clair, nos utilisateurs se sentent plus à l’aise. Les espaces épurés, clairs et ouverts renforcent leur confiance. Nous offrons une expérience honnête, intemporelle.
 
-**Ravir** : les expériences agréables favorisent un ressenti et une découverte réjouissants. Parfois, cela relève de la magie. Parfois, il s’agit d’un détail parfait. Nous concevons ces moments pour proposer à nos utilisateurs un changement bienvenu. Le résultat obtenu constitue une expérience fluide et continue.
+**Ravir**  : les expériences agréables favorisent un ressenti et une découverte réjouissants. Parfois, cela relève de la magie. Parfois, il s’agit d’un détail parfait. Nous concevons ces moments pour proposer à nos utilisateurs un changement bienvenu. Le résultat obtenu constitue une expérience fluide et continue.
 
 ## <a name="inclusive-design-users"></a>Utilisateurs de la conception inclusive  
 On distingue deux catégories d’utilisateurs de la technologie d’assistance :

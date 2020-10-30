@@ -1,17 +1,17 @@
 ---
-Description: Vous pouvez utiliser plusieurs schémas d’URI (Uniform Resource Identifier) pour faire référence à des fichiers qui proviennent de votre package d’application, des dossiers de données de votre application ou du cloud. Vous pouvez également utiliser un schéma d’URI pour faire référence à des chaînes chargées à partir des fichiers de ressources (.resw) de votre application.
+description: Vous pouvez utiliser plusieurs schémas d’URI (Uniform Resource Identifier) pour faire référence à des fichiers qui proviennent de votre package d’application, des dossiers de données de votre application ou du cloud. Vous pouvez également utiliser un schéma d’URI pour faire référence à des chaînes chargées à partir des fichiers de ressources (.resw) de votre application.
 title: Schémas d’URI
 template: detail.hbs
 ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5bf063c12362fe26e3810e6153b857b7c1a2e4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8806992ebb7f4335ca0a748c1b2bce4a6de39fae
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170523"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031543"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 
@@ -31,7 +31,7 @@ hier-part   = "//" authority path-abempty
             / path-empty
 ```
 
-Cela signifie qu’il existe essentiellement trois composants à un URI. Le fait de suivre immédiatement les deux barres obliques du *schéma* d’URI est un composant (qui peut être vide) appelé *autorité*. Et immédiatement après cela est le *chemin d’accès*. En utilisant l’URI `http://www.contoso.com/welcome.png` comme exemple, le schéma est « `http://` », l’autorité est « `www.contoso.com` » et le chemin d’accès est « `/welcome.png` ». Un autre exemple est l’URI `ms-appx:///logo.png` , où les composants d’autorité sont vides et prennent une valeur par défaut.
+Cela signifie qu’il existe essentiellement trois composants à un URI. Le fait de suivre immédiatement les deux barres obliques du *schéma* d’URI est un composant (qui peut être vide) appelé *autorité* . Et immédiatement après cela est le *chemin d’accès* . En utilisant l’URI `http://www.contoso.com/welcome.png` comme exemple, le schéma est « `http://` », l’autorité est « `www.contoso.com` » et le chemin d’accès est « `/welcome.png` ». Un autre exemple est l’URI `ms-appx:///logo.png` , où les composants d’autorité sont vides et prennent une valeur par défaut.
 
 Le composant fragment est ignoré par le traitement propre au schéma des URI mentionnés dans cette rubrique. Pendant la récupération et la comparaison des ressources, le composant de fragment n’a pas de palier. Toutefois, les couches au-dessus de l’implémentation spécifique peuvent interpréter le fragment pour récupérer une ressource secondaire.
 
@@ -41,7 +41,7 @@ La comparaison se produit octet pour Byte après la normalisation de tous les co
 
 Tous les schémas d’URI décrits dans cette rubrique suivent les règles URI typiques (RFC 3986) pour la normalisation et la récupération des ressources pour les schémas. La forme normalisée de ces URI gère la casse et le pourcentage de décodage des caractères non réservés RFC 3986.
 
-Pour tous les schémas d’URI décrits dans cette rubrique, le *schéma*, l' *autorité*et le *chemin d’accès* ne sont pas sensibles à la casse par standard, ou sont traités par le système sans respect de la casse. **Remarque** La seule exception à cette règle est l' *autorité* de qui respecte la `ms-resource` casse.
+Pour tous les schémas d’URI décrits dans cette rubrique, le *schéma* , l' *autorité* et le *chemin d’accès* ne sont pas sensibles à la casse par standard, ou sont traités par le système sans respect de la casse. **Remarque** La seule exception à cette règle est l' *autorité* de qui respecte la `ms-resource` casse.
 
 ## <a name="ms-appx-and-ms-appx-web"></a>MS-AppX et MS-AppX-Web
 

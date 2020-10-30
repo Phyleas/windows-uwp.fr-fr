@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
+description: Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
 title: Définir des contraintes de reconnaissance vocale personnalisées
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
@@ -8,18 +8,18 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b48564469fd77f3c670739a7095124ed7399a1fe
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5cef63bab911f46e34d337957011556a0c420763
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160073"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032162"
 ---
 # <a name="define-custom-recognition-constraints"></a>Définir des contraintes de reconnaissance vocale personnalisées
 
 Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
 
-> **API importantes**: [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
+> **API importantes** : [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 La reconnaissance vocale requiert au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, la grammaire de dictée prédéfinie des applications Windows universelles est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
 
@@ -144,7 +144,7 @@ Gardez à l’esprit les points suivants :
 - Vous pouvez ajouter plusieurs contraintes de fichier de grammaire à une collection de contraintes.
 - Utilisez l’extension de fichier .grxml pour les documents de grammaire XML qui sont conformes aux règles SRGS.
 
-L’exemple suivant utilise une grammaire SRGS définie dans un fichier nommé srgs.grxml (décrit ultérieurement). Dans les propriétés du fichier, l’option **Action de package** a la valeur **Contenu**, avec l’option **Copier dans le répertoire de sortie** définie sur **Toujours copier** :
+L’exemple suivant utilise une grammaire SRGS définie dans un fichier nommé srgs.grxml (décrit ultérieurement). Dans les propriétés du fichier, l’option **Action de package** a la valeur **Contenu** , avec l’option **Copier dans le répertoire de sortie** définie sur **Toujours copier** :
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -171,7 +171,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. World Wide Web Consortium les grammaires doivent se conformer à la spécification SISR (W3C) [interprétation sémantique pour la reconnaissance vocale () 1,0](https://www.w3.org/TR/semantic-interpretation/) .
+Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. Les grammaires doivent être conformes à la spécification W3C (World Wide Web Consortium) [SISR (Semantic Interpretation for Speech Recognition) 1.0](https://www.w3.org/TR/semantic-interpretation/).
 
 Ici, nous écoutons des variantes de « yes » et « no ».
 
@@ -212,7 +212,7 @@ Ici, nous écoutons des variantes de « yes » et « no ».
 
 ## <a name="manage-constraints"></a>Gérer les contraintes
 
-Quand une collection de contraintes est chargée pour la reconnaissance vocale, votre application peut gérer les contraintes qui sont activées pour les opérations de reconnaissance vocale en affectant à la propriété [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) d’une contrainte la valeur **true** ou **false**. Le paramètre par défaut est **true**.
+Quand une collection de contraintes est chargée pour la reconnaissance vocale, votre application peut gérer les contraintes qui sont activées pour les opérations de reconnaissance vocale en affectant à la propriété [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) d’une contrainte la valeur **true** ou **false** . Le paramètre par défaut est **true** .
 
 Plutôt que de charger, décharger et compiler des contraintes pour chaque opération de reconnaissance vocale, il est généralement plus efficace de charger les contraintes une fois, et de les activer ou désactiver en fonction des besoins. Utilisez la propriété [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled), si nécessaire.
 

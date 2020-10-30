@@ -1,17 +1,17 @@
 ---
-Description: Le Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à générer plus de revenus et conquérir des clients.
+description: Le Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à générer plus de revenus et conquérir des clients.
 title: Impliquer les clients avec Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ms.date: 08/21/2017
 ms.topic: article
 keywords: Kit de développement logiciel (SDK) Windows 10, UWP, Microsoft Store services
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b8544f6d4f60b2f4ca91af35ff922fcfe089380
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8356367b47242f7bda01da753cc8599aff9edd79
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155463"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030532"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec Microsoft Store Services SDK
 
@@ -72,7 +72,7 @@ Pour installer le Microsoft Store Services SDK via le programme d’installation
 
 4.  Démarrez Visual Studio.
 
-5.  Si vous disposez d’un projet qui fait référence à des bibliothèques à partir de n’importe quelle version antérieure du kit de développement logiciel (SDK) Microsoft Store services, Microsoft Advertising SDK, le kit de développement logiciel (SDK) client universel ou Microsoft Store Kit de développement logiciel (SDK), nous vous recommandons d’ouvrir votre projet dans Visual Studio et de nettoyer et de régénérer votre projet (dans **Explorateur de solutions**, de cliquer avec le bouton droit sur le nœud de votre projet et **de sélectionner** **nettoyer**, puis de cliquer à nouveau avec le bouton droit sur le nœud de votre projet et de
+5.  Si vous disposez d’un projet qui fait référence à des bibliothèques à partir de n’importe quelle version antérieure du kit de développement logiciel (SDK) Microsoft Store services, Microsoft Advertising SDK, le kit de développement logiciel (SDK) client universel ou Microsoft Store Kit de développement logiciel (SDK), nous vous recommandons d’ouvrir votre projet dans Visual Studio et de nettoyer et de régénérer votre projet (dans **Explorateur de solutions** , de cliquer avec le bouton droit sur le nœud de votre projet et **de sélectionner** **nettoyer** , puis de cliquer à nouveau avec le bouton droit sur le nœud de votre projet et de
 
   Dans le cas contraire, si vous utilisez le kit de développement logiciel (SDK) pour la première fois dans votre projet, vous êtes maintenant prêt à [Ajouter la référence d’assembly à votre projet](#references).
 
@@ -95,7 +95,7 @@ Pour installer les bibliothèques du kit de développement logiciel (SDK) Micros
     > [!NOTE]
     > Si votre projet contient déjà des références de bibliothèque d’une installation MSI antérieure du kit de développement logiciel (SDK), supprimez ces références de votre projet. Des icônes s’afficheront en regard de ces références, car les bibliothèques auxquelles elles sont associées ont été supprimées au cours des étapes précédentes.
 
-4. Dans Visual Studio, cliquez sur **Projet** et sur **Gérer les packages NuGet**.
+4. Dans Visual Studio, cliquez sur **Projet** et sur **Gérer les packages NuGet** .
 
 5. Dans la zone de recherche, tapez **Microsoft. services. Store. engagement** et installez le package Microsoft. services. Store. engagement. Une fois l’installation du package terminée, enregistrez votre solution.
     > [!NOTE]
@@ -103,7 +103,7 @@ Pour installer les bibliothèques du kit de développement logiciel (SDK) Micros
 
 6. Fermez la solution Visual Studio qui contient votre projet, puis rouvrez la solution.
 
-7.  Si votre projet référence déjà des bibliothèques d’une version antérieure du Microsoft Store Services SDK installée via NuGet et que vous avez mis à jour votre projet vers une version plus récente du SDK, nous vous recommandons de nettoyer et de régénérer votre projet (dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de votre projet, puis sélectionnez **Nettoyer**, cliquez de nouveau avec le bouton droit sur le nœud de projet, puis sélectionnez **Régénérer**).
+7.  Si votre projet référence déjà des bibliothèques d’une version antérieure du Microsoft Store Services SDK installée via NuGet et que vous avez mis à jour votre projet vers une version plus récente du SDK, nous vous recommandons de nettoyer et de régénérer votre projet (dans l’ **Explorateur de solutions** , cliquez avec le bouton droit sur le nœud de votre projet, puis sélectionnez **Nettoyer** , cliquez de nouveau avec le bouton droit sur le nœud de projet, puis sélectionnez **Régénérer** ).
 
   Dans le cas contraire, si vous utilisez le kit de développement logiciel (SDK) pour la première fois dans votre projet, vous êtes maintenant prêt à [Ajouter la référence d’assembly à votre projet](#references).
 
@@ -115,13 +115,13 @@ Après avoir installé le kit de développement logiciel (SDK) Microsoft Store s
 
 1. Ouvrez votre projet dans Visual Studio.
     > [!NOTE]
-    > Si votre projet est une application JavaScript qui cible **n’importe quel processeur**, mettez à jour votre projet pour utiliser une sortie de génération spécifique à l’architecture (par exemple, **x86**).
+    > Si votre projet est une application JavaScript qui cible **n’importe quel processeur** , mettez à jour votre projet pour utiliser une sortie de génération spécifique à l’architecture (par exemple, **x86** ).
 
-2. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence**.
+2. Dans **l’Explorateur de solutions** , cliquez avec le bouton droit sur **Références** , puis cliquez sur **Ajouter une référence** .
 
-3. Dans **le gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis activez la case à cocher en regard de **Microsoft engagement Framework**. Cela vous permet d’utiliser les API de l’espace de noms [Microsoft. services. Store. engagement](/uwp/api/microsoft.services.store.engagement) .
+3. Dans **le gestionnaire de références** , développez **Windows universel** , cliquez sur **Extensions** , puis activez la case à cocher en regard de **Microsoft engagement Framework** . Cela vous permet d’utiliser les API de l’espace de noms [Microsoft. services. Store. engagement](/uwp/api/microsoft.services.store.engagement) .
 
-3. Cliquez sur **OK**.
+3. Cliquez sur **OK** .
 
 > [!NOTE]
 > Si vous avez installé les bibliothèques du kit de développement logiciel (SDK) via NuGet, votre projet contiendra une référence **Microsoft. services. Store. engagement** . La référence **Microsoft. services. Store. engagement** représente le package NuGet (plutôt que les bibliothèques qu’elle contient) et vous pouvez l’ignorer.
@@ -130,7 +130,7 @@ Après avoir installé le kit de développement logiciel (SDK) Microsoft Store s
 
 ## <a name="understanding-framework-packages-in-the-sdk"></a>Présentation des packages d’infrastructure dans le SDK
 
-La bibliothèque Microsoft.Services.Store.Engagement.dll dans le kit de développement logiciel (SDK) Microsoft Store services est configurée en tant que *package d’infrastructure*. Cette bibliothèque contient les API de l’espace de noms [Microsoft.Services.Store.Engagement](/uwp/api/microsoft.services.store.engagement).
+La bibliothèque Microsoft.Services.Store.Engagement.dll dans le kit de développement logiciel (SDK) Microsoft Store services est configurée en tant que *package d’infrastructure* . Cette bibliothèque contient les API de l’espace de noms [Microsoft.Services.Store.Engagement](/uwp/api/microsoft.services.store.engagement).
 
 Étant donné que cette bibliothèque est un package d’infrastructure, cela signifie qu’après l’installation par un utilisateur d’une version de votre application qui utilise cette bibliothèque, cette bibliothèque est automatiquement mise à jour sur son appareil via Windows Update chaque fois que nous publions une nouvelle version de la bibliothèque avec des correctifs et des améliorations des performances. Cela permet de s’assurer que vos clients disposent toujours de la dernière version disponible de la bibliothèque installée sur leurs appareils.
 

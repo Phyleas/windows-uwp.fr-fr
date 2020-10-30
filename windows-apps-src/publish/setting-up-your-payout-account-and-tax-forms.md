@@ -1,17 +1,17 @@
 ---
-Description: Pour recevoir de l’argent des ventes de l’application dans le Microsoft Store, vous devez configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires.
+description: Pour recevoir de l’argent des ventes de l’application dans le Microsoft Store, vous devez configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires.
 title: Configurer votre compte de paiement et vos déclarations de taxe
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 1/17/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b7f7209d77e05453126f885e37a251e8b6511e95
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 563e8e5df010d869183fb0a3c734eaae521a759e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172873"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030272"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations de taxe
 
@@ -47,8 +47,8 @@ Vous pouvez compléter et soumettre vos formulaires fiscaux par voie électroniq
 > [!IMPORTANT]
 > Les différents pays et régions ont des exigences fiscales différentes. Le montant exact des taxes dont vous devez vous affranchir varie selon les pays et les régions où vous vendez vos applications. Pour savoir dans quels pays Microsoft vous dispense des taxes d’utilisation et sur les ventes, voir le [Contrat du développeur de l’application](/legal/windows/agreements/app-developer-agreement) Dans d’autres pays, selon l’endroit où vous êtes inscrit, vous devrez peut-être verser directement les taxes d’utilisation et les taxes sur les ventes de vos applications à l’administration fiscale locale. En outre, les recettes de la vente d’application que vous recevez peuvent être considérées comme du revenu imposable. Nous vous encourageons vivement à contacter l’autorité appropriée pour votre pays ou région qui peut vous aider à déterminer les bonnes informations fiscales pour vos activités de développeur Microsoft Store.
 
-1. Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône **paramètres de compte** dans le coin supérieur droit, puis sélectionnez Paramètres du **développeur**.
-2. Dans le menu de navigation situé à gauche, sélectionnez **Paiement et taxes**, puis **Attributions de paiement et de taxes**.
+1. Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône **paramètres de compte** dans le coin supérieur droit, puis sélectionnez Paramètres du **développeur** .
+2. Dans le menu de navigation situé à gauche, sélectionnez **Paiement et taxes** , puis **Attributions de paiement et de taxes** .
 
     ![Attribution du profil de paiement et de taxe](images/payout-tax-profile-assignment.png)
 
@@ -56,7 +56,7 @@ Vous pouvez compléter et soumettre vos formulaires fiscaux par voie électroniq
 
     ![Paiement-sélectionner un ID de vendeur](images/payout-select-seller-id.png)
 
-4. Si vous souhaitez utiliser un profil fiscal existant, sélectionnez-le dans la liste déroulante. Dans le cas contraire, sélectionnez **Créer un nouveau profil** puis appuyez sur **Envoyer**. Vous serez redirigé vers la page des profils fiscaux.
+4. Si vous souhaitez utiliser un profil fiscal existant, sélectionnez-le dans la liste déroulante. Dans le cas contraire, sélectionnez **Créer un nouveau profil** puis appuyez sur **Envoyer** . Vous serez redirigé vers la page des profils fiscaux.
 5. Cliquez sur le bouton **Modifier** pour modifier vos informations fiscales.
 6. Sélectionnez la case d’option appropriée, puis indiquez votre pays si vous y êtes invité. Cette étape détermine l’entité métier Microsoft qui sera utilisée pour effectuer des versements sur votre compte.
 
@@ -87,8 +87,8 @@ Un compte de paiement est le compte bancaire sur lequel nous envoyons les recett
 
 ### <a name="create-a-payment-profile"></a>Créer un profil de paiement
 
-1. Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage **paramètres** dans le coin supérieur droit, puis sélectionnez **paramètres du développeur**.
-2. Sous le titre *Paiement et taxe*, sélectionnez **Attribution de profil de paiement et de taxe**.
+1. Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage **paramètres** dans le coin supérieur droit, puis sélectionnez **paramètres du développeur** .
+2. Sous le titre *Paiement et taxe* , sélectionnez **Attribution de profil de paiement et de taxe** .
 
     > [!NOTE]
     > Puisqu’il s’agit d’informations sensibles, vous pouvez être invité à vous reconnecter.
@@ -106,7 +106,7 @@ Un compte de paiement est le compte bancaire sur lequel nous envoyons les recett
 
 Si vous avez choisi d’utiliser un compte bancaire pour recevoir des paiements, vous devez effectuer la procédure suivante pour le configurer.
 
-1. Sur la page *profil bancaire*, fournissez les informations requises sur votre banque.
+1. Sur la page *profil bancaire* , fournissez les informations requises sur votre banque.
 2. Fournissez les détails de votre compte bancaire.
 
     > [!NOTE]
@@ -115,7 +115,7 @@ Si vous avez choisi d’utiliser un compte bancaire pour recevoir des paiements,
     ![Informations bancaires sur le paiement](images/payout-bank-info.png)
 
 3. Fournissez les détails du bénéficiaire.
-4. De retour sur la page*Attribution de profil*, sélectionnez la devise que vous souhaitez que nous utilisions pour émettre vos paiements.
+4. De retour sur la page *Attribution de profil* , sélectionnez la devise que vous souhaitez que nous utilisions pour émettre vos paiements.
 
     > [!WARNING]
     > Assurez-vous que votre banque accepte la devise de paiement que vous sélectionnez.
@@ -131,7 +131,7 @@ Si vous avez choisi d’utiliser un compte bancaire pour recevoir des paiements,
 
 Pour garantir le succès du paiement, notez les points suivants :
 
-- Le **nom du titulaire du compte** entré pour votre compte de paiement dans l’espace partenaires doit correspondre exactement au nom associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire contient un deuxième prénom, ajoutez un deuxième prénom au **nom du titulaire du compte**.
+- Le **nom du titulaire du compte** entré pour votre compte de paiement dans l’espace partenaires doit correspondre exactement au nom associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire contient un deuxième prénom, ajoutez un deuxième prénom au **nom du titulaire du compte** .
 - Les paiements sont transférés directement de Microsoft vers votre compte bancaire en devise USD.
 - Les informations bancaires saisies dans l’espace partenaires en caractères latins sont traduites en caractères cyrilliques.
 
@@ -139,8 +139,8 @@ Pour garantir le succès du paiement, notez les points suivants :
 
 Vous pouvez modifier les profils de paiement existants si vous devez apporter des modifications ou rectifier des informations erronées.
 
-1. Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage **paramètres** dans le coin supérieur droit, puis sélectionnez **paramètres du développeur**.
-2. Sous le titre *Paiement et taxe*, sélectionnez **Profils de paiement et de taxe**.
+1. Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage **paramètres** dans le coin supérieur droit, puis sélectionnez **paramètres du développeur** .
+2. Sous le titre *Paiement et taxe* , sélectionnez **Profils de paiement et de taxe** .
 3. Vos profils de paiement sont listés avec leur état. Recherchez le profil que vous souhaitez modifier, puis cliquez sur **Modifier** à droite de l’écran
 
 > [!IMPORTANT]
@@ -182,7 +182,7 @@ Si vous êtes un développeur vivant en Russie, vous pouvez avoir besoin de four
 
 Pour garantir le succès du paiement, notez les points suivants :
 
-- Le **nom du titulaire du compte** entré pour votre compte de paiement dans l’espace partenaires doit correspondre exactement au nom associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire contient un deuxième prénom, ajoutez un deuxième prénom au **nom du titulaire du compte**.
+- Le **nom du titulaire du compte** entré pour votre compte de paiement dans l’espace partenaires doit correspondre exactement au nom associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire contient un deuxième prénom, ajoutez un deuxième prénom au **nom du titulaire du compte** .
 - Les paiements sont transférés directement de Microsoft vers votre compte bancaire en rouble (RUB) russe.
 - Les informations bancaires saisies dans l’espace partenaires en caractères latins sont traduites en caractères cyrilliques.
 - Le paiement doit être effectué sur un compte bancaire et non sur une carte bancaire.
@@ -201,7 +201,7 @@ Microsoft fournit ces trois documents lors de votre première tentative de paiem
 
 Si vous avez choisi d’utiliser un compte bancaire pour recevoir des paiements, vous devez effectuer la procédure suivante pour le configurer.
 
-1. Sur la page *PayPal*, fournissez les informations requises sur votre compte PayPal.
+1. Sur la page *PayPal* , fournissez les informations requises sur votre compte PayPal.
 2. Fournissez les détails de votre compte PayPal.
 
     > [!NOTE]
@@ -210,6 +210,6 @@ Si vous avez choisi d’utiliser un compte bancaire pour recevoir des paiements,
     ![Paiement des infos PayPal](images/payout-paypal-info.png)
 
 3. Fournissez les détails du bénéficiaire.
-4. De retour sur la page*Attribution de profil*, sélectionnez la devise que vous souhaitez que nous utilisions pour émettre vos paiements.
+4. De retour sur la page *Attribution de profil* , sélectionnez la devise que vous souhaitez que nous utilisions pour émettre vos paiements.
 5. Vous devrez sélectionner un profil de paiement pour chaque programme auquel vous participez, même si vous pouvez utiliser le même profil pour plusieurs programmes.
 6. Cliquez sur Envoyer pour enregistrer vos changements.

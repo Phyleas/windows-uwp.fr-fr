@@ -1,5 +1,5 @@
 ---
-Description: ''
+description: 'En savoir plus sur : les lecteurs d’écran et les boutons système matériel'
 title: Lecteurs d’écran et événements de bouton matériel
 label: Screen readers and hardware button events
 template: detail.hbs
@@ -7,14 +7,14 @@ ms.date: 02/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, accessibilité, narrateur, lecteur d’écran
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c6ed531f21a922b407ff3ba5aae93afb8d917e
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: d4bf712c83b39a184247a4476db5a045f62a9482
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234932"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029852"
 ---
-# <a name="screen-readers-and-hardware-system-buttons"></a>Lecteurs d’écran et boutons système matériel
+# <a name="screen-readers-and-hardware-system-buttons"></a>Lecteurs d’écran et boutons système matériels
 
 Les lecteurs d’écran, tels que le [narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator), doivent être en mesure de reconnaître et de gérer les événements de bouton du système matériel et de communiquer leur État aux utilisateurs. Dans certains cas, il se peut que le lecteur d’écran doive gérer ces événements de bouton matériel exclusivement et ne pas les laisser se propager aux autres gestionnaires.
 

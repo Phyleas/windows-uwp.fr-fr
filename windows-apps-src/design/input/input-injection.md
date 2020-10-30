@@ -1,5 +1,5 @@
 ---
-Description: Simulez et automatisez les entrées à partir d’appareils tels que le clavier, la souris, le toucher, le stylet et le boîtier de votre application Windows.
+description: Simulez et automatisez les entrées à partir d’appareils tels que le clavier, la souris, le toucher, le stylet et le boîtier de votre application Windows.
 title: Simuler une entrée utilisateur par une injection d’entrée
 label: Input injection
 template: detail.hbs
@@ -7,18 +7,18 @@ keywords: appareil, digitaliseur, entrée, interaction, injection
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e1497ea30400c550cb0cbb2309801ff8145fd6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0cd1a56ca46c3e9ea401794ff5b9964545ce0c5d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219682"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030122"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simuler une entrée utilisateur par une injection d’entrée
 
 Simuler et automatiser les entrées utilisateur à partir d’appareils tels que le clavier, la souris, la touche, le stylet et le boîtier de manette dans vos applications Windows.
 
-> **API importantes**: [ **Windows. UI. Input. preview. injection**](/uwp/api/windows.ui.input.preview.injection)
+> **API importantes** : [ **Windows. UI. Input. preview. injection**](/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -26,11 +26,11 @@ L’injection d’entrée permet à votre application Windows de simuler l’ent
 
 L’injection d’entrée est utile pour les applications et les outils Windows qui doivent fournir des fonctionnalités qui incluent l’accessibilité, le test (ad hoc, automatisé) et l’accès à distance et les fonctionnalités de prise en charge.
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d’installation
 
 Pour utiliser les API d’injection d’entrée dans votre application Windows, vous devez ajouter le code suivant au manifeste de l’application :
 
-1. Cliquez avec le bouton droit sur le fichier **Package. appxmanifest** et sélectionnez **afficher le code**.
+1. Cliquez avec le bouton droit sur le fichier **Package. appxmanifest** et sélectionnez **afficher le code** .
 1. Insérez le code suivant dans le `Package` nœud :
     - `xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"`
     - `IgnorableNamespaces="rescap"`

@@ -1,5 +1,5 @@
 ---
-Description: Les applications de bureau peuvent épingler des vignettes secondaires grâce au pont de bureau.
+description: Les applications de bureau peuvent épingler des vignettes secondaires grâce au pont de bureau.
 title: Épingler des vignettes secondaires à partir d’applications de bureau
 label: Pin secondary tiles from desktop apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, Desktop Bridge, vignettes secondaires, pin, épinglage, démarrage rapide, exemple de code, exemple, secondarytile, application de bureau, Win32, WinForms, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b1e167b0ce2e91b00b7facbdd53709efdc4887
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 1c6451510816e36bed5574f0ae69254c9f4d34f6
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100267"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030652"
 ---
 # <a name="pin-secondary-tiles-from-desktop-apps"></a>Épingler des vignettes secondaires à partir d’applications de bureau
 
@@ -22,7 +22,7 @@ Grâce au [pont de bureau](https://developer.microsoft.com/windows/bridges/deskt
 ![Capture d’écran des vignettes secondaires](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **Nécessite la mise à jour des créateurs**de la place : vous devez cibler le kit de développement logiciel 16299 et exécuter Build 16299 ou version ultérieure pour épingler des vignettes secondaires à partir d’applications Desktop Bridge.
+> **Nécessite la mise à jour des créateurs** de la place : vous devez cibler le kit de développement logiciel 16299 et exécuter Build 16299 ou version ultérieure pour épingler des vignettes secondaires à partir d’applications Desktop Bridge.
 
 L’ajout d’une vignette secondaire à partir de votre application WPF ou WinForms est très similaire à une application UWP pure. La seule différence est que vous devez spécifier votre handle de fenêtre principale (HWND). En effet, lors de l’épinglage d’une vignette, Windows affiche une boîte de dialogue modale demandant à l’utilisateur de confirmer s’il souhaite épingler la vignette. Si l’application de bureau ne configure pas l’objet SecondaryTile à l’aide de la fenêtre propriétaire, Windows ne sait pas où dessiner la boîte de dialogue et l’opération échoue.
 
@@ -46,7 +46,7 @@ public interface IInitializeWithWindow
 }
 ```
 
-Si vous utilisez C++, vous pouvez également ajouter une référence au fichier d’en-tête **ShObjIdl. h** dans votre code. Ce fichier d’en-tête contient la déclaration de l’interface *IInitializeWithWindow*.
+Si vous utilisez C++, vous pouvez également ajouter une référence au fichier d’en-tête **ShObjIdl. h** dans votre code. Ce fichier d’en-tête contient la déclaration de l’interface *IInitializeWithWindow* .
 
 
 ## <a name="initialize-the-secondary-tile"></a>Initialiser la vignette secondaire
@@ -90,7 +90,7 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="send-tile-notifications"></a>Envoyer des notifications par vignette
 
 > [!IMPORTANT]
-> **Nécessite la version 17134,81 du 2018 avril ou une version ultérieure**: vous devez exécuter Build 17134,81 ou version ultérieure pour envoyer des notifications de vignette ou de badge à des vignettes secondaires à partir d’applications Desktop Bridge. Avant cette mise à jour de maintenance. 81, une exception d' *élément 0x80070490 introuvable* s’est produite lors de l’envoi de notifications de vignette ou de badge à des vignettes secondaires à partir d’applications Desktop Bridge.
+> **Nécessite la version 17134,81 du 2018 avril ou une version ultérieure** : vous devez exécuter Build 17134,81 ou version ultérieure pour envoyer des notifications de vignette ou de badge à des vignettes secondaires à partir d’applications Desktop Bridge. Avant cette mise à jour de maintenance. 81, une exception d' *élément 0x80070490 introuvable* s’est produite lors de l’envoi de notifications de vignette ou de badge à des vignettes secondaires à partir d’applications Desktop Bridge.
 
 L’envoi de notifications de vignette ou de badge est identique à celui des applications UWP. Consultez [Envoyer une notification de vignette locale](sending-a-local-tile-notification.md) pour commencer.
 

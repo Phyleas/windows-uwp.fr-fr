@@ -1,5 +1,5 @@
 ---
-Description: Les applications Windows qui prennent en charge l’encre Windows peuvent sérialiser et désérialiser des traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
+description: Les applications Windows qui prennent en charge l’encre Windows peuvent sérialiser et désérialiser des traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
 title: Stocker et récupérer les données de traits Windows Ink
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows encrage, DirectInk, InkPresenter, InkCanvas, ISF,
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 66ac039774abc2322ab8b5e9a6a264af25156406
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 36318ce0049f5ec76df0b11e57d0541df780b7ed
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216762"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031362"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Stocker et récupérer les données de traits Windows Ink
 
@@ -23,7 +23,7 @@ Les applications Windows qui prennent en charge l’encre Windows peuvent séria
 > [!NOTE]
 > ISF est la représentation persistante la plus compacte de l’entrée manuscrite. Vous pouvez l’intégrer dans un format de document binaire, tel qu’un fichier GIF, ou placer le fichier directement dans le Presse-papiers.
 
-> **API importantes**: [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows. UI. Input. encrage**](/uwp/api/Windows.UI.Input.Inking)
+> **API importantes** : [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows. UI. Input. encrage**](/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>Enregistrer des traits d’encre dans un fichier
 
@@ -63,7 +63,7 @@ Ici, nous montrons comment enregistrer les traits d’encre dessinés sur un con
 
 2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
 
-    Le contrôle [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée du stylet et de la souris sous forme de traits d’encre ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), et des écouteurs pour les événements Click sur les boutons sont déclarés.
+    Le contrôle [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée du stylet et de la souris sous forme de traits d’encre ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), et des écouteurs pour les événements Click sur les boutons sont déclarés.
 ```csharp
 public MainPage()
     {
@@ -83,7 +83,7 @@ public MainPage()
     }
 ```
 
-3.  Enfin, nous enregistrons l’entrée manuscrite dans le gestionnaire d’événements Click du bouton **Enregistrer**.
+3.  Enfin, nous enregistrons l’entrée manuscrite dans le gestionnaire d’événements Click du bouton **Enregistrer** .
 
     Une classe [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) permet à l’utilisateur de sélectionner le fichier et l’emplacement où les données d’entrée manuscrite sont enregistrées.
 
@@ -195,7 +195,7 @@ Ici, nous montrons comment charger des traits d’encre à partir d’un fichier
 
 2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
 
-    Le contrôle [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée du stylet et de la souris sous forme de traits d’encre ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), et des écouteurs pour les événements Click sur les boutons sont déclarés.
+    Le contrôle [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée du stylet et de la souris sous forme de traits d’encre ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), et des écouteurs pour les événements Click sur les boutons sont déclarés.
 ```csharp
 public MainPage()
     {
@@ -215,7 +215,7 @@ public MainPage()
     }
 ```
 
-3.  Enfin, nous enregistrons l’entrée manuscrite dans le gestionnaire d’événements Click du bouton **Charger**.
+3.  Enfin, nous enregistrons l’entrée manuscrite dans le gestionnaire d’événements Click du bouton **Charger** .
 
     Une classe [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) permet à l’utilisateur de sélectionner le fichier et l’emplacement où récupérer les données d’entrée manuscrite enregistrées.
 
@@ -317,7 +317,7 @@ Dans cet exemple, nous activons la sélection de traits lorsque l’entrée est 
 
 2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
 
-    L’élément [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Des écouteurs d’événements Click sur les boutons ainsi que des événements relatifs au pointeur et aux traits pour la fonctionnalité de sélection sont également déclarés ici.
+    L’élément [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Des écouteurs d’événements Click sur les boutons ainsi que des événements relatifs au pointeur et aux traits pour la fonctionnalité de sélection sont également déclarés ici.
 
     Pour obtenir un exemple complet de sélection de traits d’encre, consultez Entrée directe pour traitement avancé dans [Interactions avec le stylo ou le stylet](pen-and-stylus-interactions.md).
 ```csharp
@@ -365,7 +365,7 @@ public MainPage()
     }
 ```
 
-3.  Enfin, après avoir ajouté la prise en charge de la sélection de traits, nous implémentons la fonctionnalité de Presse-papiers dans les gestionnaires d’événements Click sur les boutons **Couper**, **Copier** et **Coller**.
+3.  Enfin, après avoir ajouté la prise en charge de la sélection de traits, nous implémentons la fonctionnalité de Presse-papiers dans les gestionnaires d’événements Click sur les boutons **Couper** , **Copier** et **Coller** .
 
     Pour Cut, nous appelons d’abord [**CopySelectedToClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) sur le [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) de l' [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter).
 

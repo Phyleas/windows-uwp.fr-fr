@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment planifier l’affichage d’une notification Toast locale à un moment ultérieur.
+description: Découvrez comment planifier l’affichage d’une notification Toast locale à un moment ultérieur.
 title: Planifier une notification Toast
 label: Schedule a toast notification
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: Windows 10, UWP, notification Toast planifiée, scheduledtoastnotification, Guide de démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef849490df82d7677e19d1f1619d98111611be3
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 2a138458634f0246d7e6bed9d6d65c2479dac3c9
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100307"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030692"
 ---
 # <a name="schedule-a-toast-notification"></a>Planifier une notification Toast
 
@@ -23,14 +23,14 @@ Notez que les notifications Toast planifiées ont une fenêtre de remise de 5 mi
 > [!IMPORTANT]
 > Les applications de bureau (packages MSIX/Sparse et bureau classique) présentent des étapes légèrement différentes pour l’envoi de notifications et la gestion de l’activation. Suivez les instructions ci-dessous, mais remplacez `ToastNotificationManager` par la `DesktopNotificationManagerCompat` classe de la documentation sur les [applications de bureau](toast-desktop-apps.md) .
 
-> **API importantes**: [classe ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **API importantes** : [classe ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
 ## <a name="prerequisites"></a>Prérequis
 
 Pour bien comprendre cette rubrique, les éléments suivants sont utiles...
 
-* Une connaissance pratique des termes et des concepts de notification Toast. Pour plus d’informations, consultez [Toast and Action Center Overview](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
+* Une connaissance pratique des termes et des concepts de notification Toast. Pour plus d’informations, consultez [Toast and Action Center Overview](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
 * Une bonne connaissance du contenu de notification Windows 10 Toast. Pour plus d’informations, consultez [la documentation sur le contenu Toast](adaptive-interactive-toasts.md).
 * Un projet d’application UWP Windows 10
 

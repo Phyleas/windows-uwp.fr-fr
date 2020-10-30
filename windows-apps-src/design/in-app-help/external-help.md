@@ -1,5 +1,5 @@
 ---
-Description: Concevez des pages d’aide externe pour obtenir des instructions détaillées et des conseils sur votre application.
+description: Concevez des pages d’aide externe pour obtenir des instructions détaillées et des conseils sur votre application.
 title: Recommandations en matière de conception de pages d’aide externe
 label: External help
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 56afd553-c520-4a28-b63d-2e1b3c1d3606
 ms.localizationpriority: medium
-ms.openlocfilehash: eaca2af3a497de75beaffe5d3af4a261b24d8ba4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 315b384192cb8232560bfa09cdd572fa83a3a549
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617174"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030722"
 ---
 # <a name="external-help-pages"></a>Pages d’aide externe
 
@@ -44,4 +44,4 @@ Les pages d’aide externe sont l’endroit idéal pour proposer des didacticiel
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Instructions de l’aide de l’application](guidelines-for-app-help.md)
+* [Recommandations relatives à l’aide des applications](guidelines-for-app-help.md)

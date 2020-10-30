@@ -1,36 +1,36 @@
 ---
-Description: Cette rubrique décrit les indexeurs spécifiques au format utilisés par l’outil MakePri.exe pour générer son index de ressources.
+description: Cette rubrique décrit les indexeurs spécifiques au format utilisés par l’outil MakePri.exe pour générer son index de ressources.
 title: Indexeurs spécifiques au format de MakePri.exe
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d30a0321de872dac11070c52dd0598b2276bcab
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 3794d369ae9d47cfc7aad1b24ca2768b04024581
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79200957"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031692"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Indexeurs spécifiques au format de MakePri.exe
 
 Cette rubrique décrit les indexeurs spécifiques au format utilisés par l’outil [MakePri.exe](compile-resources-manually-with-makepri.md) pour générer son index de ressources.
 
 > [!NOTE]
-> MakePri. exe est installé lorsque vous activez l’option **SDK Windows pour les applications gérées UWP** lors de l’installation du kit de développement logiciel (SDK) Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Par exemple, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe est installé lorsque vous activez l’option **SDK Windows pour les applications gérées UWP** lors de l’installation du kit de développement logiciel (SDK) Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (et dans les dossiers nommés pour les autres architectures). Par exemple : `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-MakePri.exe est généralement utilisé avec les commandes `new`, `versioned` ou `resourcepack`. Voir [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md). Dans ces cas, il indexe les fichiers sources pour générer un index des ressources. MakePri.exe utilise plusieurs indexeurs individuels pour lire les fichiers de ressources sources ou les conteneurs pour les ressources. L’indexeur de base est l’indexeur de dossier. Il indexe le contenu d’un dossier, par exemple des images `.jpg` ou `.png`.
+MakePri.exe est généralement utilisé avec les `new` `versioned` commandes, ou `resourcepack` . Consultez [MakePri.exe options de ligne de commande](makepri-exe-command-options.md). Dans ce cas, il indexe les fichiers sources pour générer un index des ressources. MakePri.exe utilise différents indexeurs individuels pour lire des conteneurs ou fichiers de ressources sources différents pour les ressources. L’indexeur de dossier le plus simple est l’indexeur de dossiers, qui indexe le contenu d’un dossier, tel que les `.jpg` `.png` images ou.
 
-Vous identifiez des indexeurs spécifiques au format en spécifiant les éléments `<indexer-config>` dans un élément `<index>` du [fichier de configuration de MakePri.exe](makepri-exe-configuration.md). L’attribut `type` identifie l’indexeur spécifique au format qui est utilisé.
+Vous identifiez les indexeurs spécifiques au format en spécifiant `<indexer-config>` des éléments dans un `<index>` élément du [ fichier de configurationMakePri.exe](makepri-exe-configuration.md). L' `type` attribut identifie l’indexeur spécifique au format utilisé.
 
-En général, le contenu des conteneurs de ressources trouvés lors de l’indexation est indexé, au lieu d’être lui-même ajouté à l’index. Par exemple, les fichiers `.resjson` détectés par l’indexeur de dossier peuvent être eux-mêmes indexés par un indexeur `.resjson`, auquel cas le fichier `.resjson` n’apparaît pas dans l’index. **Remarque :** un élément `<indexer-config>` pour l’indexeur associé à ce conteneur doit être inclus dans le fichier de configuration pour que cela se produise.
+Les conteneurs de ressources rencontrés pendant l’indexation obtiennent généralement leur contenu indexé au lieu d’être ajoutés à l’index proprement dit. Par exemple, les `.resjson` fichiers trouvés par l’indexeur de dossier peuvent être indexés par un `.resjson` indexeur, auquel cas le `.resjson` fichier lui-même n’apparaît pas dans l’index. **Notez** `<indexer-config>` qu’un élément de l’indexeur associé à ce conteneur doit être inclus dans le fichier de configuration pour que cela se produise.
 
-En règle générale, les qualificateurs trouvés dans une entité contenante, par exemple un dossier ou un fichier&mdash;, sont appliqués à toutes les ressources figurant dans celle-ci, par exemple les fichiers du dossier ou les chaînes du fichier `.resw`.
+En règle générale, les qualificateurs d’une entité conteneur, &mdash; tels qu’un dossier ou un `.resw` fichier &mdash; , sont appliqués à toutes les ressources qu’il contient, telles que les fichiers dans le dossier ou les chaînes dans le `.resw` fichier.
 
-## <a name="folder"></a>Folder
+## <a name="folder"></a>Dossier
 
-L’indexeur de dossier est identifié par un attribut `type` FOLDER. Il indexe le contenu d’un dossier et détermine les qualificateurs de ressources à partir du dossier et des noms de fichiers. Son élément de configuration doit être conforme au schéma suivant.
+L’indexeur de dossier est identifié par un `type` attribut de Folder. Il indexe le contenu d’un dossier et détermine les qualificateurs de ressources à partir du dossier et des noms de fichiers. Son élément de configuration est conforme au schéma suivant.
 
 ```xml
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -67,13 +67,13 @@ L’indexeur de dossier est identifié par un attribut `type` FOLDER. Il indexe 
 </xs:schema>
 ```
 
-L’attribut `qualifierDelimiter` spécifie le caractère après lequel les qualificateurs sont spécifiés dans un nom de fichier, en ignorant l’extension. La valeur par défaut est « . ».
+L' `qualifierDelimiter` attribut spécifie le caractère après lequel les qualificateurs sont spécifiés dans un nom de fichier, en ignorant l’extension. La valeur par défaut est ".".
 
 ## <a name="pri"></a>PRI
 
-L’indexeur PRI est identifié par un attribut `type` PRI. Il indexe le contenu d’un fichier PRI. En général, vous l’utilisez lors de l’indexation de la ressource contenue dans un autre assembly, DLL, kit de développement logiciel (SDK) ou bibliothèque de classes dans le fichier PRI de l’application.
+L’indexeur PRI est identifié par un `type` attribut de PRI. Il indexe le contenu d’un fichier PRI. En général, vous l’utilisez lors de l’indexation de la ressource contenue dans un autre assembly, une DLL, un kit de développement logiciel (SDK) ou une bibliothèque de classes dans le PRI de l’application.
 
-Tous les noms de ressources, qualificateurs et valeurs contenus dans le fichier PRI sont gérés directement dans le nouveau fichier PRI. Toutefois, le mappage de ressources de niveau supérieur n’est pas géré dans le fichier PRI final. Les mappages de ressources sont fusionnés.
+Tous les noms de ressources, qualificateurs et valeurs contenus dans le fichier PRI sont directement gérés dans le nouveau fichier PRI. Toutefois, le mappage de ressources de niveau supérieur n’est pas conservé dans le PRI final. Les mappages de ressources sont fusionnés.
 
 ```xml
 <xs:schema id="prifile" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -92,7 +92,7 @@ Tous les noms de ressources, qualificateurs et valeurs contenus dans le fichier 
 
 ## <a name="priinfo"></a>PriInfo
 
-L’indexeur PriInfo est identifié par un attribut `type` PRIINFO. Il indexe le contenu d’un fichier de vidage détaillé. Vous produisez un fichier de vidage détaillé en exécutant `makepri dump` avec l’option `/dt detailed`. L’élément de configuration de l’indexeur doit être conforme au schéma suivant.
+L’indexeur PriInfo est identifié par un `type` attribut de PriInfo. Il indexe le contenu d’un fichier de vidage détaillé. Vous générez un fichier de vidage détaillé en exécutant `makepri dump` avec l' `/dt detailed` option. L’élément de configuration de l’indexeur est conforme au schéma suivant.
 
 ```xml
 <xs:schema id="priinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -111,15 +111,15 @@ L’indexeur PriInfo est identifié par un attribut `type` PRIINFO. Il indexe le
 </xs:schema>
 ```
 
-Cet élément de configuration permet d’utiliser des attributs facultatifs pour configurer le comportement de l’indexeur PriInfo. La valeur par défaut est `emitStrings` et la valeur de `emitPaths` est `true`. Si la valeur de `emitStrings` est `true`, les ressources potentielles dont l’attribut `type` est défini sur « String » doivent être incluses dans l’index, sinon elles sont exclues. Si la valeur de « emitPaths » est `true`, les ressources potentielles dont l’attribut `type` est défini sur « Path » doivent être incluses dans l’index, sinon elles sont exclues.
+Cet élément de configuration permet d’avoir des attributs facultatifs pour configurer le comportement de l’indexeur PriInfo. La valeur par défaut de `emitStrings` et de `emitPaths` est `true` . Si `emitStrings` la `true` valeur est, les candidats aux ressources avec l' `type` attribut défini sur « String » sont inclus dans l’index ; sinon, ils sont exclus. Si « emitPaths » est `true` alors le candidat aux ressources dont l' `type` attribut a la valeur « Path » est inclus dans l’index, sinon, ils sont exclus.
 
-Voici un exemple de configuration qui inclut les types de ressources String, mais ignore les types de ressources Path.
+Voici un exemple de configuration qui comprend des types de ressources de type chaîne, mais ignore les types de ressources Path.
 
 ```xml
 <indexer-config type="priinfo" emitStrings="true" emitPaths="false" />
 ```
 
-Pour être indexé, un fichier de vidage doit se terminer par l’extension `.pri.xml`et doit être conforme au schéma suivant.
+Pour être indexé, un fichier de vidage doit se terminer par l’extension `.pri.xml` et doit être conforme au schéma suivant.
 
 ```xml
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
@@ -213,11 +213,11 @@ Pour être indexé, un fichier de vidage doit se terminer par l’extension `.pr
 </xs:schema>
 ```
 
-MakePri.exe prend en charge les types de vidage « Basic », « Detailed », « Schema » et « Summary ». Pour configurer MakePri.exe afin qu’il utilise un type de vidage que l’indexeur PriInfo est en mesure de lire, incluez « /DumpType Detailed » lorsque vous utilisez la commande `dump`.
+MakePri.exe prend en charge les types de vidage « Basic », « detailed », « Schema » et « Summary ». Pour configurer MakePri.exe pour émettre le type de vidage que l’indexeur PriInfo peut lire, incluez « /DumpType detailed » lors de l’utilisation de la `dump` commande.
 
-Plusieurs éléments du fichier `.pri.xml` sont ignorés par MakePri.exe. Ces éléments sont calculés lors de l’indexation, ou spécifiés dans le fichier de configuration de MakePri.exe. Les noms de ressources, les qualificateurs et les valeurs contenus dans le fichier de vidage sont gérés directement dans le nouveau fichier PRI. Toutefois, le mappage de ressources de niveau supérieur n’est pas géré dans le fichier PRI final. Les mappages de ressources sont fusionnés dans le cadre de l’indexation.
+Plusieurs éléments du `.pri.xml` fichier sont ignorés par MakePri.exe. Ces éléments sont calculés pendant l’indexation ou spécifiés dans le fichier de configuration MakePri.exe. Les noms de ressources, les qualificateurs et les valeurs qui sont contenus dans le fichier dump sont directement gérés dans le nouveau fichier PRI. Toutefois, le mappage de ressources de niveau supérieur n’est pas conservé dans le PRI final. Les mappages de ressources sont fusionnés dans le cadre de l’indexation.
 
-Voici un exemple de ressource de type String valide à partir d’un fichier de vidage.
+Il s’agit d’un exemple de ressource de type chaîne valide à partir d’un fichier dump.
 
 ```xml
 <NamedResource name="SampleString " index="96" uri="ms-resource://SampleApp/resources/SampleString ">
@@ -235,7 +235,7 @@ Voici un exemple de ressource de type String valide à partir d’un fichier de 
 </NamedResource>
 ```
 
-Voici un exemple de ressource de type Path valide avec deux candidats à partir d’un fichier de vidage.
+Il s’agit d’un exemple de ressource de type chemin d’accès valide avec deux candidats à partir d’un fichier dump.
 
 ```xml
 <NamedResource name="Sample.png" index="77" uri="ms-resource://SampleApp/Files/Images/Sample.png">
@@ -264,7 +264,7 @@ Voici un exemple de ressource de type Path valide avec deux candidats à partir 
 
 ## <a name="resfiles"></a>ResFiles
 
-L’indexeur ResFiles est identifié par un attribut `type` RESFILES. Il indexe le contenu d’un fichier `.resfiles`. Son élément de configuration doit être conforme au schéma suivant.
+L’indexeur ResFiles est identifié par un `type` attribut de ResFiles. Il indexe le contenu d’un `.resfiles` fichier. Son élément de configuration est conforme au schéma suivant.
 
 ```xml
 <xs:schema id="resx" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -282,7 +282,7 @@ L’indexeur ResFiles est identifié par un attribut `type` RESFILES. Il indexe 
 </xs:schema>
 ```
 
-Un fichier `.resfiles` est un fichier texte contenant une liste plate de chemins d’accès de fichiers. Un fichier `.resfiles` peut contenir des commentaires « // ». Voici un exemple.
+Un `.resfiles` fichier est un fichier texte contenant une liste plate de chemins d’accès aux fichiers. Un `.resfiles` fichier peut contenir des commentaires « // ». Voici un exemple.
 
 <blockquote>
 <pre>
@@ -295,7 +295,7 @@ Images\logo.scale-180.png
 
 ## <a name="resjson"></a>ResJSON
 
-L’indexeur ResJSON est identifié par un attribut `type` RESJSON. Il indexe le contenu d’un fichier `.resjson`, qui est un fichier de ressources de chaîne. Son élément de configuration doit être conforme au schéma suivant.
+L’indexeur ResJSON est identifié par un `type` attribut de ResJSON. Il indexe le contenu d’un `.resjson` fichier, qui est un fichier de ressources de type chaîne. Son élément de configuration est conforme au schéma suivant.
 
 ```xml
 <xs:schema id="resjson" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -313,17 +313,17 @@ L’indexeur ResJSON est identifié par un attribut `type` RESJSON. Il indexe le
 </xs:schema>
 ```
 
-Un fichier `.resjson` contient du texte JSON (voir [The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)). Le fichier doit contenir un objet JSON unique avec des propriétés hiérarchiques. Chaque propriété doit être un autre objet JSON ou une valeur de chaîne.
+Un `.resjson` fichier contient du texte JSON (consultez [le type de média application/json pour JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)). Le fichier doit contenir un seul objet JSON avec des propriétés hiérarchiques. Chaque propriété doit être un autre objet JSON ou une valeur de chaîne.
 
-Les propriétés JSON dont les noms commencent par un trait de soulignement (« _ ») ne sont pas compilées dans le fichier PRI final, mais sont gérées dans le fichier journal.
+Les propriétés JSON dont les noms commencent par un trait de soulignement (« _ ») ne sont pas compilées dans le fichier PRI final, mais sont conservées dans le fichier journal.
 
-Le fichier peut également contenir des commentaires « // » qui sont ignorés lors de l’analyse.
+Le fichier peut également contenir des commentaires « // » qui sont ignorés pendant l’analyse.
 
-L’attribut `initialPath` place toutes les ressources sous ce chemin d’accès initial en l’ajoutant au début du nom de la ressource. En général, vous l’utilisez lors de l’indexation de ressources de bibliothèques de classes. La valeur par défaut est vide.
+L' `initialPath` attribut place toutes les ressources sous ce chemin d’accès initial en l’ajoutant au nom de la ressource. En général, vous pouvez l’utiliser lors de l’indexation des ressources de bibliothèque de classes. La valeur par défaut est vide.
 
 ## <a name="resw"></a>ResW
 
-L’indexeur ResW est identifié par un attribut `type` RESW. Il indexe le contenu d’un fichier `.resw`, qui est un fichier de ressources de chaîne. Son élément de configuration doit être conforme au schéma suivant.
+L’indexeur ResW est identifié par un `type` attribut de ResW. Il indexe le contenu d’un `.resw` fichier, qui est un fichier de ressources de type chaîne. Son élément de configuration est conforme au schéma suivant.
 
 ```xml
 <xs:schema id="resw" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -342,7 +342,7 @@ L’indexeur ResW est identifié par un attribut `type` RESW. Il indexe le conte
 </xs:schema>
 ```
 
-Un fichier `.resw` est un fichier XML qui se conforme au schéma suivant.
+Un `.resw` fichier est un fichier XML conforme au schéma suivant.
 
 ```xml
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
@@ -393,13 +393,13 @@ Un fichier `.resw` est un fichier XML qui se conforme au schéma suivant.
   </xsd:schema>
 ```
 
-L’attribut `convertDotsToSlashes` convertit tous les points (« . ») trouvés dans les noms de ressources (attributs de nom d’élément de données) en barre oblique « / », sauf lorsque les points se trouvent entre les caractères « [ » et « ] ».
+L' `convertDotsToSlashes` attribut convertit tous les caractères de point (".") trouvés dans les noms de ressources (attributs de nom d’élément de données) en barre oblique « / », sauf si les caractères de point sont compris entre « [ » et « ] ».
 
-L’attribut `initialPath` place toutes les ressources sous ce chemin d’accès initial en l’ajoutant au début du nom de la ressource. En général, vous l’utilisez lors de l’indexation de ressources de bibliothèques de classes. La valeur par défaut est vide.
+L' `initialPath` attribut place toutes les ressources sous ce chemin d’accès initial en l’ajoutant au nom de la ressource. En général, vous l’utilisez lors de l’indexation des ressources de bibliothèque de classes. La valeur par défaut est vide.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Options de ligne de commande MakePri. exe](makepri-exe-command-options.md)
-* [Fichier de configuration MakePri. exe](makepri-exe-configuration.md)
+* [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md)
+* [Fichier de configuration de MakePri.exe](makepri-exe-configuration.md)
 * [Type de média application/JSON pour JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

@@ -1,5 +1,5 @@
 ---
-Description: Il s’agit d’une rubrique centrale destinée aux développeurs qui décrit de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampon, le Presse-papiers, les réseaux, les tâches en arrière-plan et la protection des données verrouillées.
+description: Il s’agit d’une rubrique centrale destinée aux développeurs qui décrit de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampon, le Presse-papiers, les réseaux, les tâches en arrière-plan et la protection des données verrouillées.
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Windows Information Protection, données d’entreprise, protection des données d’entreprise, EDP, applications compatibles
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: 69bab48836d7679d8bcec5f9132bca88d7607cdb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cb3006541a5e14936035bc7b9d3b6493df031823
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173243"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032012"
 ---
 # <a name="windows-information-protection-wip"></a>Protection des informations Windows (WIP)
 
@@ -96,4 +96,4 @@ Si vous prévoyez d’inclure votre application dans une stratégie de gestion d
 
 
 
- 
+ 

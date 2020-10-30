@@ -1,5 +1,5 @@
 ---
-Description: Développez un éditeur de méthode d’entrée (IME) personnalisé pour aider un texte d’entrée utilisateur dans une langue qui ne peut pas être représentée facilement sur un clavier AZERTY standard.
+description: Développez un éditeur de méthode d’entrée (IME) personnalisé pour aider un texte d’entrée utilisateur dans une langue qui ne peut pas être représentée facilement sur un clavier AZERTY standard.
 title: Spécifications de l’éditeur de méthode d’entrée (IME)
 label: Input Method Editor (IME) requirements
 template: detail.hbs
@@ -7,12 +7,12 @@ keywords: IME, éditeur de méthode d’entrée, entrée, interaction
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a34c15826bff757b7c4277b87cc5fed53a6f109
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74c223aefa525bb6109521c8b91a9a849e2f5586
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160003"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030132"
 ---
 # <a name="custom-input-method-editor-ime-requirements"></a>Configuration requise de l’éditeur de méthode d’entrée (IME) personnalisé
 
@@ -22,13 +22,13 @@ Pour obtenir une vue d’ensemble des éditeurs de méthode d’entrée, consult
 
 ## <a name="default-ime"></a>IME par défaut
 
-Un utilisateur peut sélectionner l’un de ses IME actifs (**paramètres-> heure & langue-> langue-> langues préférées-> module linguistique-options**) comme IME par défaut pour la langue de votre choix.
+Un utilisateur peut sélectionner l’un de ses IME actifs ( **paramètres-> heure & langue-> langue-> langues préférées-> module linguistique-options** ) comme IME par défaut pour la langue de votre choix.
 
 :::image type="content" source="images/IMEs/ime-preferred-languages.png" alt-text="Paramètre de langue par défaut":::
 
 Sélectionnez le clavier par défaut dans l’écran Paramètres options de langue pour la langue par défaut.
 
-:::image type="content" source="images/IMEs/ime-preferred-languages-keyboard.png" alt-text="Clavier de langue par défaut":::
+:::image type="content" source="images/IMEs/ime-preferred-languages-keyboard.png" alt-text="Paramètre de langue par défaut":::
 
 > [!Important]
 > Nous vous déconseillons d’écrire directement dans le registre pour définir le clavier par défaut de votre IME personnalisé.
@@ -147,7 +147,7 @@ if (ToUnicode(VK_PACKET, 0, abKbdState, &wch, 1, 0) == 1)
 
 Fournissez aux utilisateurs des fonctionnalités de recherche via le contrat de recherche et l’intégration au volet de recherche.
 
-:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="Volet de recherche et suggestions IME":::<br/>
+:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="Paramètre de langue par défaut":::<br/>
 *Volet de recherche et suggestions IME*
 
 Le volet de recherche est un emplacement central où les utilisateurs peuvent effectuer des recherches dans l’ensemble de leurs applications. Pour les utilisateurs de l’IME, Windows fournit une expérience de recherche unique qui permet d’intégrer des éditeurs IME compatibles avec Windows afin d’améliorer l’efficacité et la convivialité.
@@ -208,9 +208,9 @@ Les icônes en mode IME sont définies par un glyphe typographique blanc dans un
 
 | Icône | Description |
 | --- | --- |
-| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="Exemple d’icône de personnalisation IME pour le chinois traditionnel ChangeJie."::: | Exemple d’icône de personnalisation IME pour le chinois traditionnel ChangeJie. |
-| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="Exemple d’icône de personnalisation IME pour le chinois traditionnel New ChangeJie."::: | Exemple d’icône de personnalisation IME pour le chinois traditionnel ChangeJie. |
-| :::image type="content" source="images/IMEs/ime-mode-icon-chinese.png" alt-text="Icône en mode chinois"::: | Exemple d’icône mode IME. |
+| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="Paramètre de langue par défaut"::: | Exemple d’icône de personnalisation IME pour le chinois traditionnel ChangeJie. |
+| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="Paramètre de langue par défaut"::: | Exemple d’icône de personnalisation IME pour le chinois traditionnel ChangeJie. |
+| :::image type="content" source="images/IMEs/ime-mode-icon-chinese.png" alt-text="Paramètre de langue par défaut"::: | Exemple d’icône mode IME. |
 
 ### <a name="owned-window"></a>Fenêtre propriétaire
 
@@ -257,22 +257,22 @@ Les étapes suivantes montrent comment utiliser InstallShield pour créer un pro
 
 - Installez Visual Studio.
 - Démarrez Visual Studio.
-- Dans le menu **fichier** , pointez sur **nouveau** , puis sélectionnez **projet**. La boîte **de dialogue Nouveau projet** s’ouvre.
-- Dans le volet gauche, accédez à **modèles > d’autres types de projets > le programme d’installation et le déploiement**, cliquez sur **activer InstallShield Limited Edition**, puis cliquez sur **OK**. Suivez les instructions d'installation.
+- Dans le menu **fichier** , pointez sur **nouveau** , puis sélectionnez **projet** . La boîte de dialogue **Nouveau projet** s’affiche.
+- Dans le volet gauche, accédez à **modèles > d’autres types de projets > le programme d’installation et le déploiement** , cliquez sur **activer InstallShield Limited Edition** , puis cliquez sur **OK** . Suivez les instructions d'installation.
 - Démarrez Visual Studio.
 - Ouvrez le fichier de solution IME (. sln).
-- Dans Explorateur de solutions, cliquez avec le bouton droit sur la solution, pointez sur **Ajouter**, puis sélectionnez **nouveau projet**. La boîte de dialogue **Ajouter un nouveau projet** s’ouvre.
-- Dans le contrôle d’arborescence de gauche, accédez à **modèles > d’autres types de projets > InstallShield Limited Edition**.
-- Dans la fenêtre centrale, cliquez sur **projet InstallShield Limited Edition**.
-- Dans la zone de texte **nom** , tapez « SetupIME », puis cliquez sur **OK**.
-- Dans la boîte de dialogue **Assistant projet** , cliquez sur informations sur l' **application**.
+- Dans Explorateur de solutions, cliquez avec le bouton droit sur la solution, pointez sur **Ajouter** , puis sélectionnez **nouveau projet** . La boîte de dialogue **Ajouter un nouveau projet** s’ouvre.
+- Dans le contrôle d’arborescence de gauche, accédez à **modèles > d’autres types de projets > InstallShield Limited Edition** .
+- Dans la fenêtre centrale, cliquez sur **projet InstallShield Limited Edition** .
+- Dans la zone de texte **nom** , tapez « SetupIME », puis cliquez sur **OK** .
+- Dans la boîte de dialogue **Assistant projet** , cliquez sur informations sur l' **application** .
 - Renseignez le nom de votre société et les autres champs.
-- Cliquez sur **fichiers d’application**.
-- Dans le volet gauche, cliquez avec le bouton droit sur le dossier **[INSTALLDIR]** , puis sélectionnez **nouveau dossier**. Nommez le dossier « Plug-ins ».
-- Cliquez sur **Ajouter des fichiers**. Accédez à votre DLL IME et ajoutez-la au dossier **plugins** . Répétez cette étape pour le dictionnaire IME.
-- Cliquez avec le bouton droit sur la DLL IME et sélectionnez **Propriétés**. La boîte de dialogue **Propriétés** s’ouvre.
+- Cliquez sur **fichiers d’application** .
+- Dans le volet gauche, cliquez avec le bouton droit sur le dossier **[INSTALLDIR]** , puis sélectionnez **nouveau dossier** . Nommez le dossier « Plug-ins ».
+- Cliquez sur **Ajouter des fichiers** . Accédez à votre DLL IME et ajoutez-la au dossier **plugins** . Répétez cette étape pour le dictionnaire IME.
+- Cliquez avec le bouton droit sur la DLL IME et sélectionnez **Propriétés** . La boîte de dialogue **Propriétés** s’ouvre.
 - Dans la boîte de dialogue **Propriétés** , cliquez sur l’onglet **paramètres com & .net** .
-- Sous **type d’inscription**, sélectionnez **inscription automatique** , puis cliquez sur **OK**.
+- Sous **type d’inscription** , sélectionnez **inscription automatique** , puis cliquez sur **OK** .
 - Générez la solution. La DLL IME est générée et InstallShield crée un fichier setup.exe qui permet aux utilisateurs d’installer votre IME sur Windows.
 
 Pour créer votre propre expérience d’installation, appelez la méthode [ITfInputProcessorProfileMgr :: RegisterProfile](/windows/win32/api/msctf/nf-msctf-itfinputprocessorprofilemgr-registerprofile) pour inscrire l’IME au cours de l’installation. N’écrivez pas d’entrées de Registre directement.
@@ -286,9 +286,9 @@ Si l’IME doit être utilisable immédiatement après l’installation, appelez
 Implémentez la Convention suivante pour rendre vos IME conformes aux exigences d’accessibilité et pour utiliser le narrateur. Pour rendre les listes de candidats accessibles, vos IME doivent respecter cette Convention.
 
 - La liste de candidats doit avoir une **UIA_AutomationIdPropertyId** égale à « IME_Candidate_Window » pour les listes de candidats à la conversion ou « IME_Prediction_Window » pour les listes de candidats de prédiction.
-- Quand la liste candidate apparaît et disparaît, elle déclenche des événements de type **UIA_MenuOpenedEventId** et **UIA_MenuClosedEventId**, respectivement
-- Lorsque le candidat actuellement sélectionné change, la liste de candidats lève une **UIA_SelectionItem_ElementSelectedEventId**. L’élément sélectionné doit avoir une propriété **UIA_SelectionItemIsSelectedPropertyId** égale à **true**.
-- La **UIA_NamePropertyId** pour chaque élément de la liste candidate doit être le nom du candidat. Si vous le souhaitez, vous pouvez fournir des informations supplémentaires pour lever l’ambiguïté des candidats par le biais de **UIA_HelpTextPropertyId**.
+- Quand la liste candidate apparaît et disparaît, elle déclenche des événements de type **UIA_MenuOpenedEventId** et **UIA_MenuClosedEventId** , respectivement
+- Lorsque le candidat actuellement sélectionné change, la liste de candidats lève une **UIA_SelectionItem_ElementSelectedEventId** . L’élément sélectionné doit avoir une propriété **UIA_SelectionItemIsSelectedPropertyId** égale à **true** .
+- La **UIA_NamePropertyId** pour chaque élément de la liste candidate doit être le nom du candidat. Si vous le souhaitez, vous pouvez fournir des informations supplémentaires pour lever l’ambiguïté des candidats par le biais de **UIA_HelpTextPropertyId** .
 
 ## <a name="related-topics"></a>Rubriques connexes
 

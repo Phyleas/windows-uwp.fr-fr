@@ -1,17 +1,17 @@
 ---
-Description: Le Microsoft Store atteint les clients dans plus de 200 pays et régions du monde entier.
+description: Le Microsoft Store atteint les clients dans plus de 200 pays et régions du monde entier.
 title: Définir la sélection du marché
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, marchés, pays, régions
 ms.localizationpriority: medium
-ms.openlocfilehash: 63650ad15f4a3083b4f500bc16591bb6bd8d8185
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 075a9303d694bfe6bcb4f602bb0bad1e6105dd99
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162023"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029767"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
@@ -42,7 +42,7 @@ Tenez compte du fait que même si vous sélectionnez tous les marchés, la légi
 > Pour les applications précédemment publiées qui incluent des packages ciblant Windows 8 ou Windows 8.1, certains marchés individuels sont traités comme un seul marché « Rest of World ». Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8x).
 
 Vous verrez également une case à cocher qui vous permet d’indiquer s’il faut proposer votre application sur n’importe quel marché que le magasin peut ajouter à l’avenir. Si vous laissez cette case cochée et que nous ajoutons par la suite de nouveaux marchés, le prix de base et la date de disponibilité générale de votre envoi seront utilisés pour votre application sur ces marchés. Si vous ne souhaitez pas que cela se produise, vous pouvez décocher cette case. dans ce cas, nous ne listerons pas votre application sur tous les marchés futurs (même si vous pouvez toujours les ajouter ultérieurement).
- 
+ 
 
 ## <a name="microsoft-store-consumer-markets"></a>Microsoft Store marchés des consommateurs
 
@@ -472,7 +472,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | États-Unis        | Carte cadeau       | 2,24 %                         | Mars 2016     |
 
- 
+ 
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
@@ -738,4 +738,4 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 </table>
 
 > [!NOTE]
-> Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire à un compte de développeur, consultez [types de comptes, emplacements et frais](account-types-locations-and-fees.md).
+> Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire à un compte de développeur, consultez [types de comptes, emplacements et frais](account-types-locations-and-fees.md).

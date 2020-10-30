@@ -1,5 +1,5 @@
 ---
-Description: Apprenez à gérer par programmation la navigation dans le focus avec le clavier, le boîtier de sélection et les outils d’accessibilité dans une application Windows.
+description: Apprenez à gérer par programmation la navigation dans le focus avec le clavier, le boîtier de sélection et les outils d’accessibilité dans une application Windows.
 title: Navigation en mode focus programmé avec un clavier, une manette et des outils d’accessibilité
 label: Programmatic focus navigation
 keywords: clavier, contrôleur de jeu, contrôle à distance, navigation, stratégie de navigation, entrée, interaction utilisateur, accessibilité, convivialité
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2e62404766d822343537cea2aca8e512482093
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b64eeafda6abe146d05e29d491850da3b36a1999
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220532"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032172"
 ---
 # <a name="programmatic-focus-navigation"></a>Navigation en mode focus programmé
 

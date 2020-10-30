@@ -1,5 +1,5 @@
 ---
-Description: Étendez les fonctionnalités de base de Cortana avec les commandes vocales qui activent une application Windows et exécutent une seule action.
+description: Étendez les fonctionnalités de base de Cortana avec les commandes vocales qui activent une application Windows et exécutent une seule action.
 title: Interactions avec Cortana
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
@@ -8,12 +8,12 @@ keywords: Cortana, canevas Cortana, conception Cortana, interface utilisateur, c
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d79f62a98e30ef67743abd6a6dd00ce24d3fa13
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 270c3e4838c6edc3ac0aedc7092a545028ceff86
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220592"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032192"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Interactions Cortana dans les applications Windows
 
@@ -37,6 +37,6 @@ Pour savoir comment étendre Cortana avec les fonctionnalités d’une applicati
 
 **Exemples**
 * [Exemple de commande vocale Cortana](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
- 
+ 
 
- 
+ 

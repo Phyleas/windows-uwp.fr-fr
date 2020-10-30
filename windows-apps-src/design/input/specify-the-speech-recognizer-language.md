@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale.
+description: Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale.
 title: Spécifier la langue de reconnaissance vocale
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
@@ -8,19 +8,19 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a19e4ec876ca5dfa313c56e5653b3a27a4155765
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: fa8137b5bf05bb8099a803fedd7e056fc14d9d70
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219932"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031322"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Spécifier la langue de reconnaissance vocale
 
 
 Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale.
 
-> **API importantes**: [**SupportedTopicLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages), [**SupportedGrammarLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages), [**Language**](/uwp/api/Windows.Globalization.Language)
+> **API importantes** : [**SupportedTopicLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages), [**SupportedGrammarLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages), [**Language**](/uwp/api/Windows.Globalization.Language)
 
 
 Nous avons répertorié les langues installées sur un système. Identifiez la langue par défaut et sélectionnez une autre langue pour la reconnaissance.
@@ -56,9 +56,9 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 Les langues installées peuvent varier entre les appareils. Vérifiez l’existence d’une langue avant de vous en servir pour une contrainte particulière.
 
-**Remarque**    Un redémarrage est nécessaire après l’installation d’un nouveau module linguistique. Une exception avec le code d’erreur SPERR \_ \_ introuvable (0x8004503a) est levée si la langue spécifiée n’est pas prise en charge ou n’a pas terminé l’installation de.
+**Remarque**  Un redémarrage est nécessaire après l’installation d’un nouveau module linguistique. Une exception avec le code d’erreur SPERR \_ \_ introuvable (0x8004503a) est levée si la langue spécifiée n’est pas prise en charge ou n’a pas terminé l’installation de.
 
- 
+ 
 
 Déterminez les langues prises en charge sur un appareil en vérifiant l’une des deux propriétés statiques de la classe [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) :
 
@@ -79,7 +79,7 @@ var language = new Windows.Globalization.Language("en-US");
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 
 Une contrainte de rubrique peut être configurée en ajoutant une [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) à la collection [**Constraints**](/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) de la [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), puis en appelant [**CompileConstraintsAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync). Un [**speechRecognitionResultStatus**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) de **TopicLanguageNotSupported** est renvoyé si le module de reconnaissance n’est pas initialisé avec une langue de rubrique prise en charge.
@@ -95,6 +95,6 @@ Une grammaire SRGS est un format XML standard ouvert représenté par la classe 
 **Exemples**
 
 * [Reconnaissance vocale et exemple de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

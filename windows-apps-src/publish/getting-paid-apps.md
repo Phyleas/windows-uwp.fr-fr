@@ -1,17 +1,17 @@
 ---
-Description: En savoir plus sur la réception de paiements pour vos applications, les modules complémentaires (produits dans l’application) et les revenus de la publicité.
+description: En savoir plus sur la réception de paiements pour vos applications, les modules complémentaires (produits dans l’application) et les revenus de la publicité.
 title: Processus de paiement
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, paiements, application Sales, application proceeds, paiement, frais de magasin, retenue de paiement, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e2b67984c43d799f0f4e3a1c6662b57bdc6ae9d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7138a30abb3e2de46c94de96614cc0e404ede675
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167393"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029742"
 ---
 # <a name="getting-paid"></a>Processus de paiement
 Voici quelques informations importantes sur la réception des paiements pour vos applications, modules complémentaires et revenus publicitaires.
@@ -49,7 +49,7 @@ Gardez à l’esprit que le prix que vous sélectionnez peut inclure la taxe sur
 
 ## <a name="payout-reporting"></a>Rapports de paiement
 
-Vous pouvez accéder aux détails de vos informations de paiement et télécharger des rapports dans la page **Récapitulatif des paiements** de l’[Espace partenaires](https://partner.microsoft.com/dashboard). Pour en savoir plus sur les informations présentées ici et sur la façon dont nous classons l’argent que vous gagnez, consultez [Récapitulatif des paiements](payout-summary.md).
+Vous pouvez accéder aux détails de vos informations de paiement et télécharger des rapports dans la page **Récapitulatif des paiements** de l’ [Espace partenaires](https://partner.microsoft.com/dashboard). Pour en savoir plus sur les informations présentées ici et sur la façon dont nous classons l’argent que vous gagnez, consultez [Récapitulatif des paiements](payout-summary.md).
 
 
 ## <a name="payout-timeframe"></a>Délais de paiement
@@ -59,16 +59,16 @@ Les paiements sont effectués chaque mois (à condition que le seuil de paiement
 
 ##  <a name="payout-hold-status"></a>État de paiement en attente
 
-Par défaut, nous envoyons les paiements une fois par mois, comme décrit ci-dessus. Toutefois, vous avez la possibilité de mettre les paiements d’un programme en attente, ce qui nous empêche de les envoyer à votre compte. Si vous choisissez de mettre vos paiements en attente, nous continuerons à enregistrer les revenus que vous gagnez et à fournir les détails dans votre **Résumé de paiement**. Toutefois, nous n’enverrons les paiements à votre compte que lorsque vous aurez retiré la mise en attente.
+Par défaut, nous envoyons les paiements une fois par mois, comme décrit ci-dessus. Toutefois, vous avez la possibilité de mettre les paiements d’un programme en attente, ce qui nous empêche de les envoyer à votre compte. Si vous choisissez de mettre vos paiements en attente, nous continuerons à enregistrer les revenus que vous gagnez et à fournir les détails dans votre **Résumé de paiement** . Toutefois, nous n’enverrons les paiements à votre compte que lorsque vous aurez retiré la mise en attente.
 
-Pour mettre vos paiements en attente, accédez à **Paramètres de développeur**. Sous **Paiement et taxe**, dans la section **Attribution de profil de paiement et de taxe**, recherchez le programme pour lequel vous souhaitez mettre les paiements en attente. Cochez la case **Conserver mon paiement** pour mettre les paiements de ce programme en attente. Vous pouvez modifier votre état de paiement en attente à tout moment, mais n’oubliez pas que votre décision aura un impact sur le paiement mensuel suivant. Par exemple, si vous souhaitez conserver le paiement d’avril, veillez à définir votre état d’attente de paiement **sur activé** avant la fin du mars.
+Pour mettre vos paiements en attente, accédez à **Paramètres de développeur** . Sous **Paiement et taxe** , dans la section **Attribution de profil de paiement et de taxe** , recherchez le programme pour lequel vous souhaitez mettre les paiements en attente. Cochez la case **Conserver mon paiement** pour mettre les paiements de ce programme en attente. Vous pouvez modifier votre état de paiement en attente à tout moment, mais n’oubliez pas que votre décision aura un impact sur le paiement mensuel suivant. Par exemple, si vous souhaitez conserver le paiement d’avril, veillez à définir votre état d’attente de paiement **sur activé** avant la fin du mars.
 
-Une fois que vous avez défini votre état de paiement en attente sur **Activé**, tous les paiements de ce programme sont bloqués tant que vous n’avez pas remis le curseur sur **Désactivé**. En procédant ainsi, vous serez inclus dans le prochain cycle de paiement mensuel (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez des paiements en attente, mais que vous souhaitez que le paiement ait été généré en juin, veillez à désactiver l’état de maintien du paiement à **off** avant la fin de l’opération.
+Une fois que vous avez défini votre état de paiement en attente sur **Activé** , tous les paiements de ce programme sont bloqués tant que vous n’avez pas remis le curseur sur **Désactivé** . En procédant ainsi, vous serez inclus dans le prochain cycle de paiement mensuel (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez des paiements en attente, mais que vous souhaitez que le paiement ait été généré en juin, veillez à désactiver l’état de maintien du paiement à **off** avant la fin de l’opération.
 
 > [!NOTE]
-> L’**état de paiement en attente** s’applique à chaque programme individuellement (Microsoft Store, publicité, Place de marché Azure, etc.). Si vous souhaitez mettre les paiements en attente sur tous vos programmes, vous devez le faire sur chaque programme individuellement.
+> L’ **état de paiement en attente** s’applique à chaque programme individuellement (Microsoft Store, publicité, Place de marché Azure, etc.). Si vous souhaitez mettre les paiements en attente sur tous vos programmes, vous devez le faire sur chaque programme individuellement.
 
 
- 
+ 
 
- 
+ 

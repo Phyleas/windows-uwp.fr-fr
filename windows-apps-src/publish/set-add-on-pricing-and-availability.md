@@ -1,17 +1,17 @@
 ---
-Description: Lors de la soumission d’un module complémentaire, les options de la page Tarification et disponibilité déterminent le prix et les conditions de disponibilité.
+description: Lors de la soumission d’un module complémentaire, les options de la page Tarification et disponibilité déterminent le prix et les conditions de disponibilité.
 title: Définir le prix et la disponibilité d’un module complémentaire
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, modules complémentaires, IAP, prix
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c53977ed26d19bb0860e9fb952cfebbe65c1e2f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5aa63307a232eed0e3fdb2e6d1355665d964212b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174723"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029957"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’un module complémentaire
 
@@ -29,12 +29,12 @@ Pour plus d’informations et pour obtenir la liste complète des marchés dispo
 
 Vous pouvez déterminer si votre module complémentaire doit être proposé à l’achat aux clients. 
 
-L’option par défaut **peut être affichée dans la liste des magasins du produit parent**. Laissez cette option sélectionnée pour les modules complémentaires qui seront disponibles pour tous les clients. 
+L’option par défaut **peut être affichée dans la liste des magasins du produit parent** . Laissez cette option sélectionnée pour les modules complémentaires qui seront disponibles pour tous les clients. 
 
 Pour les modules complémentaires que vous ne souhaitez pas rendre largement disponibles, sélectionnez **masqué dans le magasin** et l’une des options suivantes :
 
--   **Disponible à l’achat dans le produit parent uniquement**: le choix de cette option permet à n’importe quel client d’acheter le module complémentaire à partir de votre application, mais le module complémentaire ne s’affiche pas dans le Listing de votre application ou peut être découvert dans le Windows Store. Utilisez cette option uniquement si l’offre n’est pas largement disponible, par exemple lors des périodes initiales de test interne.
--   **Arrêter l’acquisition : tout client disposant d’un lien direct peut voir la liste des magasins du produit, mais il ne peut le télécharger que s’il en a déjà détenu le produit ou s’il a un code promotionnel et utilise un appareil Windows 10. Ce module complémentaire n’est pas affiché dans le Listing du produit parent**: le choix de cette option signifie que le module complémentaire ne sera pas affiché dans la liste de votre application et qu’aucun nouveau client ne pourra acheter le module complémentaire. Toutefois, **cette option n’est pas prise en charge pour les clients qui utilisent Windows 8.1 ou une version antérieure**. Si votre application précédemment publiée est disponible sur Windows 8.1 ou une version antérieure, le module complémentaire sera toujours disponible pour achat à ces clients. Pour arrêter de proposer ce module complémentaire aux clients qui utilisent Windows 8.1 ou une version antérieure, vous devrez mettre à jour votre application en supprimant le code proposant le module complémentaire, puis publier une nouvelle soumission de l’application. Nous vous recommandons de suivre cette procédure, même si votre application ne cible pas Windows 8.1 ou une version antérieure ; en effet, vos clients bénéficieront d’une meilleure expérience si vous ne leur proposez jamais un module complémentaire dont vous avez décidé d’arrêter la mise à disposition.
+-   **Disponible à l’achat dans le produit parent uniquement** : le choix de cette option permet à n’importe quel client d’acheter le module complémentaire à partir de votre application, mais le module complémentaire ne s’affiche pas dans le Listing de votre application ou peut être découvert dans le Windows Store. Utilisez cette option uniquement si l’offre n’est pas largement disponible, par exemple lors des périodes initiales de test interne.
+-   **Arrêter l’acquisition : tout client disposant d’un lien direct peut voir la liste des magasins du produit, mais il ne peut le télécharger que s’il en a déjà détenu le produit ou s’il a un code promotionnel et utilise un appareil Windows 10. Ce module complémentaire n’est pas affiché dans le Listing du produit parent** : le choix de cette option signifie que le module complémentaire ne sera pas affiché dans la liste de votre application et qu’aucun nouveau client ne pourra acheter le module complémentaire. Toutefois, **cette option n’est pas prise en charge pour les clients qui utilisent Windows 8.1 ou une version antérieure** . Si votre application précédemment publiée est disponible sur Windows 8.1 ou une version antérieure, le module complémentaire sera toujours disponible pour achat à ces clients. Pour arrêter de proposer ce module complémentaire aux clients qui utilisent Windows 8.1 ou une version antérieure, vous devrez mettre à jour votre application en supprimant le code proposant le module complémentaire, puis publier une nouvelle soumission de l’application. Nous vous recommandons de suivre cette procédure, même si votre application ne cible pas Windows 8.1 ou une version antérieure ; en effet, vos clients bénéficieront d’une meilleure expérience si vous ne leur proposez jamais un module complémentaire dont vous avez décidé d’arrêter la mise à disposition.
     
  > [!NOTE] 
  > Le choix de l’option **arrêter l’acquisition** et/ou de l’envoi d’une mise à jour d’application qui supprime le module complémentaire de votre application n’empêchera pas les clients d’utiliser le module complémentaire s’ils l’ont déjà acheté. Les abonnements existants ne pourront pas être renouvelés et seront ensuite annulés après la fin du terme actuel.
@@ -49,7 +49,7 @@ Pour plus d’informations, consultez [configurer une planification de version p
 
 ## <a name="pricing"></a>Tarifs
 
-Vous devez sélectionner un prix de base pour votre module complémentaire (sauf si vous avez sélectionné l’option **arrêter l’acquisition** dans la section **visibilité** ). La sélection par défaut est **libre**. par conséquent, si vous souhaitez payer de l’argent pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (à partir de. 99 USD).
+Vous devez sélectionner un prix de base pour votre module complémentaire (sauf si vous avez sélectionné l’option **arrêter l’acquisition** dans la section **visibilité** ). La sélection par défaut est **libre** . par conséquent, si vous souhaitez payer de l’argent pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (à partir de. 99 USD).
 
 Vous pouvez également planifier des changements de prix pour indiquer la date et l’heure auxquelles le prix du module complémentaire doit changer. En outre, vous avez la possibilité de personnaliser ces modifications pour des marchés spécifiques. 
 

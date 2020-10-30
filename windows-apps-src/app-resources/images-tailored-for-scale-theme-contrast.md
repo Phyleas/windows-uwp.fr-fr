@@ -1,20 +1,20 @@
 ---
-Description: Votre application peut charger des fichiers de ressources d’image contenant des images adaptées pour le facteur d’échelle de l’affichage, le thème, le contraste élevé et d’autres contextes d’exécution.
+description: Votre application peut charger des fichiers de ressources d’image contenant des images adaptées pour le facteur d’échelle de l’affichage, le thème, le contraste élevé et d’autres contextes d’exécution.
 title: Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1d6639a901385c3a33fb0ed670b9b7e4cf683e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9b0cb92c15b39a0bee10e7fe70bc8c4e1581af3c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157603"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031822"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
-Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour [afficher le facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou du balisage XAML, par exemple en tant que propriété **source** d’une **image**. Ils peuvent également apparaître dans le fichier source du manifeste de votre package d’application (le `Package.appxmanifest` fichier) &mdash; , par exemple, sous la forme de l’icône de l’application sous l’onglet ressources visuelles du concepteur de manifeste Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs dans les noms de fichiers de vos images et en les chargeant éventuellement de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), vous pouvez charger le fichier image le plus approprié qui correspond le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle d’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
+Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour [afficher le facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou du balisage XAML, par exemple en tant que propriété **source** d’une **image** . Ils peuvent également apparaître dans le fichier source du manifeste de votre package d’application (le `Package.appxmanifest` fichier) &mdash; , par exemple, sous la forme de l’icône de l’application sous l’onglet ressources visuelles du concepteur de manifeste Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs dans les noms de fichiers de vos images et en les chargeant éventuellement de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), vous pouvez charger le fichier image le plus approprié qui correspond le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle d’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
 
 Une ressource d’image est contenue dans un fichier de ressources d’image. Vous pouvez également considérer l’image comme un élément multimédia et le fichier qui la contient comme un fichier de ressources. vous pouvez trouver ces types de fichiers de ressources dans le dossier \Assets de votre projet. Pour plus d’informations sur l’utilisation de qualificateurs dans les noms de vos fichiers de ressources d’image, consultez [adapter vos ressources aux qualificateurs de langage, de mise à l’échelle et autres](tailor-resources-lang-scale-contrast.md).
 
@@ -158,7 +158,7 @@ bitmapImage.SetSourceAsync(imageFileStream);
 this.myXAMLImageElement.Source = bitmapImage;
 ```
 
-Pour le même effet à un niveau global, vous *pouvez* remplacer les valeurs de qualificateur dans le **ResourceContext**par défaut. Au lieu de cela, nous vous conseillons d’appeler [**ResourceContext. SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). Vous définissez des valeurs une fois avec un appel à **SetGlobalQualifierValue** , puis ces valeurs sont en vigueur sur le **ResourceContext** par défaut chaque fois que vous l’utilisez pour les recherches. Par défaut, la classe [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) utilise le **ResourceContext**par défaut.
+Pour le même effet à un niveau global, vous *pouvez* remplacer les valeurs de qualificateur dans le **ResourceContext** par défaut. Au lieu de cela, nous vous conseillons d’appeler [**ResourceContext. SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). Vous définissez des valeurs une fois avec un appel à **SetGlobalQualifierValue** , puis ces valeurs sont en vigueur sur le **ResourceContext** par défaut chaque fois que vous l’utilisez pour les recherches. Par défaut, la classe [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) utilise le **ResourceContext** par défaut.
 
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Contrast", "high");
@@ -169,7 +169,7 @@ this.myXAMLImageElement.Source = new Windows.UI.Xaml.Media.Imaging.BitmapImage(n
 ## <a name="updating-images-in-response-to-qualifier-value-change-events"></a>Mise à jour des images en réponse aux événements de modification de valeur de qualificateur
 Votre application en cours d’exécution peut répondre aux modifications apportées aux paramètres système qui affectent les valeurs de qualificateur dans le contexte de ressource par défaut. L’un de ces paramètres système appelle l’événement [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) sur [**ResourceContext. QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
 
-En réponse à cet événement, vous pouvez recharger vos images à l’aide du **ResourceContext**par défaut, que [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) utilise par défaut.
+En réponse à cet événement, vous pouvez recharger vos images à l’aide du **ResourceContext** par défaut, que [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) utilise par défaut.
 
 ```csharp
 public MainPage()

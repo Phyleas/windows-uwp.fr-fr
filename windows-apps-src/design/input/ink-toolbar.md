@@ -1,5 +1,5 @@
 ---
-Description: Ajoutez un InkToolbar par défaut à une application d’écriture manuscrite Windows, ajoutez un bouton stylet personnalisé au InkToolbar et liez le bouton stylet personnalisé à une définition de stylet personnalisée.
+description: Ajoutez un InkToolbar par défaut à une application d’écriture manuscrite Windows, ajoutez un bouton stylet personnalisé au InkToolbar et liez le bouton stylet personnalisé à une définition de stylet personnalisée.
 title: Ajouter un élément InkToolbar à une application Windows
 label: Add an InkToolbar to a Windows app
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 20446af1f0d62f0c6b18a0ff675818fe41db1740
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 78585f9734131531db5cfa429770ed8351459d8f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219742"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030202"
 ---
 # <a name="add-an-inktoolbar-to-a-windows-app"></a>Ajouter un élément InkToolbar à une application Windows
 
@@ -35,7 +35,7 @@ En tant que superposition totalement transparente, le contrôle InkCanvas ne fou
 
   Cette rubrique est dédiée au contrôle InkToolbar.
 
-> **API importantes**: [**classe InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas), [**classe InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar), classe [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter), [**Windows. UI. Input. encrage**](/uwp/api/Windows.UI.Input.Inking)
+> **API importantes** : [**classe InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas), [**classe InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar), classe [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter), [**Windows. UI. Input. encrage**](/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="default-inktoolbar"></a>Contrôle InkToolbar par défaut
 
@@ -87,7 +87,7 @@ Quand vous ajoutez une barre d’outils Ink à votre application, vous pouvez ac
 
 Spécifiez explicitement l’emplacement et l’orientation de la barre d’outils par le biais de ses propriétés [VerticalAlignment](/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment)et [orientation](/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) .
 
-| Par défaut | Explicite |
+| Default | Explicite |
 | --- | --- |
 | ![Emplacement et orientation de la barre d’outils d’encre par défaut](./images/ink/location-default-small.png) | ![Emplacement et orientation de la barre d’outils encre explicite](./images/ink/location-explicit-small.png) |
 | *Emplacement et orientation par défaut de la barre d’outils Windows Ink* | *Emplacement et orientation explicites de la barre d’outils Windows Ink* |
@@ -103,7 +103,7 @@ Voici le code permettant de définir explicitement l’emplacement et l’orient
 
 **Initialiser en fonction des préférences de l’utilisateur ou de l’état de l’appareil**
 
-Dans certains cas, vous souhaiterez peut-être définir l’emplacement et l’orientation de la barre d’outils encre en fonction de la préférence de l’utilisateur ou de l’état de l’appareil. L’exemple suivant montre comment définir l’emplacement et l’orientation de la barre d’outils d’encre en fonction des préférences d’écriture à gauche ou à droite spécifiées par le biais de **paramètres > appareils > pen & stylet > stylet Windows ink > choisir la main avec laquelle vous écrivez**.
+Dans certains cas, vous souhaiterez peut-être définir l’emplacement et l’orientation de la barre d’outils encre en fonction de la préférence de l’utilisateur ou de l’état de l’appareil. L’exemple suivant montre comment définir l’emplacement et l’orientation de la barre d’outils d’encre en fonction des préférences d’écriture à gauche ou à droite spécifiées par le biais de **paramètres > appareils > pen & stylet > stylet Windows ink > choisir la main avec laquelle vous écrivez** .
 
 ![Paramètre main dominant](./images/ink/location-handedness-setting.png)  
 *Paramètre main dominant*
@@ -134,13 +134,13 @@ Vous pouvez également utiliser la liaison pour consulter les mises à jour de l
 **Télécharger cet exemple à partir de la [barre d’outils Ink emplacement et orientation, exemple (dynamique)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
 
 1. Tout d’abord, nous allons ajouter notre ViewModel.
-    1. Ajoutez un nouveau dossier à votre projet et appelez-le **ViewModels**.
-    1. Ajoutez une nouvelle classe au dossier ViewModels (pour cet exemple, nous l’avons appelée **InkToolbarSnippetHostViewModel.cs**).
+    1. Ajoutez un nouveau dossier à votre projet et appelez-le **ViewModels** .
+    1. Ajoutez une nouvelle classe au dossier ViewModels (pour cet exemple, nous l’avons appelée **InkToolbarSnippetHostViewModel.cs** ).
         > [!NOTE] 
         > Nous avons utilisé le [modèle Singleton](/previous-versions/msp-n-p/ff650849(v=pandp.10)) , car nous n’avons besoin que d’un seul objet de ce type pendant la durée de vie de l’application
 
     1. Ajoutez `using System.ComponentModel` l’espace de noms au fichier.
-    1. Ajoutez une variable membre statique appelée **instance**et une propriété en lecture seule statique nommée **instance**. Rendez le constructeur privé pour vérifier que cette classe n’est accessible qu’à l’aide de la propriété d’instance.   
+    1. Ajoutez une variable membre statique appelée **instance** et une propriété en lecture seule statique nommée **instance** . Rendez le constructeur privé pour vérifier que cette classe n’est accessible qu’à l’aide de la propriété d’instance.   
         > [!NOTE] 
         > Cette classe hérite de l’interface [INotifyPropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged) , qui est utilisée pour informer les clients, généralement les clients de liaison, qu’une valeur de propriété a été modifiée. Nous allons l’utiliser pour gérer les modifications apportées à l’orientation de l’appareil (nous allons développer ce code et expliquer plus en détail dans une étape ultérieure).  
 
@@ -210,8 +210,8 @@ Vous pouvez également utiliser la liaison pour consulter les mises à jour de l
         ```
 
 1. À présent, nous allons ajouter deux classes de convertisseur à notre projet. Chaque classe contient un objet Convert qui retourne une valeur d’alignement ( [HorizontalAlignment](/uwp/api/windows.ui.xaml.horizontalalignment) ou [VerticalAlignment](/uwp/api/windows.ui.xaml.verticalalignment)).
-    1. Ajoutez un nouveau dossier à votre projet et appelez-le **convertisseurs**.
-    1. Ajoutez deux nouvelles classes au dossier convertisseurs (pour cet exemple, nous les appelons **HorizontalAlignmentFromHandednessConverter.cs** et **VerticalAlignmentFromAppViewConverter.cs**).
+    1. Ajoutez un nouveau dossier à votre projet et appelez-le **convertisseurs** .
+    1. Ajoutez deux nouvelles classes au dossier convertisseurs (pour cet exemple, nous les appelons **HorizontalAlignmentFromHandednessConverter.cs** et **VerticalAlignmentFromAppViewConverter.cs** ).
     1. Ajoutez `using Windows.UI.Xaml` des `using Windows.UI.Xaml.Data` espaces de noms et à chaque fichier.
     1. Remplacez chaque classe par `public` et spécifiez qu’elle implémente l’interface [IValueConverter](/uwp/api/windows.ui.xaml.data.ivalueconverter) .
     1. Ajoutez les méthodes [Convert](/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) et [ConvertBack](/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) à chaque fichier, comme indiqué ici (nous laissons la méthode ConvertBack non implémentée).

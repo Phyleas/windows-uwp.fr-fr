@@ -1,5 +1,5 @@
 ---
-Description: Concevez votre application pour une esthétique et un fonctionnement optimaux sur votre télévision.
+description: Concevez votre application pour une esthétique et un fonctionnement optimaux sur votre télévision.
 title: Conception pour Xbox et télévision
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b0c278599c878e807ef8b2e2564ca9add31ea4ad
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e2648cc9a85c538d71f87f69d8525b171d2bed98
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220282"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031512"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Conception pour Xbox et télévision
 
@@ -32,9 +32,9 @@ La plateforme Windows universelle vous permet de créer des expériences agréa
 La plupart des fonctionnalités fournies par l’infrastructure UWP permettent aux applications d’utiliser la même interface utilisateur sur ces appareils, sans travail supplémentaire.
 Toutefois, des éléments particuliers sont à prendre en compte afin d’optimiser votre application et l’adapter pour un fonctionnement parfait sur les écrans de télévision et Xbox One.
 
-L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le « **10-foot experience** »
+L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le «  **10-foot experience**  »
 Ce nom vient du fait que l’utilisateur se trouve généralement à 3 mètres (10 pieds) de l’écran.
-Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience « *2-foot experience* » ou lors d’interactions avec un PC.
+Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience «  *2-foot experience*  » ou lors d’interactions avec un PC.
 Si vous développez une application pour Xbox One ou tout autre appareil dont la sortie et l’entrée se font respectivement sur télévision et par boîtier de commande, vous devez toujours garder ceci à l’esprit.
 
 Toutes les étapes décrites dans cet article ne sont pas nécessaires pour que votre application fonctionne pour les expériences « 10-foot experience », mais le fait de les comprendre et de prendre les décisions appropriées pour votre application créera une meilleure « 10-foot experience », mieux adaptée aux besoins spécifiques de votre application.
@@ -122,7 +122,7 @@ La taille des éléments interactifs de l’interface utilisateur doit être d�
 
 #### <a name="number-of-clicks"></a>Nombre de clics.
 
-Lorsque l’utilisateur navigue d’un bord de l’écran de télévision à l’autre, la simplification de votre interface utilisateur doit se faire en **six clics** maximum. Là encore s’applique le principe de la **simplicité**. 
+Lorsque l’utilisateur navigue d’un bord de l’écran de télévision à l’autre, la simplification de votre interface utilisateur doit se faire en **six clics** maximum. Là encore s’applique le principe de la **simplicité** . 
 
 ![6 icônes pour traverser](images/designing-for-tv/six-clicks.png)
 
@@ -241,7 +241,7 @@ L’extrait de code suivant permet de réaliser l’effet en question :
 
 [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) est un autre exemple de volet généralement positionné près d’un ou plusieurs bords de l’application. Son arrière-plan doit donc s’étendre aux bords des écrans de TV. Il contient généralement un bouton **Plus** (...) sur le côté droit qui doit rester dans la zone adaptée à l’écran de TV. Voici quelques stratégies différentes permettant d’obtenir les interactions et effets visuels souhaités.
 
-**Option 1** : modifiez la couleur d’arrière-plan de `CommandBar` pour la définir sur transparent ou sur la même couleur que l’arrière-plan de la page :
+**Option 1**  : modifiez la couleur d’arrière-plan de `CommandBar` pour la définir sur transparent ou sur la même couleur que l’arrière-plan de la page :
 
 ```xml
 <CommandBar x:Name="topbar"
@@ -252,7 +252,7 @@ L’extrait de code suivant permet de réaliser l’effet en question :
 
 `CommandBar` paraît ainsi avoir le même arrière-plan que le reste de la page ; l’arrière-plan s’étend donc vers le bord de l’écran en toute fluidité.
 
-**Option 2** : ajoutez un rectangle en arrière-plan dont le remplissage est de la même couleur que l’arrière-plan de `CommandBar`, puis placez-le sous `CommandBar` et à travers le reste de la page :
+**Option 2**  : ajoutez un rectangle en arrière-plan dont le remplissage est de la même couleur que l’arrière-plan de `CommandBar`, puis placez-le sous `CommandBar` et à travers le reste de la page :
 
 ```xml
 <Rectangle VerticalAlignment="Top"
@@ -333,7 +333,7 @@ Vous placez l’extrait de code précédent dans les ressources de la page ou de
 > [!NOTE]
 > Cet extrait de code est spécifiquement conçu pour les contrôles `ListView`. Pour un style `GridView`, définissez l’attribut [TargetType](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) des éléments [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) et [Style](/uwp/api/Windows.UI.Xaml.Style) sur `GridView`.
 
-Pour un contrôle plus précis de la façon dont les éléments sont mis en vue, si votre application cible la version 1803 ou une version ultérieure, vous pouvez utiliser l' [événement UIElement. BringIntoViewRequested](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur le [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour que **ListView**le contrôle / **GridView** ListView puisse l’intercepter avant que le **ScrollViewer** interne ne fasse, comme dans les extraits de code suivants :
+Pour un contrôle plus précis de la façon dont les éléments sont mis en vue, si votre application cible la version 1803 ou une version ultérieure, vous pouvez utiliser l' [événement UIElement. BringIntoViewRequested](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur le [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour que **ListView** le contrôle / **GridView** ListView puisse l’intercepter avant que le **ScrollViewer** interne ne fasse, comme dans les extraits de code suivants :
 
 ```xaml
 <GridView x:Name="gridView">
@@ -391,7 +391,7 @@ Vous pouvez choisir un **thème d’application** (clair ou foncé) en fonction 
 
 L’UWP permet également aux applications de définir le thème de manière dynamique selon les paramètres système fournis par les appareils sur lesquels elles s’exécutent.
 Bien que l’UWP respecte toujours les paramètres de thème spécifiés par l’utilisateur, chaque appareil fournit également un thème par défaut approprié.
-En raison de la nature de Xbox One, qui génère plus d’expériences *multimédias* que d’expériences de *productivité*, son thème de système est foncé par défaut.
+En raison de la nature de Xbox One, qui génère plus d’expériences *multimédias* que d’expériences de *productivité* , son thème de système est foncé par défaut.
 Si le thème de votre application est basé sur les paramètres système, celui-ci devrait être foncé sur Xbox One par défaut.
 
 ### <a name="accent-color"></a>Couleur d’accentuation
@@ -403,7 +403,7 @@ Dans la mesure où votre application appelle ces couleurs d’accentuation par l
 
 Notez également que l’ensemble des couleurs utilisateur sur Xbox One n’est pas le même que sur les PC, téléphones et autres appareils.
 
-Tant que votre application utilise une ressource pinceau telle que **SystemControlForegroundAccentBrush**ou une ressource de couleur (**SystemAccentColor**), ou qu’elle appelle à la place des couleurs d’accentuation directement via l’API [UIColorType. accent *](/uwp/api/Windows.UI.ViewManagement.UIColorType) , ces couleurs sont remplacées par des couleurs d’accentuation disponibles sur Xbox One. Les couleurs du pinceau à contraste élevé sont également extraites du système de la même façon que sur un PC et un téléphone.
+Tant que votre application utilise une ressource pinceau telle que **SystemControlForegroundAccentBrush** ou une ressource de couleur ( **SystemAccentColor** ), ou qu’elle appelle à la place des couleurs d’accentuation directement via l’API [UIColorType. accent *](/uwp/api/Windows.UI.ViewManagement.UIColorType) , ces couleurs sont remplacées par des couleurs d’accentuation disponibles sur Xbox One. Les couleurs du pinceau à contraste élevé sont également extraites du système de la même façon que sur un PC et un téléphone.
 
 Pour en savoir plus sur la couleur d’accentuation en général, voir [Couleur d’accentuation](../style/color.md#accent-color).
 
@@ -438,9 +438,9 @@ Vous pouvez régler la propriété [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api
 
 ### <a name="navigation-pane"></a>Volet de navigation <a name="navigation-pane" />
 
-Un volet de navigation (également appelé *menu hamburger*) est un contrôle de navigation couramment utilisé dans les applications UWP. En règle générale, il s’agit d’un volet comportant plusieurs options dans un menu de style de liste qui dirigera l’utilisateur vers différentes pages. En général, ce volet démarre en mode réduit pour économiser l’espace ; l’utilisateur peut l’ouvrir en cliquant sur un bouton.
+Un volet de navigation (également appelé *menu hamburger* ) est un contrôle de navigation couramment utilisé dans les applications UWP. En règle générale, il s’agit d’un volet comportant plusieurs options dans un menu de style de liste qui dirigera l’utilisateur vers différentes pages. En général, ce volet démarre en mode réduit pour économiser l’espace ; l’utilisateur peut l’ouvrir en cliquant sur un bouton.
 
-Même si les volets de navigation sont très accessibles par souris et écran tactile, ce n’est pas le cas pour le boîtier de commande/la télécommande car l’utilisateur doit ouvrir le volet par le biais d’un bouton. Par conséquent, une bonne pratique consiste à rendre possible l’ouverture du panneau de navigation à l’aide de la touche **Affichage**, ainsi que son ouverture en naviguant tout à gauche de la page. Vous trouverez un exemple de code sur la façon d’implémenter ce modèle de conception dans le document de [navigation de focus par programmation](../input/focus-navigation-programmatic.md#split-view-code-sample) . L’accès aux contenus du volet est ainsi grandement facilité. Pour en savoir plus sur la façon dont les volets de navigation se comportent sur des écrans de tailles différentes et pour connaître les meilleures pratiques en matière de navigation pour le boîtier de commande/la télécommande, voir [Volets de navigation](../controls-and-patterns/navigationview.md).
+Même si les volets de navigation sont très accessibles par souris et écran tactile, ce n’est pas le cas pour le boîtier de commande/la télécommande car l’utilisateur doit ouvrir le volet par le biais d’un bouton. Par conséquent, une bonne pratique consiste à rendre possible l’ouverture du panneau de navigation à l’aide de la touche **Affichage** , ainsi que son ouverture en naviguant tout à gauche de la page. Vous trouverez un exemple de code sur la façon d’implémenter ce modèle de conception dans le document de [navigation de focus par programmation](../input/focus-navigation-programmatic.md#split-view-code-sample) . L’accès aux contenus du volet est ainsi grandement facilité. Pour en savoir plus sur la façon dont les volets de navigation se comportent sur des écrans de tailles différentes et pour connaître les meilleures pratiques en matière de navigation pour le boîtier de commande/la télécommande, voir [Volets de navigation](../controls-and-patterns/navigationview.md).
 
 ### <a name="commandbar-labels"></a>Libellés CommandBar
 
@@ -468,7 +468,7 @@ Pour plus d’informations sur l’interface utilisateur imbriquée, voir [Inter
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-L’élément [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) permet aux utilisateurs d’interagir avec leur média en fournissant une expérience de lecture par défaut grâce à laquelle ils peuvent lire le contenu, le mettre en pause, activer les sous-titres, etc. Ce contrôle est une propriété de l’objet [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) et prend en charge deux options de disposition : *sur une ligne* et *sur deux lignes*. Dans la disposition sur une ligne, le curseur et les boutons de lecture se trouvent tous sur une même ligne, le bouton lecture/pause étant situé à gauche du curseur. Dans la disposition sur deux lignes, le curseur occupe sa propre ligne, les boutons de lecture se trouvant sur une ligne distincte en dessous. Lors de la conception pour l’expérience « 10-foot », la disposition sur deux lignes doit être utilisée, car elle assure une meilleure navigation avec une manette de jeu. Pour activer la disposition sur deux lignes, définissez `IsCompact="False"` pour l’élément `MediaTransportControls` dans la propriété [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) de la `MediaPlayerElement`.
+L’élément [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) permet aux utilisateurs d’interagir avec leur média en fournissant une expérience de lecture par défaut grâce à laquelle ils peuvent lire le contenu, le mettre en pause, activer les sous-titres, etc. Ce contrôle est une propriété de l’objet [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) et prend en charge deux options de disposition : *sur une ligne* et *sur deux lignes* . Dans la disposition sur une ligne, le curseur et les boutons de lecture se trouvent tous sur une même ligne, le bouton lecture/pause étant situé à gauche du curseur. Dans la disposition sur deux lignes, le curseur occupe sa propre ligne, les boutons de lecture se trouvant sur une ligne distincte en dessous. Lors de la conception pour l’expérience « 10-foot », la disposition sur deux lignes doit être utilisée, car elle assure une meilleure navigation avec une manette de jeu. Pour activer la disposition sur deux lignes, définissez `IsCompact="False"` pour l’élément `MediaTransportControls` dans la propriété [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) de la `MediaPlayerElement`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -499,7 +499,7 @@ Dans l’expérience « 10-foot », il est souvent plus facile pour les client
 
 ## <a name="custom-visual-state-trigger-for-xbox"></a>Déclencheur d’état visuel personnalisé pour Xbox
 
-Pour personnaliser votre application UWP pour l’expérience « 10-foot », nous vous recommandons d’effectuer des modifications de disposition lorsque l’application détecte son lancement sur une console Xbox. L’une des méthodes utilisées pour cette fin est le *déclencheur d’état visuel* personnalisé. Les déclencheurs d’état visuel sont particulièrement utiles lorsque vous souhaitez apporter des modifications dans **Blend pour Visual Studio**. L’extrait de code suivant montre comment créer un déclencheur d’état visuel pour Xbox :
+Pour personnaliser votre application UWP pour l’expérience « 10-foot », nous vous recommandons d’effectuer des modifications de disposition lorsque l’application détecte son lancement sur une console Xbox. L’une des méthodes utilisées pour cette fin est le *déclencheur d’état visuel* personnalisé. Les déclencheurs d’état visuel sont particulièrement utiles lorsque vous souhaitez apporter des modifications dans **Blend pour Visual Studio** . L’extrait de code suivant montre comment créer un déclencheur d’état visuel pour Xbox :
 
 ```xml
 <VisualStateManager.VisualStateGroups>

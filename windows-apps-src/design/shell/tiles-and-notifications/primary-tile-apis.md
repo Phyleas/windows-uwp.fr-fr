@@ -1,5 +1,5 @@
 ---
-Description: Vous pouvez épingler par programmation la vignette principale de votre propre application pour démarrer, comme vous pouvez épingler des vignettes secondaires. Et vous pouvez vérifier s’il est actuellement épinglé.
+description: Vous pouvez épingler par programmation la vignette principale de votre propre application pour démarrer, comme vous pouvez épingler des vignettes secondaires. Et vous pouvez vérifier s’il est actuellement épinglé.
 title: API de vignettes principales
 label: Primary tile API's
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, StartScreenManager, épingler la vignette principale, API de vignettes principales, vérifier si la vignette est épinglée, vignette dynamique
 ms.localizationpriority: medium
-ms.openlocfilehash: 569ef5de9298a0fb9da58e4aaa88689c35b98c72
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 83cf11d80ffcd03148cbe5e784aaad5836357796
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172343"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029692"
 ---
 # <a name="primary-tile-apis"></a>API de vignette principale
  
@@ -20,9 +20,9 @@ ms.locfileid: "89172343"
 Les API de vignettes principales vous permettent de vérifier si votre application est actuellement épinglée pour démarrer et de demander l’épinglage de la vignette principale de votre application.
 
 > [!IMPORTANT]
-> **Nécessite Creators Update**: vous devez cibler le kit de développement logiciel (SDK) 15063 et exécuter la version 15063 ou une version ultérieure pour utiliser les API de vignettes principales.
+> **Nécessite Creators Update** : vous devez cibler le kit de développement logiciel (SDK) 15063 et exécuter la version 15063 ou une version ultérieure pour utiliser les API de vignettes principales.
 
-> **API importantes**: [**classe StartScreenManager**](/uwp/api/windows.ui.startscreen.startscreenmanager), [ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_), [RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
+> **API importantes** : [**classe StartScreenManager**](/uwp/api/windows.ui.startscreen.startscreenmanager), [ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_), [RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>Quand utiliser les API de vignettes principales

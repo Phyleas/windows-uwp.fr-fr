@@ -1,17 +1,17 @@
 ---
-Description: MakePri.exe a le jeu de commandes createconfig, dump, New, ResourcePack et Versioned. Cette rubrique décrit en détail leur utilisation.
+description: MakePri.exe a le jeu de commandes createconfig, dump, New, ResourcePack et Versioned. Cette rubrique décrit en détail leur utilisation.
 title: Options de ligne de commande de MakePri.exe
 template: detail.hbs
 ms.date: 04/10/2018
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 638de4d2795b3b248edfdcc35dc72fa21d31fc3b
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 7443efbb227bf3f9ea64db58902ebeb67b02f676
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253783"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031732"
 ---
 # <a name="makepriexe-command-line-options"></a>Options de ligne de commande de MakePri.exe
 
@@ -115,7 +115,7 @@ Help:
 La `dump` commande génère un fichier XML vidé contenant une liste de toutes les ressources dans un fichier PRI spécifié. Exécutez `MakePri.exe dump /?` pour obtenir de l’aide détaillée sur cette commande.
 
 > [!NOTE]
-> Un pack de ressources sans schéma est un Pack qui a été créé avec le commutateur *omitSchemaFromResourcePacks* dans le fichier de configuration PRI. Pour vider un pack de ressources sans schéma, utilisez le commutateur `/es <main_package_PRI_file>` . Si vous ne spécifiez pas le fichier principal, vous verrez le message*d’erreur « le fichier Resources. pri dans le package a été endommagé ; le chiffrement a échoué (erreur PRI222:0xdef0000f-une erreur non spécifiée s’est produite)*».
+> Un pack de ressources sans schéma est un Pack qui a été créé avec le commutateur *omitSchemaFromResourcePacks* dans le fichier de configuration PRI. Pour vider un pack de ressources sans schéma, utilisez le commutateur `/es <main_package_PRI_file>` . Si vous ne spécifiez pas le fichier principal, vous verrez le message *d’erreur « le fichier Resources. pri dans le package a été endommagé ; le chiffrement a échoué (erreur PRI222:0xdef0000f-une erreur non spécifiée s’est produite)* ».
 
 ```console
 C:\>makepri dump /?

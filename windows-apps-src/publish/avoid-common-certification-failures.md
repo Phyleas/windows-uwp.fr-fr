@@ -1,17 +1,17 @@
 ---
-Description: Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’être certifiées, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application.
+description: Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’être certifiées, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application.
 title: Éviter les échecs de certification courants
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 07c814fc48e47b2bdc8980ac72732783d7ea9139
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 672da214582fb6b206d7e16e1e776be40caeec90
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158023"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031222"
 ---
 # <a name="avoid-common-certification-failures"></a>Éviter les échecs de certification courants
 
@@ -42,6 +42,6 @@ Consultez cette liste pour éviter les problèmes qui empêchent souvent les app
 -   Si votre application utilise les API de commerce à partir de l’espace de noms [**Windows.ApplicationModel.Store**](/uwp/api/Windows.ApplicationModel.Store), prenez soin de tester l’application et de vérifier qu’elle gère les exceptions par défaut. En outre, assurez-vous que votre application utilise la classe [**CurrentApp**](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) et non la classe [**CurrentAppSimulator**](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) , qui est uniquement à des fins de test. (Notez que si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser les membres de l’espace de noms [Windows. services. Store](/uwp/api/windows.services.store) au lieu de l’espace de noms Windows. ApplicationModel. Store.)
 
 
- 
+ 
 
- 
+ 

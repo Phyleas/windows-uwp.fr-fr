@@ -1,17 +1,17 @@
 ---
-Description: La page Tarification et disponibilité du processus de soumission d’application vous permet de déterminer le prix de votre application, la mise à disposition ou non d’une version d’évaluation gratuite, ainsi que le mode, la date et l’emplacement d’accessibilité de votre application auprès des clients.
+description: La page Tarification et disponibilité du processus de soumission d’application vous permet de déterminer le prix de votre application, la mise à disposition ou non d’une version d’évaluation gratuite, ainsi que le mode, la date et l’emplacement d’accessibilité de votre application auprès des clients.
 title: Définir la tarification et la disponibilité d’une application
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
 ms.localizationpriority: medium
-ms.openlocfilehash: 9956463471b310835aedf517817878d526cc810d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f7373ae49b867e9fb1b59f6d7fb18e32f4d7bf65
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164103"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029922"
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
@@ -55,9 +55,9 @@ Il existe deux types d’essai que vous pouvez choisir, et vous avez la possibil
 
 ### <a name="time-limited"></a>Limitée dans le temps
 
-Choisissez **limité au temps** pour permettre aux clients d’essayer gratuitement votre application pendant un certain nombre de jours : **1 jour**, **7 jours**, **15 jours**ou **30 jours**. Vous pouvez limiter les fonctionnalités en ajoutant du code pour [exclure ou limiter les fonctionnalités de la version d’évaluation](../monetize/in-app-purchases-and-trials.md), ou vous pouvez permettre aux clients d’accéder à toutes les fonctionnalités pendant cette période. 
+Choisissez **limité au temps** pour permettre aux clients d’essayer gratuitement votre application pendant un certain nombre de jours : **1 jour** , **7 jours** , **15 jours** ou **30 jours** . Vous pouvez limiter les fonctionnalités en ajoutant du code pour [exclure ou limiter les fonctionnalités de la version d’évaluation](../monetize/in-app-purchases-and-trials.md), ou vous pouvez permettre aux clients d’accéder à toutes les fonctionnalités pendant cette période. 
 > [!NOTE]
-> Les versions d’évaluation limitées dans le temps ne sont pas présentées aux clients sur Windows 10 Build 10.0.10586 ou version antérieure, ou aux clients sur Windows Phone 8,1 et versions antérieures.
+> Les versions d’évaluation limitées dans le temps ne sont pas présentées aux clients sur Windows 10 Build 10.0.10586 ou version antérieure, ou aux clients sur Windows Phone 8,1 et versions antérieures.
 
 ### <a name="unlimited"></a>Illimité
 
@@ -70,7 +70,7 @@ Par défaut, votre version d’évaluation sera disponible dès la publication d
 >[!NOTE]
 > Ces dates s’appliquent uniquement aux clients sur Windows 10 (y compris la Xbox). Si votre application est disponible pour les clients sur des versions antérieures du système d’exploitation, la version d’évaluation sera proposée à ces clients tant que votre produit sera disponible. 
 
-Pour définir les dates auxquelles la version d’évaluation doit être proposée aux clients sur Windows 10, définissez la liste déroulante **commence** à et/ou **se termine sur** **à, puis**choisissez la date et l’heure. Dans ce cas, vous pouvez choisir **UTC** afin que l’heure que vous sélectionnez soit heure UTC (Universal Coordinated Time), ou choisir **local** afin que ces heures soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plus d’un fuseau horaire, un seul fuseau horaire de ce marché sera utilisé. Pour le États-Unis, le fuseau horaire est utilisé.) Vous pouvez sélectionner **Personnaliser pour des marchés spécifiques** si vous souhaitez définir des dates différentes pour un ou plusieurs marchés.
+Pour définir les dates auxquelles la version d’évaluation doit être proposée aux clients sur Windows 10, définissez la liste déroulante **commence** à et/ou **se termine sur** **à, puis** choisissez la date et l’heure. Dans ce cas, vous pouvez choisir **UTC** afin que l’heure que vous sélectionnez soit heure UTC (Universal Coordinated Time), ou choisir **local** afin que ces heures soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plus d’un fuseau horaire, un seul fuseau horaire de ce marché sera utilisé. Pour le États-Unis, le fuseau horaire est utilisé.) Vous pouvez sélectionner **Personnaliser pour des marchés spécifiques** si vous souhaitez définir des dates différentes pour un ou plusieurs marchés.
 
 
 ## <a name="sale-pricing"></a>Prix de vente

@@ -1,5 +1,5 @@
 ---
-Description: Recevoir, traiter et gérer des données d’entrée à partir d’appareils de pointage tels que Touch, Mouse, Pen/Stylus et Touchpad, dans vos applications Windows.
+description: Recevoir, traiter et gérer des données d’entrée à partir d’appareils de pointage tels que Touch, Mouse, Pen/Stylus et Touchpad, dans vos applications Windows.
 title: Gérer les entrées du pointeur
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,12 +8,12 @@ keywords: stylet, souris, pavé tactile, entrées tactiles, pointeur, entrées, 
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 11402ae9f2ea99c583d82d1998ad238eac44576c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bae166c1671421c13302df0d2f85e505985d3f2e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219852"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030742"
 ---
 # <a name="handle-pointer-input"></a>Gérer les entrées du pointeur
 
@@ -72,10 +72,10 @@ Les applications Windows peuvent écouter les événements de pointeur suivants�
 <td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Se produit lorsqu’un autre élément d’interface utilisateur capture le pointeur, lorsque le pointeur est libéré ou lorsqu’un autre pointeur est capturé par programme.</p>
 <div class="alert">
-<strong>Remarque</strong>    Il n’y a pas d’événement de capture de pointeur correspondant.
+<strong>Remarque</strong>  Il n’y a pas d’événement de capture de pointeur correspondant.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -120,7 +120,7 @@ Les applications Windows peuvent écouter les événements de pointeur suivants�
 <p>L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Lorsque vous cliquez sur le bouton de la souris (gauche, roulette ou droite), une association secondaire est créée entre le pointeur et ce bouton via l’événement <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> .</p></td>
 </tr>
 </tbody>
-</table> 
+</table> 
 
 ## <a name="pointer-event-example"></a>Exemple d’événement de pointeur
 
@@ -240,7 +240,8 @@ Nous allons maintenant utiliser le retour d’interface utilisateur dans le cadr
 -   Ce gestionnaire gère l’événement [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) . Nous allons ajouter l’événement au journal des événements, ajouter le pointeur au dictionnaire de pointeur actif et afficher les détails du pointeur.
 
     > [!NOTE]
-    > Les événements [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) et [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) ne se produisent pas toujours par paires. Votre application doit écouter et gérer tout événement qui peut conclure un pointeur vers le dessous (par exemple, [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)et [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).      
+    > Les événements [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) et [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) ne se produisent pas toujours par paires. Votre application doit écouter et gérer tout événement qui peut conclure un pointeur vers le dessous (par exemple, [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)et [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).
+         
 
 ```csharp
 /// <summary>
@@ -322,7 +323,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 -   Ce gestionnaire gère l’événement [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) . L’événement est ajouté au journal des événements et les détails de pointeur sont mis à jour.
 
     > [!Important]
-    > L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Lorsque vous cliquez sur le bouton de la souris (gauche, roulette ou droite), une association secondaire est créée entre le pointeur et ce bouton via l’événement [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) . L’événement [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) est déclenché uniquement lorsque ce même bouton de souris est relâché (aucun autre bouton ne peut être associé au pointeur tant que cet événement n’est pas terminé). En raison de cette association exclusive, les autres clics de bouton de souris sont routés via l’événement [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved).     
+    > L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Lorsque vous cliquez sur le bouton de la souris (gauche, roulette ou droite), une association secondaire est créée entre le pointeur et ce bouton via l’événement [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) . L’événement [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) est déclenché uniquement lorsque ce même bouton de souris est relâché (aucun autre bouton ne peut être associé au pointeur tant que cet événement n’est pas terminé). En raison de cette association exclusive, les autres clics de bouton de souris sont routés via l’événement [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved).     
 
 ```csharp
 /// <summary>
@@ -528,7 +529,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   Ce gestionnaire gère l’événement [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) . L’événement est ajouté au journal des événements, le pointeur est supprimé du tableau de pointeurs et les détails de pointeur sont mis à jour.
 
     > [!NOTE]
-    > [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) peut se produire au lieu de [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased). La capture de pointeur peut être perdue pour diverses raisons, notamment l’interaction de l’utilisateur, la capture par programmation d’un autre pointeur, l’appel de [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
+    > [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) peut se produire au lieu de [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased). La capture de pointeur peut être perdue pour diverses raisons, notamment l’interaction de l’utilisateur, la capture par programmation d’un autre pointeur, l’appel de [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
 
 ```csharp
 /// <summary>
@@ -697,7 +698,7 @@ Cette application particulière utilise à la fois la couleur et l’animation p
 
 ### <a name="visual-feedback"></a>Retour visuel
 
-Nous définissons un **[UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol)**, basé sur un objet **[ellipse](/uwp/api/windows.ui.xaml.shapes.ellipse)** XAML, qui met en évidence l’emplacement de chaque pointeur sur la zone de dessin et utilise une **[table de montage séquentiel](/uwp/api/windows.ui.xaml.media.animation.storyboard)** pour animer l’ellipse qui correspond au pointeur principal.
+Nous définissons un **[UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol)** , basé sur un objet **[ellipse](/uwp/api/windows.ui.xaml.shapes.ellipse)** XAML, qui met en évidence l’emplacement de chaque pointeur sur la zone de dessin et utilise une **[table de montage séquentiel](/uwp/api/windows.ui.xaml.media.animation.storyboard)** pour animer l’ellipse qui correspond au pointeur principal.
 
 **Voici le code XAML :**
 

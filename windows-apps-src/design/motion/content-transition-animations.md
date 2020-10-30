@@ -1,5 +1,5 @@
 ---
-Description: Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
+description: Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
 title: Recommandations en matière d’animations de transition de contenu
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d498c3214effd64895c6a894802a9ccc82ff357
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ed70a100b4aec7a2c1490cfc48e4d2f6ceac950e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169263"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029778"
 ---
 # <a name="content-transition-animations"></a>Animations de transition de contenu
 
@@ -23,7 +23,7 @@ ms.locfileid: "89169263"
 
 Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
 
-> **API importantes**: [ **classe ContentThemeTransition (XAML)**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
+> **API importantes** : [ **classe ContentThemeTransition (XAML)**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
@@ -46,6 +46,6 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 * [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](/previous-versions/windows/apps/hh452703(v=win.10))
 * [**Classe ContentThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
- 
+ 
 
- 
+ 

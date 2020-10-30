@@ -1,17 +1,17 @@
 ---
-Description: Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description dans le Windows Store pour ces différents systèmes.
+description: Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description dans le Windows Store pour ces différents systèmes.
 title: Création d’annonces Windows Store spécifiques à la plateforme
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, personnaliser, liste, description, plus haut
 ms.localizationpriority: medium
-ms.openlocfilehash: b0008095ac027a1ef1d17b655610a3ad50a6596b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 582b6dec3daf55eadfda4758523b196deac6577e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220502"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029792"
 ---
 # <a name="create-platform-specific-store-listings"></a>Création d’annonces Windows Store spécifiques à la plateforme
 
@@ -26,16 +26,16 @@ Les clients sur Windows 10 (y compris la Xbox) verront toujours la [liste des bo
 Les listes de magasins spécifiques à la plateforme peuvent être utiles si vous souhaitez mentionner les fonctionnalités qui apparaissent uniquement dans une version du système d’exploitation ou si vous souhaitez fournir des captures d’écran spécifiques à un système d’exploitation particulier (indépendamment du type d’appareil).
 
 > [!NOTE]
-> La création d’une liste de magasins spécifique à une plateforme dans une langue ne crée pas de liste de magasins spécifique à la plateforme dans d’autres langues que votre application prend en charge. Il vous faudra créer la description dans le Windows Store spécifique à la plateforme pour chacune des langues. Notez également que vous ne pouvez pas [Importer et exporter des données de liste de magasins](import-and-export-store-listings.md) pour des listes spécifiques à la plateforme.
+> La création d’une liste de magasins spécifique à une plateforme dans une langue ne crée pas de liste de magasins spécifique à la plateforme dans d’autres langues que votre application prend en charge. Il vous faudra créer la description dans le Windows Store spécifique à la plateforme pour chacune des langues. Notez également que vous ne pouvez pas [Importer et exporter des données de liste de magasins](import-and-export-store-listings.md) pour des listes spécifiques à la plateforme.
 
 
 ## <a name="creating-a-platform-specific-store-listing"></a>Création d’une description dans le Windows Store spécifique à la plateforme
 
-En haut de la page de liste de votre **Boutique** , si votre application précédemment publiée comprend des packages qui prennent en charge des versions antérieures du système d’exploitation ((Windows 8. x ou une version antérieure et/ou Windows Phone 8. x ou une version antérieure), vous pouvez sélectionner **créer un listing de l’App Store spécifique à la plateforme**. Après avoir sélectionné cette option, vous êtes invité à choisir parmi les versions de système d’exploitation ciblées prises en charge par votre envoi. Une fois que vous avez déjà créé des listes de magasins spécifiques à la plateforme pour toutes les versions antérieures du système d’exploitation ciblées par votre application, vous ne pouvez pas effectuer une autre sélection.
+En haut de la page de liste de votre **Boutique** , si votre application précédemment publiée comprend des packages qui prennent en charge des versions antérieures du système d’exploitation ((Windows 8. x ou une version antérieure et/ou Windows Phone 8. x ou une version antérieure), vous pouvez sélectionner **créer un listing de l’App Store spécifique à la plateforme** . Après avoir sélectionné cette option, vous êtes invité à choisir parmi les versions de système d’exploitation ciblées prises en charge par votre envoi. Une fois que vous avez déjà créé des listes de magasins spécifiques à la plateforme pour toutes les versions antérieures du système d’exploitation ciblées par votre application, vous ne pouvez pas effectuer une autre sélection.
 
 Vous pouvez utiliser votre liste de magasins par défaut (Windows 10) comme point de départ, qui placera le texte et les images applicables que vous avez entrés pour votre liste de magasins par défaut. vous serez alors en mesure d’apporter les modifications souhaitées avant l’enregistrement. Vous pouvez également choisir de partir d’une description vide.
 
-Une fois que vous avez cliqué sur **Continuer**, la page de liste de votre **Boutique** inclut désormais une section pour la liste des magasins spécifiques à la plateforme que vous venez de créer. Cette section inclut son propre ensemble de champs pour **Description** (obligatoire), **Nouveautés de cette version**, **captures d’écran**, icône de vignette d' **application**, **fonctionnalités d’application**et **Configuration requise supplémentaire**. Veillez à entrer des informations dans chaque champ où vous souhaitez afficher des informations pour la description personnalisée dans le Windows Store, même si ces informations sont identiques à celles de la description par défaut. Si vous laissez un de ces champs vide, aucune information ne s’affiche pour ce champ dans la description personnalisée dans le Windows Store.
+Une fois que vous avez cliqué sur **Continuer** , la page de liste de votre **Boutique** inclut désormais une section pour la liste des magasins spécifiques à la plateforme que vous venez de créer. Cette section inclut son propre ensemble de champs pour **Description** (obligatoire), **Nouveautés de cette version** , **captures d’écran** , icône de vignette d' **application** , **fonctionnalités d’application** et **Configuration requise supplémentaire** . Veillez à entrer des informations dans chaque champ où vous souhaitez afficher des informations pour la description personnalisée dans le Windows Store, même si ces informations sont identiques à celles de la description par défaut. Si vous laissez un de ces champs vide, aucune information ne s’affiche pour ce champ dans la description personnalisée dans le Windows Store.
 
 > [!IMPORTANT]
 > Les champs de la section [informations supplémentaires](create-app-store-listings.md#additional-information) de la liste des magasins ne peuvent pas être personnalisés pour différentes versions de système d’exploitation.
@@ -49,10 +49,10 @@ Vous pouvez continuer à modifier les annonces spécifiques à la plateforme en 
 
 Si vous créez une liste de magasins spécifique à une plateforme et que vous décidez ultérieurement d’afficher votre annonce par défaut pour les clients de ce système d’exploitation, sélectionnez le lien **supprimer** en regard de cette liste.
 
-Une fois que vous avez confirmé que vous souhaitez afficher la liste de vos clients par défaut, sélectionnez **OK**. La liste de la boutique propre à la plateforme sera supprimée (pour toutes les langues dans lesquelles elle existait) et les clients sur cette version du système d’exploitation verront désormais votre liste de magasins par défaut. Si vous changez d’avis, vous pouvez créer une autre liste de magasins propre à la plateforme pour ce système d’exploitation en suivant les étapes indiquées ci-dessus.
- 
+Une fois que vous avez confirmé que vous souhaitez afficher la liste de vos clients par défaut, sélectionnez **OK** . La liste de la boutique propre à la plateforme sera supprimée (pour toutes les langues dans lesquelles elle existait) et les clients sur cette version du système d’exploitation verront désormais votre liste de magasins par défaut. Si vous changez d’avis, vous pouvez créer une autre liste de magasins propre à la plateforme pour ce système d’exploitation en suivant les étapes indiquées ci-dessus.
+ 
 
- 
+ 
 
 
 

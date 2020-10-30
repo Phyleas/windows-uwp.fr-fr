@@ -1,6 +1,6 @@
 ---
 title: Navigation en mode focus sans souris
-Description: Apprenez à utiliser la navigation de focus pour fournir des expériences d’interaction complètes et cohérentes dans vos applications Windows et vos contrôles personnalisés pour les utilisateurs de l’utilisation du clavier, ceux souffrant de handicaps et d’autres exigences d’accessibilité, ainsi que l’expérience de 10 pieds des écrans de télévision et de Xbox.
+description: Apprenez à utiliser la navigation de focus pour fournir des expériences d’interaction complètes et cohérentes dans vos applications Windows et vos contrôles personnalisés pour les utilisateurs de l’utilisation du clavier, ceux souffrant de handicaps et d’autres exigences d’accessibilité, ainsi que l’expérience de 10 pieds des écrans de télévision et de Xbox.
 label: ''
 template: detail.hbs
 keywords: clavier, contrôleur de jeu, contrôle à distance, navigation, navigation interne directionnelle, zone directionnelle, stratégie de navigation, entrée, interaction utilisateur, accessibilité, convivialité
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6119a6b7d7621857e3317589a3b4a64ba3d5d2ea
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3d7b77f627cd09c988c90b44167be7b5e452fe67
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217222"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032212"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Navigation centrée sur le clavier, le boîtier, le contrôle à distance et les outils d’accessibilité
 
@@ -52,7 +52,7 @@ Voici quelques autres considérations relatives à la navigation axée :
   - Si oui, ces groupes contiennent-ils des sous-groupes ?
 - La disposition nécessite-t-elle une navigation directionnelle personnalisée (touches de direction) et un ordre de tabulation ?
 
-Le [logiciel d’ingénierie pour l’ebook d’accessibilité](https://www.microsoft.com/download/details.aspx?id=19262) présente un excellent chapitre sur *la conception de la hiérarchie logique*.
+Le [logiciel d’ingénierie pour l’ebook d’accessibilité](https://www.microsoft.com/download/details.aspx?id=19262) présente un excellent chapitre sur *la conception de la hiérarchie logique* .
 
 ## <a name="2d-directional-navigation-for-keyboard"></a>navigation directionnelle 2D pour le clavier
 
@@ -68,7 +68,7 @@ Vous pouvez utiliser la propriété [XYFocusKeyboardNavigation](/uwp/api/windows
 
 ### <a name="auto-default-behavior"></a>[Automatique](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (comportement par défaut)
 
-Lorsqu’il est défini sur auto, le comportement de navigation directionnelle est déterminé par le ascendance de l’élément ou la hiérarchie d’héritage. Si tous les ancêtres sont en mode par défaut (défini sur **auto**), la navigation directionnelle avec le clavier n’est *pas* prise en charge.
+Lorsqu’il est défini sur auto, le comportement de navigation directionnelle est déterminé par le ascendance de l’élément ou la hiérarchie d’héritage. Si tous les ancêtres sont en mode par défaut (défini sur **auto** ), la navigation directionnelle avec le clavier n’est *pas* prise en charge.
 
 ### <a name="disabled"></a>[Désactivé](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
@@ -77,7 +77,7 @@ Affectez à **XYFocusKeyboardNavigation** la valeur **Disabled** pour bloquer la
 ![Comportement désactivé XYFocusKeyboardNavigation ](images/keyboard/xyfocuskeyboardnav-disabled.gif)
  *XYFocusKeyboardNavigation désactivé*
 
-Dans cet exemple, **XYFocusKeyboardNavigation** ( [ContainerPrimary](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) ) principal a la valeur **activé**. Tous les éléments enfants héritent de ce paramètre et peuvent être parcourus à l’aide des touches de direction. Toutefois, les éléments B3 et B4 se trouvent dans un [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) secondaire (ContainerSecondary) avec **XYFocusKeyboardNavigation** défini sur **Disabled**, qui remplace le conteneur principal et désactive la navigation dans la touche de direction pour lui-même et entre ses éléments enfants.
+Dans cet exemple, **XYFocusKeyboardNavigation** ( [ContainerPrimary](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) ) principal a la valeur **activé** . Tous les éléments enfants héritent de ce paramètre et peuvent être parcourus à l’aide des touches de direction. Toutefois, les éléments B3 et B4 se trouvent dans un [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) secondaire (ContainerSecondary) avec **XYFocusKeyboardNavigation** défini sur **Disabled** , qui remplace le conteneur principal et désactive la navigation dans la touche de direction pour lui-même et entre ses éléments enfants.
 
 ```XAML
 <Grid 
@@ -125,7 +125,7 @@ Dans cet exemple, **XYFocusKeyboardNavigation** ( [ContainerPrimary](/uwp/api/Wi
 </Grid>
 ```
 
-### <a name="enabled"></a>[Activé](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### <a name="enabled"></a>[Enabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
 Affectez la valeur **activé** à **XYFocusKeyboardNavigation** pour prendre en charge la navigation directionnelle 2D vers un contrôle et chacun de ses objets enfants [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) .
 
@@ -134,7 +134,7 @@ Quand il est défini, la navigation à l’aide des touches de direction est lim
 ![Comportement activé pour XYFocusKeyboardNavigation ](images/keyboard/xyfocuskeyboardnav-enabled.gif)
  *XYFocusKeyboardNavigation* Behavior
 
-Dans cet exemple, **XYFocusKeyboardNavigation** ( [ContainerPrimary](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) ) principal a la valeur **activé**. Tous les éléments enfants héritent de ce paramètre et peuvent être parcourus à l’aide des touches de direction. Les éléments B3 et B4 se trouvent dans un [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) secondaire (ContainerSecondary) où **XYFocusKeyboardNavigation** n’est pas défini, ce qui hérite ensuite du paramètre de conteneur principal. L’élément B5 n’est pas dans une zone de direction déclarée et ne prend pas en charge la navigation par touche de direction, mais prend en charge le comportement de navigation par onglet standard.
+Dans cet exemple, **XYFocusKeyboardNavigation** ( [ContainerPrimary](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) ) principal a la valeur **activé** . Tous les éléments enfants héritent de ce paramètre et peuvent être parcourus à l’aide des touches de direction. Les éléments B3 et B4 se trouvent dans un [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) secondaire (ContainerSecondary) où **XYFocusKeyboardNavigation** n’est pas défini, ce qui hérite ensuite du paramètre de conteneur principal. L’élément B5 n’est pas dans une zone de direction déclarée et ne prend pas en charge la navigation par touche de direction, mais prend en charge le comportement de navigation par onglet standard.
 
 ```xaml
 <Grid
@@ -211,7 +211,7 @@ Voici un exemple plus complexe de trois zones directionnelles imbriquées dans l
 
 Si vous pouvez utiliser les touches de direction pour la navigation directionnelle 2D witin un contrôle ou un groupe de contrôles, la touche Tab peut être utilisée pour naviguer entre tous les contrôles d’une application Windows. 
 
-Tous les contrôles interactifs prennent en charge la navigation par touche Tab par défaut (la propriété[IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) et [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) ont la **valeur true**), avec l’ordre de tabulation logique dérivé de la disposition des contrôles dans votre application. Toutefois, l’ordre par défaut ne correspond pas nécessairement à l’ordre visuel. La position d’affichage réelle peut dépendre du conteneur de disposition parent et de certaines propriétés que vous pouvez définir sur les éléments enfants pour influencer la disposition.
+Tous les contrôles interactifs prennent en charge la navigation par touche Tab par défaut (la propriété [IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) et [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) ont la **valeur true** ), avec l’ordre de tabulation logique dérivé de la disposition des contrôles dans votre application. Toutefois, l’ordre par défaut ne correspond pas nécessairement à l’ordre visuel. La position d’affichage réelle peut dépendre du conteneur de disposition parent et de certaines propriétés que vous pouvez définir sur les éléments enfants pour influencer la disposition.
 
 Évitez un ordre de tabulation personnalisé qui permet de se concentrer sur votre application. Par exemple, une liste de contrôles dans un formulaire doit avoir un ordre de tabulation qui s’enchaîne de haut en bas et de gauche à droite (en fonction des paramètres régionaux).
 
@@ -326,7 +326,7 @@ Lorsqu’un contrôle n’a pas de [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.
 
 Tous les éléments enfants d’un contrôle sont considérés comme une portée, et si l’un de ces éléments a également des éléments enfants, ils sont considérés comme une autre portée. Toute ambiguïté est résolue en choisissant le premier élément de l’arborescence d’éléments visuels de l’étendue. 
 
-Pour exclure un contrôle de l’ordre de tabulation, affectez la valeur **false**à la propriété [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) .
+Pour exclure un contrôle de l’ordre de tabulation, affectez la valeur **false** à la propriété [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) .
 
 Remplacez l’ordre de tabulation par défaut en définissant la propriété [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) .
 
@@ -440,7 +440,7 @@ Les propriétés de stratégie de navigation suivantes vous permettent d’influ
 
 Ces propriétés ont les valeurs possibles [auto](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy) (valeur par défaut), [NavigationDirectionDistance](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy), [projection](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)ou [RectilinearDistance ](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy).
 
-Si la valeur est **auto**, le comportement de l’élément est basé sur les ancêtres de l’élément. Si tous les éléments ont la valeur **auto**, la **projection** est utilisée.
+Si la valeur est **auto** , le comportement de l’élément est basé sur les ancêtres de l’élément. Si tous les éléments ont la valeur **auto** , la **projection** est utilisée.
 
 > [!NOTE]
 > D’autres facteurs, tels que l’élément ayant précédemment le focus ou la proximité de l’axe de la direction de navigation, peuvent influencer le résultat.

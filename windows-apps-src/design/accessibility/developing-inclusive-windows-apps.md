@@ -1,5 +1,5 @@
 ---
-Description: Apprenez à développer des applications Windows accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste, ainsi que la prise en charge des technologies d’assistance.
+description: Apprenez à développer des applications Windows accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste, ainsi que la prise en charge des technologies d’assistance.
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Développement d’applications Windows 10 inclusives
 label: Developing inclusive Windows 10 apps
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 856ed1222cd393ec2730226f9c4faadf7e9ad0d7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ff42cc2ac8ffb965b5f58db081cd86106f4145ef
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219812"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029872"
 ---
 # <a name="developing-inclusive-windows-apps"></a>Développement d’applications Windows inclusives  
 
@@ -47,7 +47,7 @@ L’objectif est d’aider l’utilisateur à comprendre la façon dont l’inte
 
 Pour en savoir plus sur la navigation au clavier parmi les éléments de l’interface utilisateur, voir [Accessibilité du clavier](keyboard-accessibility.md).  
 
-En outre, le livre électronique [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) (Conception de logiciels accessibles) comporte un chapitre sur ce sujet intitulé _Conception de la hiérarchie logique_.
+En outre, le livre électronique [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) (Conception de logiciels accessibles) comporte un chapitre sur ce sujet intitulé _Conception de la hiérarchie logique_ .
 
 ## <a name="color-and-contrast"></a>Couleur et contraste  
 L’une des fonctionnalités d’accessibilité intégrées dans Windows est le mode Contraste élevé, qui améliore le contraste de couleur du texte et des images sur l’écran de l’ordinateur. Pour certaines personnes, l’augmentation du contraste des couleurs permet de réduire la fatigue visuelle et de faciliter la lecture. Lorsque vous vérifiez votre interface utilisateur en mode de contraste élevé, vous souhaitez vous assurer que les contrôles ont été codés de manière cohérente et avec les couleurs système (pas à l’aide de couleurs codées en dur) pour vous assurer qu’ils seront en mesure de voir tous les contrôles de l’écran qu’un utilisateur n’utilisant pas le contraste élevé pourrait voir.  
@@ -64,9 +64,9 @@ Pour plus d’informations, voir [Thèmes à contraste élevé](high-contrast-th
 
 Si vous avez décidé d’utiliser votre propre thème de couleur au lieu des couleurs système, tenez compte des recommandations suivantes :  
 
-**Coefficient de contraste couleur** : la section 508 mise à jour du Americans with Disability Act, ainsi que d’autres législations, exigent que le contraste de couleur par défaut entre le texte et son arrière-plan doit être de 5:1. Pour le texte de grande taille (tailles de police de 18 points, ou 14 points et en gras), le contraste requis par défaut est de 3:1.  
+**Coefficient de contraste couleur**  : la section 508 mise à jour du Americans with Disability Act, ainsi que d’autres législations, exigent que le contraste de couleur par défaut entre le texte et son arrière-plan doit être de 5:1. Pour le texte de grande taille (tailles de police de 18 points, ou 14 points et en gras), le contraste requis par défaut est de 3:1.  
 
-**Combinaisons de couleurs** : environ 7 % des hommes (et moins de 1 % des femmes) souffrent de problèmes de perception des couleurs. Les utilisateurs daltoniens ont des difficultés à distinguer certaines couleurs, il est donc important de ne pas se servir uniquement de la couleur pour communiquer un état ou une idée. Comme pour les images décoratives (par exemple, les icônes ou les arrière-plans), les combinaisons de couleurs doivent être choisies de manière à optimiser la perception de l’image par les utilisateurs daltoniens.  
+**Combinaisons de couleurs**  : environ 7 % des hommes (et moins de 1 % des femmes) souffrent de problèmes de perception des couleurs. Les utilisateurs daltoniens ont des difficultés à distinguer certaines couleurs, il est donc important de ne pas se servir uniquement de la couleur pour communiquer un état ou une idée. Comme pour les images décoratives (par exemple, les icônes ou les arrière-plans), les combinaisons de couleurs doivent être choisies de manière à optimiser la perception de l’image par les utilisateurs daltoniens.  
 
 ## <a name="accessibility-checklist"></a>Liste de vérification de l’accessibilité  
 Voici une version abrégée de la liste de vérification de l’accessibilité :

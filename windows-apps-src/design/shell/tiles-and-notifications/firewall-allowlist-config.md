@@ -1,5 +1,5 @@
 ---
-Description: De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic indésirable. Ce document décrit comment autoriser le trafic WNS à traverser des pare-feu.
+description: De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic indésirable. Ce document décrit comment autoriser le trafic WNS à traverser des pare-feu.
 title: Ajout du trafic WNS au pare-feu Allowlist
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, service de notification Windows, notification, Windows, pare-feu, dépannage, IP, trafic, entreprise, réseau, IPv4, VIP, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: 4277b46728464630bf478b1f78008e92b4e3fe99
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: 6212111770ff61179eabf0f77e109d1a6d2235b3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845528"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032042"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Pare-feu d’entreprise et configurations de proxy pour prendre en charge le trafic WNS
 
@@ -38,7 +38,7 @@ Vous trouverez ci-dessous une liste contenant les noms de domaine complets, les 
 
 
 ### <a name="fqdns-vips-ips-and-ports"></a>FQDN, VIP, adresses IP et ports
-Quelle que soit la méthode choisie ci-dessous, vous devez autoriser le trafic réseau vers les destinations listées via le **port 443**. Chacun des éléments du document XML suivant est expliqué dans le tableau qui le suit (en [termes et notations](#terms-and-notations)). Les plages d’adresses IP ont été intentionnellement omises dans ce document pour vous inciter à utiliser uniquement les noms de domaine complets, car les noms de domaine complets restent constants. Toutefois, vous pouvez télécharger le fichier XML contenant la liste complète à partir du centre de téléchargement : [VIP et plages d’adresses IP du service de notification Windows (WNS)](https://www.microsoft.com/download/details.aspx?id=44238). Les nouvelles adresses IP virtuelles ou les plages d’adresses IP seront **effectives une semaine après leur téléchargement**.
+Quelle que soit la méthode choisie ci-dessous, vous devez autoriser le trafic réseau vers les destinations listées via le **port 443** . Chacun des éléments du document XML suivant est expliqué dans le tableau qui le suit (en [termes et notations](#terms-and-notations)). Les plages d’adresses IP ont été intentionnellement omises dans ce document pour vous inciter à utiliser uniquement les noms de domaine complets, car les noms de domaine complets restent constants. Toutefois, vous pouvez télécharger le fichier XML contenant la liste complète à partir du centre de téléchargement : [VIP et plages d’adresses IP du service de notification Windows (WNS)](https://www.microsoft.com/download/details.aspx?id=44238). Les nouvelles adresses IP virtuelles ou les plages d’adresses IP seront **effectives une semaine après leur téléchargement** .
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -73,9 +73,9 @@ Vous trouverez ci-dessous des explications sur les notations et les éléments u
 | Terme | Explication |
 |---|---|
 | **Point-notation décimale (par exemple, 64.4.28.0/26)** | La notation à points décimaux est un moyen de décrire la plage d’adresses IP. Par exemple, 64.4.28.0/26 signifie que les 26 premiers bits de 64.4.28.0 sont constants, tandis que les 6 derniers bits sont variables.  Dans ce cas, la plage IPv4 est 64.4.28.0-64.4.28.63. |
-| **ClientDNS** | Il s’agit des filtres de nom de domaine complet (FQDN) pour les périphériques clients (PC Windows, ordinateurs de bureau) recevant des notifications de WNS. Elles doivent être autorisées par le biais du pare-feu pour permettre aux clients WNS d’utiliser la fonctionnalité WNS.  Il est recommandé d’autoriser la liste des noms de domaine complets au lieu des plages IP/VIP, puisque celles-ci ne seront jamais modifiées. |
+| **ClientDNS** | Il s’agit des filtres de nom de domaine Fully-Qualified (FQDN) pour les périphériques clients (PC Windows, ordinateurs de bureau) recevant des notifications de WNS. Elles doivent être autorisées par le biais du pare-feu pour permettre aux clients WNS d’utiliser la fonctionnalité WNS.  Il est recommandé d’autoriser la liste des noms de domaine complets au lieu des plages IP/VIP, puisque celles-ci ne seront jamais modifiées. |
 | **ClientIPsIPv4** | Il s’agit des adresses IPv4 des serveurs auxquels les périphériques clients accèdent (ordinateurs Windows, ordinateurs de bureau) recevant des notifications de WNS. |
-| **CloudServiceDNS** | Il s’agit des filtres de nom de domaine complet (FQDN) pour les serveurs WNS auxquels votre service Cloud doit communiquer pour envoyer des notificatios à WNS. Celles-ci doivent être autorisées par le biais du pare-feu pour permettre aux services d’envoyer des notifications WNS.  Il est recommandé d’autoriser la liste des noms de domaine complets au lieu des plages IP/VIP, puisque celles-ci ne seront jamais modifiées.|
+| **CloudServiceDNS** | Il s’agit des filtres de nom de domaine Fully-Qualified (FQDN) pour les serveurs WNS auxquels votre service Cloud communiquera pour envoyer des notificatios à WNS. Celles-ci doivent être autorisées par le biais du pare-feu pour permettre aux services d’envoyer des notifications WNS.  Il est recommandé d’autoriser la liste des noms de domaine complets au lieu des plages IP/VIP, puisque celles-ci ne seront jamais modifiées.|
 | **CloudServiceIPs** | CloudServiceIPs sont les adresses IPv4 des serveurs utilisés pour les services Cloud pour envoyer des notifications à WNS  |
 
 
@@ -91,4 +91,4 @@ Si vous utilisez le service de notification hérité, MPNS, les plages d’adres
 * [Comment s’authentifier auprès des services de notifications Push Windows (WNS)](/previous-versions/windows/apps/hh465407(v=win.10))
 * [En-têtes des demandes et des réponses du service de notifications Push](/previous-versions/windows/apps/hh465435(v=win.10))
 * [Recommandations et liste de vérification sur les notifications Push](./windows-push-notification-services--wns--overview.md)
- 
+ 

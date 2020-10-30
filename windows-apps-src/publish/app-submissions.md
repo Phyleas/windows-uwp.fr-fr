@@ -1,22 +1,22 @@
 ---
-Description: Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission.
+description: Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission.
 title: Soumissions d’application
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: liste de vérification, Windows, UWP, envoi, envoi, jeu, application, envoi
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 99b4d7412727e5f195c32d3f3c21fe82b284e658
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d38cf2b8e134983ae73c909f7036603eadcd6289
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219972"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031292"
 ---
 # <a name="app-submissions"></a>Soumissions d’application
 
 
-Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission**.
+Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission** .
 
 Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Les mises à jour que vous apportez à votre soumission sont enregistrées, ce qui vous permet de revenir et de travailler dessus à chaque fois que vous êtes prêt.
 
@@ -62,7 +62,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 | **Paramètres du jeu**             | Facultatif (applicable uniquement aux jeux)         | [Paramètres du jeu](enter-app-properties.md#game-settings) |
 | **Mode d’affichage**             | Facultatif                   | [Mode d’affichage](enter-app-properties.md#display-mode) |
 | **Déclarations de produit**          | Par défaut : les clients peuvent installer cette application sur un autre lecteur ou dispositif de stockage. Windows peut inclure les données de cette application dans les sauvegardes automatiques sur OneDrive | [Déclarations de produit](./product-declarations.md) |
-| **Configuration exigée**      | Facultatif                                    | [Configuration exigée](enter-app-properties.md#system-requirements)      |
+| **Configuration système requise**      | Facultatif                                    | [Configuration système requise](enter-app-properties.md#system-requirements)      |
 
 <span/>
 

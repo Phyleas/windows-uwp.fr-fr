@@ -1,5 +1,5 @@
 ---
-Description: Les interactions de l’utilisateur dans l’application Windows sont une combinaison de sources d’entrée et de sortie (telles que la souris, le clavier, le stylet, le pavé tactile, la voix, Cortana, le contrôleur, le mouvement, le point de regard, etc.), ainsi que divers modes ou modificateurs qui permettent des expériences étendues (y compris la roulette et les boutons de la souris
+description: Les interactions de l’utilisateur dans l’application Windows sont une combinaison de sources d’entrée et de sortie (telles que la souris, le clavier, le stylet, le pavé tactile, la voix, Cortana, le contrôleur, le mouvement, le point de regard, etc.), ainsi que divers modes ou modificateurs qui permettent des expériences étendues (y compris la roulette et les boutons de la souris
 title: Notions fondamentales sur les interactions
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
@@ -8,18 +8,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dde0e5479533aed225dbadc68b325afede050dbb
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: aeb10951061d7d029b2825d7210b9f00d8731873
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219672"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030182"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 
 ![types d’entrée Windows](images/input-interactions/icons-inputdevices03.png)
 
-Les interactions de l’utilisateur dans l’application Windows sont une combinaison de sources d’entrée et de sortie (telles que la souris, le clavier, le stylet, le pavé tactile, la voix, **Cortana**, le contrôleur, le mouvement, le point de regard, etc.), ainsi que divers modes ou modificateurs qui permettent des expériences étendues (y compris la roulette et les boutons de la souris
+Les interactions de l’utilisateur dans l’application Windows sont une combinaison de sources d’entrée et de sortie (telles que la souris, le clavier, le stylet, le pavé tactile, la voix, **Cortana** , le contrôleur, le mouvement, le point de regard, etc.), ainsi que divers modes ou modificateurs qui permettent des expériences étendues (y compris la roulette et les boutons de la souris
 
 UWP utilise un système d’interaction contextuelle « intelligent » qui, dans la plupart des cas, élimine la nécessité de gérer individuellement les types uniques d’entrée reçus par votre application. Cela inclut la gestion des entrées effectuées par le biais d’une interface tactile, d’un pavé tactile, d’une souris et d’un stylet en tant que type de pointeur générique pour prendre en charge les actions statiques (comme l’appui ou l’appui long), les actions de manipulation (comme le glissement pour le mouvement panoramique) ou le rendu d’entrée manuscrite.
 
@@ -27,15 +27,15 @@ Familiarisez-vous avec chaque type de périphérique d’entrée, ses comporteme
 
 ## <a name="gaze"></a>Pointage du regard
 
-Pour la **mise à jour 2018 d’avril de Windows 10**, nous avons introduit la prise en charge de l’entrée de regard en utilisant les périphériques d’entrée de suivi oculaire. 
+Pour la **mise à jour 2018 d’avril de Windows 10** , nous avons introduit la prise en charge de l’entrée de regard en utilisant les périphériques d’entrée de suivi oculaire. 
 
 > [!NOTE]
 > La prise en charge du matériel de suivi oculaire a été introduite dans **Windows 10 automne Creators Update** avec le [contrôle oculaire](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), une fonctionnalité intégrée qui vous permet d’utiliser vos yeux pour contrôler le pointeur sur l’écran, taper avec le clavier visuel et communiquer avec des personnes utilisant la conversion de texte par synthèse vocale.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
-- Tablet
-- PC et portables
+- Tablette
+- PC et ordinateurs portables
 
 ### <a name="typical-usage"></a>Utilisation classique
 
@@ -47,12 +47,12 @@ Effectuez le suivi du pointage du regard, de l’attention et de la présence de
 
 ## <a name="surface-dial"></a>Surface Dial
 
-Pour la **mise à jour anniversaire Windows 10**, nous avons introduit la catégorie roulette Windows de l’appareil d’entrée. Surface Dial est le premier de cette classe de périphérique.
+Pour la **mise à jour anniversaire Windows 10** , nous avons introduit la catégorie roulette Windows de l’appareil d’entrée. Surface Dial est le premier de cette classe de périphérique.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
-- Tablet
-- PC et portables
+- Tablette
+- PC et ordinateurs portables
 
 ### <a name="typical-usage"></a>Utilisation classique
 
@@ -69,8 +69,8 @@ Dans Windows 10, l’extensibilité de **Cortana** vous permet de gérer les co
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
--   PC et portables
+-   Tablette
+-   PC et ordinateurs portables
 -   Surface Hub
 -   IoT
 -   Xbox
@@ -80,14 +80,14 @@ Dans Windows 10, l’extensibilité de **Cortana** vous permet de gérer les co
 
 ### <a name="typical-usage"></a>Utilisation classique
 
-Une commande vocale est un énoncé, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée via **Cortana**. L’application peut être lancée au premier plan ou en arrière-plan en fonction du niveau et de la complexité de l’interaction. Par exemple, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaire sont mieux gérées au premier plan, tandis que les commandes de base peuvent être gérées en arrière-plan.
+Une commande vocale est un énoncé, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée via **Cortana** . L’application peut être lancée au premier plan ou en arrière-plan en fonction du niveau et de la complexité de l’interaction. Par exemple, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaire sont mieux gérées au premier plan, tandis que les commandes de base peuvent être gérées en arrière-plan.
 
 L’intégration des fonctionnalités de base de votre application et la fourniture d’un point d’entrée central pour que l’utilisateur accomplisse la plupart des tâches sans ouvrir directement votre application, permettent à **Cortana** de devenir une liaison entre votre application et l’utilisateur. Dans de nombreux cas, cela permet à l’utilisateur de gagner beaucoup de temps et d’énergie. Pour plus d’informations, voir [Recommandations relatives à la conception de Cortana](/cortana/skills/cortana-design-guidelines).
 
 ### <a name="more-info"></a>En savoir plus
 
 [Instructions de conception de Cortana](/cortana/skills/cortana-design-guidelines)
- 
+ 
 
 ## <a name="speech"></a>Voix
 
@@ -100,8 +100,8 @@ La conversion de texte par synthèse vocale (ou TTS) est utilisée pour informer
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
--   PC et portables
+-   Tablette
+-   PC et ordinateurs portables
 -   Surface Hub
 -   IoT
 -   Xbox
@@ -119,7 +119,7 @@ Le langage naturel est la façon dont nous interagissons verbalement avec d’au
 
 Les interactions en langage naturel avec une application sont similaires : nous parlons à l’application par le biais de notre appareil comme s’il s’agissait d’une personne et attendons de l’application qu’elle comprenne et réagisse en conséquence.
 
-Le langage naturel est le mode d’interaction vocale le plus avancé. Il peut être implémenté et exposé par le biais de **Cortana**.
+Le langage naturel est le mode d’interaction vocale le plus avancé. Il peut être implémenté et exposé par le biais de **Cortana** .
 
 **Commande et contrôle**
 
@@ -136,13 +136,13 @@ La dictée est généralement utilisée lorsqu’une application n’a pas besoi
 ### <a name="more-info"></a>En savoir plus
 
 [Recommandations en matière de conception de fonctions vocales](./speech-interactions.md)
- 
+ 
 
 ## <a name="pen"></a>Stylet
 
 Un stylet peut servir de dispositif de pointage précis au niveau des pixels, tel que la souris. Il constitue également l’appareil d’entrée manuscrite numérique optimal.
 
-**Remarque**    Il existe deux types d’appareils Pen : actif et passif.
+**Remarque**  Il existe deux types de stylet : actif et passif.
   -   Les stylets passifs ne contiennent pas d’éléments électroniques et peuvent émuler efficacement des entrées tactiles au doigt. Ils requièrent un écran de base reconnaissant les entrées en fonction de la pression de contact. Dans la mesure où les utilisateurs posent souvent leur main lorsqu’ils écrivent sur la surface d’entrée, les données d’entrée peuvent être altérées en raison d’une mauvaise élimination des interférences de la paume.
   -   Les stylets actifs contiennent des éléments électroniques et peuvent fonctionner avec des écrans d’appareil complexes. Ils peuvent ainsi fournir des données d’entrée beaucoup plus étendues (pointage ou données de proximité, par exemple) au système et à votre application. L’élimination des interférences de la paume est beaucoup plus robuste.
 
@@ -151,8 +151,8 @@ Lorsque nous parlons de stylets, nous faisons référence à des stylets actifs 
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
--   PC et portables
+-   Tablette
+-   PC et ordinateurs portables
 -   Surface Hub
 -   IoT
 
@@ -169,17 +169,17 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 ### <a name="more-info"></a>En savoir plus
 
 [Recommandations en matière de conception pour le stylet](./pen-and-stylus-interactions.md)
- 
+ 
 
-## <a name="touch"></a>Entrées tactiles
+## <a name="touch"></a>Toucher
 
 Avec une interface tactile, les mouvements physiques avec un ou plusieurs doigts peuvent servir à émuler la manipulation directe d’éléments d’interface utilisateur (par exemple, le mouvement panoramique, la rotation, le redimensionnement ou le déplacement), ou faire office de méthode d’entrée alternative (semblable à la souris ou au stylet) ou complémentaire (pour modifier l’aspect d’autres entrées, comme par exemple maculer un trait d’encre dessiné avec un stylet). Les expériences tactiles peuvent fournir des sensations plus naturelles et proches de celles du monde réel pour les utilisateurs lorsqu’ils interagissent avec des éléments sur un écran.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
--   PC et portables
+-   Tablette
+-   PC et ordinateurs portables
 -   Surface Hub
 -   IoT
 
@@ -204,7 +204,7 @@ En règle générale, une interface tactile répond aux critères suivants :
 ### <a name="more-info"></a>En savoir plus
 
 [Recommandations en matière de conception pour l’interface tactile](./touch-interactions.md)
- 
+ 
 
 ## <a name="touchpad"></a>Pavé tactile
 
@@ -212,7 +212,7 @@ Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
--   PC et portables
+-   PC et ordinateurs portables
 -   IoT
 
 ![pavé tactile](images/input-interactions/icons-touchpad01.png)
@@ -228,7 +228,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 ### <a name="more-info"></a>En savoir plus
 
 [Recommandations en matière de conception pour le pavé tactile](./touch-interactions.md)
- 
+ 
 
 ## <a name="keyboard"></a>Clavier
 
@@ -239,8 +239,8 @@ Avec [Continuum pour téléphones](/windows-hardware/design/device-experiences/c
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
--   PC et portables
+-   Tablette
+-   PC et ordinateurs portables
 -   Surface Hub
 -   IoT
 -   Xbox
@@ -256,7 +256,7 @@ Le clavier visuel est un clavier logiciel visuel que vous pouvez utiliser à la 
 
 Le clavier tactile est un clavier logiciel visuel permettant d’entrer du texte à l’aide de la fonction tactile. Le clavier tactile ne se substitue pas au clavier visuel car il n’est utilisé que pour la saisie de texte (il n’émule pas le clavier matériel) et apparaît seulement quand un champ textuel ou un autre contrôle textuel modifiable reçoit le focus. Le clavier tactile ne gère pas les commandes système ou de l’application.
 
-**Remarque**    Le OSK est prioritaire sur le clavier tactile, qui ne s’affiche pas si le OSK est présent.
+**Remarque**  Le clavier visuel a priorité sur le clavier tactile, lequel n’est pas visible si le clavier visuel est présent.
 
 En règle générale, un clavier répond aux critères suivants :
 
@@ -268,7 +268,7 @@ En règle générale, un clavier répond aux critères suivants :
 ### <a name="more-info"></a>En savoir plus
 
 [Recommandations en matière de conception pour le clavier](./keyboard-interactions.md)
- 
+ 
 
 ## <a name="mouse"></a>Souris
 
@@ -277,8 +277,8 @@ La souris est particulièrement adaptée aux applications de productivité et in
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
--   PC et portables
+-   Tablette
+-   PC et ordinateurs portables
 -   Surface Hub
 -   IoT
 
@@ -295,7 +295,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 ### <a name="more-info"></a>En savoir plus
 
 [Recommandations en matière de conception pour la souris](./mouse-interactions.md)
- 
+ 
 
 ## <a name="gesture"></a>Mouvement
 
@@ -303,7 +303,7 @@ Un mouvement désigne tous les gestes de l’utilisateur reconnus comme entrée 
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
--   PC et portables
+-   PC et ordinateurs portables
 -   IoT
 -   Xbox
 -   HoloLens
@@ -331,7 +331,7 @@ Le boîtier de commande/contrôleur est un périphérique spécialisé général
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
--   PC et portables
+-   PC et ordinateurs portables
 -   IoT
 -   Xbox
 
@@ -349,8 +349,8 @@ En vous adaptant au plus grand nombre d’utilisateurs et d’appareils et en co
 ### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
--   Tablet
--   PC et portables
+-   Tablette
+-   PC et ordinateurs portables
 -   Surface Hub
 -   IoT
 -   Xbox
@@ -366,6 +366,6 @@ Tout comme les personnes ont recours à une combinaison de voix et de mouvement 
 
 
 
- 
+ 
 
- 
+ 

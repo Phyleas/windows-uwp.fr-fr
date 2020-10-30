@@ -1,5 +1,5 @@
 ---
-Description: Utilisez les commentaires visuels pour montrer aux utilisateurs quand leurs interactions avec une application Windows sont détectées, interprétées et gérées.
+description: Utilisez les commentaires visuels pour montrer aux utilisateurs quand leurs interactions avec une application Windows sont détectées, interprétées et gérées.
 title: Retour visuel
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
@@ -8,18 +8,18 @@ keywords: retour visuel, retour de focus, retour tactile, visualisation de conta
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1afc1c884a7a01ef1021f37476d1e29430c62e3c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b82ff29de09766aa348a548c5bd484b7c46db31f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219832"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030512"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
 Utilisez le retour visuel pour indiquer aux utilisateurs quand leurs interactions sont détectées, interprétées et gérées. Le retour visuel peut aider les utilisateurs en encourageant l’interaction. Il indique le succès d’une interaction et améliore ainsi le sentiment de contrôle de l’utilisateur. Il transmet également l’état du système et réduit les erreurs.
 
-> **API importantes**:  [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Core**](/uwp/api/Windows.UI.Core)
+> **API importantes** :  [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Core**](/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -58,16 +58,16 @@ Voici quelques exemples de visualisations de contact intégrées à Windows :
 
 Toutes les applications Windows comportent un visuel du focus plus défini autour des contrôles interactifs de l’application. Ces nouveaux visuels du focus sont entièrement personnalisables, mais peuvent également être désactivés si nécessaire.
 
-Pour l' **expérience de 10 pieds** typique de l’utilisation de la Xbox et de la télévision, Windows prend en charge le **focus**, un effet d’éclairage qui anime la bordure d’éléments pouvant être actifs, tels qu’un bouton, lorsqu’ils se concentrent sur le boîtier ou l’entrée au clavier.
+Pour l' **expérience de 10 pieds** typique de l’utilisation de la Xbox et de la télévision, Windows prend en charge le **focus** , un effet d’éclairage qui anime la bordure d’éléments pouvant être actifs, tels qu’un bouton, lorsqu’ils se concentrent sur le boîtier ou l’entrée au clavier.
 
 ## <a name="color-branding--customizing"></a>Personnalisation des couleurs et des visuels du focus
 
 ### <a name="border-properties"></a>Propriétés des bordures
 
-Les visuels du focus à haute visibilité sont composés de deux éléments : la bordure principale et la bordure secondaire. La bordure principale a une épaisseur de **2 px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1 px** et apparaît autour de la bordure principale *intérieure*.
+Les visuels du focus à haute visibilité sont composés de deux éléments : la bordure principale et la bordure secondaire. La bordure principale a une épaisseur de **2 px** et apparaît autour de la bordure secondaire *extérieure* . La bordure secondaire a une épaisseur de **1 px** et apparaît autour de la bordure principale *intérieure* .
 ![Lignes rouges des visuels du focus à haute visibilité](images/FocusRectRedlines.png)
 
-Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez les propriétés **FocusVisualPrimaryThickness** ou **FocusVisualSecondaryThickness**, respectivement :
+Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez les propriétés **FocusVisualPrimaryThickness** ou **FocusVisualSecondaryThickness** , respectivement :
 ```XAML
 <Slider Width="200" FocusVisualPrimaryThickness="5" FocusVisualSecondaryThickness="2"/>
 ```
@@ -75,7 +75,7 @@ Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez l
 
 La marge est une propriété de type [**Thickness**](/dotnet/api/system.windows.thickness)et, par conséquent, la marge peut être personnalisée pour s’afficher uniquement sur certains côtés du contrôle. Voir ci-dessous : ![ focus de visibilité haute épaisseur marge inférieure uniquement](images/FocusThicknessSide.png)
 
-La marge est l’espace entre les limites visuelles du contrôle et le début de la *bordure secondaire*des éléments visuels du focus. La marge par défaut est **1px** en dehors des limites du contrôle. Vous pouvez modifier cette marge par contrôle, en modifiant la propriété **FocusVisualMargin** :
+La marge est l’espace entre les limites visuelles du contrôle et le début de la *bordure secondaire* des éléments visuels du focus. La marge par défaut est **1px** en dehors des limites du contrôle. Vous pouvez modifier cette marge par contrôle, en modifiant la propriété **FocusVisualMargin** :
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
@@ -83,7 +83,7 @@ La marge est l’espace entre les limites visuelles du contrôle et le début de
 
 *Une marge négative éloignera la bordure du centre du contrôle ; en revanche, une marge positive rapprochera la bordure du centre du contrôle.*
 
-Pour désactiver les visuels du focus du contrôle, désactivez simplement **UseSystemFocusVisuals** :
+Pour désactiver les visuels du focus du contrôle, désactivez simplement **UseSystemFocusVisuals**  :
 ```XAML
 <Slider Width="200" UseSystemFocusVisuals="False"/>
 ```
@@ -133,6 +133,6 @@ Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propri
 - [Entrée : exemple de mouvements Windows 8](/samples/browse/?redirectedfrom=MSDN-samples)
 - [Entrée : manipulations et gestes, exemple](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [Exemple d’entrée tactile DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
- 
+ 
 
- 
+ 

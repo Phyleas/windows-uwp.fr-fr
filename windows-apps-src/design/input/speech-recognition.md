@@ -1,5 +1,5 @@
 ---
-Description: La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
+description: La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
 title: Reconnaissance vocale
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
@@ -8,19 +8,19 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 249af1260b261733454fa353adc695818d113afc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ad721bc64de87fc8bb1a56f687860738bebed56c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165893"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030052"
 ---
 # <a name="speech-recognition"></a>Reconnaissance vocale
 
 
 La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
 
-> **API importantes**: [ **Windows. Media. SpeechRecognition**](/uwp/api/Windows.Media.SpeechRecognition)
+> **API importantes** : [ **Windows. Media. SpeechRecognition**](/uwp/api/Windows.Media.SpeechRecognition)
 
 La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API de reconnaissance vocale pour programmer le runtime, de grammaires prêtes à l’emploi pour la dictée et la recherche web, ainsi que d’une interface utilisateur système par défaut permettant aux utilisateurs de découvrir et d’utiliser les fonctionnalités de reconnaissance vocale.
 
@@ -221,11 +221,11 @@ La grammaire de dictée de texte libre par défaut peut reconnaître la plupart 
 La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
 > [!NOTE]
-> Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.     
+> Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.     
 
 Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 
-Pour utiliser les contraintes de service Web, l’entrée vocale et la prise en charge de la dictée doivent être activées dans les **paramètres** en activant l’option « obtenir un savoir-faire » dans  **paramètres-> la confidentialité > la reconnaissance vocale, l’entrée manuscrite et la saisie**.
+Pour utiliser les contraintes de service Web, l’entrée vocale et la prise en charge de la dictée doivent être activées dans les **paramètres** en activant l’option « obtenir un savoir-faire » dans  **paramètres-> la confidentialité > la reconnaissance vocale, l’entrée manuscrite et la saisie** .
 
 Ici, nous montrons comment tester si les entrées vocales sont activées et ouvrir la page Paramètres-> confidentialité-> la parole, l’entrée manuscrite et la frappe, si ce n’est pas le cas.
 
@@ -280,7 +280,7 @@ Utilisez un fichier XML VCD (Voice Command Definition) pour définir les command
 
 Voir [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
-**Remarque**    Le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous souhaitez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
+**Remarque**  Le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous souhaitez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
 Pour apprendre à utiliser des contraintes, voir [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md).
 
 La grammaire de dictée prédéfinie d’une application Windows universelle reconnaît la plupart des mots et des expressions courtes dans une langue donnée. Elle est activée par défaut lorsqu’un objet du moteur de reconnaissance vocale est instancié sans contraintes personnalisées.
@@ -323,7 +323,7 @@ Si vous utilisez une contrainte basée sur une grammaire prédéfinie (dictée o
 Si vous utilisez une contrainte basée sur une liste de mots ou d’expressions ou une contrainte basée sur un fichier de grammaire SRGS :
 
 -   Écran **Écoute**
--   Écran **Nous vous avons entendu dire**, si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
+-   Écran **Nous vous avons entendu dire** , si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
 -   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
 L’image suivante présente un exemple du flux entre des écrans d’un moteur de reconnaissance vocale qui utilise une contrainte basée sur un fichier de grammaire SGRS. Dans cet exemple, la reconnaissance vocale a réussi.
@@ -334,7 +334,7 @@ L’image suivante présente un exemple du flux entre des écrans d’un moteur 
 
 ![Écran final de la reconnaissance vocale correspondant à une contrainte basée sur un fichier de grammaire SGRS](images/speech-listening-complete.png)
 
-L’écran **Listening** peut fournir des exemples de mot ou d’expression que l’application peut reconnaître. Nous montrons ici comment utiliser les propriétés de la classe [**SpeechRecognizerUIOptions**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) (obtenue en appelant la propriété [**SpeechRecognizer.UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions)) pour personnaliser le contenu de l’écran **Listening**.
+L’écran **Listening** peut fournir des exemples de mot ou d’expression que l’application peut reconnaître. Nous montrons ici comment utiliser les propriétés de la classe [**SpeechRecognizerUIOptions**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) (obtenue en appelant la propriété [**SpeechRecognizer.UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions)) pour personnaliser le contenu de l’écran **Listening** .
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)

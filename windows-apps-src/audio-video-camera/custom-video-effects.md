@@ -1,20 +1,20 @@
 ---
-Description: Cet article explique comment créer un composant Windows Runtime implémentant l’interface IBasicVideoEffect pour créer des effets personnalisés de flux vidéo.
+description: Cet article explique comment créer un composant Windows Runtime implémentant l’interface IBasicVideoEffect pour créer des effets personnalisés de flux vidéo.
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Effets vidéo personnalisés
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: a80e00a44bbb1c401811f72eb7024aef25013f29
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 119d444f073c4f668dcdc63fc118ed408eca8e32
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363952"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030492"
 ---
 # <a name="custom-video-effects"></a>Effets vidéo personnalisés
 
@@ -30,12 +30,12 @@ Un effet vidéo personnalisé est défini dans une classe qui implémente l’in
 
 **Ajouter un composant Windows Runtime pour votre effet vidéo**
 
-1.  Dans Microsoft Visual Studio, quand votre solution est ouverte, accédez au menu **Fichier**, sélectionnez **Ajouter-&gt;Nouveau projet.**
-2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)**.
-3.  Pour cet exemple, nommez le projet *VideoEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
-4.  Cliquez sur **OK**.
-5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
-6.  Renommez le fichier *ExampleVideoEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
+1.  Dans Microsoft Visual Studio, quand votre solution est ouverte, accédez au menu **Fichier** , sélectionnez **Ajouter-&gt;Nouveau projet.**
+2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)** .
+3.  Pour cet exemple, nommez le projet *VideoEffectComponent* . Ce nom sera référencé dans le code ultérieurement.
+4.  Cliquez sur **OK** .
+5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions** , cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer** .
+6.  Renommez le fichier *ExampleVideoEffect.cs* . Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui** .
 7.  Ouvrez **ExampleVideoEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicVideoEffect**](/uwp/api/Windows.Media.Effects.IBasicVideoEffect).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetImplementIBasicVideoEffect":::
@@ -72,7 +72,7 @@ La méthode [**DiscardQueuedFrames**](/uwp/api/windows.media.effects.ibasicvideo
 La propriété [**IsReadOnly**](/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) permet au système de savoir si votre effet écrit dans la sortie de l’effet. Si votre application ne modifie pas les trames vidéo (par exemple, un effet qui effectue seulement une analyse des trames vidéo), vous devez définir cette propriété sur true. Ainsi, le système copie efficacement à votre place l’entrée de trame dans la sortie de trame.
 
 > [!TIP]
-> Quand la propriété [**IsReadOnly**](/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) est définie sur true, le système copie la trame d’entrée sur la trame de sortie avant l’appel de [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe). Le fait de définir la propriété **IsReadOnly** sur true ne vous empêche pas d’écrire sur les trames de sortie de l’effet dans **ProcessFrame**.
+> Quand la propriété [**IsReadOnly**](/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) est définie sur true, le système copie la trame d’entrée sur la trame de sortie avant l’appel de [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe). Le fait de définir la propriété **IsReadOnly** sur true ne vous empêche pas d’écrire sur les trames de sortie de l’effet dans **ProcessFrame** .
 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetIsReadOnly":::
@@ -93,13 +93,13 @@ Le système vérifie la propriété [**SupportedEncodingProperties**](/uwp/api/w
 
 
 > [!NOTE] 
-> Si vous renvoyez une liste vide d’objets [**VideoEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) à partir de **SupportedEncodingProperties**, le système utilise par défaut le codage ARGB32.
+> Si vous renvoyez une liste vide d’objets [**VideoEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) à partir de **SupportedEncodingProperties** , le système utilise par défaut le codage ARGB32.
 
- 
+ 
 
 ### <a name="supportedmemorytypes-property"></a>Propriété SupportedMemoryTypes
 
-Le système vérifie que la propriété [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) pour déterminer si l’effet va accéder aux trames vidéo dans la mémoire du logiciel ou dans la mémoire du matériel (GPU). Si vous retournez [**MediaMemoryTypes. CPU**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes), les trames d’entrée et de sortie qui contiennent des données d’image dans les objets [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) sont passées. Si vous renvoyez **MediaMemoryTypes.Gpu**, l’effet sera transmis aux trames en entrée et en sortie qui contiennent des données d’image dans les objets [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface).
+Le système vérifie que la propriété [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) pour déterminer si l’effet va accéder aux trames vidéo dans la mémoire du logiciel ou dans la mémoire du matériel (GPU). Si vous retournez [**MediaMemoryTypes. CPU**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes), les trames d’entrée et de sortie qui contiennent des données d’image dans les objets [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) sont passées. Si vous renvoyez **MediaMemoryTypes.Gpu** , l’effet sera transmis aux trames en entrée et en sortie qui contiennent des données d’image dans les objets [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSupportedMemoryTypes":::
 
@@ -107,7 +107,7 @@ Le système vérifie que la propriété [**SupportedMemoryTypes**](/uwp/api/wind
 > [!NOTE]
 > Si vous spécifiez [**MediaMemoryTypes.GpuAndCpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes), le système utilise la mémoire du GPU ou du système, selon laquelle est la plus performante pour le pipeline. Quand vous utilisez cette valeur, vous devez vérifier la méthode [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) pour voir si le [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) ou le [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) transmis dans la méthode contient des données, puis traiter la trame en fonction.
 
- 
+ 
 
 ### <a name="timeindependent-property"></a>Propriété TimeIndependent
 
@@ -146,13 +146,13 @@ Ajoutez le code suivant à l’intérieur de l’espace de noms de l’effet pou
 
 > [!NOTE]
 > Dans la mesure où cette technique accède à une mémoire tampon d’image native non gérée, vous devez configurer votre projet pour autoriser du code unsafe.
-> 1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet VideoEffectComponent et sélectionnez **Propriétés**.
+> 1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet VideoEffectComponent et sélectionnez **Propriétés** .
 > 2.  Sélectionnez l’onglet **Build** .
 > 3.  Activez la case à cocher **autoriser le code unsafe** .
 
- 
+ 
 
-Vous pouvez maintenant ajouter l’implémentation de la méthode **ProcessFrame**. Tout d’abord, cette méthode obtient un objet [**BitmapBuffer**](/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) à partir des bitmaps logiciels en entrée et en sortie. Notez que la trame en sortie est ouverte pour l’écriture, et que la trame en entrée l’est pour la lecture. Ensuite, un [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference) est obtenu pour chaque tampon en appelant [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference). Ensuite, le tampon de données réel est obtenu en transtypant les objets **IMemoryBufferReference** en tant qu’interface d’interopérabilité COM définie ci-dessus, **IMemoryByteAccess**, puis en appelant **GetBuffer**.
+Vous pouvez maintenant ajouter l’implémentation de la méthode **ProcessFrame** . Tout d’abord, cette méthode obtient un objet [**BitmapBuffer**](/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) à partir des bitmaps logiciels en entrée et en sortie. Notez que la trame en sortie est ouverte pour l’écriture, et que la trame en entrée l’est pour la lecture. Ensuite, un [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference) est obtenu pour chaque tampon en appelant [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference). Ensuite, le tampon de données réel est obtenu en transtypant les objets **IMemoryBufferReference** en tant qu’interface d’interopérabilité COM définie ci-dessus, **IMemoryByteAccess** , puis en appelant **GetBuffer** .
 
 Maintenant que les tampons de données ont été obtenus, vous pouvez lire à partir du tampon en entrée et écrire sur le tampon en sortie. La disposition de la mémoire tampon est obtenue en appelant [**GetPlaneDescription**](/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription), qui fournit des informations sur la largeur, la Stride et le décalage initial de la mémoire tampon. Les bits par pixel sont déterminés par les propriétés d’encodage définies précédemment à l’aide de la méthode [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) . Les informations sur le format du tampon sont utilisées pour trouver l’index dans le tampon pour chaque pixel. La valeur du pixel du tampon source est copiée dans le tampon cible. Les valeurs de couleur sont multipliées par la propriété FadeValue définie pour cet effet afin de les diminuer du montant spécifié.
 
@@ -168,11 +168,11 @@ Utilisez les étapes suivantes pour ajouter le package NuGet Win2D au projet que
 
 **Pour ajouter le package NuGet Win2D à votre projet d’effet**
 
-1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **VideoEffectComponent** et sélectionnez **Gérer les packages NuGet**.
-2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer**.
-3.  Dans la zone de recherche, entrez **Win2D**.
-4.  Sélectionnez **Win2D.uwp**, puis **Installer** dans le volet droit.
-5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
+1.  Dans l’ **Explorateur de solutions** , cliquez avec le bouton droit sur le projet **VideoEffectComponent** et sélectionnez **Gérer les packages NuGet** .
+2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer** .
+3.  Dans la zone de recherche, entrez **Win2D** .
+4.  Sélectionnez **Win2D.uwp** , puis **Installer** dans le volet droit.
+5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK** .
 6.  Acceptez la licence de package.
 
 Outre les espaces de noms inclus dans l’installation de base du projet, vous devez inclure les espaces de noms suivants fournis par Win2D.
@@ -214,9 +214,9 @@ La dernière étape consiste à implémenter la méthode [**ProcessFrame**](/uwp
 
 Pour utiliser votre effet vidéo dans votre application, vous devez ajouter une référence au projet d’effet à votre application.
 
-1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
-2.  Développez l’onglet **Projets**, sélectionnez **Solution**, puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *VideoEffectComponent*.
-3.  Cliquez sur **OK**.
+1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références** , puis sélectionnez **Ajouter une référence** .
+2.  Développez l’onglet **Projets** , sélectionnez **Solution** , puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *VideoEffectComponent* .
+3.  Cliquez sur **OK** .
 
 ### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>Ajouter un effet personnalisé à un flux vidéo de caméra
 
@@ -232,7 +232,7 @@ Une fois l’effet ajouté, [**StartPreviewAsync**](/uwp/api/windows.media.captu
 
 ### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Ajouter un effet personnalisé à un clip dans une composition multimédia
 
-Pour obtenir des instructions générales sur la création des compositions multimédias à partir de clips vidéo, voir [Compositions multimédias et modification](media-compositions-and-editing.md). L’extrait de code suivant illustre la création d’une composition multimédia simple qui utilise un effet vidéo personnalisé. Un objet [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) est créé en appelant [**CreateFromFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromfileasync), en transmettant un fichier vidéo sélectionné par l’utilisateur avec un [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) et le clip est ajouté à un nouveau [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition). Ensuite, un objet [**VideoEffectDefinition**](/uwp/api/Windows.Media.Effects.VideoEffectDefinition) est créé, en transmettant l’espace de noms et le nom de classe de votre effet au constructeur. Enfin, la définition de l’effet est ajoutée à la collection [**VideoEffectDefinitions**](/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) de l’objet **MediaClip**.
+Pour obtenir des instructions générales sur la création des compositions multimédias à partir de clips vidéo, voir [Compositions multimédias et modification](media-compositions-and-editing.md). L’extrait de code suivant illustre la création d’une composition multimédia simple qui utilise un effet vidéo personnalisé. Un objet [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) est créé en appelant [**CreateFromFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromfileasync), en transmettant un fichier vidéo sélectionné par l’utilisateur avec un [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) et le clip est ajouté à un nouveau [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition). Ensuite, un objet [**VideoEffectDefinition**](/uwp/api/Windows.Media.Effects.VideoEffectDefinition) est créé, en transmettant l’espace de noms et le nom de classe de votre effet au constructeur. Enfin, la définition de l’effet est ajoutée à la collection [**VideoEffectDefinitions**](/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) de l’objet **MediaClip** .
 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs" id="SnippetAddEffectToComposition":::

@@ -1,5 +1,5 @@
 ---
-Description: Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana.
+description: Incorporez des fonctionnalités vocales dans vos applications en utilisant les commandes vocales, la reconnaissance vocale et la synthèse vocale de Cortana.
 title: Interactions vocales
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a93f9b1506d2b4dfcdad260bf86bf39c15d875
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d42802f4efb131f413b192f4e5f851f630ce4e57
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173343"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029862"
 ---
 # <a name="speech-interactions"></a>Interactions vocales
 
@@ -24,7 +24,7 @@ Intégrez la reconnaissance vocale et la conversion de texte par synthèse vocal
 **TTS** TTS utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en mots prononcés. La chaîne d’entrée peut être du texte basique sans fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse et l’accentuation.
 
 **Autres composants liés à la parole :** 
- **Cortana** dans les applications Windows utilise des commandes vocales personnalisées (orales ou typées) pour lancer votre application au premier plan (l’application prend le focus, tout comme si elle était lancée à partir du menu Démarrer) ou l’activer en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). Consultez les [instructions relatives aux commandes vocales (VCD) Cortana](/cortana/voice-commands/vcd) si vous exposez les fonctionnalités de l’application dans l’interface utilisateur de **Cortana** .
+ **Cortana** dans les applications Windows utilise des commandes vocales personnalisées (orales ou typées) pour lancer votre application au premier plan (l’application prend le focus, tout comme si elle était lancée à partir du menu Démarrer) ou l’activer en tant que service d’arrière-plan ( **Cortana** conserve le focus, mais fournit les résultats de l’application). Consultez les [instructions relatives aux commandes vocales (VCD) Cortana](/cortana/voice-commands/vcd) si vous exposez les fonctionnalités de l’application dans l’interface utilisateur de **Cortana** .
 
 ## <a name="speech-interaction-design"></a>Conception de l’interaction vocale
 
@@ -86,15 +86,15 @@ Les écrans varient selon les contraintes spécifiées :
 -   Liste de mots ou d’expressions, ou fichier de grammaire SRGS
 
     -   Écran **Écoute**
-    -   Écran **Nous vous avons entendu dire**, si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
+    -   Écran **Nous vous avons entendu dire** , si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
     -   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
-Sur l’écran **Écoute**, vous pouvez :
+Sur l’écran **Écoute** , vous pouvez :
 
 -   personnaliser le titre ;
 -   fournir un exemple de texte illustrant ce que peut dire l’utilisateur ;
 -   spécifier si l’écran **Nous vous avons entendu dire** s’affiche ;
--   restituer à l’utilisateur la chaîne reconnue sur l’écran **Nous vous avons entendu dire**.
+-   restituer à l’utilisateur la chaîne reconnue sur l’écran **Nous vous avons entendu dire** .
 
 Voici un exemple du flux de reconnaissance intégrée pour un module de reconnaissance vocale qui utilise une contrainte définie par le SRGS. Dans cet exemple, la reconnaissance vocale est une réussite.
 
@@ -210,7 +210,7 @@ Les deux problèmes peuvent être résolus en utilisant SSML au lieu de texte br
 | [Spécifier la langue de reconnaissance vocale](specify-the-speech-recognizer-language.md) | Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale. |
 | [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md) | Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale. |
 | [Activer la dictée continue](enable-continuous-dictation.md) |Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée. |
-| [Gérer les problèmes liés aux entrées audio](manage-issues-with-audio-input.md) | Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio. |
+| [Gérer les problèmes d’entrée audio](manage-issues-with-audio-input.md) | Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio. |
 | [Définir des délais d’expiration de reconnaissance vocale](set-speech-recognition-timeouts.md) | Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale. |
 
 ## <a name="related-articles"></a>Articles connexes
@@ -218,9 +218,9 @@ Les deux problèmes peuvent être résolus en utilisant SSML au lieu de texte br
 * [Interactions vocales]()
 * [Interactions avec Cortana](./cortana-interactions.md)
 
- **Exemples**
+ **Exemples**
 
 * [Reconnaissance vocale et exemple de synthèse vocale](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

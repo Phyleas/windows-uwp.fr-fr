@@ -1,17 +1,17 @@
 ---
-Description: Quand vous envoyez un module complémentaire, les options de la page Propriétés vous aident à déterminer le comportement de ce module lorsqu’il est proposé aux clients.
+description: Quand vous envoyez un module complémentaire, les options de la page Propriétés vous aident à déterminer le comportement de ce module lorsqu’il est proposé aux clients.
 title: Définir les propriétés d’un module complémentaire
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, module complémentaire, propriétés, période d’abonnement, durée de vie du produit, type de contenu, IAP, achat dans l’application, produit dans l’application
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d092f443ab643b74cdd0221c96540fed0c7d474
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d9e43529d9a54cc014e1a9596e766de9ebe89d00
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157993"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030502"
 ---
 # <a name="enter-add-on-properties"></a>Définir les propriétés d’un module complémentaire
 
@@ -29,7 +29,7 @@ Les champs que vous voyez sur cette page varient en fonction du type de produit 
 
 ## <a name="product-lifetime"></a>Durée de vie du produit
 
-Si vous avez sélectionné l’option **durable** pour votre type de produit, la **durée de vie du produit** est indiquée ici. Par défaut, le champ **Durée de vie du produit** d’un module complémentaire durable affiche **Toujours**, ce qui signifie que ce module n’expire jamais. Si vous préférez, vous pouvez modifier la **durée de vie du produit** afin que le module complémentaire expire après une durée définie (avec des options de 1-365 jours).
+Si vous avez sélectionné l’option **durable** pour votre type de produit, la **durée de vie du produit** est indiquée ici. Par défaut, le champ **Durée de vie du produit** d’un module complémentaire durable affiche **Toujours** , ce qui signifie que ce module n’expire jamais. Si vous préférez, vous pouvez modifier la **durée de vie du produit** afin que le module complémentaire expire après une durée définie (avec des options de 1-365 jours).
 
 
 ## <a name="quantity"></a>Quantité
@@ -39,7 +39,7 @@ Si vous avez sélectionné **consommable géré** par le magasin pour votre type
 
 ## <a name="subscription-period"></a>Période d’abonnement
 
-Si vous avez sélectionné **abonnement** pour le type de produit, la **période d’abonnement** est indiquée ici. Choisissez une option pour spécifier la fréquence à laquelle un client est facturé pour l’abonnement. L’option par défaut est **mensuelle**, mais vous pouvez également **Sélectionner 3 mois**, **6 mois**, **annuellement**ou **24 mois**.
+Si vous avez sélectionné **abonnement** pour le type de produit, la **période d’abonnement** est indiquée ici. Choisissez une option pour spécifier la fréquence à laquelle un client est facturé pour l’abonnement. L’option par défaut est **mensuelle** , mais vous pouvez également **Sélectionner 3 mois** , **6 mois** , **annuellement** ou **24 mois** .
 
 > [!IMPORTANT]
 > Une fois votre module complémentaire publié, vous ne pouvez plus modifier votre sélection de **période d’abonnement** .
@@ -47,7 +47,7 @@ Si vous avez sélectionné **abonnement** pour le type de produit, la **période
 
 ## <a name="free-trial"></a>Essai gratuit
 
-Si vous avez sélectionné **abonnement** pour votre type de produit, la **version d’évaluation gratuite** est également indiquée ici. L’option par défaut n’est **pas une version d’évaluation gratuite.** Si vous préférez, vous pouvez permettre aux clients d’utiliser le module complémentaire gratuitement pendant une période définie (soit **1 semaine** , soit **1 mois**). 
+Si vous avez sélectionné **abonnement** pour votre type de produit, la **version d’évaluation gratuite** est également indiquée ici. L’option par défaut n’est **pas une version d’évaluation gratuite.** Si vous préférez, vous pouvez permettre aux clients d’utiliser le module complémentaire gratuitement pendant une période définie (soit **1 semaine** , soit **1 mois** ). 
 
 > [!IMPORTANT]
 > Une fois votre module complémentaire publié, vous ne pouvez plus modifier votre sélection **d’évaluation gratuite** .
@@ -55,7 +55,7 @@ Si vous avez sélectionné **abonnement** pour votre type de produit, la **versi
 
 ## <a name="content-type"></a>Type de contenu
 
-Quel que soit le type de produit de votre module complémentaire, vous devez indiquer le type de contenu que vous offrez. Pour la plupart des modules complémentaires, le type de contenu doit être **Téléchargement de logiciels électroniques**. Si une autre option de la liste décrit mieux votre module complémentaire (par exemple, si vous proposez un téléchargement musical ou un livre électronique), sélectionnez cette option à la place.
+Quel que soit le type de produit de votre module complémentaire, vous devez indiquer le type de contenu que vous offrez. Pour la plupart des modules complémentaires, le type de contenu doit être **Téléchargement de logiciels électroniques** . Si une autre option de la liste décrit mieux votre module complémentaire (par exemple, si vous proposez un téléchargement musical ou un livre électronique), sélectionnez cette option à la place.
 
 Voici les options disponibles pour le type de contenu d’un module complémentaire :
 
@@ -90,7 +90,7 @@ Pour interroger ce champ, utilisez la propriété [StoreProduct. Keywords](/uwp/
 
 ### <a name="custom-developer-data"></a>Données personnalisées du développeur
 
-Vous pouvez entrer jusqu’à 3000 caractères dans le champ de **données de développement personnalisé** (anciennement appelé **étiquette**) pour fournir un contexte supplémentaire pour votre produit dans l’application. Le plus souvent, il se présente sous la forme d’une chaîne XML, mais vous pouvez entrer tout ce que vous souhaitez dans ce champ. Votre application peut ensuite interroger ce champ pour lire son contenu (même si l’application ne peut pas modifier les données et les renvoyer.)
+Vous pouvez entrer jusqu’à 3000 caractères dans le champ de **données de développement personnalisé** (anciennement appelé **étiquette** ) pour fournir un contexte supplémentaire pour votre produit dans l’application. Le plus souvent, il se présente sous la forme d’une chaîne XML, mais vous pouvez entrer tout ce que vous souhaitez dans ce champ. Votre application peut ensuite interroger ce champ pour lire son contenu (même si l’application ne peut pas modifier les données et les renvoyer.)
 
 Par exemple, imaginons que vous avez un jeu et que vous vendiez un module complémentaire qui autorise le client à accéder à des niveaux supplémentaires. À l’aide du champ de **données Custom Developer** , l’application peut interroger pour voir quels niveaux sont disponibles lorsqu’un client possède ce module complémentaire. Vous pouvez ajuster la valeur à tout moment (dans ce cas, les niveaux inclus), sans avoir à apporter de modifications au code dans votre application, ni soumettre à nouveau l’application, en mettant à jour les informations dans le champ des **données de développeur personnalisé** du module complémentaire, puis en publiant une soumission mise à jour pour le module complémentaire.
 
@@ -99,8 +99,8 @@ Pour interroger ce champ, utilisez la propriété [StoreSku. CustomDeveloperData
 > [!NOTE]
 > Le champ de **données développeur personnalisé** n’est pas disponible pour une utilisation dans les packages ciblant Windows 8 et Windows 8.1.
 
- 
+ 
 
- 
+ 
 
- 
+ 

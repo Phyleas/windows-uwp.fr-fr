@@ -1,17 +1,17 @@
 ---
-Description: Vous pouvez sélectionner les captures d’écran, les logos et d’autres ressources artistiques (telles que les codes de fin et les images promotionnelles) à inclure dans la liste des boutiques de votre application.
+description: Vous pouvez sélectionner les captures d’écran, les logos et d’autres ressources artistiques (telles que les codes de fin et les images promotionnelles) à inclure dans la liste des boutiques de votre application.
 title: Captures d’écran, images et bandes-annonces de l’application
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, code de fin, vidéo, capture d’écran, image, icône, liste des boutiques, images de la liste des boutiques
 ms.localizationpriority: medium
-ms.openlocfilehash: be46e33ccc97545b86321e2e520b79c5a74f7a2e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b9af3ab765b218d933a4382f7b241704c81af2f1
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219762"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031302"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -81,13 +81,13 @@ Cette image peut apparaître dans différentes pages du magasin pour Windows 10 
 
 Cette image est nécessaire pour un affichage correct sur Windows Phone 8,1 et versions antérieures. Si votre application précédemment publiée prend en charge Windows Phone 8,1 ou une version antérieure et que vous ne fournissez pas cette image, les clients verront une icône vide avec la liste de votre application. (Cela s’applique également aux clients sur Windows 10 si votre application n’a que des packages ciblant Windows Phone 8,1 ou une version antérieure.)
 
-Si votre envoi comprend *uniquement* des packages UWP, vous n’avez pas besoin de fournir cette image (sauf si vous activez la case à cocher pour les  **clients sur Windows 10 et Xbox, vous pouvez afficher des images de logos téléchargés à la place des images de mes packages**, comme décrit dans la section suivante).
+Si votre envoi comprend *uniquement* des packages UWP, vous n’avez pas besoin de fournir cette image (sauf si vous activez la case à cocher pour les  **clients sur Windows 10 et Xbox, vous pouvez afficher des images de logos téléchargés à la place des images de mes packages** , comme décrit dans la section suivante).
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>Afficher uniquement les images de logo chargées dans le Store
 
 Vous avez la possibilité d’empêcher le magasin d’utiliser les images de logos dans les packages de votre application lors de l’affichage de votre annonce auprès des clients sur Windows 10 (y compris la Xbox), et de faire en sorte que le magasin utilise uniquement les images que vous téléchargez. Cela vous permet de mieux contrôler l’apparence de votre application dans différents affichages dans le magasin pour les clients sur Windows 10 (y compris la Xbox). (Si votre application précédemment publiée prend en charge des versions de système d’exploitation antérieures, ces clients peuvent toujours voir les images de vos packages.)
 
-Pour que le magasin utilise uniquement les images que vous téléchargez (pour les clients sur Windows 10, y compris la Xbox) et que vous n’utilisiez pas d’images de vos packages, cochez la case **pour les clients sur Windows 10 et Xbox, affichez les images de logos téléchargés à la place des images de mes packages**.
+Pour que le magasin utilise uniquement les images que vous téléchargez (pour les clients sur Windows 10, y compris la Xbox) et que vous n’utilisiez pas d’images de vos packages, cochez la case **pour les clients sur Windows 10 et Xbox, affichez les images de logos téléchargés à la place des images de mes packages** .
 
 Lorsque vous activez cette case, une nouvelle section appelée **Affichage des images par le Windows Store** s’affiche. Ici, vous pouvez télécharger 3 images, y compris la taille de la vignette de l' **application 1:1 (300 x 300 pixels)** (si vous activez la case à cocher, le champ pour indiquer que l’image sera déplacée dans cette section). Nous vous recommandons de fournir les trois tailles d’image si vous utilisez cette option : 300 x 300, 150 x 150 et 71 x 71 pixels. Toutefois, seule la taille de 300 x 300 est requise.
 
@@ -152,7 +152,7 @@ Lorsque vous fournissez vos codes de fin, veillez à respecter les conditions su
 - N’incluez pas de classements d’âge dans vos codes de fin.
 
 > [!WARNING]
-> L’exception à la nécessité d’inclure les évaluations d’âge dans vos codes de fin s’applique **uniquement** aux codes de fin de la **Microsoft Store** affichés **sur la page du produit**. Tout code de fin publié en dehors de l’espace partenaires, qui n’est pas destiné à être affiché exclusivement sur la page de produit de Microsoft Store **doit** afficher des informations d’évaluation incorporées, le cas échéant, conformément aux directives de l’autorité d’évaluation appropriée.  
+> L’exception à la nécessité d’inclure les évaluations d’âge dans vos codes de fin s’applique **uniquement** aux codes de fin de la **Microsoft Store** affichés **sur la page du produit** . Tout code de fin publié en dehors de l’espace partenaires, qui n’est pas destiné à être affiché exclusivement sur la page de produit de Microsoft Store **doit** afficher des informations d’évaluation incorporées, le cas échéant, conformément aux directives de l’autorité d’évaluation appropriée.  
 
 À l’instar des autres champs de la page de liste du Store, les codes de fin doivent être certifiés avant de pouvoir être publiés sur le Microsoft Store. Veillez à ce que vos codes de fin soient conformes aux [stratégies de Microsoft Store](store-policies.md).
 
@@ -206,9 +206,9 @@ Alors que cette image nous permet de prendre en compte votre application pour le
 Ces images sont requises pour un affichage correct si vous publiez votre application sur Xbox. 
 
 Vous pouvez télécharger 3 tailles différentes :
-- **Image clé personnalisée, 584 x 800 pixels**: doit inclure le titre du produit. Une barre de personnalisation est requise sur cette image. Conservez le titre et toutes les images clés dans les trois quarts supérieurs de l’image, car une superposition peut apparaître sur le trimestre inférieur.
-- **Intitulé héros art, 1920 x 1080 pixels**: doit inclure le titre du produit. Conservez le titre et toutes les images clés dans les trois quarts supérieurs de l’image, car une superposition peut apparaître sur le trimestre inférieur.
-- **Art du carré promotionnel, 1080 x 1080 pixels**: *ne doit pas* inclure le titre du produit.
+- **Image clé personnalisée, 584 x 800 pixels** : doit inclure le titre du produit. Une barre de personnalisation est requise sur cette image. Conservez le titre et toutes les images clés dans les trois quarts supérieurs de l’image, car une superposition peut apparaître sur le trimestre inférieur.
+- **Intitulé héros art, 1920 x 1080 pixels** : doit inclure le titre du produit. Conservez le titre et toutes les images clés dans les trois quarts supérieurs de l’image, car une superposition peut apparaître sur le trimestre inférieur.
+- **Art du carré promotionnel, 1080 x 1080 pixels** : *ne doit pas* inclure le titre du produit.
 
 > [!NOTE]
 > Pour un meilleur affichage sur la Xbox, vous devez également fournir une image **9:16 (720 x 1080 ou 1440 x 2160 pixels)** dans la section [logos des boutiques](#store-logos) .
@@ -223,11 +223,11 @@ L’image **2:1 (2400 x 1200)** est utilisée uniquement si votre application pr
 
 ### <a name="images-only-for-windows-8x-andor-windows-phone-8x"></a>Images uniquement pour Windows 8. x et/ou Windows Phone 8. x 
 
-Si votre application envoyée précédemment prend en charge des versions de système d’exploitation antérieures (Windows 8. x et/ou Windows Phone 8. x), ces images doivent être fournies pour que nous puissions tenir compte de votre application dans des dispositions promotionnelles (bien qu’elles ne garantissent pas que votre application sera proposée). Si votre application ne prend pas en charge ces versions antérieures du système d’exploitation, ignorez cette section. (Cette section était autrefois appelée **images promotionnelles facultatives**.)
+Si votre application envoyée précédemment prend en charge des versions de système d’exploitation antérieures (Windows 8. x et/ou Windows Phone 8. x), ces images doivent être fournies pour que nous puissions tenir compte de votre application dans des dispositions promotionnelles (bien qu’elles ne garantissent pas que votre application sera proposée). Si votre application ne prend pas en charge ces versions antérieures du système d’exploitation, ignorez cette section. (Cette section était autrefois appelée **images promotionnelles facultatives** .)
 
-**Pour les Windows Phone 8,1 et versions antérieures**, deux tailles d’image peuvent être utilisées dans des présentations promotionnelles : **1000 x 800 pixels (5:4)** et **358 x 358 pixels (1:1)**. Si votre application s’exécute sur Windows Phone 8,1 ou une version antérieure, nous vous recommandons de fournir des images dans ces deux tailles.  
+**Pour les Windows Phone 8,1 et versions antérieures** , deux tailles d’image peuvent être utilisées dans des présentations promotionnelles : **1000 x 800 pixels (5:4)** et **358 x 358 pixels (1:1)** . Si votre application s’exécute sur Windows Phone 8,1 ou une version antérieure, nous vous recommandons de fournir des images dans ces deux tailles.  
 
 > [!TIP]
 > Veillez à fournir une image d’icône de vignette d’application 300 x 300 dans la section [logos des boutiques](#store-logos) pour toute soumission prenant en charge Windows Phone 8,1 ou une version antérieure. Cela permet de s’assurer que votre application n’apparaît pas dans le magasin avec une icône vide.  
 
-**Pour Windows 8.1 et versions antérieures**, certaines dispositions promotionnelles peuvent utiliser une image de la taille de **414 x 180** pixels. Si votre application s’exécute sur Windows 8.1 ou une version antérieure, nous vous recommandons de fournir une image de cette taille.
+**Pour Windows 8.1 et versions antérieures** , certaines dispositions promotionnelles peuvent utiliser une image de la taille de **414 x 180** pixels. Si votre application s’exécute sur Windows 8.1 ou une version antérieure, nous vous recommandons de fournir une image de cette taille.

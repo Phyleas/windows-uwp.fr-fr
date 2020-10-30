@@ -1,17 +1,17 @@
 ---
-Description: Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d'en savoir plus sur elle.
+description: Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d'en savoir plus sur elle.
 title: Tableau des catégories et sous-catégories
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, catégorie, sous-catégorie, genre, catégories, genres
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b22ceaf0f1cdefcc7f29f0a8ca79658aa15803
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b1d14f0b14ea97d9825dbdd44c78f62ac8ea2bd5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167423"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030392"
 ---
 # <a name="category-and-subcategory-table"></a>Tableau des catégories et sous-catégories
 
@@ -43,7 +43,7 @@ Le Microsoft Store organise les applications dans les catégories et sous-catég
     <tbody>
 <tr>
     <td>Livres et référence</td>
-    <td>Liseuse électronique <br> Fiction <br> Non-fiction <br> Informations de référence</td>
+    <td>Liseuse électronique <br> Fiction <br> Non-fiction <br> Référence</td>
   </tr>
   <tr>
     <td>Entreprises</td>
@@ -51,10 +51,10 @@ Le Microsoft Store organise les applications dans les catégories et sous-catég
   </tr>
   <tr>
     <td>Outils de développeur</td>
-    <td>Base de données <br> Outils de conception <br> Kits de développement <br> Mise en réseau <br> Référence et formation <br> Serveurs <br> Services <br> Hébergement web</td>
+    <td>Base de données <br> Outils de conception <br> Kits de développement <br> Mise en réseau <br> Référence et formation <br> Serveurs <br> Outils <br> Hébergement web</td>
   </tr>
   <tr>
-    <td>Éducation</td>
+    <td>Education</td>
     <td>Livres et référence <br> Éveil <br> Outils pédagogiques <br> Langage <br> Aide scolaire et universitaire</td>
   </tr>
   <tr>
@@ -67,7 +67,7 @@ Le Microsoft Store organise les applications dans les catégories et sous-catég
   </tr>
   <tr>
     <td>Jeux</td>
-    <td>Action + aventure <br> Jeux de cartes et de société <br> Casino <br> Classiques <br> Éducatif <br> Famille et enfants <br> Sports de combat <br> La bataille en ligne sur plusieurs joueurs <br> Musique <br> Autres <br> Jeux de plateforme <br> Puzzle et jeux d'esprit <br> Courses et pilotage <br> Jeux de rôle <br> Tir <br> Simulation <br> Sports <br> Stratégie <br> Outils <br> Word</td>
+    <td>Action + aventure <br> Jeux de cartes et de société <br> Casino <br> Classiques <br> Éducatif <br> Famille et enfants <br> Sports de combat <br> La bataille en ligne sur plusieurs joueurs <br> Musique <br> Autre <br> Jeux de plateforme <br> Puzzle et jeux d'esprit <br> Courses et pilotage <br> Jeux de rôle <br> Tir <br> Simulation <br> Sports <br> Stratégie <br> Outils <br> Word</td>
   </tr>
   <tr>
     <td>Gouvernement et politique</td>
