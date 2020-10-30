@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09db3caefccfce3ff110cb034efa27ff53c4154a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3d4bb343f2a8535fae60e19cd417099a99ae852d
+ms.sourcegitcommit: 6c1d2dd99221242d5d09f17e99f87302143c6180
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218222"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644319"
 ---
 # <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres de l’application
 
@@ -82,7 +82,7 @@ Si votre application permet aux utilisateurs de choisir le mode couleur de l’a
 - Foncé
 - Windows default
 
-Nous vous recommandons également d’ajouter un lien hypertexte à la page Couleurs de l’application Paramètres Windows, qui permet aux utilisateurs d’accéder au mode d’application par défaut actif et de le modifier. Utilisez la chaîne « Paramètres couleur Windows » pour le texte du lien hypertexte.
+Nous vous recommandons également d’ajouter un lien hypertexte à la page Couleurs de l’application Paramètres Windows, qui permet aux utilisateurs d’accéder au mode d’application par défaut actif et de le modifier. Utilisez la chaîne « Paramètres couleur Windows » pour le texte du lien hypertexte et `ms-settings:colors` pour l’URI.
 
 ![Section « Choisir un mode »](images/appsettings_mode.png)
 
