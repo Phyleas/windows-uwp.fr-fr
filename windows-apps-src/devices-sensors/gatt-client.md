@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4ec2c3d849833b4a1673c4a4f425f32c42d00f
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 339a154c3acf39c4f574d22907cf697db658552b
+ms.sourcegitcommit: 74c2c878b9dbb92785b89f126359c3f069175af2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353759"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93122400"
 ---
 # <a name="bluetooth-gatt-client"></a>Client GATT Bluetooth
 
@@ -23,7 +23,7 @@ Cet article illustre l’utilisation des API clientes de l’attribut génériqu
 - S’abonner aux notifications lorsque la valeur caractéristique change
 
 > [!Important]
-> Vous devez déclarer la fonctionnalité « Bluetooth » dans *Package. appxmanifest*.
+> Vous devez déclarer la fonctionnalité « Bluetooth » dans *Package. appxmanifest* .
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
@@ -52,7 +52,11 @@ Pour créer une implémentation utile, un développeur doit avoir une connaissan
 
 Pour des raisons pratiques, le Bluetooth SIG gère une [liste de profils publics](https://www.bluetooth.com/specifications/adopted-specifications#gattspec) disponibles.
 
-## <a name="query-for-nearby-devices"></a>Interroger des appareils proches
+## <a name="examples"></a>Exemples
+
+Pour obtenir un exemple complet, consultez l' [exemple Bluetooth Low Energy](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BluetoothLE).
+
+### <a name="query-for-nearby-devices"></a>Interroger des appareils proches
 
 Il existe deux méthodes principales pour interroger des appareils proches :
 
@@ -89,7 +93,7 @@ deviceWatcher.Start();
 
 Une fois que vous avez démarré le DeviceWatcher, vous recevrez [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) pour chaque appareil qui répond à la requête dans le gestionnaire pour l’événement [ajouté](/uwp/api/windows.devices.enumeration.devicewatcher.added) pour les appareils en question. Pour plus d’informations sur DeviceWatcher, consultez l’exemple complet [sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
 
-## <a name="connecting-to-the-device"></a>Connexion à l’appareil
+### <a name="connecting-to-the-device"></a>Connexion à l’appareil
 
 Une fois qu’un appareil souhaité est découvert, utilisez [DeviceInformation.ID](/uwp/api/windows.devices.enumeration.deviceinformation.id) pour obtenir l’objet appareil Bluetooth le pour l’appareil en question :
 
@@ -111,14 +115,14 @@ bluetoothLeDevice.Dispose();
 Si l’application doit à nouveau accéder à l’appareil, il suffit de recréer l’objet d’appareil et d’accéder à une caractéristique (décrite dans la section suivante) pour que le système d’exploitation se reconnecte en cas de besoin. Si l’appareil est proche, vous obtiendrez un accès à l’appareil. sinon, il renverra une erreur DeviceUnreachable.  
 
 > [!NOTE]
-> La création d’un objet [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) en appelant cette méthode seule n’initie pas (nécessairement) une connexion. Pour initier une connexion, définissez [GattSession. MaintainConnection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) sur `true` , ou appelez une méthode de découverte de service non mise en cache sur **BluetoothLEDevice**, ou effectuez une opération de lecture/écriture sur l’appareil.
+> La création d’un objet [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) en appelant cette méthode seule n’initie pas (nécessairement) une connexion. Pour initier une connexion, définissez [GattSession. MaintainConnection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) sur `true` , ou appelez une méthode de découverte de service non mise en cache sur **BluetoothLEDevice** , ou effectuez une opération de lecture/écriture sur l’appareil.
 >
 > - Si **GattSession. MaintainConnection** a la valeur true, le système attend indéfiniment une connexion et se connecte lorsque l’appareil est disponible. Il n’y a rien à attendre pour votre application, car **GattSession. MaintainConnection** est une propriété.
 > - Pour la découverte de service et les opérations de lecture/écriture dans le cadre du GATT, le système attend une durée limitée mais variable. Quoi que ce soit de l’instantané à quelques minutes. Les facteurs composent le trafic sur la pile et la façon dont la demande est mise en file d’attente. S’il n’existe aucune autre demande en attente et que l’appareil distant est inaccessible, le système attendra sept (7) secondes avant d’expirer. S’il y a d’autres demandes en attente, chacune des demandes de la file d’attente peut prendre sept (7) secondes pour le traitement, si bien que la plus proche est vers l’arrière de la file d’attente, plus vous attendez.
 >
 > Actuellement, vous ne pouvez pas annuler le processus de connexion.
 
-## <a name="enumerating-supported-services-and-characteristics"></a>Énumération des services et caractéristiques pris en charge
+### <a name="enumerating-supported-services-and-characteristics"></a>Énumération des services et caractéristiques pris en charge
 
 Maintenant que vous avez un objet BluetoothLEDevice, l’étape suivante consiste à découvrir les données exposées par l’appareil. Pour ce faire, la première étape consiste à interroger les services :
 
@@ -146,7 +150,7 @@ if (result.Status == GattCommunicationStatus.Success)
 
 Le système d’exploitation retourne une liste en lecture seule des objets GattCharacteristic sur lesquels vous pouvez ensuite effectuer des opérations.
 
-## <a name="perform-readwrite-operations-on-a-characteristic"></a>Effectuer des opérations de lecture/écriture sur une caractéristique
+### <a name="perform-readwrite-operations-on-a-characteristic"></a>Effectuer des opérations de lecture/écriture sur une caractéristique
 
 La caractéristique est l’unité fondamentale de communication basée sur le GATT. Elle contient une valeur qui représente un élément de données distinct sur l’appareil. Par exemple, la caractéristique niveau de batterie a une valeur qui représente le niveau de batterie de l’appareil.
 
@@ -196,13 +200,13 @@ if (result == GattCommunicationStatus.Success)
 }
 ```
 
-> **Conseil**: les éléments [DataReader](/uwp/api/windows.storage.streams.datareader) et [DataWriter](/uwp/api/windows.storage.streams.datawriter) sont indispensable quand vous travaillez avec les mémoires tampons brutes que vous recevez à partir de nombreuses API Bluetooth.
+> **Conseil** : les éléments [DataReader](/uwp/api/windows.storage.streams.datareader) et [DataWriter](/uwp/api/windows.storage.streams.datawriter) sont indispensable quand vous travaillez avec les mémoires tampons brutes que vous recevez à partir de nombreuses API Bluetooth.
 
-## <a name="subscribing-for-notifications"></a>Abonnement à des notifications
+### <a name="subscribing-for-notifications"></a>Abonnement à des notifications
 
 Assurez-vous que la caractéristique prend en charge l’indication ou la notification (Vérifiez les propriétés caractéristiques pour vous en assurer).
 
-> À **part**: l’indication est considérée comme plus fiable, car chaque événement de modification de valeur est associé à un accusé de réception de l’appareil client. La notification est plus répandue, car la plupart des transactions GATT préfèrent économiser de l’énergie plutôt que d’être extrêmement fiables. Dans tous les cas, tout ce qui est géré au niveau de la couche de contrôleur afin que l’application ne soit pas impliquée. Nous y reviendrons collectivement comme « notifications », mais vous le savez maintenant.
+> À **part** : l’indication est considérée comme plus fiable, car chaque événement de modification de valeur est associé à un accusé de réception de l’appareil client. La notification est plus répandue, car la plupart des transactions GATT préfèrent économiser de l’énergie plutôt que d’être extrêmement fiables. Dans tous les cas, tout ce qui est géré au niveau de la couche de contrôleur afin que l’application ne soit pas impliquée. Nous y reviendrons collectivement comme « notifications », mais vous le savez maintenant.
 
 Il y a deux choses à prendre en charge avant d’obtenir des notifications :
 
@@ -235,3 +239,4 @@ void Characteristic_ValueChanged(GattCharacteristic sender,
     // Parse the data however required.
 }
 ```
+
