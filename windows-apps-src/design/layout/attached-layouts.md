@@ -1,5 +1,5 @@
 ---
-Description: Vous pouvez définir des dispositions attachées pour les utiliser avec des conteneurs comme le contrôle ItemsRepeater.
+description: Vous pouvez définir des dispositions attachées pour les utiliser avec des conteneurs comme le contrôle ItemsRepeater.
 title: Disposition attachée
 label: AttachedLayout
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be16e22a30f0b366ad55f323a0f3f2aa2b7b837
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 62ecc21d3ed9835ae7360d0c0dfdfa0b09cbdced
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220302"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034862"
 ---
 # <a name="attached-layouts"></a>Dispositions attachées
 
@@ -24,7 +24,7 @@ Dans cette rubrique, nous aborderons ce qu’implique la création d’une dispo
 | - |
 | Ce contrôle est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications Windows. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/). |
 
-> **API importantes** :
+> **API importantes**  :
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 > * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
@@ -40,9 +40,9 @@ Dans cette rubrique, nous aborderons ce qu’implique la création d’une dispo
 
 Pour effectuer une disposition, il faut répondre à deux questions pour chaque élément :
 
-1. Quelle sera la ***taille*** de cet élément ?
+1. Quelle sera la * **taille** _ de cet élément ?
 
-2. Quelle sera la ***position*** de cet élément ?
+2. Quelle sera la _*_position_*_ de cet élément ?
 
 Le système de disposition XAML, qui répond à ces questions, est brièvement abordé dans le cadre de la discussion sur les [Panneaux personnalisés](./custom-panels-overview.md).
 
@@ -58,7 +58,7 @@ C’est pour cette raison que le Panel en XAML a souvent été synonyme de dispo
 [ItemsRepeater](../controls-and-patterns/items-repeater.md) se comporte également comme Panel, à la différence près qu’il n’expose pas de propriété Children permettant d’ajouter ou de supprimer programmatiquement des enfants UIElement.  La durée de vie de ses enfants est en effet gérée automatiquement par le framework pour correspondre à une collection d’éléments de données.  Bien qu’il ne soit pas dérivé de Panel, il se comporte et est traité par le framework comme un Panel.
 
 > [!NOTE]
-> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) est un conteneur, dérivé de Panel, qui délègue sa logique à l’objet [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) attaché.  LayoutPanel, actuellement en *préversion*, n’est disponible que dans les *préversions* du package WinUI.
+> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) est un conteneur, dérivé de Panel, qui délègue sa logique à l’objet [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) attaché.  LayoutPanel, actuellement en _préversion*, est uniquement disponible dans les *préversions* du package WinUI.
 
 #### <a name="containers"></a>Conteneurs
 
@@ -149,10 +149,10 @@ L’approche permettant de créer une disposition sans virtualisation devrait se
 
 1. Dérivez du type de base [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (au lieu de Panel).
 2. *(Facultatif)* Définissez des propriétés de dépendance qui, en cas de modification, invalideront la disposition.
-3. _(**Nouveau**/Facultatif)_ Initialisez tous les objets d’état requis par la disposition dans le cadre de [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Remisez-les (stash) avec le conteneur hôte à l’aide du [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) fourni avec le contexte.
+3. _( **Nouveau** /Facultatif)_ Initialisez tous les objets d’état requis par la disposition dans le cadre de [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Remisez-les (stash) avec le conteneur hôte à l’aide du [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) fourni avec le contexte.
 4. Remplacez [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) et appelez la méthode [Measure](/uwp/api/windows.ui.xaml.uielement.measure) sur tous les enfants.
 5. Remplacez [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) et appelez la méthode [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) sur tous les enfants.
-6. *(**Nouveau**/Facultatif)* Nettoyez tous les états enregistrés dans le cadre de [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
+6. *( **Nouveau** /Facultatif)* Nettoyez tous les états enregistrés dans le cadre de [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
 
 ### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Exemple : Disposition de pile simple (éléments de taille variable)
 
@@ -272,7 +272,7 @@ VirtualizingLayoutContext fournit deux propriétés supplémentaires conçues po
 
 ## <a name="data-dependent-virtualizing-layouts"></a>Dispositions avec virtualisation dépendantes des données
 
-Les dispositions avec virtualisation sont plus faciles si l’on connaît la taille de chaque élément sans avoir à mesurer le contenu à afficher.  Dans ce document, nous ferons référence à cette catégorie de dispositions avec virtualisation sous le simple nom de **dispositions des données**, car elles impliquent généralement une inspection des données.  En fonction des données, une application peut choisir une représentation visuelle d’une taille connue, peut-être parce que sa partie des données a été déterminée précédemment par la conception.
+Les dispositions avec virtualisation sont plus faciles si l’on connaît la taille de chaque élément sans avoir à mesurer le contenu à afficher.  Dans ce document, nous ferons référence à cette catégorie de dispositions avec virtualisation sous le simple nom de **dispositions des données** , car elles impliquent généralement une inspection des données.  En fonction des données, une application peut choisir une représentation visuelle d’une taille connue, peut-être parce que sa partie des données a été déterminée précédemment par la conception.
 
 L’approche générale consiste pour la disposition à :
 
@@ -284,7 +284,7 @@ L’approche générale consiste pour la disposition à :
 3. Dans le cadre de [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) : [organiser](/uwp/api/windows.ui.xaml.uielement.arrange) chaque UIElement réalisé avec la position précalculée.
 
 > [!NOTE]
-> L’approche de type disposition des données est souvent incompatible avec la _virtualisation des données_,  en particulier lorsque les seules données chargées en mémoire sont les données requises pour remplir la partie visible par l’utilisateur.  La virtualisation des données ne fait pas référence au chargement différé ou incrémentiel des données lorsqu’un utilisateur fait défiler l’endroit où elles restent résidentes,  mais au moment où les éléments sont libérés de la mémoire à mesure qu’ils défilent hors affichage.  Une disposition des données inspectant chacun de ses éléments de données empêcherait la virtualisation des données de fonctionner comme prévu.  Une disposition comme UniformGridLayout, qui suppose que tout a la même taille, fait exception.
+> L’approche de type disposition des données est souvent incompatible avec la _virtualisation des données_ ,  en particulier lorsque les seules données chargées en mémoire sont les données requises pour remplir la partie visible par l’utilisateur.  La virtualisation des données ne fait pas référence au chargement différé ou incrémentiel des données lorsqu’un utilisateur fait défiler l’endroit où elles restent résidentes,  mais au moment où les éléments sont libérés de la mémoire à mesure qu’ils défilent hors affichage.  Une disposition des données inspectant chacun de ses éléments de données empêcherait la virtualisation des données de fonctionner comme prévu.  Une disposition comme UniformGridLayout, qui suppose que tout a la même taille, fait exception.
 
 > [!TIP]
 > Si vous créez un contrôle personnalisé pour une bibliothèque de contrôles qui sera utilisée par d’autres personnes dans une grande variété de situations, la disposition des données n’est peut-être pas l’option à envisager.
@@ -311,13 +311,13 @@ Le code ci-dessous présente ce que pourrait être une interface utilisateur de 
 #### <a name="implementation"></a>Implémentation
 
 ```csharp
-/// <summary>
-///  This is a custom layout that displays elements in two different sizes
-///  wide (w) and narrow (n). There are two types of rows 
-///  odd rows - narrow narrow wide
-///  even rows - wide narrow narrow
-///  This pattern repeats.
-/// </summary>
+/// <summary>
+///  This is a custom layout that displays elements in two different sizes
+///  wide (w) and narrow (n). There are two types of rows 
+///  odd rows - narrow narrow wide
+///  even rows - wide narrow narrow
+///  This pattern repeats.
+/// </summary>
 
 public class ActivityFeedLayout : VirtualizingLayout // STEP #1 Inherit from base attached layout
 {

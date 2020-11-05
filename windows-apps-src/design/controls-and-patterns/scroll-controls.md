@@ -1,5 +1,5 @@
 ---
-Description: Le mouvement panoramique et le défilement permettent aux utilisateurs d’atteindre du contenu qui s’étend au-delà des limites de l’écran.
+description: Le mouvement panoramique et le défilement permettent aux utilisateurs d’atteindre du contenu qui s’étend au-delà des limites de l’écran.
 title: Contrôles de la visionneuse à défilement
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f4fb37250817087bf7b8a41144bf9e4841a9048
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 60a8e8f204591e455e2ccf52b09684a878b67452
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174463"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063031"
 ---
 # <a name="scroll-viewer-controls"></a>Contrôles de la visionneuse à défilement
 
@@ -25,7 +25,7 @@ ms.locfileid: "89174463"
 
 Utilisez les contrôles de la visionneuse à défilement quand la taille du contenu de l’interface utilisateur à afficher est supérieure à ce que vous pouvez adapter dans une zone.
 
-> **API importantes** : [classe ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [classe ScrollBar](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
+> **API importantes**  : [classe ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [classe ScrollBar](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 
 Les visionneuses à défilement permettent d’étendre le contenu au-delà des limites de la fenêtre d’affichage (zone visible). Les utilisateurs accèdent à ce contenu en manipulant la surface de la visionneuse à défilement via une interaction tactile, la roulette de la souris, le clavier ou un boîtier de commande, ou à l’aide du pointeur de souris ou du stylet pour interagir avec la barre de défilement de la visionneuse à défilement. Cette image montre plusieurs exemples de contrôles de visionneuse à défilement.
 
@@ -144,6 +144,9 @@ Pour les cas où un ScrollViewer est explicite dans votre code XAML, comme indiq
 - Si l’utilisateur doit faire défiler un long passage de texte, configurez la visionneuse à défilement pour qu’elle défile uniquement verticalement.
 - Une visionneuse à défilement ne doit contenir qu’un seul objet. Notez que cet objet peut être un panneau de disposition contenant à son tour un nombre quelconque d’objets.
 - Ne placez pas de contrôle [Pivot](pivot.md) dans une visionneuse à défilement pour éviter les conflits avec la logique de défilement du sélecteur de vue.
+- Si vous devez gérer des événements de pointeur pour un [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) dans une vue à défilement (comme ScrollViewer ou ListView), vous devez explicitement désactiver la prise en charge des événements de manipulation sur l’élément dans la vue en appelant [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). Pour réactiver les événements de manipulation dans la vue, appelez [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
+
+
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 

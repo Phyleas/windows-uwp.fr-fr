@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5acf1a017a55ddf75520eccf22b1a3b00ee8084b
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: fcad3bfeb5c31a6b3af85e5fd9a0ea72f11d65da
+ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253600"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93049510"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>Héberger un contrôle XAML WinRT standard dans une application Win32 C++
 
@@ -24,19 +24,19 @@ Cet article explique comment utiliser l’[API d’hébergement XAML UWP](using-
 
 ## <a name="create-a-desktop-application-project"></a>Créer un projet d’application de bureau
 
-1. Dans Visual Studio 2019 avec Windows SDK 10, version 1903 (version 10.0.18362) ou une version ultérieure installé, créez un projet d’**application de bureau Windows** que vous nommez **MyDesktopWin32App**. Ce type de projet est disponible sous les filtres de projet **C++** , **Windows** et **Bureau**.
+1. Dans Visual Studio 2019 avec Windows SDK 10, version 1903 (version 10.0.18362) ou une version ultérieure installé, créez un projet d’ **application de bureau Windows** que vous nommez **MyDesktopWin32App**. Ce type de projet est disponible sous les filtres de projet **C++** , **Windows** et **Bureau**.
 
-2. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution, cliquez sur **Recibler la solution**, sélectionnez la version **10.0.18362.0** ou une version ultérieure du kit de développement logiciel (SDK), puis cliquez sur **OK**.
+2. Dans l’ **Explorateur de solutions** , cliquez avec le bouton droit sur le nœud de la solution, cliquez sur **Recibler la solution** , sélectionnez la version **10.0.18362.0** ou une version ultérieure du kit de développement logiciel (SDK), puis cliquez sur **OK**.
 
 3. Installez le package NuGet [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) pour activer la prise en charge de [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) dans votre projet :
 
-    1. Cliquez avec le bouton droit sur votre projet dans l’**Explorateur de solutions**, puis choisissez **Gérer les packages NuGet**.
-    2. Sélectionnez l’onglet **Parcourir**, recherchez le package [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), puis installez la version la plus récente de celui-ci.
+    1. Cliquez avec le bouton droit sur votre projet dans l’ **Explorateur de solutions** , puis choisissez **Gérer les packages NuGet**.
+    2. Sélectionnez l’onglet **Parcourir** , recherchez le package [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), puis installez la version la plus récente de celui-ci.
 
     > [!NOTE]
     > Pour les nouveaux projets, vous pouvez également installer l’[Extension Visual Studio (VSIX) C++/WinRT](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) et utiliser l’un des modèles de projet C++/WinRT inclus dans cette extension. Pour plus d’informations, consultez [cet article](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-4. Sous l’onglet **Parcourir** du **Gestionnaire de package NuGet**, recherchez le package NuGet [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) et installez la dernière version stable de ce package. Ce package fournit plusieurs ressources de génération et d’exécution qui permettent aux îlots XAML Islands de fonctionner dans votre application.
+4. Sous l’onglet **Parcourir** du **Gestionnaire de package NuGet** , recherchez le package NuGet [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) et installez la dernière version stable de ce package. Ce package fournit plusieurs ressources de génération et d’exécution qui permettent aux îlots XAML Islands de fonctionner dans votre application.
 
 5. Définissez la valeur `maxVersionTested` dans votre [manifeste d’application](/windows/desktop/SbsCs/application-manifests) pour spécifier que votre application est compatible avec Windows 10, version 1903 ou ultérieure.
 
@@ -55,6 +55,12 @@ Cet article explique comment utiliser l’[API d’hébergement XAML UWP](using-
             </compatibility>
         </assembly>
         ```
+
+6. Ajoutez une référence aux métadonnées de Windows Runtime :
+   1. Dans l’ **Explorateur de solutions** , cliquez avec le bouton droit sur le nœud **Références** de votre projet et sélectionnez **Ajouter une référence**.
+   2. Cliquez sur le bouton **Parcourir** en bas de la page et accédez au dossier UnionMetadata dans le chemin d’installation du kit SDK. Par défaut, le kit SDK sera installé sur `C:\Program Files (x86)\Windows Kits\10\UnionMetadata`. 
+   3. Ensuite, sélectionnez le dossier nommé d’après la version de Windows que vous ciblez (par exemple, 10.0.18362.0) et à l’intérieur de ce dossier, choisissez le fichier `Windows.winmd`.
+   4. Cliquez sur **OK** pour fermer la boîte de dialogue **Ajouter une référence**.
 
 ## <a name="use-the-xaml-hosting-api-to-host-a-winrt-xaml-control"></a>Utiliser l’API d’hébergement XAML pour héberger un contrôle XAML WinRT
 
@@ -77,9 +83,9 @@ Le processus de base de l’utilisation de l’API d’hébergement XAML pour h
         > [!NOTE]
         > Ces interfaces sont déclarées dans le fichier d’en-tête **Windows.UI.Xaml.Hosting. desktopwindowxamlsource.h** dans le SDK Windows. Par défaut, ce fichier se trouve dans %programfiles(x86)%\Windows Kits\10\Include\\<build number\>\um.
 
-    2. Appelez la méthode **AttachToWindow** de l’interface **IDesktopWindowXamlSourceNative** ou **IDesktopWindowXamlSourceNative2**, puis transmettez l’identificateur de fenêtre de l’élément d’interface utilisateur parent dans votre application.
+    2. Appelez la méthode **AttachToWindow** de l’interface **IDesktopWindowXamlSourceNative** ou **IDesktopWindowXamlSourceNative2** , puis transmettez l’identificateur de fenêtre de l’élément d’interface utilisateur parent dans votre application.
 
-    3. Définissez la taille initiale de la fenêtre enfant interne contenue dans l’objet **DesktopWindowXamlSource**. Par défaut, cette fenêtre enfant interne a une largeur et une hauteur de 0. Si vous ne définissez pas la taille de la fenêtre, les contrôles XAML WinRT que vous ajoutez à l’objet **DesktopWindowXamlSource** ne sont pas visibles. Pour accéder à la fenêtre enfant interne dans l’objet **DesktopWindowXamlSource**, utilisez la propriété **WindowHandle** de l’interface **IDesktopWindowXamlSourceNative** ou **IDesktopWindowXamlSourceNative2**.
+    3. Définissez la taille initiale de la fenêtre enfant interne contenue dans l’objet **DesktopWindowXamlSource**. Par défaut, cette fenêtre enfant interne a une largeur et une hauteur de 0. Si vous ne définissez pas la taille de la fenêtre, les contrôles XAML WinRT que vous ajoutez à l’objet **DesktopWindowXamlSource** ne sont pas visibles. Pour accéder à la fenêtre enfant interne dans l’objet **DesktopWindowXamlSource** , utilisez la propriété **WindowHandle** de l’interface **IDesktopWindowXamlSourceNative** ou **IDesktopWindowXamlSourceNative2**.
 
 3. Enfin, attribuez l’objet **Windows.UI.Xaml.UIElement** que vous souhaitez héberger à la propriété [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) de votre objet **DesktopWindowXamlSource**.
 
@@ -286,7 +292,7 @@ Les instructions suivantes montrent comment empaqueter tous les composants de la
 
 1. Ajoutez un nouveau [projet d’empaquetage d’application Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) à votre solution. À mesure que vous créez le projet, sélectionnez **Windows 10, version 1903 (10.0; Build 18362)** pour la **Version cible** et la **Version minimale**.
 
-2. Dans le projet d’empaquetage, cliquez avec le bouton droit sur le nœud **Applications**, puis choisissez **Ajouter une référence**. Dans la liste des projets, sélectionnez le projet d’application de bureau C++/Win32 dans votre solution, puis cliquez sur **OK**.
+2. Dans le projet d’empaquetage, cliquez avec le bouton droit sur le nœud **Applications** , puis choisissez **Ajouter une référence**. Dans la liste des projets, sélectionnez le projet d’application de bureau C++/Win32 dans votre solution, puis cliquez sur **OK**.
 
 3. Générez et exécutez le projet d’empaquetage. Vérifiez que l’application s’exécute et affiche les contrôles XAML WinRT comme prévu.
 

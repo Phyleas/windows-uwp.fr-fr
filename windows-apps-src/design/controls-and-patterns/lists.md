@@ -1,5 +1,5 @@
 ---
-description: Découvrez les collections et les listes en tant que représentations de plusieurs éléments de données associés qui apparaissent ensemble. 
+description: Découvrez les collections et les listes en tant que représentations de plusieurs éléments de données associés qui apparaissent ensemble.
 title: Collections et listes
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 764d2d769a1455ff6a0815a6716866c055edf291
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3fd6cfb7fb0ffd7102f32d7159aba2b4c1042b76
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220022"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063021"
 ---
 # <a name="collections-and-lists"></a>Collections et listes
 
 Les collections et les listes font référence à la représentation de plusieurs éléments de données associés qui apparaissent ensemble. Les collections peuvent être représentées de plusieurs façons, par différents contrôles de collection (également appelés affichages Collection). Les contrôles de collection affichent et permettent des interactions avec le contenu basé sur des collections (liste de contacts, liste de dates, collection d’images, etc.).
 
-> **API importantes** : [Classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe FlipView](/uwp/api/windows.ui.xaml.controls.flipview), [classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+> **API importantes**  : [Classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe FlipView](/uwp/api/windows.ui.xaml.controls.flipview), [classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
 Les contrôles traités dans cet article sont les suivants :
 
@@ -74,7 +74,9 @@ Utilisez un affichage Liste pour :
     - Créer une liste de messages ou un journal de messages.
     - Créer une liste de contacts.
     - Créer le volet principal dans le [modèle Maître/Détails](master-details.md). Un modèle Maître/Détails est souvent utilisé dans les applications de messagerie, dans lesquelles un volet (maître) contient une liste d’éléments sélectionnables, tandis que l’autre (détails) affiche une vue détaillée de l’élément sélectionné.
-    
+
+> [!NOTE]
+> Si vous devez gérer des événements de pointeur pour un [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) dans une vue à défilement (comme ScrollViewer ou ListView), vous devez explicitement désactiver la prise en charge des événements de manipulation sur l’élément dans la vue en appelant [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). Pour réactiver les événements de manipulation dans la vue, appelez [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
 
 ### <a name="examples"></a>Exemples
 
@@ -140,6 +142,9 @@ Utilisez un affichage de grille pour :
 - Prendre en charge un grand nombre de cas d’usage, notamment les suivants (les plus courants) :
     - Interface utilisateur de type vitrine (par exemple, exploration d’applications, de chansons, de produits)
     - Bibliothèques de photos interactives
+
+> [!NOTE]
+> Si vous devez gérer des événements de pointeur pour un [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) dans une vue à défilement (comme ScrollViewer ou ListView), vous devez explicitement désactiver la prise en charge des événements de manipulation sur l’élément dans la vue en appelant [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). Pour réactiver les événements de manipulation dans la vue, appelez [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
 
 ### <a name="examples"></a>Exemples
 
@@ -277,7 +282,7 @@ Utilisez un ItemsRepeater si :
 
 ### <a name="examples"></a>Exemples
 
-Les trois exemples suivants sont tous des contrôles ItemsRepeater liés à la même source de données (une collection de nombres). La collection de nombres est représentée de trois façons, chaque ItemsRepeaters ci-dessous utilisant un [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) et un [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2) personnalisé différent.
+Les trois exemples suivants sont tous des contrôles ItemsRepeater liés à la même source de données (une collection de nombres). La collection de nombres est représentée de trois façons, chaque ItemsRepeaters ci-dessous utilisant un [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) et un [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) personnalisé différent.
 
 ![ItemsRepeater avec barres horizontales](images/itemsrepeater-1.png)
 ![ItemsRepeater avec barres verticales](images/itemsrepeater-2.png)
