@@ -1,5 +1,5 @@
 ---
-Description: Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
+description: Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
 title: Affichage web
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 46fc3c0eb087891de4fe622f0770bc7f1b2955d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f2f3bf022210e5b5f329cb5824cb36708154b977
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163303"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034382"
 ---
 # <a name="web-view"></a>Affichage web
 
 Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
 
-> **API importantes** : [Classe WebView](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+> **API importantes**  : [Classe WebView](/uwp/api/Windows.UI.Xaml.Controls.WebView)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -88,9 +88,9 @@ webView1.Navigate("http://www.contoso.com");
 
 Pour accéder à un URI avec une requête POST et des en-têtes HTTP, utilisez la méthode [NavigateWithHttpRequestMessage](/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage). Cette méthode prend en charge seulement [HttpMethod.Post](/uwp/api/windows.web.http.httpmethod.post) et [HttpMethod.Get](/uwp/api/windows.web.http.httpmethod.get) pour la valeur de la propriété [HttpRequestMessage.Method](/uwp/api/windows.web.http.httprequestmessage.method). 
 
-Pour charger du contenu non compressé et non chiffré à partir des magasins de données [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) ou [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) de votre application, utilisez la méthode **Navigate** avec un **Uri** qui fait appel au [schéma ms-appdata](../../app-resources/uri-schemes.md). La prise en charge de l’affichage web pour ce schéma nécessite de placer votre contenu dans un sous-dossier sous le dossier local ou temporaire. Ceci permet l’accès à des URI comme ms-appdata:///local/*dossier*/*fichier*.html et ms-appdata:///temp/*dossier*/*fichier*.html. (Pour charger des fichiers compressés ou chiffrés, consultez [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri).) 
+Pour charger du contenu non compressé et non chiffré à partir des magasins de données [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) ou [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) de votre application, utilisez la méthode **Navigate** avec un **Uri** qui fait appel au [schéma ms-appdata](../../app-resources/uri-schemes.md). La prise en charge de l’affichage web pour ce schéma nécessite de placer votre contenu dans un sous-dossier sous le dossier local ou temporaire. Ceci permet l’accès à des URI comme ms-appdata:///local/ *dossier*/*fichier*.html et ms-appdata:///temp/ *dossier*/*fichier*.html. (Pour charger des fichiers compressés ou chiffrés, consultez [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri).) 
 
-Chacun de ces sous-dossiers de premier niveau est isolé du contenu des autres sous-dossiers de premier niveau. Par exemple, vous pouvez accéder à ms-appdata:///temp/dossier1/fichier.html, mais ce fichier ne peut pas contenir de lien vers ms-appdata:///temp/dossier2/fichier.html. Vous pouvez cependant ajouter des liens vers du contenu HTML dans le package d’application en utilisant le **schéma ms-appx-web**, et vers du contenu web en utilisant des schémas d’URI **http** et **https**.
+Chacun de ces sous-dossiers de premier niveau est isolé du contenu des autres sous-dossiers de premier niveau. Par exemple, vous pouvez accéder à ms-appdata:///temp/dossier1/fichier.html, mais ce fichier ne peut pas contenir de lien vers ms-appdata:///temp/dossier2/fichier.html. Vous pouvez cependant ajouter des liens vers du contenu HTML dans le package d’application en utilisant le **schéma ms-appx-web** , et vers du contenu web en utilisant des schémas d’URI **http** et **https**.
 
 ```csharp
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
@@ -109,7 +109,7 @@ Vous pouvez charger du contenu local via un résolveur personnalisé en utilisan
 Le contrôle d’affichage web fournit plusieurs événements que vous pouvez utiliser pour répondre aux états de la navigation et du chargement de contenu. Les événements se produisent dans l’ordre suivant pour le contenu de la vue web racine : [NavigationStarting](/uwp/api/windows.ui.xaml.controls.webview.navigationstarting), [ContentLoading](/uwp/api/windows.ui.xaml.controls.webview.contentloading), [DOMContentLoaded](/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded), [NavigationCompleted](/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
 
 
-**NavigationStarting** : se produit avant que l’affichage web accède à du nouveau contenu. Vous pouvez annuler la navigation dans un gestionnaire pour cet événement en définissant la propriété WebViewNavigationStartingEventArgs.Cancel sur true. 
+**NavigationStarting**  : se produit avant que l’affichage web accède à du nouveau contenu. Vous pouvez annuler la navigation dans un gestionnaire pour cet événement en définissant la propriété WebViewNavigationStartingEventArgs.Cancel sur true. 
 
 ```csharp
 webView1.NavigationStarting += webView1_NavigationStarting;
@@ -122,7 +122,7 @@ private void webView1_NavigationStarting(object sender, WebViewNavigationStartin
 }
 ```
 
-**ContentLoading** : se produit quand l’affichage web a commencé à charger du nouveau contenu. 
+**ContentLoading**  : se produit quand l’affichage web a commencé à charger du nouveau contenu. 
 
 ```csharp
 webView1.ContentLoading += webView1_ContentLoading;
@@ -137,7 +137,7 @@ private void webView1_ContentLoading(WebView sender, WebViewContentLoadingEventA
 }
 ```
 
-**DOMContentLoaded** : se produit quand l’affichage web a fini d’analyser le contenu HTML actuel. 
+**DOMContentLoaded**  : se produit quand l’affichage web a fini d’analyser le contenu HTML actuel. 
 
 ```csharp
 webView1.DOMContentLoaded += webView1_DOMContentLoaded;
@@ -152,7 +152,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** : se produit quand l’affichage web a fini de charger le contenu actuel ou en cas d’échec de la navigation. Pour déterminer si la navigation a échoué, vérifiez les propriétés [IsSuccess](/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess) et [WebErrorStatus](/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus) de la classe [WebViewNavigationCompletedEventArgs](/uwp/api/Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs). 
+**NavigationCompleted**  : se produit quand l’affichage web a fini de charger le contenu actuel ou en cas d’échec de la navigation. Pour déterminer si la navigation a échoué, vérifiez les propriétés [IsSuccess](/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess) et [WebErrorStatus](/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus) de la classe [WebViewNavigationCompletedEventArgs](/uwp/api/Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs). 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;

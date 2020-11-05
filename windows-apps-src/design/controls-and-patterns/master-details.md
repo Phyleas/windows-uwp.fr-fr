@@ -1,5 +1,5 @@
 ---
-Description: Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes/carnets d’adresse de messagerie et de contacts.
+description: Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes/carnets d’adresse de messagerie et de contacts.
 title: Maître/détails
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60cd7eaa9e5ef317641e105004f2456e82ee48ca
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 605d42417145b9f6ecc8f71a0191afe6049de9c5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219982"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034522"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/détails
 
@@ -21,7 +21,7 @@ ms.locfileid: "91219982"
 
 Le modèle Maître/détails a un volet principal (généralement avec un [affichage de liste](lists.md)) et un volet des détails pour le contenu. Quand un élément de la liste principale est sélectionné, le volet des détails est mis à jour. Ce modèle est souvent utilisé pour la messagerie et les carnets d’adresses.
 
-> **API importantes** : [classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](/uwp/api/windows.ui.xaml.controls.splitview)
+> **API importantes**  : [classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Exemple de modèle Maître/détails](images/HIGSecOne_MasterDetail.png)
 
@@ -45,7 +45,7 @@ Quand vous implémentez le modèle Maître/détails, nous vous recommandons d’
 | 320 epx-640 epx        | Empilé           |
 | 641 epx ou plus large       | Côte-à-côte      |
 
- 
+ 
 ## <a name="stacked-style"></a>Style empilé
 
 Le style empilé ne permet de visualiser qu’un seul volet à la fois : le volet principal ou le volet des détails.

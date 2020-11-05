@@ -1,5 +1,5 @@
 ---
-Description: Un conseil d’apprentissage est un menu volant semi-persistant riche en contenu qui fournit des informations contextuelles.
+description: Un conseil d’apprentissage est un menu volant semi-persistant riche en contenu qui fournit des informations contextuelles.
 title: Conseils d’apprentissage
 template: detail.hbs
 ms.date: 09/24/2020
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: fbe23101861429f3aef9298f854a600521d20613
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 8d4322e5d5dcdfad768b9c87b555093e42becd7e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750525"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033312"
 ---
 # <a name="teaching-tip"></a>Conseil éducatif
 
@@ -171,10 +171,10 @@ Un conseil d’apprentissage non ciblé avec son mode PreferredPlacement défini
 ![Exemple d’application avec un conseil d’apprentissage dans l’angle inférieur gauche. Le titre du conseil est « Enregistrement automatique », et le sous-titre explique : « Nous enregistrons vos modifications au fur et à mesure. Vous n’avez pas à le faire. » Un bouton de fermeture figure dans l’angle supérieur droit du conseil d’apprentissage.](../images/teaching-tip-non-targeted-preferred-placement.png)
 
 Le diagramme ci-dessous illustre le résultat des 13 définitions possibles du mode PreferredPlacement pour les conseils d’apprentissage ciblés.
-![Illustration contenant 13 conseils d’apprentissage, chacun correspondant à un mode de positionnement ciblé distinct. Chaque conseil d’apprentissage est étiqueté avec le mode auquel il correspond. Le premier mot d’un mode de positionnement indique le côté de la cible sur lequel le conseil d’apprentissage est centré. L’extension du conseil d’apprentissage est toujours située au centre de ce côté de la cible et pointe vers celle-ci. Si le mode de positionnement contient un deuxième mot, le corps du conseil d’apprentissage n’est pas centré, mais décalé dans la direction spécifiée. Par exemple, le mode de positionnement « TopRight » fait apparaître le conseil d’apprentissage au-dessus de la cible et décalé vers la droite, avec son extension pointant vers le bas au centre du bord supérieur de la cible. Le corps étant décalé vers la droite, l’extension est presque sur le bord gauche du corps du conseil d’apprentissage et celui-ci s’étend au-delà du bord droit de la cible. Le mode de positionnement « Center » est unique et a pour effet que l’extension du conseil d’apprentissage pointe sur le centre de la cible et que le conseil d’apprentissage est centré sur la moitié supérieure de celle-ci.](../images/teaching-tip-targeted-preferred-placement-modes.png)
+![Illustration contenant 13 conseils d’apprentissage, chacun correspondant à un mode de positionnement ciblé distinct. Chaque conseil d’apprentissage est étiqueté avec le mode auquel il correspond.  Le premier mot d’un mode de positionnement indique le côté de la cible sur lequel le conseil d’apprentissage est centré. L’extension du conseil d’apprentissage est toujours située au centre de ce côté de la cible et pointe vers celle-ci. Si le mode de positionnement contient un deuxième mot, le corps du conseil d’apprentissage n’est pas centré, mais décalé dans la direction spécifiée. Par exemple, le mode de positionnement « TopRight » fait apparaître le conseil d’apprentissage au-dessus de la cible et décalé vers la droite, avec son extension pointant vers le bas au centre du bord supérieur de la cible. Le corps étant décalé vers la droite, l’extension est presque sur le bord gauche du corps du conseil d’apprentissage et celui-ci s’étend au-delà du bord droit de la cible. Le mode de positionnement « Center » est unique et a pour effet que l’extension du conseil d’apprentissage pointe sur le centre de la cible et que le conseil d’apprentissage est centré sur la moitié supérieure de celle-ci.](../images/teaching-tip-targeted-preferred-placement-modes.png)
 
 Le diagramme ci-dessous illustre le résultat des 13 modes PreferredPlacement qui peuvent être définis pour des conseils d’apprentissage non ciblés.
-![Illustration contenant neuf conseils d’apprentissage, chacun correspondant à un mode de positionnement non ciblé distinct. Chaque conseil d’apprentissage est étiqueté avec le mode auquel il correspond. Le premier mot d’un mode de positionnement indique le côté de la racine XAML sur lequel le conseil d’apprentissage est centré. Si le mode de positionnement contient un deuxième mot, le conseil d’apprentissage se positionne dans l’angle spécifié de la racine XAML. Par exemple, le mode de positionnement « TopRight » a pour effet que le conseil d’apprentissage apparaît dans l’angle supérieur droit de la racine XAML. Pour les modes de positionnement non ciblés, l’ordre des deux mots n’affecte pas le positionnement. TopRight équivaut à RightTop. Le mode de positionnement « Center » est unique et a pour effet que le conseil d’apprentissage s’affiche au centre vertical et horizontal de la racine XAML.](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
+![Illustration contenant neuf conseils d’apprentissage, chacun correspondant à un mode de positionnement non ciblé distinct. Chaque conseil d’apprentissage est étiqueté avec le mode auquel il correspond.  Le premier mot d’un mode de positionnement indique le côté de la racine XAML sur lequel le conseil d’apprentissage est centré.  Si le mode de positionnement contient un deuxième mot, le conseil d’apprentissage se positionne dans l’angle spécifié de la racine XAML. Par exemple, le mode de positionnement « TopRight » a pour effet que le conseil d’apprentissage apparaît dans l’angle supérieur droit de la racine XAML. Pour les modes de positionnement non ciblés, l’ordre des deux mots n’affecte pas le positionnement. TopRight équivaut à RightTop.  Le mode de positionnement « Center » est unique et a pour effet que le conseil d’apprentissage s’affiche au centre vertical et horizontal de la racine XAML.](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
 
 ### <a name="add-a-placement-margin"></a>Ajouter une marge de positionnement
 

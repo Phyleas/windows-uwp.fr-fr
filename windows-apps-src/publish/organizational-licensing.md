@@ -1,17 +1,17 @@
 ---
-Description: Vous pouvez indiquer si et comment votre application peut être proposée pour des achats en volume par le biais du Microsoft Store pour Entreprises et du Microsoft Store pour Éducation dans la section Gestion des licences organisationnelles d’une soumission d’application.
+description: Vous pouvez indiquer si et comment votre application peut être proposée pour des achats en volume par le biais du Microsoft Store pour Entreprises et du Microsoft Store pour Éducation dans la section Gestion des licences organisationnelles d’une soumission d’application.
 title: Options de gestion des licences organisationnelles
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, store pour entreprises, store pour éducation, organisation, licence en volume, entreprise, store éducation, store entreprises, achat en volume, en gros
 localizationpriority: high
-ms.openlocfilehash: f572a09c488cfff391fead603612148b6a85bc02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dbaf44409e387d15225e701ef5c64fc2cb198ece
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174743"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034622"
 ---
 # <a name="organizational-licensing-options"></a>Options de gestion des licences organisationnelles
 

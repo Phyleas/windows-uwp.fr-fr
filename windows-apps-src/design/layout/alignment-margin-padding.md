@@ -1,17 +1,17 @@
 ---
-Description: Utilisez les propriétés d’alignement, de marge et de remplissage pour arranger la disposition des éléments sur une page.
+description: Utilisez les propriétés d’alignement, de marge et de remplissage pour arranger la disposition des éléments sur une page.
 title: Alignement, marge et remplissage pour la disposition
 ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1982bdd60ea8f14d19b9b29556b143abd8931127
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f2782118b2ed35578ac48f2996839ceefcf5b71b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165663"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034892"
 ---
 # <a name="alignment-margin-padding"></a>Alignement, marge, remplissage
 
@@ -36,10 +36,10 @@ L’alignement rend votre interface utilisateur claire, organisée et équilibr�
 ![Diagramme illustrant l’alignement](images/alignment.svg)
 
 - [**HorizontalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) et [**VerticalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) spécifient la manière dont un élément doit être positionné dans son conteneur parent.
-    - Les valeurs de **HorizontalAlignment** sont **Left**, **Center**, **Right** et **Stretch**.
-    - Les valeurs de **VerticalAlignment** sont **Top**, **Center**, **Bottom**, et **Stretch**
+    - Les valeurs de **HorizontalAlignment** sont **Left** , **Center** , **Right** et **Stretch**.
+    - Les valeurs de **VerticalAlignment** sont **Top** , **Center** , **Bottom** , et **Stretch**
 
-- Avec **Stretch**, valeur par défaut pour les deux propriétés, les éléments remplissent tout l’espace qui leur est alloué dans le conteneur parent. Une valeur Height et Width à nombre réel annule une valeur Stretch, qui agira à la place en tant que valeur de type Center. Certains contrôles, tels que Button, remplacent la valeur Stretch par défaut dans leur style par défaut.
+- Avec **Stretch** , valeur par défaut pour les deux propriétés, les éléments remplissent tout l’espace qui leur est alloué dans le conteneur parent. Une valeur Height et Width à nombre réel annule une valeur Stretch, qui agira à la place en tant que valeur de type Center. Certains contrôles, tels que Button, remplacent la valeur Stretch par défaut dans leur style par défaut.
 
 - [**HorizontalContentAlignment**](/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment) et [**VerticalContentAlignment**](/uwp/api/windows.ui.xaml.controls.control.verticalcontentalignment) spécifient la manière dont les éléments enfants sont positionnés dans un conteneur.
 
@@ -71,7 +71,7 @@ Contrairement à Margin, Padding n’est pas une propriété de FrameworkElement
 -   [**Control.Padding**](/uwp/api/windows.ui.xaml.controls.control.padding) : hérite de toutes les classes dérivées [**Control**](/uwp/api/windows.ui.xaml.controls). Comme les contrôles ne possèdent pas tous du contenu, cette propriété n’a aucun effet pour ces contrôles. Si le contrôle a une bordure, le remplissage s’applique à l’intérieur de celle-ci.
 -   [**Border.Padding**](/uwp/api/windows.ui.xaml.controls.border.padding) : définit l’espace entre la ligne de rectangle créée par [**BorderThickness**](/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**](/uwp/api/windows.ui.xaml.controls.border.borderbrush) et l’élément [**Child**](/uwp/api/windows.ui.xaml.controls.border.child).
 -   [ **ItemsPresenter.Padding**](/uwp/api/windows.ui.xaml.controls.itemspresenter.padding) : contribue à l’apparence des éléments dans les contrôles d’éléments, en plaçant le remplissage spécifié autour de chaque élément.
--   [ **TextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.textblock.padding) et [**RichTextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.richtextblock.padding) : étendent le cadre englobant autour du texte de l’élément de texte. Ces éléments de texte n’ayant pas d’**arrière-plan**, il peut être difficile de voir. Pour cette raison, utilisez les paramètres [**Margin**](/uwp/api/windows.ui.xaml.documents.block.margin) sur les conteneurs [**Block**](/uwp/api/windows.ui.xaml.documents.block) à la place.
+-   [ **TextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.textblock.padding) et [**RichTextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.richtextblock.padding) : étendent le cadre englobant autour du texte de l’élément de texte. Ces éléments de texte n’ayant pas d’ **arrière-plan** , il peut être difficile de voir. Pour cette raison, utilisez les paramètres [**Margin**](/uwp/api/windows.ui.xaml.documents.block.margin) sur les conteneurs [**Block**](/uwp/api/windows.ui.xaml.documents.block) à la place.
 
 Dans chacun de ces cas, les éléments ont aussi une propriété Margin. Si les propriétés Margin et Padding sont toutes les deux appliquées, elles s’ajoutent : la distance apparente entre un conteneur extérieur et tout contenu intérieur est égale à la marge plus au remplissage.
 

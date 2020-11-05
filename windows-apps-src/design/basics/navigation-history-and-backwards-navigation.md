@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment implémenter la navigation vers l’arrière afin de parcourir l’historique de navigation de l’utilisateur dans une application Windows.
+description: Découvrez comment implémenter la navigation vers l’arrière afin de parcourir l’historique de navigation de l’utilisateur dans une application Windows.
 title: Navigation dans l’historique et navigation vers l’arrière
 template: detail.hbs
 op-migration-status: ready
@@ -7,16 +7,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f87c02f726512f54830f8678fa8bbec5ecee4f
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 17303da53e7822be2e4984e6b852664c63c0919c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763044"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030992"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Historique de navigation et navigation vers l’arrière pour les applications Windows
 
-> **API importantes** : [événement BackRequested](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [classe SystemNavigationManager](/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **API importantes**  : [événement BackRequested](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [classe SystemNavigationManager](/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 L’application Windows fournit un système de navigation vers l’arrière cohérent afin de parcourir l’historique de navigation de l’utilisateur dans une application et, en fonction de l’appareil, d’une application à l’autre.
 
@@ -286,9 +286,9 @@ bool App::On_BackRequested()
 
 Cette recommandation de conception pour une navigation vers l’arrière est applicable à tous les appareils, mais certains appareils et facteurs de forme peuvent bénéficier d’une optimisation. Cela dépend également du bouton Précédent matériel pris en charge par différents interpréteurs de commandes.
 
-- **Téléphone/tablette** : un bouton Précédent matériel ou logiciel est toujours présent sur un appareil mobile et une tablette mais, pour des questions de clarté, nous vous recommandons de représenter un bouton Précédent dans l’application.
-- **Bureau/hub** : représentez le bouton Précédent dans l’application dans l’angle supérieur gauche de l’interface utilisateur de votre application.
-- **Xbox/TV** : ne représentez pas de bouton Précédent pour éviter d’alourdir inutilement l’interface utilisateur. Au lieu de cela, utilisez le bouton B du boîtier de commande pour naviguer vers l’arrière.
+- **Téléphone/tablette**  : un bouton Précédent matériel ou logiciel est toujours présent sur un appareil mobile et une tablette mais, pour des questions de clarté, nous vous recommandons de représenter un bouton Précédent dans l’application.
+- **Bureau/hub**  : représentez le bouton Précédent dans l’application dans l’angle supérieur gauche de l’interface utilisateur de votre application.
+- **Xbox/TV**  : ne représentez pas de bouton Précédent pour éviter d’alourdir inutilement l’interface utilisateur. Au lieu de cela, utilisez le bouton B du boîtier de commande pour naviguer vers l’arrière.
 
 Si votre application s’exécute sur plusieurs appareils, [créez un déclencheur visuel personnalisé pour Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) pour modifier la visibilité du bouton. Le contrôle NavigationView modifie automatiquement la visibilité du bouton Précédent si votre application s’exécute sur Xbox. 
 

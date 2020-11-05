@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment accorder une identité à des applications de bureau non empaquetées afin d'y utiliser les fonctionnalités Windows 10 modernes.
+description: Découvrez comment accorder une identité à des applications de bureau non empaquetées afin d'y utiliser les fonctionnalités Windows 10 modernes.
 title: Accorder une identité à des applications de bureau non empaquetées
 ms.date: 04/23/2020
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6c2adc41fd33692d3cc3deb78ed8dd0659709a11
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 30fab5da3727153b8e1f33924ffcb6177843eb4e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172703"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031162"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Accorder une identité à des applications de bureau non empaquetées
 

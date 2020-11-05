@@ -1,5 +1,5 @@
 ---
-Description: Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options.
+description: Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options.
 title: Recommandations en matière de boutons bascule
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c8df28335bf67c00f0429d6967e9013c73ec351
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 03714fef129ccb51bd84a73317bfda702317f313
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154193"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034712"
 ---
 # <a name="toggle-switches"></a>Boutons bascule
 
@@ -25,7 +25,7 @@ Le bouton bascule représente un commutateur physique qui permet à l’utilisat
 
 Pour créer un contrôle de bouton bascule, utilisez la [classe ToggleSwitch](/uwp/api/windows.ui.xaml.controls.toggleswitch).
 
-> **API de plateforme** : [classe ToggleSwitch](/uwp/api/windows.ui.xaml.controls.toggleswitch), [propriété IsOn](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [événement Toggled](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **API de plateforme**  : [classe ToggleSwitch](/uwp/api/windows.ui.xaml.controls.toggleswitch), [propriété IsOn](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [événement Toggled](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 

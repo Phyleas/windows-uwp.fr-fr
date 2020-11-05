@@ -1,5 +1,5 @@
 ---
-Description: Une zone de mot de passe (PasswordBox) est une zone d’entrée de texte qui masque les caractères saisis, pour des raisons de confidentialité.
+description: Une zone de mot de passe (PasswordBox) est une zone d’entrée de texte qui masque les caractères saisis, pour des raisons de confidentialité.
 title: Recommandations en matière de zones de mot de passe
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ba2df600e294aab959a090d8b5a5f8645a40d55
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: cb5bce63243869db0f8d9ae46a4c3c2b3844086c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749725"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030882"
 ---
 # <a name="password-box"></a>Zone de mot de passe
 
@@ -39,7 +39,7 @@ Par défaut, la zone de mot de passe permet à l’utilisateur d’afficher son 
    :::column-end:::
 :::row-end:::
 
-> **API de plateforme** : [classe PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [propriété Password](/uwp/api/windows.ui.xaml.controls.passwordbox.password), [propriété PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [propriété PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [événement PasswordChanged](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> **API de plateforme**  : [classe PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [propriété Password](/uwp/api/windows.ui.xaml.controls.passwordbox.password), [propriété PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [propriété PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [événement PasswordChanged](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -151,7 +151,7 @@ La valeur de la propriété [PasswordRevealMode](/uwp/api/windows.ui.xaml.contro
 
 ### <a name="hidden-and-visible-modes"></a>Modes Masqué et Visible
 
-Les autres valeurs d’énumération [PasswordRevealMode](/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode), **Hidden** et **Visible**, masquent le bouton d’affichage du mot de passe et vous permettent de gérer par programme si le mot de passe est masqué.
+Les autres valeurs d’énumération [PasswordRevealMode](/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode), **Hidden** et **Visible** , masquent le bouton d’affichage du mot de passe et vous permettent de gérer par programme si le mot de passe est masqué.
 
 Pour toujours masquer le mot de passe, définissez PasswordRevealMode sur Hidden. Sauf si vous avez besoin que le mot de passe soit toujours masqué, vous pouvez fournir une interface utilisateur personnalisée pour permettre à l’utilisateur de faire basculer PasswordRevealMode de la valeur Hidden à Visible. Par exemple, vous pouvez utiliser une case à cocher pour choisir d’afficher ou de masquer le mot de passe, comme illustré dans l’exemple suivant. Vous pouvez également utiliser d’autres contrôles, tels que [ToggleButton](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton), pour permettre à l’utilisateur de basculer entre les modes.
 

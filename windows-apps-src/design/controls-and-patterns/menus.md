@@ -1,5 +1,5 @@
 ---
-Description: Les menus et les menus contextuels affichent une liste de commandes ou d’options lorsque l’utilisateur les demande.
+description: Les menus et les menus contextuels affichent une liste de commandes ou d’options lorsque l’utilisateur les demande.
 title: Menus et menus contextuels
 label: Menus and context menus
 template: detail.hbs
@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f7f1420e8f4284f1a4ed0c835a70e15958f95f
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 1b93197288b165dbb7e8c79e90ca7a7abcf96ef2
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749925"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034512"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -40,7 +40,7 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
    :::column-end:::
 :::row-end:::
 
-> **API de la bibliothèque d’interface utilisateur Windows** : [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar)
+> **API de la bibliothèque d’interface utilisateur Windows**  : [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar)
 >
 > **API de plateforme :** [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
 
@@ -220,7 +220,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### <a name="light-dismiss"></a>Abandon interactif
 
-Les contrôles d’abandon interactif, tels que les menus, les menus contextuels et les menus volants, interceptent le focus du clavier et du boîtier de commande à l’intérieur de l’interface utilisateur temporaire, jusqu’à le faire disparaître. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la propriété [LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode). Par défaut, les interfaces utilisateur temporaires dessinent la superposition de l’abandon interactif sur Xbox (**Automatique**), mais pas sur les autres familles d’appareils. Vous pouvez forcer la superposition à être toujours **Activée** ou **Désactivée**.
+Les contrôles d’abandon interactif, tels que les menus, les menus contextuels et les menus volants, interceptent le focus du clavier et du boîtier de commande à l’intérieur de l’interface utilisateur temporaire, jusqu’à le faire disparaître. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la propriété [LightDismissOverlayMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode). Par défaut, les interfaces utilisateur temporaires dessinent la superposition de l’abandon interactif sur Xbox ( **Automatique** ), mais pas sur les autres familles d’appareils. Vous pouvez forcer la superposition à être toujours **Activée** ou **Désactivée**.
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />

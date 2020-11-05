@@ -1,5 +1,5 @@
 ---
-Description: Vous pouvez personnaliser la structure et le comportement visuels d’un contrôle en créant un modèle de contrôle dans l’infrastructure XAML.
+description: Vous pouvez personnaliser la structure et le comportement visuels d’un contrôle en créant un modèle de contrôle dans l’infrastructure XAML.
 MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -11,18 +11,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1d712e9d4a12800542184cf37fb504d6f7d20d7
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 720104c9dc27e258307b307a466477a5ca14f3e3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750505"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033423"
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 
 Vous pouvez personnaliser la structure et le comportement visuels d’un contrôle en créant un modèle de contrôle dans l’infrastructure XAML. Les contrôles sont dotés de plusieurs propriétés, telles que [**Background**](/uwp/api/windows.ui.xaml.controls.control.background), [**Foreground**](/uwp/api/windows.ui.xaml.controls.control.foreground) et [**FontFamily**](/uwp/api/windows.ui.xaml.controls.control.fontfamily) que vous pouvez définir en spécifiant les différents aspects de l’apparence du contrôle. Cependant, les modifications que vous apportez en définissant ces propriétés sont limitées. Vous pouvez spécifier des personnalisations supplémentaires en créant un modèle à l’aide de la classe [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate). Voici comment créer une classe **ControlTemplate** pour personnaliser l’apparence d’un contrôle [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox).
 
-> **API importantes** : [**classe ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate), [**propriété Control.Template**](/uwp/api/windows.ui.xaml.controls.control.template)
+> **API importantes**  : [**classe ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate), [**propriété Control.Template**](/uwp/api/windows.ui.xaml.controls.control.template)
 
 ## <a name="custom-control-template-example"></a>Exemple de modèle de contrôle personnalisé
 
@@ -48,12 +48,12 @@ Voici ce à quoi ressemble ce contrôle [**CheckBox**](/uwp/api/Windows.UI.Xaml.
 
 Lorsque vous créez un modèle [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate), vous combinez des objets [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) afin d’obtenir un contrôle unique. Un modèle **ControlTemplate** doit uniquement disposer d’un objet **FrameworkElement** comme élément racine. L’élément racine contient généralement d’autres objets **FrameworkElement**. La combinaison des objets forme la structure visuelle du contrôle.
 
-Le code XAML suivant permet de créer un modèle [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) pour un contrôle [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) spécifiant que le contenu du contrôle doit être placé en dessous la case de sélection. L’élément racine est un élément [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border). L’exemple fourni inclut la mention [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) pour créer un **X** indiquant que l’utilisateur a sélectionné la case **CheckBox** et la mention [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) indiquant un état indéterminé. Notez qu’[**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) a la valeur 0 dans les sections **Path** et **Ellipse**. Ainsi, par défaut, aucune opacité ne s’affiche dans les deux cas.
+Le code XAML suivant permet de créer un modèle [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) pour un contrôle [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) spécifiant que le contenu du contrôle doit être placé en dessous la case de sélection. L’élément racine est un élément [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border). L’exemple fourni inclut la mention [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) pour créer un **X** indiquant que l’utilisateur a sélectionné la case **CheckBox** et la mention [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) indiquant un état indéterminé. Notez qu’ [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) a la valeur 0 dans les sections **Path** et **Ellipse**. Ainsi, par défaut, aucune opacité ne s’affiche dans les deux cas.
 
 Un [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) est un lien spécial qui lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. TemplateBinding peut uniquement être utilisé dans une définition ControlTemplate en XAML. Consultez [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
 
 > [!NOTE]
-> À compter de Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), vous pouvez utiliser des extensions de balisage [**x:Bind**](../../xaml-platform/x-bind-markup-extension.md) là où vous utilisez [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Consultez [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
+> À compter de Windows 10 version 1809 ( [SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), vous pouvez utiliser des extensions de balisage [**x:Bind**](../../xaml-platform/x-bind-markup-extension.md) là où vous utilisez [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Consultez [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -91,7 +91,7 @@ Un [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) es
 
 ## <a name="specify-the-visual-behavior-of-a-control"></a>Spécifier le comportement visuel d’un contrôle
 
-Le comportement visuel indique l’apparence d’un contrôle lorsqu’il se trouve dans un état spécifique. 3 états de sélection sont associés au contrôle [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) : `Checked`, `Unchecked` et `Indeterminate`. La valeur de la propriété [**IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) détermine l’état du contrôle **CheckBox**, lequel détermine ce qui s’affiche dans la case.
+Le comportement visuel indique l’apparence d’un contrôle lorsqu’il se trouve dans un état spécifique. 3 états de sélection sont associés au contrôle [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) : `Checked`, `Unchecked` et `Indeterminate`. La valeur de la propriété [**IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) détermine l’état du contrôle **CheckBox** , lequel détermine ce qui s’affiche dans la case.
 
 Le tableau suivant comporte les valeurs [**IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) possibles, les états correspondants du contrôle [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) et l’apparence de **CheckBox**.
 
@@ -176,7 +176,7 @@ Pour mieux comprendre le fonctionnement des objets [**VisualState**](/uwp/api/Wi
 | De `Checked` à `Indeterminate`   | La valeur [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) de l’état [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) `Indeterminate` est appliquée. Ainsi, la valeur [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) de l’élément `IndeterminateGlyph` est 1. La valeur **Setter** de l’état **VisualState** `Checked` est supprimée. Ainsi, la valeur [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) de l’élément `CheckGlyph` est 0. | Un cercle s’affiche.                            |
 | De `Indeterminate` à `Unchecked` | La valeur [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) de l’état [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) `Indeterminate` est supprimée. Ainsi, la valeur [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) de l’élément `IndeterminateGlyph` est 0.                                                                                                                                           | Rien ne s’affiche.                             |
 
- 
+ 
 Pour plus d’informations sur la façon de créer des états visuels pour des contrôles, notamment la façon d’utiliser la classe [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) et les types d’animations, voir [Animations dans une table de montage séquentiel pour les états visuels](/previous-versions/windows/apps/jj819808(v=win.10)).
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>Utilisation de thèmes en toute simplicité à l’aide d’outils

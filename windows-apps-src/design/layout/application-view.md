@@ -1,22 +1,22 @@
 ---
-Description: Utilisez la classe ApplicationView pour présenter différentes parties de votre application dans des fenêtres distinctes.
+description: Utilisez la classe ApplicationView pour présenter différentes parties de votre application dans des fenêtres distinctes.
 title: Utiliser la classe ApplicationView pour montrer les fenêtres secondaires d’une application
 ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2005f254118c44b386879f771cc4e5c0ae2cadc4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2cdee3c0844fc5a01d0749e4e6219d92cd8178a0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165623"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034852"
 ---
 # <a name="show-multiple-views-with-applicationview"></a>Afficher plusieurs vues avec ApplicationView
 
 Aidez les utilisateurs à accroître leur productivité en leur permettant de voir des parties indépendantes de votre application dans des fenêtres distinctes. Quand vous créez plusieurs fenêtres pour une application, chacune d’elles se comporte de manière indépendante. La barre des tâches répertorie chaque fenêtre séparément. Les utilisateurs peuvent déplacer, redimensionner, afficher et masquer des fenêtres d’application indépendamment et ils peuvent basculer d’une fenêtre à une autre comme s’il s’agissait d’applications distinctes. Chaque fenêtre opère dans son propre thread.
 
-> **API importantes** : [**ApplicationViewSwitcher**](/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher), [**CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+> **API importantes**  : [**ApplicationViewSwitcher**](/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher), [**CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
 
 ## <a name="what-is-a-view"></a>Qu’est-ce qu’une vue ?
 
@@ -24,7 +24,7 @@ Une vue d’application est l’association de type 1:1 d’un thread et d’une
 
 Les vues sont gérées par l’objet [**CoreApplication**](/uwp/api/Windows.ApplicationModel.Core.CoreApplication). Vous devez appeler [**CoreApplication.CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) pour créer un objet [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView). L’objet **CoreApplicationView** réunit [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) et [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) (stockés dans les propriétés [**CoreWindow**](/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) et [**Dispatcher**](/uwp/api/windows.applicationmodel.core.coreapplicationview.dispatcher)). Vous pouvez considérer la **CoreApplicationView** comme l’objet qui utilise Windows Runtime pour interagir avec le système Windows principal.
 
-En règle générale, vous ne travaillez pas directement avec la [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView). À la place, Windows Runtime fournit la classe [**ApplicationView**](/uwp/api/Windows.UI.ViewManagement.ApplicationView) dans l’espace de noms [**Windows.UI.ViewManagement**](/uwp/api/Windows.UI.ViewManagement). Cette classe fournit des propriétés, des méthodes et des événements que vous utilisez quand votre application interagit avec le système de fenêtrage. Pour fonctionner avec une **ApplicationView**, appelez la méthode statique [**ApplicationView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview), qui obtient une instance **ApplicationView** liée au thread actuel de la **CoreApplicationView**.
+En règle générale, vous ne travaillez pas directement avec la [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView). À la place, Windows Runtime fournit la classe [**ApplicationView**](/uwp/api/Windows.UI.ViewManagement.ApplicationView) dans l’espace de noms [**Windows.UI.ViewManagement**](/uwp/api/Windows.UI.ViewManagement). Cette classe fournit des propriétés, des méthodes et des événements que vous utilisez quand votre application interagit avec le système de fenêtrage. Pour fonctionner avec une **ApplicationView** , appelez la méthode statique [**ApplicationView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview), qui obtient une instance **ApplicationView** liée au thread actuel de la **CoreApplicationView**.
 
 De même, l’infrastructure XAML enveloppe l’objet [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) dans un objet [**Windows.UI.XAML.Window**](/uwp/api/Windows.UI.Xaml.Window). Dans une application XAML, vous interagissez généralement avec l’objet **Window** au lieu de travailler directement avec la **CoreWindow**.
 
@@ -113,7 +113,7 @@ Si des vues secondaires sont ouvertes, la fenêtre de la vue principale peut êt
 Les autres vues, notamment les vues que vous avez créées en appelant [**CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) dans le code de votre application, sont des vues secondaires. La vue principale et les vues secondaires sont stockées dans la collection [**CoreApplication.Views**](/uwp/api/windows.applicationmodel.core.coreapplication.views). En règle générale, vous créez des vues secondaires en réponse à une action de l’utilisateur. Dans certains cas, le système crée des vues secondaires pour votre application.
 
 > [!NOTE]
-> Vous pouvez utiliser la fonctionnalité d’*accès affecté* de Windows pour exécuter une application en [mode plein écran](/windows/manage/set-up-a-device-for-anyone-to-use). Dans ce cas, le système crée une vue secondaire pour présenter l’interface utilisateur de votre application au-dessus de l’écran de verrouillage. Les vues secondaires créées par l’application ne sont pas autorisées. Ainsi, si vous essayez d’afficher votre propre vue secondaire en mode plein écran, une exception est levée.
+> Vous pouvez utiliser la fonctionnalité d’ *accès affecté* de Windows pour exécuter une application en [mode plein écran](/windows/manage/set-up-a-device-for-anyone-to-use). Dans ce cas, le système crée une vue secondaire pour présenter l’interface utilisateur de votre application au-dessus de l’écran de verrouillage. Les vues secondaires créées par l’application ne sont pas autorisées. Ainsi, si vous essayez d’afficher votre propre vue secondaire en mode plein écran, une exception est levée.
 
 ## <a name="switch-from-one-view-to-another"></a>Basculer d’une vue à une autre
 

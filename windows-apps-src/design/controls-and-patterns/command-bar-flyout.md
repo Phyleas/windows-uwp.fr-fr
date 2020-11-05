@@ -1,5 +1,5 @@
 ---
-Description: Les menus volants de barre de commandes procurent aux utilisateurs un accès inline aux tâches les plus courantes de votre application.
+description: Les menus volants de barre de commandes procurent aux utilisateurs un accès inline aux tâches les plus courantes de votre application.
 title: Menu volant de barre de commandes
 label: Command bar flyout
 template: detail.hbs
@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a2f6e61373ae343d8d683d6e5f9169cc399f1594
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 3ca79795264fd0629c19877f22bdc3eb332fa69f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750545"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031492"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
@@ -46,9 +46,9 @@ Le menu volant de barre de commandes a deux modes d’affichage : *réduit* et 
    :::column-end:::
 :::row-end:::
 
->**API de la bibliothèque d’interface utilisateur Windows** : [classe CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>**API de la bibliothèque d’interface utilisateur Windows**  : [classe CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
->**API de plateforme** : [classe CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout ](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [classe AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [classe AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [classe AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>**API de plateforme**  : [classe CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [classe AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [classe AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [classe AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 >
 > CommandBarFlyout nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
 
@@ -415,8 +415,8 @@ Le tableau ci-après montre les commandes qui sont incluses dans un TextCommandB
 
 TextCommandBarFlyout ne peut pas être personnalisé et est géré automatiquement par chaque contrôle de texte. Toutefois, vous pouvez remplacer le TextCommandBarFlyout par défaut par des commandes personnalisées.
 
-- Pour remplacer le TextCommandBarFlyout par défaut qui s’affiche quand du texte est sélectionné, vous pouvez créer un CommandBarFlyout personnalisé (ou un autre type de menu volant) et l’assigner à la propriété **SelectionFlyout**. Si vous définissez SelectionFlyout sur **null**, aucune commande n’apparaît au moment de la sélection.
-- Pour remplacer le TextCommandBarFlyout par défaut qui s’affiche sous la forme d’un menu contextuel, affectez un CommandBarFlyout personnalisé (ou un autre type de menu volant) à la propriété **ContextFlyout** sur un contrôle de texte. Si vous définissez ContextFlyout sur **null**, le menu volant affiché dans les versions précédentes du contrôle de texte apparaît à la place du TextCommandBarFlyout.
+- Pour remplacer le TextCommandBarFlyout par défaut qui s’affiche quand du texte est sélectionné, vous pouvez créer un CommandBarFlyout personnalisé (ou un autre type de menu volant) et l’assigner à la propriété **SelectionFlyout**. Si vous définissez SelectionFlyout sur **null** , aucune commande n’apparaît au moment de la sélection.
+- Pour remplacer le TextCommandBarFlyout par défaut qui s’affiche sous la forme d’un menu contextuel, affectez un CommandBarFlyout personnalisé (ou un autre type de menu volant) à la propriété **ContextFlyout** sur un contrôle de texte. Si vous définissez ContextFlyout sur **null** , le menu volant affiché dans les versions précédentes du contrôle de texte apparaît à la place du TextCommandBarFlyout.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 

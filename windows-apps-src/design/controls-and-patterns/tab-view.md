@@ -1,5 +1,5 @@
 ---
-Description: TabView offre un moyen flexible d’organiser plusieurs documents dans des onglets dynamiques
+description: TabView offre un moyen flexible d’organiser plusieurs documents dans des onglets dynamiques
 title: Vue d’onglets
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3010feeb1a19f8c4d38883415cc315b8d863bb82
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f34e2a882746ac833d2b78373a96496c1f079864
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749735"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034772"
 ---
 # <a name="tabview"></a>TabView
 
@@ -34,7 +34,7 @@ Le contrôle TabView permet d’afficher un ensemble d’onglets et leur contenu
    :::column-end:::
 :::row-end:::
 
-> **API de la bibliothèque d’interface utilisateur Windows** : [Classe TabView](/uwp/api/microsoft.ui.xaml.controls.tabview), [Classe TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+> **API de la bibliothèque d’interface utilisateur Windows**  : [Classe TabView](/uwp/api/microsoft.ui.xaml.controls.tabview), [Classe TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
 > Tout au long de ce document, nous utilisons l’alias **muxc** en XAML pour représenter les API de la bibliothèque d’interface utilisateur Windows que nous avons incluses dans notre projet. Nous l’avons ajouté à notre élément [Page](/uwp/api/windows.ui.xaml.controls.page) : `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
@@ -203,7 +203,7 @@ Par défaut, [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) prend en cha
 
 ### <a name="tab-and-cursor-key-behavior"></a>Comportement des touches de tabulation et de curseur
 
-Quand le focus se déplace dans la zone de _TabStrip_, le [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) sélectionné obtient le focus. L’utilisateur peut ensuite utiliser les flèches gauche et droite pour déplacer le focus (et non la sélection) vers d’autres onglets dans le TabStrip. Le focus de la flèche est bloqué à l’intérieur de la bande d’onglet et du bouton d’ajout d’onglet (+), s’il est présent. Pour déplacer le focus hors de la zone de TabStrip, l’utilisateur peut appuyer sur la touche Tab afin de déplacer le focus sur l’élément pouvant être actif suivant.
+Quand le focus se déplace dans la zone de _TabStrip_ , le [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) sélectionné obtient le focus. L’utilisateur peut ensuite utiliser les flèches gauche et droite pour déplacer le focus (et non la sélection) vers d’autres onglets dans le TabStrip. Le focus de la flèche est bloqué à l’intérieur de la bande d’onglet et du bouton d’ajout d’onglet (+), s’il est présent. Pour déplacer le focus hors de la zone de TabStrip, l’utilisateur peut appuyer sur la touche Tab afin de déplacer le focus sur l’élément pouvant être actif suivant.
 
 Déplacer le focus à l’aide de la touche Tab
 

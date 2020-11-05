@@ -1,5 +1,5 @@
 ---
-Description: Le son vient compléter l’expérience utilisateur d’une application et offre à l’utilisateur cette touche audio supplémentaire qui l’aide à reconnaître Windows sur l’ensemble des plateformes.
+description: Le son vient compléter l’expérience utilisateur d’une application et offre à l’utilisateur cette touche audio supplémentaire qui l’aide à reconnaître Windows sur l’ensemble des plateformes.
 label: Sound
 title: Son
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c479a47a53c5f52bab1febf490957355264bfc4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cd7c394f66eb1da585a605d96ed50804b8aab375
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159873"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033182"
 ---
 # <a name="sound"></a>Son
 
@@ -49,9 +49,9 @@ UWP fournit un système audio aisément accessible, qui vous permet de bénéfic
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-**ElementSoundPlayer** peut prendre trois états : **On**, **Off** et **Auto**.
+**ElementSoundPlayer** peut prendre trois états : **On** , **Off** et **Auto**.
 
-S’il est défini sur **Off**, aucun son ne sera émis, quelle que soit la plateforme sur laquelle votre application s’exécute. Si le système audio est défini sur **On**, les sons de votre application seront émis sur chaque plateforme.
+S’il est défini sur **Off** , aucun son ne sera émis, quelle que soit la plateforme sur laquelle votre application s’exécute. Si le système audio est défini sur **On** , les sons de votre application seront émis sur chaque plateforme.
 
 L’activation de l’objet ElementSoundPlayer entraîne également l’activation automatique de l’audio spatial (son 3D). Pour désactiver le son 3D (tout en gardant le son activé), désactivez la propriété **SpatialAudioMode** de l’objet ElementSoundPlayer : 
 
@@ -60,15 +60,15 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
 La propriété **SpatialAudioMode** peut accepter les valeurs suivantes : 
-- **Auto** : l’audio spatial est activé quand le son est activé. 
-- **Off** : l’audio spatial est toujours désactivé, même si le son est activé.
-- **On** : l’audio spatial est toujours émis.
+- **Auto**  : l’audio spatial est activé quand le son est activé. 
+- **Off**  : l’audio spatial est toujours désactivé, même si le son est activé.
+- **On**  : l’audio spatial est toujours émis.
 
 Pour plus d’informations sur l’audio spatial et la façon dont XAML le gère, voir [AudioGraph - Audio spatial](../../audio-video-camera/audio-graphs.md#spatial-audio).
 
 ### <a name="sound-for-tv-and-xbox"></a>Son pour télévision et Xbox
 
-Le son constitue un aspect essentiel de l’expérience d’interface à 3 mètres (« 10-foot ») et par défaut, l’état de **ElementSoundPlayer** est **Auto**, ce qui signifie que vous n’entendrez le son que si votre application est exécutée sur Xbox.
+Le son constitue un aspect essentiel de l’expérience d’interface à 3 mètres (« 10-foot ») et par défaut, l’état de **ElementSoundPlayer** est **Auto** , ce qui signifie que vous n’entendrez le son que si votre application est exécutée sur Xbox.
 Pour plus d’informations sur la conception pour Xbox et la télévision, consultez [Conception pour Xbox et la télévision](../devices/designing-for-tv.md).
 
 ## <a name="sound-volume-override"></a>Remplacement du volume sonore
@@ -85,7 +85,7 @@ où le volume maximal (par rapport au volume système) est de 1,0, et le volume 
 
 Si le son par défaut d’un contrôle n’est pas souhaité, il peut être désactivé. Ceci se fait via l’élément **ElementSoundMode** sur le contrôle.
 
-L’élément **ElementSoundMode** peut prendre deux états : **Off** et **Default**. Quand il n’est pas défini, il a la valeur **Default**. S’il est défini sur **Off**, chaque son lu par le contrôle sera désactivé, *sauf pour le focus*.
+L’élément **ElementSoundMode** peut prendre deux états : **Off** et **Default**. Quand il n’est pas défini, il a la valeur **Default**. S’il est défini sur **Off** , chaque son lu par le contrôle sera désactivé, *sauf pour le focus*.
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -108,7 +108,7 @@ Le son le plus courant déclenché par un contrôle dans notre système actuel e
 En règle générale, ce son est émis seulement quand un utilisateur cible explicitement un contrôle simple ou une partie d’un contrôle via un [périphérique d’entrée](../input/index.md).
 
 
-Pour lire ce son à partir d’un événement de contrôle quelconque, il vous suffit d’appeler la méthode Play à partir de **ElementSoundPlayer** et de passer en entrée **ElementSound.Invoke** :
+Pour lire ce son à partir d’un événement de contrôle quelconque, il vous suffit d’appeler la méthode Play à partir de **ElementSoundPlayer** et de passer en entrée **ElementSound.Invoke**  :
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 ```
@@ -133,12 +133,12 @@ La navigation entre les panneaux ou les vues d’une page de l’application ([O
 
 L’expérience audio associée à ce concept de navigation est représentée par les sons **MovePrevious** et **MoveNext**.
 
-Lors de l’accès à une vue/un panneau considérés comme l’*élément suivant* d’une liste, appelez :
+Lors de l’accès à une vue/un panneau considérés comme l’ *élément suivant* d’une liste, appelez :
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
-Lors de l’accès à une vue/un panneau considérés comme l’*élément précédent* d’une liste, appelez :
+Lors de l’accès à une vue/un panneau considérés comme l’ *élément précédent* d’une liste, appelez :
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
@@ -163,7 +163,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
 ### <a name="cycling-focus-sounds"></a>Émission successive de différents sons de focus
 
-En complément de l’appel de l’élément **ElementSound.Focus**, le système audio émet successivement par défaut 4 sons différents sur chaque déclencheur de navigation. Cela signifie que le système n’émettra pas deux fois de suite les deux mêmes sons de focus.
+En complément de l’appel de l’élément **ElementSound.Focus** , le système audio émet successivement par défaut 4 sons différents sur chaque déclencheur de navigation. Cela signifie que le système n’émettra pas deux fois de suite les deux mêmes sons de focus.
 
 Cette fonctionnalité de lecture successive est destinée à empêcher que les sons de focus ne deviennent monotones ou gênants pour l’utilisateur ; les sons de focus sont ceux qui seront émis le plus souvent et doivent donc être les plus subtils.
 

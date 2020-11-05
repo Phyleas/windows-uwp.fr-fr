@@ -1,5 +1,5 @@
 ---
-Description: Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des documents au format RTF qui contiennent du texte mis en forme, des liens hypertexte et des images. Vous pouvez faire en sorte que RichEditBox soit en lecture seule en définissant sa propriété IsReadOnly sur true.
+description: Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des documents au format RTF qui contiennent du texte mis en forme, des liens hypertexte et des images. Vous pouvez faire en sorte que RichEditBox soit en lecture seule en définissant sa propriété IsReadOnly sur true.
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff0b8cc337c8afe3d7c06ffabca4eb0fa0d5a8d
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: bb5ee48152b96c430e3b6ab8cf320b3055620865
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750325"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035212"
 ---
 # <a name="rich-edit-box"></a>Zone d’édition enrichie
 
@@ -36,7 +36,7 @@ Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des docume
    :::column-end:::
 :::row-end:::
 
-> **API de plateforme** : [classe RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [propriété Document](/uwp/api/windows.ui.xaml.controls.richeditbox.document), [propriété IsReadOnly](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [propriété IsSpellCheckEnabled](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
+> **API de plateforme**  : [classe RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [propriété Document](/uwp/api/windows.ui.xaml.controls.richeditbox.document), [propriété IsReadOnly](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [propriété IsSpellCheckEnabled](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 

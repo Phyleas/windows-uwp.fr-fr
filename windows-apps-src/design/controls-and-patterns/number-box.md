@@ -1,5 +1,5 @@
 ---
-Description: NumberBox est un contrôle qui permet d’afficher et de modifier des nombres.
+description: NumberBox est un contrôle qui permet d’afficher et de modifier des nombres.
 title: Zone de nombre
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f37a2753cced0f53fab54af393af74c21f3597
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 4bba2f90d7240b454c4dbd5331251e306f946af7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749755"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030912"
 ---
 # <a name="number-box"></a>Zone de nombre
 

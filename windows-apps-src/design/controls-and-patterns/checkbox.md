@@ -1,5 +1,5 @@
 ---
-Description: Permet de sélectionner ou de désélectionner des éléments d’action. Peut être utilisée pour un ou plusieurs éléments de liste.
+description: Permet de sélectionner ou de désélectionner des éléments d’action. Peut être utilisée pour un ou plusieurs éléments de liste.
 title: Cases à cocher
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7add5ca356f5d1c41ddeb1fa19ea54c69ef9e583
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: e18f750f7a442fdfe5d5ffc0119a8a64f5571407
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750565"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030962"
 ---
 # <a name="check-boxes"></a>Cases à cocher
 
@@ -114,7 +114,7 @@ Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepte
 </StackPanel>
 ```
 
-Si la case à cocher peut également être dans l’état **indéterminé**, nous utilisons la propriété [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) de la liaison pour spécifier la valeur booléenne représentant cet état. Dans ce cas, nous ne souhaitons pas que le bouton Envoyer soit également activé :
+Si la case à cocher peut également être dans l’état **indéterminé** , nous utilisons la propriété [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) de la liaison pour spécifier la valeur booléenne représentant cet état. Dans ce cas, nous ne souhaitons pas que le bouton Envoyer soit également activé :
 
 ```xaml
 <Button Content="Submit" 

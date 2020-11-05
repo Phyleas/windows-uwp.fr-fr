@@ -1,5 +1,5 @@
 ---
-Description: 'Nous lisons du texte en permanence : nos e-mails, un livre, un panneau routier, les prix sur un menu, la pression des pneus ou des affiches sur des poteaux.'
+description: 'Nous lisons du texte en permanence : nos e-mails, un livre, un panneau routier, les prix sur un menu, la pression des pneus ou des affiches sur des poteaux.'
 title: Contrôles de texte
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b06767e5009a4d7654fa7937498319a1bbed671
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ca8facaa63f0eb4c99e518c2fafb0e87208b759d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173883"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033002"
 ---
 # <a name="text-controls"></a>Contrôles de texte
 
@@ -25,7 +25,7 @@ Les contrôles de texte comprennent les zones de saisie de texte, les zones de m
 - Les contrôles d’affichage de texte en lecture seule sont [TextBlock](text-block.md) et [RichTextBlock](rich-text-block.md).
 - Les contrôles pour l’entrée de texte et la modification sont : [TextBox](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md) et [PasswordBox](password-box.md).
 
-> **API importantes** : [classe TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [classe RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [classe TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [classe RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [classe AutoSuggestBox](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [classe PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+> **API importantes**  : [classe TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [classe RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [classe TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [classe RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [classe AutoSuggestBox](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [classe PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -148,7 +148,7 @@ Pour plus d’informations, voir l’article [Utiliser l’étendue des entrées
 
 Les polices Windows peuvent inclure plusieurs couches colorées pour chaque glyphe. Par exemple, la police Segoe UI Emoji définit les versions de couleur des émoticônes et des autres caractères Emoji.
 
-Les contrôles de texte standard et enrichi prennent en charge l’affichage des polices en couleur. Par défaut, la propriété **IsColorFontEnabled** est définie sur **true**, et les polices dotées de ces couches supplémentaires s’affichent donc en couleur. La police en couleur par défaut sur le système est Segoe UI Emoji, et les contrôles utiliseront cette police pour afficher les glyphes en couleur.
+Les contrôles de texte standard et enrichi prennent en charge l’affichage des polices en couleur. Par défaut, la propriété **IsColorFontEnabled** est définie sur **true** , et les polices dotées de ces couches supplémentaires s’affichent donc en couleur. La police en couleur par défaut sur le système est Segoe UI Emoji, et les contrôles utiliseront cette police pour afficher les glyphes en couleur.
 
 ```xaml
 <TextBlock FontSize="30">Hello ☺⛄☂♨⛅</TextBlock>

@@ -1,6 +1,6 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Description: Le contrôle TextBox permet à un utilisateur d’entrer du texte dans une application.
+description: Le contrôle TextBox permet à un utilisateur d’entrer du texte dans une application.
 title: Zone de texte
 label: Text box
 template: detail.hbs
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 794bf6e99701dd73ee74b07c289fe9a2e5ca9744
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 542822b27f356c9471ec8a6c6f5bec0aac2144ce
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749776"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034752"
 ---
 # <a name="text-box"></a>Zone de texte
 
@@ -38,7 +38,7 @@ Le contrôle TextBox comporte différentes fonctionnalités destinées à simpli
    :::column-end:::
 :::row-end:::
 
-> **API de plateforme** : [classe TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [propriété Text](/uwp/api/windows.ui.xaml.controls.textbox.text)
+> **API de plateforme**  : [classe TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [propriété Text](/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 

@@ -1,17 +1,17 @@
 ---
-Description: Découvrez les derniers ajouts apportés aux documents des développeurs Windows.
+description: Découvrez les derniers ajouts apportés aux documents des développeurs Windows.
 title: Dernières mises à jour des documents des développeurs Windows
 ms.topic: article
 ms.date: 10/8/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 584709fe3b574d29f45da5bdd230862285e36bb6
-ms.sourcegitcommit: b78edb431541b40b86860c0b707449f44feced24
+ms.openlocfilehash: ac7efb725dc4f687a33e875b866b56240593cdf1
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91870987"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031922"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Dernières mises à jour des documents des développeurs Windows
 

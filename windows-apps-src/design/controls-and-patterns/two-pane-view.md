@@ -1,17 +1,17 @@
 ---
-Description: TwoPaneView est un contrôle de disposition vous permettant de gérer l’affichage d’applications ayant 2 zones de contenu distinctes.
+description: TwoPaneView est un contrôle de disposition vous permettant de gérer l’affichage d’applications ayant 2 zones de contenu distinctes.
 title: Vue à deux volets
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 681405694880024e158b4ef5798ca2862a38fde2
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750225"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034432"
 ---
 # <a name="two-pane-view"></a>Vue à deux volets
 
@@ -102,7 +102,7 @@ La vue à deux volets gère la taille et la disposition des volets, mais vous de
 
 Chaque volet d’une vue à deux volets peut contenir un seul `UIElement` XAML. Pour ajouter du contenu, vous placez généralement un panneau de disposition XAML dans chaque volet, puis vous ajoutez d’autres contrôles et du contenu au panneau. Les volets pouvant changer de taille et alterner entre mode horizontal et mode vertical, vous devez vérifier que le contenu de chaque volet peut s’adapter à ces changements. Pour plus d’informations sur la création d’une interface utilisateur adaptative, consultez [Dispositions dynamiques avec XAML](../layout/layouts-with-xaml.md) et [Panneaux de disposition](../layout/layout-panels.md).
 
-L’exemple présenté ici crée l’interface utilisateur d’une application simple avec une image et des informations (celle que vous avez vue précédemment dans la section _Exemples_). Quand l’application est répartie sur deux écrans, l’image et les informations sont affichées sur des écrans distincts. Sur un seul écran, le contenu peut être affiché dans deux volets ou combiné dans un volet unique en fonction de la place disponible. (S’il n’y a de la place que pour un seul volet, le contenu de Pane2 est déplacé dans Pane1 et l’utilisateur doit faire défiler le volet pour voir le contenu masqué. Ce code est présenté plus loin dans la section _Répondre aux changements de mode_.)
+L’exemple présenté ici crée l’interface utilisateur d’une application simple avec une image et des informations (celle que vous avez vue précédemment dans la section _Exemples_ ). Quand l’application est répartie sur deux écrans, l’image et les informations sont affichées sur des écrans distincts. Sur un seul écran, le contenu peut être affiché dans deux volets ou combiné dans un volet unique en fonction de la place disponible. (S’il n’y a de la place que pour un seul volet, le contenu de Pane2 est déplacé dans Pane1 et l’utilisateur doit faire défiler le volet pour voir le contenu masqué. Ce code est présenté plus loin dans la section _Répondre aux changements de mode_.)
 
 ![Petite image d’un exemple d’application répartie sur deux écrans](images/two-pane-view/tpv-left-right.png)
 
@@ -198,7 +198,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### <a name="pane-sizing"></a>Dimensionnement des volets
 
-Sur un seul écran, la taille des volets est déterminée par les propriétés [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) et [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length). Celles-ci utilisent les valeurs de [GridLength](/uwp/api/windows.ui.xaml.gridlength) qui prennent en charge les redimensionnements _auto_ et \* (_étoile_ ou proportionnel). Pour obtenir une explication des redimensionnements auto et *, consultez la section _Propriétés de disposition_ de l’article [Dispositions dynamiques avec XAML](../layout/layouts-with-xaml.md#layout-properties).
+Sur un seul écran, la taille des volets est déterminée par les propriétés [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) et [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length). Celles-ci utilisent les valeurs de [GridLength](/uwp/api/windows.ui.xaml.gridlength) qui prennent en charge les redimensionnements _auto_ et \* ( _étoile_ ou proportionnel). Pour obtenir une explication des redimensionnements auto et *, consultez la section _Propriétés de disposition_ de l’article [Dispositions dynamiques avec XAML](../layout/layouts-with-xaml.md#layout-properties).
 
 Par défaut, `Pane1Length` est défini sur `Auto` et se redimensionne automatiquement en fonction de son contenu. `Pane2Length` est défini sur `*` et utilise tout l’espace restant.
 

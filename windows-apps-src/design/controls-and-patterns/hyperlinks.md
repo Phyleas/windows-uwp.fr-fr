@@ -1,5 +1,5 @@
 ---
-Description: Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte.
+description: Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte.
 title: Liens hypertexte
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 471e17199d6a1858625ce418ea756d79cf8600f9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 90dfaa44205ac8eebfcb21227368e2daa492d3c4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160133"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030562"
 ---
 # <a name="hyperlinks"></a>Liens hypertexte
 
 Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
-> **API de plateforme** : [élément de texte Hyperlink](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [contrôle HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **API de plateforme**  : [élément de texte Hyperlink](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [contrôle HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 

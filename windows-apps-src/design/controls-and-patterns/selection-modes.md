@@ -1,5 +1,5 @@
 ---
-Description: Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter une action sur un ou plusieurs éléments.
+description: Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter une action sur un ou plusieurs éléments.
 title: Mode de sélection
 label: Selection mode
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b781e6074468fbe73446e4057e36ff31266d05
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1f3ec8d816ecd6de0cb08ca685a69cc693f4f47c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72165096"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035192"
 ---
 # <a name="selection-mode-overview"></a>Vue d’ensemble du mode de sélection
 

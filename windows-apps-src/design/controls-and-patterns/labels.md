@@ -1,5 +1,5 @@
 ---
-Description: Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
+description: Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
 title: Étiquettes
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68b062dc4bd70c81b1b8b57808fad8e9c7498d75
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9c1dc878280b24424aa4bb20d5a1d6324838b127
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172613"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034542"
 ---
 # <a name="labels"></a>Étiquettes
 
@@ -24,7 +24,7 @@ ms.locfileid: "89172613"
 
 Une étiquette correspond au nom ou au titre d’un contrôle ou d’un groupe de contrôles associés.
 
-> **API importantes** : propriété Header, [classe TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+> **API importantes**  : propriété Header, [classe TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
 En XAML, de nombreux contrôles disposent d’une propriété Header intégrée que vous utilisez pour afficher l’étiquette. Pour les contrôles qui n’ont pas de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
@@ -53,6 +53,6 @@ En XAML, de nombreux contrôles disposent d’une propriété Header intégrée 
 * [RichEditBox.Header, propriété](/uwp/api/windows.ui.xaml.controls.richeditbox.header)
 * [TextBlock, classe](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
- 
+ 
 
- 
+ 

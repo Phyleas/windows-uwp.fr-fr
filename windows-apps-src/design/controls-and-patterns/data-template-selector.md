@@ -1,5 +1,5 @@
 ---
-Description: Utilisez les sélecteurs de modèle de données pour personnaliser les styles de vos éléments en fonction des propriétés des éléments.
+description: Utilisez les sélecteurs de modèle de données pour personnaliser les styles de vos éléments en fonction des propriétés des éléments.
 title: Sélection du modèle de données
 label: Data template selection
 template: detail.hbs
@@ -7,18 +7,18 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 382e28b38347a4901e781a12637423260c4bd3e3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5b10afc03a1936c033977a53bd12effdae1c2ead
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160383"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032332"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>Sélection du modèle de données : Stylisation d’éléments en fonction de leurs propriétés
 
 La conception personnalisée des contrôles de collections est gérée par un [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate). Les modèles de données définissent la disposition et le style de chaque élément, et ce balisage est appliqué à chaque élément de la collection. Cet article explique comment utiliser un [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) pour appliquer différents modèles de données à une collection et sélectionner le modèle de données à utiliser en fonction de certaines valeurs ou propriétés d’élément de votre choix.
 
-> **API importantes** : [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector), [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
+> **API importantes**  : [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector), [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
 
 [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) est une classe qui active une logique personnalisée de sélection de modèle. Elle vous permet de définir des règles qui spécifient le modèle de données à utiliser pour certains éléments d’une collection. Pour implémenter cette logique, vous créez une sous-classe de DataTemplateSelector dans votre code-behind et définissez la logique qui détermine quel modèle de données à utiliser pour quelle catégorie d’éléments (par exemple, les éléments d’un certain type, les éléments ayant une certaine valeur de propriété, etc.). Vous déclarez une instance de cette classe dans la section Resources de votre fichier XAML, ainsi que les définitions des modèles de données que vous allez utiliser. Vous identifiez ces ressources avec une valeur `x:Key`, ce qui vous permet de les référencer dans votre code XAML.
 
@@ -130,7 +130,7 @@ Une fois votre code compilé, chaque élément de la collection passe la méthod
 
 Quand vous utilisez un ListView ou un GridView avec une grande collection de données, les performances associées aux défilements et aux panoramiques peuvent être un sujet de préoccupation. Pour que les grandes collections continuent de bien fonctionner, vous pouvez effectuer certaines étapes pour améliorer les performances de vos modèles de données. Celles-ci sont décrites plus en détail dans [Optimisation des options d’interface ListView et GridView](../../debug-test-perf/optimize-gridview-and-listview.md).
 
-- _Réduction des éléments par élément_ : maintenez le nombre d’éléments d’interface utilisateur dans un modèle de données à un niveau minimum raisonnable.
+- _Réduction des éléments par élément_  : maintenez le nombre d’éléments d’interface utilisateur dans un modèle de données à un niveau minimum raisonnable.
 - Recyclage de conteneurs avec des collections hétérogènes
-  - Utilisez l’_événement ChoosingItemContainer_ : cet événement est un moyen très performant d’utiliser différents modèles de données pour différents éléments. Pour obtenir des performances optimales, vous devez optimiser la mise en cache et la sélection des modèles de données pour vos données spécifiques.
-  - Utilisez un _sélecteur de modèle d’élément_ : évitez d’utiliser un sélecteur de modèle d’élément (`DataTemplateSelector`) dans certains cas en raison de son impact sur les performances.
+  - Utilisez l’ _événement ChoosingItemContainer_  : cet événement est un moyen très performant d’utiliser différents modèles de données pour différents éléments. Pour obtenir des performances optimales, vous devez optimiser la mise en cache et la sélection des modèles de données pour vos données spécifiques.
+  - Utilisez un _sélecteur de modèle d’élément_  : évitez d’utiliser un sélecteur de modèle d’élément (`DataTemplateSelector`) dans certains cas en raison de son impact sur les performances.

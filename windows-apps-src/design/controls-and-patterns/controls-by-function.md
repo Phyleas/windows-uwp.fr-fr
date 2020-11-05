@@ -1,5 +1,5 @@
 ---
-Description: Fournit une liste par fonction de certains des contrôles que vous pouvez utiliser dans vos applications.
+description: Fournit une liste par fonction de certains des contrôles que vous pouvez utiliser dans vos applications.
 title: Contrôles par fonction
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 49a608f46c21cddfbd7fcb5e149c4b316bf9b175
-ms.sourcegitcommit: ce1a7efa01779721b4b618ae5605597152e424cb
+ms.openlocfilehash: 36397e64215bfe4b57aac32e9eccc94182495688
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92379368"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033302"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 

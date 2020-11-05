@@ -1,5 +1,5 @@
 ---
-Description: Utilisez des modèles pour modifier l’apparence des éléments dans les contrôles ListView ou GridView.
+description: Utilisez des modèles pour modifier l’apparence des éléments dans les contrôles ListView ou GridView.
 title: Modèles et conteneurs d’éléments
 label: Item containers and templates
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 505e03124f345b8b32c6b3454ffa4aad32a72e29
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74cacee6dc8ea7bec0af4e5ffab66b392a0f945c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172753"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034682"
 ---
 # <a name="item-containers-and-templates"></a>Modèles et conteneurs d’éléments
 
@@ -25,7 +25,7 @@ ms.locfileid: "89172753"
 
 Les contrôles **ListView** et **GridView** gèrent la disposition de leurs éléments (horizontale, verticale, renvoi à la ligne, etc.) et l’interaction de l’utilisateur avec les éléments, mais pas l’affichage de chaque élément à l’écran. La visualisation de l’élément est gérée par les conteneurs d’éléments. Quand vous ajoutez des éléments à un affichage de liste, ils sont placés automatiquement dans un conteneur. Le conteneur d’éléments par défaut pour le contrôle ListView est [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) ; pour le contrôle GridView, il s’agit de [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
 
-> **API importantes** : [classe ListView](/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](/uwp/api/windows.ui.xaml.controls.gridview), [classe ListViewItem](/uwp/api/windows.ui.xaml.controls.listviewitem), [classe GridViewItem](/uwp/api/windows.ui.xaml.controls.gridviewitem), [propriété ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), [propriété ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
+> **API importantes**  : [classe ListView](/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](/uwp/api/windows.ui.xaml.controls.gridview), [classe ListViewItem](/uwp/api/windows.ui.xaml.controls.listviewitem), [classe GridViewItem](/uwp/api/windows.ui.xaml.controls.gridviewitem), [propriété ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), [propriété ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
 
 > [!NOTE]
@@ -40,8 +40,8 @@ Comme indiqué ci-dessus, les éléments ListView sont automatiquement placés d
 ## <a name="introduction-to-customization"></a>Introduction à la personnalisation
 Les contrôles de conteneur (comme ListViewItem et GridViewItem) comprennent deux parties importantes qui se combinent pour créer les visuels finaux d’un élément : le *modèle de données* et le *modèle de contrôle*.
 
-- **Modèle de données** : vous affectez un [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) à la propriété [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) de la vue Liste pour spécifier la façon dont les éléments de données individuels sont montrés.
-- **Modèle de contrôle** : le modèle de contrôle fournit la partie de la visualisation d’élément dont l’infrastructure est responsable, comme les états visuels. Vous pouvez utiliser la propriété [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) pour modifier le modèle de contrôle. En règle générale, vous procédez ainsi pour modifier les couleurs de l’affichage de liste, afin qu’elles correspondent à votre personnalisation ou pour changer l’affichage des éléments sélectionnés.
+- **Modèle de données**  : vous affectez un [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) à la propriété [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) de la vue Liste pour spécifier la façon dont les éléments de données individuels sont montrés.
+- **Modèle de contrôle**  : le modèle de contrôle fournit la partie de la visualisation d’élément dont l’infrastructure est responsable, comme les états visuels. Vous pouvez utiliser la propriété [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) pour modifier le modèle de contrôle. En règle générale, vous procédez ainsi pour modifier les couleurs de l’affichage de liste, afin qu’elles correspondent à votre personnalisation ou pour changer l’affichage des éléments sélectionnés.
 
 Cette image montre comment le modèle de contrôle et le modèle de données se combinent pour créer le visuel final d’un élément.
 
@@ -328,7 +328,7 @@ Comme nous l’avons remarqué précédemment pour les modèles de données, le 
 Les contrôles ListView et GridView sont optimisés pour réduire le nombre d’éléments XAML créés par élément. Les visuels **ListViewItem** sont créés par le [ListViewItemPresenter](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter), qui est un élément XAML spécial affichant des visuels complexes pour le focus, la sélection et d’autres états visuels, sans la surcharge de nombreux éléments UIElement.
  
 > [!NOTE]
-> Dans les applications UWP pour Windows 10, **ListViewItem** et **GridViewItem** utilisent **ListViewItemPresenter** ; GridViewItemPresenter est déprécié et vous ne devez pas l’utiliser. ListViewItem et GridViewItem définissent des valeurs de propriété différentes sur ListViewItemPresenter afin d’obtenir des apparences par défaut différentes.
+> Dans les applications UWP pour Windows 10, **ListViewItem** et **GridViewItem** utilisent **ListViewItemPresenter**  ; GridViewItemPresenter est déprécié et vous ne devez pas l’utiliser. ListViewItem et GridViewItem définissent des valeurs de propriété différentes sur ListViewItemPresenter afin d’obtenir des apparences par défaut différentes.
 
 Pour modifier l’apparence du conteneur d’éléments, utilisez la propriété [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) et spécifiez un [Style](/uwp/api/windows.ui.xaml.style) avec son [TargetType](/uwp/api/windows.ui.xaml.style.targettype) défini sur **ListViewItem** ou sur **GridViewItem**.
 
@@ -361,7 +361,7 @@ Pour modifier les autres propriétés de ListViewItemPresenter qui ne sont pas l
 
 **Pour faire une copie du modèle par défaut dans Visual Studio**
  
-1. Ouvrez le volet Structure du document (**Affichage > Autres fenêtres > Structure du document**).
+1. Ouvrez le volet Structure du document ( **Affichage > Autres fenêtres > Structure du document** ).
 2. Sélectionnez l’élément de liste ou de grille à modifier. Dans cet exemple, vous allez modifier l’élément `colorsGridView`.
 3. Cliquez avec le bouton droit et sélectionnez **Modifier les modèles supplémentaires > Modifier le conteneur d’éléments généré (ItemContainerStyle) > Modifier une copie**.
     ![Éditeur Visual Studio](images/listview-itemcontainerstyle-vs.png)
@@ -426,12 +426,12 @@ Vous pouvez maintenant modifier les propriétés de ListViewItemPresenter pour c
 
 ListView et GridView indiquent les éléments sélectionnés de différentes façons, en fonction du contrôle et du [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode). Pour plus d’informations sur la sélection d’affichage de liste, consultez [ListView et GridView](listview-and-gridview.md). 
 
-Quand **SelectionMode** est défini sur **Multiple**, une case à cocher de sélection s’affiche dans le modèle de contrôle de l’élément. Vous pouvez utiliser la propriété [SelectionCheckMarkVisualEnabled](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) pour désactiver la case de sélection en mode de sélection Multiple. Cette propriété est cependant ignorée dans les autres modes de sélection : vous ne pouvez donc pas activer la case à cocher en mode de sélection Extended ou Single.
+Quand **SelectionMode** est défini sur **Multiple** , une case à cocher de sélection s’affiche dans le modèle de contrôle de l’élément. Vous pouvez utiliser la propriété [SelectionCheckMarkVisualEnabled](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) pour désactiver la case de sélection en mode de sélection Multiple. Cette propriété est cependant ignorée dans les autres modes de sélection : vous ne pouvez donc pas activer la case à cocher en mode de sélection Extended ou Single.
 
 Vous pouvez définir la propriété [CheckMode](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) pour spécifier si la case à cocher s’affiche avec le style Inline ou le style Overlay.
 
-- **Inline** : Ce style affiche la case à cocher à gauche du contenu et colore l’arrière-plan du conteneur d’éléments pour indiquer la sélection. Il s’agit du style par défaut pour ListView.
-- **Overlay** : Ce style affiche la case à cocher au-dessus du contenu et colore unique la bordure du conteneur d’éléments pour indiquer la sélection. Il s’agit du style par défaut pour GridView.
+- **Inline**  : Ce style affiche la case à cocher à gauche du contenu et colore l’arrière-plan du conteneur d’éléments pour indiquer la sélection. Il s’agit du style par défaut pour ListView.
+- **Overlay**  : Ce style affiche la case à cocher au-dessus du contenu et colore unique la bordure du conteneur d’éléments pour indiquer la sélection. Il s’agit du style par défaut pour GridView.
 
 Le tableau suivant montre les visuels par défaut utilisés pour indiquer la sélection.
 

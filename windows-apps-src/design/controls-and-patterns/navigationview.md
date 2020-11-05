@@ -1,5 +1,5 @@
 ---
-Description: NavigationView est un contrôle adaptatif qui implémente des modèles de navigation de niveau supérieur pour votre application.
+description: NavigationView est un contrôle adaptatif qui implémente des modèles de navigation de niveau supérieur pour votre application.
 title: Affichage de navigation
 template: detail.hbs
 ms.date: 09/24/2020
@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5c5a880cc7291e15e71315d4977b6a28f22b2f00
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 689f55393df5fc7af59af6ce1e51fb002f49b713
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749845"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031132"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -39,11 +39,11 @@ _Affichage de navigation prend en charge à la fois le panneau ou menu de naviga
    :::column-end:::
 :::row-end:::
 
-> **API de plateforme** : [Classe Windows.UI.Xaml.Controls.NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview)
+> **API de plateforme**  : [Classe Windows.UI.Xaml.Controls.NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
-> **API de la bibliothèque d’interface utilisateur Windows** : [Classe Microsoft.UI.Xaml.Controls.NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+> **API de la bibliothèque d’interface utilisateur Windows**  : [Classe Microsoft.UI.Xaml.Controls.NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
-> Certaines fonctionnalités de NavigationView, par exemple la navigation _supérieure_ et _hiérarchique_, nécessitent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+> Certaines fonctionnalités de NavigationView, par exemple la navigation _supérieure_ et _hiérarchique_ , nécessitent Windows 10, version 1809 ( [SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -258,7 +258,7 @@ _Contenu d’affichage de navigation_
 
 La zone de contenu présente la plupart des informations relatives à la catégorie de navigation sélectionnée.
 
-Nous recommandons des marges de 12 px pour votre zone de contenu lorsque NavigationView est en mode **Minimal**, et des marges de 24 px dans les autres cas.
+Nous recommandons des marges de 12 px pour votre zone de contenu lorsque NavigationView est en mode **Minimal** , et des marges de 24 px dans les autres cas.
 
 ## <a name="adaptive-behavior"></a>Comportement adaptatif
 
@@ -266,7 +266,7 @@ Par défaut, le mode d’affichage de navigation change automatiquement selon la
 
 ### <a name="default"></a>Par défaut
 
-Lorsque la propriété PaneDisplayMode est définie sur sa valeur par défaut **Auto**, le comportement adaptatif consiste à afficher :
+Lorsque la propriété PaneDisplayMode est définie sur sa valeur par défaut **Auto** , le comportement adaptatif consiste à afficher :
 
 - Un volet gauche développé sur les fenêtres de grande largeur (1008 px ou supérieur).
 - Un volet de navigation gauche (LeftCompact) comportant uniquement des icônes sur les fenêtres de largeur moyenne (641 px à 1007 px).
@@ -324,7 +324,7 @@ _Mode de navigation avec PaneDisplayMode définie sur LeftMinimal_
 <NavigationView PaneDisplayMode="LeftMinimal" />
 ```
 
-Comme décrit précédemment dans la section _Modes d’affichage_, vous pouvez définir le volet afin qu’il soit toujours visible, toujours développé, toujours compact ou toujours minimal. Vous pouvez également gérer les modes d’affichage vous-même dans le code de votre application. Vous trouverez un exemple dans la prochaine section.
+Comme décrit précédemment dans la section _Modes d’affichage_ , vous pouvez définir le volet afin qu’il soit toujours visible, toujours développé, toujours compact ou toujours minimal. Vous pouvez également gérer les modes d’affichage vous-même dans le code de votre application. Vous trouverez un exemple dans la prochaine section.
 
 ### <a name="top-to-left-navigation"></a>Navigation du haut vers la gauche
 
@@ -411,7 +411,7 @@ Cet exemple montre comment utiliser **NavigationView** avec un volet de navigati
 
 L'exemple montre une façon recommandée de configurer des données de navigation qui s’adaptent à de nombreux scénarios courants. Il explique également comment implémenter la navigation vers l’arrière avec le bouton précédent de **NavigationView** et la navigation au clavier.
 
-Ce code suppose que votre application contient des pages avec les noms suivants pour accéder à ces éléments : *HomePage*, *AppsPage*, *GamesPage*, *MusicPage*, *MyContentPage* et *SettingsPage*. Le code de ces pages n’est pas affiché.
+Ce code suppose que votre application contient des pages avec les noms suivants pour accéder à ces éléments : *HomePage* , *AppsPage* , *GamesPage* , *MusicPage* , *MyContentPage* et *SettingsPage*. Le code de ces pages n’est pas affiché.
 
 > [!IMPORTANT]
 > Vous trouverez des informations sur les pages de l’application dans un [ValueTuple](/dotnet/api/system.valuetuple). Cette structure nécessite une version minimale SDK 17763 ou supérieure pour votre projet d’application. Si vous utilisez la version WinUI de NavigationView pour cibler des versions antérieures de Windows 10, vous pouvez utiliser le [paquet NuGet System.ValueTuple](https://www.nuget.org/packages/System.ValueTuple/).
@@ -1680,7 +1680,7 @@ Si votre application spécifie la région qui peut être déplacée par glisser 
 ```
 
 #### <a name="remarks"></a>Remarks
-Pour ajuster davantage la position de la zone d’en-tête de NavigationView, remplacez la ressource de thème XAML *NavigationViewHeaderMargin*, par exemple dans vos ressources de page.
+Pour ajuster davantage la position de la zone d’en-tête de NavigationView, remplacez la ressource de thème XAML *NavigationViewHeaderMargin* , par exemple dans vos ressources de page.
 
 ```Xaml
 <Page.Resources>
