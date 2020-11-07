@@ -6,12 +6,12 @@ keywords: composer, radial, didacticiel
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cc1618432d35687fe1bfa619396bc2b798dd40bf
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d6da91818abcf140c7d381f9d481fc92ba2feb56
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216922"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339697"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>Didacticiel : prendre en charge la numérotation en surface (et les autres appareils volants) dans votre application Windows
 
@@ -45,25 +45,25 @@ La numérotation prend en charge trois gestes de base :
 * [SDK Windows 10 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Appareil volant (uniquement la [surface de numérotation](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) à l’heure actuelle)
 * Si vous ne connaissez pas le développement d’applications Windows avec Visual Studio, consultez les rubriques suivantes avant de commencer ce didacticiel :  
-    * [Se préparer](../../get-started/get-set-up.md)
+    * [Se préparer](/windows/apps/get-started/get-set-up)
     * [Créer une application « Hello World » (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 
 ## <a name="set-up-your-devices"></a>Configurer vos appareils
 
 1. Vérifiez que votre appareil Windows est sous tension.
-2. Accédez à **Démarrer**, sélectionnez **paramètres**  >  **appareils**  >  **Bluetooth & autres appareils**, puis activez la fonction **Bluetooth** .
+2. Accédez à **Démarrer** , sélectionnez **paramètres**  >  **appareils**  >  **Bluetooth & autres appareils** , puis activez la fonction **Bluetooth** .
 3. Retirez le bas de la surface de cadran pour ouvrir le compartiment de la batterie, et assurez-vous qu’il y a deux piles AAA dans.
 4. Si l’onglet batterie est présent sur le dessous de la composition, retirez-le.
 5. Appuyez et maintenez enfoncé le petit bouton incrusté à côté des piles jusqu’à ce que la lumière Bluetooth clignote.
 6. Revenez à votre appareil Windows et sélectionnez **Ajouter Bluetooth ou autre périphérique**.
-7. Dans la boîte de dialogue **Ajouter un périphérique** , sélectionnez **Bluetooth**  >  **connexion à la surface**Bluetooth. Votre composition de surface doit maintenant se connecter et être ajoutée à la liste des appareils sous **souris, clavier, & stylet** dans la page paramètres **Bluetooth & autres appareils** .
+7. Dans la boîte de dialogue **Ajouter un périphérique** , sélectionnez **Bluetooth**  >  **connexion à la surface** Bluetooth. Votre composition de surface doit maintenant se connecter et être ajoutée à la liste des appareils sous **souris, clavier, & stylet** dans la page paramètres **Bluetooth & autres appareils** .
 8. Testez la numérotation en appuyant sur la touche et maintenez-la enfoncée pendant quelques secondes pour afficher le menu intégré.
 9. Si le menu n’est pas affiché sur votre écran (le cadran doit également vibrer), revenez aux paramètres Bluetooth, retirez l’appareil et réessayez de connecter l’appareil.
 
 > [!NOTE]
 > Les appareils roue peuvent être configurés à l’aide des paramètres de la **Roulette** :
 > 1. Dans le menu **Démarrer** , sélectionnez **paramètres**.
-> 2. Sélectionnez **Devices**  >  **volant**d’appareils.    
+> 2. Sélectionnez **Devices**  >  **volant** d’appareils.    
 > ![Écran Paramètres de la roue](images/radialcontroller/wheel-settings.png)
 
 Vous êtes maintenant prêt à commencer ce didacticiel. 
@@ -87,7 +87,7 @@ Ces objets fournissent la majeure partie de l’expérience de l’appareil roue
 
 | Composant | Description |
 | --- | --- |
-| [Classe **RadialController** ](/uwp/api/Windows.UI.Input.RadialController) et connexe | Représente un appareil d’entrée de roue ou un accessoire tel que le cadran de surface. |
+| [Classe **RadialController**](/uwp/api/Windows.UI.Input.RadialController) et connexe | Représente un appareil d’entrée de roue ou un accessoire tel que le cadran de surface. |
 | [**IRadialControllerConfigurationInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)  /  [ **IRadialControllerInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Nous ne couvrons pas cette fonctionnalité ici. pour plus d’informations, consultez l' [exemple de bureau classique Windows](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Permet l’interopérabilité avec une application Windows. |
 
 ## <a name="step-1-run-the-sample"></a>Étape 1 : exécuter l’exemple
@@ -611,7 +611,7 @@ Pour voir cela en action (vous aurez besoin d’une surface Studio) :
 
 ## <a name="summary"></a>Résumé
 
-Félicitations, vous avez terminé le *didacticiel de prise en main : prendre en charge la numérotation en surface (et les autres appareils volants) dans votre application Windows*! Nous vous avons montré le code de base requis pour la prise en charge d’un appareil roue dans vos applications Windows, et comment fournir certaines des expériences utilisateur plus riches prises en charge par les API **RadialController** .
+Félicitations, vous avez terminé le *didacticiel de prise en main : prendre en charge la numérotation en surface (et les autres appareils volants) dans votre application Windows* ! Nous vous avons montré le code de base requis pour la prise en charge d’un appareil roue dans vos applications Windows, et comment fournir certaines des expériences utilisateur plus riches prises en charge par les API **RadialController** .
 
 ## <a name="related-articles"></a>Articles connexes
 

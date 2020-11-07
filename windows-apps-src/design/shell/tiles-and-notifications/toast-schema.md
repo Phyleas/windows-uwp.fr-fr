@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7116f1aa6f06eda1351183963ea8169625a8df70
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 3bc7fab8bff98fc2711747122d62031fb4d3a65d
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033022"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339777"
 ---
 # <a name="toast-content-schema"></a>Schéma du contenu de notification toast
 
@@ -21,7 +21,7 @@ ms.locfileid: "93033022"
 
 Les éléments suivants décrivent toutes les propriétés et tous les éléments du contenu Toast.
 
-Si vous préférez utiliser du code XML brut au lieu de la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), consultez [le schéma XML](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/schema-root).
+Si vous préférez utiliser du code XML brut au lieu de la [bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), consultez [le schéma XML](/uwp/schemas/tiles/toastschema/schema-root).
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
@@ -57,7 +57,7 @@ Spécifie le scénario représenté par le Toast.
 | Valeur | Signification |
 |---|---|
 | **Par défaut** | Comportement normal du Toast. |
-| **Rappel** | Notification de rappel. Elle sera affichée au préalable et rester sur l’écran de l’utilisateur jusqu’à ce qu’elle soit fermée. |
+| **Rappeler** | Notification de rappel. Elle sera affichée au préalable et rester sur l’écran de l’utilisateur jusqu’à ce qu’elle soit fermée. |
 | **Alarme** | Une notification d’alarme. Elle sera affichée au préalable et rester sur l’écran de l’utilisateur jusqu’à ce qu’elle soit fermée. L’audio est bouclé par défaut et utilise l’audio-alarme. |
 | **IncomingCall** | Notification d’appel entrant. Elle sera affichée au préalable dans un format d’appel spécial et rester sur l’écran de l’utilisateur jusqu’à ce qu’elle soit fermée. L’audio est en boucle par défaut et utilise l’audio de sonnerie. |
 

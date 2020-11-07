@@ -6,12 +6,12 @@ keywords: encre, entrée manuscrite, didacticiel
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f726f4ab4a422cc94f00493261620ddff8b6122b
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: fb74b5d15b731a6b08a0adcec20a801b7e133a7f
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860192"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339817"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Didacticiel : prendre en charge l’encre dans votre application Windows
 
@@ -40,7 +40,7 @@ Avec Windows Ink, vous pouvez fournir à vos clients l’équivalent numérique 
 * [SDK Windows 10 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Selon votre configuration, vous devrez peut-être installer le package NuGet [Microsoft. Netcore. UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) et activer le **mode développeur** dans vos paramètres système (paramètres-> Update & Security-> pour les développeurs-> utiliser les fonctionnalités de développement).
 * Si vous ne connaissez pas le développement d’applications Windows avec Visual Studio, consultez les rubriques suivantes avant de commencer ce didacticiel :  
-    * [Se préparer](../../get-started/get-set-up.md)
+    * [Se préparer](/windows/apps/get-started/get-set-up)
     * [Créer une application « Hello World » (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 * **[Facultatif]** Un stylet numérique et un ordinateur avec un affichage qui prend en charge l’entrée de ce stylet numérique.
 
@@ -466,7 +466,7 @@ Félicitations, vous avez terminé le didacticiel **d’entrée : prise en char
 
 * [Interactions avec le stylet et Windows Ink dans les applications Windows](pen-and-stylus-interactions.md)
 
-### <a name="samples"></a>exemples
+### <a name="samples"></a>Exemples
 
 * [Exemple d’analyse de l’encre (Basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
 * [Exemple de reconnaissance de l’écriture manuscrite (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)

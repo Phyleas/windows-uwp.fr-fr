@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e00e3de9445a8b7c63ebaead70173c29b637b54
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9fa73c6fdd0a0cac69cb485d3426ddfc327591bd
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166323"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339667"
 ---
 # <a name="my-people-notifications"></a>Notifications de Mes Contacts
 
@@ -18,9 +18,9 @@ Les notifications de mes personnes offrent aux utilisateurs une nouvelle façon 
 
 ![notification d’Emoji cardiaque](images/heart-emoji-notification-small.gif)
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
-+ Windows 10 et Microsoft Visual Studio 2019. Pour plus d’informations sur l’installation, consultez la page [obtenir une configuration avec Visual Studio](../get-started/get-set-up.md).
++ Windows 10 et Microsoft Visual Studio 2019. Pour plus d’informations sur l’installation, consultez la page [obtenir une configuration avec Visual Studio](/windows/apps/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour commencer à utiliser C#, consultez [créer une application « Hello, World »](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="how-it-works"></a>Fonctionnement
@@ -67,7 +67,7 @@ Le nœud d’image à l’intérieur de la liaison doit inclure les paramètres 
 
 En outre, le nœud Toast de niveau supérieur doit inclure le paramètre **Hint-People** pour spécifier le contact d’envoi. Ce paramètre peut prendre les valeurs suivantes :
 
-+ **Adresse e-mail** 
++ **Adresse de messagerie** 
     + Par exemple, ` mailto:johndoe@mydomain.com `
 + **Numéro de téléphone** 
     + Par exemple, Tél. : 888-888-8888

@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: c6cae9e2416eb992815f098649d6b02ee472da14
-ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
+ms.openlocfilehash: be63c7ec1e682924e2364a2c6ea8e4d2d81dee3f
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192969"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339507"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows 10
 
@@ -217,15 +217,15 @@ De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour
     </tr>
     <tr>
         <td>Exemple de jeu JavaScript 2D</td>
-        <td><a href="../get-started/get-started-tutorial-game-js2d.md">Créer un jeu UWP en JavaScript</a></td>
+        <td><a href="/windows/uwp/get-started/">Créer un jeu UWP en JavaScript</a></td>
     </tr>
     <tr>
         <td>Exemple de jeu JavaScript 3D</td>
-        <td><a href="../get-started/get-started-tutorial-game-js3d.md">Création d’un jeu JavaScript 3D à l’aide de three.js</a></td>
+        <td><a href="/windows/uwp/get-started/">Création d’un jeu JavaScript 3D à l’aide de three.js</a></td>
     </tr>
     <tr>
         <td>Exemple de jeu UWP multigame 2D</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Créer un jeu UWP dans MonoGame 2D</a></td>
+        <td><a href="/windows/uwp/get-started/">Créer un jeu UWP dans MonoGame 2D</a></td>
     </tr>
 </table>
 
@@ -512,7 +512,7 @@ C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simpl
     </colgroup>
     <tr>
         <td>C# : Guide de programmation et informations de référence</td>
-        <td><a href="/dotnet/articles/csharp/csharp">Référence du langage C#</a></td>
+        <td><a href="/dotnet/articles/csharp/csharp">Informations de référence sur le langage C#</a></td>
     </tr>
 </table>
 
@@ -616,7 +616,7 @@ PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme 
         <td><a href="https://playfab.com/">Vue d’ensemble des outils et des services</a></td>
     </tr>
     <tr>
-        <td>Mise en route</td>
+        <td>Prise en main</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">Guide de mise en route général</a></td>
     </tr>
     <tr>
@@ -752,7 +752,7 @@ MonoGame est une infrastructure de développement open source inter-plateforme i
     </tr>
     <tr>
         <td>Exemple de jeu UWP multigame 2D</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Créer un jeu UWP dans MonoGame 2D</a></td>
+        <td><a href="/windows/uwp/get-started/">Créer un jeu UWP dans MonoGame 2D</a></td>
     </tr>
 </table>
 
@@ -970,7 +970,7 @@ Si vous ne connaissez pas du tout la programmation UWP et que vous envisagez d�
     </tr>
 </table>
 
-### <a name="windows-desktop-apisto-uwp"></a>API de bureau Windows pour UWP
+### <a name="windows-desktop-apis-to-uwp"></a>API de bureau Windows pour UWP
 
 Voici quelques liens pour vous aider à migrer votre jeu de bureau Windows vers UWP.
 

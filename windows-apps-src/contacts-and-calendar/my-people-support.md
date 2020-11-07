@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eea2d228ddf5ad6dfaef227bfaeb0bafb071490
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8c0e174613357ad9e4e45d2776f3fbc618535b30
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170493"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339457"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge de Mes Contacts à une application
 
@@ -21,9 +21,9 @@ La fonctionnalité mes contacts permet aux utilisateurs d’épingler des contac
 
 ![Conversation mes contacts](images/my-people-chat.png)
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
-+ Windows 10 et Microsoft Visual Studio 2019. Pour plus d’informations sur l’installation, consultez la page [obtenir une configuration avec Visual Studio](../get-started/get-set-up.md).
++ Windows 10 et Microsoft Visual Studio 2019. Pour plus d’informations sur l’installation, consultez la page [obtenir une configuration avec Visual Studio](/windows/apps/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour commencer à utiliser C#, consultez [créer une application « Hello, World »](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="overview"></a>Vue d’ensemble
@@ -38,7 +38,7 @@ Une fois cette opération effectuée, votre application s’affiche dans le pann
 
 ## <a name="declaring-support-for-the-contract"></a>Déclaration de prise en charge du contrat
 
-Pour déclarer la prise en charge du contrat My People, ouvrez votre application dans Visual Studio. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur **Package. appxmanifest** , puis sélectionnez **Ouvrir avec**. Dans le menu, sélectionnez **éditeur XML (texte)** , puis cliquez sur **OK**. Apportez les modifications suivantes au manifeste :
+Pour déclarer la prise en charge du contrat My People, ouvrez votre application dans Visual Studio. Dans le **Explorateur de solutions** , cliquez avec le bouton droit sur **Package. appxmanifest** , puis sélectionnez **Ouvrir avec**. Dans le menu, sélectionnez **éditeur XML (texte)** , puis cliquez sur **OK**. Apportez les modifications suivantes au manifeste :
 
 **Avant**
 
@@ -187,7 +187,7 @@ Si vous souhaitez que les contacts épinglés à la barre des tâches soient bad
 ![Badge des notifications de personnes](images/my-people-badging.png)
 
 Pour Badger un contact, le nœud Toast de niveau supérieur doit inclure le paramètre Hint-People pour indiquer l’envoi ou le contact associé. Ce paramètre peut prendre l’une des valeurs suivantes :
-+ **Adresse e-mail** 
++ **Adresse de messagerie** 
     + Par exemple, mailto:johndoe@mydomain.com
 + **Numéro de téléphone** 
     + Par exemple, Tél. : 888-888-8888
@@ -220,7 +220,7 @@ PinnedContactManager pinnedContactManager = PinnedContactManager.GetDefault();
 ```
 
 ## <a name="pinning-and-unpinning-contacts"></a>Épinglage et désépinglage de contacts
-Vous pouvez maintenant épingler et détacher des contacts à l’aide de l’PinnedContactManager que vous venez de créer. Les méthodes **RequestPinContactAsync** et **RequestUnpinContactAsync** fournissent à l’utilisateur des boîtes de dialogue de confirmation, de sorte qu’elles doivent être appelées à partir de votre thread de l’application cloisonnée (ASTA ou UI).
+Vous pouvez maintenant épingler et détacher des contacts à l’aide de l’PinnedContactManager que vous venez de créer. Les méthodes **RequestPinContactAsync** et **RequestUnpinContactAsync** fournissent à l’utilisateur des boîtes de dialogue de confirmation. elles doivent donc être appelées à partir de votre application Single-Threaded thread Apartment (ASTA ou UI).
 
 ```Csharp
 async void PinContact (Contact contact)

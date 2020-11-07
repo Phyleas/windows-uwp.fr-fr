@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, kit de développement logiciel (SDK) Microsoft Store services, tests A/B, expériences
 ms.localizationpriority: medium
-ms.openlocfilehash: c38eee9e3be7d6ea85b56fd5ad3aa3d62ae751b9
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 7cc63c1bdf5f3357bed596e5afcf03681eeb513a
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93029766"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339737"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>Exécuter des expériences d’application avec des tests A/B
 
@@ -30,13 +30,13 @@ Pour créer et exécuter un test A/B, procédez comme suit :
 
 Pour découvrir une procédure pas à pas illustrant le processus de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les tests a/B de l’espace partenaires sont pris en charge uniquement pour les applications UWP.
 
 Avant d’être en mesure d’exécuter des expériences avec des tests A/B, vous devez configurer votre ordinateur de développement :
 
-* Suivez les instructions mentionnées [ici](../get-started/get-set-up.md) pour configurer votre ordinateur de développement pour le développement UWP.
+* Suivez les instructions mentionnées [ici](/windows/apps/get-started/get-set-up) pour configurer votre ordinateur de développement pour le développement UWP.
 * [Installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk). Outre l’API relative aux expériences, ce SDK fournit des API pour d’autres fonctionnalités, telles que l’affichage d’annonces publicitaires et l’orientation de vos clients vers le Hub de commentaires pour vous permettre de recueillir des commentaires concernant votre application.
 
 ## <a name="best-practices"></a>Meilleures pratiques

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f9da8025936698ab7d72cd8b3d69896d8ec74da0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2e4613b565545bfb7807c98fa74495b4b60b57bb
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174883"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339538"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>Bien démarrer : Choix d’un langage de programmation
 
@@ -26,9 +26,9 @@ Bien que l’article se concentre ici sur C#, les autres langages offrent des av
 -   [Créer une application « Hello, World ! » à l’aide de C# ou de Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [Créer une application « Hello, World! » en utilisant C++/WinRT](../get-started/create-a-basic-windows-10-app-in-cppwinrt.md)
 -   [Créer une application « Hello, World ! » à l’aide de C++/CX](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [Créer une application « Hello, World ! » à l’aide de JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
+-   [Créer une application « Hello, World ! » à l’aide de JavaScript](/windows/apps/get-started/)
 
-**Remarque**    Pour les applications qui utilisent des graphiques 3D, les normes OpenGL et OpenGL ES ne sont pas disponibles en mode natif pour les applications UWP. Si vous préférez ne pas réécrire votre code OpenGL ES dans Microsoft DirectX, vous pourriez être intéressé par **Angle**. Angle est un projet en cours conçu pour convertir OpenGL en DirectX en transformant des appels d’API OpenGL en appels d’API DirectX. Pour en savoir plus, consultez les articles suivants :
+**Remarque**  Pour les applications qui utilisent des graphiques 3D, les normes OpenGL et OpenGL ES ne sont pas disponibles en mode natif pour les applications UWP. Si vous préférez ne pas réécrire votre code OpenGL ES dans Microsoft DirectX, vous pourriez être intéressé par **Angle**. Angle est un projet en cours conçu pour convertir OpenGL en DirectX en transformant des appels d’API OpenGL en appels d’API DirectX. Pour en savoir plus, consultez les articles suivants :
 -   [Angle](https://bugs.chromium.org/p/angleproject/)
 -   [Créer votre première application UWP à l’aide de DirectX](/previous-versions/windows/apps/br229580(v=win.10))
 -   [Exemples d’applications UWP utilisant DirectX](/samples/browse/?expanded=windows&products=windows-uwp&terms=directx)

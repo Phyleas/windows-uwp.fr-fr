@@ -5,12 +5,12 @@ ms.date: 10/12/2020
 ms.topic: article
 keywords: Windows 10, c#, WinRT, cswinrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 3116e176c8f156939f075e0a23d1be2352a8ecde
-ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
+ms.openlocfilehash: 817c4ec364040cbe64f8ab466a5bdf059d8c2dda
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171148"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339647"
 ---
 # <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>Procédure pas à pas : générer une projection .NET 5 à partir d’un composant C++/WinRT et distribuer le NuGet
 
@@ -25,7 +25,7 @@ Vous pouvez télécharger l’exemple complet pour cette procédure pas à pas �
 
 Cette procédure pas à pas et l’exemple correspondant requièrent les outils et composants suivants :
 
-- [Visual Studio 16,8 Preview 3](https://visualstudio.microsoft.com/vs/preview/) (ou version ultérieure) avec la charge de travail de développement plateforme Windows universelle installée. Dans **Détails de l’installation**  >  **plateforme Windows universelle développement**, activez l’option **outils de plateforme Windows universelle C++ (v14x)** .
+- [Visual Studio 16,8 Preview 3](https://visualstudio.microsoft.com/vs/preview/) (ou version ultérieure) avec la charge de travail de développement plateforme Windows universelle installée. Dans **Détails de l’installation**  >  **plateforme Windows universelle développement** , activez l’option **outils de plateforme Windows universelle C++ (v14x)** .
 - [Kit de développement logiciel (SDK) .net 5,0 RC2](https://github.com/dotnet/installer).
 - [Extension VSIX c++/WinRT](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) pour les modèles de projet/WinRT c++.
 
@@ -51,10 +51,10 @@ namespace winrt::SimpleMathComponent::implementation
 }
 ```
 
-Pour obtenir des instructions plus détaillées sur la création d’un composant C++/WinRT et la génération d’un fichier. winmd, consultez [Windows Runtime Components with c++/WinRT](https://docs.microsoft.com/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt).
+Pour obtenir des instructions plus détaillées sur la création d’un composant C++/WinRT et la génération d’un fichier. winmd, consultez [Windows Runtime Components with c++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md).
 
 > [!NOTE]
-> Si vous implémentez [IInspectable :: getruntimeclassname,](https://docs.microsoft.com/windows/win32/api/inspectable/nf-inspectable-iinspectable-getruntimeclassname) dans votre composant, celui-ci **doit** retourner un nom de classe WinRT valide. Comme C#/WinRT utilise la chaîne de nom de classe pour l’interopérabilité, un nom de classe d’exécution incorrect lève une **exception InvalidCastException**.
+> Si vous implémentez [IInspectable :: getruntimeclassname,](/windows/win32/api/inspectable/nf-inspectable-iinspectable-getruntimeclassname) dans votre composant, celui-ci **doit** retourner un nom de classe WinRT valide. Comme C#/WinRT utilise la chaîne de nom de classe pour l’interopérabilité, un nom de classe d’exécution incorrect lève une **exception InvalidCastException**.
 
 ## <a name="add-a-projection-project-to-the-component-solution"></a>Ajouter un projet de projection à la solution de composant
 
@@ -62,23 +62,23 @@ Si vous avez cloné l’exemple à partir de référentiel, commencez par suppri
 
 1. Ajoutez un nouveau projet de **bibliothèque de classes (.net Core)** à votre solution.
 
-    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de votre solution, puis cliquez sur **Ajouter**  ->  **un nouveau projet**.
-    2. Dans la **boîte de dialogue Ajouter un nouveau projet**, recherchez le modèle de projet **bibliothèque de classes (.net Core)** . Sélectionnez le modèle, puis cliquez sur **suivant**.
+    1. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur le nœud de votre solution, puis cliquez sur **Ajouter**  ->  **un nouveau projet**.
+    2. Dans la **boîte de dialogue Ajouter un nouveau projet** , recherchez le modèle de projet **bibliothèque de classes (.net Core)** . Sélectionnez le modèle, puis cliquez sur **suivant**.
     3. Nommez le nouveau projet **SimpleMathProjection** , puis cliquez sur **créer**.
 
 2. Supprimez le fichier **Class1.cs** vide du projet.
 
 3. Installez le [package NuGet C#/WinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT).
 
-    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur votre projet **SimpleMathProjection** , puis sélectionnez **gérer les packages NuGet**. 
+    1. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur votre projet **SimpleMathProjection** , puis sélectionnez **gérer les packages NuGet**. 
     2. Recherchez le package NuGet **Microsoft. Windows. CsWinRT** et installez la version la plus récente.
 
-4. Ajoutez une référence de projet au projet **SimpleMathComponent** . Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud **dépendances** sous le projet **SimpleMathProjection** , sélectionnez **Ajouter une référence de projet**, puis sélectionnez le projet **SimpleMathComponent** .
+4. Ajoutez une référence de projet au projet **SimpleMathComponent** . Dans **Explorateur de solutions** , cliquez avec le bouton droit sur le nœud **dépendances** sous le projet **SimpleMathProjection** , sélectionnez **Ajouter une référence de projet** , puis sélectionnez le projet **SimpleMathComponent** .
 
     > [!NOTE]
     > Si vous utilisez Visual Studio 16,8 Preview 4 ou une version ultérieure, vous avez terminé cette section après avoir terminé l’étape 4. Si vous utilisez Visual Studio 16,8 Preview 3, vous devez également effectuer l’étape 5.
 
-5. Si vous utilisez Visual Studio 16,8 Preview 3 : dans **Explorateur de solutions**, double-cliquez sur le nœud **SimpleMathProjection** pour ouvrir le fichier projet dans l’éditeur, ajoutez les éléments suivants au fichier, puis enregistrez et fermez le fichier.
+5. Si vous utilisez Visual Studio 16,8 Preview 3 : dans **Explorateur de solutions** , double-cliquez sur le nœud **SimpleMathProjection** pour ouvrir le fichier projet dans l’éditeur, ajoutez les éléments suivants au fichier, puis enregistrez et fermez le fichier.
 
     ```xml
     <ItemGroup>
@@ -103,7 +103,7 @@ Une fois ces étapes effectuées, votre **Explorateur de solutions** devrait res
 
 Avant de pouvoir appeler **cswinrt.exe** et générer l’assembly de projection, vous devez modifier le fichier projet pour le projet de projection.
 
-1. Dans **Explorateur de solutions**, double-cliquez sur le nœud **SimpleMathProjection** pour ouvrir le fichier projet dans l’éditeur.
+1. Dans **Explorateur de solutions** , double-cliquez sur le nœud **SimpleMathProjection** pour ouvrir le fichier projet dans l’éditeur.
 
 2. Mettez à jour l' `TargetFramework` élément pour référencer le SDK Windows. Cela ajoute les dépendances d’assembly nécessaires à la prise en charge de l’interopérabilité et de la projection. Notre exemple cible la version la plus récente de Windows 10 lors de cette procédure pas à pas, **net 5.0-Windows 10.0.19041.0** (également appelé Kit de développement logiciel (SDK) version 2004).
 
@@ -161,8 +161,8 @@ Pour distribuer et utiliser l’assembly d’interopérabilité, vous pouvez cr�
 
 1. Ajoutez un fichier de spécifications NuGet (. NuSpec) au projet **SimpleMathProjection** .
 
-    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nœud **SimpleMathProjection** , choisissez **Ajouter**  ->  **un nouveau dossier**, puis nommez le dossier **NuGet**. 
-    2. Cliquez avec le bouton droit sur le dossier **NuGet** , choisissez **Ajouter**  ->  **un nouvel élément**, choisissez le fichier XML, puis nommez-le **SimpleMathProjection. NuSpec**. 
+    1. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur le nœud **SimpleMathProjection** , choisissez **Ajouter**  ->  **un nouveau dossier** , puis nommez le dossier **NuGet**. 
+    2. Cliquez avec le bouton droit sur le dossier **NuGet** , choisissez **Ajouter**  ->  **un nouvel élément** , choisissez le fichier XML, puis nommez-le **SimpleMathProjection. NuSpec**. 
 
 2. Ajoutez le code suivant à **SimpleMathProjection. csproj** pour générer automatiquement le package. Ces propriétés spécifient le `NuspecFile` et le répertoire pour générer le package NuGet.
 
@@ -210,17 +210,17 @@ Pour distribuer et utiliser l’assembly d’interopérabilité, vous pouvez cr�
 
 ![Explorateur de solutions présentant la génération de projection](images/projection-generated-files.png)
 
-## <a name="referencethenugetpackage-inacnet50consoleapplication"></a>Référencer le package NuGet dans une application console C# .NET 5,0
+## <a name="reference-the-nuget-package-in-a-c-net-50-console-application"></a>Référencer le package NuGet dans une application console C# .NET 5,0
 
-Pour utiliser le **SimpleMathComponent**projeté, vous pouvez simplement ajouter une référence au package NuGet nouvellement créé dans votre application. Les étapes suivantes montrent comment effectuer cette opération en créant une application console simple dans une solution distincte.
+Pour utiliser le **SimpleMathComponent** projeté, vous pouvez simplement ajouter une référence au package NuGet nouvellement créé dans votre application. Les étapes suivantes montrent comment effectuer cette opération en créant une application console simple dans une solution distincte.
 
 1. Créez une solution avec un projet **application console (.net Core)** .
 
     1. Dans Visual Studio, sélectionnez **Fichier** -> **Nouveau** -> **Projet**.
-    2. Dans la **boîte de dialogue Ajouter un nouveau projet**, recherchez le modèle de projet **application console (.net Core)** . Sélectionnez le modèle, puis cliquez sur **suivant**.
+    2. Dans la **boîte de dialogue Ajouter un nouveau projet** , recherchez le modèle de projet **application console (.net Core)** . Sélectionnez le modèle, puis cliquez sur **suivant**.
     3. Nommez le nouveau projet **SampleConsoleApp** , puis cliquez sur **créer**. La création de ce projet dans une nouvelle solution vous permet de restaurer le package NuGet **SimpleMathComponent** séparément.
 
-2. Dans **Explorateur de solutions**, double-cliquez sur le nœud **SampleConsoleApp** pour ouvrir le fichier projet **SampleConsoleApp. csproj** et mettez à jour le moniker du Framework cible et la configuration de la plateforme, comme indiqué dans l’exemple suivant.
+2. Dans **Explorateur de solutions** , double-cliquez sur le nœud **SampleConsoleApp** pour ouvrir le fichier projet **SampleConsoleApp. csproj** et mettez à jour le moniker du Framework cible et la configuration de la plateforme, comme indiqué dans l’exemple suivant.
 
     ```xml
     <PropertyGroup>
@@ -250,7 +250,7 @@ Pour utiliser le **SimpleMathComponent**projeté, vous pouvez simplement ajouter
 4. Modifiez le fichier **Program.cs** pour utiliser la fonctionnalité fournie par **SimpleMathComponent**.
 
     ```csharp
-    static void Main(string[] args)
+    static void Main(string[] args)
     {
         var x = new SimpleMathComponent.SimpleMath();
         Console.WriteLine("Adding 5.5 + 6.5 ...");

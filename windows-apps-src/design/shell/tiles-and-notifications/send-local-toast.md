@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, envoyer des notifications Toast, notifications, envoyer des notifications, Toast notifications, guide pratique, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: b532e041ffbbcf4a2ecac0e3386430b65d833f2d
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 4142fb3d036bb19eb652ca9048a70325eb64b17d
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034482"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339807"
 ---
 # <a name="send-a-local-toast-notification-from-uwp-apps"></a>Envoyer une notification Toast locale à partir d’applications UWP
 
@@ -262,7 +262,7 @@ L’activation des boutons de premier plan est gérée de la même façon que le
 
 Lorsque vous spécifiez l’activation en arrière-plan sur votre toast (ou sur un bouton à l’intérieur du Toast), votre tâche en arrière-plan est exécutée au lieu d’activer votre application de premier plan.
 
-Pour plus d’informations sur les tâches en arrière-plan, consultez [prendre en charge votre application avec des tâches en arrière-plan](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
+Pour plus d’informations sur les tâches en arrière-plan, consultez [prendre en charge votre application avec des tâches en arrière-plan](../../../launch-resume/support-your-app-with-background-tasks.md).
 
 Si vous ciblez la version 14393 ou une version ultérieure, vous pouvez utiliser des tâches en arrière-plan in-process, ce qui simplifie beaucoup les choses. Notez que les tâches en arrière-plan in-process ne peuvent pas s’exécuter sur des versions antérieures de Windows. Nous allons utiliser une tâche en arrière-plan in-process dans cet exemple de code.
 
@@ -348,9 +348,9 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 
 Si vous souhaitez supprimer ou remplacer par programmation la notification que vous envoyez, vous devez utiliser la propriété Tag (et éventuellement la propriété Group) pour fournir une clé primaire pour votre notification. Ensuite, vous pouvez utiliser cette clé primaire à l’avenir pour supprimer ou remplacer la notification.
 
-Pour plus d’informations sur le remplacement ou la suppression des notifications Toast déjà fournies, consultez [démarrage rapide : gestion des notifications Toast dans le centre de maintenance (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
+Pour plus d’informations sur le remplacement ou la suppression des notifications Toast déjà fournies, consultez [démarrage rapide : gestion des notifications Toast dans le centre de maintenance (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
-Les balises et les groupes fonctionnent comme une clé primaire composite. Group est l’identificateur plus générique, dans lequel vous pouvez assigner des groupes tels que « wallPosts », « messages », « friendRequests », etc. La balise doit ensuite identifier de manière unique la notification proprement dite à partir du groupe. À l’aide d’un groupe générique, vous pouvez supprimer toutes les notifications de ce groupe à l’aide de l' [API RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
+Les balises et les groupes fonctionnent comme une clé primaire composite. Group est l’identificateur plus générique, dans lequel vous pouvez assigner des groupes tels que « wallPosts », « messages », « friendRequests », etc. La balise doit ensuite identifier de manière unique la notification proprement dite à partir du groupe. À l’aide d’un groupe générique, vous pouvez supprimer toutes les notifications de ce groupe à l’aide de l' [API RemoveGroup](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```csharp
 // Create toast content
@@ -381,10 +381,10 @@ Voici un exemple de ce qu’une application de messagerie doit faire...
 
 1. L’utilisateur reçoit plusieurs toasts sur les nouveaux messages d’une conversation
 2. L’utilisateur appuie sur l’un de ces toasts pour ouvrir la conversation
-3. L’application ouvre la conversation, puis efface tous les toasts pour cette conversation (en utilisant [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) sur le groupe d’applications pour cette conversation).
+3. L’application ouvre la conversation, puis efface tous les toasts pour cette conversation (en utilisant [RemoveGroup](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) sur le groupe d’applications pour cette conversation).
 4. Le centre de maintenance de l’utilisateur reflète désormais correctement l’état de notification, car aucune notification périmée pour cette conversation n’est laissée dans le centre de maintenance.
 
-Pour en savoir plus sur l’effacement de toutes les notifications ou la suppression de notifications spécifiques, consultez [démarrage rapide : gestion des notifications Toast dans le centre de maintenance (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
+Pour en savoir plus sur l’effacement de toutes les notifications ou la suppression de notifications spécifiques, consultez [démarrage rapide : gestion des notifications Toast dans le centre de maintenance (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
 ```csharp
 ToastNotificationManager.History.Clear();

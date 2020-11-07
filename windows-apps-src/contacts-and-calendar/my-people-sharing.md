@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76d52fe3ed7e7fb74ae5338e589ab34751bedebe
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8cbf82592e91b82e2d9d34d116d00aecf2ddd021
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173663"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339407"
 ---
 # <a name="my-people-sharing"></a>Partage de Mes Contacts
 
@@ -18,9 +18,9 @@ La fonctionnalité mes contacts permet aux utilisateurs d’épingler des contac
 
 ![Panneau de partage de mes personnes](images/my-people-sharing.png)
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
-+ Windows 10 et Microsoft Visual Studio 2019. Pour plus d’informations sur l’installation, consultez la page [obtenir une configuration avec Visual Studio](../get-started/get-set-up.md).
++ Windows 10 et Microsoft Visual Studio 2019. Pour plus d’informations sur l’installation, consultez la page [obtenir une configuration avec Visual Studio](/windows/apps/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour commencer à utiliser C#, consultez [créer une application « Hello, World »](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="overview"></a>Vue d’ensemble
@@ -37,7 +37,7 @@ Une fois cette opération effectuée, votre application s’affiche en tant que 
 
 ## <a name="declaring-support-for-the-share-contract"></a>Déclaration de prise en charge du contrat de partage
 
-Pour déclarer la prise en charge de votre application en tant que cible de partage, commencez par ouvrir votre application dans Visual Studio. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur **Package. appxmanifest** , puis sélectionnez **Ouvrir avec**. Dans le menu, sélectionnez **éditeur XML (texte)** , puis cliquez sur **OK**. Ensuite, apportez les modifications suivantes au manifeste :
+Pour déclarer la prise en charge de votre application en tant que cible de partage, commencez par ouvrir votre application dans Visual Studio. Dans le **Explorateur de solutions** , cliquez avec le bouton droit sur **Package. appxmanifest** , puis sélectionnez **Ouvrir avec**. Dans le menu, sélectionnez **éditeur XML (texte)** , puis cliquez sur **OK**. Ensuite, apportez les modifications suivantes au manifeste :
 
 
 **Avant**
