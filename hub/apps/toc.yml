@@ -126,6 +126,8 @@
                   href: winui/winui2/release-notes/winui-2.1.md
                 - name: "WinUI\_2.0"
                   href: winui/winui2/release-notes/winui-2.0.md
+        - name: Informations de référence sur les API WinUI
+          href: /uwp/api/overview/winui/
     - name: "Développement pour Windows\_10X"
       items:
         - name: "Questions fréquentes (FAQ) sur le développement Windows\_10X"
