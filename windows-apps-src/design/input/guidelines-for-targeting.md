@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b6113294d3f3c0c98946f0fed407e36de8a563
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c0f18feed166ea775f540a28fd873d7e81083cf0
+ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035062"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94513688"
 ---
 # <a name="guidelines-for-touch-targets"></a>Instructions pour les cibles tactiles
 
@@ -38,7 +38,7 @@ La *taille Fluent Standard* a été créée pour fournir un équilibre entre le 
 
 ## <a name="fluent-compact-sizing"></a>Taille Fluent Compact
 
-Les applications peuvent afficher un plus haut niveau de densité des informations avec un *dimensionnement compact Fluent* . Le dimensionnement compact aligne les éléments d’interface utilisateur sur une cible 32 x 32 EPX, ce qui permet aux éléments d’interface utilisateur de s’aligner sur une grille plus étroite et de les mettre à l’échelle de manière appropriée en fonction de la mise à l’échelle du
+Les applications peuvent afficher un plus haut niveau de densité des informations avec un *dimensionnement compact Fluent*. Le dimensionnement compact aligne les éléments d’interface utilisateur sur une cible 32 x 32 EPX, ce qui permet aux éléments d’interface utilisateur de s’aligner sur une grille plus étroite et de les mettre à l’échelle de manière appropriée en fonction de la mise à l’échelle du
 
 ### <a name="examples"></a>Exemples
 
@@ -95,6 +95,5 @@ Vous pouvez modifier ces recommandations en matière de tailles de cibles en fon
 - [Entrée : exemple de test de positionnement tactile](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [Exemple de défilement XAML, panoramique et zoom](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [Entrée : exemple d’entrée manuscrite simplifiée](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [Entrée : exemple de mouvements Windows 8](/samples/browse/?redirectedfrom=MSDN-samples)
 * [Entrée : manipulations et gestes, exemple](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [Exemple d’entrée tactile DirectX](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
