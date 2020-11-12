@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 78ccbe1f18167c318ffa38f3614cfab61782d147
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1f6474170967986bfee555eb07d7ea41601e9e48
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032442"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339757"
 ---
 # <a name="introduction-to-windows-app-design"></a>Introduction à la conception d’applications Windows
 
@@ -162,7 +162,7 @@ Nous proposons divers outils pour vous aider à réaliser votre conception :
 
 - Consultez notre [page des kits de ressources de conception](../downloads/index.md) pour les kits de ressources XD, Illustrator, Photoshop, Framer et Sketch, ainsi que des outils de conception supplémentaires et des téléchargements de police.
 
-- Pour configurer votre ordinateur afin de pouvoir écrire du code pour les applications UWP, consultez notre article [Prise en main &gt; Préparation](../../get-started/get-set-up.md).
+- Pour configurer votre ordinateur afin de pouvoir écrire du code pour les applications UWP, consultez notre article [Prise en main &gt; Préparation](/windows/apps/get-started/get-set-up).
 
 - Pour apprendre à implémenter l’interface utilisateur pour UWP, jetez un coup œil à nos [exemples d’applications UWP](https://developer.microsoft.com/windows/samples) de bout en bout.
 

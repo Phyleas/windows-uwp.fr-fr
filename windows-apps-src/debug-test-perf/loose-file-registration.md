@@ -5,12 +5,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil, gestionnaire d’applications, déploiement, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fd5bf6be691974d956de0c71f4a1d11aa1a229f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7006d32777e7b3ece5c5b6ed066bd23265b0bbb7
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166093"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339617"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Déployer une application par le biais de l’inscription de fichiers libres 
 
@@ -25,16 +25,16 @@ Une disposition de fichier libre est simplement l’acte de placer le contenu de
 
 ## <a name="advantages-of-loose-file-registration"></a>Avantages de l’inscription de fichier libre
 
-- **Validation rapide** : étant donné que les fichiers de l’application sont déjà décompressés, les utilisateurs peuvent rapidement inscrire la disposition de fichier libre et lancer l’application. Comme pour une application ordinaire, l’utilisateur peut utiliser l’application telle qu’elle a été conçue. 
-- **Distribution facile dans le réseau** : si les fichiers libres se trouvent dans un partage réseau plutôt que sur un lecteur local, les développeurs peuvent envoyer l’emplacement du partage réseau à d’autres utilisateurs ayant accès au réseau, puis inscrire la disposition de fichier libre et exécuter l’application. Cela permet à plusieurs utilisateurs de valider l’application simultanément. 
-- **Collaboration** : l’inscription de fichier libre permet aux développeurs et aux concepteurs de continuer à travailler sur des éléments visuels alors que l’application est inscrite. Les utilisateurs verront ces modifications lors du lancement de l’application. Notez que vous pouvez modifier uniquement des ressources statiques de cette manière. Si vous avez besoin de modifier du code ou du contenu créé de façon dynamique, vous devez recompiler l’application.
+- **Validation rapide**  : étant donné que les fichiers de l’application sont déjà décompressés, les utilisateurs peuvent rapidement inscrire la disposition de fichier libre et lancer l’application. Comme pour une application ordinaire, l’utilisateur peut utiliser l’application telle qu’elle a été conçue. 
+- **Distribution facile dans le réseau**  : si les fichiers libres se trouvent dans un partage réseau plutôt que sur un lecteur local, les développeurs peuvent envoyer l’emplacement du partage réseau à d’autres utilisateurs ayant accès au réseau, puis inscrire la disposition de fichier libre et exécuter l’application. Cela permet à plusieurs utilisateurs de valider l’application simultanément. 
+- **Collaboration**  : l’inscription de fichier libre permet aux développeurs et aux concepteurs de continuer à travailler sur des éléments visuels alors que l’application est inscrite. Les utilisateurs verront ces modifications lors du lancement de l’application. Notez que vous pouvez modifier uniquement des ressources statiques de cette manière. Si vous avez besoin de modifier du code ou du contenu créé de façon dynamique, vous devez recompiler l’application.
 
 ## <a name="how-to-register-a-loose-file-layout"></a>Comment inscrire une disposition de fichier libre
 
 Windows fournit plusieurs outils de développement pour inscrire des dispositions de fichiers libres sur des appareils locaux et distants. Vous avez le choix entre `WinDeployAppCmd` (Outil SDK Windows), Portail d’appareil Windows, PowerShell et [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network). Nous allons voir comment inscrire des fichiers libres à l’aide de ces outils. Mais d’abord, assurez-vous que vous avez la configuration suivante :
 
 - Vos appareils doivent être sur Windows 10 Creators Update (Build 14965) ou version ultérieure.
-- Vous devez activer le [mode développeur](../get-started/enable-your-device-for-development.md) et la [découverte d’appareils](../get-started/enable-your-device-for-development.md#device-discovery) sur tous les appareils.
+- Vous devez activer le [mode développeur](/windows/apps/get-started/enable-your-device-for-development) et la [découverte d’appareils](/windows/apps/get-started/enable-your-device-for-development#device-discovery) sur tous les appareils.
 
 > [!IMPORTANT]
 > L’inscription de fichier libre est disponible uniquement sur les des appareils qui prennent en charge le protocole de partage réseau (SMB) : Ordinateur de bureau et Xbox. 
@@ -47,11 +47,11 @@ Si vous utilisez les outils du kit de développement logiciel (SDK) correspondan
 WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Address> -pin <target machine PIN>
 ```
 
-**Chemin réseau** : chemin des fichiers libres de l’application.
+**Chemin réseau**  : chemin des fichiers libres de l’application.
 
-**Adresse IP** : adresse IP de la machine cible.
+**Adresse IP**  : adresse IP de la machine cible.
 
-**PIN de la machine cible** : code confidentiel, si nécessaire, pour établir une connexion avec l’appareil cible. Vous serez invité à réessayer avec l’option `-pin` si une authentification est requise. Pour savoir comment obtenir un code PIN, consultez [Découverte d’appareils](../get-started/enable-your-device-for-development.md#device-discovery).
+**PIN de la machine cible**  : code confidentiel, si nécessaire, pour établir une connexion avec l’appareil cible. Vous serez invité à réessayer avec l’option `-pin` si une authentification est requise. Pour savoir comment obtenir un code PIN, consultez [Découverte d’appareils](/windows/apps/get-started/enable-your-device-for-development#device-discovery).
 
 ### <a name="windows-device-portal"></a>Portail d’appareil Windows
 
@@ -65,7 +65,7 @@ Pour inscrire la disposition de fichier libre dans le Portail d’appareil, proc
 1. Si l’appareil hôte n’a pas accès au partage réseau, une invite s’affiche pour vous permettre d’entrer les informations d’identification requises.
 1. Une fois l’inscription terminée, vous pouvez lancer l’application.
 
-Dans la page Gestionnaire d’applications du Portail d’appareil, vous pouvez également inscrire des dispositions de fichiers libres facultatives pour votre application principale en activant la case à cocher **Je souhaite spécifier des packages facultatifs**, puis en spécifiant les chemins d’accès de partage réseau des applications facultatives. 
+Dans la page Gestionnaire d’applications du Portail d’appareil, vous pouvez également inscrire des dispositions de fichiers libres facultatives pour votre application principale en activant la case à cocher **Je souhaite spécifier des packages facultatifs** , puis en spécifiant les chemins d’accès de partage réseau des applications facultatives. 
 
 ### <a name="powershell"></a>PowerShell 
 

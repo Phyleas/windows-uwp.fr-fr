@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: f06a3c933060a7309604ae8dec49455ac3bd02ab
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: 1618b2de1f0db96989a7aedf5b53805fd70f535e
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845568"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339567"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour Windows Desktop
 
@@ -32,10 +32,10 @@ Vous pouvez utiliser Device Portal pour :
 
 ### <a name="turn-on-developer-mode"></a>Activer le mode développeur
 
-À compter de Windows 10, version 1607, certaines des dernières fonctionnalités pour ordinateurs de bureau sont destinées uniquement au mode développeur. Pour en savoir plus sur la façon d’activer le mode développeur, consultez [Activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
+À compter de Windows 10, version 1607, certaines des dernières fonctionnalités pour ordinateurs de bureau sont destinées uniquement au mode développeur. Pour en savoir plus sur la façon d’activer le mode développeur, consultez [Activer votre appareil pour le développement](/windows/apps/get-started/enable-your-device-for-development).
 
 > [!IMPORTANT]
-> Parfois, en raison de problèmes réseau ou de compatibilité, le mode développeur ne s’installe pas correctement. Pour résoudre ces problèmes, voir la section correspondante [Activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package).
+> Parfois, en raison de problèmes réseau ou de compatibilité, le mode développeur ne s’installe pas correctement. Pour résoudre ces problèmes, voir la section correspondante [Activer votre appareil pour le développement](/windows/apps/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package).
 
 ### <a name="turn-on-device-portal"></a>Activer Device Portal
 
@@ -132,7 +132,7 @@ Voici quelques-unes des erreurs courantes que vous pouvez rencontrer lors de la 
 
 Cette erreur peut s’afficher si vous tentez d’installer les packages de développement sur une préversion de Windows 10. Ces packages de fonctionnalités à la demande (Feature-on-Demand ou FoD) sont hébergés sur Windows Update, et leur téléchargement sur des préversions nécessite un abonnement à la distribution de version d’évaluation. Si votre installation ne bénéficie pas de la distribution de version d’évaluation pour la version et la combinaison appropriées, la charge utile ne pourra pas être téléchargée. Vérifiez les éléments suivants :
 
-1. Accédez à **Paramètres > Mise à jour et sécurité > Programme Windows Insider** et vérifiez que la section **Compte Windows Insider** affiche vos informations de compte correctes. Si vous ne voyez pas cette section, sélectionnez **Associer un compte Windows Insider**, ajoutez votre compte de messagerie, puis vérifiez qu’il s’affiche sous l’en-tête **Compte Windows Insider** (vous devrez peut-être sélectionner à nouveau **Associer un compte Windows Insider** pour lier un compte récemment ajouté).
+1. Accédez à **Paramètres > Mise à jour et sécurité > Programme Windows Insider** et vérifiez que la section **Compte Windows Insider** affiche vos informations de compte correctes. Si vous ne voyez pas cette section, sélectionnez **Associer un compte Windows Insider** , ajoutez votre compte de messagerie, puis vérifiez qu’il s’affiche sous l’en-tête **Compte Windows Insider** (vous devrez peut-être sélectionner à nouveau **Associer un compte Windows Insider** pour lier un compte récemment ajouté).
  
 2. Sous **Quel type de contenu voulez-vous recevoir ?** , vérifiez que l’option **Développement actif de Windows** est sélectionnée.
  

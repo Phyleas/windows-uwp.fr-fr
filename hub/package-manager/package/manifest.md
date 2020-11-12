@@ -4,12 +4,12 @@ description: Si vous voulez soumettre un package logiciel au dépôt du Gestionn
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a3a1acebf2b48e767fbd16998967145976305434
-ms.sourcegitcommit: 94841d1d59703897b42b11597c28a9d966626f47
+ms.openlocfilehash: c0c01d87dc7e02b356a4fba20b01519e3361b28a
+ms.sourcegitcommit: 36ae65013da22930c8e838fc65a63564a0bafee2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110570"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94377795"
 ---
 # <a name="create-your-package-manifest"></a>Créer votre manifeste de package
 
@@ -166,7 +166,7 @@ ManifestVersion: 0.1.0
 
 ## <a name="installer-switches"></a>Commutateurs de programme d’installation
 
-Vous pouvez souvent déterminer quels sont les commutateurs (`Switches`) silencieux disponibles pour un programme d’installation en transmettant un `-?` au programme d’installation à partir de la ligne de commande. Voici quelques `Swtiches` silencieux courants qui peuvent être utilisés pour différents types de programme d’installation.
+Vous pouvez souvent déterminer quels sont les commutateurs (`Switches`) silencieux disponibles pour un programme d’installation en transmettant un `-?` au programme d’installation à partir de la ligne de commande. Voici quelques `Switches` silencieux courants qui peuvent être utilisés pour différents types de programme d’installation.
 
 | Programme d’installation | Commande  | Documentation |  
 | :--- | :-- | :--- |  
@@ -177,7 +177,7 @@ Vous pouvez souvent déterminer quels sont les commutateurs (`Switches`) silenci
 
 ## <a name="tips-and-best-practices"></a>Conseils et bonnes pratiques
 
-* Afin d’optimiser l’expérience utilisateur lors de la recherche et de l’installation de votre logiciel, nous vous recommandons d’inclure le plus d’éléments facultatifs possible au-delà du schéma obligatoire. Par exemple, le champ `AppMoniker` est facultatif. Toutefois, si vous incluez ce champ, les clients verront les résultats associés à la valeur `AppMoniker` lors de l’exécution de la commande [search](../winget/search.md) (par exemple, **vscode** pour **Visual Studio Code**). S’il n’existe qu’une seule application avec la valeur `AppMoniker` spécifiée, les clients peuvent installer votre application en spécifiant le moniker au lieu de l’ID complet.
+* Afin d’optimiser l’expérience utilisateur lors de la recherche et de l’installation de votre logiciel, nous vous recommandons d’inclure le plus d’éléments facultatifs possible au-delà du schéma obligatoire. Par exemple, le champ `AppMoniker` est facultatif. Toutefois, si vous incluez ce champ, les clients verront les résultats associés à la valeur `AppMoniker` lors de l’exécution de la commande [search](../winget/search.md) (par exemple, **vscode** pour **Visual Studio Code** ). S’il n’existe qu’une seule application avec la valeur `AppMoniker` spécifiée, les clients peuvent installer votre application en spécifiant le moniker au lieu de l’ID complet.
 * L’`Id` doit être unique. Vous ne pouvez pas avoir plusieurs envois avec le même identificateur de package. Évitez les espaces parce que vous obligeriez les utilisateurs à placer des guillemets autour de l’`Id` lors de l’utilisation du client [winget](../index.md).
 * Évitez de créer plusieurs dossiers d’éditeur. Par exemple, ne créez pas « Contoso Ltd » s’il existe déjà un dossier « Contoso ». Évitez également les espaces lors de la création de dossiers.
 * Tous les packages doivent être envoyés avec une installation sans assistance dans la mesure du possible. Si vous avez un fichier exécutable qui ne prend pas en charge l’installation sans assistance, l’expérience utilisateur sera réduite.

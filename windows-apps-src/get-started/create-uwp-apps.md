@@ -1,16 +1,16 @@
 ---
 title: Créer des applications avec la plateforme Windows universelle
-description: Créer une application de plateforme Windows universelle (UWP) pour Windows 10 est plus simple que vous ne le pensez.
+description: Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez.
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: a9230df47c9929ee902fc8e0b93f7de7a5ef70df
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 143e393a72aa24f81561e792148e4cc8b39bdeb4
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011364"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339797"
 ---
 # <a name="start-coding"></a>Commencer à développer
 
@@ -57,7 +57,7 @@ Si vous avez déjà exploré nos pistes d'apprentissage, ou si vous vous intére
 
 | Domaine | Description |
 | --- | --- |
-| **Nouveautés** | Chaque mise à jour majeure de Windows 10 enrichit notre documentation avec de nouveaux conseils. Cette documentation contient des informations sur la fonctionnalité, les conseils de développement qui accompagnent chaque version, ainsi que des listes de nouvelles API : </br>   [Nouveautés de la dernière version de Windows 10 pour les développeurs](../whats-new/windows-10-version-latest.md) |
+| **Nouveautés** | Chaque mise à jour majeure de Windows 10 enrichit notre documentation avec de nouveaux conseils. Cette documentation contient des informations sur la fonctionnalité, les conseils de développement qui accompagnent chaque version, ainsi que des listes de nouvelles API : </br>   [Nouveautés de la dernière version de Windows 10 pour les développeurs](../whats-new/windows-10-build-19041.md) |
 | **Conception et interface utilisateur** | Toutes les informations associées à la présentation visuelle et à l'interface utilisateur de votre application sont contenues dans cette section de la documentation. Si vous vous intéressez aux spécificités du langage de balisage XAML ou si vous souhaitez simplement créer un style unique pour vos documents, commencez ici : </br>   [Informations de base relatives à la conception pour les applications UWP](../design/basics/index.md) |
 | **Développer des applications** | Pour obtenir des informations détaillées sur une fonctionnalité spécifique de Windows 10, ou pour savoir ce que vous pouvez faire avec le développement UWP, consultez cette section de notre documentation : </br>   [Fonctionnalités des applications UWP](../develop/index.md). </br> La référence API des applications Windows 10 est hébergée dans un ensemble de documents connexes, que vous trouverez ici : </br>   [Espaces de noms Windows UWP](/uwp/api/) </br>   [Fichier et schémas XML](/uwp/schemas/) |
 | **Développer des jeux** | Ces documents contiennent des informations sur le développement de jeux sur Windows ou Xbox. Cela comprend des instructions de configuration, des programmes pour développeurs et des instructions de programmation avec des fonctionnalités DirectX ou Xbox. </br>   [Prise en main du développement de jeux](../gaming/getting-started.md) |
