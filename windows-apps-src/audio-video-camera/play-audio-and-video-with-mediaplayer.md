@@ -4,14 +4,14 @@ description: Cet article vous explique comment lire du contenu multimédia dans 
 title: Lire du contenu audio et vidéo avec MediaPlayer
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ce223d4d70f883545114507ec49fcd9d7084d2a5
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 166a498ba7323869fe60f7d3392b93ac501dd331
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363902"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691547"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Lire du contenu audio et vidéo avec MediaPlayer
 
@@ -214,7 +214,7 @@ Dans le gestionnaire d’événements **VideoTracksChanged** , récupérez les p
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetSphericalTracksChanged":::
 
 ## <a name="use-mediaplayer-in-frame-server-mode"></a>Utiliser MediaPlayer en mode de serveur de frames
-À compter de Windows 10, version 1703, vous pouvez utiliser **MediaPlayer** en mode de serveur de trame. Dans ce mode, le **MediaPlayer** ne rend pas automatiquement les frames à un **MediaPlayerElement**associé. Au lieu de cela, votre application copie le frame actuel du **MediaPlayer** vers un objet qui implémente [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). Le scénario principal que cette fonctionnalité permet d’utiliser utilise des nuanceurs de pixels pour traiter les trames vidéo fournies par le **MediaPlayer**. Votre application est chargée d’afficher chaque frame après son traitement, par exemple en affichant le frame dans un contrôle d' [**image**](/uwp/api/windows.ui.xaml.controls.image) XAML.
+À compter de Windows 10, version 1703, vous pouvez utiliser **MediaPlayer** en mode de serveur de trame. Dans ce mode, le **MediaPlayer** ne rend pas automatiquement les frames à un **MediaPlayerElement** associé. Au lieu de cela, votre application copie le frame actuel du **MediaPlayer** vers un objet qui implémente [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). Le scénario principal que cette fonctionnalité permet d’utiliser utilise des nuanceurs de pixels pour traiter les trames vidéo fournies par le **MediaPlayer**. Votre application est chargée d’afficher chaque frame après son traitement, par exemple en affichant le frame dans un contrôle d' [**image**](/uwp/api/windows.ui.xaml.controls.image) XAML.
 
 Dans l’exemple suivant, un nouveau **MediaPlayer** est initialisé et le contenu vidéo est chargé. Ensuite, un gestionnaire pour [**VideoFrameAvailable**](/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable) est inscrit. Le mode de serveur de frames est activé en affectant à la propriété [**IsVideoFrameServerEnabled**](/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled) de l’objet **MediaPlayer** la **valeur true**. Enfin, la lecture du média démarre avec un appel à [**Play**](/uwp/api/windows.media.playback.mediaplayer.Play).
 
@@ -222,7 +222,7 @@ Dans l’exemple suivant, un nouveau **MediaPlayer** est initialisé et le conte
 
 L’exemple suivant montre un gestionnaire pour **VideoFrameAvailable** qui utilise [Win2D](https://github.com/Microsoft/Win2D) pour ajouter un effet de flou simple à chaque image d’une vidéo, puis affiche les frames traités dans un contrôle [image](/uwp/api/windows.ui.xaml.controls.image) XAML.
 
-Chaque fois que le gestionnaire **VideoFrameAvailable** est appelé, la méthode [**CopyFrameToVideoSurface**](/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface) est utilisée pour copier le contenu du frame dans un [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). Vous pouvez également utiliser [**CopyFrameToStereoscopicVideoSurfaces**](/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces) pour copier le contenu 3D dans deux surfaces, pour traiter le contenu de l’œil gauche et du bon œil séparément. Pour obtenir un objet qui implémente **IDirect3DSurface**  , cet exemple crée un [**SoftwareBitmap**](/uwp/api/windows.graphics.imaging.softwarebitmap) , puis utilise cet objet pour créer un **CanvasBitmap**Win2D, qui implémente l’interface nécessaire. Un **CanvasImageSource** est un objet Win2D qui peut être utilisé comme source pour un contrôle **image** . un nouveau est créé et défini en tant que source de l' **image** dans laquelle le contenu doit être affiché. Ensuite, un **CanvasDrawingSession** est créé. Utilisé par Win2D pour restituer l’effet de flou.
+Chaque fois que le gestionnaire **VideoFrameAvailable** est appelé, la méthode [**CopyFrameToVideoSurface**](/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface) est utilisée pour copier le contenu du frame dans un [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). Vous pouvez également utiliser [**CopyFrameToStereoscopicVideoSurfaces**](/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces) pour copier le contenu 3D dans deux surfaces, pour traiter le contenu de l’œil gauche et du bon œil séparément. Pour obtenir un objet qui implémente **IDirect3DSurface**  , cet exemple crée un [**SoftwareBitmap**](/uwp/api/windows.graphics.imaging.softwarebitmap) , puis utilise cet objet pour créer un **CanvasBitmap** Win2D, qui implémente l’interface nécessaire. Un **CanvasImageSource** est un objet Win2D qui peut être utilisé comme source pour un contrôle **image** . un nouveau est créé et défini en tant que source de l' **image** dans laquelle le contenu doit être affiché. Ensuite, un **CanvasDrawingSession** est créé. Utilisé par Win2D pour restituer l’effet de flou.
 
 Une fois que tous les objets nécessaires ont été instanciés, **CopyFrameToVideoSurface** est appelé, ce qui copie le frame actuel à partir du **MediaPlayer** dans le **CanvasBitmap**. Ensuite, un **GaussianBlurEffect** Win2D est créé, avec le **CanvasBitmap** défini comme source de l’opération. Enfin, **CanvasDrawingSession. DrawImage** est appelé pour dessiner l’image source, avec l’effet de flou appliqué, dans le **CanvasImageSource** qui a été associé au contrôle **image** , provoquant son dessin dans l’interface utilisateur.
 
@@ -240,7 +240,7 @@ Pour plus d’informations sur Win2D, consultez le [référentiel GitHub Win2D](
 6.  Acceptez la licence de package.
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>Détecter les modifications de niveau audio et y répondre par le système
-À compter de Windows 10, version 1803, votre application peut détecter si le système diminue ou diminue le niveau audio d’un **MediaPlayer**en cours de lecture. Par exemple, le système peut réduire, ou « canard », le niveau de lecture audio lors de la sonnerie d’une alarme. Le système désactive votre application lorsqu’elle passe en arrière-plan si votre application n’a pas déclaré la fonctionnalité *backgroundMediaPlayback* dans le manifeste de l’application. La classe [**AudioStateMonitor**](./uwp/api/windows.media.audio.audiostatemonitor) vous permet de vous inscrire pour recevoir un événement lorsque le système modifie le volume d’un flux audio. Accédez à la propriété **AudioStateMonitor** d’un **MediaPlayer** et enregistrez un gestionnaire pour l’événement [**SoundLevelChanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) à notifier lorsque le niveau audio de ce **MediaPlayer** est modifié par le système.
+À compter de Windows 10, version 1803, votre application peut détecter si le système diminue ou diminue le niveau audio d’un **MediaPlayer** en cours de lecture. Par exemple, le système peut réduire, ou « canard », le niveau de lecture audio lors de la sonnerie d’une alarme. Le système désactive votre application lorsqu’elle passe en arrière-plan si votre application n’a pas déclaré la fonctionnalité *backgroundMediaPlayback* dans le manifeste de l’application. La classe [**AudioStateMonitor**](/uwp/api/windows.media.audio.audiostatemonitor) vous permet de vous inscrire pour recevoir un événement lorsque le système modifie le volume d’un flux audio. Accédez à la propriété **AudioStateMonitor** d’un **MediaPlayer** et enregistrez un gestionnaire pour l’événement [**SoundLevelChanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) à notifier lorsque le niveau audio de ce **MediaPlayer** est modifié par le système.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetRegisterAudioStateMonitor":::
 
@@ -260,15 +260,15 @@ L’utilisateur peut décider qu’il souhaite suspendre ou continuer la lecture
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
-* [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md)
+* [Éléments multimédias, playlists et pistes](media-playback-with-mediasource.md)
 * [Intégrer avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md)
 * [Créer, planifier et gérer des coupures de médias](create-schedule-and-manage-media-breaks.md)
-* [Lire du contenu multimédia en arrière-plan](background-audio.md)
+* [Lire le média en arrière-plan](background-audio.md)
 
 
 
 
 
- 
+ 
 
- 
+ 

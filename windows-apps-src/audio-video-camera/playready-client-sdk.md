@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a444b8af0121c6012bc90adda075c161111838b3
-ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
+ms.openlocfilehash: be670dfab9e7bd27c4c380e9b00ec8a655704885
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94513658"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691527"
 ---
 # <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 
@@ -77,7 +77,7 @@ Les nouvelles interfaces, classes et énumérations suivantes ont été ajoutée
 -   Classe [**PlayReadySecureStopIterator**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator)
 -   Énumérateur [**PlayReadyHardwareDRMFeatures**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures)
 
-Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fonctionnalités de la gestion des droits numériques par PlayReady. L’exemple peut être téléchargé à partir du [navigateur d’exemples de code](samples/microsoft/windows-universal-samples/playready/).
+Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fonctionnalités de la gestion des droits numériques par PlayReady. L’exemple peut être téléchargé à partir du [navigateur d’exemples de code](/samples/microsoft/windows-universal-samples/playready/).
 
 ## <a name="things-to-consider"></a>Points importants à prendre en compte
 
@@ -161,10 +161,10 @@ Le tableau suivant recense les mappages entre les différentes normes OPL dans 
         <th>300</th>
         <td colspan="2">
             <p>
-                **Lorsque la restriction de type de protection HDCP n’est PAS définie**  : transmet le contenu avec protection HDCP. Si la protection HDCP n’est pas enclenchée, la lecture vers les ports HDMI/DVI est bloquée.
+                **Lorsque la restriction de type de protection HDCP n’est PAS définie** : transmet le contenu avec protection HDCP. Si la protection HDCP n’est pas enclenchée, la lecture vers les ports HDMI/DVI est bloquée.
             </p>
             <p>
-                **Lorsque la restriction de type HDCP est définie** : passe le contenu avec HDCP 2,2 et le type de flux de contenu défini sur 1. Si la protection HDCP ne s’enclenche pas ou si le type de flux de contenu ne peut pas être défini sur 1, la lecture vers les ports HDMI/DVI est bloquée.
+                **Lorsque la restriction de type HDCP est définie**: passe le contenu avec HDCP 2,2 et le type de flux de contenu défini sur 1. Si la protection HDCP ne s’enclenche pas ou si le type de flux de contenu ne peut pas être défini sur 1, la lecture vers les ports HDMI/DVI est bloquée.
             </p>
         </td>
     </tr>
@@ -260,10 +260,10 @@ La gestion des droits numériques par PlayReady vous permet de lire le contenu s
         <td>NE transmet PAS le contenu</td>
         <td>
             <p>
-                **Lorsque la restriction de type de protection HDCP n’est PAS définie**  : transmet le contenu lorsque la protection HDCP 2.0 ou version ultérieure est enclenchée. Si l’enclenchement échoue, le contenu N’EST PAS transmis.
+                **Lorsque la restriction de type de protection HDCP n’est PAS définie** : transmet le contenu lorsque la protection HDCP 2.0 ou version ultérieure est enclenchée. Si l’enclenchement échoue, le contenu N’EST PAS transmis.
             </p>
             <p>
-                **Lorsque la restriction de type de protection HDCP EST définie**  : transmet le contenu avec protection HDCP 2.2, et type de flux de contenu défini sur 1. Si la protection HDCP n’est pas enclenchée ou si le type de flux de contenu ne peut pas être défini sur 1, le contenu N’EST PAS transmis
+                **Lorsque la restriction de type de protection HDCP EST définie** : transmet le contenu avec protection HDCP 2.2, et type de flux de contenu défini sur 1. Si la protection HDCP n’est pas enclenchée ou si le type de flux de contenu ne peut pas être défini sur 1, le contenu N’EST PAS transmis
             </p>        
         </td>
     </tr>
@@ -507,7 +507,7 @@ Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt s
 -   Lorsque la présentation multimédia s’arrête car la fin du contenu a été atteinte ou lorsque l’utilisateur a arrêté la présentation multimédia en cours de lecture.
 -   Lorsque la session précédente se termine inopinément (par exemple, en raison d’un blocage du système ou de l’application). L’application devra contrôler, au moment du démarrage ou de l’arrêt, s’il y a des sessions d’arrêt sécurisé en attente et envoyer les demandes séparément de la lecture de tout autre contenu multimédia.
 
-Pour obtenir un exemple d’implémentation d’arrêt sécurisé, consultez le fichier **securestop.cs** dans l’exemple PlayReady situé dans le navigateur de l' [exemple de code](samples/microsoft/windows-universal-samples/playready//).
+Pour obtenir un exemple d’implémentation d’arrêt sécurisé, consultez le fichier **securestop.cs** dans l’exemple PlayReady situé dans le navigateur de l' [exemple de code](/samples/microsoft/windows-universal-samples/playready/).
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Utiliser la gestion des droits numériques par PlayReady sur Xbox One
 
@@ -518,8 +518,8 @@ Pour utiliser PlayReady DRM dans une application UWP sur Xbox, vous devez d’ab
 
 Une fois que vous recevez d’autorisation, vous devrez ajouter un objet `<DeviceCapability>`  supplémentaire au manifeste de l’application. Vous devez l’ajouter manuellement, car aucun paramètre n’est actuellement disponible dans le concepteur de manifeste d’application. Pour le configurer, procédez comme suit :
 
-1. Le projet étant ouvert dans Visual Studio, ouvrez l’ **Explorateur de solutions** et cliquez avec le bouton droit sur **Package.appxmanifest**.
-2. Sélectionnez **Ouvrir avec…** , choisissez **Éditeur XML (Texte)** , puis cliquez sur **OK**.
+1. Le projet étant ouvert dans Visual Studio, ouvrez l’**Explorateur de solutions** et cliquez avec le bouton droit sur **Package.appxmanifest**.
+2. Sélectionnez **Ouvrir avec…**, choisissez **Éditeur XML (Texte)**, puis cliquez sur **OK**.
 3. Entre les balises `<Capabilities>`, ajoutez le `<DeviceCapability>` suivant :
 
     ```xml
