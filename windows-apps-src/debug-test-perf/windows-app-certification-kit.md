@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ac1525a91426f6d39e20c9a9416154ad3d6f3e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: be02f9b049a1beb1866d21c97f11fe3efeb815f3
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174023"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339347"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
@@ -21,9 +21,9 @@ Pour faire [certifier votre application par Windows](/windows/win32/win_cert/win
 
 Conditions préalables pour tester une application Windows universelle :
 
-- Vous devez installer et exécuter Windows 10.
+- Vous devez installer et exécuter Windows 10.
 - Vous devez installer le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/downloads/app-certification-kit/), qui est inclus dans le kit de développement logiciel (SDK) Windows pour Windows 10.
-- Vous devez [activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
+- Vous devez [activer votre appareil pour le développement](/windows/apps/get-started/enable-your-device-for-development).
 - Vous devez déployer l’application Windows que vous voulez tester sur votre ordinateur.
 
 > [!NOTE]
@@ -59,7 +59,7 @@ Conditions préalables pour tester une application Windows universelle :
 
 1. Dans la fenêtre de commande, accédez au répertoire contenant le Kit de certification des applications Windows.
 
-    **Remarque**   Le chemin d’accès par défaut est C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
+    **Remarque** Le chemin par défaut est C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
 
 2. Entrez les commandes suivantes dans cet ordre pour tester une application qui est déjà installée sur votre ordinateur de test :
 
@@ -75,9 +75,9 @@ Conditions préalables pour tester une application Windows universelle :
 
 3. Une fois le test terminé, ouvrez le fichier de rapport nommé `[report file name]` et examinez les résultats du test.
 
-**Remarque**  Le Kit de certification des applications Windows peut être exécuté à partir d’un service, mais le service doit initialiser le processus du Kit dans une session utilisateur active et ne peut être exécuté dans Session0.
+**Remarque** Le Kit de certification des applications Windows peut être exécuté à partir d’un service, mais le service doit initialiser le processus du Kit dans une session utilisateur active et ne peut pas être exécuté au sein de Session0.
 
-**Remarque**   Pour en savoir plus sur la ligne de commande du Kit de certification des applications Windows, entrez la commande `appcert.exe /?`.
+**Remarque** Pour en savoir plus sur la ligne de commande du Kit de certification des applications Windows, entrez la commande `appcert.exe /?`.
 
 ## <a name="testing-with-a-low-power-computer"></a>Test avec un ordinateur à faible consommation d’énergie
 

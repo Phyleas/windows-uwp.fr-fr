@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: edaa15aa2e88252c328a368df1b7698a9b74f5e0
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: b1420fc5b5e74cba46b486b57be1098ac17ad1f5
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750445"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339827"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Créer une application « Hello, World! » en C++/CX
 
@@ -61,7 +61,7 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 ## <a name="hello-world-store-app-in-ccx"></a>Application Hello World Store en C++/CX
 
-Notre première application, intitulée « Hello World », présente certaines fonctionnalités de base en matière d’interactivité, de présentation et de style. Nous allons créer une application à partir du modèle de projet d’application Windows universelle. Si vous avez déjà développé des applications pour Windows 8.1 et Windows Phone 8.1, vous vous souvenez peut-être que vous deviez disposer de trois projets dans Visual Studio, un pour l'application Windows, un pour l'application téléphonique et un autre contenant du code partagé. La plateforme Windows universelle (UPW) de Windows 10 permet de n'utiliser qu'un seul projet, qui s'exécute sur tous les appareils, notamment sur les ordinateurs de bureau et portables Windows 10, et sur les appareils tels que les tablettes, les téléphones mobiles, les appareils VR, etc.
+Notre première application, intitulée « Hello World », présente certaines fonctionnalités de base en matière d’interactivité, de présentation et de style. Nous allons créer une application à partir du modèle de projet d’application Windows universelle. Si vous avez développé auparavant des applications pour Windows 8.1 et Windows Phone 8.1, vous vous rappelez probablement que vous deviez avoir trois projets dans Visual Studio, l’un pour l’application Windows, l’un pour l’application téléphonique et l’un avec du code partagé. La plateforme Windows universelle (UPW) de Windows 10 permet de n'utiliser qu'un seul projet, qui s'exécute sur tous les appareils, notamment sur les ordinateurs de bureau et portables Windows 10, et sur les appareils tels que les tablettes, les téléphones mobiles, les appareils VR, etc.
 
 Commençons par les bases :
 
@@ -69,13 +69,13 @@ Commençons par les bases :
 
 -   Comprendre les projets et fichiers qui sont créés.
 
--   Comprendre les extensions de composants Visual C++ (C++/CX) et savoir quand les utiliser.
+-   Comprendre les extensions de composant Visual C++ (C++/CX) et savoir quand les utiliser.
 
 **Tout d'abord, créez une solution dans Visual Studio**
 
 1.  Dans Visual Studio, dans la barre de menus, choisissez **Fichier** > **Nouveau** > **Projet...** .
 
-2.  Dans la boîte de dialogue **Créer un projet**, sélectionnez **Application vide (Windows universelle - C++/CX)** .  Si vous ne voyez pas cette option, vérifiez que les outils de développement d’applications Windows universelles sont installés. Pour plus d’informations, consultez [Se préparer](get-set-up.md).
+2.  Dans la boîte de dialogue **Créer un projet**, sélectionnez **Application vide (Windows universelle - C++/CX)** .  Si vous ne voyez pas cette option, vérifiez que les outils de développement d’applications Windows universelles sont installés. Pour plus d’informations, consultez [Se préparer](/windows/apps/get-started/get-set-up).
 
 ![Modèles de projet C++/CX dans la boîte de dialogue Créer un projet ](images/vs2019-uwp-01.png)
 
@@ -84,7 +84,7 @@ Commençons par les bases :
 4.  Choisissez le bouton **Créer**.
 
 > [!NOTE]
-> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s'affiche et vous demande d'activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
+> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s'affiche et vous demande d'activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](/windows/apps/get-started/enable-your-device-for-development). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
 
    Vos fichiers de projet sont créés.
 
@@ -300,7 +300,7 @@ Il est très simple de personnaliser l’apparence d’une application. Par déf
 
 Quel thème utiliser ? Tout est question de goût personnel. Toutefois, nous recommandons le thème à dominante foncée pour les applications qui affichent essentiellement des images ou de la vidéo, et le thème à dominante claire pour les applications qui contiennent beaucoup de texte. Si vous recourez à un modèle de couleurs personnalisé, utilisez le thème qui s’accorde le mieux à l’apparence de votre application. Dans le reste de ce didacticiel, nous utilisons le thème à dominante claire dans les captures d’écran.
 
-**Remarque**  Le thème s'applique au démarrage de l'application et n'est pas modifiable pendant l'exécution de celle-ci.
+**Remarque** Le thème s’applique au démarrage de l’application et n’est pas modifiable pendant l’exécution de celle-ci.
 
 ### <a name="using-system-styles"></a>Utilisation de styles système
 
@@ -327,7 +327,7 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 
 7.  Répétez le processus pour définir la taille de la police et affectez **BaseTextBlockStyle** à l’élément `greetingOutput`[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
-    **Conseil**  Bien que le [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) ne contienne pas de texte, lorsque vous placez le pointeur au-dessus de l'aire de conception XAML, un contour bleu indique son emplacement pour vous permettre de le sélectionner.  
+    **Conseil** Bien que le [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) ne contienne pas de texte, quand vous placez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique son emplacement pour vous permettre de le sélectionner.  
 
     Votre code XAML doit maintenant se présenter ainsi :
 
@@ -397,6 +397,6 @@ C’est ici que prend fin le premier didacticiel. Il vous a appris à ajouter du
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Si votre projet d'application universelle Windows cible Windows 8.1 et/ou Windows Phone 8.1, vous pouvez le porter vers Windows 10. Aucune procédure automatique n'existe pour ce faire, mais vous pouvez effectuer le portage manuellement. Commencez par un nouveau projet Windows universel pour obtenir la dernière structure du système de projet et les derniers fichiers manifeste, copiez vos fichiers de code dans la structure de répertoire du projet, ajoutez les éléments à votre projet, puis réécrivez votre code XAML à l’aide du [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) en suivant les recommandations de cette rubrique. Pour plus d’informations, voir [Portage d’un projet Windows Runtime 8 vers un projet de plateforme Windows universelle (UWP)](../porting/w8x-to-uwp-porting-to-a-uwp-project.md) et [Portage vers la plateforme Windows universelle (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp).
+Si votre projet d’application Windows universelle cible Windows 8.1 et/ou Windows Phone 8.1, vous pouvez le porter vers Windows 10. Aucune procédure automatique n'existe pour ce faire, mais vous pouvez effectuer le portage manuellement. Commencez par un nouveau projet Windows universel pour obtenir la dernière structure du système de projet et les derniers fichiers manifeste, copiez vos fichiers de code dans la structure de répertoire du projet, ajoutez les éléments à votre projet, puis réécrivez votre code XAML à l’aide du [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) en suivant les recommandations de cette rubrique. Pour plus d’informations, voir [Portage d’un projet Windows Runtime 8 vers un projet de plateforme Windows universelle (UWP)](../porting/w8x-to-uwp-porting-to-a-uwp-project.md) et [Portage vers la plateforme Windows universelle (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp).
 
 Si vous disposez de code C++ existant que vous souhaitez intégrer avec une application UWP, par exemple, pour créer une interface utilisateur UWP pour une application existante, voir [Utilisation de code C++ existant dans un projet Windows universel](/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app).

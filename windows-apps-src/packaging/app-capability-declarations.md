@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4f6656530656e3d93fb16598b9a75c4fd06e4c3d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ed06779b2f8a8a38320a7292bea17bf1b64a43d6
+ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219782"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94513678"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 
@@ -83,7 +83,7 @@ Les fonctionnalités d’appareil permettent à votre application d’accéder �
 | **Disque optique** | La fonctionnalité d’appareil **optical** permet aux applications d’accéder aux fonctions des lecteurs de disque optiques (CD, DVD et Blu-ray).<br/>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.Devices.Custom**](/uwp/api/Windows.Devices.Custom). |
 | **Mouvements** | La fonctionnalité d’appareil **activity** permet aux applications de détecter le mouvement actuel de l’appareil.<br/>Cette fonctionnalité est nécessaire pour l’utilisation de certaines API de l’espace de noms [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors). |
 | **Communication en série** | La fonctionnalité d'appareil **serialcommunication** donne accès aux API de l'espace de noms Windows.Devices.SerialCommunication, qui permet à une application Windows de communiquer avec un périphérique qui expose un port série ou une abstraction de port série. Cette fonctionnalité est requise pour l'utilisation des API de l'espace de noms [**Windows.Devices.SerialCommnication**](/uwp/api/windows.devices.serialcommunication). |
-| **Dispositif de suivi oculaire** | La fonctionnalité **gazeInput** permet aux applications de détecter ce que l'utilisateur regarde entre les limites de l'application lorsqu'un appareil de suivi oculaire est connecté. Elle est nécessaire pour utiliser certaines API de l'espace de noms [**Windows.Devices.Input.Preview**](/uwp/api/windows.devices.input.preview). |
+| **Dispositif de suivi oculaire** | La fonctionnalité **gazeInput** permet aux applications de détecter ce que l’utilisateur regarde dans les limites de l’application quand un appareil de suivi oculaire compatible est connecté. Elle s’applique également aux appareils Mixed Reality qui prennent en charge le suivi du regard. Elle est nécessaire pour utiliser certaines API de l'espace de noms [**Windows.Devices.Input.Preview**](/uwp/api/windows.devices.input.preview). Pour les appareils Mixed Reality, cette fonctionnalité est requise pour les API dans [**Windows.Perception.People.EyesPose**](/uwp/api/windows.perception.people.eyespose). |
 | **GPIO, I2C, SPI et PWM** | La fonctionnalité d'appareil **lowLevel** permet d'accéder aux dispositifs GPIO, I2C, SPI et PWM. Elle est nécessaire pour utiliser les API des espaces de noms suivants : [**Windows.Devices.Gpio**](/uwp/api/windows.devices.gpio), [**Windows.Devices.I2c**](/uwp/api/windows.devices.i2c), [**Windows.Devices.Spi**](/uwp/api/windows.devices.spi),[**Windows.Devices.Pwm**](/uwp/api/windows.devices.pwm).<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
 
 
