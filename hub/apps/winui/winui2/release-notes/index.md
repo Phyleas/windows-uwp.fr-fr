@@ -3,12 +3,12 @@ title: Notes de publication de WinUI
 description: Index des notes de publication de WinUI.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 33d4b9dfb497017f446549d4f3daf737a8fa5ebb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2055ba69566a901ea1491a36d742455fc13b5cb3
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166693"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691537"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Notes de publication de la bibliothèque Windows UI 2.x
 
@@ -52,6 +52,6 @@ Historique des versions du [package NuGet Microsoft.UI.Xaml](https://www.nuget.o
 | [2.1](winui-2.1.md) | stable | Avril 2019 | [Notes de publication](winui-2.1.md) | **Première publication open source** de [GitHub](https://github.com/microsoft/microsoft-ui-xaml). Comprend [ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |
 | [2.0](winui-2.0.md) | stable | Octobre 2018 | [Notes de publication](winui-2.0.md) | **Publication initiale**. Comprend des fonctionnalités et des contrôles Fluent natifs officiels pour les applications UWP Windows.  |
 
-### <a name="windows-ui-library-3-preview-2-july-2020"></a>Bibliothèque d’interface utilisateur Windows 3 Preview 2 (juillet 2020)
+### <a name="windows-ui-library-3-preview-3-november-2020"></a>Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)
 
-Pour plus d’informations sur la façon d’essayer des préversions anticipées de WinUI 3, consultez [Bibliothèque d’interface utilisateur Windows 3 Preview 2 (juillet 2020)](../../winui3/index.md).
+Pour plus d’informations sur l’essai des préversions anticipées de WinUI 3, consultez [Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)](../../winui3/index.md).

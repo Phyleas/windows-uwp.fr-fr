@@ -90,7 +90,7 @@
       items:
         - name: Vue d’ensemble
           href: winui/index.md
-        - name: "Bibliothèque d’interface utilisateur Windows\_3.0 Preview\_2"
+        - name: "Bibliothèque d’interface utilisateur Windows\_3 Preview\_3"
           items:
             - name: Vue d’ensemble et notes de publication
               href: winui/winui3/index.md

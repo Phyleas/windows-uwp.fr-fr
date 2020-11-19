@@ -4,12 +4,12 @@ description: Bibliothèques WinUI pour le développement d’applications Window
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources, winui, bibliothèque d’interface utilisateur Windows
-ms.openlocfilehash: eb87744ed5d3eb5882b4ebae75b8dcf295d89f10
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 932b3c898737426db6d62d6699b11c8f8c1b484b
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166753"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691507"
 ---
 # <a name="windows-ui-library-winui"></a>Bibliothèque d’IU Windows (WinUI)
 
@@ -46,7 +46,7 @@ Avec la compatibilité de bas niveau avec les versions antérieures de Windows 
 - [Code source](https://aka.ms/winui)
 - [Application XAML Controls Gallery](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-## <a name="windows-ui-3-library-preview-2"></a>Bibliothèque d’interface utilisateur Windows 3 (Preview 2)
+## <a name="windows-ui-3-library-preview-3"></a>Bibliothèque d’interface utilisateur Windows 3 (Preview 3)
 
 WinUI 3 est la prochaine version de WinUI, une plateforme d’interface utilisateur Windows 10 native entièrement découplée du [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk/).
 
@@ -69,8 +69,8 @@ Notez que la plateforme Windows universelle contient plus que le simple framewor
 
 ### <a name="related-links-for-winui-3"></a>Liens associés pour WinUI 3
 
-- [Bibliothèque d’interface utilisateur Windows 3 Preview 2 (juillet 2020)](winui3/index.md)
-- [Application XAML Controls Gallery (WinUI 3 Preview 2)](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
+- [Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)](winui3/index.md)
+- [Application XAML Controls Gallery (WinUI 3 Preview 3)](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## <a name="winui-resources"></a>Ressources WinUI
 

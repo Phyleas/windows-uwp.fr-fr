@@ -1,18 +1,18 @@
 ---
 description: Cet article présente les modèles de projet et d’élément Visual Studio pour les applications Windows.
 title: Modèles de projet et d’élément Visual Studio pour les applications Windows
-ms.date: 07/02/2020
+ms.date: 11/17/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, îles xaml
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: 7e8500aab3c6eeaa1552dc61a95ea7404bf4d5d5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f84bd251bbae9c3f1a1326ab3ac3c7cf0fce3938
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174203"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691597"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>Modèles de projet et d’élément Visual Studio pour les applications Windows
 
@@ -25,7 +25,7 @@ Visual Studio 2019 fournit de nombreux modèles de projet et d’élément qui 
 
 La [bibliothèque d’interface utilisateur Windows (WinUI)](../winui/index.md) est la plateforme d’interface utilisateur native moderne des applications Windows parmi les plateformes d’applications de bureau (.NET et Win32 natif) et d’applications UWP. [WinUI 3](../winui/winui3/index.md) (actuellement disponible en préversion pour les développeurs) est la dernière version majeure de WinUI. Celle-ci fait de WinUI un framework d’expérience utilisateur complet pour les applications de bureau Windows.
 
-WinUI 3 comprend un package VSIX pour Visual Studio 2019 qui fournit des modèles de projet et d’élément permettant de créer des applications avec une interface basée sur WinUI. Pour plus d’informations sur le package VSIX de WinUI 3 et sur les modèles de projet qu’il fournit, consultez [cette section](../winui/winui3/index.md#install-winui-3-preview-2).
+WinUI 3 comprend un package VSIX pour Visual Studio 2019 qui fournit des modèles de projet et d’élément permettant de créer des applications avec une interface basée sur WinUI. Pour plus d’informations sur le package VSIX de WinUI 3 et sur les modèles de projet qu’il fournit, consultez [cette section](../winui/winui3/index.md#install-winui-3-preview-3).
 
 > [!IMPORTANT]
 > WinUI 3, ainsi que les modèles Visual Studio qui lui sont associés, sont actuellement disponibles en préversion pour les développeurs, le but étant de réaliser une première évaluation et de rassembler les commentaires de la communauté des développeurs. Pour l’instant, vous ne devez pas l’utiliser avec les applications de production.

@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources, winui, bibliothèque d’interface utilisateur Windows
 ms.custom: RS5
-ms.openlocfilehash: 42f790ed92a41f298465bcc42b21dcdb3fa8bc86
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c7baa8fe74a45d1f7ba7f829f6d9f1228c70d44f
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493634"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691557"
 ---
 # <a name="windows-ui-library-2x"></a>Bibliothèque d’interface utilisateur Windows 2.x
 
@@ -21,7 +21,7 @@ La bibliothèque d’interface utilisateur Windows fournit des contrôles d’in
 Elle maintient la compatibilité de bas niveau avec les versions antérieures de Windows 10, pour que votre application fonctionne même si les utilisateurs n’ont pas le dernier système d’exploitation.
 
 > [!NOTE]
-> Consultez [Bibliothèque d’interface utilisateur Windows 3 Preview 2 (juillet 2020)](../winui3/index.md), mise à jour majeure de la plateforme d’interface utilisateur Windows 10.
+> Consultez [Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)](../winui3/index.md), une mise à jour majeure de la plateforme d’interface utilisateur Windows 10.
 
 ## <a name="features"></a>Fonctionnalités
 
