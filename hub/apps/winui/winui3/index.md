@@ -3,12 +3,12 @@ title: WinUI 3 Preview 3 (novembre 2020)
 description: Vue d’ensemble de la version WinUI 3 Preview 3.
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: d2ff1646c431ef1f79455260a61027d0a84f77ca
-ms.sourcegitcommit: f723edbe3dc846c1988d721f6e8078aaec371899
+ms.openlocfilehash: f6c8b8730aeea12534c0e6595d220c837c0852dd
+ms.sourcegitcommit: 60638c0403ff67eadda994d82c5c851bc1271bc5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701965"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810096"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)
 
@@ -43,15 +43,19 @@ WinUI 3 Preview 3 inclut des modèles de projet Visual Studio qui vous permett
     Pour générer des applications C++, vous devez également inclure les charges de travail suivantes :
     - Développement Desktop en C++
     - Le composant facultatif *Outils de plateforme Windows universelle C++ (v142)* pour la charge de travail Plateforme Windows universelle (voir « Détails de l’installation » sous la section « Développement pour plateforme Windows universelle », dans le volet de droite)
-3. Assurez-vous que votre système a une source de package NuGet activée pour **nuget.org**. Pour plus d’informations, consultez [Configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior).
+3. Assurez-vous que votre système a une source de package NuGet activée pour **nuget.org**. Pour plus d’informations, consultez [Configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior).[Windows Community Toolkit](#windows-community-toolkit)
 
 4. Téléchargez et installez le [package VSIX WinUI 3 Preview 3](https://aka.ms/winui3/preview3-download). Ceci ajoute à la fois les modèles de projet WinUI 3 et le package NuGet contenant les bibliothèques WinUI 3 à Visual Studio 2019.
 
     Pour obtenir des instructions sur la façon d’ajouter le package VSIX à Visual Studio, consultez [Recherche et utilisation des extensions Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
 
-5. Si vous utilisez le contrôle WebView2 dans votre application, installez la version Canal Dev du navigateur Microsoft Edge à partir de [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download). Veillez à désinstaller toutes les instances existantes de Microsoft Edge Beta, de Microsoft Edge Dev et de Microsoft Edge WebView2 Runtime.
+#### <a name="webview2"></a>Vue web 2
 
-6. Si vous utilisez le kit de ressources Communauté Windows, [téléchargez la dernière version](https://aka.ms/wct-winui3).
+Si vous utilisez le contrôle WebView2 dans votre application, installez la **version Canal Dev du navigateur Microsoft Edge** à partir de [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download). Veillez à désinstaller toutes les instances existantes de Microsoft Edge Beta, de Microsoft Edge Dev et de Microsoft Edge WebView2 Runtime.
+
+#### <a name="windows-community-toolkit"></a>Windows Community Toolkit
+
+Si vous utilisez le kit de ressources Communauté Windows, [téléchargez la dernière version](https://aka.ms/wct-winui3).
 
 ## <a name="create-winui-projects"></a>Créer des projets WinUI
 
