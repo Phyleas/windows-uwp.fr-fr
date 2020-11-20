@@ -4,12 +4,12 @@ description: Bibliothèques WinUI pour le développement d’applications Window
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources, winui, bibliothèque d’interface utilisateur Windows
-ms.openlocfilehash: 932b3c898737426db6d62d6699b11c8f8c1b484b
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
+ms.openlocfilehash: 3b2b18ab35f46b132ec3017bb0f3c6564b7be9ee
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691507"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933124"
 ---
 # <a name="windows-ui-library-winui"></a>Bibliothèque d’IU Windows (WinUI)
 
@@ -42,7 +42,7 @@ Avec la compatibilité de bas niveau avec les versions antérieures de Windows 
 ### <a name="related-links-for-winui-2x"></a>Liens associés pour WinUI 2.x
 
 - [Vue d’ensemble de la bibliothèque WinUI 2.x](winui2/index.md)
-- [Documentation sur les API](/uwp/api/overview/winui/)
+- [Documentation sur les API](/windows/winui/api/)
 - [Code source](https://aka.ms/winui)
 - [Application XAML Controls Gallery](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
