@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 00717a64135ef32a99b06c61b31e2ff59a587878
-ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
+ms.openlocfilehash: b73568c5fb4bae6392051fedcd6ca3dea078a98d
+ms.sourcegitcommit: 4491da3f509b1126601990a816c6eb301d35ecc6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285450"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95416616"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 
@@ -47,7 +47,7 @@ L’autre solution consiste à demander un report et à utiliser **async/await**
 
 Si vous avez plusieurs tâches en arrière-plan, déterminez si elles doivent s’exécuter dans le même processus hôte ou être séparées dans différents processus hôtes. Placez-les dans des processus hôtes séparés si vous craignez qu’une défaillance dans une tâche en arrière-plan puisse réduire les autres tâches en arrière-plan.  Utilisez l’entrée de **groupe de ressources** dans le concepteur de manifeste pour regrouper les tâches en arrière-plan dans différents processus hôtes. 
 
-Pour définir le **groupe de ressources**, ouvrez le concepteur package. appxmanifest, choisissez **déclarations**et ajoutez une déclaration de **app service** :
+Pour définir le **groupe de ressources**, ouvrez le concepteur package. appxmanifest, choisissez **déclarations** et ajoutez une déclaration de **app service** :
 
 ![Paramètre de groupe de ressources](images/resourcegroup.png)
 
@@ -59,11 +59,11 @@ Les tâches en arrière-plan qui s’exécutent dans le même processus que l’
 
 **Demander l’exécution des tâches en arrière-plan :**
 
-> **Important**    À compter de Windows 10, les applications ne sont plus obligées de se trouver sur l’écran de verrouillage comme condition préalable à l’exécution des tâches en arrière-plan.
+> **Important**  À compter de Windows 10, les applications ne sont plus obligées de se trouver sur l’écran de verrouillage comme condition préalable à l’exécution des tâches en arrière-plan.
 
 Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous les types de tâches prises en charge, sans être épinglées à l’écran de verrouillage. Toutefois, les applications doivent appeler [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) et vérifier que l’exécution de l’application en arrière-plan n’est pas refusée. Vérifiez que **GetAccessStatus** ne retourne pas l’une des énumérations [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) refusées. Par exemple, cette méthode retourne **BackgroundAccessStatus. DeniedByUser** si l’utilisateur a refusé explicitement des autorisations de tâche en arrière-plan pour votre application dans les paramètres de l’appareil.
 
-Si l’exécution de votre application est refusée en arrière-plan, votre application doit appeler [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) et garantir que la réponse n’est pas refusée avant l’inscription des tâches en arrière-plan.
+Si l’exécution de votre application est refusée en arrière-plan, votre application doit appeler [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) et garantir que la réponse n’est pas refusée avant l’inscription des tâches en arrière-plan.
 
 Pour plus d’informations sur le choix des utilisateurs concernant l’activité en arrière-plan et l’économiseur de batterie, consultez [optimiser l’activité en arrière-plan](../debug-test-perf/optimize-background-activity.md) 
 ## <a name="background-task-checklist"></a>Liste de vérifications relatives aux tâches en arrière-plan
@@ -89,15 +89,23 @@ Pour plus d’informations sur le choix des utilisateurs concernant l’activit�
 *S’applique uniquement aux tâches en arrière-plan in-process*
 
 - Lors de l’annulation d’une tâche, vérifiez que le gestionnaire d’événements `BackgroundActivated` se ferme avant l’annulation ou la fin du processus.
--   Écrivez des tâches en arrière-plan de courte durée. Les tâches en arrière-plan sont limitées à 30 secondes de l’utilisation de l’horloge.
--   Ne comptez pas sur l’interaction utilisateur dans les tâches en arrière-plan.
+-   Écrivez des tâches en arrière-plan de courte durée. La plupart des tâches en arrière-plan sont limitées à 30 secondes d’utilisation de l’horloge du mur.
+
+
+*Pratiques à éviter*
+- Réduisez l’utilisation de la communication entre processus via COM ou RPC.
+-   Le processus avec lequel vous tentez de communiquer peut ne pas être à l’État en cours d’exécution, ce qui peut entraîner un blocage.
+-   Un laps de temps considérable peut être consacré à la communication entre processus, et est compté par rapport au temps alloué à l’exécution de votre tâche en arrière-plan.
+- Ne comptez pas sur l’interaction utilisateur dans les tâches en arrière-plan.
+
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
+* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan COM winmain](create-and-register-a-winmain-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
-* [Lire du contenu multimédia en arrière-plan](../audio-video-camera/background-audio.md)
+* [Lire le média en arrière-plan](../audio-video-camera/background-audio.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
@@ -109,6 +117,6 @@ Pour plus d’informations sur le choix des utilisateurs concernant l’activit�
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](/previous-versions/hh974425(v=vs.110))
 
- 
+ 
 
- 
+ 
