@@ -4,12 +4,12 @@ description: Guide pratique pour installer et utiliser la bibliothèque d’inte
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources
-ms.openlocfilehash: 7b7b248ce166368d315dce42f27075d3933c0781
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: e3b0daae3f053daabe153f8a0058953ff76e3b90
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762851"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691567"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Bien démarrer avec la bibliothèque d’IU Windows 2.x
 
@@ -18,7 +18,7 @@ ms.locfileid: "91762851"
 La bibliothèque est disponible sous forme de package NuGet qui peuvent être ajoutés à un projet Visual Studio nouveau ou existant.
 
 > [!NOTE]
-> Pour plus d’informations sur l’essai des préversions anticipées de WinUI 3, consultez [Bibliothèque d’interface utilisateur Windows 3 Preview 2 (juillet 2020)](../winui3/index.md).
+> Pour plus d’informations sur l’essai des préversions anticipées de WinUI 3, consultez [Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)](../winui3/index.md).
 
 ## <a name="download-and-install-the-windows-ui-library"></a>Télécharger et installer la bibliothèque d’IU Windows
 

@@ -1,21 +1,21 @@
 ---
-description: Quand vous souhaitez créer une application de bureau, la première chose à faire est de déterminer s’il faut utiliser les API Win32 et COM ou .NET.
+description: Quand vous souhaitez créer une application de bureau Windows, la première chose à faire est de déterminer s’il faut utiliser les API Win32 et COM ou .NET.
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
-title: Choisir votre plateforme d’application
+title: Choisir votre plateforme d’application Windows
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: développement d’applications de bureau Win32 pour Windows
-ms.openlocfilehash: 46cf8a8e9a57384b85b3156b87697f898ff08ee8
-ms.sourcegitcommit: 37f570c7425a3fa953a0c375c19381bf9cf2b6a2
+ms.openlocfilehash: cdd21279e987f329024c53434e47777e427b95ab
+ms.sourcegitcommit: b69edc6d73370923f31df61c7e42b53de6c928ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93191900"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94870905"
 ---
-# <a name="choose-your-app-platform"></a>Choisir votre plateforme d’application
+# <a name="choose-your-windows-app-platform"></a>Choisir votre plateforme d’application Windows
 
 Quand vous souhaitez créer une application de bureau, la première chose à faire est de choisir la plateforme d’application à utiliser. Windows propose quatre plateformes d’application principales, chacune ayant ses propres avantages :
 
