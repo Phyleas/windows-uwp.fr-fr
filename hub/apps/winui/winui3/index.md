@@ -3,12 +3,12 @@ title: WinUI 3 Preview 3 (novembre 2020)
 description: Vue d’ensemble de la version WinUI 3 Preview 3.
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: d91d957434b2a39182e2c764aecf49fc43f7a601
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: ac641036af8505b1e51fb81385f5206a9aa44f40
+ms.sourcegitcommit: 29c8999fb7a941fc6e26b49cf10f4cc1fcb69641
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933174"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "95002914"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)
 
@@ -177,6 +177,7 @@ WinUI 3 Preview 3 est compatible avec les PC qui exécutent la mise à jour d�
 - Les applications de bureau prennent en charge .NET 5 et C# 9, et elles doivent être empaquetées dans une application MSIX
 - Les applications UWP prennent en charge .NET Native et C# 7.3
 - Les outils de développement et IntelliSense peuvent ne pas fonctionner correctement dans Visual Studio version 16.8.
+- Aucune prise en charge du Concepteur XAML
 - Les nouvelles applications C++/CX ne sont pas prises en charge. Toutefois, vos applications existantes continueront à fonctionner (veuillez passer à C++/WinRT dès que possible)
 - La prise en charge de plusieurs fenêtres dans les applications de bureau est en cours de développement, mais n’est pas encore terminée et stable.
   - Signalez un bogue sur notre dépôt si vous rencontrez de nouveaux problèmes ou des régressions avec le comportement des fenêtres multiples.
