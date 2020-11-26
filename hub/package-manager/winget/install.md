@@ -5,11 +5,11 @@ ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
 ms.openlocfilehash: 5daae6dabee1201dd9df0b83dc56f98b06b15487
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334526"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96025169"
 ---
 # <a name="install-command-winget"></a>install, commande (winget)
 

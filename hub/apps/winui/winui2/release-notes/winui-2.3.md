@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.3
 description: Notes de publication de WinUI 2.3, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 1043ae488342fc8396902c73c2f00eb5b19f584d
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: ad589b15b5481b5b7ff402fc2043afd71c139479
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636509"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933064"
 ---
 # <a name="windows-ui-library-23"></a>Bibliothèque d’IU Windows 2.3
 
@@ -73,4 +73,4 @@ https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt).
 
 Des articles de procédures pour les contrôles de la bibliothèque d’interface utilisateur Windows sont inclus dans la [documentation sur les contrôles de la plateforme Windows universelle](/windows/uwp/design/controls-and-patterns/).
 
-Les documents de référence sur les API se trouvent ici : [API de la bibliothèque d’interface utilisateur Windows](/uwp/api/overview/winui/).
+Les documents de référence sur les API se trouvent ici : [API de la bibliothèque d’interface utilisateur Windows](/windows/winui/api/).

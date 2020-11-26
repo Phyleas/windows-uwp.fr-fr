@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.0
 description: Notes de publication de WinUI 2.0.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: eb1cde864427768ab1adb3b982e4acc5b58906db
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6b362f78049cc6bb1ed6dfe341c2e5b083484a4
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154813"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933084"
 ---
 # <a name="windows-ui-library-20"></a>Bibliothèque d’IU Windows 2.0
 
@@ -76,4 +76,4 @@ https://github.com/Microsoft/Xaml-Controls-Gallery).
 
 Des articles de procédures pour les contrôles de la bibliothèque d’interface utilisateur Windows sont inclus dans la [documentation sur les contrôles de la plateforme Windows universelle](/windows/uwp/design/controls-and-patterns/).
 
-Les documents de référence sur les API se trouvent ici : [API de la bibliothèque d’interface utilisateur Windows](/uwp/api/overview/winui/).
+Les documents de référence sur les API se trouvent ici : [API de la bibliothèque d’interface utilisateur Windows](/windows/winui/api/).

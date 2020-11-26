@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b54e0b4417dd4ba9b835622a4c064b803de7fca9
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 416e3947678de0ba70687d9070c245fdfb4376df
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219703"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933184"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Nouveautés de Windows 10 pour les développeurs, build 17763
 
@@ -34,7 +34,7 @@ Transitions de page | Les [transitions de page](../design/motion/page-transition
 Mise à l’échelle du texte | Le nouveau [guide de mise à l'échelle du texte](../design/input/text-scaling.md) explique comment mettre à jour vos applications afin de les adapter aux nouveaux comportements de mise à l'échelle du texte, qui permettent aux utilisateurs de modifier la taille relative des polices dans le système d'exploitation et dans les applications individuelles. Au lieu d'utiliser une loupe (qui se contente généralement d'agrandir tout ce qui se trouve dans une zone de l'écran et introduit ses propres problèmes d'utilisation), de modifier la résolution d'affichage ou de se fier à la mise à l'échelle PPP (qui redimensionne tout en fonction de l'affichage et de la distance de visualisation standard), un utilisateur peut rapidement accéder à un paramètre permettant de redimensionner uniquement le texte, dans une fourchette comprise entre 100 % (taille par défaut) et 225 %.
 Kits de ressources | Les [kits de ressources Adobe XD et Adobe Illustrator](../design/downloads/index.md) ont été mis à jour avec de nouvelles fonctionnalités. Ceux-ci fournissent des contrôles et des modèles de disposition pour la conception d'applications UWP.
 Commandes de l'interface utilisateur | Les mises à jour de l'[infrastructure de commande UWP](../design/basics/commanding-basics.md) incluent une meilleure encapsulation d'un objet de commande (comportement, étiquette, icône, raccourcis clavier, clé d'accès et description) et un ensemble standard de commandes courantes (couper, copier, coller, quitter, etc.), ce qui évite d'avoir à définir ces propriétés manuellement. </br> La nouvelle classe [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) fournit une classe de base pour définir le comportement de commande d'un élément d'interface utilisateur interactif qui exécute une action lorsqu'il est appelé. Il s'agit de la classe parente de [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand), qui expose un ensemble de commandes de plateforme standard avec des propriétés prédéfinies. 
-Bibliothèque d’IU Windows | La [bibliothèque d'IU Windows](/uwp/toolkits/winui/) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d'interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d'exploitation. </br> Pour plus d'informations sur le contenu de la bibliothèque d'IU Windows, consultez la [liste des espaces de noms d'API inclus dans le package NuGet.](/uwp/api/overview/winui/)
+Bibliothèque d’IU Windows | La [bibliothèque d'IU Windows](/uwp/toolkits/winui/) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d'interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d'exploitation. </br> Pour plus d'informations sur le contenu de la bibliothèque d'IU Windows, consultez la [liste des espaces de noms d'API inclus dans le package NuGet.](/windows/winui/api/)
 
 ## <a name="develop-windows-apps"></a>Développer des applications Windows
 

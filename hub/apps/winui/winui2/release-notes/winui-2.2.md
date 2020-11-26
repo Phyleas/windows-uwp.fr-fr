@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.2
 description: Notes de publication de WinUI 2.2, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 603c2c439e47c82695c8bdf5cd16fceebc9bc068
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: b14b96ffc03d5e3e934b72d71ae9e2a8a3f0eb1d
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762935"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933144"
 ---
 # <a name="windows-ui-library-22"></a>Bibliothèque d’IU Windows 2.2
 
@@ -40,7 +40,7 @@ Le contrôle TabView est une collection d’onglets qui représentent chacun une
 
 #### <a name="documentation"></a>Documentation
 
-https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2
+https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true
 
 #### <a name="navigationview-updates"></a>Mises à jour de NavigationView
 
@@ -144,7 +144,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery).
 
 Des articles de procédures pour les contrôles de la bibliothèque d’interface utilisateur Windows sont inclus dans la [documentation sur les contrôles de la plateforme Windows universelle](/windows/uwp/design/controls-and-patterns/).
 
-Les documents de référence sur les API se trouvent ici : [API de la bibliothèque d’interface utilisateur Windows](/uwp/api/overview/winui/).
+Les documents de référence sur les API se trouvent ici : [API de la bibliothèque d’interface utilisateur Windows](/windows/winui/api/).
 
 ## <a name="microsoftuixaml-22-prerelease-version-history"></a>Historique des versions de Microsoft.UI.Xaml 2.2-prerelease
 
@@ -158,7 +158,7 @@ Juillet 2019
 
 ### <a name="experimental-feature"></a>Fonctionnalité expérimentale
 
-* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2)
+* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true)
 
 ### <a name="microsoftuixaml-2220190416001-prerelease"></a>Microsoft.UI.Xaml 2.2.20190416001-prerelease
 

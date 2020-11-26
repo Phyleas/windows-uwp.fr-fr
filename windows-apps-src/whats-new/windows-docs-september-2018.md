@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d15cd0289b3de0c086a3ddc974e1b121447188c5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 064ffbcc8c254b50704b2e63579e424a78933b3c
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155223"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933164"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre 2018
 
@@ -34,7 +34,7 @@ La documentation du développeur Windows est constamment mise à jour afin d’i
 
 La [bibliothèque d’IU Windows](/uwp/toolkits/winui/) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d'exploitation.
 
-Pour plus d’informations sur le contenu de la bibliothèque d’IU Windows, voir la [liste des espaces de noms d’API inclus dans le package NuGet.](/uwp/api/overview/winui/)
+Pour plus d’informations sur le contenu de la bibliothèque d’IU Windows, voir la [liste des espaces de noms d’API inclus dans le package NuGet.](/windows/winui/api/)
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
