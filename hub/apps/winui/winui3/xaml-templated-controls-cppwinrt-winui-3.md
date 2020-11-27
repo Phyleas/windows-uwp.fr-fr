@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 9790db23160538e90e0386c34003831e5efb20ac
-ms.sourcegitcommit: aabd6f40df6cc82bb8ce3a43275e4abd568c236f
+ms.openlocfilehash: 1b06296dd77bb1501ed96bd7b87f6c3d3a43fb1a
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92061707"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95482891"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-cwinrt"></a>Contrôles XAML basés sur un modèle pour les applications WinUI 3 avec C++/WinRT
 

@@ -6,13 +6,13 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C#, exemple, presse-papiers, cas, étude
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a7ec46b28a8ddf0b4accadb37b40e786ac8c47a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89170413"
 ---
-# <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>Portage de l’exemple Clipboard vers C++/WinRT depuis C#&mdash;une étude de cas
+# <a name="porting-the-clipboard-sample-to-cwinrt-from-cmdasha-case-study"></a>Portage de l’exemple Clipboard vers C++/WinRT depuis C#&mdash;une étude de cas
 
 Cette rubrique présente une étude de cas de portage de l’un des [exemples d’application de plateforme Windows universelle (UWP)](https://github.com/microsoft/Windows-universal-samples) à partir de [C#](/visualstudio/get-started/csharp) vers [C++/WinRT](./intro-to-using-cpp-with-winrt.md). Vous pouvez bénéficier d’une pratique et d’une expérience de portage en suivant la procédure pas à pas et en portant l’exemple pour vous-même au fur et à mesure.
 
@@ -166,7 +166,7 @@ Ajoutons maintenant au fichier `MainPage.idl` les nouveaux types et le nouveau m
 Ainsi, dans votre projet C++/WinRT, ouvrez `MainPage.idl` et modifiez-le afin qu’il ressemble à ce qui figure ci-dessous. Notez que l’une des modifications consiste à changer le nom de l’espace de noms de **Clipboard** en **SDKTemplate**. Si vous le souhaitez, vous pouvez remplacer tout le contenu de `MainPage.idl` par le code suivant. Une autre modification à noter est que nous changeons le nom de **Scenario::ClassType** en **Scenario::ClassName**.
 
 ```idl
-// MainPage.idl
+// MainPage.idl
 namespace SDKTemplate
 {
     struct Scenario
@@ -203,7 +203,7 @@ Dans votre propre travail de portage, vous ne voulez peut-être pas changer le n
 
 Cependant, en effectuant le portage dans cette procédure pas à pas, nous allons changer chaque occurrence dans le code source du nom de l’espace de noms **Clipboard** en **SDKTemplate**. Il y a également un emplacement dans les propriétés du projet C++/WinRT où le nom de l’espace de noms **Clipboard** apparaît : nous allons donc en profiter pour changer cela maintenant.
 
-Dans Visual Studio, pour le projet C++/WinRT, définissez la propriété du projet **Propriétés communes** \> **C++/WinRT** \> **Espace de noms racine** sur la valeur *SDKTemplate*.
+Dans Visual Studio, pour le projet C++/WinRT, définissez la propriété du projet **Propriétés communes** \> **C++/WinRT** \> **Root Namespace** avec la valeur *SDKTemplate*.
 
 ### <a name="save-the-idl-and-re-generate-stub-files"></a>Enregistrer l’IDL et regénérer les fichiers stub
 
@@ -510,7 +510,7 @@ Le code d’initialisation que vous venez d’ajouter référence des types qui 
 
 #### <a name="add-five-new-blank-xaml-pages"></a>Ajouter cinq nouvelles pages XAML vides
 
-Ajoutez un nouvel élément **XAML** > **Page vide (C++/WinRT)**   au projet (vérifiez qu’il s’agit bien du modèle d’élément **Page vide (C++/WinRT)** et non pas du modèle **Page vide**). Nommez-le  `CopyText`. La nouvelle page XAML est définie dans l’espace de noms **SDKTemplate**, qui est ce que nous voulons.
+Ajoutez un nouvel élément **XAML** > **Page vide (C++/WinRT)** au projet (vérifiez qu’il s’agit bien du modèle d’élément **Page vide (C++/WinRT)** et non pas du modèle **Page vide**). Nommez-le `CopyText`. La nouvelle page XAML est définie dans l’espace de noms **SDKTemplate**, qui est ce que nous voulons.
 
 Répétez le processus ci-dessus à quatre reprises, puis nommez les pages XAML `CopyImage`, `CopyFiles`, `HistoryAndRoaming` et `OtherScenarios`.
 
@@ -710,7 +710,7 @@ En C#, la propriété **DataPackageView.AvailableFormats** est une **IReadOnlyLi
 
 Pour porter l’utilisation du type C# **System.Text.StringBuilder**, nous allons utiliser le type standard C++ [**std::wostringstream**](/cpp/standard-library/sstream-typedefs#wostringstream). Ce type est un flux de sortie pour les chaînes larges (et pour l’utiliser, nous devons inclure le fichier d’en-tête `sstream`). Au lieu d’utiliser une méthode **Append** comme vous le faites avec un **StringBuilder**, vous utilisez l’[opérateur d’insertion](/cpp/standard-library/using-insertion-operators-and-controlling-format) (`<<`) avec un flux de sortie comme **wostringstream**. Pour plus d’informations, consultez [iostream (programmation)](/cpp/standard-library/iostream-programming) et [Mise en forme des chaînes C++/WinRT](./strings.md#formatting-strings).
 
-Le code C# construit un**StringBuilder** avec le mot clé `new`. En C#, les objets sont des types référence par défaut, déclarés sur le tas avec `new`. Dans le standard C++moderne, les objets sont des types valeur par défaut, déclarés sur la pile (sans utiliser `new`). Nous portons donc `StringBuilder output = new StringBuilder();` en C++/WinRT aussi simplement que `std::wostringstream output;`.
+Le code C# construit un **StringBuilder** avec le mot clé `new`. En C#, les objets sont des types référence par défaut, déclarés sur le tas avec `new`. Dans le standard C++moderne, les objets sont des types valeur par défaut, déclarés sur la pile (sans utiliser `new`). Nous portons donc `StringBuilder output = new StringBuilder();` en C++/WinRT aussi simplement que `std::wostringstream output;`.
 
 Le mot clé C# `var` demande au compilateur d’inférer un type. Vous portez `var` en `auto` dans C++/WinRT. Cependant, dans C++/WinRT, il existe des cas où (afin d’éviter les copies) vous voulez une *référence* à un type inféré (ou déduit), et vous exprimez une référence lvalue à un type déduit avec `auto&`. Il existe également des cas où vous voulez un type spécial de référence qui se lie correctement, qu’il soit initialisé avec une *lvalue* ou avec une *rvalue*. Vous exprimez cela avec `auto&&`. Il s’agit de la forme que vous voyez utilisée dans la boucle `for` du code porté ci-dessous. Pour en savoir plus sur les valeurs *lvalue* et *rvalue*, consultez [Catégories de valeurs et références à celles-ci](./cpp-value-categories.md).
 
@@ -955,7 +955,7 @@ void MainPage::OnNavigatedTo(NavigationEventArgs const& /* e */)
 
 Là encore, nous appelons la fonction [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector), mais cette fois-ci pour créer une collection de [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). Ceci faisait partie de la décision que nous avons prise d’effectuer la conversion boxing de nos objets **Scenario** selon un mode juste-à-temps.
 
-Et, à la place de l’utilisation ici en C# de l’[interpolation de chaîne](/dotnet/csharp/language-reference/tokens/interpolated), nous utilisons une combinaison de la fonction [**to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) et de l’[opérateur de concaténation ](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator) de **winrt::hstring**.
+Et, à la place de l’utilisation ici en C# de l’[interpolation de chaîne](/dotnet/csharp/language-reference/tokens/interpolated), nous utilisons une combinaison de la fonction [**to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) et de l’[opérateur de concaténation](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator) de **winrt::hstring**.
 
 #### <a name="isapplicationwindowactive"></a>**isApplicationWindowActive**
 
@@ -969,7 +969,7 @@ Même modèle que **isApplicationWindowActive** (regardez le titre immédiatemen
 
 #### <a name="button_click"></a>**Button_Click**
 
-**Button_Click** est une méthode (de gestion des événements) privée de la classe C# **MainPage** et elle est définie dans `MainPage.xaml.cs`. La voici, avec la classe XAML**SplitView** qu’elle référence et le contrôle **ToggleButton** qui l’inscrit.
+**Button_Click** est une méthode (de gestion des événements) privée de la classe C# **MainPage** et elle est définie dans `MainPage.xaml.cs`. La voici, avec la classe XAML **SplitView** qu’elle référence et le contrôle **ToggleButton** qui l’inscrit.
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -1301,7 +1301,7 @@ std::wostringstream output;
 output << std::wstring_view(ApplicationData::Current().LocalFolder().Path());
 ```
 
-La construction d’une **std::wstring_view** à partir d’une **winrt::hstring** comme celle-ci montre une alternative à l’appel de la fonction [**hstring::c_str**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) (pour transformer la **winrt::hstring** en chaîne de style C). Cette alternative fonctionne grâce à l’[opérateur de conversion**de **hstring** pour**std::wstring_view](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view).
+La construction d’une **std::wstring_view** à partir d’une **winrt::hstring** comme celle-ci montre une alternative à l’appel de la fonction [**hstring::c_str**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) (pour transformer la **winrt::hstring** en chaîne de style C). Cette alternative fonctionne grâce à l’[opérateur de conversion **de **hstring** pour** std::wstring_view](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view).
 
 Considérez ce fragment C#.
 

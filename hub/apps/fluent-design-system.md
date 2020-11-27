@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: f5d1829d9fca4f5805a52ed34a1218723897c13d
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 55dfda48feb87538abc9ae206f93cd577dc63eb8
+ms.sourcegitcommit: 4f82bc9e2096d0212f10d633899f4bc19b7fe75d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932990"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94973298"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Système Fluent Design pour créateurs d’applications Windows
 
@@ -251,7 +251,7 @@ Ajoutez de la matière à votre application UWP :
 
 ## <a name="design-toolkits-and-code-samples"></a>Kits de ressources et exemples de code
 
-Vous voulez commencer à créer vos propres applications avec Fluent Design ? Nos kits de ressources pour Adobe XD, Adobe Illustrator, Adobe Photoshop, Framer et Sketch vous aideront à accélérer vos conceptions, et nos exemples vous aideront à coder plus rapidement.
+Vous voulez commencer à créer vos propres applications avec Fluent Design ? Nos kits de ressources pour Figma, Adobe XD et Sketch vous aideront à accélérer vos conceptions et nos exemples à coder plus rapidement.
 
 :::row:::
     :::column:::
