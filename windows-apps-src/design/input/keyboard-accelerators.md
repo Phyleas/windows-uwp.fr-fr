@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: e9cb4a52e56862f9be27c72ef46afced895633c3
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: ee0c92ec81f7bbabc2218afbf263000a167d2057
+ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860093"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310207"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -35,7 +35,7 @@ Les accélérateurs incluent généralement les touches de fonction F1 à F12 ou
 > [!NOTE]
 > Les contrôles de plateforme UWP intègrent des accélérateurs de clavier. Par exemple, ListView prend en charge Ctrl + A pour sélectionner tous les éléments de la liste, et RichEditBox prend en charge Ctrl + Tab pour insérer un onglet dans la zone de texte. Ces accélérateurs de clavier intégrés sont appelés **accélérateurs de contrôle** et sont exécutés uniquement si le focus se trouve sur l’élément ou sur l’un de ses enfants. Les accélérateurs définis par vous à l’aide des API de l’accélérateur clavier décrits ici sont appelés **accélérateurs d’application**.
 
-Les accélérateurs de clavier ne sont pas disponibles pour chaque action, mais sont souvent associés à des commandes exposées dans des menus (et doivent être spécifiés avec le contenu de l’élément de menu).Les accélérateurs peuvent également être associés à des actions qui n’ont pas d’éléments de menu équivalents. Toutefois, étant donné que les utilisateurs s’appuient sur les menus d’une application pour découvrir et apprendre le jeu de commandes disponible, vous devez essayer de rendre la détection des accélérateurs aussi simple que possible (l’utilisation d’étiquettes ou de modèles établis peut vous aider).
+Les accélérateurs de clavier ne sont pas disponibles pour chaque action, mais sont souvent associés à des commandes exposées dans des menus (et doivent être spécifiés avec le contenu de l’élément de menu). Les accélérateurs peuvent également être associés à des actions qui n’ont pas d’éléments de menu équivalents. Toutefois, étant donné que les utilisateurs s’appuient sur les menus d’une application pour découvrir et apprendre le jeu de commandes disponible, vous devez essayer de rendre la détection des accélérateurs aussi simple que possible (l’utilisation d’étiquettes ou de modèles établis peut vous aider).
 
 ![Capture d’écran des accélérateurs de clavier dans une étiquette d’élément de menu.](images/accelerators/accelerators_menuitemlabel.png)  
 *Raccourcis clavier décrits dans une étiquette d’élément de menu*
@@ -127,11 +127,11 @@ Nous vous recommandons de définir des accélérateurs de clavier pour les actio
 ```
 
 ![Capture d’écran d’une touche d’accès rapide dans une info-bulle.](images/accelerators/accelerators_tooltip.png)  
-***Accélérateur clavier décrit dans une info-bulle***
+**_Accélérateur clavier décrit dans une info-bulle_* _
 
 L’objet [UIElement](/uwp/api/windows.ui.xaml.uielement) a une collection [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) , [KeyboardAccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators), où vous spécifiez vos objets KeyboardAccelerator personnalisés et définissez les séquences de touches pour l’accélérateur clavier :
 
--   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** : [VirtualKey](/uwp/api/windows.system.virtualkey) utilisé pour l’accélérateur clavier.
+-   _ *[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**- [VirtualKey](/uwp/api/windows.system.virtualkey) utilisé pour l’accélérateur clavier.
 
 -   **[Modificateurs](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** : [VirtualKeyModifiers](/uwp/api/windows.system.virtualkeymodifiers) utilisé pour l’accélérateur clavier. Si le modificateur n’est pas défini, la valeur par défaut est None.
 
@@ -202,7 +202,7 @@ Dans l’exemple suivant, CTRL + S déclenche l’événement Click, car le bout
 ``` xaml 
 <Button Content="Save" Click="OnSave">
   <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
   </Button.KeyboardAccelerators>
 </Button>
 ```
@@ -211,7 +211,7 @@ Si un élément implémente plusieurs modèles de contrôle, un seul peut être 
 1.  Invoke (bouton)
 2.  Toggle (case à cocher)
 3.  Sélection (ListView)
-4.  Développer/réduire (ComboBox) 
+4.  Développer/réduire (ComboBox) 
 
 Si aucune correspondance n’est identifiée, l’accélérateur n’est pas valide et un message de débogage est fourni («aucun modèle d’automatisation pour ce composant n’a été trouvé. Implémentez tout le comportement souhaité dans l’événement appelé. La définition de la propriété Handled sur true dans votre gestionnaire d’événements supprime ce message.»)
 
@@ -228,8 +228,8 @@ Ici, nous montrons comment définir une collection d’accélérateurs de clavie
 ``` xaml
 <ListView x:Name="MyListView">
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
-    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
 </ListView>
 ```
@@ -285,10 +285,10 @@ Si un contrôle est désactivé, l’accélérateur associé est également dés
   <TextBox>
     <TextBox.KeyboardAccelerators>
       <KeyboardAccelerator 
-        Key="A" 
-        Modifiers="Control" 
-        Invoked="CustomTextSelecAllInvoked" 
-        IsEnabled="False" />
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
     </TextBox.KeyboardAccelerators>
   </TextBox>
 
@@ -308,18 +308,18 @@ Dans cet exemple, AutomationProperty. AcceleratorKey retourne la chaîne « Con
   <ListView.KeyboardAccelerators>
 
     <KeyboardAccelerator 
-      Key="A" 
-      Modifiers="Control,Shift" 
-      Invoked="CustomSelectAllInvoked" />
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
       
     <KeyboardAccelerator 
-      Key="F5" 
-      Modifiers="None" 
-      Invoked="RefreshInvoked" />
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
 
   </ListView.KeyboardAccelerators>
 
-</ListView>   
+</ListView>   
 ```
 
 > [!NOTE] 
@@ -354,14 +354,14 @@ Cela peut ne pas être toujours possible en raison de différences de fonctionna
 | Rechercher du contenu dans un contrôle ou une fenêtre ayant le focus | Ctrl+F |
 | Atteindre le résultat de la recherche suivant | F3 |
 | **Autres actions** | |
-| Ajouter des favoris | Ctrl + D | 
-| Actualiser | F5 ou Ctrl + R | 
-| Zoom avant | Ctrl + + | 
-| Faire un zoom arrière | Ctrl +- | 
-| Zoomer sur la vue par défaut | Ctrl + 0 | 
-| Enregistrer | Ctrl+S | 
-| fermez | Ctrl+W | 
-| Imprimer | Ctrl+P | 
+| Ajouter des favoris | Ctrl + D | 
+| Actualiser | F5 ou Ctrl + R | 
+| Zoom avant | Ctrl + + | 
+| Faire un zoom arrière | Ctrl +- | 
+| Zoomer sur la vue par défaut | Ctrl + 0 | 
+| Enregistrer | Ctrl+S | 
+| Fermer | Ctrl+W | 
+| Imprimer | Ctrl+P | 
 
 Notez que certaines combinaisons ne sont pas valides pour les versions localisées de Windows. Par exemple, dans la version espagnole de Windows, CTRL + N est utilisé pour le gras au lieu de CTRL + B. Nous vous recommandons de fournir des accélérateurs de clavier localisés si l’application est localisée.
 
@@ -526,14 +526,24 @@ Lorsque l’événement [CharacterReceived](/uwp/api/windows.ui.core.corewindow.
 Les événements d’entrée en préversion sont déclenchés avant tout autre événement. Si vous ne gérez pas ces événements, l’accélérateur de l’élément qui a le focus est activé, suivi de l’événement KeyOut. Les deux événements sont propagés jusqu’à ce qu’ils soient gérés.
 
 
-![Diagramme montrant la ](images/accelerators/accelerators_keyevents.png)
- ***séquence d’événements*** clé de séquence d’événements Key
+![Diagramme montrant la séquence d’événements clés de séquence d’événements ](images/accelerators/accelerators_keyevents.png) 
+* **Key event sequence** _
 
 Ordre des événements :
 
-Afficher un aperçu des événements KeyOut...
-App Accelerator OnKeyDown, méthode KeyOut, événements d’application accélérateurs sur la méthode OnKeyDown parente sur l’événement keyversion parent sur le parent (se propage à la racine)...
-Événements CharacterReceived PreviewKeyUp événements KeyUpEvents
+Afficher un aperçu des événements KeyOut<br>
+…<br>
+Accélérateur d’application<br>
+OnKeyDown, méthode<br>
+KeyDown (événement)<br>
+Accélérateurs d’application sur le parent<br>
+Méthode OnKeyDown sur le parent<br>
+Événement KeyOut sur le parent<br>
+(Se propage à la racine)<br>
+…<br>
+Événement CharacterReceived<br>
+Événements PreviewKeyUp<br>
+KeyUpEvents<br>
 
 Lorsque l’événement d’accélérateur est géré, l’événement KeyOut est également marqué comme géré. L’événement KeyUp reste non géré.
 
@@ -572,8 +582,7 @@ protected override void OnProcessKeyboardAccelerators(
 
 Nous vous recommandons de localiser tous les accélérateurs de clavier. Vous pouvez le faire avec le fichier de ressources UWP standard (. resw) et l’attribut x :Uid dans vos déclarations XAML. Dans cet exemple, le Windows Runtime charge automatiquement les ressources.
 
-![Diagramme de localisation de l’accélérateur clavier avec les ressources UWP fichier de localisation de l' ](images/accelerators/accelerators_localization.png)
- ***accélérateur clavier avec le fichier de ressources UWP***
+![Diagramme de localisation de l’accélérateur clavier avec le fichier de ressources UWP ](images/accelerators/accelerators_localization.png) _ localisation de l'*_accélérateur clavier avec le fichier de ressources UWP_**
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -634,6 +643,6 @@ public class MyListView : ListView
 - [Interactions avec le clavier](keyboard-interactions.md)
 - [Clés d’accès](access-keys.md)
 
-### <a name="samples"></a>exemples
+### <a name="samples"></a>Exemples
 
 - [Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)

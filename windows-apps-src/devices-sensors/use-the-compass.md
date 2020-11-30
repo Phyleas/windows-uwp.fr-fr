@@ -4,14 +4,14 @@ title: Utiliser le compas
 description: Découvrez comment utiliser l’API Compass de plateforme Windows universelle (UWP) pour déterminer l’en-tête actuel dans une application de navigation.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0365ced06e85a99fa063c86cad0946526b3f26
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 4ddd5ddddb31cf93977cb0d5bd9c16e916c4126b
+ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304661"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310197"
 ---
 # <a name="use-the-compass"></a>Utiliser le compas
 
@@ -106,14 +106,14 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
             }
         }
     }
-    ```
+```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **CompassCS**, you'd replace `namespace App1` with `namespace CompassCS`.
+Vous devez remplacer le nom de l’espace de noms dans l’extrait de code précédent par le nom que vous avez donné à votre projet. Par exemple, si vous avez créé un projet nommé **CompassCS**, vous devez remplacer `namespace App1` par `namespace CompassCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   Ouvrez le fichier MainPage.xaml et remplacez le contenu d’origine par le code XML suivant.
 
 ```xml
-        <Page
+    <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -173,6 +173,6 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
  <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
- 
+ 
 
- 
+ 
