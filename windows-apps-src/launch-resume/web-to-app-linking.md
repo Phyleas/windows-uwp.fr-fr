@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: fcffbf9fd3f333aa4aea4f155c5508d2867c2776
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 493a9936fa5d97ef2ac8d8d67bec15ce2f4df3c2
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158726"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420368"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Activer des applications pour les sites Web à l’aide de gestionnaires d’URI d’application
 
@@ -59,8 +59,8 @@ Créez un fichier JSON (sans l’extension de fichier .json) nommé **windows-ap
 
 ``` JSON
 [{
-  "packageFamilyName": "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
-  "paths": [ "*" ],
+  "packageFamilyName" : "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
+  "paths" : [ "*" ],
   "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
@@ -73,8 +73,8 @@ L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères g
 
 | **Caractère générique** | **Description**               |
 |--------------|-------------------------------|
-| **\***       | Représente une sous-chaîne      |
-| **?**        | Représente un caractère unique |
+| **\** _       | Représente une sous-chaîne      |
+| _ *?**        | Représente un caractère unique |
 
 Par exemple, `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prend en charge tous les chemins d’accès qui commencent par l’adresse de votre site Web (par exemple, MSN.com), **à l’exception** de ceux sous `/news/` et `/blog/` . **msn.com/weather.html** sera pris en charge, mais pas **MSN.com/news/topnews.html**.
 
