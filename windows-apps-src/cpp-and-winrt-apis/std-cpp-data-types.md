@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, données, types
 ms.localizationpriority: medium
-ms.openlocfilehash: d61de7acdfa2fc3b563aa77630a9eb8043bce3d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e4c759cef4869f3270a59bb66f2b999cb35f19e
+ms.sourcegitcommit: bbf5451c3240e260fb8f9baadbdadf772ffe96ba
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154333"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96537303"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Types de données C++ standard et C++/WinRT
 
@@ -61,7 +61,7 @@ IAsyncOperation<IMap<winrt::hstring, IInspectable>> StorageItemContentProperties
 Vous pouvez appeler cette API avec une liste d’initialiseurs comme suit.
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile)
 {
     auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" }) };
 }
@@ -103,7 +103,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 Mais vous ne pouvez pas transmettre un **std::vector&lt;std::wstring&gt;** là où une collection Windows Runtime est attendue. Cela est dû au fait que, la collection Windows Runtime appropriée de **std::wstring** ayant été convertie, le langage C++ ne forcera pas le ou les paramètres de type de cette collection. Par conséquent, l’exemple de code suivant ne sera pas compilé (et la solution consiste à passer un **std::vector&lt;winrt::hstring&gt;** à la place, comme indiqué ci-dessus).
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<std::wstring> vecW)
 {
     auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)) }; // error! Can't convert from vector of wstring to async_iterable of hstring.
 }
@@ -131,7 +131,7 @@ Une série de constructeurs, d’opérateurs, de fonctions et d’itérateurs so
 Pour plus d’exemples et d’informations, consultez la rubrique sur les informations de référence sur les API [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view).
 
 ## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt;** et constructions d’itération standard
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) est un exemple d’API Windows Runtime qui retourne une collection de type [**IVector&lt;T&gt;** ](/uwp/api/windows.foundation.collections.ivector_t_) (projeté dans C++/WinRT comme **winrt::Windows::Foundation::Collections::IVector&lt;T&gt;** ). Vous pouvez utiliser ce type avec des constructions d’itération standard, par exemple des `for` basés sur les plages.
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) est un exemple d’API Windows Runtime qui retourne une collection de type [**IVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.ivector_t_) (projeté dans C++/WinRT comme **winrt::Windows::Foundation::Collections::IVector&lt;T&gt;** ). Vous pouvez utiliser ce type avec des constructions d’itération standard, par exemple des `for` basés sur les plages.
 
 ```cppwinrt
 // main.cpp
