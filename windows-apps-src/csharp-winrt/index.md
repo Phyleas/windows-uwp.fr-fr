@@ -5,37 +5,34 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 844d8441777e7c95e2b562cf7dff748600a072e9
-ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
+ms.openlocfilehash: 9c0bc2445ce6369599749e1741ab7a703b0367b6
+ms.sourcegitcommit: ca661dd72852b109f4b8b1d7d7e2149180fcb3ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171136"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96517116"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
-> [!IMPORTANT]
-> C#/WinRT est en préversion publique et peut être largement modifié avant la version finale. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
-
 C#/WinRT est un kit de ressources empaqueté dans NuGet qui fournit une prise en charge de la projection Windows Runtime (WinRT) pour le langage C#. Une *projection* est une couche de traduction, comme un assembly d’interopérabilité, qui permet de programmer des API WinRT de manière naturelle et familière pour le langage cible. Par exemple, la projection C#/WinRT masque les détails de l’interopérabilité entre les interfaces C# et WinRT, et fournit des mappages de nombreux types WinRT aux équivalents .NET appropriés, comme des chaînes, des URI, des types valeur courants et des collections génériques.
 
-C#/WinRT fournit actuellement une prise en charge de la consommation des types WinRT, et la préversion actuelle vous permet de [créer](#create-an-interop-assembly) et de [référencer](#reference-an-interop-assembly) les assemblys d’interopérabilité WinRT. Les futures versions de C#/WinRT ajouteront une prise en charge de la création de types WinRT en C#.
+C#/WinRT fournit actuellement une prise en charge de la consommation des types WinRT, et la dernière version vous permet de [créer](#create-an-interop-assembly) et de [référencer](#reference-an-interop-assembly) les assemblys d’interopérabilité WinRT. Les futures versions de C#/WinRT ajouteront une prise en charge de la création de types WinRT en C#.
 
 Pour plus d’informations sur C#/WinRT, consultez le [dépôt GitHub C#/WinRT](https://aka.ms/cswinrt/repo).
 
 ## <a name="motivation-for-cwinrt"></a>Motivation pour C#/WinRT
 
-[.NET Core](/dotnet/core/) est le point principal de la plateforme .NET, et .NET 5 est la prochaine version majeure. Il s’agit d’un runtime open source multiplateforme qui peut être utilisé pour générer des applications d’appareil, cloud et IoT.
+[.NET Core](/dotnet/core/) est le point principal de la plateforme .NET, et .NET 5 est la dernière version majeure. Il s’agit d’un runtime open source multiplateforme qui peut être utilisé pour générer des applications d’appareil, cloud et IoT.
 
 Les versions précédentes de .NET Framework et .NET Core avaient une connaissance intégrée de WinRT, qui est une technologie spécifique à Windows. Pour prendre en charge les objectifs de portabilité et d’efficacité de .NET 5, nous avons retiré la prise en charge de la projection WinRT du compilateur et du runtime .NET, et nous l’avons déplacée dans le kit de ressources C#/WinRT. L’objectif de C#/WinRT est de fournir la parité avec la prise en charge WinRT intégrée proposée par les versions antérieures du compilateur C# et du runtime .NET. Pour plus d’informations, consultez [Mappages .NET des types Windows Runtime](../winrt-components/net-framework-mappings-of-windows-runtime-types.md).
 
 C#/WinRT prend également en charge WinUI 3.0. Cette version de WinUI retire du système d’exploitation les contrôles et fonctionnalités de l’interface utilisateur Microsoft native. Cela permet aux développeurs d’applications d’utiliser les derniers contrôles et visuels disponibles sur Windows 10, version 1803 et sur les versions ultérieures.
 
-Enfin, C#/WinRT est un kit de ressources général conçu pour prendre en charge d’autres scénarios où la prise en charge intégrée de WinRT n’est pas disponible dans le compilateur C# ou le runtime .NET. C#/WinRT prend en charge les versions du runtime .NET compatibles avec .NET Standard jusqu’à la version 2.0, comme Mono 5.4.
+Enfin, C#/WinRT est un kit de ressources général conçu pour prendre en charge d’autres scénarios où la prise en charge intégrée de WinRT n’est pas disponible dans le compilateur C# ou le runtime .NET.
 
 ## <a name="create-an-interop-assembly"></a>Créer un assembly d’interopérabilité
 
-Les API WinRT sont définies dans les fichiers de métadonnées Windows (*. winmd). Le package NuGet C#/WinRT ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) comprend le compilateur C#/WinRT, **cswinrt**, que vous pouvez utiliser pour traiter les fichiers de métadonnées Windows et générer du code C# .NET 5.0. Vous pouvez compiler ces fichiers sources dans des assemblys d’interopérabilité, de la même façon que [C++/WinRT](../cpp-and-winrt-apis/index.md) génère des en-têtes pour une projection de langage C++. Vous pouvez alors distribuer les assemblys d’interopérabilité C#/WinRT pour les applications à référencer, en même temps que l’assembly de runtime C#/WinRT.
+Les API WinRT sont définies dans les fichiers de métadonnées Windows (*. winmd). Le package NuGet C#/WinRT ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) comprend le compilateur C#/WinRT, **cswinrt.exe**, que vous pouvez utiliser pour traiter les fichiers de métadonnées Windows et générer du code C# .NET 5.0. Vous pouvez compiler ces fichiers sources dans des assemblys d’interopérabilité, de la même façon que [C++/WinRT](../cpp-and-winrt-apis/index.md) génère des en-têtes pour une projection de langage C++. Vous pouvez alors distribuer les assemblys d’interopérabilité C#/WinRT pour les applications à référencer, en même temps que l’assembly de runtime C#/WinRT.
 
 Pour une procédure pas à pas qui montre comment créer et distribuer un assembly d’interopérabilité en tant que package NuGet, consultez [Procédure pas à pas : Générer une projection .NET 5 à partir d’un composant C++/WinRT et mettre à jour le NuGet](net-projection-from-cppwinrt-component.md).
 
@@ -53,7 +50,7 @@ Dans ce projet, vous devez également référencer le package NuGet CsWinRT et l
 
 ### <a name="distribute-the-interop-assembly"></a>Distribuer l’assembly d’interopérabilité
 
-Un assembly d’interopérabilité est généralement distribué sous la forme d’un package NuGet, avec une dépendance sur le package NuGet C#/WinRT pour l’assembly de runtime C#/WinRT nécessaire, **winrt.runtime.dll**.
+Un assembly d’interopérabilité est généralement distribué sous la forme d’un package NuGet, avec une dépendance sur le package NuGet C#/WinRT pour l’assembly de runtime C#/WinRT nécessaire, **WinRT.Runtime.dll**.
 
 Pour vous assurer que la version correcte du runtime C#/WinRT est déployée pour les applications .Net 5.0, ajoutez une condition `targetFramework` dans le fichier .nuspec avec une dépendance avec le package NuGet C#/WinRT.
 
@@ -63,7 +60,7 @@ Pour vous assurer que la version correcte du runtime C#/WinRT est déployée pou
   <metadata>
     <dependencies>
       <group targetFramework="net5.0">
-        <dependency id="Microsoft.Windows.CsWinRT" version="0.9.0" />
+        <dependency id="Microsoft.Windows.CsWinRT" version="1.0.1" />
       </group>
     </dependencies>
   </metadata>
@@ -71,7 +68,7 @@ Pour vous assurer que la version correcte du runtime C#/WinRT est déployée pou
 ```
 
 > [!NOTE]
-> Le moniker de framework cible pour .NET 5.0 passe de « NETCoreApp5.0 » à « net5.0 ». 
+> Le moniker de framework cible pour .NET 5.0 passe de « NETCoreApp5.0 » à « net5.0 ».
 
 ## <a name="reference-an-interop-assembly"></a>Référencer un assembly d’interopérabilité
 
@@ -95,7 +92,7 @@ C#/WinRT utilise l’[autre ordre de recherche de LoadLibrary](/windows/win32/dl
 
 ## <a name="known-issues"></a>Problèmes connus
 
-Certains problèmes de performances liés à l’interopérabilité ont été identifiés dans la préversion actuelle de C#/WinRT. Ils seront traités avant la version finale qui sera publiée fin 2020. Les autres problèmes connus et les changements cassants seront notés dans le [dépôt GitHub C#/WinRT](https://aka.ms/cswinrt/repo).
+Les problèmes connus et les changements cassants sont notés dans le [dépôt GitHub C#/WinRT](https://aka.ms/cswinrt/repo).
 
 Si vous rencontrez des problèmes fonctionnels avec le package NuGet C#/WinRT, le compilateur cswinrt.exe ou les sources de projection générées, signalez-les-nous par le biais de la [page relative aux problèmes liées à C#/WinRT](https://github.com/microsoft/CsWinRT/issues).
 
