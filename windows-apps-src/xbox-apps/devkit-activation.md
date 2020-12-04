@@ -6,25 +6,32 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 29bcb1b248b6b2392845962bb49eb11efed035f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d93fef1b06fa52616b7e5eddf7b3ac0530856dc2
+ms.sourcegitcommit: a15bc17aa0640722d761d0d33f878cb2a822e8ed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174753"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96577101"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Activation du Mode développeur Xbox One
 
 ## <a name="how-developer-mode-works"></a>Fonctionnement du Mode développeur
-Xbox One dispose de deux modes : le mode *vente au détail* (**1**) et le mode *développeur* (**2**). En Mode commercial, la console permet à n’importe quel utilisateur de jouer et d’exécuter des applications en tant qu’utilisateur. Le Mode développeur, vous permet de développer des logiciels pour la console, mais pas de jouer à des jeux commerciaux ou d’exécuter des applications commerciales.
+Cet article s’applique uniquement à Xbox One et à la série Xbox X | Les consoles ont été acquises via des canaux de vente au détail. Pour le matériel du kit de développement acquis via un programme de développement managé, consultez la remarque à la fin de l’article.
 
-Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. Une fois le mode développeur activé, vous pouvez basculer entre Retail (**2A**) et Developer modes (**2b**).
+Les consoles de vente au détail Xbox peuvent avoir deux modes : le mode vente au détail (1) et le mode développeur (2). En mode vente au détail, la console est dans un état normal : vous pouvez jouer à des jeux et exécuter des applications acquises via le magasin Xbox. En mode développeur, vous pouvez développer et tester des logiciels pour la console, mais vous ne pouvez pas jouer à des jeux de vente au détail ou exécuter des applications de vente au détail.
+
+Le mode développeur peut être activé sur n’importe quelle console Xbox de vente au détail, via l’application « conversion du kit de vente au détail » qui se trouve dans le magasin Xbox. Une fois que le mode développeur est activé sur votre console de vente au détail, vous pouvez passer de l’un à l’autre au détail (2a) et aux modes développeur (2b).
+
+> [!NOTE]
+> N’exécutez pas cette application de conversion sur un matériel de développement Xbox acquis via un programme géré par Xbox (par exemple, ID@Xbox ) ou vous risquez d’introduire des erreurs et des retards lors du développement de votre jeu. Si vous êtes un partenaire géré, vous pouvez obtenir plus d’informations sur l’activation du matériel de développement. Atteindre https://developer.microsoft.com/en-us/games/xbox/docs/gdk/provisioning-role.
+
+<br></br>
 
 ![Modes Xbox One](images/dev-mode-flow.png)
 
-## <a name="activate-developer-mode-on-your-retail-xbox-one-console"></a>Activer le Mode développeur sur votre console Xbox One commerciale
+## <a name="activate-developer-mode-on-your-retail-xbox-console"></a>Activer le mode développeur sur votre console Xbox de vente au détail
 
-1.  Démarrez votre console Xbox One.
+1.  Démarrez votre console Xbox.
 
 2.  Recherchez et installez l’application d' **activation en mode dev** à partir du magasin Xbox One.
 
