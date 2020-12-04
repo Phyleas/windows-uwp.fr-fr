@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c0bc2445ce6369599749e1741ab7a703b0367b6
-ms.sourcegitcommit: ca661dd72852b109f4b8b1d7d7e2149180fcb3ee
+ms.openlocfilehash: 107c85b7e2562edb9995a6bfd76e47904750536b
+ms.sourcegitcommit: a15bc17aa0640722d761d0d33f878cb2a822e8ed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96517116"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96577091"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -89,6 +89,18 @@ C#/WinRT fournit également un chemin d’activation de secours si Windows ne pa
 3. Contoso.dll
 
 C#/WinRT utilise l’[autre ordre de recherche de LoadLibrary](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications) pour localiser une DLL d’implémentation. Une application basée sur ce comportement de secours doit empaqueter la DLL d’implémentation en même temps que le module d’application.
+
+## <a name="common-errors-with-net-5"></a>Erreurs courantes avec .NET 5+
+
+Vous pouvez rencontrer les erreurs ou avertissements suivants dans un projet généré avec une version du kit SDK .NET antérieure à celle de l’une de ses dépendances.
+
+| Message d'erreur ou d’avertissement | Motif |
+|--------------------------|--------|
+| System.IO.FileLoadException | Cette erreur d’exécution se produit lors de l’appel d’API dans une bibliothèque qui n’expose pas de types SDK Windows. |
+| Avertissement MSB3277 : Détection de conflits entre les différentes versions de Microsoft.Windows.SDK.NET qui n’ont pas pu être résolus. | Cette erreur de build se produit lors du référencement d’une bibliothèque qui expose des types de SDK Windows sur sa surface d’API. |
+| [CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705) : L’assembly 'AssemblyName1' utilise 'TypeName' dont la version est supérieure à celle de l’assembly référencé 'AssemblyName2' | Cette erreur du compilateur de build se produit lors du référencement et de la consommation des types de SDK Windows exposés dans une bibliothèque. |
+
+Pour corriger ces erreurs, mettez à jour votre kit SDK .NET avec la dernière version. Cette mise à jour permet de vous assurer que les versions d’assembly de SDK Windows et de runtime utilisées par votre application sont compatibles avec toutes les dépendances. Ces erreurs peuvent se produire avec des mises à jour de fonctionnalités ou de maintenance anticipées du kit SDK .NET 5, car les correctifs de runtime peuvent demander des mises à jour de vos versions d’assembly.
 
 ## <a name="known-issues"></a>Problèmes connus
 
