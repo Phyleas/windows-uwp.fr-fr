@@ -18,7 +18,7 @@
       href: basics/commanding-basics.md
     - name: Notions de base sur le contenu
       href: basics/content-basics.md
-    - name: Didacticiels
+    - name: Tutoriels
       items:
         - name: Créer une interface utilisateur
           href: basics/xaml-basics-ui.md
@@ -216,6 +216,8 @@
           href: controls-and-patterns/progress-controls.md
         - name: Info-bulle
           href: controls-and-patterns/tooltips.md
+        - name: Barre d’informations
+          href: controls-and-patterns/infobar.md
     - name: Texte
       items:
         - name: Vue d’ensemble

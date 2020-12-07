@@ -3,12 +3,12 @@ title: Notes de publication de WinUI
 description: Index des notes de publication de WinUI.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 4c89209868c1478f34de79f8b243fbe0e3dc80a3
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: 7038a61e0bf7047c49295b8c4482e92f113f647d
+ms.sourcegitcommit: 03308873eafd0f768e1c518f4d1cc4e4fe0b70b7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933104"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96606014"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Notes de publication de la bibliothèque Windows UI 2.x
 
@@ -46,7 +46,8 @@ Historique des versions du [package NuGet Microsoft.UI.Xaml](https://www.nuget.o
 
 | Version NuGet de Microsoft.UI.Xaml | Type | Date de sortie | Notes de publication | Points essentiels |
 | --- | --- | --- | --- | --- |
-| [2.4](winui-2.4.md) | stable | Mai 2020 | [Notes de publication](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush), [ProgressRing](winui-2.4.md#progressring), [Mises à jour de TabView](winui-2.4.md#tabview-updates), [Mises à jour du thème sombre de la famille de contrôles TextBox](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls), [Navigation hiérarchique](winui-2.4.md#hierarchical-navigation),  |
+| [2.5](winui-2.5.md) | stable | Décembre 2020 | [Notes de publication](winui-2.5.md) | [InfoBar](winui-2.5.md#infobar), [Determiner ProgressRing](winui-2.5.md#determinate-progressring), [NavigationView FooterMenuItems](winui-2.5.md#navigationview-footermenuitems) |
+| [2.4](winui-2.4.md) | stable | Mai 2020 | [Notes de publication](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush), [ProgressRing](winui-2.4.md#progressring), [Mises à jour de TabView](winui-2.4.md#tabview-updates), [Mises à jour du thème sombre pour la famille de contrôles TextBox](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls), [Navigation hiérarchique](winui-2.4.md#hierarchical-navigation)  |
 | [2.3](winui-2.3.md) | stable | Novembre 2019 | [Notes de publication](winui-2.3.md) | [Actualisation visuelle de la barre de progression](winui-2.3.md#progress-bar-visual-refresh), [NumberBox](winui-2.3.md#numberbox), [RadioButtons](winui-2.3.md#radiobuttons) |
 | [2.2](winui-2.2.md) | stable | Août 2019 | [Notes de publication](winui-2.2.md) | [TabView](winui-2.2.md#tabview), [Mises à jour de NavigationView](winui-2.2.md#navigationview-updates), [Mises à jour des styles visuels](winui-2.2.md#visual-style-updates)  |
 | [2.1](winui-2.1.md) | stable | Avril 2019 | [Notes de publication](winui-2.1.md) | **Première publication open source** de [GitHub](https://github.com/microsoft/microsoft-ui-xaml). Comprend [ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |

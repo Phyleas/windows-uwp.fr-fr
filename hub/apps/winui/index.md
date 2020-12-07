@@ -4,12 +4,12 @@ description: Bibliothèques WinUI pour le développement d’applications Window
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources, winui, bibliothèque d’interface utilisateur Windows
-ms.openlocfilehash: 3b2b18ab35f46b132ec3017bb0f3c6564b7be9ee
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: cd96367579c61223dcaf2be2f336026244a6ed9b
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933124"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603686"
 ---
 # <a name="windows-ui-library-winui"></a>Bibliothèque d’IU Windows (WinUI)
 
@@ -29,7 +29,7 @@ Avec la prise en charge des applications de bureau et UWP, vous pouvez effectuer
 Vous pouvez utiliser WinUI 2.x dans les applications UWP et l’incorporer à vos applications de bureau nouvelles ou existantes à l’aide de [XAML Islands](../desktop/modernize/xaml-islands.md).
 
 > [!NOTE]
-> WinUI 2.4 est la version la plus récente de WinUI 2.x. Pour obtenir la liste des travaux planifiés dans la prochaine version, consultez la page du [jalon WinUI 2.5](https://github.com/microsoft/microsoft-ui-xaml/milestone/10).
+> WinUI 2.5 est la version la plus récente de WinUI 2.x. Pour obtenir la liste des travaux planifiés dans la prochaine version, consultez la page du [jalon WinUI 2.6](https://github.com/microsoft/microsoft-ui-xaml/milestone/11).
 
 La bibliothèque WinUI 2.x est étroitement couplée au [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) et fournit des contrôles d’interface utilisateur Windows natifs officiels ainsi que d’autres éléments d’interface utilisateur pour les applications UWP.
 
