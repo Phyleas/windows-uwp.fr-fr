@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: Cette feuille de route propose une vue d’ensemble des principales fonctionnalités d’entreprise pour les applications UWP (plateforme Windows universelle) et Windows 10.
+description: Cette feuille de route propose une vue d’ensemble des principales fonct. d’entreprise pour les app. de plateforme Windows universelle (UWP) et Windows 10.
 title: Entreprise
 ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff96cd25c32418f518f6b1807e08eb72c3e14c6a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4bd6c92729766b99630958d4b33514ef4791d4bf
+ms.sourcegitcommit: 3153ef4838c35084a64173c7ed88719c8864f8cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168433"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755286"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -19,8 +19,7 @@ Cet article propose une vue d’ensemble des principales fonctionnalités d’en
 
 ## <a name="feature-highlights"></a>Présentation des fonctionnalités
 
-<a id="template-studio" />
-
+<a id="template-studio"></a>
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
 Windows Template Studio est une extension Visual Studio 2019 qui accélère la création d’applications UWP (plateforme Windows universelle) à l’aide d’un Assistant. Le projet UWP résultant est constitué de code bien mis en forme et lisible, qui intègre les dernières fonctionnalités de Windows 10, tout en implémentant des modèles éprouvés et des bonnes pratiques.
@@ -29,8 +28,7 @@ Windows Template Studio est une extension Visual Studio 2019 qui accélère la 
 
 Consultez [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio)
 
-<a id="desktop-style-UI" />
-
+<a id="desktop-style-UI"></a>
 ### <a name="controls-to-create-desktop-style-uis"></a>Contrôles permettant de créer des IU d’applications de bureau
 
 Nous avons publié de nouveaux contrôles UWP XAML qui comblent le fossé entre une IU d’Application de bureau classique et une IU UWP.
@@ -39,8 +37,7 @@ Par exemple, les nouveaux contrôles [MenuBar](../design/controls-and-patterns/m
 
 ![MenuBar](images/menu-bar.png)
 
-<a id="enterprise" />
-
+<a id="enterprise"></a>
 ### <a name="controls-to-support-enterprise-scenarios"></a>Contrôles permettant de prendre en charge des scénarios d’entreprise
 
 [DataGridView](/windows/communitytoolkit/controls/datagrid) offre un moyen flexible d’afficher une collection de données en lignes et en colonnes.
@@ -58,16 +55,14 @@ La bibliothèque d’IU Windows est un ensemble de packages NuGet qui fournissen
 
 Consultez [Bibliothèque d’IU Windows (préversion)](/uwp/toolkits/winui/).
 
-<a id="xaml-islands" />
-
+<a id="xaml-islands"></a>
 ### <a name="uwp-controls-in-desktop-applications-xaml-islands"></a>Contrôles UWP dans les applications de bureau (XAML Islands)
 
 Windows 10 vous permet maintenant d’utiliser les contrôles UWP dans les applications de bureau WPF, Windows Forms et C++ Win32 avec une fonctionnalité appelée *XAML Islands*. Cela signifie que vous pouvez améliorer l’apparence et les fonctionnalités de vos Applications de bureau existantes à l’aide des dernières fonctionnalités de l’IU Windows 10. Celles-ci sont disponibles uniquement via les contrôles UWP, tels que Windows Ink, et les contrôles prenant en charge Fluent Design System. Cette fonctionnalité est désignée sous le nom d’îles XAML.
 
 Consultez [Contrôles UWP dans les applications de bureau](/windows/apps/desktop/modernize/xaml-islands).
 
-<a id="standard" />
-
+<a id="standard"></a>
 ### <a name="net-standard-20"></a>.NET Standard 2.0
 
 .NET Standard comprend plus de 20 000 API supplémentaires par rapport à .NET Standard 1.x. Cela rend tellement plus facile la migration des bibliothèques .NET Framework existantes, puis leur utilisation dans différentes applications .NET, notamment votre application UWP.
@@ -76,16 +71,14 @@ Consultez [Contrôles UWP dans les applications de bureau](/windows/apps/desktop
 
 Consultez [Partager du code entre une application de bureau et une application UWP](../porting/desktop-to-uwp-migrate.md).
 
-<a id="sql-server" />
-
+<a id="sql-server"></a>
 ### <a name="sql-server-connectivity"></a>Connectivité SQL Server
 
 Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](/dotnet/api/system.data.sqlclient).
 
 Consultez [Utiliser une base de données SQL Server dans une application UWP](../data-access/sql-server-databases.md).
 
-<a id="MSIX" />
-
+<a id="MSIX"></a>
 ### <a name="msix-deployment"></a>Déploiement de MSIX
 
 MSIX est un format de package d’application Windows qui regroupe les meilleures fonctionnalités de MSI, .appx, App-V et ClickOnce pour proposer une expérience d’empaquetage moderne et fiable dans toutes les applications Windows. Le format de package MSIX conserve les packages d’applications et les fichiers d’installation existants tout en proposant des fonctionnalités d’empaquetage et de déploiement modernes pour les applications Win32, WPF et Windows Forms. 
@@ -94,11 +87,10 @@ MSIX est un format de package d’application Windows qui regroupe les meilleure
 
 Consultez la [documentation de MSIX](/windows/msix/).
 
-<a id="distribution" />
-
+<a id="distribution"></a>
 ## <a name="security"></a>Sécurité
 
-Windows 10 fournit une suite de fonctionnalités de sécurité qui permet aux développeurs d’applications de protéger l’identité de leurs utilisateurs, la sécurité des réseaux d’entreprise ainsi que toutes les données professionnelles stockées sur des appareils. Nouveauté de Windows 10, Microsoft Passport constitue une alternative à l’utilisation de mots de passe. Il s’agit d’une solution d’authentification à deux facteurs facile à déployer et accessible à l’aide d’un code PIN ou de Windows Hello, qui fournit une sécurité de qualité professionnelle et prend en charge la reconnaissance des empreintes digitales et de l’iris ainsi que la reconnaissance faciale.
+Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les développeurs d’applications destinées à protéger l’identité de leurs utilisateurs, la sécurité des réseaux d’entreprise et les données professionnelles stockées sur des appareils. Nouveauté de Windows 10, Microsoft Passport constitue une alternative à l’utilisation de mot de passe. Il s’agit d’une solution d’authentification à deux facteurs facile à déployer et accessible à l’aide d’un PIN ou de Windows Hello, qui fournit une sécurité de qualité professionnelle et prend en charge la reconnaissance des empreintes digitales, de l’iris et la reconnaissance faciale.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -169,10 +161,10 @@ Vous disposez d’options pour distribuer les applications aux utilisateurs de v
 
 ## <a name="patterns-and-practices"></a>Modèles et pratiques
 
-Les bases de code pour les applications d’entreprise à grande échelle peuvent être difficiles à gérer. Prism est un framework permettant de générer des applications XAML pouvant être testées, faciles à gérer et faiblement couplées dans WPF, Windows 10 UWP et Xamarin Forms. Prism fournit une implémentation d’une collection de modèles de conception utiles pour écrire des applications XAML bien structurées et faciles à gérer, notamment des modèles MVVM, d’injection de dépendance, de commandes, EventAggregator, etc.
+Les bases de code pour les applications d’entreprise à grande échelle peuvent être difficiles à gérer. Prism est une infrastructure permettant de créer des applications XAML pouvant être testées, faciles à gérer et faiblement couplées dans WPF, UWP Windows 10 et Xamarin Forms. Prism fournit une implémentation d’une collection de modèles de conception utiles pour écrire des applications XAML bien structurées et faciles à gérer, notamment des modèles MVVM, d’injection de dépendance, de commandes, EventAggregator, etc.
 
 Pour plus d’informations sur Prism, consultez le [dépôt GitHub](https://github.com/PrismLibrary/Prism).
 
- 
+ 
 
- 
+ 

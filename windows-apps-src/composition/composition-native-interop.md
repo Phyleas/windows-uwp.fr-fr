@@ -1,17 +1,17 @@
 ---
-ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: Interopération native de la composition
 description: L’API Windows.UI.Composition fournit des interfaces pour interopération en mode natif, permettant ainsi de déplacer directement le contenu dans le compositeur.
-ms.date: 06/22/2018
+ms.date: 12/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b89e4107ea92dce241977b048d28d6a85e2fd34
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
+ms.openlocfilehash: 4ae214f99cad9d8d2db644b184c12172a56a443b
+ms.sourcegitcommit: 7d01748e3ef084fcf04cc0e2830c8ec66e8d1252
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166433"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96849473"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>Interopérabilité native de la composition avec DirectX et Direct2D
 
@@ -37,13 +37,31 @@ Les méthodes [**BeginDraw**](/windows/desktop/api/windows.ui.composition.intero
 
 Pour des raisons de performances, quand une application appelle [**BeginDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw) , il n’est pas garanti que le contenu de la texture retournée soit le contenu précédent de la surface. L’application doit supposer que le contenu est aléatoire et elle doit s’assurer que tous les pixels sont touchés, soit en effaçant la surface avant le rendu, soit en dessinant un contenu suffisamment opaque pour couvrir la totalité du rectangle mis à jour. Combiné au fait que le pointeur texture est uniquement valide entre les appels de **BeginDraw** et [**EndDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw), cela empêche l’application de copier le contenu précédent en dehors de la surface. Pour cette raison, nous proposons une méthode [**Scroll**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-scroll) , qui permet à l’application d’effectuer une copie de pixels de surface identique.
 
-## <a name="usage-example"></a>Exemple d'utilisation
+## <a name="cwinrt-usage-example"></a>Exemple d’utilisation de C++/WinRT
 
 L’exemple de code suivant illustre un scénario d’interopérabilité. L’exemple combine les types de la surface d’exposition Windows Runtime de la composition Windows, ainsi que les types des en-têtes Interop, et le code qui restitue le texte à l’aide des API DirectWrite et Direct2D basées sur COM. L’exemple utilise [**BeginDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw) et [**EndDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) pour le rendre transparent pour l’interopérabilité entre ces technologies. L’exemple utilise DirectWrite pour disposer le texte, puis il utilise Direct2D pour le rendre. Le périphérique graphique de composition accepte directement le périphérique Direct2D au moment de l’initialisation. Cela permet à **BeginDraw** de retourner un pointeur d’interface **ID2D1DeviceContext** , ce qui est beaucoup plus efficace que l’application de créer un contexte Direct2D pour encapsuler une interface ID3D11Texture2D retournée à chaque opération de dessin.
 
-Il existe deux exemples de code ci-dessous. Tout d’abord, un exemple [c++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) (qui est complet), puis un exemple de code c++/CX (qui omet les parties DirectWrite et Direct2D de l’exemple).
+Pour tester l’exemple de code C++/WinRT ci-dessous, commencez par créer un projet d' **application principale (c++/WinRT)** dans Visual Studio (pour connaître la configuration requise, consultez [prise en charge de Visual Studio pour C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Remplacez le contenu de vos `pch.h` `App.cpp` fichiers de code source et par les listes de code ci-dessous, puis générez et exécutez. L’application affiche la chaîne « Hello, World ! » en texte noir sur un arrière-plan transparent.
 
-Pour utiliser l’exemple de code C++/WinRT ci-dessous, commencez par créer un projet d' **application principale (C++/WinRT)** dans Visual Studio (pour connaître la configuration requise, consultez [prise en charge de Visual Studio pour C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Lors de la création du projet, sélectionnez comme version cible **Windows 10, version 1803 (10,0 ; Build 17134)**. Il s’agit de la version sur laquelle ce code a été généré et testé. Remplacez le contenu de votre `App.cpp` fichier de code source par le code ci-dessous, puis générez et exécutez. L’application affiche la chaîne « Hello, World ! » en texte noir sur un arrière-plan transparent.
+```cppwinrt
+// pch.h
+#pragma once
+#include <windows.h>
+#include <D2d1_1.h>
+#include <D3d11_4.h>
+#include <Dwrite.h>
+#include <Windows.Graphics.DirectX.Direct3D11.interop.h>
+#include <Windows.ui.composition.interop.h>
+#include <unknwn.h>
+
+#include <winrt/Windows.ApplicationModel.Core.h>
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Graphics.DirectX.h>
+#include <winrt/Windows.Graphics.DirectX.Direct3D11.h>
+#include <winrt/Windows.UI.Composition.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Input.h>
+```
 
 ```cppwinrt
 // App.cpp
@@ -62,16 +80,6 @@ Pour utiliser l’exemple de code C++/WinRT ci-dessous, commencez par créer un 
 //*********************************************************
 
 #include "pch.h"
-
-#include <D2d1_1.h>
-#include <D3d11_4.h>
-#include <Dwrite.h>
-#include <Windows.Graphics.DirectX.Direct3D11.interop.h>
-#include <Windows.ui.composition.interop.h>
-#include <winrt/Windows.Foundation.h>
-#include <winrt/Windows.Graphics.DirectX.h>
-#include <winrt/Windows.Graphics.DirectX.Direct3D11.h>
-#include <winrt/Windows.UI.Composition.h>
 
 using namespace winrt;
 using namespace winrt::Windows::ApplicationModel::Core;
@@ -117,11 +125,11 @@ struct SampleText
         // own redrawing our pixels.
         m_deviceReplacedEventToken = m_compositionGraphicsDevice.RenderingDeviceReplaced(
             [this](CompositionGraphicsDevice const&, RenderingDeviceReplacedEventArgs const&)
-        {
-            // Draw the text again.
-            DrawText();
-            return S_OK;
-        });
+            {
+                // Draw the text again.
+                DrawText();
+                return S_OK;
+            });
     }
 
     ~SampleText()
@@ -312,7 +320,7 @@ struct SampleApp : implements<SampleApp, IFrameworkViewSource, IFrameworkView>
         return *this;
     }
 
-    void Initialize(CoreApplicationView const &)
+    void Initialize(CoreApplicationView const&)
     {
     }
 
@@ -527,7 +535,14 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 }
 ```
 
-```cpp
+## <a name="ccx-usage-example"></a>Exemple d’utilisation de C++/CX
+
+> [!NOTE]
+> Cet exemple de code existe pour vous aider à gérer votre application C++/CX. Toutefois, nous vous recommandons d’utiliser [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) pour les nouvelles applications. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d’en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne.
+
+L’exemple de code C++/CX ci-dessous omet les parties DirectWrite et Direct2D de l’exemple.
+
+```cppcx
 //------------------------------------------------------------------------------
 //
 // Copyright (C) Microsoft. All rights reserved.
