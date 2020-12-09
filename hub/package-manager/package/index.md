@@ -4,12 +4,12 @@ description: Vous pouvez utiliser le Gestionnaire de package Windows comme canal
 ms.date: 04/29/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9c9039154e2a576a691a01d64abcf8c9029c1c
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: b2bde5a55d22d0541724cd777c315b2751cf1d36
+ms.sourcegitcommit: 3153ef4838c35084a64173c7ed88719c8864f8cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334600"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755276"
 ---
 # <a name="submit-packages-to-windows-package-manager"></a>Envoyer des packages au Gestionnaire de package Windows
 
