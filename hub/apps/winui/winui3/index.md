@@ -3,12 +3,12 @@ title: WinUI 3 Preview 3 (novembre 2020)
 description: Vue d’ensemble de la version WinUI 3 Preview 3.
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: ac641036af8505b1e51fb81385f5206a9aa44f40
-ms.sourcegitcommit: 29c8999fb7a941fc6e26b49cf10f4cc1fcb69641
+ms.openlocfilehash: 69855aea647b608d9253e4f71b6d7d38917def61
+ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "95002914"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857420"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)
 
@@ -43,7 +43,7 @@ WinUI 3 Preview 3 inclut des modèles de projet Visual Studio qui vous permett
     Pour générer des applications C++, vous devez également inclure les charges de travail suivantes :
     - Développement Desktop en C++
     - Le composant facultatif *Outils de plateforme Windows universelle C++ (v142)* pour la charge de travail Plateforme Windows universelle (voir « Détails de l’installation » sous la section « Développement pour plateforme Windows universelle », dans le volet de droite)
-3. Assurez-vous que votre système a une source de package NuGet activée pour **nuget.org**. Pour plus d’informations, consultez [Configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior).[Windows Community Toolkit](#windows-community-toolkit)
+3. Assurez-vous que votre système a une source de package NuGet activée pour **nuget.org**. Pour plus d’informations, consultez [Configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior).
 
 4. Téléchargez et installez le [package VSIX WinUI 3 Preview 3](https://aka.ms/winui3/preview3-download). Ceci ajoute à la fois les modèles de projet WinUI 3 et le package NuGet contenant les bibliothèques WinUI 3 à Visual Studio 2019.
 
