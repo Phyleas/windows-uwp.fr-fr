@@ -6,12 +6,12 @@ ms.date: 3/30/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f205770f789e2530ac35317f35b545c18592b0c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e16446321ccb8dc2494f59feec88fbb0a52aed94
+ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174763"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857410"
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
@@ -35,7 +35,7 @@ Cet article explique comment s’inscrire à un compte de développeur Windows d
 5.  Entrez le **nom d’affichage** de l’éditeur que vous souhaitez utiliser (50 caractères au maximum). Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom. Pour les comptes d’entreprise, assurez-vous d’utiliser le nom commercial ou le nom commercial inscrit de votre organisation. Si vous entrez un nom que quelqu’un d’autre a déjà sélectionné, ou si quelqu’un d’autre a le droit d’utiliser ce nom, nous ne vous permettons pas de l’utiliser.
 
     > [!NOTE]
-    > Vérifiez que vous disposez des droits nécessaires pour utiliser le nom que vous entrez ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez [contrat pour développeurs d’applications](/legal/windows/agreements/app-developer-agreement) . Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).    
+    > Vérifiez que vous disposez des droits nécessaires pour utiliser le nom que vous entrez ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez [contrat pour développeurs d’applications](/legal/windows/agreements/app-developer-agreement) . Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).    
 
 6.  Entrez les coordonnées que vous souhaitez utiliser pour votre compte de développeur.
 
@@ -62,7 +62,7 @@ Une fois inscrit, votre compte passe par la vérification. Pour les comptes indi
 
 Si vous souhaitez permettre à plusieurs personnes d’accéder au compte d’entreprise en se connectant avec le compte Microsoft qui l’ouvrait (au lieu d’être des utilisateurs individuels ajoutés au compte), consultez les instructions suivantes :
 
--   Créez le compte Microsoft à l’aide d’une adresse de messagerie qui ne vous appartient pas déjà ou d’une autre personne, telle que MyCompany_PartnerCenter@outlook.com . N’utilisez pas d’adresse de messagerie dans le domaine de votre société, en particulier si votre entreprise utilise déjà Azure AD. Comme indiqué précédemment, vous pouvez ajouter des utilisateurs supplémentaires à partir du service Azure AD de votre entreprise ultérieurement.
+-   La propriété d’un e-mail vérifie que l’adresse du contact principal (adresse e-mail principale) est valide. L’adresse e-mail du contact principal doit être un compte professionnel qui est supervisé et qui peut envoyer/recevoir des e-mails. Les partenaires ne doivent **pas** utiliser : (1) une adresse de messagerie personnelle non associée au domaine de l’entreprise, ou (2) une connexion de l’utilisateur client n’est pas associée à la messagerie (par exemple, jsmith@testcompany.onmicrosoft.com ).
 -   Limitez l’accès à ce compte Microsoft au moins d’utilisateurs possible.
 -   Configurez une liste de distribution de courrier électronique d’entreprise qui inclut tous les utilisateurs qui ont besoin d’accéder au compte de développeur. Ajoutez cette adresse de messagerie aux [informations de sécurité associées au compte Microsoft](https://account.microsoft.com/security). Cette approche permet à tous les employés de la liste de recevoir les codes de sécurité qui sont envoyés à cet alias. Si la configuration d’une liste de distribution n’est pas possible, vous pouvez ajouter l’adresse de messagerie d’un individu à vos informations de sécurité. Toutefois, le propriétaire de cette adresse de messagerie est la seule personne qui peut accéder au code de sécurité et le partager lorsque vous y êtes invité (par exemple, lorsque de nouvelles informations de sécurité sont ajoutées au compte ou lorsque le compte est accessible à partir d’un nouvel appareil).
 -   Ajoutez un numéro de téléphone d’entreprise aux informations de sécurité de l’compte Microsoft. Essayez d’utiliser un nombre qui ne nécessite pas d’extension et qui est accessible aux membres de l’équipe clé.
