@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 107c85b7e2562edb9995a6bfd76e47904750536b
-ms.sourcegitcommit: a15bc17aa0640722d761d0d33f878cb2a822e8ed
+ms.openlocfilehash: ef6fad694dd45e80d462f6a0c5c73ac5539fe16a
+ms.sourcegitcommit: c063d0d130944558afa20181dd294ffe7a187a3f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96577091"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090683"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -96,9 +96,9 @@ Vous pouvez rencontrer les erreurs ou avertissements suivants dans un projet gé
 
 | Message d'erreur ou d’avertissement | Motif |
 |--------------------------|--------|
-| System.IO.FileLoadException | Cette erreur d’exécution se produit lors de l’appel d’API dans une bibliothèque qui n’expose pas de types SDK Windows. |
-| Avertissement MSB3277 : Détection de conflits entre les différentes versions de Microsoft.Windows.SDK.NET qui n’ont pas pu être résolus. | Cette erreur de build se produit lors du référencement d’une bibliothèque qui expose des types de SDK Windows sur sa surface d’API. |
-| [CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705) : L’assembly 'AssemblyName1' utilise 'TypeName' dont la version est supérieure à celle de l’assembly référencé 'AssemblyName2' | Cette erreur du compilateur de build se produit lors du référencement et de la consommation des types de SDK Windows exposés dans une bibliothèque. |
+| Avertissement MSB3277 : Détection de conflits entre les différentes versions de WinRT.Runtime ou Microsoft.Windows.SDK.NET qui n’ont pas pu être résolus. | Cet avertissement de build se produit lors du référencement d’une bibliothèque qui expose des types de SDK Windows sur sa surface d’API. |
+| [Erreur CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705): L’assembly 'AssemblyName1' utilise 'TypeName' dont la version est supérieure à celle de l’assembly référencé 'AssemblyName2' | Cette erreur du compilateur de build se produit lors du référencement et de la consommation des types de SDK Windows exposés dans une bibliothèque. |
+| System.IO.FileLoadException | Cette erreur d’exécution peut se produire lors de l’appel de certaines API dans une bibliothèque qui n’expose pas de types SDK Windows. |
 
 Pour corriger ces erreurs, mettez à jour votre kit SDK .NET avec la dernière version. Cette mise à jour permet de vous assurer que les versions d’assembly de SDK Windows et de runtime utilisées par votre application sont compatibles avec toutes les dépendances. Ces erreurs peuvent se produire avec des mises à jour de fonctionnalités ou de maintenance anticipées du kit SDK .NET 5, car les correctifs de runtime peuvent demander des mises à jour de vos versions d’assembly.
 
