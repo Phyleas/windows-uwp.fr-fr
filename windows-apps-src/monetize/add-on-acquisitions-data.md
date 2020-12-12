@@ -5,12 +5,12 @@ ms.date: 03/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, réseau de publicité, métadonnées d’application
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1349582515ce66232ea8266efc588610faae98
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 406519bb6a38c3f7c8225d81fbd6fd37611ed1e0
+ms.sourcegitcommit: 368753aea2792984857f6a57a22daed1035f1a33
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493564"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97349712"
 ---
 # <a name="get-add-on-acquisitions-data-for-your-games-and-apps"></a>Obtenir des données d’acquisitions d’extension pour vos applications et vos jeux 
 Utilisez cette méthode dans l’API Microsoft Store Analytics pour obtenir des données d’acquisition d’agrégats d’agrégats au format JSON pour les applications UWP et Xbox One qui ont été reçues par le biais du portail des développeurs Xbox (XDP) et disponibles dans le tableau de bord de l’espace partenaires de XDP Analytics. 
@@ -45,9 +45,7 @@ Le paramètre *ApplicationID* ou *addonProductId* est obligatoire. Pour récupé
 | addonProductId | string | *ProductID* du module complémentaire pour lequel vous souhaitez récupérer les données d’acquisition. | Oui |
 | startDate | Date | Dans la plage de dates, date de début de la récupération des données d’acquisition. La valeur par défaut est la date actuelle. | Non |
 | endDate | Date | Dans la plage de dates, date de fin de la récupération des données d’acquisition. La valeur par défaut est la date actuelle. | Non |
-| top | int | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. | Non |
-| skip | int | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. | Non |
-| Filter | string | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction contient un nom de champ du corps de la réponse et une valeur qui sont associés aux opérateurs EQ ou ne, et les instructions peuvent être combinées à l’aide de and ou de ou de. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre filter. Par exemple, filtre = l’égalisation du marché « États-Unis » et « EQ de sexe ». <br/> Vous pouvez spécifier les champs suivants dans le corps de la réponse : <ul><li>**acquisitionType**</li><li>**vieillissement**</li><li>**storeClient**</li><li>**gender**</li><li>**négoci**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | Non |
+| filter | string | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction contient un nom de champ du corps de la réponse et une valeur qui sont associés aux opérateurs EQ ou ne, et les instructions peuvent être combinées à l’aide de and ou de ou de. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre filter. Par exemple, filtre = l’égalisation du marché « États-Unis » et « EQ de sexe ». <br/> Vous pouvez spécifier les champs suivants dans le corps de la réponse : <ul><li>**acquisitionType**</li><li>**vieillissement**</li><li>**storeClient**</li><li>**gender**</li><li>**négoci**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | Non |
 | aggregationLevel | string | Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : **day**, **week** ou **month**. Par défaut, la valeur est **day**. | Non |
 | orderby | string | Instruction qui commande les valeurs de données de résultats pour chaque acquisition d’extension. La syntaxe est *orderby = Field [Order], champ [Order],...* Le paramètre *Field* peut être l’une des chaînes suivantes : <ul><li>**date**</li><li>**acquisitionType**</li><li>**vieillissement**</li><li>**storeClient**</li><li>**gender**</li><li>**négoci**</li><li>**osVersion**</li><li>**deviceType**</li><li>**orderName**</li></ul> Le paramètre order, facultatif, peut comporter les valeurs **asc** ou **desc** afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est **ASC**. <br/> Voici un exemple de chaîne *orderby* : *orderby = date, Market* | Non |
 | groupby | string | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants : <ul><li>**date**</li><li>**applicationName**</li><li>**addonProductName**</li> <li>**acquisitionType**</li><li>**vieillissement**</li> <li>**storeClient**</li><li>**gender**</li> <li>**négoci**</li> <li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre *groupby*, ainsi que dans les paramètres suivants : <ul><li>**date**</li><li>**applicationId**</li><li>**addonProductId**</li><li>**acquisitionQuantity**</li></ul> Le paramètre groupby peut être utilisé avec le paramètre *aggregationLevel*. Par exemple : *&GroupBy = Age, market&aggregationLevel = week* | Non |
@@ -74,7 +72,6 @@ Authorization: Bearer <your access token>
 | Valeur | Type | Description |
 | --- | --- | --- |
 | Valeur | tableau | Tableau d’objets contenant des données d’acquisition agrégées d’extensions. Pour plus d’informations sur les données incluses dans chaque objet, voir [Valeurs d’acquisition d’extensions](#add-on-acquisition-values) ci-dessous. |
-| @nextLink | string | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête a la valeur 10000, mais qu’il existe plus de 10 000 lignes de données d’acquisition d’extensions pour la demande. |
 | TotalCount | int | Nombre total de lignes dans les résultats de la requête. |
 
 ### <a name="add-on-acquisition-values"></a>Valeurs d’acquisition d’extensions
