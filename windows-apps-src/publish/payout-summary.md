@@ -6,18 +6,18 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10, UWP, Résumé du paiement, relevé, paiements, bénéfices, versements, paiement, frais
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d83031702a642fa21a711edfdbaff69661c853
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 996f77db55d959fb1e328e4e722166cc466a8dbd
+ms.sourcegitcommit: d5ad11e2289d1d04319405a78dd02aaacf866e3a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035022"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390357"
 ---
 # <a name="payout-reports"></a>Rapports de revenu
 
 Le **Résumé du paiement** vous donne des détails sur l’argent que vous avez obtenu auprès de Microsoft. Elle vous permet également de savoir quand vous recevrez des paiements et le montant que vous allez percevoir.
 
-Si vous vendez des produits dans la place de marché Azure, vous verrez également des informations sur les versements réussis dans le **Résumé du paiement** . Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](/legal/marketplace/participation-policy) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
+Si vous vendez des produits dans la place de marché Azure, vous verrez également des informations sur les versements réussis dans le **Résumé du paiement**. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](/legal/marketplace/participation-policy) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
 
 > [!NOTE]
 > Pour être éligible au paiement, votre produit doit atteindre le [seuil de paiement](payment-thresholds-methods-and-timeframes.md) de 50 $. Pour plus d’informations sur le seuil de paiement, consultez cette page et examinez le contrat du développeur de l’application.
@@ -34,9 +34,9 @@ Pour ouvrir l’une des pages de synthèse des revenus :
 
 ## <a name="transaction-history-page"></a>Page Historique des transactions
 
-Cette page affiche tous vos bénéfices individuels avec pour chacun la date, le type et le montant. Vous pouvez afficher ces informations pour une période déterminée, mais aussi filtrer par ID d’inscription, Programme, ID de paiement, Type de bénéfice, Levier et Statut. Les données sont disponibles pour l’exercice actuel (du 1er juillet au 30 juin) et les deux exercices précédents.
+Cette page affiche tous vos bénéfices individuels avec, pour chacun, la date, le type et le montant. Vous pouvez sélectionner une période à afficher, et vous pouvez également filtrer par ID d’inscription, programme, ID de paiement, type de gain, levier, mois de paiement estimé, ajustement et état. Les données sont disponibles pour l’exercice actuel (du 1er juillet au 30 juin) et les deux exercices précédents.
 
-Pour afficher plus de détails sur un bénéfice, sélectionnez la flèche vers le bas située dans la partie droite de la page. Vous obtenez alors le levier, le montant de chiffre d’affaires et le produit. Si, pour une raison quelconque, ces données ne sont pas disponibles, mais que vous avez besoin d’y accéder, contactez le [support technique](https://developer.microsoft.com/windows/support). Si le résultat est le résultat d’un ajustement et non d’une transaction, les champs de produit ne sont pas affichés.
+Pour afficher plus de détails sur un bénéfice, sélectionnez la flèche vers le bas située dans la partie droite de la page. Le levier, le montant du revenu, le mois de paiement estimé et le produit s’affichent. Si, pour une raison quelconque, ces données ne sont pas disponibles, mais que vous avez besoin d’y accéder, contactez le [support technique](https://developer.microsoft.com/windows/support). Si le résultat est le résultat d’un ajustement et non d’une transaction, les champs de produit ne sont pas affichés. La raison de l’ajustement ne s’affiche pas, sauf si un ajustement est nécessaire et si le filtre d’ajustement est sélectionné.
 
 Pour exporter les données de transaction sur cette page, sélectionnez Exporter, puis suivez les instructions de la page exporter des données. Les fichiers exportés à partir de la page historique des transactions affichent les données dans la devise de la transaction, les bénéfices dans la devise de la transaction et le dollar des États-Unis, et la valeur payée dans paiement à la devise
 
@@ -225,5 +225,5 @@ L’historique des transactions antérieures au 1er juillet 2019 est traité sé
 | Devise de paiement        | Devise dans laquelle votre paiement a été effectué.                                                                                                                                       |
 | Paiement converti       | Montant du paiement converti en devise du paiement à l’aide du taux de change.                                                                                                         |
 | Modèle de paiement des taxes         | Tiers responsable du versement des taxes (ventes, consommation, ou TVA/GST).                                                                                                   |
-| Date et heure d’éligibilité   | Date et heure auxquelles le produit de la transaction devient éligible au paiement (UTC). Lorsqu’un paiement est créé, il inclut les revenus de transactions dont la date et l’heure d’admissibilité sont antérieures à la date de création du paiement. (Inclus uniquement dans le fichier .csv **Réservé** ) |
-| Charges                 | Ventilation détaillée de tous les frais agrégés dans la colonne Montant de transaction. (Uniquement pour Microsoft Azure Marketplace ; non inclus dans le fichier .csv **Réservé** ) |
+| Date et heure d’éligibilité   | Date et heure auxquelles le produit de la transaction devient éligible au paiement (UTC). Lorsqu’un paiement est créé, il inclut les revenus de transactions dont la date et l’heure d’admissibilité sont antérieures à la date de création du paiement. (Inclus uniquement dans le fichier .csv **Réservé**) |
+| Charges                 | Ventilation détaillée de tous les frais agrégés dans la colonne Montant de transaction. (Uniquement pour Microsoft Azure Marketplace ; non inclus dans le fichier .csv **Réservé**) |
