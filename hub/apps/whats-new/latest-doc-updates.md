@@ -2,44 +2,41 @@
 description: Découvrez les derniers ajouts apportés aux documents des développeurs Windows.
 title: Dernières mises à jour des documents des développeurs Windows
 ms.topic: article
-ms.date: 11/05/2020
+ms.date: 12/8/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: a4d05e92399fa0246add4751323439303647d531
-ms.sourcegitcommit: 98888dede3c59ee12c64ab0521a85b5fa60cb771
+ms.openlocfilehash: 4c4e37cfa65a3fa28bf97f68ba6927584c7ed81e
+ms.sourcegitcommit: 7142248655ed1f34c20c3fe156ba047f58a5acd5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93765582"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912504"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Dernières mises à jour des documents des développeurs Windows
 
-Les documents des développeurs Windows sont régulièrement mis à jour avec des informations et du contenu nouveaux et améliorés. Voici un récapitulatif des changements au 5 novembre 2020.
+Les documents des développeurs Windows sont régulièrement mis à jour avec des informations et du contenu nouveaux et améliorés. Voici un récapitulatif des changements au 8 décembre 2020.
 
 Remarque : Pour obtenir la liste spécifique des API ajoutées à Windows 10 build 19041 (ou 2004), consultez [cette liste](/windows/uwp/whats-new/windows-10-build-19041-api-diff).
 
 
-## <a name="news"></a>Actualités
-
-Ce mois-ci, nous avons converti un autre lot de liens absolus en liens relatifs afin d’accélérer la navigation et d’améliorer l’expérience de lecture hors connexion. N’hésitez pas à nous contacter si vous trouvez des liens rompus. Vous pouvez nous envoyer vos commentaires directement via la plupart de nos pages, ou nous contacter via notre nom d’utilisateur Twitter [@WindowsDocs](https://www.twitter.com/windowsdocs).
 
 Voici les principales nouveautés de mois-ci :
 
+### <a name="new-videos"></a>Nouvelles vidéos
+
+* [Tabs vs. Spaces - Épisode 6](https://www.youtube.com/watch?v=XkLjxr9iQ-8)
 
 ### <a name="new-topics"></a>Nouvelles rubriques
 
-* [API de console classiques et séquences de terminaux virtuels](https://docs.microsoft.com/windows/console/classic-vs-vt)
-* [Feuille de route de l’écosystème de la console et du terminal Windows](https://docs.microsoft.com/windows/console/ecosystem-roadmap)
-* [Ensembles d’API Windows](https://docs.microsoft.com/windows/win32/apiindex/windows-apisets)
-* [Opération du chargeur de l’ensemble d’API](https://docs.microsoft.com/windows/win32/apiindex/api-set-loader-operation)
-* [Détecter la disponibilité des ensembles d’API](https://docs.microsoft.com/windows/win32/apiindex/detect-api-set-availability)
-* [Bibliothèques parapluies Windows](https://docs.microsoft.com/windows/win32/apiindex/windows-umbrella-libraries)
+* [WinUI 3 Preview 3](https://docs.microsoft.com/windows/apps/winui/winui3/)
+* [Notes de publication de WinUI 2.5](https://docs.microsoft.com/windows/apps/winui/winui2/release-notes/winui-2.5)
+* [Icônes Segoe MDL2 Assets](https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font)
+
+* [Objets agiles en C#/WinRT](https://docs.microsoft.com/windows/uwp/csharp-winrt/agile-objects)
 
 
-### <a name="new-and-updated-samples"></a>Nouveaux exemples et exemples mis à jour
 
-* [Procédure pas à pas : Générer une projection .NET 5 à partir d’un composant C++/WinRT et distribuer le NuGet](https://docs.microsoft.com/windows/uwp/csharp-winrt/net-projection-from-cppwinrt-component)
 
 
 ### <a name="other-content-of-interest"></a>Autre contenu intéressant
@@ -47,401 +44,272 @@ Voici les principales nouveautés de mois-ci :
 * [Azure Communication Services](https://docs.microsoft.com/azure/communication-services/overview)
 * [Démarrage rapide : Python avec Azure App Configuration](https://docs.microsoft.com/azure/azure-app-configuration/quickstart-python)
 
-### <a name="deprecated-content"></a>Contenu déprécié
-
-* [BarcodeScanner.GetSupportedProfiles](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedprofiles?view=winrt-19041)
 
 ### <a name="updated-documentation"></a>Documentation mise à jour
 
-* [Documentation sur la console](https://github.com/MicrosoftDocs/Console-Docs)
-* [Contenu conceptuel MIDL 3.0](https://docs.microsoft.com/uwp/midl-3/intro#parameters)
-* [Vue d’ensemble : Bien démarrer avec Docker](https://docs.microsoft.com/windows/dev-environment/docker/overview)
-* [Bien démarrer avec le montage d’un disque Linux dans WSL 2](https://docs.microsoft.com/windows/wsl/wsl2-mount-disk)
+* [Contenu DirectML](https://docs.microsoft.com/windows/win32/direct3d12/dml-version-history)
 
-Les rubriques de référence suivantes sur les API ont été largement mises à jour le mois dernier :
+Les rubriques de référence suivantes ont été largement mises à jour au cours du mois dernier :
 
-### <a name="win32-api-reference"></a>Informations de référence sur les API Win32
-<ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-createmappedbitmap">CreateMappedBitmap, fonction (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-createtoolbarex">CreateToolbarEx, fonction (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-getwindowsubclass">GetWindowSubclass, fonction (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-imagelist_addmasked">ImageList_AddMasked, fonction (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-imagelist_create">ImageList_Create, fonction (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-imagelist_draw">ImageList_Draw, fonction (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-imagelist_replaceicon">ImageList_ReplaceIcon, fonction (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-imagelist_setoverlayimage">ImageList_SetOverlayImage, fonction (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror">CommDlgExtendedError, fonction (commdlg.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commdlg/nf-commdlg-findtexta">FindTextA, fonction (commdlg.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commdlg/nf-commdlg-findtextw">FindTextW, fonction (commdlg.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commdlg/nf-commdlg-getopenfilenamea">GetOpenFileNameA, fonction (commdlg.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commdlg/nf-commdlg-getopenfilenamew">GetOpenFileNameW, fonction (commdlg.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commdlg/nf-commdlg-getsavefilenamea">GetSaveFileNameA, fonction (commdlg.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commdlg/nf-commdlg-getsavefilenamew">GetSaveFileNameW, fonction (commdlg.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dde/nf-dde-unpackddelparam">UnpackDDElParam, fonction (dde.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_clone">DPA_Clone, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_createex">DPA_CreateEx, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_destroycallback">DPA_DestroyCallback, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_enumcallback">DPA_EnumCallback, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_getptr">DPA_GetPtr, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_getptrindex">DPA_GetPtrIndex, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_grow">DPA_Grow, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_insertptr">DPA_InsertPtr, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_search">DPA_Search, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_setptr">DPA_SetPtr, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dpa_sort">DPA_Sort, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dsa_create">DSA_Create, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dsa_deleteitem">DSA_DeleteItem, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dsa_destroycallback">DSA_DestroyCallback, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dsa_enumcallback">DSA_EnumCallback, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dsa_getitem">DSA_GetItem, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dsa_getitemptr">DSA_GetItemPtr, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dsa_insertitem">DSA_InsertItem, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dpa_dsa/nf-dpa_dsa-dsa_setitem">DSA_SetItem, fonction (dpa_dsa.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-bindmoniker">BindMoniker, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-codosdatetimetofiletime">CoDosDateTimeToFileTime, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-cofiletimetodosdatetime">CoFileTimeToDosDateTime, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-cofreealllibraries">CoFreeAllLibraries, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-cofreelibrary">CoFreeLibrary, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-coinitialize">CoInitialize, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-coloadlibrary">CoLoadLibrary, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-createantimoniker">CreateAntiMoniker, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-createdataadviseholder">CreateDataAdviseHolder, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-createdatacache">CreateDataCache, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-createobjrefmoniker">CreateObjrefMoniker, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-createpointermoniker">CreatePointerMoniker, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/objbase/nf-objbase-getrunningobjecttable">GetRunningObjectTable, fonction (objbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole/nf-ole-oledraw">OleDraw, fonction (ole.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole/nf-ole-oleloadfromstream">OleLoadFromStream, fonction (ole.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole/nf-ole-olesavetostream">OleSaveToStream, fonction (ole.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-createdataadviseholder">CreateDataAdviseHolder, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-createoleadviseholder">CreateOleAdviseHolder, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olecreateembeddinghelper">OleCreateEmbeddingHelper, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olecreatefromdata">OleCreateFromData, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olecreatemenudescriptor">OleCreateMenuDescriptor, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olegetautoconvert">OleGetAutoConvert, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olegetclipboard">OleGetClipboard, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olegeticonofclass">OleGetIconOfClass, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-oleinitialize">OleInitialize, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-oleiscurrentclipboard">OleIsCurrentClipboard, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olequerycreatefromdata">OleQueryCreateFromData, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-oleregenumverbs">OleRegEnumVerbs, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olesavetostream">OleSaveToStream, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olesetmenudescriptor">OleSetMenuDescriptor, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-oleuninitialize">OleUninitialize, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-writefmtusertypestg">WriteFmtUserTypeStg, fonction (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/prsht/nf-prsht-createpropertysheetpagea">CreatePropertySheetPageA, fonction (prsht.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/prsht/nf-prsht-createpropertysheetpagew">CreatePropertySheetPageW, fonction (prsht.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/prsht/nf-prsht-propertysheeta">PropertySheetA, fonction (prsht.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/prsht/nf-prsht-propertysheetw">PropertySheetW, fonction (prsht.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupcloseinffile">SetupCloseInfFile, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupdigetdevicepropertyw">SetupDiGetDevicePropertyW, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupdiopendeviceinfow">SetupDiOpenDeviceInfoW, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupfindnextline">SetupFindNextLine, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupgetfieldcount">SetupGetFieldCount, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupgetlinecounta">SetupGetLineCountA, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupgetlinecountw">SetupGetLineCountW, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupgetlinetexta">SetupGetLineTextA, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupgetlinetextw">SetupGetLineTextW, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupgetstringfielda">SetupGetStringFieldA, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupgetstringfieldw">SetupGetStringFieldW, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupgetthreadlogtoken">SetupGetThreadLogToken, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupiteratecabineta">SetupIterateCabinetA, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupiteratecabinetw">SetupIterateCabinetW, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setuplogerrora">SetupLogErrorA, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setuplogerrorw">SetupLogErrorW, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupopeninffilea">SetupOpenInfFileA, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupopenlog">SetupOpenLog, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupverifyinffilea">SetupVerifyInfFileA, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupverifyinffilew">SetupVerifyInfFileW, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-setupwritetextlog">SetupWriteTextLog, fonction (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/nf-shellapi-assoccreateforclasses">AssocCreateForClasses, fonction (shellapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/nf-shellapi-duplicateicon">DuplicateIcon, fonction (shellapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/nf-shellapi-extracticonexa">ExtractIconExA, fonction (shellapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/nf-shellapi-extracticonexw">ExtractIconExW, fonction (shellapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/nf-shellapi-shell_notifyiconw">Shell_NotifyIconW, fonction (shellapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/nf-shellapi-shgetimagelist">SHGetImageList, fonction (shellapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/nf-shellapi-shgetstockiconinfo">SHGetStockIconInfo, fonction (shellapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/nf-shellapi-shsetlocalizedname">SHSetLocalizedName, fonction (shellapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-dad_autoscroll">DAD_AutoScroll, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-dad_dragenterex2">DAD_DragEnterEx2, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-dad_setdragimage">DAD_SetDragImage, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-ilcreatefrompath">ILCreateFromPath, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-ilcreatefrompatha">ILCreateFromPathA, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-ilcreatefrompathw">ILCreateFromPathW, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-ilsavetostream">ILSaveToStream, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-pickicondlg">PickIconDlg, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-restartdialog">RestartDialog, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shaddtorecentdocs">SHAddToRecentDocs, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shchangenotify">SHChangeNotify, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shcreateshellitem">SHCreateShellItem, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shdodragdrop">SHDoDragDrop, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shell_getimagelists">Shell_GetImageLists, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shgetrealidl">SHGetRealIDL, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shgetsetsettings">SHGetSetSettings, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shilcreatefrompath">SHILCreateFromPath, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shlimitinputedit">SHLimitInputEdit, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shopenwithdialog">SHOpenWithDialog, fonction (shlobj_core.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-backupeventloga">BackupEventLogA, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-backupeventlogw">BackupEventLogW, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-cleareventloga">ClearEventLogA, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-cleareventlogw">ClearEventLogW, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-closeeventlog">CloseEventLog, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-deleteumsthreadcontext">DeleteUmsThreadContext, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-encryptfilea">EncryptFileA, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-encryptfilew">EncryptFileW, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-enterumsschedulingmode">EnterUmsSchedulingMode, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-getcurrenthwprofilea">GetCurrentHwProfileA, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-getcurrenthwprofilew">GetCurrentHwProfileW, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-getnumberofeventlogrecords">GetNumberOfEventLogRecords, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-getumscompletionlistevent">GetUmsCompletionListEvent, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-openbackupeventloga">OpenBackupEventLogA, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-openbackupeventlogw">OpenBackupEventLogW, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-queryumsthreadinformation">QueryUmsThreadInformation, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-readencryptedfileraw">ReadEncryptedFileRaw, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-readeventloga">ReadEventLogA, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-readeventlogw">ReadEventLogW, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-umsthreadyield">UmsThreadYield, fonction (winbase.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winnls/nf-winnls-notifyuilanguagechange">NotifyUILanguageChange, fonction (winnls.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winperf/nc-winperf-pm_collect_proc">PM_COLLECT_PROC (winperf.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winsafer/nf-winsafer-safercreatelevel">SaferCreateLevel, fonction (winsafer.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winsafer/nf-winsafer-safergetlevelinformation">SaferGetLevelInformation, fonction (winsafer.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winsafer/nf-winsafer-safergetpolicyinformation">SaferGetPolicyInformation, fonction (winsafer.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winsafer/nf-winsafer-saferidentifylevel">SaferIdentifyLevel, fonction (winsafer.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winsafer/nf-winsafer-saferrecordeventlogentry">SaferRecordEventLogEntry, fonction (winsafer.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winsafer/nf-winsafer-safersetlevelinformation">SaferSetLevelInformation, fonction (winsafer.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winsafer/nf-winsafer-safersetpolicyinformation">SaferSetPolicyInformation, fonction (winsafer.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-addclipboardformatlistener">AddClipboardFormatListener, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-adjustwindowrectex">AdjustWindowRectEx, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-animatewindow">AnimateWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-appendmenua">AppendMenuA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-appendmenuw">AppendMenuW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-attachthreadinput">AttachThreadInput, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-bringwindowtotop">BringWindowToTop, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-callmsgfiltera">CallMsgFilterA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-callmsgfilterw">CallMsgFilterW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-changedisplaysettingsa">ChangeDisplaySettingsA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-changedisplaysettingsw">ChangeDisplaySettingsW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-changewindowmessagefilterex">ChangeWindowMessageFilterEx, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-checkdlgbutton">CheckDlgButton, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-checkmenuitem">CheckMenuItem, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-checkmenuradioitem">CheckMenuRadioItem, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-childwindowfrompoint">ChildWindowFromPoint, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-childwindowfrompointex">ChildWindowFromPointEx, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-closedesktop">CloseDesktop, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-closewindowstation">CloseWindowStation, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-createcaret">CreateCaret, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-createdesktopa">CreateDesktopA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-createdesktopw">CreateDesktopW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-createdialogindirectparama">CreateDialogIndirectParamA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-createdialogindirectparamw">CreateDialogIndirectParamW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-createiconindirect">CreateIconIndirect, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-defrawinputproc">DefRawInputProc, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-defwindowproca">DefWindowProcA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-defwindowprocw">DefWindowProcW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-deletemenu">DeleteMenu, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-destroycaret">DestroyCaret, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-destroywindow">DestroyWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-dialogboxindirectparama">DialogBoxIndirectParamA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-dialogboxindirectparamw">DialogBoxIndirectParamW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-dispatchmessage">DispatchMessage, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-dispatchmessagea">DispatchMessageA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-dispatchmessagew">DispatchMessageW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-drawedge">DrawEdge, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-drawicon">DrawIcon, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-drawiconex">DrawIconEx, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-drawtexta">DrawTextA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-drawtextexa">DrawTextExA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-drawtextexw">DrawTextExW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-drawtextw">DrawTextW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-enablemenuitem">EnableMenuItem, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-enablescrollbar">EnableScrollBar, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-endmenu">EndMenu, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-endpaint">EndPaint, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-enumdisplaydevicesa">EnumDisplayDevicesA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-enumdisplaydevicesw">EnumDisplayDevicesW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-fillrect">FillRect, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-findwindowa">FindWindowA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-findwindoww">FindWindowW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-flashwindowex">FlashWindowEx, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getancestor">GetAncestor, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getcapture">GetCapture, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getcaretblinktime">GetCaretBlinkTime, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclassinfoa">GetClassInfoA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclassinfoexa">GetClassInfoExA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclassinfoexw">GetClassInfoExW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclassinfow">GetClassInfoW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclasslongptra">GetClassLongPtrA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclasslongptrw">GetClassLongPtrW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclassname">GetClassName, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclassnamea">GetClassNameA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclassnamew">GetClassNameW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclassword">GetClassWord, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclipboardformatnamea">GetClipboardFormatNameA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclipboardformatnamew">GetClipboardFormatNameW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getclipboardviewer">GetClipboardViewer, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getcursorpos">GetCursorPos, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getdesktopwindow">GetDesktopWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getdlgitemint">GetDlgItemInt, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getdlgitemtexta">GetDlgItemTextA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getdlgitemtextw">GetDlgItemTextW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getdoubleclicktime">GetDoubleClickTime, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getfocus">GetFocus, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getforegroundwindow">GetForegroundWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getkeyboardstate">GetKeyboardState, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getlastactivepopup">GetLastActivePopup, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmenudefaultitem">GetMenuDefaultItem, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmenuinfo">GetMenuInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmenuitemcount">GetMenuItemCount, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmenuitemid">GetMenuItemID, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmenuiteminfoa">GetMenuItemInfoA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmenuiteminfow">GetMenuItemInfoW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmenustate">GetMenuState, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmessageextrainfo">GetMessageExtraInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getmessagetime">GetMessageTime, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getparent">GetParent, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getpointerdevices">GetPointerDevices, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getpointerframeinfohistory">GetPointerFrameInfoHistory, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getpointerframetouchinfo">GetPointerFrameTouchInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getpointertype">GetPointerType, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getprocessdefaultlayout">GetProcessDefaultLayout, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getrawinputdevicelist">GetRawInputDeviceList, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getscrollbarinfo">GetScrollBarInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getscrollinfo">GetScrollInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getshellwindow">GetShellWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getsubmenu">GetSubMenu, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getsystemmetrics">GetSystemMetrics, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getsystemmetricsfordpi">GetSystemMetricsForDpi, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-gettitlebarinfo">GetTitleBarInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-gettopwindow">GetTopWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-gettouchinputinfo">GetTouchInputInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getwindow">GetWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getwindowtexta">GetWindowTextA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getwindowtextlengtha">GetWindowTextLengthA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getwindowtextlengthw">GetWindowTextLengthW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getwindowtextw">GetWindowTextW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-getwindowthreadprocessid">GetWindowThreadProcessId, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-initializetouchinjection">InitializeTouchInjection, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-injecttouchinput">InjectTouchInput, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-insendmessage">InSendMessage, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-insertmenua">InsertMenuA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-insertmenuitema">InsertMenuItemA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-insertmenuitemw">InsertMenuItemW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-insertmenuw">InsertMenuW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-invalidaterect">InvalidateRect, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-invertrect">InvertRect, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-isclipboardformatavailable">IsClipboardFormatAvailable, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-isdialogmessagea">IsDialogMessageA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-isdialogmessagew">IsDialogMessageW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-isdlgbuttonchecked">IsDlgButtonChecked, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-ishungappwindow">IsHungAppWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-isiconic">IsIconic, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-ismenu">IsMenu, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-iswindowunicode">IsWindowUnicode, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-iswineventhookinstalled">IsWinEventHookInstalled, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-iszoomed">IsZoomed, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-loadicona">LoadIconA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-loadiconw">LoadIconW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-loadimagea">LoadImageA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-locksetforegroundwindow">LockSetForegroundWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-lockworkstation">LockWorkStation, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-logicaltophysicalpoint">LogicalToPhysicalPoint, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-mapwindowpoints">MapWindowPoints, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messagebeep">MessageBeep, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messagebox">MessageBox, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messageboxa">Fonction MessageBoxA (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messageboxindirecta">MessageBoxIndirectA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messageboxindirectw">MessageBoxIndirectW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messageboxw">Fonction MessageBoxW (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-modifymenua">ModifyMenuA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-modifymenuw">ModifyMenuW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-monitorfrompoint">MonitorFromPoint, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-monitorfromrect">MonitorFromRect, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-monitorfromwindow">MonitorFromWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-oemtocharbuffa">OemToCharBuffA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-oemtocharbuffw">OemToCharBuffW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-openinputdesktop">OpenInputDesktop, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-peekmessagea">PeekMessageA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-peekmessagew">PeekMessageW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-physicaltologicalpoint">PhysicalToLogicalPoint, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-postmessagea">PostMessageA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-postmessagew">PostMessageW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-privateextracticonsa">PrivateExtractIconsA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-privateextracticonsw">PrivateExtractIconsW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-querydisplayconfig">QueryDisplayConfig, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-realgetwindowclassw">RealGetWindowClassW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-redrawwindow">RedrawWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-registerclipboardformata">RegisterClipboardFormatA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-registerclipboardformatw">RegisterClipboardFormatW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-registerdevicenotificationa">RegisterDeviceNotificationA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-registerdevicenotificationw">RegisterDeviceNotificationW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-removemenu">RemoveMenu, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-removepropa">RemovePropA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-removepropw">RemovePropW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-scrolldc">ScrollDC, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-scrollwindow">ScrollWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-scrollwindowex">ScrollWindowEx, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-senddlgitemmessagea">SendDlgItemMessageA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-senddlgitemmessagew">SendDlgItemMessageW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-sendmessagetimeouta">SendMessageTimeoutA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-sendmessagetimeoutw">SendMessageTimeoutW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setcaretblinktime">SetCaretBlinkTime, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setclipboarddata">SetClipboardData, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setcoalescabletimer">SetCoalescableTimer, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setcursorpos">SetCursorPos, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setdlgitemtexta">SetDlgItemTextA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setdlgitemtextw">SetDlgItemTextW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setdoubleclicktime">SetDoubleClickTime, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setfocus">SetFocus, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setforegroundwindow">SetForegroundWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setlayeredwindowattributes">SetLayeredWindowAttributes, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setmenuinfo">SetMenuInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setmenuiteminfoa">SetMenuItemInfoA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setmenuiteminfow">SetMenuItemInfoW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setmessageextrainfo">SetMessageExtraInfo, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setparent">SetParent, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setprocesswindowstation">SetProcessWindowStation, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setpropa">SetPropA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setpropw">SetPropW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowdisplayaffinity">SetWindowDisplayAffinity, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowlonga">SetWindowLongA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowlongptra">SetWindowLongPtrA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowlongptrw">SetWindowLongPtrW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowlongw">SetWindowLongW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowpos">SetWindowPos, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowshookexa">SetWindowsHookExA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowshookexw">SetWindowsHookExW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowtexta">SetWindowTextA, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-setwindowtextw">SetWindowTextW, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-showscrollbar">ShowScrollBar, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-showwindow">ShowWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-showwindowasync">ShowWindowAsync, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-shutdownblockreasoncreate">ShutdownBlockReasonCreate, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-shutdownblockreasondestroy">ShutdownBlockReasonDestroy, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-systemparametersinfoa">Fonction SystemParametersInfoA (winuser.h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-systemparametersinfow">Fonction SystemParametersInfoW (winuser.h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-trackmouseevent">TrackMouseEvent, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-updatelayeredwindow">UpdateLayeredWindow, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-waitforinputidle">WaitForInputIdle, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-waitmessage">WaitMessage, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-windowfromdc">WindowFromDC, fonction (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wtsapi32/nf-wtsapi32-wtsdisconnectsession">WTSDisconnectSession, fonction (wtsapi32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wtsapi32/nf-wtsapi32-wtsfreememory">WTSFreeMemory, fonction (wtsapi32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wtsapi32/nf-wtsapi32-wtsfreememoryexa">WTSFreeMemoryExA, fonction (wtsapi32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wtsapi32/nf-wtsapi32-wtsfreememoryexw">WTSFreeMemoryExW, fonction (wtsapi32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wtsapi32/nf-wtsapi32-wtslogoffsession">WTSLogoffSession, fonction (wtsapi32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wtsapi32/nf-wtsapi32-wtsvirtualchannelopenex">WTSVirtualChannelOpenEx, fonction (wtsapi32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wtsapi32/nf-wtsapi32-wtsvirtualchannelquery">WTSVirtualChannelQuery, fonction (wtsapi32.h) </a></li>
-</ul>
-
-### <a name="uwp-api-reference"></a>Référence de l’API UWP
+## <a name="winrt-conceptual"></a>Aide conceptuelle de WinRT
 
 <ul>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothcachemode">Windows.Devices.Bluetooth.BluetoothCacheMode</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.fromidasync">Windows.Devices.Bluetooth.BluetoothLEDevice.FromIdAsync(System.String)</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.gattserviceschanged">Windows.Devices.Bluetooth.BluetoothLEDevice.GattServicesChanged</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.namechanged">Windows.Devices.Bluetooth.BluetoothLEDevice.NameChanged</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.patterninterface">Windows.UI.Xaml.Automation.Peers.PatternInterface</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.candragitems">Windows.UI.Xaml.Controls.ListViewBase.CanDragItems</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/audio-video-camera/playready-client-sdk">Gestion des droits numériques PlayReady</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/composition-native-interop">Interopération native de la composition</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types">Types de données C++ standard et C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/agile-objects">Objets agiles avec C#/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop">Portail d’appareil pour Windows Desktop</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/loose-file-registration">Déployer une application par le biais de l’inscription de fichiers libres</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro">Introduction à la conception d’applications Windows</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/infobar">InfoBar</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">Affichage de navigation</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls">Recommandations en matière de contrôles de progression</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/ink-walkthrough">Entrée manuscrite prise en charge dans votre application Windows</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/keyboard-accelerators">Raccourcis clavier</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/radialcontroller-walkthrough">Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application Windows</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/grid-tutorial">Utilisez Grid et StackPanel pour créer une application simple.</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema">Schéma du contenu de notification toast</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font">Icônes Segoe MDL2 Assets</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/host-card-emulation">Créer une application de carte à puce NFC</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/devices-sensors/use-the-compass">Utiliser le compas</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/enterprise/index">Entreprise</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/e2e">Guide de développement de jeux Windows 10</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp">Créer une application Hello World en C++/CX (Windows 10)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Créer des applications avec la plateforme Windows universelle</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Cycle de vie d’une application UWP Windows 10</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/guidelines-for-background-tasks">Recommandations relatives aux tâches en arrière-plan</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/web-to-app-linking">Activer les applications pour les sites web à l’aide de gestionnaires d’URI d’application</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing">Exécuter des expériences d’application avec des tests A/B</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations">Déclarations des fonctionnalités d’application</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation">Activation du Mode développeur Xbox One</a></li>
 </ul>
 
+## <a name="win32-conceptual"></a>Aide conceptuelle de Win32
+
+<ul>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/win32-tslicensekeypack">Classe Win32_TSLicenseKeyPack</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-directml-constants">Constantes DirectML</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ne-directml-dml_axis_direction">DML_AXIS_DIRECTION</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ne-directml-dml_depth_space_order">DML_DEPTH_SPACE_ORDER</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ne-directml-dml_graph_edge_type">DML_GRAPH_EDGE_TYPE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ne-directml-dml_graph_node_type">DML_GRAPH_NODE_TYPE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/nf-directml-dmlcreatedevice1">Fonction DMLCreateDevice1</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/nn-directml-idmldevice1">IDMLDevice1</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_graph_desc">DML_GRAPH_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_graph_edge_desc">DML_GRAPH_EDGE_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_graph_node_desc">DML_GRAPH_NODE_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_scalar_union">DML_SCALAR_UNION</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/queries">Requêtes</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">Syntaxe des variables</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/dlgbox/color-dialog-box">Boîte de dialogue Couleur</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/api.jetopentemptable3-method">Méthode Api.JetOpenTempTable3</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/database-parameters">Paramètres de base de données</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esenterrorexception-class">Classe EsentErrorException</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentioexception-class">Classe EsentIOException</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentmemoryexception-class">Classe EsentMemoryException</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentquotaexception-class">Classe EsentQuotaException</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentresourceexception-class">Classe EsentResourceException</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/index-parameters">Paramètres d’index</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-columnbase-structure">Structure JET_COLUMNBASE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-columncreate-structure">Structure JET_COLUMNCREATE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-columndef-structure">Structure JET_COLUMNDEF</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-columnlist-structure">Structure JET_COLUMNLIST</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-dbinfomisc-structure">Structure JET_DBINFOMISC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-dbinfomisc2-structure">Structure JET_DBINFOMISC2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-dbinfomisc3-structure">Structure JET_DBINFOMISC3</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-dbinfomisc4-structure">Structure JET_DBINFOMISC4</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-dbinfoupgrade-structure">Structure JET_DBINFOUPGRADE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-enumcolumn-structure">Structure JET_ENUMCOLUMN</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-indexcreate-structure">Structure JET_INDEXCREATE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-indexcreate2-structure">Structure JET_INDEXCREATE2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-indexlist-structure">Structure JET_INDEXLIST</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-objectinfo-structure">Structure JET_OBJECTINFO</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-objectlist-structure">Structure JET_OBJECTLIST</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-retrievecolumn-structure">Structure JET_RETRIEVECOLUMN</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-sesid">JET_SESID</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-tablecreate-structure">Structure JET_TABLECREATE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-tablecreate2-structure">Structure JET_TABLECREATE2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-tablecreate3-structure">Structure JET_TABLECREATE3</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jet-tableid">JET_TABLEID</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetaddcolumn-function">Fonction JetAddColumn</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetattachdatabase-function">Fonction JetAttachDatabase</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetattachdatabase2-function">Fonction JetAttachDatabase2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetbackup-function">Fonction JetBackup</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetbackupinstance-function">Fonction JetBackupInstance</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetbeginsession-function">Fonction JetBeginSession</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetbegintransaction-function">Fonction JetBeginTransaction</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetbegintransaction2-function">Fonction JetBeginTransaction2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetbegintransaction3-function">Fonction JetBeginTransaction3</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcommittransaction-function">Fonction JetCommitTransaction</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreatedatabase-function">Fonction JetCreateDatabase</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreatedatabase2-function">Fonction JetCreateDatabase2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreateindex-function">Fonction JetCreateIndex</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreateindex2-function">Fonction JetCreateIndex2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreateindex3-function">Fonction JetCreateIndex3</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreateindex4w-function">Fonction JetCreateIndex4W</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreateinstance-function">Fonction JetCreateInstance</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreateinstance2-function">Fonction JetCreateInstance2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetcreatetable-function">Fonction JetCreateTable</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetdelete-function">Fonction JetDelete</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetdetachdatabase-function">Fonction JetDetachDatabase</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetdetachdatabase2-function">Fonction JetDetachDatabase2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetdupcursor-function">Fonction JetDupCursor</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetendexternalbackup-function">Fonction JetEndExternalBackup</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetenumeratecolumns-function">Fonction JetEnumerateColumns</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetescrowupdate-function">Fonction JetEscrowUpdate</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetexternalrestore2-function">Fonction JetExternalRestore2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetgetattachinfo-function">Fonction JetGetAttachInfo</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetgetcolumninfo-function">Fonction JetGetColumnInfo</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetgetdatabaseinfo-function">Fonction JetGetDatabaseInfo</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetgetindexinfo-function">Fonction JetGetIndexInfo</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetgetobjectinfo-function">JetGetObjectInfo, fonction</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetgetrecordposition-function">Fonction JetGetRecordPosition</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetgettableindexinfo-function">Fonction JetGetTableIndexInfo</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetgettableinfo-function">Fonction JetGetTableInfo</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetinit-function">Fonction JetInit</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetinit2-function">Fonction JetInit2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetinit3-function">Fonction JetInit3</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetintersectindexes-function">Fonction JetIntersectIndexes</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetmakekey-function">Fonction JetMakeKey</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetmove-function">Fonction JetMove</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetopendatabase-function">Fonction JetOpenDatabase</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetopenfile-function">Fonction JetOpenFile</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetopenfileinstance-function">Fonction JetOpenFileInstance</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetopentable-function">Fonction JetOpenTable</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetopentemptable-function">Fonction JetOpenTempTable</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetopentemptable2-function">Fonction JetOpenTempTable2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetopentemptable3-function">Fonction JetOpenTempTable3</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetossnapshotfreeze-function">Fonction JetOSSnapshotFreeze</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetossnapshotprepare-function">Fonction JetOSSnapshotPrepare</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetreadfileinstance-function">Fonction JetReadFileInstance</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetregistercallback-function">Fonction JetRegisterCallback</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetrestore-function">Fonction JetRestore</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetrestore2-function">Fonction JetRestore2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetrestoreinstance-function">Fonction JetRestoreInstance</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetretrievecolumn-function">Fonction JetRetrieveColumn</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetretrievecolumns-function">Fonction JetRetrieveColumns</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetretrievekey-function">Fonction JetRetrieveKey</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetsetcolumn-function">Fonction JetSetColumn</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetsetcolumns-function">Fonction JetSetColumns</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetsetcurrentindex-function">Fonction JetSetCurrentIndex</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetsetcurrentindex2-function">Fonction JetSetCurrentIndex2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetsetcurrentindex3-function">Fonction JetSetCurrentIndex3</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetsetcurrentindex4-function">Fonction JetSetCurrentIndex4</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetsetindexrange-function">Fonction JetSetIndexRange</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetsetls-function">Fonction JetSetLS</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetstopservice-function">Fonction JetStopService</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetterm-function">Fonction JetTerm</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetterm2-function">Fonction JetTerm2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetupdate-function">Fonction JetUpdate</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/jetupdate2-function">Fonction JetUpdate2</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/transaction-log-parameters">Paramètres du journal des transactions</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/transactions">Transactions (événements Windows)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/security">Sécurité et identité</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/shell/handlers">Création de gestionnaires d’extensions d’environnement</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/shell/nf-shobjidl-istorageprovidercopyhook-copycallback">IStorageProviderCopyHook::CopyCallback</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/shell/nn-shobjidl-istorageprovidercopyhook"> IStorageProviderCopyHook</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/shell/shell-shellexecute">Méthode Shell.ShellExecute (Shldisp.h)</a></li>
+</ul>
+
+## <a name="win32-api-reference"></a>Informations de référence sur les API Win32
+
+<ul>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ne-directml-dml_operator_type">DML_OPERATOR_TYPE </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_gather_operator_desc">DML_GATHER_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_gru_operator_desc">DML_GRU_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_join_operator_desc">DML_JOIN_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_lstm_operator_desc">DML_LSTM_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_one_hot_operator_desc">DML_ONE_HOT_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_padding_operator_desc">DML_PADDING_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_reduce_operator_desc">DML_REDUCE_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_scatter_operator_desc">DML_SCATTER_OPERATOR_DESC (DML_SCATTER_ELEMENTS_OPERATOR_DESC) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_split_operator_desc">DML_SPLIT_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/directml/ns-directml-dml_top_k_operator_desc">DML_TOP_K_OPERATOR_DESC </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header0">FWPM_NET_EVENT_HEADER0 (fwpmtypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header1">FWPM_NET_EVENT_HEADER1 (fwpmtypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header2">FWPM_NET_EVENT_HEADER2 (fwpmtypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header3">FWPM_NET_EVENT_HEADER3 (fwpmtypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_provider_context1">FWPM_PROVIDER_CONTEXT1 (fwpmtypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_provider_context2">FWPM_PROVIDER_CONTEXT2 (fwpmtypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpmu/nf-fwpmu-fwpmfilteradd0">FwpmFilterAdd0 (fwpmu.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter0">FWPS_FILTER0 (fwpstypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter1">FWPS_FILTER1 (fwpstypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter2">FWPS_FILTER2 (fwpstypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fwptypes/ns-fwptypes-fwp_condition_value0">FWP_CONDITION_VALUE0 (fwptypes.h) </a></li>
+</ul>
+
+## <a name="uwp-api-reference"></a>Référence de l’API UWP
+
+<ul>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.applicationexecutionstate">Windows.ApplicationModel.Activation.ApplicationExecutionState</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.searchactivatedeventargs">Windows.ApplicationModel.Activation.SearchActivatedEventArgs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.maintenancetrigger">Windows.ApplicationModel.Background.MaintenanceTrigger</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.provider.contactpickerui">Windows.ApplicationModel.Contacts.Provider.ContactPickerUI</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contact.fields">Windows.ApplicationModel.Contacts.Contact.Fields</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contact.name">Windows.ApplicationModel.Contacts.Contact.Name</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactinformation">Windows.ApplicationModel.Contacts.ContactInformation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.namedresource">Windows.ApplicationModel.Resources.Core.NamedResource</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecandidate">Windows.ApplicationModel.Resources.Core.ResourceCandidate</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecandidatevectorview">Windows.ApplicationModel.Resources.Core.ResourceCandidateVectorView</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext">Windows.ApplicationModel.Resources.Core.ResourceContext</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap">Windows.ApplicationModel.Resources.Core.ResourceMap</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcequalifier">Windows.ApplicationModel.Resources.Core.ResourceQualifier</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcequalifiervectorview">Windows.ApplicationModel.Resources.Core.ResourceQualifierVectorView</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.search.searchpane.language">Windows.ApplicationModel.Search.SearchPane.Language</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.search.searchpane.querysubmitted">Windows.ApplicationModel.Search.SearchPane.QuerySubmitted</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.search.searchpane.visible">Windows.ApplicationModel.Search.SearchPane.Visible</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.search.searchpanequerylinguisticdetails">Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.search.searchpanequerysubmittedeventargs">Windows.ApplicationModel.Search.SearchPaneQuerySubmittedEventArgs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.search.searchpanesuggestionsrequest">Windows.ApplicationModel.Search.SearchPaneSuggestionsRequest</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.search.searchsuggestioncollection">Windows.ApplicationModel.Search.SearchSuggestionCollection</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.search.searchsuggestioncollection.size">Windows.ApplicationModel.Search.SearchSuggestionCollection.Size</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationupdate">Windows.Devices.Enumeration.DeviceInformationUpdate</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher">Windows.Devices.Enumeration.DeviceWatcher</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication.serialdevice.readtimeout">Windows.Devices.SerialCommunication.SerialDevice.ReadTimeout</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication.serialdevice.writetimeout">Windows.Devices.SerialCommunication.SerialDevice.WriteTimeout</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.brightnessoverride">Windows.Graphics.Display.BrightnessOverride</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printbindingoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintBindingOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printborderingoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printcollationoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintCollationOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printcolormodeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintColorModeOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printcopiesoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintCopiesOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printcustomitemdetails">Windows.Graphics.Printing.OptionDetails.PrintCustomItemDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printduplexoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintDuplexOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printholepunchoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintHolePunchOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printmediasizeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintMediaSizeOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printmediatypeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintMediaTypeOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printqualityoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintQualityOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printstapleoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintStapleOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.printmanager">Windows.Graphics.Printing.PrintManager</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask">Windows.Graphics.Printing.PrintTask</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest">Windows.Graphics.Printing.PrintTaskRequest</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtasksourcerequestedargs">Windows.Graphics.Printing.PrintTaskSourceRequestedArgs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.printing.standardprinttaskoptions">Windows.Graphics.Printing.StandardPrintTaskOptions</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.playlists.playlist">Windows.Media.Playlists.Playlist</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.proximity.peerwatcher.stop">Windows.Networking.Proximity.PeerWatcher.Stop</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.servicediscovery.dnssd.dnssdregistrationresult">Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.servicediscovery.dnssd.dnssdregistrationstatus">Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationStatus</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.servicediscovery.dnssd.dnssdservicewatcher">Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.servicediscovery.dnssd.dnssdservicewatcherstatus">Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue.createtimer">Windows.System.DispatcherQueue.CreateTimer</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue.getforcurrentthread">Windows.System.DispatcherQueue.GetForCurrentThread</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue.shutdowncompleted">Windows.System.DispatcherQueue.ShutdownCompleted</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue.shutdownstarting">Windows.System.DispatcherQueue.ShutdownStarting</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuecontroller.dispatcherqueue">Windows.System.DispatcherQueueController.DispatcherQueue</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuepriority">Windows.System.DispatcherQueuePriority</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueueshutdownstartingeventargs">Windows.System.DispatcherQueueShutdownStartingEventArgs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer">Windows.System.DispatcherQueueTimer</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer.interval">Windows.System.DispatcherQueueTimer.Interval</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer.isrepeating">Windows.System.DispatcherQueueTimer.IsRepeating</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer.isrunning">Windows.System.DispatcherQueueTimer.IsRepeating</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer.start">Windows.System.DispatcherQueueTimer.Start</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer.stop">Windows.System.DispatcherQueueTimer.Stop</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer.tick">Windows.System.DispatcherQueueTimer.Tick</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.core.animationmetrics.animationdescription">Windows.UI.Core.AnimationMetrics.AnimationDescription</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties">Windows.UI.Input.PointerPointProperties</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile">Windows.UI.StartScreen.SecondaryTile</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync">Windows.UI.StartScreen.SecondaryTile.RequestDeleteAsync</a></li>
 

@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 689f55393df5fc7af59af6ce1e51fb002f49b713
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 614cfc03ade485ba7cf2e6a8d819ec2d33d2d947
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031132"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603909"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -39,11 +39,11 @@ _Affichage de navigation prend en charge à la fois le panneau ou menu de naviga
    :::column-end:::
 :::row-end:::
 
-> **API de plateforme**  : [Classe Windows.UI.Xaml.Controls.NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview)
+> **API de plateforme** : [Classe Windows.UI.Xaml.Controls.NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
-> **API de la bibliothèque d’interface utilisateur Windows**  : [Classe Microsoft.UI.Xaml.Controls.NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+> **API de la bibliothèque d’interface utilisateur Windows** : [Classe Microsoft.UI.Xaml.Controls.NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
-> Certaines fonctionnalités de NavigationView, par exemple la navigation _supérieure_ et _hiérarchique_ , nécessitent Windows 10, version 1809 ( [SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
+> Certaines fonctionnalités de NavigationView, par exemple la navigation _supérieure_ et _hiérarchique_, nécessitent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou la [bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -191,9 +191,22 @@ Voici l’anatomie du volet détaillé pour les positions du volet de navigation
 1. AutoSuggestBox (facultatif)
 1. Bouton Paramètres (facultatif)
 
+#### <a name="footer-menu-items"></a>Éléments de menu de pied de page
+Vous pouvez utiliser [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) pour placer des éléments de navigation à la fin du volet de navigation, à l’inverse de la propriété [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) qui place des éléments au début du volet.
+
+Par défaut, FooterMenuItems s’affiche avant l’élément Paramètres. L’élément Paramètres peut toujours être activé/désactivé à l’aide de la propriété [`IsSettingsVisible`](/uwp/api/microsoft.ui.xaml.controls.navigationview.IsSettingsVisible).
+
+Seuls les éléments de navigation doivent être placés dans FooterMenuItems : tout autre contenu qui doit être aligné sur le pied de page du volet doit être placé dans [Footer menu items](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter).
+
+Pour obtenir un exemple d’ajout de FooterMenuItems à votre NavigationView, consultez la [classe FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems). 
+
+L’image ci-dessous montre un contrôle NavigationView avec les éléments de navigation Compte, Votre panier et Aide dans le menu de pied de page. 
+
+![NavigationView avec FooterMenuItems](images/footermenu-leftmode.png)
+
 #### <a name="pane-footer"></a>Pied de page du volet
 
-Vous pouvez placer un contenu de forme libre dans le pied de page du volet en l’ajoutant à la propriété [PaneFooter](/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter).
+Vous pouvez placer un contenu de forme libre dans le pied de page du volet en l’ajoutant à la propriété [PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter).
 
 :::row:::
     :::column:::
@@ -258,7 +271,7 @@ _Contenu d’affichage de navigation_
 
 La zone de contenu présente la plupart des informations relatives à la catégorie de navigation sélectionnée.
 
-Nous recommandons des marges de 12 px pour votre zone de contenu lorsque NavigationView est en mode **Minimal** , et des marges de 24 px dans les autres cas.
+Nous recommandons des marges de 12 px pour votre zone de contenu lorsque NavigationView est en mode **Minimal**, et des marges de 24 px dans les autres cas.
 
 ## <a name="adaptive-behavior"></a>Comportement adaptatif
 
@@ -266,7 +279,7 @@ Par défaut, le mode d’affichage de navigation change automatiquement selon la
 
 ### <a name="default"></a>Par défaut
 
-Lorsque la propriété PaneDisplayMode est définie sur sa valeur par défaut **Auto** , le comportement adaptatif consiste à afficher :
+Lorsque la propriété PaneDisplayMode est définie sur sa valeur par défaut **Auto**, le comportement adaptatif consiste à afficher :
 
 - Un volet gauche développé sur les fenêtres de grande largeur (1008 px ou supérieur).
 - Un volet de navigation gauche (LeftCompact) comportant uniquement des icônes sur les fenêtres de largeur moyenne (641 px à 1007 px).
@@ -324,7 +337,7 @@ _Mode de navigation avec PaneDisplayMode définie sur LeftMinimal_
 <NavigationView PaneDisplayMode="LeftMinimal" />
 ```
 
-Comme décrit précédemment dans la section _Modes d’affichage_ , vous pouvez définir le volet afin qu’il soit toujours visible, toujours développé, toujours compact ou toujours minimal. Vous pouvez également gérer les modes d’affichage vous-même dans le code de votre application. Vous trouverez un exemple dans la prochaine section.
+Comme décrit précédemment dans la section _Modes d’affichage_, vous pouvez définir le volet afin qu’il soit toujours visible, toujours développé, toujours compact ou toujours minimal. Vous pouvez également gérer les modes d’affichage vous-même dans le code de votre application. Vous trouverez un exemple dans la prochaine section.
 
 ### <a name="top-to-left-navigation"></a>Navigation du haut vers la gauche
 
@@ -380,6 +393,8 @@ Vous pouvez gérer l'un ou l'autre événement pour effectuer des tâches liées
 
 **SelectionChanged** peut être déclenché par un utilisateur invoquant un élément qui n'est pas actuellement sélectionné, ou en modifiant par programmation l'élément sélectionné. Si le changement de sélection se produit parce qu'un utilisateur a invoqué un élément, l'événement ItemInvoked se produit en premier. Si la modification de la sélection s’effectue par programmation, ItemInvoked n’est pas déclenché.
 
+Tous les éléments de navigation font partie du même modèle de sélection, qu’ils soient membres de [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) ou de [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems). Un seul élément de navigation peut être sélectionné à la fois. 
+
 ### <a name="backwards-navigation"></a>Navigation vers l’arrière
 
 NavigationView intègre un bouton précédent ; mais, comme pour la navigation vers l'avant, il n'effectue pas automatiquement la navigation vers l'arrière. Lorsque l’utilisateur actionne le bouton précédent, l’événement [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) est déclenché. Vous gérez cet événement pour effectuer la navigation vers l’arrière. Pour obtenir plus d’informations et des exemples de code, consultez l’article [Historique de navigation et navigation vers l’arrière](../basics/navigation-history-and-backwards-navigation.md).
@@ -411,7 +426,7 @@ Cet exemple montre comment utiliser **NavigationView** avec un volet de navigati
 
 L'exemple montre une façon recommandée de configurer des données de navigation qui s’adaptent à de nombreux scénarios courants. Il explique également comment implémenter la navigation vers l’arrière avec le bouton précédent de **NavigationView** et la navigation au clavier.
 
-Ce code suppose que votre application contient des pages avec les noms suivants pour accéder à ces éléments : *HomePage* , *AppsPage* , *GamesPage* , *MusicPage* , *MyContentPage* et *SettingsPage*. Le code de ces pages n’est pas affiché.
+Ce code suppose que votre application contient des pages avec les noms suivants pour accéder à ces éléments : *HomePage*, *AppsPage*, *GamesPage*, *MusicPage*, *MyContentPage* et *SettingsPage*. Le code de ces pages n’est pas affiché.
 
 > [!IMPORTANT]
 > Vous trouverez des informations sur les pages de l’application dans un [ValueTuple](/dotnet/api/system.valuetuple). Cette structure nécessite une version minimale SDK 17763 ou supérieure pour votre projet d’application. Si vous utilisez la version WinUI de NavigationView pour cibler des versions antérieures de Windows 10, vous pouvez utiliser le [paquet NuGet System.ValueTuple](https://www.nuget.org/packages/System.ValueTuple/).
@@ -977,7 +992,7 @@ void MainPage::NavView_ItemInvoked(
 ## <a name="hierarchical-navigation"></a>Navigation hiérarchique
 Certaines applications peuvent avoir une structure hiérarchique plus complexe qui nécessite plus qu’une simple liste plate d’éléments de navigation. Vous souhaiterez peut-être utiliser des éléments de navigation de niveau supérieur pour afficher des catégories de pages, avec des éléments enfants affichant des pages spécifiques. Cette approche est également utile si vous avez des pages de style hub uniquement liées à d’autres pages. Dans ces types de cas, vous devez créer un NavigationView hiérarchique.
 
-Pour montrer une liste hiérarchique d’éléments de navigation imbriqués dans le volet, utilisez la propriété [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems?view=winui-2.4) ou la propriété [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource?view=winui-2.4) de **NavigationViewItem**.
+Pour montrer une liste hiérarchique d’éléments de navigation imbriqués dans le volet, utilisez la propriété [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems) ou la propriété [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource) de **NavigationViewItem**.
 Chaque NavigationViewItem peut contenir d’autres NavigationViewItems et éléments d’organisation tels que des séparateurs et des en-têtes d’élément. Pour afficher une liste hiérarchique quand vous utilisez `MenuItemsSource`, définissez `ItemTemplate` en tant que NavigationViewItem et liez sa propriété `MenuItemsSource` au niveau suivant de la hiérarchie.
 
 Bien que NavigationViewItem puisse contenir un nombre quelconque de niveaux imbriqués, nous vous recommandons de limiter la profondeur de la hiérarchie de navigation de votre application. Nous pensons que deux niveaux sont idéaux pour faciliter l’utilisation et la compréhension.
@@ -1010,7 +1025,7 @@ Ajoutez une hiérarchie d’éléments de menu à NavigationView en
 * liant la propriété MenuItemsSource aux données hiérarchiques ;
 * définissant le modèle d’élément en tant que NavigationViewMenuItem, avec son contenu (Content) défini sur l’étiquette de l’élément de menu et sa propriété MenuItemsSource liée au niveau suivant de la hiérarchie.
 
-Cet exemple montre également les événements de développement ([Expanding](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding?view=winui-2.4)) et de réduction ([Collapsed](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed?view=winui-2.4)). Ces événements sont déclenchés pour un élément de menu avec enfants.
+Cet exemple montre également les événements de développement ([Expanding](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding)) et de réduction ([Collapsed](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed)). Ces événements sont déclenchés pour un élément de menu avec enfants.
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >
@@ -1384,7 +1399,7 @@ Le NavigationView entier n’affiche pas plus d’un indicateur de sélection.
 
 Dans les deux modes Top et Left, un clic sur les flèches sur les NavigationViewItems permet de développer ou de réduire la sous-arborescence. En cliquant ou en appuyant _ailleurs_ sur le NavigationViewItem, vous déclenchez l’événement `ItemInvoked`, qui entraîne également la réduction ou le développement de la sous-arborescence.
 
-Pour empêcher un élément d’afficher l’indicateur de sélection quand il est appelé, affectez la valeur False à sa propriété [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3), comme indiqué ci-dessous :
+Pour empêcher un élément d’afficher l’indicateur de sélection quand il est appelé, affectez la valeur False à sa propriété [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked), comme indiqué ci-dessous :
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >
@@ -1680,7 +1695,7 @@ Si votre application spécifie la région qui peut être déplacée par glisser 
 ```
 
 #### <a name="remarks"></a>Remarks
-Pour ajuster davantage la position de la zone d’en-tête de NavigationView, remplacez la ressource de thème XAML *NavigationViewHeaderMargin* , par exemple dans vos ressources de page.
+Pour ajuster davantage la position de la zone d’en-tête de NavigationView, remplacez la ressource de thème XAML *NavigationViewHeaderMargin*, par exemple dans vos ressources de page.
 
 ```Xaml
 <Page.Resources>

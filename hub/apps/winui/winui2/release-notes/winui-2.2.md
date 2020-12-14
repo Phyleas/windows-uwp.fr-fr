@@ -3,16 +3,16 @@ title: Notes de publication de WinUI 2.2
 description: Notes de publication de WinUI 2.2, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: b14b96ffc03d5e3e934b72d71ae9e2a8a3f0eb1d
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: 128732f57fff892cc16e4b4b4ac6f691fe72e4a2
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933144"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603866"
 ---
 # <a name="windows-ui-library-22"></a>Bibliothèque d’IU Windows 2.2
 
-WinUI 2.2 est la dernière version officielle de la bibliothèque d’IU Windows.
+WinUI 2.2 est la version d’août 2019 de la bibliothèque d’interface utilisateur Windows.
 
 Vous pouvez ajouter des packages WinUI à votre application à l’aide du gestionnaire de package NuGet. Pour plus d’informations, consultez [Bien démarrer avec la bibliothèque d’interface utilisateur Windows](../getting-started.md).
 

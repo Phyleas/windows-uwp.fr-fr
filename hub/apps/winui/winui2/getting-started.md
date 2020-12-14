@@ -4,16 +4,16 @@ description: Guide pratique pour installer et utiliser la bibliothèque d’inte
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, sdk kit de ressources
-ms.openlocfilehash: e3b0daae3f053daabe153f8a0058953ff76e3b90
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
+ms.openlocfilehash: 670254b8ca9ba8641e9adf1410aef918be73f705
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691567"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603836"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Bien démarrer avec la bibliothèque d’IU Windows 2.x
 
-[WinUI 2.4](release-notes/winui-2.4.md) est la dernière version stable de WinUI et doit être utilisée pour les applications en production.
+[WinUI 2.5](release-notes/winui-2.5.md), qui est la dernière version stable de WinUI, doit être utilisée pour les applications en production.
 
 La bibliothèque est disponible sous forme de package NuGet qui peuvent être ajoutés à un projet Visual Studio nouveau ou existant.
 
@@ -27,7 +27,7 @@ La bibliothèque est disponible sous forme de package NuGet qui peuvent être aj
 2. Ouvrez un projet existant ou créez un projet à l’aide du modèle Application vide sous Visual C# -> Windows-> Universel, ou le modèle approprié pour la projection de votre langage.  
 
     > [!IMPORTANT]
-    > Pour utiliser WinUI 2.4, vous devez définir TargetPlatformVersion >= 10.0.18362.0 et TargetPlatformMinVersion >= 10.0.15063.0 dans les propriétés du projet.
+    > Pour utiliser WinUI 2.5, vous devez définir TargetPlatformVersion >= 10.0.18362.0 et TargetPlatformMinVersion >= 10.0.15063.0 dans les propriétés du projet.
 
 3. Dans le volet Explorateur de solutions, cliquez avec le bouton droit sur le nom de votre projet, puis sélectionnez **Gérer les packages NuGet**. Sélectionnez l’onglet **Parcourir** et recherchez **Microsoft.UI.Xaml** ou **WinUI**. Choisissez ensuite les [packages NuGet de la bibliothèque d’IU Windows](nuget-packages.md) que vous souhaitez utiliser.
 Le package **Microsoft.UI.Xaml** contient des fonctionnalités et des contrôles Fluent adaptés à toutes les applications.  

@@ -3,16 +3,16 @@ title: Notes de publication de WinUI 2.1
 description: Notes de publication de WinUI 2.1, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: d743b5653a824753706cebbfe1f1a60c419debfe
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: eb9d01c49dffd8017b2a70557f9408ceb758ae1e
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933134"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603856"
 ---
 # <a name="windows-ui-library-21"></a>Bibliothèque d’IU Windows 2.1
 
-La dernière version officielle de la bibliothèque d’IU Windows (WinUI 2.1) a été publiée le 8 avril 2019. 
+Première version open source de la bibliothèque d’interface utilisateur Windows - WinUI 2.1 (publiée en avril 2019).
 
 WinUI met à votre disposition une grande partie des fonctionnalités les plus récentes de la plateforme d’expérience utilisateur Windows, notamment des contrôles et des styles Fluent à jour, sous une forme immédiatement exploitable et offrant une compatibilité descendante avec la Mise à jour anniversaire de Windows 10 (14393). La [Galerie de contrôles XAML](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) vous donne des exemples pour explorer toutes les nouvelles fonctionnalités intéressantes ajoutées à la bibliothèque.
 

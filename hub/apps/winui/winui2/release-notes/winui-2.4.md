@@ -3,16 +3,16 @@ title: Notes de publication de WinUI 2.4
 description: Notes de publication de WinUI 2.4, nouvelles fonctionnalités et corrections de bogues incluses.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 5e2ff23b3b0ea63002ad54a367e82e81ee1cd542
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: d6c6f029b63ea8ad32f1b0109ed983b74f2b4c4d
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762913"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603696"
 ---
 # <a name="windows-ui-library-24"></a>Bibliothèque d’IU Windows 2.4
 
-WinUI 2.4 est la dernière version officielle de la bibliothèque d’IU Windows (WinUI).
+WinUI 2.4 est la version de mai 2020 de la bibliothèque d’interface utilisateur Windows (WinUI).
 
 WinUI est un projet open source hébergé sur GitHub dans le [dépôt de la bibliothèque d’IU Windows](https://aka.ms/winui). Inscrivez tous les rapports de bogues, demandes de fonctionnalités et contributions de code de la Communauté dans ce dépôt.
 
@@ -83,13 +83,13 @@ Voici quelques-uns des contrôles inclus dans la famille de contrôles TextBox 
 
 ### <a name="hierarchical-navigation"></a>Navigation hiérarchique
 
-Le contrôle [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4) prend maintenant en charge la navigation hiérarchique et comprend les modes d’affichage Left, Top et LeftCompact. Un NavigationView hiérarchique est utile pour afficher des catégories de pages, identifier des pages avec des pages enfants associées ou servir dans des applications qui ont des pages de style hub liées à de nombreuses autres pages.
+Le contrôle [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true) prend maintenant en charge la navigation hiérarchique et comprend les modes d’affichage Left, Top et LeftCompact. Un NavigationView hiérarchique est utile pour afficher des catégories de pages, identifier des pages avec des pages enfants associées ou servir dans des applications qui ont des pages de style hub liées à de nombreuses autres pages.
 
 ![Contrôle NavigationView hiérarchique](..\images\HierarchicalNavView.gif)<br>*Contrôle NavigationView hiérarchique*
 
 [Indications d’utilisation](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation)
 
-[Informations de référence sur les API](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+[Informations de référence sur les API](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true)
 
 ## <a name="samples"></a>exemples
 

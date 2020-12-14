@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ccdea35b8923c756489f6b671d394fc516a960c
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 24ba67dfa51c039055cc5bc4cb31d4aff4de6765
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749745"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603884"
 ---
 # <a name="progress-controls"></a>Contrôles de progression
 
@@ -61,11 +61,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ## <a name="types-of-progress"></a>Types de progression
 
-Deux contrôles permettent d’indiquer à l’utilisateur qu’une opération est en cours d’exécution : ProgressBar ou ProgressRing.
+Deux contrôles permettent d’indiquer à l’utilisateur qu’une opération est en cours d’exécution : ProgressBar ou ProgressRing. ProgressBar et ProgressRing ont tous deux des états qui communiquent si l’utilisateur peut interagir avec l’application, ou non. 
 
--   L’état *déterminé* du contrôle ProgressBar indique le pourcentage d’achèvement d’une tâche. Ce contrôle doit être utilisé au cours d’une opération dont la durée est connue, mais dont la progression ne doit pas bloquer l’interaction de l’utilisateur avec l’application.
+-   L’état *déterminé* de ProgressBar et de ProgressRing indique le pourcentage d’achèvement d’une tâche. Ce contrôle doit être utilisé au cours d’une opération dont la durée est connue, mais dont la progression ne doit pas bloquer l’interaction de l’utilisateur avec l’application.
 -   L’état *indéterminé* de ProgressBar indique qu’une opération est en cours, qu’elle ne bloque pas l’interaction de l’utilisateur avec l’application et que son heure de fin est inconnue.
--   Seul le contrôle ProgressRing possède un état *indéterminé* et doit être utilisé quand toute interaction de l’utilisateur est bloquée jusqu’à la fin de l’opération.
+-   L’état *indéterminé* de ProgressRing indique qu’une opération est en cours, qu’elle bloque l’interaction de l’utilisateur avec l’application et que son heure de fin est inconnue.
+
 
 De plus, un contrôle de progression est en lecture seule et n’est pas interactif. Ce qui signifie que l’utilisateur ne peut pas appeler ou utiliser ces contrôles directement.
 
@@ -73,7 +74,8 @@ De plus, un contrôle de progression est en lecture seule et n’est pas interac
 |---|---|
 | ProgressBar indéterminé | ![ProgressBar - Indéterminé](images/progressbar-indeterminate.gif) |
 | ProgressBar déterminé | ![ProgressBar - Déterminé](images/progressbar-determinate.png)|
-| ProgressRing indéterminé | ![État ProgressRing](images/progressring-indeterminate.gif)|
+| ProgressRing indéterminé | ![État de ProgressRing - Indéterminé](images/progressring-indeterminate.gif)|
+| ProgressRing - Déterminé | ![État de ProgressRing - Déterminé](images/progress_ring.jpg)|
 
 
 ## <a name="examples"></a>Exemples
@@ -117,11 +119,15 @@ Il n’est pas toujours évident de savoir quel contrôle ou quel état (déterm
 
 -   **L’opération impose-t-elle à l’utilisateur d’attendre avant de continuer ?**
 
-    Si une opération nécessite une interaction complète (ou très importante) avec l’application qui implique d’attendre son achèvement, le contrôle ProgressRing est le meilleur choix. Le contrôle ProgressRing est utilisé pour les interactions modales, ce qui signifie que l’utilisateur est bloqué jusqu’à la fin de la progression.
+    Si une opération nécessite une interaction complète (ou très importante) avec l’application qui implique d’attendre son achèvement, le ProgressRing avec l’état Indéterminé est le meilleur choix.
+
+    -   **Le contrôle a-t-il une durée définie ou une fin prévisible ?**
+
+    Utilisez un ProgressRing avec l’état Déterminé si vous voulez que le visuel soit un anneau plutôt qu’une barre, et mettez à jour le pourcentage ou la valeur en conséquence. 
 
 -   **L’application attend-elle que l’utilisateur termine une tâche ?**
 
-    Si tel est le cas, utilisez un contrôle ProgressRing, qui sert à indiquer à l’utilisateur un temps d’attente inconnu.
+    Si tel est le cas, utilisez un ProgressRing avec l’état Indéterminé, car il sert à indiquer à l’utilisateur un temps d’attente inconnu.
 
 -   **Mots clés**
 
@@ -169,6 +175,12 @@ Utilisez un contrôle ProgressBar indéterminé lorsque la durée de l’opérat
 ![Exemple de contrôle ProgressRing indéterminé](images/PR_IndeterminateExample.png)
 
 Le contrôle ProgressRing indéterminé est utilisé quand toute autre interaction de l’utilisateur avec l’application est bloquée ou que l’application attend l’entrée de l’utilisateur pour continuer. L’exemple « Connexion en cours... » ci-dessus est un scénario idéal pour le contrôle ProgressRing. L’utilisateur ne peut pas continuer à utiliser l’application tant que la connexion n’a pas été établie.
+
+**ProgressRing - Déterminé**
+
+![Exemple de ProgressRing avec l’état Déterminé](images/progress_ring_determinate_example.png)
+
+Quand la durée de l’opération est connue et que le visuel Anneau est souhaité, un ProgressRing avec l’état Déterminé est préférable lors de l’installation, du téléchargement, de la configuration, etc.
 
 ## <a name="customizing-a-progress-control"></a>Personnalisation d’un contrôle de progression
 
