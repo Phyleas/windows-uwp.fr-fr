@@ -130,6 +130,14 @@
                   href: winui/winui2/release-notes/winui-2.0.md
         - name: Informations de référence sur les API WinUI
           href: /windows/winui/api/
+    - name: Générer des applications Windows avec Project Reunion (version préliminaire)
+      items:
+        - name: Vue d’ensemble
+          href: project-reunion/index.md
+        - name: MRT Core
+          href: project-reunion/mrtcore/mrtcore-overview.md
+        - name: DWriteCore
+          href: project-reunion/dwritecore.md
     - name: "Développement pour Windows\_10X"
       items:
         - name: "Questions fréquentes (FAQ) sur le développement Windows\_10X"

@@ -7,12 +7,12 @@ keywords: développement d’applications de bureau Win32 pour Windows
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b860916b90d1adc8ae9e7ae8c8ac7950125ce7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 554869625c0db7a2a19dc7c01837e47029bd28e6
+ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216742"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97214266"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Créer des applications de bureau pour les PC Windows
 
@@ -20,10 +20,11 @@ Cet article fournit les informations dont vous avez besoin pour commencer à cr�
 
 ## <a name="platforms-for-desktop-apps"></a>Plateformes pour les applications de bureau
 
-Il existe quatre plateformes principales pour créer des applications de bureau pour les PC Windows. Chaque plateforme fournit un modèle d’application qui définit le cycle de vie de l’application, un framework d’interface utilisateur complet et un ensemble de contrôles d’interface utilisateur qui vous permettent de créer des applications de bureau comme Word, Excel et Photoshop, et un accès à un ensemble complet d’API managées ou natives pour utiliser les fonctionnalités Windows. Pour une comparaison détaillée de ces plateformes ainsi que des ressources supplémentaires pour chaque plateforme, consultez [Choisir votre plateforme d’application](choose-your-platform.md).
+Il existe quatre plateformes principales pour créer des applications de bureau pour les PC Windows. Chaque plateforme fournit un modèle d’application qui définit le cycle de vie de l’application, un framework d’interface utilisateur complet et un ensemble de contrôles d’interface utilisateur qui vous permettent de créer des applications de bureau comme Word, Excel et Photoshop, et un accès à un ensemble complet d’API managées ou natives pour utiliser les fonctionnalités Windows. 
+
+Pour une comparaison détaillée de ces plateformes ainsi que des ressources supplémentaires pour chaque plateforme, consultez [Choisir votre plateforme d’application](choose-your-platform.md).
 
 <br/>
-
 <table>
 <colgroup>
 <col width="20%" />
@@ -61,8 +62,17 @@ Il existe quatre plateformes principales pour créer des applications de bureau 
 </tbody>
 </table>
 
-> [!NOTE]
-> Sur Windows 10, chacune de ces plateformes prend également en charge l’utilisation de la bibliothèque d’interface utilisateur Windows (WinUI) pour créer des interfaces utilisateur. Pour plus d’informations sur WinUI pour les applications de bureau, consultez [cette section](choose-your-platform.md#windows-ui-library).
+### <a name="future-roadmap"></a>Plan de mise en œuvre futur
+
+En pensant à l’avenir, nous faisons évoluer les plateformes de développement d’applications Windows avec la bibliothèque de l’interface utilisateur Windows (WinUI) et Project Reunion.
+
+* **WinUI** constitue un framework d’expérience utilisateur natif pour les applications Windows 10. WinUI était initialement une boîte à outils qui offrait des versions nouvelles et mises à jour des contrôles UWP pour les applications UWP ciblant des versions de bas niveau de Windows 10. WinUI s’est depuis étendue et, à partir de WinUI 3 (actuellement en préversion), est devenue la plateforme d’interface utilisateur native moderne pour les applications Windows 10 sur UWP, .NET et Win32. 
+
+    Pour plus d’informations, consultez [Bibliothèque d’interface utilisateur Windows (WinUI)](../winui/index.md).
+
+* **Project Reunion** (actuellement en préversion) est le nom de code d’un large éventail de nouveaux composants et outils de développement qui représentent l’évolution à venir de la plateforme de développement d’applications Windows. Project Reunion fournit un ensemble unifié d’API et d’outils qui peuvent être utilisés de manière cohérente par n’importe quelle application sur un large éventail de versions cibles du système d’exploitation Windows 10. Project Reunion complète les plateformes et frameworks d’applications Windows existants, comme UWP, Win32 native et .NET avec un ensemble commun d’API et d’outils que les développeurs peuvent utiliser sur ces plateformes. 
+
+    Pour plus d’informations, consultez [Project Reunion](../project-reunion/index.md).
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>Mettre à jour les applications de bureau existantes pour Windows 10
 
