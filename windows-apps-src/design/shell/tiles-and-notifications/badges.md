@@ -1,19 +1,19 @@
 ---
-description: Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
+description: Découvrez comment utiliser la notification par badge pour transmettre des informations de synthèse ou d’État spécifiques à votre application.
 title: Notifications de badge pour les applications Windows
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 64d5595bcc315b24228401ff23a1a59d29282eae
-ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
+ms.openlocfilehash: a1edb80db6858c7b8ccbbf443df2a0c01d3ede5d
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344963"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598880"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Notifications de badge pour les applications Windows
 
@@ -42,7 +42,7 @@ Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d�
 
 Statut | Glyphe | XML
 --|--|--
-aucun | (Aucun badge affiché) | `<badge value="none"/>`
+Aucun | (Aucun badge affiché) | `<badge value="none"/>`
 activity | :::image type="icon" source="images/badges/badge-activity.png"::: | `<badge value="activity"/>`
 alarme | :::image type="icon" source="images/badges/badge-alarm.png"::: | `<badge value="alarm"/>`
 alerte | :::image type="icon" source="images/badges/badge-alert.png"::: | `<badge value="alert"/>`
