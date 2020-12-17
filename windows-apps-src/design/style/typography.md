@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5f06d5e804d41b1751c72af4d07224fa346323b2
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: 3660417f6e88268dd2ad814ce4dba62354029828
+ms.sourcegitcommit: 05f9bb0c563e12daaacf7732d46f1c7f578dbe6a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860106"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97529286"
 ---
 # <a name="typography-in-windows-apps"></a>Typographie des applications Windows
 
@@ -123,7 +123,7 @@ La valeur [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) par défaut es
 
 :::row:::
     :::column:::
-![[Quatrième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+![Quatrième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
 Utilisez des lignes de 50 à 60 caractères pour faciliter la lecture.
     :::column-end:::
     :::column:::
@@ -143,7 +143,7 @@ Lorsque la quantité de texte s’étend au-delà de l’espace disponible, nous
 
 :::row:::
     :::column:::
-![[Cinquième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
+![Cinquième capture d’écran d’une barre verte comprenant une coche verte et les mots « À faire ».](images/do.svg)
 Détourez le texte et renvoyez-le automatiquement à la ligne si plusieurs lignes sont activées.
     :::column-end:::
     :::column:::
