@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ad25d4ba5d8dfe638d3de3e210f69ea204c48a14
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2f550fc90a8035d2c7e355d70b7ddd2b9a9e17fc
+ms.sourcegitcommit: f83f2f582f8c7c3447ec62df40a8f0724f7f3bbc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220012"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97675790"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Lancer l’application par défaut pour un URI
 
@@ -42,6 +42,7 @@ Cette rubrique décrit les schémas d’URI suivants qui sont intégrés dans Wi
 |[ms-tonepicker:](#tone-picker-uri-scheme) | Sélecteur de tonalités |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Application Numéros à proximité |
 |[msnweather:](#weather-app-uri-scheme) | Application météo |
+|[Microsoft-Edge :](#microsoft-edge-uri-scheme) | Navigateur Microsoft Edge |
 
 <br>
 Par exemple, l’URI suivant ouvre le navigateur par défaut et affiche le site web Bing.
@@ -119,7 +120,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 Les applications sources qui appellent [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) peuvent demander qu’elles restent à l’écran après le lancement d’un URI. Par défaut, Windows essaie de partager tout l’espace disponible de manière équitable entre l’application source et l’application cible qui gère l’URI. Les applications sources peuvent utiliser la propriété [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) pour indiquer au système d’exploitation qu’elles préfèrent que leur fenêtre d’application occupe plus ou moins d’espace disponible. La propriété **DesiredRemainingView** peut également servir à indiquer que l’application source n’a pas besoin de rester à l’écran après le lancement de l’URI et qu’elle peut être complètement remplacée par l’application cible. Cette propriété spécifie uniquement la taille de fenêtre par défaut de l’application appelante. Elle ne spécifie pas le comportement d’autres applications qui peuvent se trouver en même temps sur l’écran.
 
-**Remarque**    Windows prend en compte plusieurs facteurs différents lorsqu’il détermine la taille finale de la fenêtre de l’application source, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, et ainsi de suite. En définissant [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview), vous n’êtes pas sûr d’un comportement de fenêtrage spécifique pour l’application source.
+**Remarque**  Windows prend en compte plusieurs facteurs différents lorsqu’il détermine la taille finale de la fenêtre de l’application source, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, et ainsi de suite. En définissant [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview), vous n’êtes pas sûr d’un comportement de fenêtrage spécifique pour l’application source.
 
 ```cs
 // Set the desired remaining view.
@@ -206,7 +207,7 @@ Pour plus d’informations, voir [Lancer l’application Contacts](launch-people
 
 ### <a name="photos-app-uri-scheme"></a>Modèle URI de l’application photos
 
-Utilisez le schéma **MS-photos :** URI pour lancer l’application photos et afficher une image ou modifier une vidéo. Exemple :  
+Utilisez le schéma **MS-photos :** URI pour lancer l’application photos et afficher une image ou modifier une vidéo. Par exemple :  
 Pour afficher une image : `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 Ou pour modifier une vidéo : `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
@@ -245,3 +246,11 @@ Utilisez le schéma **msnweather :** URI pour lancer l’application météo.
 | Schéma d’URI | Résultats |
 |------------|---------|
 | msnweather://Forecast ? la = \[ latitude \]&Lo = \[ Longitude\] | Lance l’application météo dans la page prévision en fonction des coordonnées géographiques de l’emplacement.<br>`latitude` fait référence à la latitude de l’emplacement.<br> `longitude` fait référence à la longitude de l’emplacement.<br> |
+
+### <a name="microsoft-edge-uri-scheme"></a>Schéma d’URI Microsoft Edge
+
+Utilisez le schéma **Microsoft-Edge :** URI pour lancer le navigateur Microsoft Edge sur une URL spécifiée.
+
+| Schéma d’URI | Résultats |
+|------------|---------|
+| Microsoft-Edge : https://example.com/ ] | Ouvre le navigateur Microsoft Edge et accède à https://example.com/<br> |
