@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 04357cc43ed227b109d4aab20c509077261360ee
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 051d7a31afac09a6372f527355efcd6b925cb71f
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636599"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598860"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
@@ -48,7 +48,7 @@ Dans ce tutoriel, vous allez commencer avec une version simplifiée de l’exemp
 
     **Si vous maîtrisez GitHub :**
 
-    a. Clonez localement la branche maîtresse du dépôt.
+    a. Clonez localement la branche principale du dépôt.
 
     b. Accédez au répertoire `Windows-appsample-photo-lab\xaml-basics-starting-points\style`.
 

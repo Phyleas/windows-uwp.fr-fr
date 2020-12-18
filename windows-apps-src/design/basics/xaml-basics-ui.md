@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 942b2ff4af0fa093a0b343c37074185970f8209d
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: c1754edd6901b5de778b40294078b16c03dc0dda
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829551"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598820"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutoriel : Créer une interface utilisateur
 
@@ -51,7 +51,7 @@ Dans ce tutoriel, vous allez commencer avec une version simplifiée de l’exemp
 
     **Si vous maîtrisez GitHub :**
 
-    a. Clonez localement la branche maîtresse du dépôt.
+    a. Clonez localement la branche principale du dépôt.
 
     b. Accédez au répertoire `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface`.
 

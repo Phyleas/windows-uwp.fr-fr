@@ -1,5 +1,5 @@
 ---
-description: Les boîtes de dialogue et les menus volants affichent des éléments temporaires d’interface utilisateur quand l’utilisateur les sollicite ou quand un événement nécessite une notification ou une approbation.
+description: Les boîtes de dialogue affichent des éléments temporaires d’interface utilisateur quand l’utilisateur les sollicite ou quand un événement nécessite une notification ou une approbation.
 title: Contrôles de boîte de dialogue
 label: Dialogs
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 05b472efe65b57359a398c6a2405b499ff062d73
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c1ca51f0831b919c2d46b786b1720f9377c8e974
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034452"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598780"
 ---
 # <a name="dialog-controls"></a>Contrôles de boîte de dialogue
 

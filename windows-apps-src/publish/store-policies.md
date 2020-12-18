@@ -1,17 +1,17 @@
 ---
 title: Politiques du Microsoft Store
 description: Les produits du Store doivent respecter nos normes en matière de certification, offrir aux clients une expérience riche et attrayante et être adaptés au Store.
-ms.date: 10/01/2019
+ms.date: 12/16/2020
 ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 4d7c30b49ea0e6276e1d7959a17086f7ff829915
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fc7a9ebd3ebe9ce86f4c44e7e13ea25d5a01240e
+ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170909"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97611457"
 ---
 # <a name="microsoft-store-policies"></a>Politiques du Microsoft Store
 
@@ -22,6 +22,9 @@ ms.locfileid: "89170909"
 
 > [!NOTE]
 > Pour obtenir un résumé des modifications récentes apportées à ce contrat, consultez [Historique des modifications](store-policies-change-history.md).
+
+> [!NOTE]
+> **Avis de mise à jour de la politique du 16 décembre 2020** : Pour les jeux ciblant la console développée par le biais du [programme Xbox Live Creators](https://www.xbox.com/developers/creators-program/), la nécessité d’effectuer l’intégration avec XBL Services ne s’applique plus. La politique spécifique ([politique 10.13.1](https://docs.microsoft.com/windows/uwp/publish/store-policies#1013-gaming-and-xbox)) sera mise à jour pour refléter ce changement lors de la prochaine mise à jour du document Politique du Store, mais à compter de cet avis, elle ne sera plus appliquée pour le programme XBL Creators. 
 
 Nous vous remercions de l’intérêt que vous portez au développement de produits pour le Microsoft Store<sup>1</sup>. Le terme « Produit » désigne tout contenu soumis sous quelque forme que ce soit, y compris, mais sans s'y limiter, les applications, jeux, titres et tout contenu supplémentaire vendu ou offert à partir d’un produit. Nous nous évertuons à constituer un catalogue étendu de produits pour les clients à travers le monde. Les produits du Store doivent respecter nos normes en matière de certification, offrir aux clients une expérience riche et attrayante et être adaptés au Store.
 
@@ -38,7 +41,7 @@ Vos produits sont essentiels à l’expérience de centaines de millions de clie
 Si vous avez des commentaires à formuler sur nos politiques, veuillez nous en faire part sur [notre forum](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore). Nous étudierons tous les commentaires.
 
 
-## <a name="table-of-contents"></a>Table des matières
+## <a name="table-of-contents"></a>Sommaire
 
 **Politiques relatives aux produits :**
 

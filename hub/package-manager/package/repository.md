@@ -4,12 +4,12 @@ description: Une fois que vous avez créé un manifeste de package qui décrit v
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ef94a77d5012adcedf31ae1ecfddc036bcc3a059
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fef6cc96604639f84ee2c81e2de4fb28442e3f8d
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166503"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598800"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Envoyer votre manifeste au dépôt
 
@@ -96,7 +96,7 @@ Vous êtes maintenant prêt à envoyer votre nouveau manifeste vers le dépôt d
 
 ### <a name="step-5-create-a-pull-request"></a>Étape 5 : Créer une demande de tirage
 
-Une fois que vous avez envoyé vos modifications, revenez à [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) et créez une demande de tirage pour fusionner votre duplication ou branche avec la branche **maîtresse**.
+Une fois que vous avez envoyé vos modifications, revenez à [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) et créez une demande de tirage pour fusionner votre duplication ou branche avec la branche principale.
 
 ![image de l’onglet de demande de tirage](images\pull-request.png)
 
