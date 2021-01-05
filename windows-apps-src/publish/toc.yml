@@ -169,23 +169,6 @@
       href: ../publish/advertising-performance-report.md
     - name: Télécharger des rapports d’analyse
       href: ../publish/download-analytic-reports.md
-- name: Processus de paiement
-  href: ../publish/getting-paid-apps.md
-  items:
-    - name: Configurer votre compte de paiement et vos déclarations de taxe
-      href: ../publish/setting-up-your-payout-account-and-tax-forms.md
-    - name: 'Délais, méthodes et seuils de paiement'
-      href: ../publish/payment-thresholds-methods-and-timeframes.md
-    - name: Rapports de revenu
-      href: ../publish/payout-summary.md
-    - name: Détails des taxes
-      href: ../publish/tax-details-for-paid-apps.md
-    - name: Présentation des déclarations fiscales de l’IRS
-      href: ../publish/understand-irs-tax-forms.md
-    - name: Facturation de l’opérateur mobile
-      href: ../publish/mobile-operator-billing.md
-    - name: Informations sur la TVA
-      href: ../publish/vat-info.md
 - name: "Politiques et code de conduite du Microsoft\_Store"
   href: ../publish/store-policies-and-code-of-conduct.md
   items:

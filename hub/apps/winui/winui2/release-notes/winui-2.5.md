@@ -3,12 +3,12 @@ title: Notes de publication de WinUI 2.5
 description: Notes de publication de WinUI 2.5, incluant les nouvelles fonctionnalités et les résolutions de bogues.
 ms.date: 12/01/2020
 ms.topic: reference
-ms.openlocfilehash: d1b7873e874ff38037fbf766ef16b1e924edec16
-ms.sourcegitcommit: 03308873eafd0f768e1c518f4d1cc4e4fe0b70b7
+ms.openlocfilehash: 1fe64ea547b3e8966ea0ec085e77225a3a1895df
+ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96606027"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657666"
 ---
 # <a name="windows-ui-library-25"></a>Bibliothèque d’interface utilisateur Windows 2.5
 
@@ -26,7 +26,7 @@ Téléchargement du package NuGet : [Microsoft.UI.Xaml](https://www.nuget.org/p
 
 ### <a name="infobar"></a>InfoBar
 
-Le contrôle [InfoBar](/uwp/design/controls-and-patterns/infobar) est utilisé pour afficher des messages d’état à l’échelle de l’application qui sont très visibles par les utilisateurs, mais toutefois non intrusifs. Le contrôle comprend une propriété Severity qui permet d’indiquer le type de message affiché et une option pour spécifier votre propre appel à un bouton d’action ou de lien hypertexte. Comme le contrôle InfoBar (barre d’informations) est inséré avec d’autres contenus d’interface utilisateur, vous pouvez également spécifier s’il est toujours visible ou si l’utilisateur peut le faire disparaître.
+Le contrôle [InfoBar](/windows/uwp/design/controls-and-patterns/infobar) est utilisé pour afficher des messages d’état à l’échelle de l’application qui sont très visibles par les utilisateurs, mais toutefois non intrusifs. Le contrôle comprend une propriété Severity qui permet d’indiquer le type de message affiché et une option pour spécifier votre propre appel à un bouton d’action ou de lien hypertexte. Comme le contrôle InfoBar (barre d’informations) est inséré avec d’autres contenus d’interface utilisateur, vous pouvez également spécifier s’il est toujours visible ou si l’utilisateur peut le faire disparaître.
 
 Cet exemple montre un contrôle InfoBar (barre d’informations) dans l’état par défaut avec un bouton de fermeture et un message.
 
@@ -42,7 +42,7 @@ Cet exemple animé illustre un contrôle InfoBar (barre d’informations) avec d
 
 ### <a name="determinate-progressring"></a>ProgressRing - Déterminé
 
-L’état Déterminé du contrôle [ProgressRing](/uwp/design/controls-and-patterns/progress-controls) indique le pourcentage d’achèvement d’une tâche. Ce contrôle doit être utilisé au cours d’une opération pour laquelle la durée est connue, mais dont la progression ne doit pas bloquer l’interaction utilisateur avec l’application.
+L’état Déterminé du contrôle [ProgressRing](/windows/uwp/design/controls-and-patterns/progress-controls) indique le pourcentage d’achèvement d’une tâche. Ce contrôle doit être utilisé au cours d’une opération pour laquelle la durée est connue, mais dont la progression ne doit pas bloquer l’interaction utilisateur avec l’application.
 
 L’image animée suivante illustre un contrôle ProgressRing avec l’état Déterminé.
 

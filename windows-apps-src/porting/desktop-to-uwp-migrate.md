@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f1c6462e56b14396e3fdaed16221698c0333fd
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 4e27333c87b596948afcb430eb1cf1ef4998e851
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933160"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860450"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Passer d’une application de bureau à UWP
 
@@ -70,7 +70,7 @@ Utilisez ces mêmes outils pour analyser votre code. Téléchargez les outils ic
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-Si votre code n’est pas compatible avec la norme, pensez à d’autres façons d’implémenter ce code. Commencez par ouvrir le [navigateur de l’API .net](/dotnet/api/?view=netstandard-2.0). Vous pouvez utiliser ce navigateur pour passer en revue les API disponibles dans le .NET Standard 2,0. Veillez à étendre la liste à la .NET Standard 2,0.
+Si votre code n’est pas compatible avec la norme, pensez à d’autres façons d’implémenter ce code. Commencez par ouvrir le [navigateur de l’API .net](/dotnet/api/?view=netstandard-2.0&preserve-view=true). Vous pouvez utiliser ce navigateur pour passer en revue les API disponibles dans le .NET Standard 2,0. Veillez à étendre la liste à la .NET Standard 2,0.
 
 ![point net (option)](images/desktop-to-uwp/dot-net-option.png)
 
@@ -112,7 +112,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-Nous pouvons utiliser le [navigateur de l’API .net](/dotnet/api/?view=netstandard-2.0) pour trouver une alternative. Les ``DbConnection`` ``DbCommand`` classes, et ``DbDataReader`` sont toutes disponibles dans le .NET standard 2,0 afin de pouvoir les utiliser à la place.  
+Nous pouvons utiliser le [navigateur de l’API .net](/dotnet/api/?view=netstandard-2.0&preserve-view=true) pour trouver une alternative. Les ``DbConnection`` ``DbCommand`` classes, et ``DbDataReader`` sont toutes disponibles dans le .NET standard 2,0 afin de pouvoir les utiliser à la place.  
 
 Cette version révisée utilise ces classes pour obtenir une liste de clients, mais pour créer une ``DbConnection`` classe, nous devrons passer un objet de fabrique que nous créons dans l’application cliente.
 
@@ -232,14 +232,14 @@ Tout comme UWPs, le coût d’ajout d’une application Android ou iOS est plus 
 
 #### <a name="add-a-xamarin-project"></a>Ajouter un projet Xamarin
 
-Tout d’abord, ajoutez un projet **Android**, **iOS**ou **multiplateforme** à votre solution.
+Tout d’abord, ajoutez un projet **Android**, **iOS** ou **multiplateforme** à votre solution.
 
 Ces modèles se trouvent dans la boîte de dialogue **Ajouter un nouveau projet** , sous le groupe **Visual C#** .
 
 ![Capture d’écran de la boîte de dialogue Ajouter un nouveau projet, qui indique les options d’installation de l' > Visual C Sharp et Android, Cross Platform et i O S.](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Les projets multiplateformes sont très utiles pour les applications avec peu de fonctionnalités spécifiques à la plateforme. Vous pouvez les utiliser pour créer une interface utilisateur XAML native qui s’exécute sur iOS, Android et Windows. Pour en savoir plus, cliquez [ici](/xamarin/xamarin-forms/).
+>Les projets multiplateformes sont très utiles pour les applications avec peu de fonctionnalités spécifiques à la plateforme. Vous pouvez les utiliser pour créer une interface utilisateur XAML native qui s’exécute sur iOS, Android et Windows. En savoir plus [ici](/xamarin/xamarin-forms/).
 
 Ensuite, à partir de votre projet Android, iOS ou multiplateforme, ajoutez une référence au projet de bibliothèque de classes.
 

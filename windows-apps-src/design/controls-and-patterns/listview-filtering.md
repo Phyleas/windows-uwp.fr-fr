@@ -7,15 +7,15 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: a62ec52fe2b8f6caac2ac27cfc4d002ec44a5b32
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: cd78d46abacd57be5b08d6caf057e9c703b32560
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034532"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860372"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>Filtrage de collections et de listes par entrée utilisateur
-Si votre collection affiche de nombreux éléments ou qu’elle est fortement liée à l’interaction utilisateur, le filtrage est une fonctionnalité utile à implémenter. Vous pouvez implémenter le filtrage selon la méthode décrite dans cet article pour la plupart des contrôles de collection, notamment [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview) et [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2). De nombreux types d’entrée utilisateur peuvent être utilisés pour filtrer une collection : cases à cocher, cases d’option, curseurs, etc. Cet article décrit comment utiliser une recherche d’utilisateur entrée au format texte pour mettre à jour un ListView en temps réel. 
+Si votre collection affiche de nombreux éléments ou qu’elle est fortement liée à l’interaction utilisateur, le filtrage est une fonctionnalité utile à implémenter. Vous pouvez implémenter le filtrage selon la méthode décrite dans cet article pour la plupart des contrôles de collection, notamment [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview) et [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true). De nombreux types d’entrée utilisateur peuvent être utilisés pour filtrer une collection : cases à cocher, cases d’option, curseurs, etc. Cet article décrit comment utiliser une recherche d’utilisateur entrée au format texte pour mettre à jour un ListView en temps réel. 
 
 > [!NOTE]
 > Cet article est centré sur le filtrage avec un ListView. Sachez que la méthode de filtrage peut également être appliquée à d’autres contrôles de collection tels que GridView, ItemsRepeater ou TreeView.

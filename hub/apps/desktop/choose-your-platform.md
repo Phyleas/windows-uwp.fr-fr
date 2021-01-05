@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: développement d’applications de bureau Win32 pour Windows
-ms.openlocfilehash: 7ed2d4100bc827dbc0db93897f534b77e1292b7e
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: 51d799a4779f6d3ecee2119277b6c41485e0d377
+ms.sourcegitcommit: e1c182ea23da9b0bd9e89425f7f1a00baec81136
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97214350"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97826270"
 ---
 # <a name="choose-your-windows-app-platform"></a>Choisir votre plateforme d’application Windows
 
@@ -133,7 +133,7 @@ Le tableau suivant compare en détail les caractéristiques de Windows Forms, de
 
 ### <a name="progressive-web-apps-pwas"></a>Applications web progressives (PWA)
 
-Les PWA permettent aux développeurs d’empaqueter le code de leur site web pour pouvoir l’installer et l’exécuter comme une application sur des PC Windows 10. Pour plus d’informations, consultez [Applications web progressives](/microsoft-edge/progressive-web-apps/get-started).
+Les PWA permettent aux développeurs d’empaqueter le code de leur site web pour pouvoir l’installer et l’exécuter comme une application sur des PC Windows 10. Pour plus d’informations, consultez [Applications web progressives](/microsoft-edge/progressive-web-apps-chromium/get-started).
 
 ### <a name="xamarin"></a>Xamarin
 

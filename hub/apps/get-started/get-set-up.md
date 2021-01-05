@@ -6,12 +6,12 @@ ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0991e4d1173bc665e0cf14786e1901e26e4823c
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 6c80bb9a3b9fe59550dff0603bdbe1b87e5b2982
+ms.sourcegitcommit: 3eb43ba2a6c52ad83523d63d825ac5d4d9050cd3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011864"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811960"
 ---
 # <a name="get-set-up"></a>Se préparer
 
@@ -57,8 +57,8 @@ Vous pouvez commencer à développer des applications immédiatement mais, avant
 
 Une fois que vous avez installé les outils et activé votre appareil pour le développement, consultez nos conseils sur la façon de commencer à créer des applications Windows 10.
 
--   [Choisissez votre plateforme](/windows/desktop/apps/choose-your-platform.md)
--   [Démarrer le codage des applications UWP](/windows/uwp/get-started/create-uwp-apps.md)
+-   [Choisissez votre plateforme](../desktop/choose-your-platform.md)
+-   [Démarrer le codage des applications UWP](/windows-apps-src/get-started/create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Scripts d’installation de développement Windows
 
@@ -73,5 +73,5 @@ Pour obtenir la liste complète des outils et des téléchargements, visitez la 
 ## <a name="see-also"></a>Voir aussi
 
 * [Exemples de code pour les développeurs UWP](https://developer.microsoft.com/windows/samples)
-* [Qu’est-ce qu’une application UWP ?](/windows/uwp/get-started/universal-application-platform-guide.md)
+* [Qu’est-ce qu’une application UWP ?](/windows-apps-src/get-started/universal-application-platform-guide.md)
 * [Créer un compte Windows](sign-up.md)

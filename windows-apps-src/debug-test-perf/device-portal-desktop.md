@@ -4,15 +4,15 @@ title: Portail d’appareil pour Windows Desktop
 description: Découvrez comment Windows Device Portal ouvre les diagnostics et l’automatisation sur votre bureau Windows.
 ms.date: 08/20/2020
 ms.topic: article
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 1618b2de1f0db96989a7aedf5b53805fd70f535e
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 42f6f35fe2cea38d4c1f194fbc740b7a8290ea8c
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339567"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860335"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour Windows Desktop
 
@@ -132,7 +132,7 @@ Voici quelques-unes des erreurs courantes que vous pouvez rencontrer lors de la 
 
 Cette erreur peut s’afficher si vous tentez d’installer les packages de développement sur une préversion de Windows 10. Ces packages de fonctionnalités à la demande (Feature-on-Demand ou FoD) sont hébergés sur Windows Update, et leur téléchargement sur des préversions nécessite un abonnement à la distribution de version d’évaluation. Si votre installation ne bénéficie pas de la distribution de version d’évaluation pour la version et la combinaison appropriées, la charge utile ne pourra pas être téléchargée. Vérifiez les éléments suivants :
 
-1. Accédez à **Paramètres > Mise à jour et sécurité > Programme Windows Insider** et vérifiez que la section **Compte Windows Insider** affiche vos informations de compte correctes. Si vous ne voyez pas cette section, sélectionnez **Associer un compte Windows Insider** , ajoutez votre compte de messagerie, puis vérifiez qu’il s’affiche sous l’en-tête **Compte Windows Insider** (vous devrez peut-être sélectionner à nouveau **Associer un compte Windows Insider** pour lier un compte récemment ajouté).
+1. Accédez à **Paramètres > Mise à jour et sécurité > Programme Windows Insider** et vérifiez que la section **Compte Windows Insider** affiche vos informations de compte correctes. Si vous ne voyez pas cette section, sélectionnez **Associer un compte Windows Insider**, ajoutez votre compte de messagerie, puis vérifiez qu’il s’affiche sous l’en-tête **Compte Windows Insider** (vous devrez peut-être sélectionner à nouveau **Associer un compte Windows Insider** pour lier un compte récemment ajouté).
  
 2. Sous **Quel type de contenu voulez-vous recevoir ?** , vérifiez que l’option **Développement actif de Windows** est sélectionnée.
  

@@ -5,15 +5,15 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 09/28/2020
 ms.topic: article
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b63e88f6d83e84bbe07fc4c5cbe7befba6dc3c8a
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 6003db167d2a36205ac02f98750295d32a03ca62
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878502"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860256"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS) 
 
@@ -65,7 +65,7 @@ Au niveau le plus élevé, la chaîne d’informations se présente comme suit :
 Dans le cadre de l’authentification auprès de WNS, le service cloud soumet une requête HTTP sur SSL (Secure Sockets Layer). Les paramètres sont fournis au format « application/x-www-for-urlencoded ». Indiquez le SID du package dans le champ « ID client » \_ et votre clé secrète dans le champ « clé \_ secrète client », comme indiqué dans l’exemple suivant. Pour obtenir des détails sur la syntaxe, voir la référence sur la [demande de jeton d’accès](/previous-versions/windows/apps/hh465435(v=win.10)).
 
 > [!NOTE]
-> Il ne s’agit là que d’un exemple, et non du code couper-coller que vous pouvez utiliser avec succès dans votre propre code. 
+> Il ne s’agit là que d’un exemple, et non du code couper-coller que vous pouvez utiliser avec succès dans votre propre code. 
 
 ``` http
  POST /accesstoken.srf HTTP/1.1

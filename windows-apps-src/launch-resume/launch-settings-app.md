@@ -6,16 +6,16 @@ ms.date: 11/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 309568b80d51cc8bd6cd2394317ef3bb8266a212
-ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
+ms.openlocfilehash: 78d843ff9bdd0625b7172af0bc973581d8bd988a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94941815"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860415"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -71,7 +71,7 @@ Pour plus d’informations sur les URI de lancement, voir [Lancer l’applicatio
 
 Les sections suivantes décrivent les différentes catégories d’URI MS-Settings utilisées pour ouvrir diverses pages de l’application Paramètres :
 
-* [Comptes](#accounts)
+* [Comptes (Accounts)](#accounts)
 * [Applications](#apps)
 * [Cortana](#cortana)
 * [Appareils](#devices)
@@ -82,7 +82,7 @@ Les sections suivantes décrivent les différentes catégories d’URI MS-Settin
 * [Réalité mixte](#mixed-reality)
 * [Réseau et Internet](#network-and-internet)
 * [Personnalisation](#personalization)
-* [Numéros](#phone)
+* [Téléphone](#phone)
 * [Confidentialité](#privacy)
 * [Surface Hub](#surface-hub)
 * [Système](#system)
@@ -171,7 +171,7 @@ Les sections suivantes décrivent les différentes catégories d’URI MS-Settin
 | Taille du curseur et du pointeur | MS-Settings : easeofaccess-cursorandpointersize |
 | Afficher | MS-Settings : easeofaccess-Display |
 | Contrôle visuel | MS-Settings : easeofaccess-eyecontrol |
-| Fonts | MS-paramètres : polices |
+| Polices | MS-paramètres : polices |
 | Contraste élevé | ms-settings:easeofaccess-highcontrast |
 | Clavier | ms-settings:easeofaccess-keyboard |
 | Loupe | ms-settings:easeofaccess-magnifier |
@@ -230,12 +230,12 @@ Les sections suivantes décrivent les différentes catégories d’URI MS-Settin
 | Point d’accès sans fil mobile | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| État | ms-settings:network-status<br/>MS-Settings : réseau |
-| VPN | MS-Settings : réseau-VPN |
+| Statut | ms-settings:network-status<br/>MS-Settings : réseau |
+| Réseau privé virtuel | MS-Settings : réseau-VPN |
 | Wi-Fi | MS-Settings : Network-WiFi (disponible uniquement si l’appareil possède un adaptateur Wi-Fi) |
 | Wi-Fi appelant | MS-Settings : Network-wificalling (disponible uniquement si Wi-Fi appelant est activé) |
 
-### <a name="personalization"></a>Personnalisation
+### <a name="personalization"></a>Personalization
 
 |Page Paramètres| URI |
 |-------------|-----|
@@ -272,7 +272,7 @@ Les sections suivantes décrivent les différentes catégories d’URI MS-Settin
 | Appareil photo | ms-settings:privacy-webcam |
 | Contacts | ms-settings:privacy-contacts |
 | Documents | MS-Settings : confidentialité-documents |
-| E-mail | ms-settings:privacy-email |
+| Courrier | ms-settings:privacy-email |
 | Dispositif de suivi oculaire | MS-Settings : privacy-Eyetracker (nécessite un matériel Eyetracker) |
 | Commentaires et diagnostics | ms-settings:privacy-feedback |
 | Système de fichiers | MS-Settings : confidentialité-broadfilesystemaccess |
@@ -354,7 +354,7 @@ Les sections suivantes décrivent les différentes catégories d’URI MS-Settin
 |Page Paramètres| URI |
 |-------------|-----|
 | Activation | MS-Settings : activation |
-| Backup | MS-paramètres : sauvegarde |
+| Sauvegarde | MS-paramètres : sauvegarde |
 | Optimisation de la distribution | MS-Settings : livraison-optimisation |
 | Localiser mon appareil | MS-paramètres : findmydevice |
 | Pour les développeurs | ms-settings:developers |

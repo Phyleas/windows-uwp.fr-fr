@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: Windows 10, UWP, jeux, .net, Unity
 ms.localizationpriority: medium
-ms.openlocfilehash: dcacb227205c0049cfc3467c9906784b0b55728f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b687f3ec09a99ae6ccb81e5c205eb454e0af0e04
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165233"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860116"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>API .NET manquantes dans Unity et UWP
 
@@ -27,11 +27,11 @@ Pour comprendre pourquoi certaines API peuvent ne pas fonctionner, il est import
 
 Chaque version du kit de développement logiciel (SDK) UWP est conforme à un autre niveau de .NET Standard. Par exemple, le kit de développement logiciel (SDK) 16299 (la mise à jour des créateurs de automne) prend en charge .NET Standard 2,0.
 
-Si vous souhaitez savoir si une certaine API .NET est prise en charge dans la version UWP que vous ciblez, vous pouvez vérifier la référence de l' [api .NET standard](/dotnet/api/index?view=netstandard-2.0) et sélectionner la version du .NET standard qui est prise en charge par cette version de UWP.
+Si vous souhaitez savoir si une certaine API .NET est prise en charge dans la version UWP que vous ciblez, vous pouvez vérifier la référence de l' [api .NET standard](/dotnet/api/index?view=netstandard-2.0&preserve-view=true) et sélectionner la version du .NET standard qui est prise en charge par cette version de UWP.
 
 ## <a name="scripting-backend-configuration"></a>Configuration du serveur principal de script
 
-La première chose à faire si vous rencontrez des problèmes de génération pour UWP consiste à vérifier les paramètres du **lecteur** (**fichiers > paramètres de Build**, sélectionnez **plateforme Windows universelle**, puis **paramètres du lecteur**). Sous **autres paramètres > la configuration**, les trois premières listes déroulantes (**Scripting Runtime**, **serveur principal de script**et **niveau de compatibilité d’API**) sont tous des paramètres importants à prendre en compte.
+La première chose à faire si vous rencontrez des problèmes de génération pour UWP consiste à vérifier les paramètres du **lecteur** (**fichiers > paramètres de Build**, sélectionnez **plateforme Windows universelle**, puis **paramètres du lecteur**). Sous **autres paramètres > la configuration**, les trois premières listes déroulantes (**Scripting Runtime**, **serveur principal de script** et **niveau de compatibilité d’API**) sont tous des paramètres importants à prendre en compte.
 
 La **version du runtime de script** est celle utilisée par le backend de script Unity, qui vous permet d’acquérir la version équivalente (à peu près) de la prise en charge de .NET Framework que vous choisissez. Toutefois, gardez à l’esprit que toutes les API de cette version du .NET Framework ne seront pas prises en charge, mais uniquement celles de la version de .NET Standard que votre UWP cible.
 
@@ -96,7 +96,7 @@ Vous pouvez également utiliser les API [Windows. Storage](/uwp/api/Windows.Stor
 
 Il est important de noter que la méthode [Close](/dotnet/api/system.io.stream.close) est uniquement disponible dans .NET standard 2,0 et versions ultérieures (même si Unity fournit une méthode d’extension). Utilisez à la place [dispose](/dotnet/api/system.io.stream.dispose) .
 
-### <a name="threading"></a>Threads
+### <a name="threading"></a>Thread
 
 Certains types dans les espaces de noms [System. Threading](/dotnet/api/system.threading) , tels que [ThreadPool](/dotnet/api/system.threading.threadpool), ne sont pas disponibles dans les versions antérieures du .NET standard. Dans ce cas, vous pouvez utiliser le [Windows.SysTEM. ](/uwp/api/windows.system.threading) Espace de noms de thread à la place.
 
@@ -115,7 +115,7 @@ private void UsingThreads()
 
 ### <a name="security"></a>Sécurité
 
-Une partie de la **System. Security.** * les espaces de noms, tels que [System. Security. Cryptography. X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0), ne sont pas disponibles lorsque vous créez un jeu Unity pour UWP. Dans ce cas, utilisez **Windows. Security.** * API, qui couvrent la plupart des fonctionnalités.
+Une partie de la **System. Security.** _ les espaces de noms, tels que [System. Security. Cryptography. X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0&preserve-view=true), ne sont pas disponibles lorsque vous créez un jeu Unity pour UWP. Dans ce cas, utilisez _*Windows. Security.* *_ Les API, qui couvrent la plupart des fonctionnalités.
 
 L’exemple suivant obtient simplement les certificats d’un magasin de certificats portant le nom donné :
 
@@ -138,9 +138,9 @@ Pour plus d’informations sur l’utilisation des API de sécurité WinRT, cons
 
 ### <a name="networking"></a>Mise en réseau
 
-Une partie du **système &period; net.** * les espaces de noms, tels que [System .net. mail](/dotnet/api/system.net.mail?view=netstandard-2.0), ne sont pas non plus disponibles lors de la création d’un jeu Unity pour UWP. Pour la plupart de ces API, utilisez la **mise en réseau Windows. Networking correspondante.** * et **Windows. Web.** * API WinRT pour bénéficier d’une fonctionnalité similaire. Pour plus d’informations, consultez [mise en réseau et services Web](../networking/index.md) .
+Certains des espaces de noms _*System &period; net.* *_ , tels que [System .net. mail](/dotnet/api/system.net.mail?view=netstandard-2.0&preserve-view=true), ne sont pas non plus disponibles lors de la création d’un jeu Unity pour UWP. Pour la plupart de ces API, utilisez le _*Windows. Networking* *_ et le _*Windows. Web correspondants.* *_ API WinRT pour bénéficier d’une fonctionnalité similaire. Pour plus d’informations, consultez [mise en réseau et services Web](../networking/index.md) .
 
-Dans le cas de **System .net. mail**, utilisez l’espace de noms [Windows. ApplicationModel. email](/uwp/api/windows.applicationmodel.email) . Pour plus d’informations, consultez [Envoyer un message électronique](../contacts-and-calendar/sending-email.md) .
+Dans le cas de _ * System .net. mail * *, utilisez l’espace de noms [Windows. ApplicationModel. email](/uwp/api/windows.applicationmodel.email) . Pour plus d’informations, consultez [Envoyer un message électronique](../contacts-and-calendar/sending-email.md) .
 
 ## <a name="see-also"></a>Voir aussi
 

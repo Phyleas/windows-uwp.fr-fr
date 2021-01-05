@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, asynchrone
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7cdffd484c426faa9b877240f45f122ccc5ec4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1c0798a1d58d3a97d02e030bcd0094f8a7364d16
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161753"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860383"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 Cette rubrique décrit la programmation asynchrone dans le plateforme Windows universelle (UWP) et sa représentation en C#, Microsoft Visual Basic .NET, C++ et JavaScript.
@@ -58,9 +58,9 @@ Un segment de code classique écrit en C# ou Visual Basic s’exécute de façon
 Avec C++/WinRT, vous utilisez des coroutines et l’opérateur **co_await** . Pour plus d’informations et pour obtenir des exemples de code, consultez [programmation asynchrone en C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 
 ## <a name="asynchronous-patterns-in-uwp-with-ccx"></a>Modèles asynchrones dans UWP avec C++/CX
-En C++/CX, la programmation asynchrone est basée sur la [**task class**](/cpp/parallel/concrt/reference/task-class) et sur sa méthode [**then method**](/cpp/parallel/concrt/reference/task-class?view=vs-2017). La syntaxe est similaire à celle des promesses JavaScript. La classe **task** et ses types associés fournissent également la fonctionnalité d’annulation et de gestion du contexte de thread. Pour plus d’informations, consultez [programmation asynchrone en C++/CX](asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
+En C++/CX, la programmation asynchrone est basée sur la [**task class**](/cpp/parallel/concrt/reference/task-class) et sur sa méthode [**then method**](/cpp/parallel/concrt/reference/task-class?view=vs-2017&preserve-view=true). La syntaxe est similaire à celle des promesses JavaScript. La classe **task** et ses types associés fournissent également la fonctionnalité d’annulation et de gestion du contexte de thread. Pour plus d’informations, consultez [programmation asynchrone en C++/CX](asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
-La [**fonction Create \_ Async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) assure la prise en charge de la génération d’API asynchrones qui peuvent être consommées à partir de JavaScript ou de tout autre langage prenant en charge UWP. Pour plus d’informations, consultez [création d’opérations asynchrones en C++/CX](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps).
+La [**fonction Create \_ Async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017&preserve-view=true) assure la prise en charge de la génération d’API asynchrones qui peuvent être consommées à partir de JavaScript ou de tout autre langage prenant en charge UWP. Pour plus d’informations, consultez [création d’opérations asynchrones en C++/CX](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps).
 
 ## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>Modèles asynchrones dans UWP utilisant JavaScript
 En JavaScript, la programmation asynchrone suit la norme [Common JS Promises/A](https://wiki.commonjs.org/wiki/Promises/A) proposée en ayant des méthodes asynchrones qui retournent des objets promise. Les promesses sont utilisées à la fois dans l’UWP et dans la Bibliothèque Microsoft Windows pour JavaScript.

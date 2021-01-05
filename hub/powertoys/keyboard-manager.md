@@ -4,12 +4,12 @@ description: Utilitaire qui permet aux utilisateurs de redéfinir des touches su
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f8f146e02cf9006e4ac74ce3426ccba0d6000c
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: eb17cd5a7ad76728e6b063f76369c8d194a5e12c
+ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618548"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97865464"
 ---
 # <a name="keyboard-manager-utility"></a>Utilitaire du gestionnaire de clavier
 
@@ -26,7 +26,10 @@ Le gestionnaire de clavier PowerToys doit être activé (avec les PowerToys exé
 ![Capture d’écran des raccourcis de remappage du gestionnaire de clavier PowerToys](../images/powertoys-keyboard-shortcuts.png)
 
 > [!NOTE]
-> Certains [raccourcis clés/OS réservés ne peuvent pas être remplacés](https://github.com/microsoft/PowerToys/wiki/Keyboard-Manager-Overview#14-keys-that-cannot-be-remapped).
+> Certaines touches de raccourci sont réservées pour le système d’exploitation et ne peuvent pas être remplacées. Les clés qui ne peuvent pas être remappées sont les suivantes :
+> - `⊞ Win`+`L`et `Ctrl`  +  `Alt`  +  `Del` ne peuvent pas être remappés, car ils sont réservés par le système d’exploitation Windows.
+> - La `Fn` clé (fonction) ne peut pas être remappée (dans la plupart des cas). Les `F1` - `F12` clés (et `F13` - `F24` ) peuvent être mappées.
+> - `Pause` enverra uniquement un événement KeyOut Sngle. Par conséquent, si vous le mappez à la touche Retour arrière, par exemple et que vous appuyez sur + Holding, vous ne supprimerez qu’un seul caractère.
 
 ## <a name="settings"></a>Paramètres
 
@@ -122,7 +125,7 @@ Le gestionnaire de clavier utilise les noms de processus (et non les noms d’ap
 
 ### <a name="keys-that-cannot-be-remapped"></a>Clés qui ne peuvent pas être remappées
 
-Certaines touches de raccourci ne sont pas autorisées pour le remappage. Ce sont, entre autres, les suivantes :
+Certaines touches de raccourci ne sont pas autorisées pour le remappage. Il s’agit notamment des paramètres suivants :
 
 - <kbd>CTRL</kbd> + <kbd>ALT</kbd> +  <kbd>Del</kbd> (commande interupt)
 - <kbd>⊞ Win</kbd> + <kbd>L</kbd> (verrouillage de votre ordinateur)
@@ -175,7 +178,7 @@ Cela dépend de la façon dont le jeu accède à vos clés. Certaines API de cla
 
 Oui. À ce stade, si vous remappez <kbd>un</kbd> à <kbd>B</kbd> sur le clavier anglais (US), puis que vous modifiez le paramètre de langue en français, si vous tapez <kbd>un</kbd> sur le clavier français (<kbd>Q</kbd> sur le clavier physique anglais des États-Unis), le résultat est <kbd>B</kbd>, ce qui est cohérent avec la manière dont Windows gère les entrées multilingues.
 
-## <a name="troubleshooting"></a>Dépannage
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Si vous avez essayé de remapper une clé ou un raccourci et que vous rencontrez des problèmes, il peut s’agir de l’un des problèmes suivants :
 

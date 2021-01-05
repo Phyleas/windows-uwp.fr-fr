@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, actualités, nouveautés, nouveau
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0d7c42b1346805c9c03714eb9bbb3944fe940ccf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f5cfe5dc66df98e3dd4d4290023cac1874ae797a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154463"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860283"
 ---
 # <a name="whats-new-in-cwinrt"></a>Nouveautés de C++/WinRT
 
@@ -34,7 +34,7 @@ Réduction de 20 % de la taille et réduction de 23 % du temps de génération
 
 ### <a name="improved-msbuild-support"></a>Amélioration de la prise en charge de MSBuild
 
-Nous avons beaucoup travailler à l’amélioration de la prise en charge de [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019) dans un grand nombre de scénarios différents.
+Nous avons beaucoup travailler à l’amélioration de la prise en charge de [MSBuild](/visualstudio/msbuild/msbuild) dans un grand nombre de scénarios différents.
 
 ### <a name="even-faster-factory-caching"></a>Mise en cache de fabrique encore plus rapide
 
@@ -107,9 +107,9 @@ Une bibliothèque à en-tête uniquement entièrement portable (pour l’analyse
 #### <a name="fewer-dependencies"></a>Moins de dépendances
 
 À cause du lecteur de métadonnées xlang, l’outil `cppwinrt.exe` lui-même a moins de dépendances. Il est ainsi beaucoup plus flexible et utilisable dans plus de scénarios, en particulier dans les environnements de build contraints. Il ne s’appuie notamment plus sur `RoMetadata.dll`.
- 
+ 
 Voici les dépendances pour `cppwinrt.exe` 2.0.
- 
+ 
 - ADVAPI32.dll
 - KERNEL32.dll
 - SHLWAPI.dll
@@ -142,7 +142,7 @@ Toutes ces DLL sont disponibles sur Windows 10, mais également sur les version
 - api-ms-win-core-threadpool-l1-2-0.dll
 - api-ms-win-core-com-l1-1-0.dll
 - api-ms-win-core-com-l1-1-1.dll
-- api-ms-win-core-synch-l1-2-0.dll 
+- api-ms-win-core-synch-l1-2-0.dll 
 
 #### <a name="the-windows-runtime-noexcept-attribute"></a>Attribut `noexcept` de Windows Runtime
 
@@ -171,14 +171,14 @@ Cette modification complète le travail effectué par l’équipe en charge de l
 ```cpp
 int32_t Function() noexcept
 {
-    try
-    {
-        // code here constitutes unique value.
-    }
-    catch (...)
-    {
-        // code here is always duplicated.
-    }
+    try
+    {
+        // code here constitutes unique value.
+    }
+    catch (...)
+    {
+        // code here is always duplicated.
+    }
 }
 ```
 
@@ -228,14 +228,14 @@ using namespace Windows::System;
 ...
 fire_and_forget Async(DispatcherQueueController controller)
 {
-    bool queued = co_await resume_foreground(controller.DispatcherQueue());
-    assert(queued);
+    bool queued = co_await resume_foreground(controller.DispatcherQueue());
+    assert(queued);
 
-    // This is just to simulate queue failure...
-    co_await controller.ShutdownQueueAsync();
+    // This is just to simulate queue failure...
+    co_await controller.ShutdownQueueAsync();
 
-    queued = co_await resume_foreground(controller.DispatcherQueue());
-    assert(!queued);
+    queued = co_await resume_foreground(controller.DispatcherQueue());
+    assert(!queued);
 }
 ```
 
@@ -266,20 +266,20 @@ La valeur de retour de **final_release** peut être `void`, un objet de l’opé
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
 {
-    hstring ToString()
-    {
-        return L"Sample";
-    }
+    hstring ToString()
+    {
+        return L"Sample";
+    }
 
-    ~Sample()
-    {
-        // Called when the unique_ptr below is reset.
-    }
+    ~Sample()
+    {
+        // Called when the unique_ptr below is reset.
+    }
 
-    static void final_release(std::unique_ptr<Sample> self) noexcept
-    {
-        // Move 'self' as needed to delay destruction.
-    }
+    static void final_release(std::unique_ptr<Sample> self) noexcept
+    {
+        // Move 'self' as needed to delay destruction.
+    }
 };
 ```
 
@@ -290,27 +290,27 @@ Vous n’êtes pas obligé d’implémenter votre **final_release** en tant que 
 ```cppwinrt
 struct MainPage : PageT<MainPage>
 {
-    MainPage()
-    {
-    }
+    MainPage()
+    {
+    }
 
-    ~MainPage()
-    {
-        DataContext(nullptr);
-    }
+    ~MainPage()
+    {
+        DataContext(nullptr);
+    }
 
-    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
-    {
-        co_await 5s;
+    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
+    {
+        co_await 5s;
 
-        co_await resume_foreground(self->Dispatcher());
-        co_await self->resource.CloseAsync();
+        co_await resume_foreground(self->Dispatcher());
+        co_await self->resource.CloseAsync();
 
-        // The object is destructed normally at the end of final_release,
+        // The object is destructed normally at the end of final_release,
         // when the std::unique_ptr<MyClass> destructs. If you want to destruct
-        // the object earlier than that, then you can set *self* to `nullptr`.
-        self = nullptr;
-    }
+        // the object earlier than that, then you can set *self* to `nullptr`.
+        self = nullptr;
+    }
 };
 ```
 
@@ -348,8 +348,8 @@ Le tableau ci-dessous contient les nouveautés et les modifications concernant C
 
 Autres modifications.
 
-- **Changement cassant**. [**winrt::get_abi(winrt::hstring const&)** ](/uwp/cpp-ref-for-winrt/get-abi) retourne désormais `void*` au lieu de `HSTRING`. Vous pouvez utiliser `static_cast<HSTRING>(get_abi(my_hstring));` pour obtenir un HSTRING. Consultez [Interopération avec le HSTRING d’ABI](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
-- **Changement cassant**. [**winrt::put_abi(winrt::hstring&)** ](/uwp/cpp-ref-for-winrt/put-abi) retourne désormais `void**` au lieu de `HSTRING*`. Vous pouvez utiliser `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` pour obtenir un HSTRING*. Consultez [Interopération avec le HSTRING d’ABI](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
+- **Changement cassant**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) retourne désormais `void*` au lieu de `HSTRING`. Vous pouvez utiliser `static_cast<HSTRING>(get_abi(my_hstring));` pour obtenir un HSTRING. Consultez [Interopération avec le HSTRING d’ABI](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
+- **Changement cassant**. [**winrt::put_abi(winrt::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) retourne désormais `void**` au lieu de `HSTRING*`. Vous pouvez utiliser `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` pour obtenir un HSTRING*. Consultez [Interopération avec le HSTRING d’ABI](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
 - **Changement cassant**. HRESULT est désormais projeté en tant que **winrt::hresult**. Si vous avez besoin d’un HRESULT (pour effectuer une vérification de type ou prendre en charge des caractéristiques de type), alors vous pouvez faire un `static_cast` sur un **winrt::hresult**. Sinon, **winrt::hresult** se convertit en HRESULT, tant que vous incluez `unknwn.h` avant d’inclure des en-têtes C++/WinRT.
 - **Changement cassant**. GUID est désormais projeté en tant que **winrt::guid**. Pour les API que vous implémentez, vous devez utiliser **winrt::guid** pour les paramètres GUID. Sinon, **winrt::guid** se convertit en GUID, tant que vous incluez `unknwn.h` avant d’inclure des en-têtes C++/WinRT. Consultez [Interopération avec le struct GUID d’ABI](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct).
 - **Changement cassant**. Le [**constructeur winrt::handle_type**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) a été renforcé en devenant plus explicite (il est désormais plus difficile d’écrire du code incorrect avec lui). Si vous avez besoin d’assigner une valeur de handle brute, appelez la [**fonction handle_type::attach**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function) à la place.

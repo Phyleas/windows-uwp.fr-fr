@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d343b2da4bdfee73479c3b5f3c45fd56a92ada35
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: bfd8fdccc62dc45928085c53fa3f5b32fe9db98c
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339787"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860160"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Procédure pas à pas pour créer un composant C++/CX/Windows Runtime et l’appeler à partir de JavaScript ou C#
 
@@ -28,14 +28,14 @@ Notez que la classe principale du composant contient des exemples de définition
 ### <a name="to-create-the-c-component-project"></a>**Pour créer le projet du composant C++**
 1. Dans la barre de menus de Visual Studio, choisissez **fichier, nouveau, projet**.
 
-2. Dans le volet gauche de la boîte de dialogue **Nouveau projet** , développez **Visual C++** , puis sélectionnez le nœud des applications Windows universelles.
+2. Dans le volet gauche de la boîte de dialogue **Nouveau projet**, développez **Visual C++**, puis sélectionnez le nœud des applications Windows universelles.
 
 3. Dans le volet central, sélectionnez **Windows Runtime composant** , puis nommez le projet WinRT \_ cpp.
 
 4. Choisissez le bouton **OK**.
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**Pour ajouter une classe activable au composant**
-Une classe activable est une classe que le code client peut créer à l’aide d’une expression **new** ( **New** en Visual Basic ou **ref new** en C++). Dans votre composant, vous devez la déclarer sous la forme **public ref class sealed**. En fait, les fichiers Class1.h et .cpp disposent déjà d’une classe ref. Vous pouvez changer le nom, mais dans cet exemple, nous utiliserons celui par défaut : Class1. Vous pouvez définir des classes ref ou standard supplémentaires dans votre composant si nécessaire. Pour plus d’informations sur les classes ref, voir [Système de types (C++/CX)](/cpp/cppcx/type-system-c-cx).
+Une classe activable est une classe que le code client peut créer à l’aide d’une expression **new** (**New** en Visual Basic ou **ref new** en C++). Dans votre composant, vous devez la déclarer sous la forme **public ref class sealed**. En fait, les fichiers Class1.h et .cpp disposent déjà d’une classe ref. Vous pouvez changer le nom, mais dans cet exemple, nous utiliserons celui par défaut : Class1. Vous pouvez définir des classes ref ou standard supplémentaires dans votre composant si nécessaire. Pour plus d’informations sur les classes ref, voir [Système de types (C++/CX)](/cpp/cppcx/type-system-c-cx).
 
 Ajoutez ces \# directives include à Class1. h :
 
@@ -272,12 +272,12 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 Si vous souhaitez créer un client C#, vous pouvez ignorer cette section.
 
 > [!NOTE]
-> Les projets plateforme Windows universelle (UWP) ne sont pas pris en charge dans Visual Studio 2019. Consultez [JavaScript et machine à écrire dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects). Pour suivre cette section, nous vous recommandons d’utiliser Visual Studio 2017. Consultez [JavaScript dans Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
+> Les projets plateforme Windows universelle (UWP) ne sont pas pris en charge dans Visual Studio 2019. Consultez [JavaScript et machine à écrire dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). Pour suivre cette section, nous vous recommandons d’utiliser Visual Studio 2017. Consultez [JavaScript dans Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
 
 ### <a name="to-create-a-javascript-project"></a>Pour créer un projet JavaScript
 1. Dans Explorateur de solutions (dans Visual Studio 2017 ; Voir la **Remarque** ci-dessus), ouvrez le menu contextuel du nœud solution et choisissez **Ajouter, nouveau projet**.
 
-2. Développez JavaScript (il peut être imbriqué dans **Autres langages** ) et choisissez **Application vide (Windows universel)**.
+2. Développez JavaScript (il peut être imbriqué dans **Autres langages**) et choisissez **Application vide (Windows universel)**.
 
 3. Acceptez le nom par défaut &mdash; App1 &mdash; en choisissant le bouton **OK** .
 
@@ -287,7 +287,7 @@ Si vous souhaitez créer un client C#, vous pouvez ignorer cette section.
 
 6. Ouvrez le menu contextuel du nœud Références, puis choisissez **Ajouter une référence**.
 
-7. Dans le volet gauche de la boîte de dialogue Gestionnaire de références, sélectionnez **Projets** , puis **Solution**.
+7. Dans le volet gauche de la boîte de dialogue Gestionnaire de références, sélectionnez **Projets**, puis **Solution**.
 
 8. Dans le volet central, sélectionnez WinRT_CPP, puis choisissez le bouton **OK** .
 
@@ -448,7 +448,7 @@ Appuyez sur F5 pour exécuter l’application.
 ### <a name="to-create-a-c-project"></a>Pour créer un projet C#
 1. Dans l’Explorateur de solutions, ouvrez le menu contextuel du nœud Solution, puis choisissez **Ajouter &gt; Nouveau projet**.
 
-2. Développez Visual C# (il peut être imbriqué dans **Autres langages** ), sélectionnez **Windows** puis **Universel** dans le volet gauche, puis sélectionnez **Application vide** dans le volet central.
+2. Développez Visual C# (il peut être imbriqué dans **Autres langages**), sélectionnez **Windows** puis **Universel** dans le volet gauche, puis sélectionnez **Application vide** dans le volet central.
 
 3. Nommez cette application CS_Client, puis cliquez sur le bouton **OK**.
 
@@ -600,9 +600,9 @@ Pour optimiser le débogage, téléchargez les symboles de débogage à partir d
 ### <a name="to-download-debugging-symbols"></a>**Pour télécharger les symboles de débogage**
 1. Dans la barre de menus, choisissez **Outils, options**.
 
-2. Dans la boîte de dialogue **Options** , développez **Débogage** et sélectionnez **Symboles**.
+2. Dans la boîte de dialogue **Options**, développez **Débogage** et sélectionnez **Symboles**.
 
-3. Sélectionnez **Serveurs de symboles Microsoft** , puis cliquez sur le bouton **OK**.
+3. Sélectionnez **Serveurs de symboles Microsoft**, puis cliquez sur le bouton **OK**.
 
 Le téléchargement des symboles peut prendre un certain temps la première fois. Pour accélérer les performances la prochaine fois que vous appuierez sur F5, spécifiez un répertoire local dans lequel mettre en cache les symboles.
 

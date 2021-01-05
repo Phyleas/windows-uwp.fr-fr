@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd6cfb7fb0ffd7102f32d7159aba2b4c1042b76
-ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
+ms.openlocfilehash: 7b1304032243c7675c4aba6cbda7e7899e8deddb
+ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063021"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657676"
 ---
 # <a name="collections-and-lists"></a>Collections et listes
 
 Les collections et les listes font référence à la représentation de plusieurs éléments de données associés qui apparaissent ensemble. Les collections peuvent être représentées de plusieurs façons, par différents contrôles de collection (également appelés affichages Collection). Les contrôles de collection affichent et permettent des interactions avec le contenu basé sur des collections (liste de contacts, liste de dates, collection d’images, etc.).
 
-> **API importantes**  : [Classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe FlipView](/uwp/api/windows.ui.xaml.controls.flipview), [classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+> **API importantes** : [Classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe FlipView](/uwp/api/windows.ui.xaml.controls.flipview), [classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
 Les contrôles traités dans cet article sont les suivants :
 
@@ -333,7 +333,7 @@ Les trois exemples suivants sont tous des contrôles ItemsRepeater liés à la m
 - [Maître/détails](master-details.md)
 - [Volet de navigation](navigationview.md)
 - [Zoom sémantique](semantic-zoom.md)
-- [Glisser-déplacer](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Glisser-déplacer](../input/drag-and-drop.md)
 - [Images miniatures](../../files/thumbnails.md)
 
 **Informations de référence sur les API**

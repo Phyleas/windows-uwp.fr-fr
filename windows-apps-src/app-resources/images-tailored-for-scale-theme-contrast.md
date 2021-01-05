@@ -6,15 +6,15 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b0cb92c15b39a0bee10e7fe70bc8c4e1581af3c
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 6aef8f2d7ec61ddbff9083ac19c1be866ade1ac2
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031822"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860183"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
-Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour [afficher le facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou du balisage XAML, par exemple en tant que propriété **source** d’une **image** . Ils peuvent également apparaître dans le fichier source du manifeste de votre package d’application (le `Package.appxmanifest` fichier) &mdash; , par exemple, sous la forme de l’icône de l’application sous l’onglet ressources visuelles du concepteur de manifeste Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs dans les noms de fichiers de vos images et en les chargeant éventuellement de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), vous pouvez charger le fichier image le plus approprié qui correspond le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle d’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
+Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour [afficher le facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou du balisage XAML, par exemple en tant que propriété **source** d’une **image**. Ils peuvent également apparaître dans le fichier source du manifeste de votre package d’application (le `Package.appxmanifest` fichier) &mdash; , par exemple, sous la forme de l’icône de l’application sous l’onglet ressources visuelles du concepteur de manifeste Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs dans les noms de fichiers de vos images et en les chargeant éventuellement de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), vous pouvez charger le fichier image le plus approprié qui correspond le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle d’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
 
 Une ressource d’image est contenue dans un fichier de ressources d’image. Vous pouvez également considérer l’image comme un élément multimédia et le fichier qui la contient comme un fichier de ressources. vous pouvez trouver ces types de fichiers de ressources dans le dossier \Assets de votre projet. Pour plus d’informations sur l’utilisation de qualificateurs dans les noms de vos fichiers de ressources d’image, consultez [adapter vos ressources aux qualificateurs de langage, de mise à l’échelle et autres](tailor-resources-lang-scale-contrast.md).
 
@@ -86,7 +86,7 @@ Le `ms-appx-web` schéma accède aux mêmes fichiers que `ms-appx` , mais dans l
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-Pour chacun des scénarios indiqués dans ces exemples, utilisez la surcharge de [constructeur d’URI](/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) qui déduit le [UriKind](/dotnet/api/system.urikind). Spécifiez un URI absolu valide, y compris le schéma et l’autorité, ou laissez l’autorité par défaut au package de l’application comme dans l’exemple ci-dessus.
+Pour chacun des scénarios indiqués dans ces exemples, utilisez la surcharge de [constructeur d’URI](/dotnet/api/system.uri.-ctor?view=netcore-2.0&preserve-view=true#System_Uri__ctor_System_String_) qui déduit le [UriKind](/dotnet/api/system.urikind). Spécifiez un URI absolu valide, y compris le schéma et l’autorité, ou laissez l’autorité par défaut au package de l’application comme dans l’exemple ci-dessus.
 
 Notez que dans ces exemples d’URI, le schéma (« `ms-appx` » ou « » `ms-appx-web` ) est suivi de « `://` », suivi d’un chemin d’accès absolu. Dans un chemin d’accès absolu, le «» de début `/` provoque l’interprétation du chemin d’accès à partir de la racine du package.
 

@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ccf994e273c683ec458b9a2eded0b13cb58c41c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 908754c56f9c5062f63b09cffc5cbafffbd8277a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158213"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860371"
 ---
 # <a name="sockets"></a>Sockets
 Les sockets constituent une technologie de transfert de données de bas niveau sur laquelle repose l’implémentation d’un grand nombre de protocoles réseau. UWP propose des classes de socket TCP et UDP pour les applications client/serveur ou (P2P) pair à pair, qu’il s’agisse de connexions longue durée ou non établies.
@@ -1277,7 +1277,7 @@ Certaines limitations importantes découlent de l’utilisation d’envois par l
 -   Vous ne pouvez pas modifier le contenu des instances **IBuffer** en cours d’écriture tant que l’écriture asynchrone n’est pas terminée.
 -   Le modèle **FlushAsync** fonctionne uniquement sur **StreamSocket.OutputStream** et **DatagramSocket.OutputStream**.
 -   Le modèle **FlushAsync** fonctionne uniquement à partir de Windows 10.
--   Dans les autres cas, utilisez [**Task.WaitAll**](/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) au lieu du modèle **FlushAsync**.
+-   Dans les autres cas, utilisez [**Task.WaitAll**](/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0&preserve-view=true#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) au lieu du modèle **FlushAsync**.
 
 ## <a name="port-sharing-for-datagramsocket"></a>Partage de port pour DatagramSocket
 Vous pouvez configurer un [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) pour qu’il coexiste avec d’autres sockets Win32 ou UWP en multidiffusion, liés à la même adresse et au même port. Pour cela, définissez la [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) sur `true` avant de lier ou de connecter le socket. Vous accédez à une instance de **DatagramSocketControl** à partir de l’objet **DatagramSocket** proprement dit via sa propriété [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control).

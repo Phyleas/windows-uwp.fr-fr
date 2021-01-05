@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bdd003445bed4ad59b21e0b744281651c30bf04f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5c5b4867d8a58779aa716245130a468374054288
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166883"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860121"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>Nouveautés de Windows 10 pour les développeurs, build 18362
 
@@ -53,7 +53,7 @@ Applications web progressives (PWA) pour Xbox | Les [applications web progressiv
 Projet Rome | Le Kit de développement logiciel Project Rome est désormais disponible pour iOS et Android. Découvrez comment intégrer des notifications Graph dans chaque plateforme : [Android](/windows/project-rome/notifications/how-to-guide-for-android) et [iOS](/windows/project-rome/notifications/how-to-guide-for-ios).
 Caméras distantes | Utilisez la classe DeviceWatcher pour [vous connecter à des caméras distantes](../audio-video-camera/connect-to-remote-cameras.md) et lire des images à partir de ces caméras dans votre application Windows.
 Contrôles UWP dans les applications de bureau (XAML Islands) | Les API du SDK Windows pour l’hébergement de contrôles UWP dans les applications de bureau Win32 WPF, Windows Forms et C++ ont disparu de la version préliminaire pour les développeurs. Pour plus d’informations, consultez [Contrôles UWP dans les applications de bureau](/windows/apps/desktop/modernize/xaml-islands).
-Visual Studio 2019 | Visual Studio 2019 a été publié avec les derniers outils et services pour l’ensemble des développeurs, des applications ou des plateformes. Découvrez [les nouveautés dans Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019?view=vs-2019) afin de vous tenir au courant de l’actualité et vous lancer.
+Visual Studio 2019 | Visual Studio 2019 a été publié avec les derniers outils et services pour l’ensemble des développeurs, des applications ou des plateformes. Découvrez [les nouveautés dans Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019) afin de vous tenir au courant de l’actualité et vous lancer.
 Win32 WebView | Notre [Forum aux questions](/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) apporte des réponses aux questions courantes lors de l’utilisation de Microsoft Edge WebView dans les applications de bureau, ainsi que des liens vers des exemples et des ressources supplémentaires.
 Ligne de commande Windows | Les [nouvelles fonctionnalités de la console](https://devblogs.microsoft.com/commandline/new-experimental-console-features/) incluent l’onglet Terminal expérimental, avec des paramètres de défilement, de forme du curseur et de couleur du curseur. Pour en savoir plus, rendez-vous sur le [blog dédié aux outils de ligne de commande Windows pour les développeurs](https://devblogs.microsoft.com/commandline/).
 Kit de ressources Communauté Windows | Le Kit de ressources Communauté Windows 5.1 fournit des mises à jour intéressantes pour l’animation, les appareils distants, le rognage d’images et l’accessibilité. </br> • La nouvelle [bibliothèque Windows-Lottie](/windows/communitytoolkit/animations/lottie) prend en charge des animations de haute qualité sur Windows 10 (1809) en utilisant les API Windows.UI.Composition, et permet l’utilisation de fichiers JSON [Bodymovin](https://aescripts.com/bodymovin/) de classes générées par du code et optimisées pour la lecture dans vos applications Windows. Testez la nouvelle [application Lottie Viewer](https://www.microsoft.com/p/lottie-viewer/9p7x9k692tmw) à partir du Microsoft Store afin de tester des animations et générer du code optimisé pour vos applications Windows. </br> • Le nouveau [sélecteur d’appareil à distance](/windows/communitytoolkit/controls/remotedevicepicker) permet à l’utilisateur de sélectionner un appareil (à proximité ou accessible sur le cloud), lancer une application sur l’appareil, ou communiquer avec les services d’application sur l’appareil distant. </br> • Le nouveau [contrôle ImageCropper](/windows/communitytoolkit/controls/imagecropper) intègre la fonctionnalité de rognage pour la sélection d’images de profil ou l’utilisation d’outils de retouche photo. </br> • En outre, il y a eu des améliorations de l’accessibilité sur les contrôles, une mise à jour du package préliminaire [Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) 6.0 pour WPF et WinForms, et d’autres fonctionnalités que vous pouvez découvrir dans les [notes de publication](https://github.com/windows-toolkit/WindowsCommunityToolkit/releases/tag/v5.1.0).

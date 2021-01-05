@@ -4,12 +4,12 @@ description: Découvrez-en plus sur les principes des angles arrondis, les appro
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, rayon d’angle, arrondi
-ms.openlocfilehash: 044ae628ffe397005113f658191398e06fd245f5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 33432ac0083c0d6660d0669ea43805e0ae73f37e
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636529"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860198"
 ---
 # <a name="corner-radius"></a>Rayon d’angle
 
@@ -22,7 +22,7 @@ Voici deux contrôles Button, le premier sans angles arrondis et le second utili
 Quand vous installez le package NuGet pour WinUI 2.2 ou ultérieur, de nouveaux styles par défaut sont installés pour les contrôles WinUI et les contrôles de plateforme. Ces nouveaux styles sont appliqués automatiquement quand vous utilisez WinUI 2.2 dans votre application ; aucune autre action n’est nécessaire. Toutefois, plus loin dans cet article, nous vous montrerons comment personnaliser les angles arrondis si vous en avez besoin.
 
 > [!IMPORTANT]
-> Certains contrôles sont disponibles à la fois dans la plateforme ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) et dans WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2)) ; par exemple, **TreeView** ou **ColorPicker**. Quand vous utilisez WinUI dans votre application, vous devez utiliser la version WinUI du contrôle. L’arrondi des angles peut être appliqué de manière incohérente dans la version plateforme en cas d’utilisation avec WinUI.
+> Certains contrôles sont disponibles à la fois dans la plateforme ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) et dans WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2&preserve-view=true)) ; par exemple, **TreeView** ou **ColorPicker**. Quand vous utilisez WinUI dans votre application, vous devez utiliser la version WinUI du contrôle. L’arrondi des angles peut être appliqué de manière incohérente dans la version plateforme en cas d’utilisation avec WinUI.
 
 > **API importantes** : [Control.CornerRadius, propriété](/uwp/api/windows.ui.xaml.controls.control.cornerradius)
 

@@ -4,14 +4,14 @@ description: Cette rubrique explique comment utiliser C++/CX pour créer un comp
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.date: 05/14/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 288795b2dc189dae7b350a30446410b40044d08f
-ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
+ms.openlocfilehash: 9cda36c6027ae74df9beb5d1de68f69f273dc5f0
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192949"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860109"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>Composants Windows Runtime avec C++/CX
 
@@ -543,7 +543,7 @@ C# et Visual Basic disposent tous les deux de la prise en charge des langages po
 ## <a name="asynchronous-methods"></a>Méthodes asynchrones
 Pour utiliser des méthodes asynchrones exposées par d’autres objets Windows Runtime, utilisez la [classe de tâche (runtime d’accès concurrentiel)](/cpp/parallel/concrt/reference/task-class). Pour plus d’informations, voir [Parallélisme des tâches (runtime d’accès concurrentiel)](/cpp/parallel/concrt/task-parallelism-concurrency-runtime).
 
-Pour implémenter des méthodes asynchrones en C++/CX, utilisez la fonction [Create \_ Async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) définie dans ppltasks. h. Pour plus d’informations, consultez [création d’opérations asynchrones en C++/CX pour les applications UWP](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps). Pour obtenir un exemple, consultez [procédure pas à pas de création d’un composant C++/CX Windows Runtime et appel de ce dernier à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Les langages .NET utilisent les méthodes asynchrones C++/CX de la même façon qu’une méthode asynchrone définie dans .NET.
+Pour implémenter des méthodes asynchrones en C++/CX, utilisez la fonction [Create \_ Async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017&preserve-view=true) définie dans ppltasks. h. Pour plus d’informations, consultez [création d’opérations asynchrones en C++/CX pour les applications UWP](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps). Pour obtenir un exemple, consultez [procédure pas à pas de création d’un composant C++/CX Windows Runtime et appel de ce dernier à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Les langages .NET utilisent les méthodes asynchrones C++/CX de la même façon qu’une méthode asynchrone définie dans .NET.
 
 ## <a name="exceptions"></a>Exceptions
 Vous pouvez lever n’importe quel type d’exception défini par Windows Runtime. Vous ne pouvez pas dériver des types personnalisés d’un type d’exception Windows Runtime. Toutefois, vous pouvez lever une exception COMException et fournir un HRESULT personnalisé, accessible par le code qui intercepte l’exception. Il n’existe aucun moyen de spécifier un message personnalisé dans une COMException.
