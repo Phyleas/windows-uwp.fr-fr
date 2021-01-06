@@ -5,38 +5,39 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: contperf-fy21q2
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: fd2f755153b29c9be766d39fb685a3f923868946
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 4c2ff55b0f89e913cd2093add37f008c38e9312f
+ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750416"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691536"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions réactives avec XAML
 
-Le système de disposition XAML fournit le dimensionnement automatique, des panneaux de disposition, des états visuels et même des définitions d’interface utilisateur séparées pour créer une interface utilisateur réactive. Grâce à une disposition dynamique, vous pouvez faire en sorte que votre application s’affiche parfaitement avec différentes tailles de fenêtres d’application, résolutions, densités de pixels et orientations. Vous pouvez également utiliser XAML pour repositionner, redimensionner, ajuster dynamiquement, afficher/masquer, remplacer ou remodéliser l’interface utilisateur de votre application, comme indiqué dans [Techniques de conception réactive](responsive-design.md). Ici, nous expliquons comment implémenter des dispositions dynamiques avec XAML.
+Le système de disposition XAML fournit le dimensionnement automatique des éléments, des panneaux de disposition et des états visuels pour vous aider à créer une interface utilisateur réactive. Grâce à une disposition dynamique, vous pouvez faire en sorte que votre application s’affiche parfaitement avec différentes tailles de fenêtres d’application, résolutions, densités de pixels et orientations. Vous pouvez également utiliser XAML pour repositionner, redimensionner, ajuster dynamiquement, afficher/masquer, remplacer ou remodéliser l’interface utilisateur de votre application, comme indiqué dans [Techniques de conception réactive](responsive-design.md). Ici, nous expliquons comment implémenter des dispositions dynamiques avec XAML.
 
 ## <a name="fluid-layouts-with-properties-and-panels"></a>Dispositions fluides avec propriétés et panneaux
 
-Une disposition dynamique repose principalement sur l’utilisation appropriée de propriétés XAML et de panneaux de disposition pour repositionner, redimensionner et ajuster dynamiquement le contenu d’une manière fluide. 
+Une disposition dynamique repose principalement sur l’utilisation appropriée de propriétés XAML et de panneaux de disposition pour repositionner, redimensionner et ajuster dynamiquement le contenu d’une manière fluide.
 
-Le système de disposition XAML prend en charge à la fois les dispositions statique et fluide. Dans une disposition statique, vous affectez aux contrôles des positions et des tailles de pixels explicites. Lorsque l’utilisateur change la résolution ou l’orientation de son appareil, l’interface utilisateur n’est pas modifiée. Les dispositions statiques peuvent être tronquées selon les facteurs de formes et tailles d’écran. D’un autre côté, les dispositions fluides rétrécissent, s’agrandissent et s’ajustent dynamiquement à l’espace visuel disponible sur un appareil. 
+Le système de disposition XAML prend en charge à la fois les dispositions statique et fluide. Dans une disposition statique, vous affectez aux contrôles des positions et des tailles de pixels explicites. Lorsque l’utilisateur change la résolution ou l’orientation de son appareil, l’interface utilisateur n’est pas modifiée. Les dispositions statiques peuvent être tronquées selon les facteurs de formes et tailles d’écran. D’un autre côté, les dispositions fluides rétrécissent, s’agrandissent et s’ajustent dynamiquement à l’espace visuel disponible sur un appareil.
 
 Dans la pratique, vous utilisez une combinaison d’éléments statiques et fluides pour créer votre interface utilisateur. Vous utilisez toujours des valeurs et des éléments statiques à certains endroits, mais assurez-vous que l’interface utilisateur globale réagit à différentes résolutions, tailles d’écran et vues.
 
 Nous vous expliquons ici comment utiliser les propriétés XAML et les panneaux de disposition pour créer une disposition fluide.
 
 ### <a name="layout-properties"></a>Propriétés de disposition
-Les propriétés de disposition contrôlent la taille et la position d’un élément. Pour créer une disposition fluide, utilisez le dimensionnement proportionnel ou automatique pour les éléments, et laissez les panneaux de disposition positionner eux-mêmes leurs enfants selon les besoins. 
+Les propriétés de disposition contrôlent la taille et la position d’un élément. Pour créer une disposition fluide, utilisez le dimensionnement proportionnel ou automatique pour les éléments, et laissez les panneaux de disposition positionner eux-mêmes leurs enfants selon les besoins.
 
 Voici certaines propriétés de disposition courantes et comment les utiliser pour créer des dispositions fluides.
 
 **Height et Width**
 
-Les propriétés [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) et [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) spécifient la taille d’un élément. Vous pouvez utiliser des valeurs fixes mesurées en pixels effectifs, ou vous pouvez utiliser le dimensionnement automatique ou proportionnel. 
+Les propriétés [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) et [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) spécifient la taille d’un élément. Vous pouvez utiliser des valeurs fixes mesurées en pixels effectifs, ou vous pouvez utiliser le dimensionnement automatique ou proportionnel.
 
 Le dimensionnement automatique redimensionne les éléments d’interface utilisateur pour qu’ils s’adaptent à leur contenu ou à leur conteneur parent. Vous pouvez également utiliser le dimensionnement automatique avec les lignes et les colonnes d’une grille. Pour utiliser le dimensionnement automatique, définissez la propriété Height et/ou Width des éléments d’interface utilisateur sur **Auto**.
 
@@ -127,9 +128,9 @@ Les panneaux de disposition vous permettent d’organiser votre interface utilis
 ## <a name="adaptive-layouts-with-visual-states-and-state-triggers"></a>Dispositions adaptatives avec états visuels et déclencheurs d’état
 Utilisez les états visuels pour apporter des changements significatifs à votre interface utilisateur en fonction de la taille de la fenêtre ou d’autres modifications.
 
-Lorsque la fenêtre de votre application grandit ou rétrécit au-delà d’une certaine proportion, vous pouvez, si vous le souhaitez, changer les propriétés de disposition pour repositionner, redimensionner, ajuster dynamiquement, révéler ou remplacer des sections de votre interface utilisateur. Vous pouvez définir des états visuels différents pour votre interface utilisateur et les appliquer lorsque la largeur ou la hauteur de la fenêtre atteint un seuil spécifié. 
+Lorsque la fenêtre de votre application grandit ou rétrécit au-delà d’une certaine proportion, vous pouvez, si vous le souhaitez, changer les propriétés de disposition pour repositionner, redimensionner, ajuster dynamiquement, révéler ou remplacer des sections de votre interface utilisateur. Vous pouvez définir des états visuels différents pour votre interface utilisateur et les appliquer lorsque la largeur ou la hauteur de la fenêtre atteint un seuil spécifié.
 
-Un [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) offre un moyen facile de définir le seuil (également appelé « point d’arrêt ») au niveau duquel un état est appliqué. Un [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) définit les valeurs de propriété qui sont appliquées à un élément lorsqu’il est dans un état particulier. Vous regroupez les états visuels dans un [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) qui applique le VisualState approprié lorsque les conditions spécifiées sont remplies.
+Un [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) définit les valeurs de propriété qui sont appliquées à un élément lorsqu’il est dans un état particulier. Vous regroupez les états visuels dans un [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) qui applique le VisualState approprié lorsque les conditions spécifiées sont remplies. Un [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) offre un moyen facile de définir le seuil (également appelé « point d’arrêt ») au niveau duquel un état est appliqué en XAML. Ou vous pouvez appeler la méthode [**VisualStateManager.GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) dans votre code pour appliquer l’état du visuel. Des exemples de ces deux méthodes sont présentés dans les sections suivantes.
 
 ### <a name="set-visual-states-in-code"></a>Définir les états visuels dans le code
 
@@ -139,7 +140,6 @@ Ici, un [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) contie
 
 > [!NOTE]
 > Windows ne permet pas à votre application de détecter l’appareil spécifique sur lequel elle s’exécute. Le système peut vous indiquer la famille d’appareils (mobile, ordinateur, etc.) sur laquelle l’application s’exécute, la résolution réelle et la quantité d’espace à l’écran disponible pour l’application (la taille de la fenêtre de l’application). Nous vous recommandons de définir des états visuels pour les [tailles d’écran et points d’arrêt](screen-sizes-and-breakpoints-for-responsive-design.md).
-
 
 ```xaml
 <Page ...
@@ -345,82 +345,8 @@ Dans ce code XAML simplifié tiré de l’exemple de déclencheurs d’état, un
 </Page>
 ```
 
-## <a name="tailored-layouts"></a>Dispositions personnalisées
-
-Lorsque vous apportez des modifications importantes à votre disposition d’interface utilisateur sur différents appareils, il peut s’avérer plus pratique de définir un fichier d’interface utilisateur distinct avec une disposition personnalisée pour l’appareil, que d’adapter une interface utilisateur unique. Si la fonctionnalité est identique sur tous les appareils, vous pouvez définir des vues XAML distinctes qui partagent le même fichier de code. Si la vue et les fonctionnalités diffèrent considérablement sur les appareils, vous pouvez définir des éléments Page distincts et l’élément Page auquel accéder lors du chargement de l’application.
-
-### <a name="separate-xaml-views-per-device-family"></a>Séparer les vues XAML par famille d’appareils
-
-Utilisez les vues XAML pour créer différentes définitions d’interface utilisateur partageant le même code-behind. Vous pouvez fournir une définition d’interface utilisateur unique pour chaque famille d’appareils. Suivez ces étapes pour ajouter une vue XAML à votre application.
-
-**Pour ajouter une vue XAML à une application**
-1. Sélectionnez Projet &gt; Ajouter un nouvel élément. La boîte de dialogue Ajouter un nouvel élément s’ouvre.
-    > **Conseil**&nbsp;&nbsp;Vérifiez que le projet ou un dossier, et non la solution, est sélectionné dans l’Explorateur de solutions.
-2. Sous Visual C# ou Visual Basic dans le volet gauche, choisissez le type de modèle XAML.
-3. Dans le volet central, choisissez Vue XAML.
-4. Entrez le nom de la vue. La vue doit être nommée correctement. Pour plus d’informations sur l’attribution de noms, consultez le reste de cette section.
-5. Cliquez sur Ajouter. Le fichier est ajouté au projet.
-
-Les étapes précédentes créent uniquement un fichier XAML, mais pas un fichier code-behind associé. Au lieu de cela, la vue XAML est associée à un fichier code-behind existant en utilisant un qualificateur DeviceName qui fait partie du nom du fichier ou du dossier. Ce nom de qualificateur peut être mappé à une valeur de chaîne qui représente la famille d’appareils de l’appareil sur lequel votre application est en cours d’exécution, par exemple, « Bureau », « Tablette » et les noms des autres familles d’appareils (voir [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues)).
-
-Vous pouvez ajouter le qualificateur au nom de fichier, ou ajouter le fichier à un dossier portant le nom du qualificateur.
-
-**Utiliser le nom de fichier**
-
-Pour utiliser le nom du qualificateur avec le fichier, utilisez ce format : *[pageName]* .DeviceFamily- *[qualifierString]* .xaml.
-
-Examinons un exemple de fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, nommez la vue XAML MainPage.DeviceFamily-Tablet.xaml. Pour créer une vue pour les appareils PC, nommez la vue MainPage.DeviceFamily-Desktop.xaml. Voici à quoi ressemble la solution dans Microsoft Visual Studio.
-
-![Vues XAML avec des noms de fichier qualifiés](images/xaml-layout-view-ex-1.png)
-
-**Utiliser le nom de dossier**
-
-Pour organiser les vues dans votre projet Visual Studio à l’aide de dossiers, vous pouvez utiliser le nom de qualificateur avec le dossier. Pour ce faire, nommez votre dossier comme ceci : DeviceFamily- *[qualifierString]* . Dans ce cas, chaque fichier de la vue XAML a le même nom. N’incluez pas le qualificateur dans le nom de fichier.
-
-Voici un exemple, pour un fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, créez un dossier nommé DeviceFamily-Tablet et placez dedans une vue XAML nommée MainPage.xaml. Pour créer une vue pour les PC, créez un dossier nommé DeviceFamily-Desktop, et placez dedans une autre vue XAML nommée MainPage.xaml. Voici à quoi ressemble la solution dans Visual Studio.
-
-![Vues XAML dans des dossiers](images/xaml-layout-view-ex-2.png)
-
-Dans les deux cas, une vue unique est utilisée pour les tablettes et les PC. Le fichier par défaut MainPage.xaml est utilisé si l’appareil sur lequel il est exécuté ne correspond à aucune des vues spécifiques de la famille d’appareils.
-
-### <a name="separate-xaml-pages-per-device-family"></a>Séparer les pages XAML par famille d’appareils
-
-Pour fournir des fonctionnalités et des vues uniques, vous pouvez créer des fichiers Page distincts (XAML et code), puis accéder à la page appropriée quand la page est nécessaire.
-
-**Pour ajouter une page XAML à une application**
-1. Sélectionnez Projet &gt; Ajouter un nouvel élément. La boîte de dialogue Ajouter un nouvel élément s’ouvre.
-    > **Conseil**&nbsp;&nbsp;Vérifiez que le projet, et non la solution, est sélectionné dans l’Explorateur de solutions.
-2. Sous Visual C# ou Visual Basic dans le volet gauche, choisissez le type de modèle XAML.
-3. Dans le volet central, choisissez Page vierge.
-4. Entrez le nom de la page. Par exemple, MainPage_Tablet. Les fichiers de code MainPage_Tablet.xaml et MainPage_Tablet.xaml.cs/vb/cpp sont créés.
-5. Cliquez sur Ajouter. Le fichier est ajouté au projet.
-
-À l’exécution, vérifiez la famille d’appareils sur laquelle l’application est exécutée et accédez de cette manière à la page appropriée.
-
-```csharp
-if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Tablet")
-{
-    rootFrame.Navigate(typeof(MainPage_Tablet), e.Arguments);
-}
-else
-{
-    rootFrame.Navigate(typeof(MainPage), e.Arguments);
-}
-```
-```cppwinrt
-if (Windows::System::Profile::AnalyticsInfo::VersionInfo().DeviceFamily() == L"Windows.Tablet")
-{
-    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage_Tablet>(), box_value(e.Arguments()));
-}
-else
-{
-    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage>(), box_value(e.Arguments()));
-}
-```
-
-Vous pouvez également utiliser des critères différents pour déterminer à quelle page accéder. Pour plus d’exemples, consultez l’exemple de [Vues multiples personnalisées](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews), qui utilise la fonction [**GetIntegratedDisplaySize**](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getintegrateddisplaysize) pour vérifier la taille physique d’un affichage intégré.
-
 ## <a name="related-topics"></a>Rubriques connexes
+
 - [Tutoriel : Créer des dispositions adaptatives](../basics/xaml-basics-adaptive-layout.md)
 - [Exemple de techniques réactives (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
 - [Exemple de déclencheurs d’état (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)

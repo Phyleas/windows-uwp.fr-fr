@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e25f9cdb091f96b648ddc00d5f5cc96bf18d1d1
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 035003be1c9b8ef84d0563af6be9f5b3a01978c7
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750595"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860136"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Passer de C++/CX à C++/WinRT
 
@@ -328,7 +328,7 @@ Les types de collections C++ utilisent le constructeur par défaut, ce qui peut 
 
 ### <a name="more-about-collections-of-empty-references"></a>En savoir plus sur les collections de références vides
 
-Quand vous avez un **Platform::Array\^** (voir [Port **Platform::Array\^** ](#port-platformarray)) dans C++/CX, vous avez la possibilité de le porter vers un **std::vector** dans C++/WinRT (en fait, n’importe quel conteneur contigu) au lieu de le conserver comme tableau. Faire le choix d’utiliser **std::vector** présente des avantages.
+Quand vous avez un **Platform::Array\^** (voir [Port **Platform::Array\^**](#port-platformarray)) dans C++/CX, vous avez la possibilité de le porter vers un **std::vector** dans C++/WinRT (en fait, n’importe quel conteneur contigu) au lieu de le conserver comme tableau. Faire le choix d’utiliser **std::vector** présente des avantages.
 
 Par exemple, alors qu’il existe un raccourci pour créer un vecteur de taille fixe de références vides (voir le tableau ci-dessus), il n’en existe pas pour créer un *tableau* de références vides. Vous devez donc répéter `nullptr` pour chaque élément dans un tableau. Si vous n’en avez pas assez, les éléments supplémentaires sont construits par défaut.
 
@@ -490,7 +490,7 @@ C++/CX et C# génèrent des exceptions si vous essayez d’effectuer une convers
 
 Une chaîne est parfois un type de valeur et parfois un type de référence. C++/CX et C++/WinRT traitent les chaînes différemment.
 
-Le type ABI [**HSTRING**](/windows/win32/winrt/hstring) est un pointeur vers une chaîne avec décompte des références. Toutefois, il ne dérive pas à partir de [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable). Techniquement, il ne s’agit donc pas d’un *objet*. En outre, un pointeur **HSTRING** null représente la chaîne vide. La conversion boxing d’éléments non dérivés à partir de **IInspectable** est effectuée en les encapsulant dans une interface [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_). De plus, Windows Runtime fournit une implémentation standard sous la forme de l’objet [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) (les types personnalisés sont signalés sous la forme [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype)).
+Le type ABI [**HSTRING**](/windows/win32/winrt/hstring) est un pointeur vers une chaîne avec décompte des références. Toutefois, il ne dérive pas à partir de [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable). Techniquement, il ne s’agit donc pas d’un *objet*. En outre, un pointeur **HSTRING** null représente la chaîne vide. La conversion boxing d’éléments non dérivés à partir de **IInspectable** est effectuée en les encapsulant dans une interface [**IReference\<T\>**](/uwp/api/windows.foundation.ireference_t_). De plus, Windows Runtime fournit une implémentation standard sous la forme de l’objet [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) (les types personnalisés sont signalés sous la forme [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype)).
 
 C++/CX représente une chaîne Windows Runtime sous la forme d’un type de référence, tandis que C++/WinRT projette une chaîne sous la forme d’un type de valeur. Cela signifie qu’une chaîne null convertie par boxing peut avoir des représentations différentes selon la façon dont vous l’avez obtenue.
 
@@ -522,7 +522,7 @@ Pour C++/WinRT, utilisez plutôt des coroutines et `co_await`. Pour plus d’inf
 
 ## <a name="consuming-objects-from-xaml-markup"></a>Utilisation d’objets à partir du balisage XAML
 
-Dans un projet C++/CX, vous pouvez utiliser des éléments nommés et des membres privés à partir du balisage XAML. Toutefois, dans C++/WinRT, toutes les entités utilisées via [**l’extension de balisage {x:Bind}** ](../xaml-platform/x-bind-markup-extension.md) XAML doivent être exposées publiquement dans IDL.
+Dans un projet C++/CX, vous pouvez utiliser des éléments nommés et des membres privés à partir du balisage XAML. Toutefois, dans C++/WinRT, toutes les entités utilisées via [**l’extension de balisage {x:Bind}**](../xaml-platform/x-bind-markup-extension.md) XAML doivent être exposées publiquement dans IDL.
 
 De plus, une liaison à un booléen affiche `true` ou `false` en C++/CX, mais affiche **Windows.Foundation.IReference`1\<Boolean\>** en C++/WinRT.
 
@@ -535,7 +535,7 @@ C++/CX fournit plusieurs types de données dans l'espace de noms **Platform**. C
 | C++/CX | C++/WinRT |
 | ---- | ---- |
 | **Platform::Agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
-| **Platform::Array\^** | Voir [Port **Platform::Array\^** ](#port-platformarray) |
+| **Platform::Array\^** | Voir [Port **Platform::Array\^**](#port-platformarray) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
@@ -625,7 +625,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 **Platform::String\^** équivaut au type Windows Runtime HSTRING ABI. Pour C++/WinRT, l’équivalent est [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Mais avec C++/WinRT, vous pouvez appeler des API Windows Runtime à l’aide de types de chaînes étendues de la bibliothèque C++ standard comme **std::wstring** et/ou des littéraux de chaîne étendue. Pour obtenir plus d’informations et des exemples de code, voir [Gestion des chaînes en C++/WinRT](strings.md).
 
-Avec C++/CX, vous pouvez accéder à la propriété [**Platform::String::Data**](/cpp/cppcx/platform-string-class?view=vs-2019#data) pour récupérer la chaîne en tant que tableau **const wchar_t\*** de style C (par exemple, pour le passer à **std::wcout**).
+Avec C++/CX, vous pouvez accéder à la propriété [**Platform::String::Data**](/cpp/cppcx/platform-string-class#data) pour récupérer la chaîne en tant que tableau **const wchar_t\* *_ de style C (par exemple, pour le passer à _* std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

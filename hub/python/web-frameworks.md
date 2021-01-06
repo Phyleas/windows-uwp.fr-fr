@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python sur windows, application web python avec wsl, application web python avec un sous-système windows pour linux, développement web python sur windows, application flask sur windows, application django sur windows, application web python, développement web flask sur windows, développement web django sur windows, développement web windows avec python et développement web de code python, extension wsl-remote, ubuntu, wsl, venv, pip, extension python microsoft, exécuter python sur windows, utiliser python sur windows, création avec python sur windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 187195133dd614818d3c68473cc53b71a0b32333
-ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
+ms.openlocfilehash: 3b5ed80b746d0aa1441bf77e6468101deee320a6
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91958742"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880552"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Bien démarrer avec Python pour le développement web sur Windows
 
@@ -202,7 +202,7 @@ Félicitations ! Vous êtes désormais prêt à créer et à exécuter des progr
 
 14. Ouvrez votre navigateur web par défaut sur la page rendue, et appuyez sur l’URL de http://127.0.0.1:5000/ dans le terminal, en saisissant **Ctrl + clic**. Votre navigateur doit afficher le message suivant :
 
-    ![Hello, Flask !](../images/hello-flask.png)
+    ![Hello World! I'm using Flask.](../images/hello-flask.png)
 
 15. Notez que lorsque vous visitez une URL du type « / », un message s’affiche dans le terminal de débogage, affichant la requête HTTP :
 

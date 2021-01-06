@@ -5,12 +5,12 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6919a2dc15aac7c5e589f2c0355f9c1cc13bfc7a
-ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
+ms.openlocfilehash: e9db25c822d524ec36c6e512e132e49a69a2bd7d
+ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97598810"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691521"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutoriel : Créer des dispositions adaptatives
 
@@ -266,10 +266,7 @@ Exécutez l'application. Lors du chargement de l’application, essayez de modif
 
 Maintenant que vous avez terminé ce laboratoire, vous avez suffisamment de connaissances en disposition adaptative pour étendre l’expérience par vous-même. Pour aller plus loin, essayez d’optimiser la disposition pour des tailles d’écran plus grandes (par exemple Surface Hub). Si vous souhaitez tester une disposition Surface Hub, consultez [Tester les applications de Surface Hub à l’aide de Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md).
 
-Si vous êtes bloqué, vous trouverez des instructions supplémentaires dans les sections suivantes de [Dispositions réactives avec XAML](../layout/layouts-with-xaml.md).
-
-+ [États visuels et déclencheurs d’état](../layout/layouts-with-xaml.md#adaptive-layouts-with-visual-states-and-state-triggers)
-+ [Dispositions personnalisées](../layout/layouts-with-xaml.md#tailored-layouts)
+Si vous êtes bloqué, vous trouverez des instructions supplémentaires dans [Dispositions réactives avec XAML](../layout/layouts-with-xaml.md).
 
 Si vous souhaitez en savoir plus sur la manière dont l’application de retouche photo initiale a été générée, vous pouvez également consulter les tutoriels sur les [interfaces utilisateur](../basics/xaml-basics-ui.md) et la [liaison de données](../../data-binding/xaml-basics-data-binding.md) XAML.
 
