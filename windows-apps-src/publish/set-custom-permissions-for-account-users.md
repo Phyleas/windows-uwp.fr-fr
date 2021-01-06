@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, rôles d’utilisateur, autorisation utilisateur, rôles personnalisés, accès utilisateur, autorisations personnaliser, rôles standard
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cdd1904dad82e0145305fe2709360be01518a7f
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: e18c7bcffe7249f6c191fc456422e0dd0c7300ef
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878482"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927802"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisées pour les utilisateurs de comptes
 
@@ -41,7 +41,7 @@ Sauf si vous choisissez de définir des [autorisations personnalisées](#custom)
 > Le **propriétaire** du compte est la personne qui l’a créé avec un compte Microsoft (et aucun utilisateur n’a été ajouté via Azure AD). Il est le seul à disposer d’un accès complet au compte et à pouvoir notamment supprimer des applications, créer et modifier l’ensemble des utilisateurs du compte et modifier tous les paramètres financiers et de compte. 
 
 
-| Rôle                 | Description              |
+| Role                 | Description              |
 |----------------------|--------------------------|
 | Manager              | Dispose d’un accès complet au compte, mais ne peut pas modifier les paramètres fiscaux et de revenus. Cela comprend la gestion des utilisateurs dans l’espace partenaires, mais notez que la possibilité de créer et de supprimer des utilisateurs dans le locataire Azure AD dépend de l’autorisation du compte dans Azure AD. Autrement dit, si un utilisateur se voit attribuer le rôle de responsable, mais ne dispose pas des autorisations d’administrateur général dans le Azure AD de l’organisation, il ne peut pas créer de nouveaux utilisateurs ou supprimer des utilisateurs de l’annuaire (même s’ils peuvent modifier le rôle de l’espace partenaires d’un utilisateur). <p> Notez que si le compte de l’espace partenaires est associé à plusieurs Azure AD locataires, un gestionnaire ne peut pas voir les détails complets d’un utilisateur (y compris le prénom, le nom, la récupération du mot de passe et s’il s’agit d’un administrateur général Azure AD), sauf s’il est connecté au même locataire que cet utilisateur avec un compte disposant d’autorisations d’administrateur général Toutefois, ils peuvent ajouter et supprimer des utilisateurs dans n’importe quel client associé au compte de l’espace partenaires. |
 | Développeur            | Peut charger des packages, soumettre des applications et modules complémentaires et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. Peut accéder à la fonctionnalité d' [expériences sur plusieurs appareils](https://developer.microsoft.com/windows/project-rome) . Il ne peut afficher ni les informations financières ni les paramètres de compte.   |
@@ -101,7 +101,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
     </tr>
     </thead>
     <tbody>
-<tr><td align="left">    <b>Paramètres du compte</b>                    </td><td align="left">  Peut afficher toutes les pages de la section <b>Paramètres du compte</b>, y compris les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a>.       </td><td align="left">  Peut afficher toutes les pages de la section <b>Paramètres du compte</b>. Peut modifier les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a> et d’autres pages, mais ne peut pas apporter de modifications au compte de revenu ou au profil fiscal (à moins que l’autorisation ne soit accordée séparément).            </td></tr>
+<tr><td align="left">    <b>Paramètres du compte</b>                    </td><td align="left">  Peut afficher toutes les pages de la section <b>Paramètres du compte</b>, y compris les <a href="/partner-center/partner-center-account-setup">coordonnées</a>.       </td><td align="left">  Peut afficher toutes les pages de la section <b>Paramètres du compte</b>. Peut modifier les <a href="/partner-center/partner-center-account-setup">coordonnées</a> et d’autres pages, mais ne peut pas apporter de modifications au compte de revenu ou au profil fiscal (à moins que l’autorisation ne soit accordée séparément).            </td></tr>
 <tr><td align="left">    <b>Utilisateurs du compte</b>                       </td><td align="left">  Peut afficher les utilisateurs qui ont été ajoutés au compte dans la section <b>utilisateurs</b> .          </td><td align="left">  Peut ajouter des utilisateurs au compte et apporter des modifications aux utilisateurs existants dans la section <b>utilisateurs</b> .             </td></tr>
 <tr><td align="left">    <b>Rapport des performances de l’AD au niveau du compte</b> </td><td align="left">  Peut afficher le <a href="advertising-performance-report.md">Rapport sur les performances publicitaires</a> au niveau du compte.      </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    <b>Campagnes Active Directory</b>                        </td><td align="left">  Peut afficher les <a href="/windows/uwp/monetize/">campagnes publicitaires</a> créées dans le compte.      </td><td align="left">  Peut créer, gérer et afficher les <a href="/windows/uwp/monetize/">campagnes publicitaires</a> créées dans le compte.          </td></tr>
@@ -113,7 +113,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 <tr><td align="left">    <b>Rapports de performances des filiales</b>      </td><td align="left">  Peut afficher le <a href="/windows/uwp/publish/advertising-performance-report">rapport sur les performances des annonces des affiliés</a> de tous les produits dans le compte.   </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    <b>Rapports d’installation de publicités de l’application</b>             </td><td align="left">  Permet d’afficher le rapport de la <a href="/windows/uwp/publish/ad-campaign-report">campagne Active Directory</a>.           </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    <b>Annonces de la communauté</b>                       </td><td align="left">  Peut afficher l’utilisation des <a href="/windows/uwp/monetize/">annonces gratuites de la communauté</a> de tous les produits dans le compte.          </td><td align="left">  Peut créer, gérer et afficher l’utilisation des <a href="/windows/uwp/monetize/">annonces gratuites de la communauté</a> de tous les produits dans le compte.               </td></tr>
-<tr><td align="left">    <b>Informations de contact</b>                        </td><td align="left">  Peut afficher les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a> dans la section Paramètres du compte.        </td><td align="left">  Peut modifier et afficher les <a href="/windows/uwp/publish/manage-account-settings-and-profile">coordonnées</a> dans la section Paramètres du compte.            </td></tr>
+<tr><td align="left">    <b>Informations de contact</b>                        </td><td align="left">  Peut afficher les <a href="/partner-center/partner-center-account-setup">coordonnées</a> dans la section Paramètres du compte.        </td><td align="left">  Peut modifier et afficher les <a href="/partner-center/partner-center-account-setup">coordonnées</a> dans la section Paramètres du compte.            </td></tr>
 <tr><td align="left">    <b>Conformité à la réglementation COPPA</b>                    </td><td align="left">  Peut afficher les sélections de <a href="in-app-ads.md#coppa-compliance">conformité avec la réglementation COPPA</a> (qui indique si les produits sont adaptés aux enfants de moins de 13 ans) pour tous les produits dans le compte.                                            </td><td align="left">  Peut modifier et afficher les sélections de <a href="in-app-ads.md#coppa-compliance">conformité Coppa</a>  (indiquant si les produits sont destinés aux enfants âgés de plus de 13 ans) pour tous les produits du compte.         </td></tr>
 <tr><td align="left">    <b>Groupes de clients</b>                     </td><td align="left">  Peut afficher les <a href="create-customer-groups.md">groupes de clients</a> (segments et groupes d’utilisateurs connus).      </td><td align="left">  Peut créer, modifier et afficher des <a href="create-customer-groups.md">groupes de clients</a> (segments et groupes d’utilisateurs connus).       </td></tr>
 <tr><td align="left">    <b>Gérer les groupes de produits</b>&nbsp;*                            </td><td align="left">  Peut afficher la page de création du nouveau groupe de produits, mais ne peut pas créer de nouveaux groupes de produits.    </td><td align="left">  Peut créer et modifier des groupes de produits.     </td></tr>
@@ -138,12 +138,12 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 
 Les autorisations de cette section peuvent être accordées à tous les produits du compte, ou personnalisées pour appliquer l’autorisation uniquement à un ou plusieurs produits spécifiques. 
 
-Les autorisations au niveau du produit sont regroupées en quatre catégories : **analytique**, **monétisation**, **publication**et **Xbox Live**. Vous pouvez développer chacune de ces catégories pour en afficher les autorisations individuelles. Vous avez également la possibilité d’activer **toutes les autorisations** pour un ou plusieurs produits spécifiques.
+Les autorisations au niveau du produit sont regroupées en quatre catégories : **analytique**, **monétisation**, **publication** et **Xbox Live**. Vous pouvez développer chacune de ces catégories pour en afficher les autorisations individuelles. Vous avez également la possibilité d’activer **toutes les autorisations** pour un ou plusieurs produits spécifiques.
 
 Pour accorder une autorisation pour chaque produit du compte, effectuez vos sélections pour cette autorisation (en basculant la case pour indiquer **lecture seule** ou **lecture/écriture**) dans la ligne marquée **tous les produits**. 
  
 > [!TIP]
-> Les sélections effectuées pour **tous les produits** s’appliquent à chaque produit actuellement présent dans le compte, ainsi qu’à tous les produits futurs créés dans le compte. Pour empêcher que des autorisations s’appliquent à des produits futurs, sélectionnez tous les produits individuellement au lieu de choisir **tous**les produits.
+> Les sélections effectuées pour **tous les produits** s’appliquent à chaque produit actuellement présent dans le compte, ainsi qu’à tous les produits futurs créés dans le compte. Pour empêcher que des autorisations s’appliquent à des produits futurs, sélectionnez tous les produits individuellement au lieu de choisir **tous** les produits.
 
 Sur la ligne **Tous les produits**, vous verrez chaque produit du compte répertorié sur une ligne distincte. Pour accorder une autorisation pour seulement un produit donné, effectuez vos sélections pour cette autorisation dans la ligne du produit en question.
 

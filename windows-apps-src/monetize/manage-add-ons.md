@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store l’API de soumission, les modules complémentaires, le produit dans l’application, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f02e222cf495f56352a645ac3a366da39dc5e3a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9ec2213f5a46318f3aaddbbe5d55b58f6816fcce
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158413"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927781"
 ---
 # <a name="manage-add-ons"></a>Gérer les extensions
 
@@ -49,7 +49,7 @@ Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou suppri
 <td align="left"><a href="create-an-add-on.md">Créer une extension</a></td>
 </tr>
 <tr>
-<td align="left">Suppression</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="delete-an-add-on.md">Supprime une extension</a></td>
 </tr>
@@ -128,10 +128,10 @@ Cette ressource décrit l’application à laquelle une extension est associée.
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description        |
-|-----------------|---------|-----------|
-| value            | object  |  Objet qui contient les valeurs suivantes : <br/><br/> <ul><li>*ID*. ID du magasin de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](../publish/view-app-identity-details.md).</li><li>*resourceLocation*. Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de l’application.</li></ul>   |
-| totalCount   | int  | Nombre d’objets d’application dans le tableau *applications* du corps de la réponse.                                                                                                                                                 |
+| Valeur | Type | Description |
+|-------|------|-------------|
+| value | object | Objet qui contient les valeurs suivantes : <ul><li>*ID*. ID du magasin de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](../publish/view-app-identity-details.md).</li><li>*resourceLocation*. Chemin relatif à ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour récupérer les données complètes de l’application.</li></ul> |
+| totalCount | int | Nombre d’objets d’application dans le tableau *applications* du corps de la réponse. |
 
 <span id="submission-object" />
 
@@ -153,8 +153,8 @@ Cette ressource a les valeurs suivantes.
 | Valeur           | Type    | Description     |
 |-----------------|---------|------------------|
 | id            | string  | ID de la soumission.    |
-| resourceLocation   | string  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.     |
- 
+| resourceLocation   | string  | Chemin relatif à ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour récupérer les données complètes de la soumission.     |
+
 <span/>
 
 ## <a name="related-topics"></a>Rubriques connexes

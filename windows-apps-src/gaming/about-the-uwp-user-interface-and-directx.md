@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, DirectX, objet d’application
 ms.localizationpriority: medium
-ms.openlocfilehash: 29eaba70a7114624474275b8f98ec77f8038b2b0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08d2039bd7b3b8aa248acca31615d34635929aa1
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163163"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927773"
 ---
 # <a name="the-app-object-and-directx"></a>Objet application et DirectX
 
@@ -94,12 +94,13 @@ Vous pouvez également obtenir le répartiteur d’événements de fenêtre pour
 
 Vous pouvez déterminer le comportement de thread de la distribution d’événements pour une fenêtre avec le type [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) . Dans ce type, il existe une méthode particulièrement importante : la méthode [**CoreDispatcher.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents), qui démarre le traitement des événements de fenêtre. Le fait d’appeler cette méthode avec une option non appropriée peut entraîner toutes sortes de comportements de traitement d’événements inattendus.
 
-| Option CoreProcessEventsOption                                                           | Description                                                                                                                                                                                                                                  |
-|------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**CoreProcessEventsOption.ProcessOneAndAllPending**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Distribue tous les événements actuellement disponibles dans la file d’attente. Si aucun événement n’est en attente, attend le nouvel événement suivant.                                                                                                                                 |
-| [**CoreProcessEventsOption.ProcessOneIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | Distribue un événement s’il est en attente dans la file d’attente. Si aucun événement n’est en attente, au lieu d’attendre le déclenchement d’un nouvel événement, effectue un retour immédiat.                                                                                          |
-| [**CoreProcessEventsOption.ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)        | Attend de nouveaux événements et distribue tous les événements disponibles. Continuez ce comportement jusqu’à la fermeture de la fenêtre ou l’application appelle la méthode [**Close**](/uwp/api/windows.ui.core.corewindow.close) sur l’instance [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) . |
-| [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | Distribue tous les événements actuellement disponibles dans la file d’attente. Si aucun événement n’est en attente, effectue un retour immédiat.                                                                                                                                          |
+| Option CoreProcessEventsOption | Description |
+|--------------------------------|-------------|
+| [**CoreProcessEventsOption.ProcessOneAndAllPending**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Distribue tous les événements actuellement disponibles dans la file d’attente. Si aucun événement n’est en attente, attend le nouvel événement suivant. |
+| [**CoreProcessEventsOption.ProcessOneIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Distribue un événement s’il est en attente dans la file d’attente. Si aucun événement n’est en attente, au lieu d’attendre le déclenchement d’un nouvel événement, effectue un retour immédiat. |
+| [**CoreProcessEventsOption.ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Attend de nouveaux événements et distribue tous les événements disponibles. Continuez ce comportement jusqu’à la fermeture de la fenêtre ou l’application appelle la méthode [**Close**](/uwp/api/windows.ui.core.corewindow.close) sur l’instance [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) . |
+| [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Distribue tous les événements actuellement disponibles dans la file d’attente. Si aucun événement n’est en attente, effectue un retour immédiat. |
+
 Les applications DirectX UWP doivent utiliser l’option [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) pour empêcher les comportements de blocage qui pourraient interrompre les mises à jour graphiques.
 
 ## <a name="asta-considerations-for-directx-devs"></a>Considérations relatives aux threads ASTA pour les développeurs DirectX
