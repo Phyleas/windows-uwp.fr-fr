@@ -8,18 +8,18 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d3e2385b1e15334b26663f6f17b3ef47ab015eec
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b676cf274121ae991066f908b18f1be705d1c580
+ms.sourcegitcommit: 77903451ae8ab1ba854494488f79184e674707df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216634"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911009"
 ---
 # <a name="page-transitions"></a>Transitions de page
 
 Les transitions de page parcourent les utilisateurs entre les pages d’une application, en fournissant des commentaires sous la forme de la relation entre les pages. Les transitions de page permettent aux utilisateurs de comprendre s’ils se trouvent en haut d’une hiérarchie de navigation, s’ils se déplacent entre les pages frères ou naviguent plus profondément dans la hiérarchie des pages.
 
-Deux animations différentes sont fournies pour la navigation entre les pages d’une application, l' *actualisation* et l' *exploration*des pages, et sont représentées par des sous-classes de [**NavigationTransitionInfo**](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
+Deux animations différentes sont fournies pour la navigation entre les pages d’une application, l' *actualisation* et l' *exploration* des pages, et sont représentées par des sous-classes de [**NavigationTransitionInfo**](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
 
 ## <a name="examples"></a>Exemples
 
@@ -104,4 +104,4 @@ Cela peut être utile lorsque vous modifiez le comportement de navigation dynami
 ## <a name="related-topics"></a>Rubriques connexes
 
 - [Naviguer entre deux pages](../basics/navigate-between-two-pages.md)
-- [Motion dans les applications UWindowsWP](index.md)
+- [Mouvement dans des applications UWP](index.md)
