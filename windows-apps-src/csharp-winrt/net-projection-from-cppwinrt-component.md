@@ -5,12 +5,12 @@ ms.date: 11/12/2020
 ms.topic: article
 keywords: Windows 10, c#, WinRT, cswinrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 45fa8a7858077438d9707835b548bdacd34e5d11
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: 57bc5c49d47dacee910cd3d80964f797633ef587
+ms.sourcegitcommit: 6da85cc75c02a5a7417966abddc8824ac87fb619
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97214191"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964732"
 ---
 # <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>Procédure pas à pas : Générer une projection .NET 5 à partir d’un composant C++/WinRT et distribuer le NuGet
 
@@ -141,7 +141,7 @@ Même si cette étape n’est pas requise pour générer une projection, elle of
 
 ## <a name="create-a-nuget-package-from-the-projection"></a>Créer un package NuGet à partir de la projection
 
-Pour distribuer et utiliser l’assembly d’interopérabilité, vous pouvez créer automatiquement un package NuGet lors de la génération de la solution en ajoutant des propriétés de projet supplémentaires. Ce package inclut l’assembly d’interopérabilité et une dépendance sur le package NuGet C#/WinRT pour l’assembly de Runtime C#/WinRT requis. Cet assembly de Runtime est nommé **winrt.runtime.dll** pour les cibles .net 5,0.
+Pour distribuer et utiliser l’assembly d’interopérabilité, vous pouvez créer automatiquement un package NuGet lors de la génération de la solution en ajoutant des propriétés de projet supplémentaires. Pour les cibles .NET 5,0, le package doit inclure l’assembly d’interopérabilité, l’assembly d’implémentation et une dépendance sur le package NuGet C#/WinRT pour l’assembly de Runtime C#/WinRT requis, **WinRT.Runtime.dll**.
 
 1. Ajoutez un fichier de spécifications NuGet (. NuSpec) au projet **SimpleMathProjection** .
 
@@ -158,7 +158,7 @@ Pour distribuer et utiliser l’assembly d’interopérabilité, vous pouvez cr�
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
-3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties. Below is an example of a C++/WinRT component NuGet spec. Notice the `dependency` on CsWinRT for the `net5.0` target framework moniker, as well as the target for `lib\net5.0\SimpleMathProjection.dll`, which points to the projection assembly **SimpleMathComponent.dll** instead of **SimpleMathComponent.winmd**. This behavior is new in .NET 5.0 and enabled by C#/WinRT.
+3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties. Below is an example NuGet spec for distributing the interop assembly from the C++/WinRT component. Note that for .NET 5.0 targets, under the `dependencies` node there is a dependency on CsWinRT, and under the `files` node **SimpleMathProjection.dll** is specified instead of **SimpleMathComponent.winmd** for the target `lib\net5.0\SimpleMathProjection.dll`. This behavior is new in .NET 5.0 and enabled by C#/WinRT. The implementation assembly, **SimpleMathComponent.dll**, must also be deployed for .NET 5.0 targets. 
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -178,7 +178,7 @@ Pour distribuer et utiliser l’assembly d’interopérabilité, vous pouvez cr�
         </dependencies>
       </metadata>
       <files>
-        <!--Support net46+, netcore3, net5, uap, c++ -->
+        <!--Support netcore3, uap, net46+, net5, c++ -->
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
