@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Configurer Windows, environnement de développement, outils de développement, chemins de développement, Microsoft, Windows, développeur, conseils, performances, WSL, terminal, NodeJS, Python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 0b3df6b081504b98933ae5b261c6e7aaf5464953
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 578bc10b26dfe04384ca8e8174e36497c20896cb
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671626"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927812"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>Configurer votre environnement de développement sur Windows 10
 
@@ -92,9 +92,9 @@ Ce guide vous permet de commencer à installer et configurer les langages et les
     :::column-end:::
     :::column:::
        [![Icône PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
-        **[PowerToys Windows](https://github.com/microsoft/PowerToys)**<br>
+        **[PowerToys Windows](../PowerToys/index.md)**<br>
         Simplifiez et personnalisez votre expérience Windows pour gagner en productivité avec cet ensemble d’utilitaires pour utilisateurs chevronnés.<br>
-        [Installer PowerToys (préversion publique)](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
+        [Installer les PowerToys](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
     :::column-end:::
 :::row-end:::
 :::row:::
