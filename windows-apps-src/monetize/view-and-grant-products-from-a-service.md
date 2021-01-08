@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: API de collection Windows 10, UWP, Microsoft Store, Microsoft Store achat d’API, afficher les produits, autoriser les produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 769366cd45b4734987e3f558c11a6e0e105cfe21
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 700749c45c563be0bb78de557cac3550767846bd
+ms.sourcegitcommit: fc7fb82121a00e552eaebafba42e5f8e1623c58a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164453"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978574"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -59,11 +59,13 @@ Avant de pouvoir utiliser l’API de collection Microsoft Store ou l’API d’a
 5.  Ajoutez plusieurs URI d’audience requis à votre [manifeste d’application](/azure/active-directory/develop/active-directory-application-manifest). Dans le volet gauche, cliquez sur **Manifeste**. Cliquez sur **modifier**, remplacez la `"identifierUris"` section par le texte suivant, puis cliquez sur **Enregistrer**.
 
     ```json
-    "identifierUris" : [                                
-            "https://onestore.microsoft.com",
-            "https://onestore.microsoft.com/b2b/keys/create/collections",
-            "https://onestore.microsoft.com/b2b/keys/create/purchase"
+    "accessTokenAcceptedVersion": 1,
+    "identifierUris": [
+        "https://onestore.microsoft.com",
+        "https://onestore.microsoft.com/b2b/keys/create/collections",
+        "https://onestore.microsoft.com/b2b/keys/create/purchase"
         ],
+    "signInAudience": "AzureADMyOrg",
     ```
 
     Ces chaînes représentent les audiences prises en charge par votre application. Dans une étape ultérieure, vous allez créer des jetons d’accès Azure AD qui seront associés à chacune de ces valeurs d’audience.
@@ -122,7 +124,7 @@ grant_type=client_credentials
 
 Pour chaque jeton, spécifiez les données de paramètre suivantes :
 
-* Pour les *paramètres \_ ID client* et * \_ clé secrète client* , spécifiez l’ID d’application et la clé secrète client pour votre application que vous avez récupérée à partir de la [portail de gestion Azure](https://portal.azure.com/). Ces deux paramètres sont requis pour créer un jeton d’accès avec le niveau d’authentification requis par l’API de collection Microsoft Store ou l’API d’achat.
+* Pour les *paramètres \_ ID client* et *\_ clé secrète client* , spécifiez l’ID d’application et la clé secrète client pour votre application que vous avez récupérée à partir de la [portail de gestion Azure](https://portal.azure.com/). Ces deux paramètres sont requis pour créer un jeton d’accès avec le niveau d’authentification requis par l’API de collection Microsoft Store ou l’API d’achat.
 
 * Pour le paramètre de *ressource* , spécifiez l’un des URI d’audience répertoriés dans la [section précédente](#access-tokens), en fonction du type de jeton d’accès que vous créez.
 
