@@ -2,17 +2,17 @@
 description: Découvrez Project Reunion, les avantages qu’il offre aux développeurs, ce qui est d’ores et déjà prêt pour eux et comment donner leur avis.
 title: Réunion de projet
 ms.topic: article
-ms.date: 11/17/2020
+ms.date: 01/07/2021
 keywords: Win32 pour Windows, développement d’applications de bureau, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5969afacc0f811e3a5c40488f45bb5b421c4b3
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: de1115281859ba322a03e3bab7a8d0e4ef71440d
+ms.sourcegitcommit: 044c75ea0c6fb3463a0150acdae1ff867dc05f29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97349356"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972123"
 ---
 # <a name="build-windows-apps-with-project-reunion-prerelease"></a>Générer des applications Windows avec Project Reunion (version préliminaire)
 
@@ -61,11 +61,12 @@ Si vous souhaitez essayer Project Reunion 0.1 en version préliminaire, vous de
 
 1. Vérifiez que votre ordinateur de développement dispose de Windows 10, version 1809 (build 17763) ou d’une version plus récente du système d’exploitation.
 
-2. Installez [Visual Studio 2019, version 16.9 Preview 2 (ou ultérieure)](https://visualstudio.microsoft.com/vs/preview/). Vous devez inclure les charges de travail suivantes lors de l’installation de Visual Studio :
-    - Développement .NET Desktop
-    - Développement pour la plateforme Windows universelle
-    - Développement Desktop en C++
-    - Composant facultatif **Outils de plateforme Windows universelle C++ (v142)** pour la charge de travail Plateforme Windows universelle (voir **Détails de l’installation** sous la section **Développement pour plateforme Windows universelle**, dans le volet de droite du programme d’installation)
+2. Installez [Visual Studio 2019, version 16.9 Preview 2 (ou ultérieure)](https://visualstudio.microsoft.com/vs/preview/). Assurez-vous que les éléments suivants sont sélectionnés dans Visual Studio Installer :
+    - Sous l’onglet **Charges de travail**, vérifiez que les charges de travail suivantes sont sélectionnées.
+        - **Développement .NET Desktop**
+        - **Développement Desktop en C++**
+        - **Développement Plateforme Windows universelle** (vérifiez aussi que le composant facultatif **Outils de plateforme Windows universelle C++ (v142)** est sélectionné pour cette charge de travail dans le volet **Détails de l’installation**)
+    - Sous l’onglet **Composants individuels**, assurez-vous que le **kit SDK Windows 10 (10.0.19041.0)** est sélectionné dans la section **Kits SDK, bibliothèques et frameworks**.
 
 3. Installez la dernière version de l’[extension Visual Studio (VSIX) C++/WinRT](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) à partir de Visual Studio Marketplace.
 
