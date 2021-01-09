@@ -1,28 +1,28 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Se préparer
-description: Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et commencez à créer des applications de la plateforme Windows universelle (UWP) pour Windows 10.
-ms.date: 10/13/2020
+description: Suivez ces instructions et commencez à créer des applications pour Windows 10, à l’aide des API WinRT (également appelées plateforme Windows universelle ou UWP).
+ms.date: 1/8/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c80bb9a3b9fe59550dff0603bdbe1b87e5b2982
-ms.sourcegitcommit: 3eb43ba2a6c52ad83523d63d825ac5d4d9050cd3
+ms.openlocfilehash: 928b8fa82e4a06f82f0e85ca34ab838562b08435
+ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97811960"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98043068"
 ---
 # <a name="get-set-up"></a>Se préparer
 
 ![Préparez-vous à utiliser Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-Il est bien plus facile de se lancer que vous ne le pensez. Suivez ces instructions et commencez à créer des applications de la plateforme Windows universelle (UWP) pour Windows 10.
+Bienvenue dans le développement Windows 10 ! Suivez ces instructions et commencez à créer des applications pour Windows 10, à l’aide des API WinRT (également appelées plateforme Windows universelle ou UWP).
 
 ## <a name="1-download-or-update-visual-studio"></a>1. Télécharger ou mettre à jour Visual Studio
 
 > [!NOTE]
-> Les nouvelles versions de Visual Studio peuvent différer des captures d’écran qui accompagnent ces instructions. Ne vous inquiétez pas ! Ces instructions restent valables.
+> Les nouvelles versions de Visual Studio peuvent différer des captures d’écran qui accompagnent ces instructions. Ne vous inquiétez pas ! Ces instructions restent valables.
 
 Microsoft Visual Studio 2019 vous permet de concevoir, coder, tester et déboguer vos applications.
 
@@ -41,24 +41,24 @@ Si vous avez déjà commencé à utiliser Visual Studio et si vous découvrez qu
 ![Comment répéter la procédure d’installation](images/win10-cs-install.png)
 
 
-## <a name="2-enable-your-device-for-development"></a>2. Activer votre appareil pour le développement
+## <a name="2-enable-your-device-for-development"></a>2. activer votre appareil pour le développement
 
 Il est important de tester vos applications UWP sur des PC et des téléphones réels. Avant de déployer des applications sur votre PC ou Windows Phone, vous devez inscrire l’appareil pour le développement.
 
 -   Pour obtenir des instructions détaillées, voir [Activer votre appareil pour le développement](enable-your-device-for-development.md).
 
-## <a name="3-register-as-an-app-developer"></a>3. Inscription en tant que développeur d’applications
+## <a name="3-register-as-an-app-developer"></a>3. Inscrivez-vous en tant que développeur d’applications
 
 Vous pouvez commencer à développer des applications immédiatement mais, avant de les soumettre au Store, vous devez disposer d’un compte de développeur.
 
 -   Pour obtenir un compte de développeur, accédez à la page [Êtes-vous prêt à vous inscrire ?](sign-up.md)
 
-## <a name="whats-next"></a>Et après ?
+## <a name="whats-next"></a>Quelle est l’étape suivante ?
 
 Une fois que vous avez installé les outils et activé votre appareil pour le développement, consultez nos conseils sur la façon de commencer à créer des applications Windows 10.
 
 -   [Choisissez votre plateforme](../desktop/choose-your-platform.md)
--   [Démarrer le codage des applications UWP](/windows-apps-src/get-started/create-uwp-apps.md)
+-   [Commencer le codage](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps)
 
 ## <a name="windows-development-setup-scripts"></a>Scripts d’installation de développement Windows
 
