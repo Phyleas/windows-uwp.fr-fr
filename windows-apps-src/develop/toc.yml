@@ -310,17 +310,15 @@
         - name: Portail d’appareil Windows
           href: ../debug-test-perf/device-portal.md
           items:
-            - name: Device Portal pour Bureau
+            - name: Portail d’appareil Windows pour les postes de travail
               href: ../debug-test-perf/device-portal-desktop.md
-            - name: Device Portal pour appareils mobiles
+            - name: Portail d’appareil Windows pour les appareils mobiles
               href: ../debug-test-perf/device-portal-mobile.md
-            - name: Portail d’appareil pour HoloLens
-              href: ../debug-test-perf/device-portal-hololens.md
-            - name: API principales Device Portal
+            - name: Principales API REST du Portail d’appareil Windows
               href: ../debug-test-perf/device-portal-api-core.md
-            - name: Écrire un plug-in personnalisé pour le portail d’appareil
+            - name: Écrire un plug-in personnalisé pour le Portail d’appareil Windows
               href: ../debug-test-perf/device-portal-plugin.md
-            - name: Provisionner le portail d’appareil avec un certificat SSL personnalisé
+            - name: Provisionner le portail d’appareil Windows avec un certificat SSL personnalisé
               href: ../debug-test-perf/device-portal-ssl.md
         - name: Kit de certification des applications Windows
           href: ../debug-test-perf/windows-app-certification-kit.md
@@ -749,7 +747,7 @@
       items:
         - name: Introduction
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: Prise en main
+        - name: Prendre en main
           href: ../cpp-and-winrt-apis/get-started.md
         - name: Nouveautés
           href: ../cpp-and-winrt-apis/news.md
