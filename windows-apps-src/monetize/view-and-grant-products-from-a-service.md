@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: API de collection Windows 10, UWP, Microsoft Store, Microsoft Store achat d’API, afficher les produits, autoriser les produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 700749c45c563be0bb78de557cac3550767846bd
-ms.sourcegitcommit: fc7fb82121a00e552eaebafba42e5f8e1623c58a
+ms.openlocfilehash: 1447a8f7a689b3405ac1ebb8807c1c68b81294db
+ms.sourcegitcommit: ad33b2b191c7e62dc68a46bd349a87ff8ca7cef8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97978574"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108922"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -33,7 +33,6 @@ Les étapes suivantes décrivent le processus de bout en bout pour l’utilisati
 2.  [Associez votre ID d’application Azure ad à votre application dans l’espace partenaires](#step-2).
 3.  Dans votre service, [créez Azure ad des jetons d’accès](#step-3) qui représentent votre identité d’éditeur.
 4.  Dans votre application Windows cliente, [créez une clé d’ID de Microsoft Store](#step-4) qui représente l’identité de l’utilisateur actuel, puis repassez cette clé à votre service.
-5.  Une fois que vous avez le jeton d’accès Azure AD requis et la clé de l’ID de Microsoft Store, [appelez l’API de collection Microsoft Store ou achetez l’API à partir de votre service](#step-5).
 
 Ce processus de bout en bout implique deux composants logiciels qui effectuent différentes tâches :
 
@@ -182,29 +181,6 @@ Suivez ces étapes pour créer une clé d’ID de Microsoft Store que vous pouve
 Le diagramme suivant illustre le processus de création d’une clé d’ID de Microsoft Store.
 
   ![Créer une clé d’ID du Windows Store](images/b2b-1.png)
-
-<span id="step-5"/>
-
-## <a name="step-5-call-the-microsoft-store-collection-api-or-purchase-api-from-your-service"></a>Étape 5 : appeler l’API de collection Microsoft Store ou acheter l’API à partir de votre service
-
-Une fois que votre service a une clé d’ID de Microsoft Store qui lui permet d’accéder aux informations de propriété d’un utilisateur spécifique, votre service peut appeler l’API de regroupement Microsoft Store ou l’API d’achat en suivant ces instructions :
-
-* [Demander des produits](query-for-products.md)
-* [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
-* [Octroyer des produits gratuits](grant-free-products.md)
-* [Obtenir les abonnements d’un utilisateur](get-subscriptions-for-a-user.md)
-* [Modifier l’état de facturation de l’abonnement d’un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md)
-
-Pour chaque scénario, fournissez les informations suivantes à l’API :
-
--   Dans l’en-tête de la demande, transmettez le jeton d’accès Azure AD qui a la valeur de l’URI de l’audience `https://onestore.microsoft.com` . Il s’agit de l’un des jetons que vous avez créés [précédemment à l’étape 3](#step-3). Ce jeton représente votre identité d’éditeur.
--   Dans le corps de la demande, transmettez la clé d’ID de Microsoft Store que vous avez récupérée précédemment à l' [étape 4](#step-4) à partir du code côté client dans votre application. Cette clé représente l’identité de l’utilisateur dont vous souhaitez accéder aux informations de propriété.
-
-### <a name="diagram"></a>Diagramme
-
-Le diagramme suivant décrit le processus d’appel d’une méthode dans l’API de collection Microsoft Store ou d’achat de l’API à partir de votre service.
-
-  ![Collections d’appels ou API achat](images/b2b-2.png)
 
 ## <a name="claims-in-a-microsoft-store-id-key"></a>Revendications dans une clé d’ID de Microsoft Store
 

@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e27333c87b596948afcb430eb1cf1ef4998e851
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: fef8499ca10f65c2eeeb9cc37bc96b482db8ad24
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860450"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104630"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Passer d’une application de bureau à UWP
 
@@ -20,7 +20,7 @@ Si vous disposez d’une application de bureau existante qui a été créée à 
 
 Vous pouvez empaqueter votre application de bureau dans un package MSIX pour accéder à de nombreuses autres fonctionnalités Windows 10. MSIX est un format de package d’application Windows moderne qui permet de créer des packages universels pour toutes les applications Windows, notamment les applications UWP, WPF, Windows Forms et Win32. En empaquetant vos applications de bureau Windows dans des packages MSIX, vous avez accès à une expérience d’installation et de mise à jour fiable, à un modèle de sécurité managé avec un système de capacité flexible, à un support pour le Microsoft Store, à la gestion d’entreprise et à de nombreux modèles de distribution personnalisés. Vous pouvez empaqueter votre application si vous avez le code source ou si vous disposez uniquement d’un fichier d’installation existant (par exemple, un programme d’installation MSI ou App-V). Une fois votre application empaquetée, vous pouvez intégrer des fonctionnalités UWP telles que les extensions de package et d’autres composants UWP.
 
-Pour plus d’informations, consultez [package Desktop applications (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-root) et les [fonctionnalités qui requièrent l’identité du package](/windows/apps/desktop/modernize/modernize-packaged-apps).
+Pour plus d’informations, consultez [créer un package MSIX à partir de votre code](/windows/msix/desktop/desktop-to-uwp-root) et des [fonctionnalités qui requièrent une identité de package](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
 ## <a name="use-windows-runtime-apis"></a>Utiliser des API Windows Runtime
 

@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, publicité, bannière, contrôle publicitaire, interstitiel
 ms.localizationpriority: medium
-ms.openlocfilehash: c12d79b97010826b05bf42a9de46780dd2f93756
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 3b4c49c08deb793614bacb0e30136dd4bd8cdfb3
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933120"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104650"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK Microsoft Advertising
 
@@ -103,7 +103,7 @@ Pour commencer à utiliser la médiation ad dans votre application UWP, [configu
 
 Une fois que vous avez terminé le développement de votre application avec ADS, vous pouvez [Envoyer votre application mise à jour](../publish/app-submissions.md) dans l’espace partenaires pour la rendre disponible dans le Store. Les applications qui affichent des publicités doivent répondre aux exigences supplémentaires spécifiées dans [la section 10,10 des stratégies de Microsoft Store](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) et [présenter le contrat de développeur d’applications](/legal/windows/agreements/app-developer-agreement).
 
-Une fois votre application publiée et disponible dans le Windows Store, vous pouvez consulter vos [rapports de performances publicitaires](../publish/advertising-performance-report.md) dans l’espace partenaires et continuer à apporter des modifications à vos paramètres de médiation pour optimiser les performances de vos publicités. Vos revenus publicitaires sont inclus dans votre [Résumé de paiement](../publish/payout-summary.md).
+Une fois votre application publiée et disponible dans le Windows Store, vous pouvez consulter vos [rapports de performances publicitaires](../publish/advertising-performance-report.md) dans l’espace partenaires et continuer à apporter des modifications à vos paramètres de médiation pour optimiser les performances de vos publicités. Vos revenus publicitaires sont inclus dans votre [Résumé de paiement](/partner-center/payout-statement).
 
 <span id="additional-help" />
 

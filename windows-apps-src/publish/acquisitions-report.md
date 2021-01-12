@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, acquisitions, ventes d’applications, téléchargements d’applications, installations, entonnoir, acquisition, conversions, canaux, affichages de pages d’application
 ms.localizationpriority: medium
-ms.openlocfilehash: cabdbd1433da64c927fe5e8326b7906095573497
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 7de7e934a89f64335698e43b31e3f04fce898aa2
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033282"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104610"
 ---
 # <a name="acquisitions-report"></a>Rapport sur les acquisitions
 
@@ -23,7 +23,7 @@ Vous pouvez afficher ces données dans l’espace partenaires ou [Télécharger 
 Dans ce rapport, une **acquisition** signifie qu’un nouveau client a obtenu une licence pour votre application (que vous avez facturé ou que vous en ayez proposé gratuitement). Une **installation** fait référence à l’application en cours d’installation sur un appareil Windows 10.
 
 > [!IMPORTANT]
-> Le rapport sur les **acquisitions** n’inclut pas les données relatives aux remboursements, aux contrepassations, aux refacturations, etc. Pour estimer le déroulement de votre application, consultez [Résumé du paiement](payout-summary.md). Dans la section **Réservé** , cliquez sur le lien **Télécharger les transactions réservées** .
+> Le rapport sur les **acquisitions** n’inclut pas les données relatives aux remboursements, aux contrepassations, aux refacturations, etc. Pour estimer le déroulement de votre application, consultez [Résumé du paiement](/partner-center/payout-statement). Dans la section **Réservé**, cliquez sur le lien **Télécharger les transactions réservées**.
 >
 > À l’exception des données d’affichage de page (comme décrit ci-dessous), ce rapport n’inclut pas les données relatives aux clients qui acquièrent une application sans être connectées à un compte Microsoft.
 
@@ -34,8 +34,8 @@ Près du haut de la page, vous pouvez sélectionner la période pour laquelle vo
 
 Vous pouvez également développer des **filtres** pour filtrer toutes les données de cette page par marché et/ou par type de périphérique.
 
--   **Marché** : le filtre par défaut est **tous les marchés** , mais vous pouvez limiter les données aux acquisitions sur un ou plusieurs marchés.
--   **Type d'appareil** : le paramètre par défaut est **Tous les appareils** . Si vous souhaitez afficher des données pour les acquisitions à partir d’un certain type d’appareil uniquement (comme un PC, une console ou une tablette), vous pouvez en choisir un ici spécifique.
+-   **Marché**: le filtre par défaut est **tous les marchés**, mais vous pouvez limiter les données aux acquisitions sur un ou plusieurs marchés.
+-   **Type d'appareil** : le paramètre par défaut est **Tous les appareils**. Si vous souhaitez afficher des données pour les acquisitions à partir d’un certain type d’appareil uniquement (comme un PC, une console ou une tablette), vous pouvez en choisir un ici spécifique.
 
 Les informations de tous les graphiques listés ci-dessous reflètent la plage de dates et les filtres que vous avez sélectionnés. Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
@@ -44,7 +44,7 @@ Les informations de tous les graphiques listés ci-dessous reflètent la plage d
 
 Le graphique **acquisitions** affiche le nombre d’acquisitions quotidiennes ou hebdomadaires (un nouveau client obtenant une licence pour votre application) sur la période sélectionnée. (Lorsque vous utilisez **appliquer des filtres** pour afficher les données pour une durée plus longue, les données d’acquisition sont regroupées par semaine.) Seules les acquisitions effectuées par les clients qui sont connectés avec un compte Microsoft valide sont incluses dans ce graphique. 
 
-Par défaut, nous affichons la vue quotidienne de l' **application** , qui comprend des données en temps quasi réel. Vous pouvez également voir le nombre d’acquisitions de la durée de vie de votre application en sélectionnant **application cumulative** . Vous avez alors accès au total cumulé de l'ensemble des acquisitions effectuées depuis la première publication de votre application.
+Par défaut, nous affichons la vue quotidienne de l' **application** , qui comprend des données en temps quasi réel. Vous pouvez également voir le nombre d’acquisitions de la durée de vie de votre application en sélectionnant **application cumulative**. Vous avez alors accès au total cumulé de l'ensemble des acquisitions effectuées depuis la première publication de votre application.
 
 Les **ventes brutes** pour votre application (d’octobre 2016) sont également disponibles dans ce graphique, avec la quantité totale obtenue à partir de l’application Sales (en USD). Notez que ce montant ne prend pas en compte les remboursements, les contrepassations, les refacturations, etc.
 
@@ -86,9 +86,9 @@ L' **entonnoir d’acquisition** vous montre le nombre de clients qui ont effect
 Les étapes de l’entonnoir sont les suivantes :
 
 - **Pages** consultées : ce nombre représente le nombre total de vues de la liste des boutiques de votre application, y compris les personnes qui ne sont pas connectées avec un compte Microsoft. Cela n’inclut pas les données des clients qui n’ont pas choisi de fournir ces informations à Microsoft.
-- **Acquisitions** : nombre de nouveaux clients qui ont obtenu une licence pour votre application (quand ils sont connectés avec leur compte Microsoft) dans un délai de 48 heures après l’affichage de la liste de leur boutique.
-- **Installations** : le nombre de clients qui ont installé l’application après l’avoir acquise.
-- **Utilisation** : le nombre de clients qui ont utilisé l’application après l’avoir installée.
+- **Acquisitions**: nombre de nouveaux clients qui ont obtenu une licence pour votre application (quand ils sont connectés avec leur compte Microsoft) dans un délai de 48 heures après l’affichage de la liste de leur boutique.
+- **Installations**: le nombre de clients qui ont installé l’application après l’avoir acquise.
+- **Utilisation**: le nombre de clients qui ont utilisé l’application après l’avoir installée.
 
 Vous pouvez éventuellement filtrer les résultats par sexe et/ou par groupe d’âge, ainsi que par ID de campagne personnalisé.
 
@@ -97,7 +97,7 @@ Vous pouvez éventuellement filtrer les résultats par sexe et/ou par groupe d�
 
 ## <a name="markets"></a>Marchés
 
-Le graphique **marchés** indique le nombre total d’acquisitions ou d’installations sur la période sélectionnée pour chaque marché dans lequel votre application est disponible. Vous pouvez choisir d’afficher ou non les données pour les **acquisitions** ou les **installations** .
+Le graphique **marchés** indique le nombre total d’acquisitions ou d’installations sur la période sélectionnée pour chaque marché dans lequel votre application est disponible. Vous pouvez choisir d’afficher ou non les données pour les **acquisitions** ou les **installations**.
 
 Vous pouvez afficher ces données sous forme de **carte** visuelle ou basculer le paramètre pour l’afficher sous forme de **tableau** . Le formulaire de table présentera cinq marchés à la fois, triés par ordre alphabétique ou par le nombre d’acquisitions ou d’installations le plus élevé. Vous pouvez également télécharger les données pour afficher des informations sur tous les marchés ensemble.
 
@@ -107,7 +107,7 @@ Vous pouvez afficher ces données sous forme de **carte** visuelle ou basculer l
 Le graphique **Données démographiques sur les clients** présente des informations démographiques sur les personnes ayant acheté votre application. Vous pouvez voir le nombre d’acquisitions (au cours de la période sélectionnée) effectuées par des personnes appartenant à un certain groupe d’âge et par sexe.
 
 > [!NOTE]
-> Certains clients ont choisi de ne pas partager ces informations. Si nous n’avons pas pu déterminer le groupe d’âge ni le sexe, l’acquisition entre dans la catégorie **Inconnu** .
+> Certains clients ont choisi de ne pas partager ces informations. Si nous n’avons pas pu déterminer le groupe d’âge ni le sexe, l’acquisition entre dans la catégorie **Inconnu**.
 
  
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, ventes complémentaires, acquisitions de module complémentaire, ventes de IAP, produits dans l’application, IAPS, modules complémentaires
 ms.localizationpriority: medium
-ms.openlocfilehash: f996fdcdff8664564379d99e529398e0f998e813
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 042922db077edb83b365a70e4451abe130614afe
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033952"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104500"
 ---
 # <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions des extensions
 
@@ -23,7 +23,7 @@ Vous pouvez afficher ces données dans l’espace partenaires ou [Télécharger 
 Dans ce rapport, une acquisition de module complémentaire signifie qu’un client a acheté un module complémentaire à partir de vous (ou l’a acquis sans payer, si vous l’avez offert gratuitement). Plusieurs achats d’un même module complémentaire de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions de modules complémentaires.
 
 > [!IMPORTANT]
-> Le rapport sur les **acquisitions du module complémentaire** n’inclut pas les données relatives aux remboursements, aux contrepassations, aux refacturations, etc. Pour estimer le déroulement de votre application, consultez [Résumé du paiement](payout-summary.md). Dans la section **Réservé** , cliquez sur le lien **Télécharger les transactions réservées** .
+> Le rapport sur les **acquisitions du module complémentaire** n’inclut pas les données relatives aux remboursements, aux contrepassations, aux refacturations, etc. Pour estimer le déroulement de votre application, consultez [Résumé du paiement](/partner-center/payout-statement). Dans la section **Réservé**, cliquez sur le lien **Télécharger les transactions réservées**.
 
 
 ## <a name="apply-filters"></a>Appliquer des filtres
@@ -32,9 +32,9 @@ Près du haut de la page, vous pouvez sélectionner la période pour laquelle vo
 
 Vous pouvez également développer des **filtres** pour filtrer toutes les données de cette page en fonction d’un ou de plusieurs compléments, par marché et/ou par type de périphérique.
 
--   **Module complémentaire** : le filtre par défaut est **tous les modules** complémentaires, mais vous pouvez limiter les données à un ou plusieurs des modules complémentaires de l’application.
--   **Marché** : le filtre par défaut est **tous les marchés** , mais vous pouvez limiter les données aux acquisitions sur un ou plusieurs marchés.
--   **Type d'appareil** : le paramètre par défaut est **Tous les appareils** . Si vous souhaitez afficher des données pour les acquisitions à partir d’un certain type d’appareil uniquement (comme un PC, une console ou une tablette), vous pouvez en choisir un ici spécifique.
+-   **Module complémentaire**: le filtre par défaut est **tous les modules** complémentaires, mais vous pouvez limiter les données à un ou plusieurs des modules complémentaires de l’application.
+-   **Marché**: le filtre par défaut est **tous les marchés**, mais vous pouvez limiter les données aux acquisitions sur un ou plusieurs marchés.
+-   **Type d'appareil** : le paramètre par défaut est **Tous les appareils**. Si vous souhaitez afficher des données pour les acquisitions à partir d’un certain type d’appareil uniquement (comme un PC, une console ou une tablette), vous pouvez en choisir un ici spécifique.
 
 Les informations de tous les graphiques listés ci-dessous reflètent la plage de dates et les filtres que vous avez sélectionnés. Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
@@ -43,7 +43,7 @@ Les informations de tous les graphiques listés ci-dessous reflètent la plage d
 
 Le graphique **Acquisitions de modules complémentaires** affiche le nombre total d’acquisitions quotidiennes ou hebdomadaires de vos modules complémentaires au cours de la période sélectionnée. (Lorsque vous utilisez **appliquer des filtres** pour afficher les données pour une durée plus longue, les données d’acquisition sont regroupées par semaine.)
 
-Vous pouvez également voir le nombre d’acquisitions de la durée de vie de votre application en sélectionnant **cumul de module complémentaire** . Vous avez alors accès au total cumulé de l'ensemble des acquisitions effectuées depuis la première publication de votre application.
+Vous pouvez également voir le nombre d’acquisitions de la durée de vie de votre application en sélectionnant **cumul de module complémentaire**. Vous avez alors accès au total cumulé de l'ensemble des acquisitions effectuées depuis la première publication de votre application.
 
 Vous pouvez éventuellement filtrer les résultats en fonction du fait que l’acquisition du module complémentaire provient du client ou du magasin Web et/ou de la version du système d’exploitation.
 
@@ -53,7 +53,7 @@ Vous pouvez éventuellement filtrer les résultats en fonction du fait que l’a
 Le graphique **démographique des clients** affiche des informations démographiques sur les personnes qui ont acquis vos modules complémentaires. Vous pouvez voir le nombre d’acquisitions (au cours de la période sélectionnée) effectuées par des personnes appartenant à un certain groupe d’âge et par sexe.
 
 > [!NOTE]
-> Certains clients ont choisi de ne pas partager ces informations. Si nous n’avons pas pu déterminer le groupe d’âge ni le sexe, l’acquisition entre dans la catégorie **Inconnu** .
+> Certains clients ont choisi de ne pas partager ces informations. Si nous n’avons pas pu déterminer le groupe d’âge ni le sexe, l’acquisition entre dans la catégorie **Inconnu**.
 
 
 ## <a name="markets"></a>Marchés

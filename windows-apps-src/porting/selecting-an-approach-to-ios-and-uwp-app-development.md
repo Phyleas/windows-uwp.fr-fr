@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a316a729fc1c2042dde5541e2b187bf8903188
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b7a8920b13b7e28947138a000fd46165abcb58b7
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171183"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104680"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Sélection d’une approche d’iOS et développement d’applications pour UWP
 
@@ -48,7 +48,7 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 
 -   [Pont Windows pour iOS](https://github.com/Microsoft/WinObjC)
 
-    Également connu sous le nom Project Islandwood, c’est un outil en cours de développement qui permet d’importer des projets Xcode directement dans Visual Studio. Le code Objective-C peut être généré et débogué dans Visual Studio. Si votre projet utilise des bibliothèques telles que Cocos pour les graphiques, cela peut s'avérer un moyen utile pour un portage rapide de votre application.
+    Il s’agit d’un outil toujours en développement qui peut importer des projets Xcode directement dans Visual Studio. Le code Objective-C peut être généré et débogué dans Visual Studio. Si votre projet utilise des bibliothèques telles que Cocos pour les graphiques, cela peut s'avérer un moyen utile pour un portage rapide de votre application.
 
 -   Réutilisez votre code C++.
 

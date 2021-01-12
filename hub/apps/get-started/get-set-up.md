@@ -6,12 +6,12 @@ ms.date: 1/8/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 928b8fa82e4a06f82f0e85ca34ab838562b08435
-ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
+ms.openlocfilehash: bb64345ff14d26a14095feb8065b250598aa78f0
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043068"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104550"
 ---
 # <a name="get-set-up"></a>Se préparer
 
@@ -58,7 +58,7 @@ Vous pouvez commencer à développer des applications immédiatement mais, avant
 Une fois que vous avez installé les outils et activé votre appareil pour le développement, consultez nos conseils sur la façon de commencer à créer des applications Windows 10.
 
 -   [Choisissez votre plateforme](../desktop/choose-your-platform.md)
--   [Commencer le codage](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps)
+-   [Commencer le codage](/windows/uwp/get-started/create-uwp-apps)
 
 ## <a name="windows-development-setup-scripts"></a>Scripts d’installation de développement Windows
 

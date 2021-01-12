@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, jeux, monétisation
 ms.localizationpriority: medium
-ms.openlocfilehash: c827c257947ea0f365bafe497e627841b501d40d
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 009d4740fed47c7cde392d41bf52384071715106
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878582"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104620"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -38,7 +38,7 @@ Voici quelques concepts importants concernant la tarification de votre jeu dans 
 ### <a name="base-price"></a>Prix de base
 
 Le prix de base du jeu est l’élément qui détermine si votre jeu est classé comme _payant_ ou _gratuit_. Vous pouvez utiliser l' [espace partenaires](https://partner.microsoft.com/dashboard) pour configurer le prix de base en fonction du pays et de la région.
-Le processus de détermination du prix peut inclure vos [responsabilités fiscales lors de la vente à différents pays](../publish/tax-details-for-paid-apps.md) et des [considérations relatives au coût pour des marchés spécifiques](../publish/define-market-selection.md). En outre, vous pouvez [définir des prix personnalisés pour des marchés spécifiques](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets).
+Le processus de détermination du prix peut inclure vos [responsabilités fiscales lors de la vente à différents pays](/partner-center/tax-details-marketplace) et des [considérations relatives au coût pour des marchés spécifiques](../publish/define-market-selection.md). En outre, vous pouvez [définir des prix personnalisés pour des marchés spécifiques](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets).
 
 ### <a name="sale-price"></a>Prix de vente
 
@@ -47,7 +47,7 @@ Vous pouvez planifier des campagnes de vente à l’avance, en définissant à l
 
 ## <a name="in-game-purchases"></a>Achats dans le jeu
 
-Les achats dans le jeu sont des produits achetés au sein d’un jeu. Ils sont également appelés de manière générique _achats in-app_. Dans le Microsoft Store, ces produits sont appelés _modules_complémentaires. [Les modules complémentaires sont publiés](../publish/add-on-submissions.md) via l’espace partenaires. Vous devrez également activer les composants additionnels dans le code de votre jeu.
+Les achats dans le jeu sont des produits achetés au sein d’un jeu. Ils sont également appelés de manière générique _achats in-app_. Dans le Microsoft Store, ces produits sont appelés _modules_ complémentaires. [Les modules complémentaires sont publiés](../publish/add-on-submissions.md) via l’espace partenaires. Vous devrez également activer les composants additionnels dans le code de votre jeu.
 
 ### <a name="types-of-add-ons"></a>Types de composants additionnels
 
@@ -117,7 +117,7 @@ Une fois que votre jeu est soumis dans le Windows Store, il entre dans le [proce
 
 Avec votre solution de jeu ouverte dans Visual Studio :
 
-1. Accéder à __Project__  >  __Store__  >  __l’application associer le magasin de projets au Store...__
+1. Accéder à   >    >  __l’application associer le magasin de projets au Store...__
 2. Connectez-vous à votre compte de développeur de l’espace partenaires et sélectionnez le nom de l’application avec laquelle associer cette solution.
 3. Double-cliquez sur le __fichier Package.appxmanifest.xml__ et accédez à l’onglet __Empaquetage__ afin de vérifier que le jeu est correctement associé.
 
@@ -169,7 +169,7 @@ Pour commencer, téléchargez et installez le [Kit de développement logiciel (S
 
 #### <a name="implementation-guides"></a>Guides d’implémentation
 
-Ces procédures pas à pas montrent comment implémenter des publicités à l’aide de __classe AdControl__, __InterstitialAd__et __NativeAd__:
+Ces procédures pas à pas montrent comment implémenter des publicités à l’aide de __classe AdControl__, __InterstitialAd__ et __NativeAd__:
 
 * [Créer des bannières publicitaires en XAML et .NET](../monetize/adcontrol-in-xaml-and--net.md)
 * [Créer des bannières publicitaires en HTML5 et JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md)
@@ -219,13 +219,13 @@ Faites votre choix parmi plusieurs types de campagnes qui peuvent aider à augme
 
 |Type de campagne             | Les publicités pour votre jeu s’affichent dans...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|Payé                      |Applications qui correspondent à l’appareil ou à la catégorie de votre jeu.                                                                                                                                                   |
+|Payant                      |Applications qui correspondent à l’appareil ou à la catégorie de votre jeu.                                                                                                                                                   |
 |Communauté gratuite            |Applications publiées par d’autres développeurs qui ont également adhéré aux campagnes publicitaires de la communauté. Pour en savoir plus, voir [À propos des annonces de la communauté](../monetize/index.md).|
 |Campagne gratuite                |Seulement les applications que vous avez publiées. Pour plus d’informations, voir [À propos des publicités maison](../monetize/index.md).                                                            |
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Rémunération](../publish/getting-paid-apps.md)
+* [Rémunération](/partner-center/marketplace-get-paid)
 * [Types de comptes, lieux géographiques et frais](../publish/account-types-locations-and-fees.md)
 * [Analyse](../publish/analytics.md)
 * [Globalisation et localisation](../design/globalizing/globalizing-portal.md)
