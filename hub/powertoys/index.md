@@ -4,12 +4,12 @@ description: Microsoft PowerToys est un ensemble d’utilitaires destinés à pe
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f441c7ef9fc4268b35c041f1100cb7f116318a5
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: 5e7e88e8ff179ebbb63aa7369c22149b645c9838
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97611850"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104580"
 ---
 # <a name="microsoft-powertoys-utilities-to-customize-windows-10"></a>Microsoft PowerToys : Utilitaires de personnalisation de Windows 10
 
@@ -149,7 +149,7 @@ Les contributions aux PowerToys sont les bienvenues ! L’équipe de développe
 
 - Rédiger des [spécifications techniques](https://codeburst.io/on-writing-tech-specs-6404c9791159)
 - Soumettre un [concept de design ou une recommandation](https://www.microsoft.com/design/inclusive/)
-- [Contribuer à la documentation](https://docs.microsoft.com/contribute/)
+- [Contribuer à la documentation](/contribute/)
 - Identifier et corriger les bogues dans le [code source](https://github.com/microsoft/PowerToys/tree/master/src)
 - [Coder de nouvelles fonctionnalités et des utilitaires PowerToys](https://github.com/microsoft/PowerToys/tree/master/doc/devdocs)
 

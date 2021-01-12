@@ -6,18 +6,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Store
 ms.localizationpriority: medium
-ms.openlocfilehash: f2516a1708948f0322d197bf4fdd524ede6ba0b0
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 29dcc02375358c7f16f38748ca92dbaeaf3ebdb7
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878542"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104700"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Store
 
 Le kit SDK Windows, le kit SDK Microsoft Advertising, le kit Microsoft Store Services SDK et le Microsoft Store fournissent des fonctionnalités qui vous permettent de générer davantage de revenus avec vos applications et de conquérir des clients en engageant les utilisateurs. Les rubriques de cette section indiquent comment générer ces fonctionnalités dans votre application.
 
-Pour plus d’informations sur les frais facturés par le Microsoft Store et sur la façon dont vous recevez l’argent généré par votre application, consultez [Rémunération](../publish/getting-paid-apps.md).
+Pour plus d’informations sur les frais facturés par le Microsoft Store et sur la façon dont vous recevez l’argent généré par votre application, consultez [Rémunération](/partner-center/marketplace-get-paid).
 
 ## <a name="choose-a-pricing-model"></a>Choisir un modèle de tarification
 
@@ -126,7 +126,7 @@ Vous êtes à la recherche d'autres moyens d'augmenter votre monétisation ? En
 
 Surveillez les performances de votre application dans le Microsoft Store grâce à ces rapports.
 
-- [Récapitulatif des paiements](../publish/payout-summary.md)
+- [Récapitulatif des paiements](/partner-center/payout-statement)
 - [Rapport sur les acquisitions](../publish/acquisitions-report.md)
 - [Rapport sur les acquisitions des extensions](../publish/add-on-acquisitions-report.md)
 - [Rapport sur les performances publicitaires](../publish/advertising-performance-report.md)
