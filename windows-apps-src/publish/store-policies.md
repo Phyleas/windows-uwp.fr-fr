@@ -6,12 +6,12 @@ ms.topic: article
 keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: fc7a9ebd3ebe9ce86f4c44e7e13ea25d5a01240e
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: 7d9679b591b64f804ae9c84badc5849cac28de99
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97611457"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104660"
 ---
 # <a name="microsoft-store-policies"></a>Politiques du Microsoft Store
 
@@ -24,7 +24,7 @@ ms.locfileid: "97611457"
 > Pour obtenir un résumé des modifications récentes apportées à ce contrat, consultez [Historique des modifications](store-policies-change-history.md).
 
 > [!NOTE]
-> **Avis de mise à jour de la politique du 16 décembre 2020** : Pour les jeux ciblant la console développée par le biais du [programme Xbox Live Creators](https://www.xbox.com/developers/creators-program/), la nécessité d’effectuer l’intégration avec XBL Services ne s’applique plus. La politique spécifique ([politique 10.13.1](https://docs.microsoft.com/windows/uwp/publish/store-policies#1013-gaming-and-xbox)) sera mise à jour pour refléter ce changement lors de la prochaine mise à jour du document Politique du Store, mais à compter de cet avis, elle ne sera plus appliquée pour le programme XBL Creators. 
+> **Avis de mise à jour de la politique du 16 décembre 2020** : Pour les jeux ciblant la console développée par le biais du [programme Xbox Live Creators](https://www.xbox.com/developers/creators-program/), la nécessité d’effectuer l’intégration avec XBL Services ne s’applique plus. La politique spécifique ([politique 10.13.1](#1013-gaming-and-xbox)) sera mise à jour pour refléter ce changement lors de la prochaine mise à jour du document Politique du Store, mais à compter de cet avis, elle ne sera plus appliquée pour le programme XBL Creators. 
 
 Nous vous remercions de l’intérêt que vous portez au développement de produits pour le Microsoft Store<sup>1</sup>. Le terme « Produit » désigne tout contenu soumis sous quelque forme que ce soit, y compris, mais sans s'y limiter, les applications, jeux, titres et tout contenu supplémentaire vendu ou offert à partir d’un produit. Nous nous évertuons à constituer un catalogue étendu de produits pour les clients à travers le monde. Les produits du Store doivent respecter nos normes en matière de certification, offrir aux clients une expérience riche et attrayante et être adaptés au Store.
 

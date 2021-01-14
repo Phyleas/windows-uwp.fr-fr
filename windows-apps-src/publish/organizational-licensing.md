@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, store pour entreprises, store pour éducation, organisation, licence en volume, entreprise, store éducation, store entreprises, achat en volume, en gros
 localizationpriority: high
-ms.openlocfilehash: dbaf44409e387d15225e701ef5c64fc2cb198ece
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 754e2efcfe865532a0d08a20337a3026bd384432
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034622"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104590"
 ---
 # <a name="organizational-licensing-options"></a>Options de gestion des licences organisationnelles
 
@@ -59,7 +59,7 @@ L’achat de licences en mode hors connexion permet aux organisations d’acqué
 Les comptes de développeur situés dans certains marchés sont actuellement en mesure de proposer des applications payantes pour l’achat en volume sur le Microsoft Store pour Entreprises. 
 
 > [!NOTE]
-> Sur certains marchés, le prix affiché pour une application sur le Microsoft Store pour Entreprises ou le Microsoft Store pour Éducation peut différer de celui affiché pour les clients au détail sur le Microsoft Store, pour le même niveau de prix. Le paiement des revenus des achats d’entreprise fonctionne de la même façon que les achats grand public de votre application. Pour plus d’informations, voir [Rémunération](getting-paid-apps.md) et [Contrat du développeur de l’application](/legal/windows/agreements/app-developer-agreement). Pour obtenir la liste des marchés dans lesquels le Microsoft Store pour Entreprises et le Microsoft Store pour Éducation sont disponibles, voir l’article [Vue d’ensemble de Microsoft Store pour Entreprises et Microsoft Store pour Éducation](/windows/manage/windows-store-for-business-overview#supported-markets).
+> Sur certains marchés, le prix affiché pour une application sur le Microsoft Store pour Entreprises ou le Microsoft Store pour Éducation peut différer de celui affiché pour les clients au détail sur le Microsoft Store, pour le même niveau de prix. Le paiement des revenus des achats d’entreprise fonctionne de la même façon que les achats grand public de votre application. Pour plus d’informations, voir [Rémunération](/partner-center/marketplace-get-paid) et [Contrat du développeur de l’application](/legal/windows/agreements/app-developer-agreement). Pour obtenir la liste des marchés dans lesquels le Microsoft Store pour Entreprises et le Microsoft Store pour Éducation sont disponibles, voir l’article [Vue d’ensemble de Microsoft Store pour Entreprises et Microsoft Store pour Éducation](/windows/manage/windows-store-for-business-overview#supported-markets).
 
 Si votre pays ou région ne sont pas répertoriés ci-dessous, vos applications payantes ne sont pour l’instant pas proposées dans Microsoft Store pour Entreprises ou dans Microsoft Store pour Éducation. Si tel est le cas, les choix de licences organisationnelles que vous effectuez pour vos applications payantes pourront être appliqués ultérieurement, à mesure que nous prendrons en charge les soumissions d’applications payantes pour de nouveaux marchés de compte de développeur à l’avenir.
 
