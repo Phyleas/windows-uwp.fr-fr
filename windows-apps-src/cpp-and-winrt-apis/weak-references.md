@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, forte, faible, référence
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9ca3ae231a70b69f9f41bb1077b875dca798eb05
-ms.sourcegitcommit: e6a7749f9ddc0fe165b68506b0be465d4ca51ab6
+ms.openlocfilehash: 46b62c202d090a7760445b3e07bca073d2636c66
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935981"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104480"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Références fortes et faibles en C++/WinRT
 
 L’environnement Windows Runtime est un système avec décompte des références. Dans un tel système, il est important de connaître la signification des références fortes et faibles (ainsi que des références qui ne sont ni fortes ni faibles, comme le pointeur implicite *this*), et de faire la distinction entre elles. Comme vous le verrez dans cette rubrique, le fait de savoir gérer ces références correctement est indispensable pour bénéficier d’un système fiable qui s’exécute correctement et éviter les plantages imprévisibles. En fournissant des fonctions d’assistance qui prennent entièrement en charge la projection de langage, [C++/WinRT](./intro-to-using-cpp-with-winrt.md) fait la moitié du travail nécessaire à la création de systèmes plus complexes, simplement et correctement.
 
 > [!NOTE]
-> À quelques exceptions près, la prise en charge des références faibles est activée par défaut pour les types Windows Runtime que vous consommez ou que vous créez en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/). **Windows.UI.Composition** et **Windows.Devices.Input.PenDevice** sont des exemples d’exceptions (c’est-à-dire que les espaces de noms pour lesquels la prise en charge des références faibles n’est *pas* activée pour ces types). Consultez également [Si votre délégué à révocation automatique ne parvient pas à s’inscrire](/windows/uwp/cpp-and-winrt-apis/handle-events#if-your-auto-revoke-delegate-fails-to-register).
+> À quelques exceptions près, la prise en charge des références faibles est activée par défaut pour les types Windows Runtime que vous consommez ou que vous créez en [C++/WinRT](./index.md). **Windows.UI.Composition** et **Windows.Devices.Input.PenDevice** sont des exemples d’exceptions (c’est-à-dire que les espaces de noms pour lesquels la prise en charge des références faibles n’est *pas* activée pour ces types). Consultez également [Si votre délégué à révocation automatique ne parvient pas à s’inscrire](./handle-events.md#if-your-auto-revoke-delegate-fails-to-register).
 > 
 > Si vous créez des types, consultez la section [Références faibles en C++/WinRT](#weak-references-in-cwinrt) de cette rubrique.
 

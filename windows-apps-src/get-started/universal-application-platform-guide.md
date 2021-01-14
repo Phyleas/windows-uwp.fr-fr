@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, universelle
 ms.localizationpriority: medium
-ms.openlocfilehash: 6871512e26b4c1f960034a5e97d88ade0b211094
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: e0d6991f261a9ee207a7e36f3dc5ad6a145f3b12
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860423"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104670"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
 
@@ -144,7 +144,7 @@ En plus de l’interaction sur différents appareils, [planifiez votre applicati
 
 L’[Espace partenaires](https://partner.microsoft.com/dashboard) vous permet de gérer et de soumettre toutes vos applications pour les appareils Windows à partir d’un seul et même emplacement. Consultez [Publier des applications et jeux Windows](../publish/index.md) afin de savoir comment soumettre vos applications pour la publication dans le Microsoft Store.
 
-De nouvelles fonctionnalités simplifient les processus tout en vous offrant un contrôle accru. Le nouveau tableau de bord vous propose également des [rapports d’analyse détaillés](../publish/analytics.md), des [informations sur les revenus](../publish/payout-summary.md), des méthodes pour [promouvoir votre application et susciter l’intérêt de vos clients](../publish/attract-customers-and-promote-your-apps.md), et bien davantage.
+De nouvelles fonctionnalités simplifient les processus tout en vous offrant un contrôle accru. Le nouveau tableau de bord vous propose également des [rapports d’analyse détaillés](../publish/analytics.md), des [informations sur les revenus](/partner-center/payout-statement), des méthodes pour [promouvoir votre application et susciter l’intérêt de vos clients](../publish/attract-customers-and-promote-your-apps.md), et bien davantage.
 
 Pour obtenir une introduction plus générale, voir [Introduction au développement d’applications Windows pour appareils Windows 10](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices)
 
