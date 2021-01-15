@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: windows 10, uwp, standard, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6fad694dd45e80d462f6a0c5c73ac5539fe16a
-ms.sourcegitcommit: c063d0d130944558afa20181dd294ffe7a187a3f
+ms.openlocfilehash: 0704a7e9c731c6f60c59615b964b51e0ded242c2
+ms.sourcegitcommit: 1022e8819e75484ca0cd94f8baf4f4d11900e0e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090683"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98206088"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -38,7 +38,7 @@ Pour une procédure pas à pas qui montre comment créer et distribuer un assemb
 
 ### <a name="invoke-cswinrtexe"></a>Appeler cswinrt.exe
 
-Pour appeler cswinrt.exe à partir d’un projet, installez le dernier [package NuGet C#/WinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/). Vous pouvez ensuite définir les propriétés d’un projet C#/WinRT dans un projet de **bibliothèque C#** pour générer un assembly d’interopérabilité. Le fragment de projet suivant montre un appel simple de **cswinrt** pour générer des sources de projection pour les types dans l’espace de noms Contoso. Ces sources sont ensuite incluses dans la build du projet.
+Pour appeler cswinrt.exe à partir d’un projet, installez le dernier [package NuGet C#/WinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/). Vous pouvez ensuite définir les propriétés d’un projet C#/WinRT dans un projet de **bibliothèque de classes C# (.NET Core)** pour générer un assembly d’interopérabilité. Le fragment de projet suivant montre un appel simple de **cswinrt** pour générer des sources de projection pour les types dans l’espace de noms Contoso. Ces sources sont ensuite incluses dans la build du projet.
 
 ```xml
 <PropertyGroup>
@@ -90,7 +90,25 @@ C#/WinRT fournit également un chemin d’activation de secours si Windows ne pa
 
 C#/WinRT utilise l’[autre ordre de recherche de LoadLibrary](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications) pour localiser une DLL d’implémentation. Une application basée sur ce comportement de secours doit empaqueter la DLL d’implémentation en même temps que le module d’application.
 
-## <a name="common-errors-with-net-5"></a>Erreurs courantes avec .NET 5+
+## <a name="common-errors-and-troubleshooting"></a>Erreurs fréquentes et résolution des problèmes
+
+- Erreur : « Métadonnées Windows ni fournies ni détectées ».
+
+  Vous pouvez spécifier des métadonnées Windows en utilisant la propriété de projet `<CsWinRTWindowsMetadata>`, par exemple :
+  ```xml
+  <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+  ```
+  
+- Erreur CS0246 : Le type ou le nom de l’espace de noms « Windows » est introuvable (une directive using ou une référence d’assembly est-elle manquante ?)
+
+  Pour résoudre cette erreur, modifiez votre propriété `<TargetFramework>` pour cibler une version spécifique de Windows, par exemple :
+  ```xml
+  <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+  ```
+  Reportez-vous à la documentation sur l’[Appel des API Windows Runtime](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) pour plus de détails sur la spécification de la propriété `<TargetFramework>`.
+
+
+### <a name="net-sdk-versioning-errors"></a>Erreurs de versioning du kit SDK .NET
 
 Vous pouvez rencontrer les erreurs ou avertissements suivants dans un projet généré avec une version du kit SDK .NET antérieure à celle de l’une de ses dépendances.
 
