@@ -6,12 +6,12 @@ ms.date: 1/8/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb64345ff14d26a14095feb8065b250598aa78f0
-ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
+ms.openlocfilehash: 9c8dbc8ff25d60b2ea1527c13125ca5ad2aa299a
+ms.sourcegitcommit: 375cf20e0583335805ec246d65819dc1674a2e32
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104550"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98240959"
 ---
 # <a name="get-set-up"></a>Se préparer
 
@@ -59,6 +59,7 @@ Une fois que vous avez installé les outils et activé votre appareil pour le d�
 
 -   [Choisissez votre plateforme](../desktop/choose-your-platform.md)
 -   [Commencer le codage](/windows/uwp/get-started/create-uwp-apps)
+
 
 ## <a name="windows-development-setup-scripts"></a>Scripts d’installation de développement Windows
 

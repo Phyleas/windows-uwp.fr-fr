@@ -4,12 +4,12 @@ description: Utilitaire qui permet aux utilisateurs de redéfinir des touches su
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb17cd5a7ad76728e6b063f76369c8d194a5e12c
-ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
+ms.openlocfilehash: a8ffd782a1b23d1e439be0462300ebdf20593913
+ms.sourcegitcommit: 375cf20e0583335805ec246d65819dc1674a2e32
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97865464"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98240999"
 ---
 # <a name="keyboard-manager-utility"></a>Utilitaire du gestionnaire de clavier
 
@@ -33,7 +33,7 @@ Le gestionnaire de clavier PowerToys doit être activé (avec les PowerToys exé
 
 ## <a name="settings"></a>Paramètres
 
-Pour créer des mappages à l’aide du gestionnaire de clavier, vous disposez des options suivantes :
+Pour créer des mappages à l’aide du gestionnaire de clavier, vous devez ouvrir les paramètres PowerToys (recherchez l’application PowerToys dans le menu Démarrer de Windows, puis sélectionnez cette option pour ouvrir la fenêtre Paramètres PowerToys). Dans les paramètres PowerToys, sous l’onglet Gestionnaire de clavier, vous verrez les options suivantes :
 
 - Lancez la fenêtre Paramètres de clavier de remappage en sélectionnant <kbd>remapper une clé</kbd>
 - Ouvrez la fenêtre Paramètres de raccourcis de remappage en sélectionnant le <kbd>raccourci de remappage</kbd>
@@ -125,7 +125,7 @@ Le gestionnaire de clavier utilise les noms de processus (et non les noms d’ap
 
 ### <a name="keys-that-cannot-be-remapped"></a>Clés qui ne peuvent pas être remappées
 
-Certaines touches de raccourci ne sont pas autorisées pour le remappage. Il s’agit notamment des paramètres suivants :
+Certaines touches de raccourci ne sont pas autorisées pour le remappage. Il s’agit, entre autres, des suivantes :
 
 - <kbd>CTRL</kbd> + <kbd>ALT</kbd> +  <kbd>Del</kbd> (commande interupt)
 - <kbd>⊞ Win</kbd> + <kbd>L</kbd> (verrouillage de votre ordinateur)
@@ -178,7 +178,7 @@ Cela dépend de la façon dont le jeu accède à vos clés. Certaines API de cla
 
 Oui. À ce stade, si vous remappez <kbd>un</kbd> à <kbd>B</kbd> sur le clavier anglais (US), puis que vous modifiez le paramètre de langue en français, si vous tapez <kbd>un</kbd> sur le clavier français (<kbd>Q</kbd> sur le clavier physique anglais des États-Unis), le résultat est <kbd>B</kbd>, ce qui est cohérent avec la manière dont Windows gère les entrées multilingues.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Si vous avez essayé de remapper une clé ou un raccourci et que vous rencontrez des problèmes, il peut s’agir de l’un des problèmes suivants :
 
