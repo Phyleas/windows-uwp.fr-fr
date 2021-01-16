@@ -1,19 +1,19 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10.
-title: Windows Phone l’étude de cas Silverlight pour UWP, Bookstore1
+title: Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea840a3f4e1f80fa7a5a60ce4a7bfd1aaef8074
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8c771de3f5ad0d042d278c0851849c306e7edb4d
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171193"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254234"
 ---
-# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1
 
 
 Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10. Grâce à Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir le [Guide des applications UWP](../get-started/universal-application-platform-guide.md).
@@ -22,7 +22,7 @@ L’application que nous porterons se compose d’une classe **ListBox** liée �
 
 Les rubriques précédentes de cette section décrivent les différences entre les plateformes et fournissent des détails et des recommandations sur le processus de portage des différents aspects d’une application dans le balisage XAML, de la liaison à un modèle d’affichage à l’accès aux données. Une étude de cas vise à compléter ces recommandations en les appliquant à un exemple concret. Elle part du principe que vous avez lu les recommandations, qui ne sont donc pas répétées.
 
-**Remarque**    Lors de l’ouverture \_ de Bookstore1Universal 10 dans Visual Studio, si vous voyez le message « mise à jour requise de Visual Studio », suivez les étapes de sélection d’un contrôle de version de la plateforme cible dans [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
+**Remarque**   Lors de l’ouverture \_ de Bookstore1Universal 10 dans Visual Studio, si vous voyez le message « mise à jour requise de Visual Studio », suivez les étapes de sélection d’un contrôle de version de la plateforme cible dans [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
 
 ## <a name="downloads"></a>Téléchargements
 
@@ -30,13 +30,13 @@ Les rubriques précédentes de cette section décrivent les différences entre l
 
 [Téléchargez l' \_ application Bookstore1Universal 10 Windows 10](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10).
 
-## <a name="the-windowsphone-silverlight-app"></a>Application Silverlight pour Windows Phone
+## <a name="the-windows-phone-silverlight-app"></a>Application Silverlight pour Windows Phone
 
 Voici à quoi ressemble Bookstore1WPSL8, l’application que nous allons porter. Il s’agit simplement d’une zone de liste à défilement vertical répertoriant des livres au-dessous de l’en-tête constitué du nom de l’application et du titre de la page.
 
 ![Apparence de l’application Bookstore1WPSL8](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## <a name="porting-to-a-windows10-project"></a>Portage d’une application vers un projet Windows 10
+## <a name="porting-to-a-windows-10-project"></a>Portage d’une application vers un projet Windows 10
 
 La procédure consistant à créer un projet dans Visual Studio, puis à copier des fichiers de Bookstore1WPSL8 dans ce nouveau projet, est très rapide. Commencez par créer un projet Application vide (universelle Windows). Nommez-le Bookstore1Universal \_ 10. Il s’agit des fichiers à copier à partir de Bookstore1WPSL8 vers Bookstore1Universal \_ 10.
 
@@ -86,7 +86,7 @@ Pour cette application, \# l’élément 3 n’est pas une dette, car la barre d
 | PhoneTextSubtleStyle                | SubtitleTextBlockStyle |
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
- 
+
 Pour définir ces styles, il vous suffit de les taper dans l’éditeur de balisage. Vous pouvez également utiliser les outils XAML de Visual Studio et les définir sans rien taper. Pour ce faire, cliquez avec le bouton droit sur un **TextBlock**, puis cliquez sur **Modifier le style** &gt; **Appliquer la ressource**. Pour procéder ainsi avec les objets **TextBlock** dans le modèle d’élément, cliquez avec le bouton droit sur **ListBox**, puis cliquez sur **Modifier des modèles supplémentaires** &gt; **Modifier les éléments générés (ItemTemplate)**.
 
 Il existe un arrière-plan blanc opaque à 80 % derrière les éléments, car le style par défaut du contrôle **ListBox** définit son arrière-plan sur la ressource système `ListBoxBackgroundThemeBrush`. Définissez `Background="Transparent"` sur l’élément **ListBox** pour effacer cet arrière-plan. Pour aligner à gauche les objets **TextBlock** dans le modèle d’élément, modifiez-les de nouveau comme décrit ci-dessus et définissez un élément **Margin** de `"9.6,0"` dans les deux objets **TextBlock**.
