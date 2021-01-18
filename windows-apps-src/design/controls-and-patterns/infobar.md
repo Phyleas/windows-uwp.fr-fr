@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 ms.custom: 20H2
 ms.localizationpriority: medium
-ms.openlocfilehash: 422d2cb0874abe2fbe767a75d718cd1f0637ccee
-ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
+ms.openlocfilehash: f790e4ed1d16ac42c95f9a835a3b9cc7f3598190
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604902"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104540"
 ---
 # <a name="infobar"></a>InfoBar
 Le contrôle InfoBar sert à afficher aux utilisateurs des messages d’état à l’échelle de l’application qui sont très visibles, mais non intrusifs. Il existe des niveaux de gravité intégrés qui permettent d’indiquer facilement le type de message affiché, ainsi qu’une option pour inclure votre propre appel à un bouton d’action ou de lien hypertexte. Étant donné que le contrôle InfoBar est inséré avec d’autres contenus d’interface utilisateur, cette option est là pour que le contrôle soit toujours visible ou pour que l’utilisateur le fasse disparaître. 
@@ -182,7 +182,7 @@ Cette icône peut être supprimée en affectant à la propriété IsIconVisible 
 
 ### <a name="add-an-action-button"></a>Ajouter un bouton d’action
 
-Un bouton d’action supplémentaire peut être ajouté en définissant votre propre bouton qui hérite de [ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) et en lui affectant une valeur dans la propriété ActionButton. Le style personnalisé est appliqué aux boutons d’action de type [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) et [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) pour la cohérence et l’accessibilité. En plus de la propriété ActionButton, des boutons d’action supplémentaires qui s’affichent sous le message peuvent être ajoutés par le biais du contenu personnalisé.
+Un bouton d’action supplémentaire peut être ajouté en définissant votre propre bouton qui hérite de [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) et en lui affectant une valeur dans la propriété ActionButton. Le style personnalisé est appliqué aux boutons d’action de type [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) et [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) pour la cohérence et l’accessibilité. En plus de la propriété ActionButton, des boutons d’action supplémentaires qui s’affichent sous le message peuvent être ajoutés par le biais du contenu personnalisé.
 
 
 ```xaml
@@ -240,7 +240,7 @@ Du contenu XAML peut être ajouté à un contrôle InfoBar à l’aide de la pro
     Message="Your documents are being saved to the cloud"
     IsClosable="False">
     <muxc:InfoBar.Content>
-        <ProgressBar IsIndeterminate="True" Margin="0,0,0,6"/>
+        <muxc:ProgressBar IsIndeterminate="True" Margin="0,0,0,6" MaxWidth="200"/>
     </muxc:InfoBar.Content>
 </muxc:InfoBar>
 ```
@@ -249,13 +249,14 @@ Du contenu XAML peut être ajouté à un contrôle InfoBar à l’aide de la pro
 
 ### <a name="lightweight-styling"></a>Création d’un style léger
 
-Vous pouvez modifier le style et le ControlTemplate par défaut pour donner au contrôle une apparence unique. Pour plus d’informations, consultez la section [Style léger](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling) de l’article [Application de styles aux contrôles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles).
+Vous pouvez modifier le style et le ControlTemplate par défaut pour donner au contrôle une apparence unique. Pour obtenir une liste des ressources de thème disponibles, consultez la section [Styles et modèles Control](/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template) dans la documentation de l’API InfoBar.
+Pour plus d’informations, consultez la section [Style léger](./xaml-styles.md#lightweight-styling) de l’article [Application de styles aux contrôles](./xaml-styles.md). 
 
-Par exemple, avec le code suivant, la taille de police de la barre de titre est de 22 pt sur les contrôles InfoBar d’une page :
+Par exemple, le code suivant définit la couleur d’arrière-plan de toutes les barres d’informations (InfoBar) à bleu :
 
 ```xaml
 <Page.Resources>
-    <x:Double x:Key="InfoBarTitleFontSize">22</x:Double>
+    <x:SolidColorBrush x:Key="InfoBarInformationalSeverityBackgroundBrush" Color="LightBlue"></x:SolidColorBrush>
 </Page.Resources>
 ```
 ### <a name="canceling-close"></a>Annulation de la fermeture

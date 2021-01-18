@@ -2,30 +2,35 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Vue d’ensemble de Windows Device Portal
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB.
-ms.date: 04/09/2019
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: a4fc5cc5b8bc99e830d3c31604e581f8e57c1007
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b860b081ba7693964b419def670da2f30d1c54c2
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173633"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104530"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
-Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous permettre de résoudre les problèmes et d’afficher les performances en temps réel de votre appareil Windows.
+Windows Device Portal (WDP) est un serveur web fourni sur les appareils Windows qui vous permet de configurer et gérer les paramètres des appareils via le réseau ou une connexion USB (les connexions locales sont également prises en charge sur les appareils avec un navigateur web).
 
-Le portail d'appareil Windows est un serveur web sur l’appareil auquel vous pouvez vous connecter à partir d’un navigateur web sur un PC. Si votre appareil dispose d’un navigateur web, vous pouvez également vous connecter localement avec le navigateur sur cet appareil.
+WDP fournit également des outils de diagnostic avancés pour le débogage et le suivi des performances en temps réel de votre appareil Windows.
 
-Windows Device Portal est disponible sur chaque famille d’appareils. Toutefois, les fonctionnalités et la configuration varient en fonction des exigences de chaque appareil. Cet article fournit une description générale de Device Portal et des liens vers des articles contenant des informations plus spécifiques pour chaque famille d’appareils.
+La fonctionnalité WDP est exposée programmatiquement par le biais d’une collection d’[API REST](device-portal-api-core.md).
 
-La fonctionnalité du portail d'appareil Windows est implémentée avec des [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler programmatiquement votre appareil.
+Cet article offre une description générale de Windows Device Portal et fournit des liens vers des articles contenant des informations plus spécifiques sur chaque famille d’appareils Windows.
 
-## <a name="setup"></a>Installation
+> [!NOTE]
+> Une famille d’appareils identifie les API, les caractéristiques système et les comportements que vous pouvez attendre sur les différentes catégories d’appareils.
 
-Chaque appareil possède des instructions spécifiques concernant la connexion à Device Portal. Toutefois, chacun nécessite d’effectuer les étapes générales suivantes.
+## <a name="setup"></a>Programme d’installation
+
+Chaque famille d’appareils fournit une version de WDP, mais les fonctionnalités et le programme d’installation varient en fonction des exigences d’un appareil.
+
+Voici les étapes de base pour tous les appareils.
 
 1. Activez le mode développeur et le portail d'appareil sur votre appareil (configuré dans l’application Paramètres).
 
@@ -33,23 +38,17 @@ Chaque appareil possède des instructions spécifiques concernant la connexion �
 
 3. Accéder à la page Device Portal dans votre navigateur. Le tableau suivant répertorie les ports et protocoles utilisés par chaque famille d’appareils.
 
-Famille d’appareils | Activé par défaut ? | HTTP | HTTPS | USB
---------------|----------------|------|-------|----
-HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | http://127.0.0.1:10080
-IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | NON APPLICABLE
-Xbox | Activer dans le mode de développement | Désactivé | 11443 | NON APPLICABLE
-Desktop (Expérience utilisateur)| Activer dans le mode de développement | 50080\* | 50043\* | NON APPLICABLE
-Téléphone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
+Le tableau suivant détaille les spécificités des appareils pour WDP.
 
-\* Cela n’est pas toujours le cas, car le portail d'appareil sur le bureau revendique des ports dans la plage éphémère (> 50 000) afin d’éviter les collisions avec les déclarations de port existant sur l’appareil. Pour plus d’informations, consultez la section [Paramètres de port](device-portal-desktop.md#registry-based-configuration-for-device-portal) pour le bureau.  
+Famille d’appareils | Activé par défaut ? | HTTP | HTTPS | USB | Instructions |
+--------------|----------------|------|-------|-----|--------------|
+Bureau| Activer dans le mode de développement | 50080\* | 50043\* | N/A | [Configurer Windows Device Portal sur un ordinateur de bureau](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
+Xbox | Activer dans le mode de développement | Désactivé | 11443 | N/A | [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md) |
+HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | http://127.0.0.1:10080 | [Portail d’appareil pour HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
+IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | N/A | [Portail d’appareil pour IoT](/windows/iot-core/manage-your-device/DevicePortal) |
+Téléphone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080 | [Portail d’appareil pour appareils mobiles](device-portal-mobile.md) |
 
-Pour obtenir des instructions d’installation propres à chaque appareil, consultez :
-
-- [Portail d’appareil pour HoloLens](./device-portal-hololens.md)
-- [Portail d’appareil pour IoT](/windows/iot-core/manage-your-device/DevicePortal)
-- [Portail d’appareil pour appareils mobiles](device-portal-mobile.md)
-- [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md)
-- [Portail d’appareil pour Bureau](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+\* Cela n’est pas toujours le cas, car le portail d'appareil sur le bureau revendique des ports dans la plage éphémère (> 50 000) afin d’éviter les collisions avec les déclarations de port existant sur l’appareil. Pour en savoir plus, consultez la section [Configuration basée sur le Registre](device-portal-desktop.md#registry-based-configuration) dans [Windows Device Portal pour les postes de travail](device-portal-desktop.md).  
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -223,3 +222,7 @@ Afin d’offrir une protection contre les [attaques CSRF](https://en.wikipedia.
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>Protection CSWSH (Cross-Site WebSocket Hijacking)
 
 Afin d’éliminer les risques d’[attaques CSWSH](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), tous les clients ouvrant une connexion WebSocket à Device Portal doivent également fournir un en-tête Origin correspondant à l’en-tête Host. Cela prouve à Device Portal que la requête provient soit de l’interface utilisateur de Device Portal, soit d’une application cliente valide. Si la requête ne présente pas d’en-tête Origin, elle sera rejetée.
+
+## <a name="see-also"></a>Voir aussi
+
+[Informations de référence sur les API principales du Portail d'appareil](device-portal-api-core.md)

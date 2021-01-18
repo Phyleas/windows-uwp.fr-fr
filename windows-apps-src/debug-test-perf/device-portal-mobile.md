@@ -1,19 +1,19 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: Device Portal pour appareils mobiles
+title: Portail d’appareil Windows pour les appareils mobiles
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil mobile.
-ms.date: 02/08/2017
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a6f85dfb13e47617138e401c8444cb5b5f6809
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: b661c1b8249f4244049a19ecb3ccab865218aab2
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339577"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98055992"
 ---
-# <a name="device-portal-for-mobile"></a>Device Portal pour appareils mobiles
+# <a name="windows-device-portal-for-mobile"></a>Portail d’appareil Windows pour les appareils mobiles
 
 À partir de Windows 10 version 1511, des fonctionnalités de développement supplémentaires sont disponibles pour la famille d’appareils mobiles. Ces fonctionnalités sont disponibles uniquement lorsque le mode développeur est activé sur l’appareil.
 
@@ -21,11 +21,11 @@ Pour en savoir plus sur la façon d’activer le mode développeur, consultez [A
 
 ![Capture d’écran des paramètres de la découverte des appareils et du portail d’appareil.](images/device-portal/mob-dev-mode-options.png)
 
-## <a name="set-up-device-portal-on-windows-phone"></a>Configurer Device Portal sur Windows Phone
+## <a name="set-up-windows-device-portal-on-windows-phone"></a>Configurer Windows Device Portal sur Windows Phone
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>Activer la détection et le couplage d’appareils
 
-Pour vous connecter au Portail d'appareil, vous devez activer la détection d’appareils et Portail d'appareil dans les paramètres de votre téléphone. Cela vous permet de coupler votre téléphone à un PC ou à un autre appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB.
+Pour vous connecter à Windows Device Portal (WDP), vous devez activer la détection d’appareils et Device Portal dans les paramètres de votre téléphone. Cela vous permet de coupler votre téléphone à un PC ou à un autre appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB.
 
 La première fois que vous vous connectez à Device Portal, vous êtes invité à entrer un code de sécurité à 6 caractères (avec respect de la casse). Cela garantit votre accès au téléphone et vous préserve des attaques. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code, puis entrez les 6 caractères dans la zone de texte du navigateur.
 

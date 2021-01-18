@@ -1,21 +1,21 @@
 ---
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
-title: Écrire un plug-in personnalisé pour le portail d’appareil
+title: Écrire un plug-in personnalisé pour le Portail d’appareil Windows
 description: Découvrez comment écrire une application UWP qui utilise le Portail d'appareil Windows pour héberger une page web et fournir des informations de diagnostic.
-ms.date: 07/06/2020
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: f66650291e2966d6a3a6ac2b5d794006382d2fbf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c01cc48f78abba95b99dc05e1372640241d9af49
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170023"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98056002"
 ---
-# <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour le portail d’appareil
+# <a name="write-a-custom-plugin-for-windows-device-portal"></a>Écrire un plug-in personnalisé pour le Portail d’appareil Windows
 
-Découvrez comment écrire une application UWP qui utilise le Portail d'appareil Windows pour héberger une page web et fournir des informations de diagnostic.
+Découvrez comment écrire une application UWP qui utilise Windows Device Portal (WDP) pour héberger une page web et fournir des informations de diagnostic.
 
 À compter de Windows 10 Creators Update (version 1703, build 15063), vous pouvez utiliser le Portail d’appareil pour héberger les interfaces de diagnostic de votre application. Cet article décrit les trois tâches nécessaires pour créer un DevicePortalProvider pour votre application : les changements du [manifeste du package d’application](/uwp/schemas/appxpackage/appx-package-manifest), la configuration de la connexion de votre application au [service Portail d’appareil](./device-portal.md) et la gestion d’une demande entrante.
 

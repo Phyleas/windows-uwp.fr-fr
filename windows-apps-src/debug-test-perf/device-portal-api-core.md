@@ -1,22 +1,22 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Informations de référence sur les API principales Device Portal
+title: Informations de référence sur les API REST principales de Windows Device Portal
 description: Découvrez les API REST principales Windows Device Portal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
 ms.custom: 19H1
-ms.date: 04/19/2019
+ms.date: 01/08/2021
 ms.topic: article
-keywords: windows 10, uwp, Portail d’appareil
+keywords: windows 10, uwp, device portal, REST
 ms.localizationpriority: medium
-ms.openlocfilehash: c8615620e09d6f00881c1bb229d98f876a95978c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 33e914d124520b8f4eacd120c191ed63715a3168
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173613"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98056052"
 ---
-# <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales Device Portal
+# <a name="windows-device-portal-core-rest-api-reference"></a>Informations de référence sur les API REST principales de Windows Device Portal
 
-Toutes les fonctionnalités du Portail d’appareil sont basées sur des API REST que les développeurs peuvent appeler directement pour accéder aux ressources et contrôler leurs appareils par programme.
+Toutes les fonctionnalités de Windows Device Portal (WDP) sont basées sur des API REST que les développeurs peuvent appeler directement pour accéder aux ressources et contrôler leurs appareils programmatiquement.
 
 ## <a name="app-deployment"></a>Déploiement des applications
 
