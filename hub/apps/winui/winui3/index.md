@@ -3,12 +3,12 @@ title: WinUI 3 Preview 3 (novembre 2020)
 description: Vue d’ensemble de la version WinUI 3 Preview 3.
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: 69855aea647b608d9253e4f71b6d7d38917def61
-ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
+ms.openlocfilehash: cbda5dc7ea58111ef40c0b9f92aef192bd61e422
+ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857420"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620835"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Bibliothèque d’interface utilisateur Windows 3 Preview 3 (novembre 2020)
 
@@ -36,10 +36,12 @@ WinUI 3 Preview 3 inclut des modèles de projet Visual Studio qui vous permett
 
 2. Installez [Visual Studio 2019, version 16.9 Preview](https://visualstudio.microsoft.com/vs/preview/)
 
-    Vous devez inclure les charges de travail suivantes lors de l’installation de Visual Studio :
-    - Développement .NET Desktop (installe également .NET 5)
+    Vous devez inclure la charge de travail suivante lors de l’installation de Visual Studio :
     - Développement pour la plateforme Windows universelle
 
+    Pour générer des applications .NET, vous devez également inclure les charges de travail suivantes :
+    - Développement .NET Desktop (installe également .NET 5)
+    
     Pour générer des applications C++, vous devez également inclure les charges de travail suivantes :
     - Développement Desktop en C++
     - Le composant facultatif *Outils de plateforme Windows universelle C++ (v142)* pour la charge de travail Plateforme Windows universelle (voir « Détails de l’installation » sous la section « Développement pour plateforme Windows universelle », dans le volet de droite)
