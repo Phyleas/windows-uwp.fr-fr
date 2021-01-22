@@ -4,12 +4,12 @@ description: Extension du shell Windows pour le changement de nom des fichiers e
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 52c24b295e6d93a7a66fda25f89462ed0607bc19
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: 39e06685b6948ed3d3935c69a8b4dafeb9ecc2ea
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618558"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691334"
 ---
 # <a name="powerrename-utility"></a>Utilitaire PowerRename
 
@@ -93,26 +93,26 @@ Les attributs de date et d’heure de création d’un fichier peuvent être uti
 
 Modèle de variable |Explication
 |:---|:---|
-|$YYYY|Année représentée par un entier à quatre ou cinq chiffres, selon le calendrier utilisé.
-|$YY|Année représentée uniquement par les deux derniers chiffres. Un zéro non significatif est ajouté pour les années à un seul chiffre.
-|$Y|Année représentée uniquement par le dernier chiffre.
-|$MMMM|Nom du mois
-|$MMM|Nom abrégé du mois
-|$MM|Month en chiffres avec des zéros non significatifs pour les mois à un seul chiffre.
-|$M|Month en chiffres sans zéros non significatifs pour les mois à un seul chiffre.
-|$DDDD|Nom du jour de la semaine
-|$DDD|Nom abrégé du jour de la semaine
-|$DD|Jour du mois en chiffres avec des zéros non significatifs pour les jours à un chiffre.
-|$D|Jour du mois en chiffres sans zéros non significatifs pour les jours à un chiffre.
-|$hh|Heures avec des zéros non significatifs pour les heures à un chiffre
-|$h|Heures sans zéros non significatifs pour les heures à un chiffre
-|$mm|Minutes avec des zéros non significatifs pour les minutes à un chiffre.
-|$m|Minutes sans zéros non significatifs pour les minutes à un chiffre.
-|$ss|Secondes avec des zéros non significatifs pour les secondes à un chiffre.
-|$s|Secondes sans zéros non significatifs pour les secondes à un chiffre.
-|$fff|Millisecondes représentées par trois chiffres complets.
-|$ff|Les millisecondes sont représentées uniquement par les deux premiers chiffres.
-|$f|Millisecondes représentées uniquement par le premier chiffre.
+|`$YYYY`|Année représentée par un entier à quatre ou cinq chiffres, selon le calendrier utilisé.
+|`$YY`|Année représentée uniquement par les deux derniers chiffres. Un zéro non significatif est ajouté pour les années à un seul chiffre.
+|`$Y`|Année représentée uniquement par le dernier chiffre.
+|`$MMMM`|Nom du mois
+|`$MMM`|Nom abrégé du mois
+|`$MM`|Month en chiffres avec des zéros non significatifs pour les mois à un seul chiffre.
+|`$M`|Month en chiffres sans zéros non significatifs pour les mois à un seul chiffre.
+|`$DDDD`|Nom du jour de la semaine
+|`$DDD`|Nom abrégé du jour de la semaine
+|`$DD`|Jour du mois en chiffres avec des zéros non significatifs pour les jours à un chiffre.
+|`$D`|Jour du mois en chiffres sans zéros non significatifs pour les jours à un chiffre.
+|`$hh`|Heures avec des zéros non significatifs pour les heures à un chiffre
+|`$h`|Heures sans zéros non significatifs pour les heures à un chiffre
+|`$mm`|Minutes avec des zéros non significatifs pour les minutes à un chiffre.
+|`$m`|Minutes sans zéros non significatifs pour les minutes à un chiffre.
+|`$ss`|Secondes avec des zéros non significatifs pour les secondes à un chiffre.
+|`$s`|Secondes sans zéros non significatifs pour les secondes à un chiffre.
+|`$fff`|Millisecondes représentées par trois chiffres complets.
+|`$ff`|Les millisecondes sont représentées uniquement par les deux premiers chiffres.
+|`$f`|Millisecondes représentées uniquement par le premier chiffre.
 
 Par exemple, en fonction des noms de fichiers :
 
@@ -143,27 +143,27 @@ Pour activer les expressions régulières, activez la case à cocher « utilise
 
 #### <a name="simple-matching-examples"></a>Exemples de correspondances simples
 
-| Rechercher     | Description                                           |
-| -------------- | ------------- |
-| ^              | Correspond au début du nom de fichier                   |
-| $              | Mettre en correspondance la fin du nom de fichier                         |
-| .*             | Correspond à tout le texte du nom                        |
-| ^ foo           | Faire correspondre le texte commençant par « foo »                     |
-| barre $           | Correspond au texte qui se termine par « bar »                       |
-| ^ foo. \* barre $    | Faire correspondre le texte commençant par « foo » et se terminant par « bar » |
-| .+? ( ? = bar)     | Faire correspondre tout jusqu’à « bar »                          |
-| barre foo [\s\S] \* | Correspond à tout ce qui se trouve entre « foo » et « bar »              |
+| Rechercher       | Description                                           |
+| ---------------- | ------------- |
+| `^`              | Correspond au début du nom de fichier                   |
+| `$`              | Mettre en correspondance la fin du nom de fichier                         |
+| `.*`             | Correspond à tout le texte du nom                        |
+| `^foo`           | Faire correspondre le texte commençant par « foo »                     |
+| `bar$`           | Correspond au texte qui se termine par « bar »                       |
+| `^foo.*bar$`     | Faire correspondre le texte commençant par « foo » et se terminant par « bar » |
+| `.+?(?=bar)`     | Faire correspondre tout jusqu’à « bar »                          |
+| `foo[\s\S]*bar`  | Correspond à tout ce qui se trouve entre « foo » et « bar »              |
 
 #### <a name="matching-and-variable-examples"></a>Exemples de correspondances et de variables
 
 *Lorsque vous utilisez les variables, l’option « mettre en correspondance toutes les occurrences » doit être activée.*
 
-| Rechercher | Remplacer par  | Description                                |
-| ---------- | ------------- |--------------------------------------------|
-| (.\*). format  | foo \_ $1.png   | Ajoute « foo \_ » au nom de fichier existant |
-| (.\*). format  | $1 \_foo.png   | Ajoute « \_ foo » au nom de fichier existant  |
-| (.\*)      | $1.txt        | Ajoute l’extension « . txt » au nom de fichier existant |
-| (^ \w + \. $) \| (^ \w + $) | $2.txt | Ajoute l’extension « . txt » au nom de fichier existant uniquement si elle n’a pas d’extension |
+| Rechercher   | Remplacer par    | Description                                |
+| ------------ | --------------- |--------------------------------------------|
+| `(.*).png`   | `foo_$1.png`   | Ajoute « foo \_ » au nom de fichier existant |
+| `(.*).png`   | `$1_foo.png`   | Ajoute « \_ foo » au nom de fichier existant  |
+| `(.*)`       | `$1.txt`        | Ajoute l’extension « . txt » au nom de fichier existant |
+| `(^\w+\.$)|(^\w+$)` | `$2.txt` | Ajoute l’extension « . txt » au nom de fichier existant uniquement si elle n’a pas d’extension |
 
 ### <a name="additional-resources-for-learning-regular-expressions"></a>Ressources supplémentaires pour l’apprentissage d’expressions régulières
 
