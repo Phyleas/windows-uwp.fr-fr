@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Azure ad, client Azure, locataire AAD, client Azure ad, gestion des locataires, locataires
 ms.localizationpriority: medium
-ms.openlocfilehash: ccb8a4fde9f1dc54d1de085dbcf0929bc6c762ea
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 84cdaac2b98e166640f96df46dd9785d1c50fbf8
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031282"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668720"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Associer Azure Active Directory à votre compte espace partenaires
 
@@ -31,10 +31,10 @@ Un locataire Azure AD unique peut être associé à plusieurs comptes de l’esp
 
 Si votre organisation utilise déjà Azure AD, procédez comme suit pour lier votre compte espace partenaires.
 
-1.  Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **paramètres de développement** . Dans le menu **paramètres** , sélectionnez **locataires** .
-2.  Sélectionnez **associer Azure ad à votre compte espace partenaires** .
+1.  Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **locataires**.
+2.  Sélectionnez **associer Azure ad à votre compte espace partenaires**.
 3.  Saisissez les informations d’identification Azure AD du locataire que vous souhaitez associer.
-4.  Passez en revue l’organisation et le nom de domaine du locataire Azure AD. Pour compléter l’association, sélectionnez **Confirmer** .
+4.  Passez en revue l’organisation et le nom de domaine du locataire Azure AD. Pour compléter l’association, sélectionnez **Confirmer**.
 5.  Si l’association est réussie, vous pourrez ajouter et gérer les utilisateurs de compte dans la section **Utilisateurs** dans l’Espace partenaires.
 
 > [!IMPORTANT]
@@ -45,10 +45,10 @@ Si votre organisation utilise déjà Azure AD, procédez comme suit pour lier vo
 
 Si vous devez configurer un nouveau Azure AD à lier à votre compte espace partenaires, procédez comme suit.
 
-1.  Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **paramètres de développement** . Dans le menu **paramètres** , sélectionnez **locataires** .
-2.  Sélectionnez **créer un Azure ad** .
+1.  Dans l' [espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **locataires**.
+2.  Sélectionnez **créer un Azure ad**.
 3.  Entrez les informations de répertoire de votre nouveau locataire Azure AD :
-    - **Nom de domaine** : nom unique que nous allons utiliser pour votre domaine Azure ad, ainsi que « . onmicrosoft.com ». Par exemple, si vous entrez « example », votre domaine Azure AD sera « example.onmicrosoft.com ».
+    - **Nom de domaine**: nom unique que nous allons utiliser pour votre domaine Azure ad, ainsi que « . onmicrosoft.com ». Par exemple, si vous entrez « example », votre domaine Azure AD sera « example.onmicrosoft.com ».
     - **E-mail du contact** : Une adresse e-mail à laquelle nous pouvons vous contacter sur votre compte si nécessaire.
     - **Informations du compte utilisateur de l’administrateur général** : Le prénom, nom de famille, nom d’utilisateur et mot de passe que vous souhaitez utiliser pour le nouveau compte d’administrateur général.
 4.  Cliquez sur **Créer** pour confirmer les nouvelles informations de domaine et de compte.
@@ -64,7 +64,7 @@ Une fois que vous avez associé un client Azure AD à votre compte espace parten
 
 Tout utilisateur disposant du rôle **Gestionnaire** pour un compte espace partenaires peut associer Azure ad locataires au compte.
 
-Pour associer un nouveau locataire, sélectionnez **associer un autre locataire Azure ad** , puis suivez les étapes indiquées ci-dessus. Notez que vous serez invité à entrer vos informations d’identification dans le locataire Azure AD que vous souhaitez associer.
+Pour associer un nouveau locataire, sélectionnez **associer un autre locataire Azure ad**, puis suivez les étapes indiquées ci-dessus. Notez que vous serez invité à entrer vos informations d’identification dans le locataire Azure AD que vous souhaitez associer.
 
 
 ### <a name="remove-an-azure-ad-tenant-from-your-partner-center-account"></a>Supprimer un locataire Azure AD de votre compte espace partenaires
@@ -74,7 +74,7 @@ Tout utilisateur disposant du rôle **Gestionnaire** pour un compte espace parte
 > [!IMPORTANT]
 > Lorsque vous supprimez un locataire, tous les utilisateurs qui ont été ajoutés au compte Espace partenaires depuis ce locataire ne pourront plus se connecter au compte. 
 
-Pour supprimer un locataire, recherchez son nom dans la page **locataires** (dans **paramètres du compte** ), puis sélectionnez **supprimer** . Un message va s’afficher pour vous demander de confirmer la suppression du locataire. Une fois cette opération effectuée, les utilisateurs de ce locataire ne pourront plus se connecter au compte de l’Espace partenaires et les autorisations que vous avez configurées pour ces utilisateurs seront supprimées.
+Pour supprimer un locataire, recherchez son nom dans la page **locataires** (dans **paramètres du compte**), puis sélectionnez **supprimer**. Un message va s’afficher pour vous demander de confirmer la suppression du locataire. Une fois cette opération effectuée, les utilisateurs de ce locataire ne pourront plus se connecter au compte de l’Espace partenaires et les autorisations que vous avez configurées pour ces utilisateurs seront supprimées.
 
 > [!TIP]
 > Vous ne pouvez pas supprimer un locataire si vous êtes actuellement connecté à l’Espace partenaires à l’aide d’un compte de ce locataire. Pour supprimer un locataire, vous devez vous connecter à l’Espace partenaires en tant que **Manager** pour un autre locataire associé au compte. S’il n’existe qu’un seul locataire associé au compte, ce locataire peut être supprimé uniquement après vous être connecté avec le compte Microsoft qui a ouvert le compte.

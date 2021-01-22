@@ -2,16 +2,16 @@
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: Si vous disposez d’un catalogue d’applications et de modules complémentaires, vous pouvez utiliser l’API de collection Microsoft Store et l’API d’achat Microsoft Store pour accéder aux informations de propriété de ces produits à partir de vos services.
 title: Gérer les droits sur les produits à partir d’un service
-ms.date: 08/01/2018
+ms.date: 01/21/2021
 ms.topic: article
 keywords: API de collection Windows 10, UWP, Microsoft Store, Microsoft Store achat d’API, afficher les produits, autoriser les produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 1447a8f7a689b3405ac1ebb8807c1c68b81294db
-ms.sourcegitcommit: ad33b2b191c7e62dc68a46bd349a87ff8ca7cef8
+ms.openlocfilehash: 7674a9b966510d914850e1fc8b2c8ca531f64a20
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108922"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668736"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -45,9 +45,6 @@ Ce processus de bout en bout implique deux composants logiciels qui effectuent d
 
 Avant de pouvoir utiliser l’API de collection Microsoft Store ou l’API d’achat, vous devez créer une application Web Azure AD, récupérer l’ID de locataire et l’ID d’application de l’application, et générer une clé. L’application Web Azure AD représente le service à partir duquel vous souhaitez appeler l’API de collection Microsoft Store ou l’API d’achat. Vous avez besoin de l’ID de locataire, de l’ID d’application et de la clé pour générer Azure AD des jetons d’accès dont vous avez besoin pour appeler l’API.
 
-> [!NOTE]
-> Vous devez uniquement effectuer les tâches de cette section une seule fois. Une fois que vous avez mis à jour votre manifeste d’application Azure AD et que vous avez l’ID de locataire, l’ID d’application et la clé secrète client, vous pouvez réutiliser ces valeurs chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
-
 1.  Si vous ne l’avez pas déjà fait, suivez les instructions de la procédure d' [intégration d’applications avec Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications) pour inscrire une application **Web/API** avec Azure ad.
     > [!NOTE]
     > Lorsque vous inscrivez votre application, vous devez choisir application **Web/API** comme type d’application afin de pouvoir récupérer une clé (également appelée clé *secrète client*) pour votre application. Pour appeler l’API de collection Microsoft Store ou l’API d’achat, vous devez fournir une clé secrète client lorsque vous demandez un jeton d’accès à partir d’Azure AD dans une étape ultérieure.
@@ -55,19 +52,6 @@ Avant de pouvoir utiliser l’API de collection Microsoft Store ou l’API d’a
 2.  Dans le [portail de gestion Azure](https://portal.azure.com/), accédez à **Azure Active Directory**. Sélectionnez votre annuaire, cliquez sur **inscriptions d’applications** dans le volet de navigation gauche, puis sélectionnez votre application.
 3.  Vous accédez à la page d’inscription principale de l’application. Dans cette page, copiez la valeur ID de l' **application** pour l’utiliser ultérieurement.
 4.  Créez une clé dont vous aurez besoin plus tard (il s’agit d’une clé *secrète client*). Dans le volet gauche, cliquez sur **paramètres** , puis sur **clés**. Dans cette page, suivez les étapes pour [créer une clé](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copiez cette clé pour une utilisation ultérieure.
-5.  Ajoutez plusieurs URI d’audience requis à votre [manifeste d’application](/azure/active-directory/develop/active-directory-application-manifest). Dans le volet gauche, cliquez sur **Manifeste**. Cliquez sur **modifier**, remplacez la `"identifierUris"` section par le texte suivant, puis cliquez sur **Enregistrer**.
-
-    ```json
-    "accessTokenAcceptedVersion": 1,
-    "identifierUris": [
-        "https://onestore.microsoft.com",
-        "https://onestore.microsoft.com/b2b/keys/create/collections",
-        "https://onestore.microsoft.com/b2b/keys/create/purchase"
-        ],
-    "signInAudience": "AzureADMyOrg",
-    ```
-
-    Ces chaînes représentent les audiences prises en charge par votre application. Dans une étape ultérieure, vous allez créer des jetons d’accès Azure AD qui seront associés à chacune de ces valeurs d’audience.
 
 <span id="step-2"/>
 
@@ -76,7 +60,7 @@ Avant de pouvoir utiliser l’API de collection Microsoft Store ou l’API d’a
 Avant de pouvoir utiliser l’API de collection Microsoft Store ou l’API achat pour configurer la propriété et les achats de votre application ou du module complémentaire, vous devez associer votre ID d’application Azure AD à l’application (ou à l’application qui contient le module complémentaire) dans l’espace partenaires.
 
 > [!NOTE]
-> Vous ne devez effectuer cette tâche qu’une seule fois.
+> Vous ne devez effectuer cette tâche qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID d’application et la clé secrète client, vous pouvez réutiliser ces valeurs chaque fois que vous avez besoin de créer un nouveau Azure AD jeton d’accès.
 
 1.  Connectez-vous à l' [espace partenaires](https://partner.microsoft.com/dashboard) , puis sélectionnez votre application.
 2.  Accédez à la page **services** &gt; **et regroupements de produits** , puis entrez votre ID d’application Azure ad dans l’un des champs **ID client** disponibles.
@@ -94,7 +78,7 @@ Avant de pouvoir récupérer une clé d’ID de Microsoft Store ou d’appeler l
 
 ### <a name="understanding-the-different-tokens-and-audience-uris"></a>Comprendre les différents jetons et URI d’audience
 
-Selon les méthodes que vous souhaitez appeler dans le Microsoft Store API de collection ou l’API d’achat, vous devez créer deux ou trois jetons différents. Chaque jeton d’accès est associé à un URI d’audience différent (il s’agit des mêmes URI que ceux que vous avez précédemment ajoutés à la `"identifierUris"` section du manifeste d’application Azure AD).
+Selon les méthodes que vous souhaitez appeler dans le Microsoft Store API de collection ou l’API d’achat, vous devez créer deux ou trois jetons différents. Chaque jeton d’accès est associé à un URI d’audience différent.
 
   * Dans tous les cas, vous devez créer un jeton avec l' `https://onestore.microsoft.com` URI d’audience. Dans une étape ultérieure, vous allez passer ce jeton à l’en-tête d' **autorisation** des méthodes dans l’API de collection Microsoft Store ou l’API d’achat.
       > [!IMPORTANT]
