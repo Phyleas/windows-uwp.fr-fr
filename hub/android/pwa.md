@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Android sur Windows, PWA, Android, Cordova, ionique, PhoneGap, application Web hybride
 ms.date: 04/28/2020
-ms.openlocfilehash: 482fd02ed7b5d978d81ec52309006034f70b7e47
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4559e795b4a9737bf68129790029f6f9136b4f81
+ms.sourcegitcommit: 99f5544d9642c87a16e3bd21f76c2fcbc97c20d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163983"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743592"
 ---
 # <a name="get-started-developing-a-pwa-or-hybrid-web-app-for-android"></a>Prise en main du développement d’une application Web PWA ou hybride pour Android
 
@@ -49,13 +49,13 @@ Vous n’avez pas besoin d’une infrastructure pour créer une application hybr
 
 Il existe deux distributions populaires de Cordova :
 
-- [PhoneGap](https://phonegap.com/)
+- [PhoneGap](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c): la prise en charge a été interrompue par Adobe.
 
 - [Ionic](https://ionicframework.com/)
 
 ## <a name="adobe-phonegap"></a>Adobe PhoneGap
 
-[PhoneGap](https://phonegap.com/): Framework pris en charge par Adobe qui prend en charge Cordova avec des outils supplémentaires, comme une [ligne de commande](http://docs.phonegap.com/getting-started/1-install-phonegap/cli/), une [application de bureau](https://phonegap.com/products#desktop-app-section)et une [Build PhoneGap](https://build.phonegap.com/), un service qui vous permet de charger votre code sur un serveur Adobe qui créera des applications natives sans avoir besoin d’installer des kits de développement logiciel (SDK) natifs sur votre ordinateur local. Cela vous permet d’effectuer des opérations telles que la génération d’une application iOS à l’aide de votre ordinateur Windows.
+La prise en charge a été supprimée récemment. Pour plus d’informations, consultez ce billet [de blog d’Adobe](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c).
 
 ### <a name="install-phonegap"></a>Installer PhoneGap
 
@@ -120,7 +120,7 @@ Pour plus d’informations, consultez les [documents angulaires ionique Cordova]
 
 ## <a name="create-a-new-project-with-ionic-capacitor-and-angular"></a>Créer un nouveau projet avec un condensateur ionique et un angle
 
-Installez ionique et Cordova-res en entrant ce qui suit dans la ligne de commande :
+Installez ionique et Cordova-Res en entrant ce qui suit dans la ligne de commande :
 
 ```bash
 npm install -g @ionic/cli native-run cordova-res
