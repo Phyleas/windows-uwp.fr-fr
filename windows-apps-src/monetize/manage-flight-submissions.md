@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store API de soumission, soumissions de vol
 ms.localizationpriority: medium
-ms.openlocfilehash: 46af08512970798be52187013e40335b6ee1561b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a5c8a8c83420830c5ec20c9586c46d54a02a5238
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164523"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811272"
 ---
 # <a name="manage-package-flight-submissions"></a>Gérer les soumissions de versions d’évaluation de package
 
@@ -66,7 +66,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de ver
 <td align="left"><a href="commit-a-flight-submission.md">Valide une soumission nouvelle ou mise à jour de version d’évaluation du package</a></td>
 </tr>
 <tr>
-<td align="left">Suppression</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-a-flight-submission.md">Supprime une soumission de version d’évaluation du package</a></td>
 </tr>
@@ -92,7 +92,7 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
     Le corps de la réponse contient une ressource de [soumission de vol](#flight-submission-object) qui inclut l’ID de la nouvelle soumission, l’URI de signature d’accès partagé (SAP) pour le chargement des packages pour l’envoi vers le stockage d’objets BLOB Azure et les données pour la nouvelle soumission (y compris toutes les annonces et les informations de tarification).
 
     > [!NOTE]
-    > Un URI SAP permet d’accéder à une ressource sécurisée dans le stockage Azure sans avoir besoin de clés de compte. Pour obtenir des informations générales sur les URI SAS et leur utilisation avec le stockage d’objets blob Azure, consultez [Signatures d’accès partagé, partie 1 : présentation du modèle SAS](/azure/storage/common/storage-sas-overview) et [Signatures d’accès partagé, partie 2 : créer et utiliser une SAS avec le stockage d’objets blob](/azure/storage/common/storage-sas-overview).
+    > Un URI SAP permet d’accéder à une ressource sécurisée dans le stockage Azure sans avoir besoin de clés de compte. Pour obtenir des informations générales sur les URI SAS et leur utilisation avec le stockage d’objets BLOB Azure, consultez [signatures d’accès partagé, partie 1 : présentation du modèle SAS](/azure/storage/common/storage-sas-overview) et [signatures d’accès partagé, partie 2 : créer et utiliser une signature d’accès partagé avec un stockage d’objets BLOB](/azure/storage/common/storage-sas-overview).
 
 4. Si vous ajoutez de nouveaux packages pour la soumission, [préparez-les](../publish/app-package-requirements.md) et ajoutez-les à une archive ZIP.
 
@@ -104,13 +104,13 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
       > [!NOTE]
       > Si vous ajoutez de nouveaux packages pour la soumission, veillez à mettre à jour les données d’envoi pour faire référence au nom et au chemin d’accès relatif de ces fichiers dans l’archive ZIP.
 
-4. Si vous ajoutez de nouveaux packages pour la soumission, chargez l’archive ZIP dans le [stockage d’objets blob Azure](/azure/storage/storage-introduction#blob-storage) à l’aide de l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée précédemment. Vous pouvez utiliser différentes bibliothèques Azure pour effectuer cette opération sur de nombreuses plateformes, notamment :
+4. Si vous ajoutez de nouveaux packages pour la soumission, téléchargez l’archive ZIP dans le [stockage d’objets BLOB Azure](/azure/storage/storage-introduction#blob-storage) à l’aide de l’URI SAS fourni dans le corps de la réponse de la méthode post que vous avez appelée précédemment. Vous pouvez utiliser différentes bibliothèques Azure pour effectuer cette opération sur de nombreuses plateformes, notamment :
 
     * [Bibliothèque cliente Azure Storage pour .NET](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Kit de développement logiciel (SDK) Azure Storage pour Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [Kit de développement logiciel (SDK) Azure Storage pour Python](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    L’exemple de code suivant en C# montre comment charger une archive ZIP vers le stockage d’objets blob Azure à l’aide de la classe [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) incluse dans la bibliothèque cliente de stockage Azure pour .NET. Cet exemple repose sur le principe que l’archive ZIP a déjà été écrite dans un objet de flux.
+    L’exemple de code C# suivant montre comment télécharger une archive ZIP dans le stockage d’objets BLOB Azure à l’aide de la classe [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) de la bibliothèque cliente Azure Storage pour .net. Cet exemple repose sur le principe que l’archive ZIP a déjà été écrite dans un objet de flux.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -259,10 +259,10 @@ Cette ressource a les valeurs suivantes.
 |------------|--------|------------------------------|
 | id            | string  | ID de la soumission.  |
 | flightId           | string  |  ID de la version d’évaluation du package auquel la soumission est associée.  |  
-| status           | string  | État de la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>Opération annulée</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Publié</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Libérer</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs.  |
+| status           | string  | État de la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>Opération annulée</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Publié</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Libérer</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | objet  |  [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs.  |
 | flightPackages           | tableau  | Contient des [ressources de package de version d’évaluation](#flight-package-object) qui fournissent des détails sur chaque package de la soumission.   |
-| packageDeliveryOptions    | object  | [Ressource des options de remise du package](#package-delivery-options-object) qui contient les paramètres de lancement de packages progressif et de mise à jour obligatoire de la soumission.   |
+| packageDeliveryOptions    | objet  | [Ressource des options de remise du package](#package-delivery-options-object) qui contient les paramètres de lancement de packages progressif et de mise à jour obligatoire de la soumission.   |
 | fileUploadUrl           | string  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, voir [Créer une soumission de version d’évaluation de package](#create-a-package-flight-submission).  |
 | targetPublishMode           | string  | Mode de publication pour la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Immédiat</li><li>Manuel</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
@@ -276,9 +276,9 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 | Valeur           | Type    | Description                   |
 |-----------------|---------|------|
-|  erreurs               |    object     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
-|  warnings               |   object      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
-|  certificationReports               |     object    |   Tableau des [ressources de rapport de certification](#certification-report-object) qui donnent accès aux données du rapport de certification de la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification.    |  
+|  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
+|  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
+|  certificationReports               |     objet    |   Tableau des [ressources de rapport de certification](#certification-report-object) qui donnent accès aux données du rapport de certification de la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification.    |  
 
 
 <span id="status-detail-object" />
@@ -331,19 +331,19 @@ Cette ressource fournit des détails sur un package d’une soumission.
 Cette ressource a les valeurs suivantes.
 
 > [!NOTE]
-> Lors de l’appel de la méthode de [mise à jour d’un vol de package](update-a-flight-submission.md) , seules les valeurs *filename*, *fileStatus*, *minimumDirectXVersion*et *minimumSystemRam* de cet objet sont requises dans le corps de la demande. Les autres valeurs sont remplies par l’espace partenaires.
+> Lors de l’appel de la méthode de [mise à jour d’un vol de package](update-a-flight-submission.md) , seules les valeurs *filename*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont requises dans le corps de la demande. Les autres valeurs sont remplies par l’espace partenaires.
 
 | Valeur           | Type    | Description              |
 |-----------------|---------|------|
 | fileName   |   string      |  Nom du package.    |  
-| fileStatus    | string    |  État du package. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Téléchargé</li><li>PendingDelete</li></ul>    |  
+| fileStatus    | string    |  État du package. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>PendingUpload</li><li>Téléchargé</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  ID qui identifie de manière unique le package. Cette valeur est utilisée par l’espace partenaires.   |     
 | version    |  string   |  Version du package d’application. Pour plus d’informations, voir [Numérotation des versions de packages](../publish/package-version-numbering.md).   |   
 | architecture    |  string   |  Architecture du package d’application (par exemple, ARM).   |     
 | languages    | tableau    |  Tableau des codes des langues prises en charge par l’application. Pour plus d’informations, voir [Langues prises en charge](../publish/supported-languages.md).    |     
 | capabilities    |  tableau   |  Tableau des fonctionnalités exigées par le package. Pour plus d’informations sur les fonctionnalités, voir [Déclarations des fonctionnalités d’application](../packaging/app-capability-declarations.md).   |     
-| minimumDirectXVersion    |  string   |  Version DirectX minimale prise en charge par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  Mémoire RAM minimale exigée par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>Memory2GB</li></ul>   |    
+| minimumDirectXVersion    |  string   |  Version DirectX minimale prise en charge par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | string    |  Mémoire RAM minimale exigée par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
@@ -371,7 +371,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description        |
 |-----------------|---------|------|
-| packageRollout   |   object      |   [Ressource de lancement de packages](#package-rollout-object) qui contient les paramètres de lancement de packages progressif de la soumission.    |  
+| packageRollout   |   objet      |   [Ressource de lancement de packages](#package-rollout-object) qui contient les paramètres de lancement de packages progressif de la soumission.    |  
 | isMandatoryUpdate    | boolean    |  Indique si vous souhaitez traiter les packages de cette soumission comme obligatoires pour l’installation automatique des mises à jour de l’application. Pour plus d’informations sur les packages obligatoires pour l’installation automatique des mises à jour de l’application, consultez [Télécharger et installer les mises à jour de package pour votre application](../packaging/self-install-package-updates.md).    |  
 | mandatoryUpdateEffectiveDate    |  Date   |  Date et heure auxquelles les packages de cette soumission deviennent obligatoires, au format ISO 8601 dans le fuseau horaire UTC.   |        
 
@@ -405,7 +405,7 @@ Les codes suivants représentent l’état d’une soumission.
 
 | Code           |  Description      |
 |-----------------|---------------|
-|  Aucune            |     Aucun code n’a été spécifié.         |     
+|  None            |     Aucun code n’a été spécifié.         |     
 |      InvalidArchive        |     L’archive ZIP contenant le package n’est pas valide ou a un format d’archive non reconnu.  |
 | MissingFiles | L’archive ZIP ne dispose pas de tous les fichiers qui ont été répertoriés dans les données de votre soumission, ou ils se trouvent dans un emplacement incorrect dans l’archive. |
 | PackageValidationFailed | La validation d’un ou de plusieurs packages de votre soumission a échoué. |
@@ -417,7 +417,7 @@ Les codes suivants représentent l’état d’une soumission.
 | ListingOptOutWarning | Le développeur supprimé un listing d’une soumission précédente ou il n’a pas inclus d’informations de listing prises en charge par le package. |
 | ListingOptInWarning  | Le développeur a ajouté un listing. |
 | UpdateOnlyWarning | Le développeur essaie d’insérer quelque chose qui prend uniquement en charge la mise à jour. |
-| Autres  | La soumission est dans un état non reconnu ou non affecté à une catégorie. |
+| Autre  | La soumission est dans un état non reconnu ou non affecté à une catégorie. |
 | PackageValidationWarning | Le processus de validation du package a généré un avertissement. |
 
 <span/>

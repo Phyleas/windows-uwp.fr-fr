@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: API de soumission de Windows 10, UWP, Microsoft Store, exemples de code, Python
 ms.localizationpriority: medium
-ms.openlocfilehash: f551a7de85e493f4fbc1a027fb3ab9c3ca2dd598
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 3fd29164dd91199b1557496985577ea956893250
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363862"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811261"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Python : soumissions d’applications, d’extensions et de versions d’évaluation
 
@@ -57,7 +57,7 @@ L’exemple suivant montre comment utiliser plusieurs méthodes dans l’API Mic
 1. Pour commencer, il [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, elle [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage Blob Azure.
+4. Il modifie les détails de la nouvelle soumission et charge un nouveau package pour l’envoi vers le stockage d’objets BLOB Azure.
 5. Ensuite, il [met à jour](update-an-app-submission.md) , puis [valide](commit-an-app-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md) jusqu’à ce que celle-ci soit validée.
 
@@ -72,7 +72,7 @@ L’exemple suivant montre comment utiliser plusieurs méthodes dans l’API Mic
 1. Pour commencer, il [récupère les données de l’extension indiquée](get-an-add-on.md).
 2. Ensuite, il [supprime la soumission en attente de l’extension](delete-an-add-on-submission.md), s’il en existe une.
 3. Après cela, elle crée [une soumission pour l’extension](create-an-add-on-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle charge une archive ZIP contenant des icônes associées à la soumission dans le stockage d’objets blob Azure. Pour en savoir plus, consultez les instructions relatives au chargement d’une archive ZIP sur le stockage Blob Azure, dans la section [Créer une soumission d’extension](manage-add-on-submissions.md#create-an-add-on-submission).
+4. Il charge une archive ZIP qui contient des icônes pour l’envoi vers le stockage d’objets BLOB Azure. Pour plus d’informations, consultez les instructions pertinentes sur le chargement d’une archive ZIP dans le stockage d’objets BLOB Azure dans [créer une soumission de module complémentaire](manage-add-on-submissions.md#create-an-add-on-submission).
 5. Ensuite, il [met à jour](update-an-add-on-submission.md) , puis [valide](commit-an-add-on-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que celle-ci soit validée.
 
@@ -87,7 +87,7 @@ L’exemple suivant montre comment utiliser plusieurs méthodes dans l’API Mic
 1. Pour commencer, il [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, il [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle charge un nouveau package associé à la soumission dans le stockage d’objets blob Azure. Pour en savoir plus, consultez les instructions relatives au chargement d’une archive ZIP sur le stockage Blob Azure, dans la section [Créer une soumission de version d’évaluation du package](manage-flight-submissions.md#create-a-package-flight-submission).
+4. Il charge un nouveau package pour l’envoi vers le stockage d’objets BLOB Azure. Pour plus d’informations, consultez les instructions pertinentes sur le chargement d’une archive ZIP dans le stockage d’objets BLOB Azure dans [créer une soumission de vol de package](manage-flight-submissions.md#create-a-package-flight-submission).
 5. Ensuite, il [met à jour](update-a-flight-submission.md) , puis [valide](commit-a-flight-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md) jusqu’à ce que celle-ci soit validée.
 

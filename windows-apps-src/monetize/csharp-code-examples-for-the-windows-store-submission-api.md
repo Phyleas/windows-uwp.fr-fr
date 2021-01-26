@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: 'API de soumission Windows 10, UWP, Microsoft Store, exemples de code, C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: ac16d6932a2f20e701d7446ac8c21c316cfe5d4a
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: c1f5704963dd1d6d6ad786a48c63ecfcd789aff9
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364122"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811297"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>\#Exemple C : soumissions pour les applications, les modules complémentaires et les vols
 
@@ -59,7 +59,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 1. Pour commencer, la méthode [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, elle [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage Blob Azure.
+4. Il modifie les détails de la nouvelle soumission et charge un nouveau package pour l’envoi vers le stockage d’objets BLOB Azure.
 5. Ensuite, il [met à jour](update-an-app-submission.md) , puis [valide](commit-an-app-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md) jusqu’à ce que celle-ci soit validée.
 
@@ -74,7 +74,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 
 1. Pour commencer, la méthode [crée une extension](create-an-add-on.md).
 2. Ensuite, elle [crée une soumission pour la nouvelle extension](create-an-add-on-submission.md).
-3. Elle charge une archive ZIP contenant des icônes associées à la soumission dans le stockage d’objets blob Azure.
+3. Il charge une archive ZIP qui contient des icônes pour l’envoi vers le stockage d’objets BLOB Azure.
 4. Ensuite, il [valide la nouvelle soumission à l’espace partenaires](commit-an-add-on-submission.md).
 5. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que celle-ci soit validée.
 
@@ -105,7 +105,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 1. Pour commencer, la méthode [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, il [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle charge un nouveau package associé à la soumission dans le stockage d’objets blob Azure.
+4. Il charge un nouveau package pour l’envoi vers le stockage d’objets BLOB Azure.
 5. Ensuite, il [met à jour](update-a-flight-submission.md) , puis [valide](commit-a-flight-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md) jusqu’à ce que celle-ci soit validée.
 
@@ -119,7 +119,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 La classe ```IngestionClient``` fournit des méthodes d’assistance qui sont utilisées par d’autres méthodes dans l’exemple d’application pour effectuer les tâches suivantes :
 
 * [Obtenez un jeton d’accès Azure ad](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) qui peut être utilisé pour appeler des méthodes dans l’API de soumission Microsoft Store. Une fois que vous avez obtenu un jeton, vous avez 60 minutes pour utiliser ce jeton dans les appels à l’API de soumission Microsoft Store avant l’expiration du jeton. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.
-* Charger une archive ZIP contenant de nouvelles ressources pour une soumission d’application ou d’extension dans le stockage Blob Azure. Pour plus d’informations sur le chargement d’une archive ZIP dans le stockage Blob Azure pour les soumissions d’application et d’extension, consultez les instructions correspondantes dans [Créer une soumission d’application](manage-app-submissions.md#create-an-app-submission) et [Créer une soumission d’extension](manage-add-on-submissions.md#create-an-add-on-submission).
+* Téléchargez une archive ZIP contenant de nouvelles ressources pour une soumission d’application ou de module complémentaire au stockage d’objets BLOB Azure. Pour plus d’informations sur le téléchargement d’une archive ZIP dans le stockage d’objets BLOB Azure pour les envois d’application et de complément, consultez les instructions pertinentes dans [créer une soumission d’application](manage-app-submissions.md#create-an-app-submission) et [créer une soumission de module complémentaire](manage-add-on-submissions.md#create-an-add-on-submission).
 * Traitez les requêtes HTTP pour l’API de soumission Microsoft Store.
 
 > [!div class="tabbedCodeSnippets"]

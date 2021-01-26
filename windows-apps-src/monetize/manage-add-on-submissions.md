@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API de soumission Microsoft Store, soumissions de module complémentaire, produit dans l’application, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5926fbd55c215eccf3517454c972edc86f3dfd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 16c9fa0f4fa4b7b6ac3ec8e0fb005b80ab1b7872
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164573"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811313"
 ---
 # <a name="manage-add-on-submissions"></a>Gérer les soumissions d’extensions
 
@@ -66,7 +66,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ex
 <td align="left"><a href="commit-an-add-on-submission.md">Valide une soumission d’extension nouvelle ou mise à jour</a></td>
 </tr>
 <tr>
-<td align="left">Suppression</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-add-on-submission.md">Supprimer une soumission d’extension</a></td>
 </tr>
@@ -92,7 +92,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
     Le corps de la réponse contient une ressource de [soumission de module complémentaire](#add-on-submission-object) qui inclut l’ID de la nouvelle soumission, l’URI de signature d’accès partagé (SAS) pour le chargement de toutes les icônes de module complémentaire pour l’envoi vers le stockage d’objets BLOB Azure et toutes les données pour la nouvelle soumission (telles que les listes et les informations de tarification).
 
     > [!NOTE]
-    > Un URI SAP permet d’accéder à une ressource sécurisée dans le stockage Azure sans avoir besoin de clés de compte. Pour obtenir des informations générales sur les URI SAS et leur utilisation avec le stockage d’objets blob Azure, consultez [Signatures d’accès partagé, partie 1 : présentation du modèle SAS](/azure/storage/common/storage-sas-overview) et [Signatures d’accès partagé, partie 2 : créer et utiliser une SAS avec le stockage d’objets blob](/azure/storage/common/storage-sas-overview).
+    > Un URI SAP permet d’accéder à une ressource sécurisée dans le stockage Azure sans avoir besoin de clés de compte. Pour obtenir des informations générales sur les URI SAS et leur utilisation avec le stockage d’objets BLOB Azure, consultez [signatures d’accès partagé, partie 1 : présentation du modèle SAS](/azure/storage/common/storage-sas-overview) et [signatures d’accès partagé, partie 2 : créer et utiliser une signature d’accès partagé avec un stockage d’objets BLOB](/azure/storage/common/storage-sas-overview).
 
 4. Si vous ajoutez de nouvelles icônes pour la soumission, [préparez-les](../publish/create-add-on-store-listings.md) et ajoutez-les à une archive ZIP.
 
@@ -104,13 +104,13 @@ Pour créer une soumission pour une extension, suivez ce processus.
       > [!NOTE]
       > Si vous ajoutez de nouvelles icônes pour la soumission, veillez à mettre à jour les données d’envoi pour faire référence au nom et au chemin d’accès relatif de ces fichiers dans l’archive ZIP.
 
-4. Si vous ajoutez de nouvelles icônes pour la soumission, chargez l’archive ZIP dans le [stockage d’objets blob Azure](/azure/storage/storage-introduction#blob-storage) à l’aide de l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée précédemment. Vous pouvez utiliser différentes bibliothèques Azure pour effectuer cette opération sur de nombreuses plateformes, notamment :
+4. Si vous ajoutez de nouvelles icônes pour l’envoi, téléchargez l’archive ZIP dans le [stockage d’objets BLOB Azure](/azure/storage/storage-introduction#blob-storage) à l’aide de l’URI SAS fourni dans le corps de la réponse de la méthode post que vous avez appelée précédemment. Vous pouvez utiliser différentes bibliothèques Azure pour effectuer cette opération sur de nombreuses plateformes, notamment :
 
     * [Bibliothèque cliente Azure Storage pour .NET](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Kit de développement logiciel (SDK) Azure Storage pour Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [Kit de développement logiciel (SDK) Azure Storage pour Python](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    L’exemple de code suivant en C# montre comment charger une archive ZIP vers le stockage d’objets blob Azure à l’aide de la classe [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) incluse dans la bibliothèque cliente de stockage Azure pour .NET. Cet exemple repose sur le principe que l’archive ZIP a déjà été écrite dans un objet de flux.
+    L’exemple de code C# suivant montre comment télécharger une archive ZIP dans le stockage d’objets BLOB Azure à l’aide de la classe [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) de la bibliothèque cliente Azure Storage pour .net. Cet exemple repose sur le principe que l’archive ZIP a déjà été écrite dans un objet de flux.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -234,14 +234,14 @@ Cette ressource a les valeurs suivantes.
 | contentType           | string  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Il peut s’agir de l’une des valeurs suivantes : <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | mots clés           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10 [mots clés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces mots clés.   |
 | lifetime           | string  |  Durée de vie de l’extension. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Toujours</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
-| listings           | object  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2, et chaque valeur est un objet de [ressource de référencement](#listing-object) qui contient les informations de référencement de l’extension.  |
-| Prix           | object  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’extension.   |
+| listings           | objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2, et chaque valeur est un objet de [ressource de référencement](#listing-object) qui contient les informations de référencement de l’extension.  |
+| Prix           | objet  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’extension.   |
 | targetPublishMode           | string  | Mode de publication pour la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Immédiat</li><li>Manuel</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
 | tag           | string  |  [Données développeur personnalisées](../publish/enter-add-on-properties.md#custom-developer-data) de l’extension (ces informations étaient précédemment appelées *tag*).   |
-| visibility  | string  |  Visibilité de l’extension. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Hidden</li><li>Public</li><li>Privées</li><li>NotSet</li></ul>  |
-| status  | string  |  État de la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>Opération annulée</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Publié</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Libérer</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. |
+| visibility  | string  |  Visibilité de l’extension. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Hidden</li><li>Public</li><li>Privé</li><li>NotSet</li></ul>  |
+| status  | string  |  État de la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>Opération annulée</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Publié</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Libérer</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | objet  |  [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. |
 | fileUploadUrl           | string  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, voir [Créer une soumission d’extension](#create-an-add-on-submission).  |
 | friendlyName  | string  |  Nom convivial de la soumission, comme indiqué dans l’espace partenaires. Cette valeur est générée lorsque vous créez l’envoi.  |
 
@@ -254,7 +254,7 @@ Cette ressource contient [des informations de liste pour un module complémentai
 | Valeur           | Type    | Description       |
 |-----------------|---------|------|
 |  description               |    string     |   Description du listing d’extensions.   |     
-|  icon               |   object      |[Ressource d’icône](#icon-object) qui contient les données de l’icône du listing d’extensions.    |
+|  icon               |   objet      |[Ressource d’icône](#icon-object) qui contient les données de l’icône du listing d’extensions.    |
 |  title               |     string    |   Titre du listing d’extensions.   |  
 
 <span id="icon-object" />
@@ -266,7 +266,7 @@ Cette ressource contient les données d’icône du listing d’extensions. Cett
 | Valeur           | Type    | Description     |
 |-----------------|---------|------|
 |  fileName               |    string     |   Nom du fichier d’icône dans l’archive ZIP que vous avez chargé pour la soumission. L’icône doit être un fichier. png qui mesure exactement 300 x 300 pixels.   |     
-|  fileStatus               |   string      |  État du fichier d’icône. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Téléchargé</li><li>PendingDelete</li></ul>   |
+|  fileStatus               |   string      |  État du fichier d’icône. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>PendingUpload</li><li>Téléchargé</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
 
@@ -276,10 +276,10 @@ Cette ressource contient des informations de tarification pour l’extension. Ce
 
 | Valeur           | Type    | Description    |
 |-----------------|---------|------|
-|  marketSpecificPricings               |    object     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](../publish/set-add-on-pricing-and-availability.md). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.     |     
+|  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](../publish/set-add-on-pricing-and-availability.md). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.     |     
 |  sales               |   tableau      |  **Déconseillé**. Tableau des [ressources de ventes](#sale-object) qui contiennent des informations commerciales pour l’extension.     |     
 |  priceId               |   string      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](../publish/set-add-on-pricing-and-availability.md) de l’extension.    |    
-|  isAdvancedPricingModel               |   boolean      |  Si la **valeur est true**, votre compte de développeur a accès à l’ensemble développé de niveaux tarifaires de. 99 usd à 1999,99 USD. Si la **valeur est false**, votre compte de développeur a accès à l’ensemble d’origine des niveaux de tarification de. 99 usd à 999,99 USD. Pour plus d’informations sur les différents niveaux, consultez [niveaux tarifaires](#price-tiers).<br/><br/>**Note** &nbsp; Remarque &nbsp; Ce champ est en lecture seule.   |
+|  isAdvancedPricingModel               |   boolean      |  Si la **valeur est true**, votre compte de développeur a accès à l’ensemble développé de niveaux tarifaires de. 99 usd à 1999,99 USD. Si la **valeur est false**, votre compte de développeur a accès à l’ensemble d’origine des niveaux de tarification de. 99 usd à 999,99 USD. Pour plus d’informations sur les différents niveaux, consultez [niveaux tarifaires](#price-tiers).<br/><br/> &nbsp; Remarque &nbsp; Ce champ est en lecture seule.   |
 
 
 <span id="sale-object" />
@@ -301,7 +301,7 @@ Cette ressource a les valeurs suivantes.
 |  basePriceId               |   string      |  [Niveau de prix](#price-tiers) à utiliser pour le prix de base de la vente.    |     
 |  startDate               |   string      |   Date de début de la vente au format ISO 8601.  |     
 |  endDate               |   string      |  Date de fin de la vente au format ISO 8601.      |     
-|  marketSpecificPricings               |   object      |   Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](../publish/set-add-on-pricing-and-availability.md). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *basePriceId* du marché spécifié.    |
+|  marketSpecificPricings               |   objet      |   Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](../publish/set-add-on-pricing-and-availability.md). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *basePriceId* du marché spécifié.    |
 
 <span id="status-details-object" />
 
@@ -311,9 +311,9 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 | Valeur           | Type    | Description       |
 |-----------------|---------|------|
-|  erreurs               |    object     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
-|  warnings               |   object      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
-|  certificationReports               |     object    |   Tableau des [ressources de rapport de certification](#certification-report-object) qui donnent accès aux données du rapport de certification de la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification.    |  
+|  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
+|  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
+|  certificationReports               |     objet    |   Tableau des [ressources de rapport de certification](#certification-report-object) qui donnent accès aux données du rapport de certification de la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification.    |  
 
 <span id="status-detail-object" />
 
@@ -352,7 +352,7 @@ Les valeurs suivantes représentent les niveaux de tarification disponibles dans
 |  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’extension.      |     
 |  NotAvailable              |   L’extension n’est pas disponible dans la région spécifiée.    |     
 |  Gratuit              |   L’extension est gratuite.    |    
-|  Niveau*xxxx*               |   Chaîne qui spécifie le niveau de prix du module complémentaire, au format de **niveau<em>xxxx</em>**. Actuellement, les plages de prix suivantes sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de niveau de tarification disponibles pour votre compte sont **Tier1012**  -  **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de niveau de tarification disponibles pour votre compte sont **niveau2**  -  **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour l’une de vos soumissions d’application dans l’espace partenaires, puis cliquez sur le lien afficher **la** **table** dans la section **marchés et prix personnalisés** .     |
+|  Niveau *xxxx*               |   Chaîne qui spécifie le niveau de prix du module complémentaire, au format de **niveau <em>xxxx</em>**. Actuellement, les plages de prix suivantes sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de niveau de tarification disponibles pour votre compte sont **Tier1012**  -  **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de niveau de tarification disponibles pour votre compte sont **niveau2**  -  **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour l’une de vos soumissions d’application dans l’espace partenaires, puis cliquez sur le lien afficher **la** **table** dans la section **marchés et prix personnalisés** .     |
 
 <span id="submission-status-code" />
 
@@ -362,7 +362,7 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 
 | Valeur           |  Description      |
 |-----------------|---------------|
-|  Aucune            |     Aucun code n’a été spécifié.         |     
+|  None            |     Aucun code n’a été spécifié.         |     
 |      InvalidArchive        |     L’archive ZIP contenant le package n’est pas valide ou a un format d’archive non reconnu.  |
 | MissingFiles | L’archive ZIP ne dispose pas de tous les fichiers qui ont été répertoriés dans les données de votre soumission, ou ils se trouvent dans un emplacement incorrect dans l’archive. |
 | PackageValidationFailed | La validation d’un ou de plusieurs packages de votre soumission a échoué. |
@@ -374,7 +374,7 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 | ListingOptOutWarning | Le développeur supprimé un listing d’une soumission précédente ou il n’a pas inclus d’informations de listing prises en charge par le package. |
 | ListingOptInWarning  | Le développeur a ajouté un listing. |
 | UpdateOnlyWarning | Le développeur essaie d’insérer quelque chose qui prend uniquement en charge la mise à jour. |
-| Autres  | La soumission est dans un état non reconnu ou non affecté à une catégorie. |
+| Autre  | La soumission est dans un état non reconnu ou non affecté à une catégorie. |
 | PackageValidationWarning | Le processus de validation du package a généré un avertissement. |
 
 <span/>

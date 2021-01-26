@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, jeux, cloud services
 ms.localizationpriority: medium
-ms.openlocfilehash: ca575975b27a71798b7cad1cac0cc83ec870d756
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9252e6c2b47e51f51f7cb3cd28f49de08478019d
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173173"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811245"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Utilisation des services de cloud computing pour les jeux UWP
 
@@ -112,7 +112,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
     </tr>
     <tr>
         <td><a href="http://www.crimecoast.com/">Pixels Squad</a></td>
-        <td>Pixels Squad a développé <b>Crime Coast</b> à l’aide du moteur de jeu Unity et d’Azure. <b>Crime Coast</b> est un jeu social de stratégie disponible sur les plateformes Android, iOS et Windows. Ont été utilisés dans ce jeu le stockage d’objets Blob Azure, un cache Azure Redis géré, un ensemble d’ordinateurs virtuels IIS à charge équilibrée et un hub de notification Microsoft. Découvrez comment cette société a géré la mise à l’échelle et l’augmentation du nombre de joueurs avec 5 000 joueurs simultanés.
+        <td>Pixels Squad a développé <b>Crime Coast</b> à l’aide du moteur de jeu Unity et d’Azure. <b>Crime Coast</b> est un jeu social de stratégie disponible sur les plateformes Android, iOS et Windows. Le stockage d’objets BLOB Azure, le cache ReDim Azure géré, un tableau de machines virtuelles IIS à charge équilibrée et Microsoft notification Hub ont été utilisés dans leur jeu. Découvrez comment cette société a géré la mise à l’échelle et l’augmentation du nombre de joueurs avec 5 000 joueurs simultanés.
         </td>
         <td>
             <ul>
@@ -150,7 +150,7 @@ Tout d’abord, vous devez prendre en considération le niveau de service le mie
 
     La plateforme en tant que service (PaaS) est comme l’infrastructure en tant que service, à ceci près qu’elle intègre également une gestion de l’infrastructure comme les serveurs, le stockage et la mise en réseau. Aussi, non seulement vous n’êtes pas obligé d’acheter des serveurs physiques et une infrastructure de base de données, mais vous n’êtes pas obligé non plus d’acheter ni de gérer des licences logicielles, une infrastructure applicative sous-jacente, un middleware, des outils de développement ou autres ressources.
 
-* [SaaS (Software as a Service)](https://azure.microsoft.com/overview/what-is-saas/)
+* [Logiciel en tant que service (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
 
     Le modèle SaaS permet aux utilisateurs de se connecter via Internet à des applications basées sur le cloud et de les utiliser. Il fournit une solution logicielle complète que vous achetez sur la base d’un paiement à l’exécution d’un fournisseur de services Cloud.  Les exemples les plus courants sont les outils de messagerie, de calendrier et Office (tels que les applications Microsoft 365 Office). Vous louez l’utilisation d’une application pour votre organisation et vos utilisateurs s’y connectent via Internet, généralement avec un navigateur Web. Toute l’infrastructure sous-jacente, incluant l’intergiciel (middleware), les logiciels applicatifs et les données d’application, est située dans le centre de données du fournisseur de services. Le fournisseur de services gère le matériel et les logiciels, et avec le contrat de service approprié, garantira également la disponibilité et la sécurité du jeu et de vos données. SaaS permet à votre organisation de disposer rapidement d’une application opérationnelle, moyennant un investissement initial minimal.
 
@@ -159,7 +159,7 @@ Tout d’abord, vous devez prendre en considération le niveau de service le mie
 
 Voici quelques-unes des façons dont vous pouvez utiliser les offres de services de cloud computing Azure pour un jeu. Azure fonctionne avec Windows, Linux et les technologies Open Source que vous connaissez comme Ruby, Python, Java et PHP. Pour plus d’informations, voir [Azure pour les jeux](https://azure.microsoft.com/solutions/gaming/).
 
-| Spécifications                 | Scénarios d’activité                            | Offre de produit                      | Fonctionnalités de produit                                    |
+| Conditions requises                 | Scénarios d’activité                            | Offre de produit                      | Fonctionnalités de produit                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | Hébergement de votre domaine dans le cloud     | Répondre efficacement aux requêtes DNS            | [DNS Azure](https://azure.microsoft.com/services/dns/) | Hébergement de votre domaine avec des performances et une disponibilité élevées  |
 | Connexion et vérification d’identité      | Le joueur se connecte et son identité est authentifiée  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | Authentification unique à toute application web sur site et dans le cloud avec une authentification multifacteur            | 
@@ -228,6 +228,6 @@ Nous innovons en permanence et ajoutons de nouvelles fonctionnalités. Pour plus
 * [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
- 
+ 
 
- 
+ 

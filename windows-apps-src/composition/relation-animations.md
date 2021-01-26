@@ -5,12 +5,12 @@ ms.date: 10/16/2020
 ms.topic: article
 keywords: Windows 10, UWP, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 75adcd2f762fd4314d7b852811760d523ef522aa
-ms.sourcegitcommit: fe21402578a1f434769866dd3c78aac63dbea5ea
+ms.openlocfilehash: 29fdffd2ab5c871fe2e455e8811615a96368259a
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152409"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811244"
 ---
 # <a name="relation-based-animations"></a>Animations basées sur les relations
 
@@ -79,7 +79,7 @@ KeyFrameAnimation.InsertExpressionKeyFrame(Single, ExpressionNode)
 
 Toutefois, contrairement à ExpressionAnimations, les ExpressionKeyFrames ne sont évalués qu’une seule fois lorsque le KeyFrameAnimation est démarré. N’oubliez pas que vous ne transmettez pas un ExpressionAnimation en tant que valeur de l’image clé, plutôt qu’une chaîne (ou un ExpressionNode, si vous utilisez ExpressionBuilder).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Passons maintenant en revue un exemple d’utilisation d’expressions, en particulier l’exemple PropertySet de la Galerie d’exemples d’interfaces utilisateur Windows. Nous allons examiner l’expression qui gère le comportement de mouvement orbite de la boule bleue.
 
@@ -95,7 +95,7 @@ Nous nous concentrerons sur le ExpressionAnimation défini dans #3. Nous utilise
 
 Dans cette équation, il existe deux propriétés que vous devez référencer à partir de PropertySet ; l’un est un décalage Centerpoint et l’autre est la rotation.
 
-```
+```csharp
 var propSetCenterPoint =
 _propertySet.GetReference().GetVector3Property("CenterPointOffset");
 
@@ -105,7 +105,7 @@ var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 
 Ensuite, vous devez définir le composant Vector3 qui tient compte de la rotation d’orbite réelle.
 
-```
+```csharp
 var orbitRotation = EF.Vector3(
     EF.Cos(EF.ToRadians(propSetRotation)) * 150,
     EF.Sin(EF.ToRadians(propSetRotation)) * 75, 0);
@@ -118,7 +118,7 @@ var orbitRotation = EF.Vector3(
 
 Enfin, Combinez ces composants et référencez la position de la boule rouge pour définir la relation mathématique.
 
-```
+```csharp
 var orbitExpression = redSprite.GetReference().Offset + propSetCenterPoint + orbitRotation;
 blueSprite.StartAnimation("Offset", orbitExpression);
 ```
@@ -127,7 +127,7 @@ Dans une situation hypothétique, que se passerait-il si vous souhaitiez utilise
 
 Dans ce cas, vous modifiez l’expression que vous avez créée précédemment. Au lieu d’obtenir une référence à CompositionObject, vous créez une référence avec un nom, puis vous affectez des valeurs différentes :
 
-```
+```csharp
 var orbitExpression = ExpressionValues.Reference.CreateVisualReference("orbitRoundVisual");
 orbitExpression.SetReferenceParameter("orbitRoundVisual", redSprite);
 blueSprite.StartAnimation("Offset", orbitExpression);
@@ -138,13 +138,13 @@ greenSprite.StartAnimation("Offset", orbitExpression);
 
 Voici le code si vous avez défini votre expression avec des chaînes via l’API publique.
 
-```
-ExpressionAnimation expressionAnimation =
-compositor.CreateExpressionAnimation("visual.Offset + " +
-"propertySet.CenterPointOffset + " +
-"Vector3(cos(ToRadians(propertySet.Rotation)) * 150," + "sin(ToRadians(propertySet.Rotation)) * 75, 0)");
- var propSetCenterPoint = _propertySet.GetReference().GetVector3Property("CenterPointOffset");
- var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
+```csharp
+ExpressionAnimation expressionAnimation = compositor.CreateExpressionAnimation("visual.Offset + " +
+    "propertySet.CenterPointOffset + " +
+    "Vector3(cos(ToRadians(propertySet.Rotation)) * 150," + "sin(ToRadians(propertySet.Rotation)) * 75, 0)");
+    
+var propSetCenterPoint = _propertySet.GetReference().GetVector3Property("CenterPointOffset");
+var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 expressionAnimation.SetReferenceParameter("propertySet", _propertySet);
 expressionAnimation.SetReferenceParameter("visual", redSprite);
 ```

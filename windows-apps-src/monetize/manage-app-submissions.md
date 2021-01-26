@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, API de soumission Microsoft Store, soumissions d’applications
 ms.localizationpriority: medium
-ms.openlocfilehash: de612607da2192af3358c94874e0896557ca6d08
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 00820f00360575f0a335d37aa0859b94648709e3
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171363"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811280"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 
@@ -70,7 +70,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ap
 <td align="left"><a href="commit-an-app-submission.md">Valide une soumission d’applications nouvelle ou mise à jour</a></td>
 </tr>
 <tr>
-<td align="left">Suppression</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-app-submission.md">Supprimer une soumission d’application</a></td>
 </tr>
@@ -98,7 +98,7 @@ Pour créer une soumission pour une application, suivez ce processus.
     Le corps de la réponse contient une ressource de [soumission d’application](#app-submission-object) qui inclut l’ID de la nouvelle soumission, l’URI de signature d’accès partagé (SAS) pour le téléchargement de tous les fichiers associés pour la soumission vers le stockage d’objets BLOB Azure (tels que les packages d’application, l’affichage d’images et les fichiers de code de fin) et toutes les données pour la nouvelle soumission
 
     > [!NOTE]
-    > Un URI SAP permet d’accéder à une ressource sécurisée dans le stockage Azure sans avoir besoin de clés de compte. Pour obtenir des informations générales sur les URI SAS et leur utilisation avec le stockage d’objets blob Azure, consultez [Signatures d’accès partagé, partie 1 : présentation du modèle SAS](/azure/storage/common/storage-sas-overview) et [Signatures d’accès partagé, partie 2 : créer et utiliser une SAS avec le stockage d’objets blob](/azure/storage/common/storage-sas-overview).
+    > Un URI SAP permet d’accéder à une ressource sécurisée dans le stockage Azure sans avoir besoin de clés de compte. Pour obtenir des informations générales sur les URI SAS et leur utilisation avec le stockage d’objets BLOB Azure, consultez [signatures d’accès partagé, partie 1 : présentation du modèle SAS](/azure/storage/common/storage-sas-overview) et [signatures d’accès partagé, partie 2 : créer et utiliser une signature d’accès partagé avec un stockage d’objets BLOB](/azure/storage/common/storage-sas-overview).
 
 4. Si vous ajoutez de nouveaux packages, en répertoriant des images ou des fichiers de code de fin pour la soumission, [Préparez les packages d’application](../publish/app-package-requirements.md) et [Préparez les captures d’écran, les images et les codes](../publish/app-screenshots-and-images.md)de fin de l’application. Ajoutez tous ces fichiers à une archive ZIP.
 
@@ -116,7 +116,7 @@ Pour créer une soumission pour une application, suivez ce processus.
     * [Kit de développement logiciel (SDK) Azure Storage pour Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [Kit de développement logiciel (SDK) Azure Storage pour Python](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    L’exemple de code suivant en C# montre comment charger une archive ZIP vers le stockage d’objets blob Azure à l’aide de la classe [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) incluse dans la bibliothèque cliente de stockage Azure pour .NET. Cet exemple repose sur le principe que l’archive ZIP a déjà été écrite dans un objet de flux.
+    L’exemple de code C# suivant montre comment télécharger une archive ZIP dans le stockage d’objets BLOB Azure à l’aide de la classe [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) de la bibliothèque cliente Azure Storage pour .net. Cet exemple repose sur le principe que l’archive ZIP a déjà été écrite dans un objet de flux.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -150,7 +150,7 @@ Vous pouvez publier progressivement les packages mis à jour d’une soumission 
 Pour activer par programmation le déploiement graduel d’un package pour une soumission d’application, suivez ce processus à l’aide des méthodes de l’API Microsoft Store soumission :
 
   1. [Créez une soumission d’applications](create-an-app-submission.md) ou [obtenez une soumission d’applications existante](get-an-app-submission.md).
-  2. Dans les données de réponse, localisez la ressource [packageRollout](#package-rollout-object) , affectez la valeur **true**au champ *isPackageRollout* , puis définissez le champ *packageRolloutPercentage* sur le pourcentage des clients de votre application qui doivent obtenir les packages mis à jour.
+  2. Dans les données de réponse, localisez la ressource [packageRollout](#package-rollout-object) , affectez la valeur **true** au champ *isPackageRollout* , puis définissez le champ *packageRolloutPercentage* sur le pourcentage des clients de votre application qui doivent obtenir les packages mis à jour.
   3. Transmettez les données de soumission d’applications mises à jour à la méthode [Mettre à jour une soumission d’applications](update-an-app-submission.md).
 
 Après avoir activé un lancement de packages progressif pour une soumission d’applications, vous pouvez utiliser les méthodes suivantes pour obtenir, mettre à jour, arrêter ou finaliser le lancement progressif par programmation.
@@ -339,11 +339,11 @@ Cette ressource a les valeurs suivantes.
 |------------|--------|-------------------|
 | id            | string  | ID de la soumission. Cet ID est disponible dans les données de réponse pour les demandes de [création d’une soumission d’application](create-an-app-submission.md), d' [extraction de toutes les applications](get-all-apps.md)et [d’extraction d’une application](get-an-app.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
 | applicationCategory           | string  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](../publish/category-and-subcategory-table.md) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement « _ », par exemple **BooksAndReference_EReader**.      |  
-| Prix           |  object  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’application.        |   
-| visibility           |  string  |  Visibilité de l’application. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Hidden</li><li>Public</li><li>Privées</li><li>NotSet</li></ul>       |   
+| Prix           |  objet  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’application.        |   
+| visibility           |  string  |  Visibilité de l’application. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Hidden</li><li>Public</li><li>Privé</li><li>NotSet</li></ul>       |   
 | targetPublishMode           | string  | Mode de publication pour la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Immédiat</li><li>Manuel</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |  
-| listings           |   object  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays et chaque valeur est une [ressource de référencement](#listing-object) qui contient des informations de référencement de l’application.       |   
+| listings           |   objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays et chaque valeur est une [ressource de référencement](#listing-object) qui contient des informations de référencement de l’application.       |   
 | hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](../publish/enter-app-properties.md) pour votre application. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Toucher</li><li>Clavier</li><li>Souris</li><li>Appareil photo</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  boolean  |   Indique si Windows peut inclure les données de votre application dans les sauvegardes automatiques sur OneDrive. Pour plus d’informations, voir [Déclarations d’application](../publish/product-declarations.md).   |   
 | canInstallOnRemovableMedia           |  boolean  |   Indique si les clients peuvent installer votre application sur un stockage amovible. Pour plus d’informations, voir [Déclarations d’application](../publish/product-declarations.md).     |   
@@ -352,14 +352,14 @@ Cette ressource a les valeurs suivantes.
 | hasExternalInAppProducts           |     boolean          |   Indique si votre application permet aux utilisateurs d’effectuer des achats en dehors du système de commerce Microsoft Store. Pour plus d’informations, voir [Déclarations d’application](../publish/product-declarations.md).     |   
 | meetAccessibilityGuidelines           |    boolean           |  Indique si votre application a fait l’objet de tests pour voir si elle est conforme aux recommandations d’accessibilité. Pour plus d’informations, voir [Déclarations d’application](../publish/product-declarations.md).      |   
 | notesForCertification           |  string  |   Contient des [notes de certification](../publish/notes-for-certification.md) pour votre application.    |    
-| status           |   string  |  État de la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>Opération annulée</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Publié</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Libérer</li><li>ReleaseFailed</li></ul>      |    
-| statusDetails           |   object  | [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs.       |    
+| status           |   string  |  État de la soumission. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>Opération annulée</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Publié</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Libérer</li><li>ReleaseFailed</li></ul>      |    
+| statusDetails           |   objet  | [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs.       |    
 | fileUploadUrl           |   string  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages, en répertoriant des images ou des fichiers de code de fin pour la soumission, téléchargez l’archive ZIP qui contient les packages et les images sur cet URI. Pour plus d’informations, voir [Créer une soumission d’application](#create-an-app-submission).       |    
 | applicationPackages           |   tableau  | Tableau des [ressources de package d’application](#application-package-object) qui fournissent des détails sur chaque package de la soumission. |    
-| packageDeliveryOptions    | object  | [Ressource des options de remise du package](#package-delivery-options-object) qui contient les paramètres de lancement de packages progressif et de mise à jour obligatoire de la soumission.  |
+| packageDeliveryOptions    | objet  | [Ressource des options de remise du package](#package-delivery-options-object) qui contient les paramètres de lancement de packages progressif et de mise à jour obligatoire de la soumission.  |
 | enterpriseLicensing           |  string  |  Une des [valeur de gestion des licences d’entreprise](#enterprise-licensing) qui indiquent le comportement de la gestion des licences d’entreprise pour l’application.  |    
 | allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows 10](../publish/set-app-pricing-and-availability.md).    |    
-| allowTargetFutureDeviceFamilies           | object   |  Dictionnaire de paires clé/valeur, où chaque clé est une [famille d’appareils Windows 10](../publish/set-app-pricing-and-availability.md) et chaque valeur est une valeur booléenne qui indique si votre application est autorisée à cibler la famille d’appareils spécifiée.     |    
+| allowTargetFutureDeviceFamilies           | objet   |  Dictionnaire de paires clé/valeur, où chaque clé est une [famille d’appareils Windows 10](../publish/set-app-pricing-and-availability.md) et chaque valeur est une valeur booléenne qui indique si votre application est autorisée à cibler la famille d’appareils spécifiée.     |    
 | friendlyName           |   string  |  Nom convivial de la soumission, comme indiqué dans l’espace partenaires. Cette valeur est générée lorsque vous créez l’envoi.       |  
 | codes           |  tableau |   Tableau qui contient jusqu’à 15 [ressources de code de fin](#trailer-object) représentant des codes de fin vidéo pour la liste des applications.<br/><br/>   |  
 
@@ -373,10 +373,10 @@ Cette ressource contient des informations de tarification pour l’application. 
 | Valeur           | Type    | Description        |
 |-----------------|---------|------|
 |  trialPeriod               |    string     |  Chaîne qui spécifie la période d’évaluation de l’application. Il peut s’agir de l’une des valeurs suivantes : <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
-|  marketSpecificPricings               |    object     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre application sur des marchés spécifiques](../publish/define-market-selection.md). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.      |     
+|  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre application sur des marchés spécifiques](../publish/define-market-selection.md). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.      |     
 |  sales               |   tableau      |  **Déconseillé**. Tableau des [ressources de ventes](#sale-object) qui contiennent des informations commerciales pour l’application.   |     
 |  priceId               |   string      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](../publish/define-market-selection.md) de l’application.   |     
-|  isAdvancedPricingModel               |   boolean      |  Si la **valeur est true**, votre compte de développeur a accès à l’ensemble développé de niveaux tarifaires de. 99 usd à 1999,99 USD. Si la **valeur est false**, votre compte de développeur a accès à l’ensemble d’origine des niveaux de tarification de. 99 usd à 999,99 USD. Pour plus d’informations sur les différents niveaux, consultez [niveaux tarifaires](#price-tiers).<br/><br/>**Note** &nbsp; Remarque &nbsp; Ce champ est en lecture seule.   |
+|  isAdvancedPricingModel               |   boolean      |  Si la **valeur est true**, votre compte de développeur a accès à l’ensemble développé de niveaux tarifaires de. 99 usd à 1999,99 USD. Si la **valeur est false**, votre compte de développeur a accès à l’ensemble d’origine des niveaux de tarification de. 99 usd à 999,99 USD. Pour plus d’informations sur les différents niveaux, consultez [niveaux tarifaires](#price-tiers).<br/><br/> &nbsp; Remarque &nbsp; Ce champ est en lecture seule.   |
 
 
 <span id="sale-object" />
@@ -398,7 +398,7 @@ Cette ressource a les valeurs suivantes.
 |  basePriceId               |   string      |  [Niveau de prix](#price-tiers) à utiliser pour le prix de base de la vente.    |     
 |  startDate               |   string      |   Date de début de la vente au format ISO 8601.  |     
 |  endDate               |   string      |  Date de fin de la vente au format ISO 8601.      |     
-|  marketSpecificPricings               |   object      |   Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre application sur des marchés spécifiques](../publish/define-market-selection.md). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *basePriceId* du marché spécifié.    |
+|  marketSpecificPricings               |   objet      |   Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre application sur des marchés spécifiques](../publish/define-market-selection.md). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *basePriceId* du marché spécifié.    |
 
 
 <span id="listing-object" />
@@ -409,8 +409,8 @@ Cette ressource contient des informations de listing pour une application. Cette
 
 | Valeur           | Type    | Description                  |
 |-----------------|---------|------|
-|  baseListing               |   object      |  Informations de [listing de base](#base-listing-object) pour l’application, qui définissent les informations de listing par défaut pour toutes les plateformes.   |     
-|  platformOverrides               | object |   Dictionnaire de paires clé/valeur, où chaque clé est une chaîne qui identifie une plateforme pour laquelle remplacer les informations de référencement et chaque valeur est une ressource de [référencement de base](#base-listing-object) (contenant uniquement les valeurs de la description au titre) qui spécifie les informations de référencement à remplacer pour la plateforme spécifiée. Les clés peuvent avoir les valeurs suivantes : <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
+|  baseListing               |   objet      |  Informations de [listing de base](#base-listing-object) pour l’application, qui définissent les informations de listing par défaut pour toutes les plateformes.   |     
+|  platformOverrides               | objet |   Dictionnaire de paires clé/valeur, où chaque clé est une chaîne qui identifie une plateforme pour laquelle remplacer les informations de référencement et chaque valeur est une ressource de [référencement de base](#base-listing-object) (contenant uniquement les valeurs de la description au titre) qui spécifie les informations de référencement à remplacer pour la plateforme spécifiée. Les clés peuvent avoir les valeurs suivantes : <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
 
 <span id="base-listing-object" />
 
@@ -448,7 +448,7 @@ Cette ressource contient les données d’image et d’icône d’une descriptio
 | Valeur           | Type    | Description           |
 |-----------------|---------|------|
 |  fileName               |    string     |   Nom du fichier image dans l’archive ZIP que vous avez chargé pour la soumission.    |     
-|  fileStatus               |   string      |  État du fichier image. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Téléchargé</li><li>PendingDelete</li></ul>   |
+|  fileStatus               |   string      |  État du fichier image. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>PendingUpload</li><li>Téléchargé</li><li>PendingDelete</li></ul>   |
 |  id  |  string  | ID de l’image. Cette valeur est fournie par l’espace partenaires.  |
 |  description  |  string  | Description de l’image.  |
 |  imageType  |  string  | Indique le type de l’image. Les chaînes suivantes sont actuellement prises en charge. <p/>[Images de capture d’écran](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Capture d’écran (utiliser cette valeur pour la capture d’écran du bureau)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Stocker les logos](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icône (utilisez cette valeur pour le logo 1:1 300 x 300 pixels)</li></ul><p/>[Images promotionnelles](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Images Xbox](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Images promotionnelles facultatives](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
@@ -512,9 +512,9 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 | Valeur           | Type    | Description         |
 |-----------------|---------|------|
-|  erreurs               |    object     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.    |     
-|  warnings               |   object      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.      |
-|  certificationReports               |     object    |   Tableau des [ressources de rapport de certification](#certification-report-object) qui donnent accès aux données du rapport de certification de la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification.   |  
+|  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.    |     
+|  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.      |
+|  certificationReports               |     objet    |   Tableau des [ressources de rapport de certification](#certification-report-object) qui donnent accès aux données du rapport de certification de la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification.   |  
 
 
 <span id="status-detail-object" />
@@ -565,19 +565,19 @@ Cette ressource contient des détails sur un package d’application pour la sou
 Cette ressource a les valeurs suivantes.  
 
 > [!NOTE]
-> Lors de l’appel de la méthode [mettre à jour une soumission d’application](update-an-app-submission.md) , seules les valeurs *filename*, *fileStatus*, *minimumDirectXVersion*et *minimumSystemRam* de cet objet sont requises dans le corps de la demande. Les autres valeurs sont remplies par l’espace partenaires.
+> Lors de l’appel de la méthode [mettre à jour une soumission d’application](update-an-app-submission.md) , seules les valeurs *filename*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont requises dans le corps de la demande. Les autres valeurs sont remplies par l’espace partenaires.
 
 | Valeur           | Type    | Description                   |
 |-----------------|---------|------|
 | fileName   |   string      |  Nom du package.    |  
-| fileStatus    | string    |  État du package. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Téléchargé</li><li>PendingDelete</li></ul>    |  
+| fileStatus    | string    |  État du package. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>PendingUpload</li><li>Téléchargé</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  ID qui identifie de manière unique le package. Cette valeur est fournie par l’espace partenaires.   |     
 | version    |  string   |  Version du package d’application. Pour plus d’informations, voir [Numérotation des versions de packages](../publish/package-version-numbering.md).   |   
 | architecture    |  string   |  Architecture du package (par exemple, ARM).   |     
 | languages    | tableau    |  Tableau des codes des langues prises en charge par l’application. Pour en savoir plus, consultez [Langages pris en charge](../publish/supported-languages.md).    |     
 | capabilities    |  tableau   |  Tableau des fonctionnalités exigées par le package. Pour plus d’informations sur les fonctionnalités, voir [Déclarations des fonctionnalités d’application](../packaging/app-capability-declarations.md).   |     
-| minimumDirectXVersion    |  string   |  Version DirectX minimale prise en charge par le package d’application. Cela peut être défini uniquement pour les applications qui ciblent Windows 8. x. Pour les applications qui ciblent d’autres versions de système d’exploitation, cette valeur doit être présente lors de l’appel de la méthode de [mise à jour d’une application de soumission](update-an-app-submission.md) , mais la valeur que vous spécifiez est ignorée. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  Mémoire RAM minimale exigée par le package d’application. Cela peut être défini uniquement pour les applications qui ciblent Windows 8. x. Pour les applications qui ciblent d’autres versions de système d’exploitation, cette valeur doit être présente lors de l’appel de la méthode de [mise à jour d’une application de soumission](update-an-app-submission.md) , mais la valeur que vous spécifiez est ignorée. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucune</li><li>Memory2GB</li></ul>   |       
+| minimumDirectXVersion    |  string   |  Version DirectX minimale prise en charge par le package d’application. Cela peut être défini uniquement pour les applications qui ciblent Windows 8. x. Pour les applications qui ciblent d’autres versions de système d’exploitation, cette valeur doit être présente lors de l’appel de la méthode de [mise à jour d’une application de soumission](update-an-app-submission.md) , mais la valeur que vous spécifiez est ignorée. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | string    |  Mémoire RAM minimale exigée par le package d’application. Cela peut être défini uniquement pour les applications qui ciblent Windows 8. x. Pour les applications qui ciblent d’autres versions de système d’exploitation, cette valeur doit être présente lors de l’appel de la méthode de [mise à jour d’une application de soumission](update-an-app-submission.md) , mais la valeur que vous spécifiez est ignorée. Il peut s’agir de l’une des valeurs suivantes : <ul><li>Aucun</li><li>Memory2GB</li></ul>   |       
 | targetDeviceFamilies    | tableau    |  Tableau de chaînes qui représentent les familles d’appareils que le package cible. Cette valeur est utilisée uniquement pour les packages qui ciblent Windows 10. Pour les packages qui ciblent des versions antérieures, cette valeur est **None**. Les chaînes de famille d’appareils suivantes sont actuellement prises en charge pour les packages Windows 10, où *{0}* est une chaîne de version Windows 10 telle que 10.0.10240.0, 10.0.10586.0 ou 10.0.14393.0 : <ul><li>Version minimale de Windows. Universal *{0}*</li><li>Version minimale de Windows. Desktop *{0}*</li><li>Version minimale de Windows. mobile *{0}*</li><li>Windows. Xbox-version minimale *{0}*</li><li>Version minimale de Windows. holographique *{0}*</li></ul>   |    
 
 <span/>
@@ -619,7 +619,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description        |
 |-----------------|---------|------|
-| packageRollout   |   object      |  [Ressource de lancement de packages](#package-rollout-object) qui contient les paramètres de lancement de packages progressif de la soumission.   |  
+| packageRollout   |   objet      |  [Ressource de lancement de packages](#package-rollout-object) qui contient les paramètres de lancement de packages progressif de la soumission.   |  
 | isMandatoryUpdate    | boolean    |  Indique si vous souhaitez traiter les packages de cette soumission comme obligatoires pour l’installation automatique des mises à jour de l’application. Pour plus d’informations sur les packages obligatoires pour l’installation automatique des mises à jour de l’application, consultez [Télécharger et installer les mises à jour de package pour votre application](../packaging/self-install-package-updates.md).    |  
 | mandatoryUpdateEffectiveDate    |  Date   |  Date et heure auxquelles les packages de cette soumission deviennent obligatoires, au format ISO 8601 dans le fuseau horaire UTC.   |        
 
@@ -678,7 +678,7 @@ Cette ressource a les valeurs suivantes.
 |  id               |    string     |   ID du code de fin. Cette valeur est fournie par l’espace partenaires.   |
 |  videoFileName               |    string     |    Nom du fichier vidéo de code de fin dans l’archive ZIP qui contient les fichiers pour l’envoi.    |     
 |  videoFileId               |   string      |  ID du fichier vidéo de code de fin. Cette valeur est fournie par l’espace partenaires.   |     
-|  trailerAssets               |   object      |  Dictionnaire de paires clé/valeur, où chaque clé est un code de langue et chaque valeur est une [ressource de source](#trailer-assets-object) de code de fin qui contient des ressources spécifiques aux paramètres régionaux supplémentaires pour le code de fin. Pour plus d’informations sur les codes de langue pris en charge, consultez [langues prises en charge](../publish/supported-languages.md).    |     
+|  trailerAssets               |   objet      |  Dictionnaire de paires clé/valeur, où chaque clé est un code de langue et chaque valeur est une [ressource de source](#trailer-assets-object) de code de fin qui contient des ressources spécifiques aux paramètres régionaux supplémentaires pour le code de fin. Pour plus d’informations sur les codes de langue pris en charge, consultez [langues prises en charge](../publish/supported-languages.md).    |     
 
 > [!NOTE]
 > La ressource des *codes* de fin a été ajoutée à mai 2017, après la première publication de l’API de soumission Microsoft Store pour les développeurs. Si vous avez créé une soumission pour une application via l’API de soumission avant l’introduction de cette ressource et que cette soumission est toujours en cours, cette ressource sera null pour les soumissions de l’application jusqu’à ce que vous validiez la soumission ou que vous la supprimiez. Si la ressource des *codes* de fin n’est pas disponible pour les envois d’une application, le champ *hasAdvancedListingPermission* de la [ressource d’application](get-app-data.md#application_object) retournée par la méthode [obtenir une application](get-an-app.md) est false.
@@ -724,7 +724,7 @@ Les valeurs suivantes représentent les niveaux de tarification disponibles dans
 |  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’application.      |     
 |  NotAvailable              |   L’application n’est pas disponible dans la région spécifiée.    |     
 |  Gratuit              |   Cette application est gratuite.    |    
-|  Niveau*xxx*               |   Chaîne qui spécifie le niveau de prix de l’application, au format de **niveau<em>xxxx</em>**. Actuellement, les plages de prix suivantes sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de niveau de tarification disponibles pour votre compte sont **Tier1012**  -  **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de niveau de tarification disponibles pour votre compte sont **niveau2**  -  **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour l’une de vos soumissions d’application dans l’espace partenaires, puis cliquez sur le lien afficher **la** **table** dans la section **marchés et prix personnalisés** .    |
+|  Niveau *xxx*               |   Chaîne qui spécifie le niveau de prix de l’application, au format de **niveau <em>xxxx</em>**. Actuellement, les plages de prix suivantes sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de niveau de tarification disponibles pour votre compte sont **Tier1012**  -  **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de niveau de tarification disponibles pour votre compte sont **niveau2**  -  **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour l’une de vos soumissions d’application dans l’espace partenaires, puis cliquez sur le lien afficher **la** **table** dans la section **marchés et prix personnalisés** .    |
 
 
 <span id="enterprise-licensing" />
@@ -739,7 +739,7 @@ Les valeurs suivantes représentent le comportement de la licence organisationne
 
 | Valeur           |  Description      |
 |-----------------|---------------|
-| Aucune            |     Ne mets pas votre application à la disposition des entreprises dont les licences en volume sont gérées par le Windows Store (en ligne).         |     
+| None            |     Ne mets pas votre application à la disposition des entreprises dont les licences en volume sont gérées par le Windows Store (en ligne).         |     
 | En ligne        |     Mets votre application à la disposition des entreprises dont les licences en volume sont gérées par le Windows Store (en ligne).  |
 | OnlineAndOffline | Mets votre application à la disposition des entreprises dont les licences en volume sont gérées par le Windows Store (en ligne) et à la disposition des entreprises par le biais de l’achat de licences en mode hors connexion. |
 
@@ -752,7 +752,7 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 
 | Valeur           |  Description      |
 |-----------------|---------------|
-| Aucune            |     Aucun code n’a été spécifié.         |     
+| None            |     Aucun code n’a été spécifié.         |     
 | InvalidArchive        |     L’archive ZIP contenant le package n’est pas valide ou a un format d’archive non reconnu.  |
 | MissingFiles | L’archive ZIP ne dispose pas de tous les fichiers qui ont été répertoriés dans les données de votre soumission, ou ils se trouvent dans un emplacement incorrect dans l’archive. |
 | PackageValidationFailed | La validation d’un ou de plusieurs packages de votre soumission a échoué. |
@@ -764,7 +764,7 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 | ListingOptOutWarning | Le développeur supprimé un listing d’une soumission précédente ou il n’a pas inclus d’informations de listing prises en charge par le package. |
 | ListingOptInWarning  | Le développeur a ajouté un listing. |
 | UpdateOnlyWarning | Le développeur essaie d’insérer quelque chose qui prend uniquement en charge la mise à jour. |
-| Autres  | La soumission est dans un état non reconnu ou non affecté à une catégorie. |
+| Autre  | La soumission est dans un état non reconnu ou non affecté à une catégorie. |
 | PackageValidationWarning | Le processus de validation du package a généré un avertissement. |
 
 <span/>
