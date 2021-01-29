@@ -8,24 +8,45 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, chemins d’accès aux fichiers, PYTHONPATH, déploiement python, création de package python
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4504e7550d19d2cc713284abebed43b6305b5dbd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c1cada0fef5968846100f66bb41b3dd70ea5b59a
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174123"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691304"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Questions fréquemment posées sur l’utilisation de Python sur Windows
 
-## <a name="why-cant-i-pip-install-a-certain-package"></a>Pourquoi ne puis-je pas « installer un certain package à l’aide de pip ?
+## <a name="trouble-installing-a-package-with-pip-install"></a>Problèmes d’installation d’un package avec pip install
 
-Une installation peut échouer pour plusieurs raisons. Dans la plupart des cas, la solution appropriée consiste à contacter le développeur du package.
+Une installation peut échouer pour plusieurs raisons : dans de nombreux cas, la bonne solution est de contacter le développeur du package.
 
-La cause la plus courante de problèmes est la tentative d’installation à un emplacement que vous n’avez pas l’autorisation de modifier. Par exemple, l’emplacement d’installation par défaut peut nécessiter des privilèges d’administrateur, que Python n’aura pas par défaut. La meilleure solution consiste à créer un environnement virtuel pour y effectuer l’installation.
+Une cause courante du problème est la tentative d’installation à un emplacement que vous n’avez pas l’autorisation de modifier. Par exemple, l’emplacement d’installation par défaut peut nécessiter des privilèges d’administrateur, que Python n’aura pas par défaut. La meilleure solution est de créer un [environnement virtuel](./web-frameworks.md#create-a-virtual-environment) et d’y effectuer l’installation.
 
 Certains packages comportent du code natif qui nécessite l’utilisation d’un compilateur C ou C++ pour l’installation. En général, les développeurs de packages doivent publier des versions précompilées, mais ce n’est pas souvent le cas. Certains de ces packages peuvent fonctionner si vous [installez Build Tools pour Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019) et sélectionnez l’option C++. Dans la plupart des cas, vous devrez contacter le développeur du package.
 
-[Suivez la discussion sur Stack Overflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
+[Suivre la discussion sur StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)
+
+### <a name="trouble-installing-pip-with-wsl"></a>Problèmes d’installation de pip avec WSL
+
+Lors de l’installation d’un package (comme Flask) avec pip sur le Sous-système Windows pour Linux (WSL ou WSL2), par exemple `python3 -m pip install flask`, vous pouvez rencontrer une erreur comme celle-ci :
+
+```bash
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None))
+after connection broken by 'NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection
+object at 0x7f655471da30>: Failed to establish a new connection: [Errno -3]
+Temporary failure in name resolution')': /simple/flask/
+```
+
+Lors de recherches sur ce problème, vous pouvez tomber sur des publications étranges, aucune n’étant particulièrement productive avec une distribution Linux sur WSL. (Avertissement : sur WSL, n’essayez pas de modifier `resolv.conf`, car ce fichier est un lien symbolique et le modifier conduirait à un véritable sac de nœuds.) Sauf si vous exécutez un pare-feu d’un autre éditeur, la solution probable est simplement de réinstaller pip :
+
+```bash
+sudo apt -y purge python3-pip
+sudo python3 -m pip uninstall pip
+sudo apt -y install python3-pip --fix-missing
+```
+
+**Ce problème est discuté plus avant dans le [dépôt du produit WSL sur GitHub](https://github.com/microsoft/WSL/issues/4020). Merci à notre communauté d’utilisateurs pour [leur contribution à ce problème](https://github.com/MicrosoftDocs/windows-uwp/issues/2679) dans la documentation.*
 
 ## <a name="what-is-pyexe"></a>Qu’est-ce que py.exe ?
 

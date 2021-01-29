@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a8f5b141e5726d19651aeafeb9b6d432e20c2f47
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 4d98877fb0d48d2c3c677af5f2b89d9fd65c05f1
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671528"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922752"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle XAML WinRT standard dans une application WPF à l’aide de XAML Islands
 
-Cet article montre deux façons d’héberger un contrôle XAML WinRT standard (autrement dit, un contrôle XAML WinRT interne fourni par le SDK Windows) dans une application WPF à l’aide de [XAML Islands](xaml-islands.md) :
+Cet article montre deux façons d’utiliser [XAML Island](xaml-islands.md) pour héberger un contrôle XAML WinRT standard (c’est-à-dire un contrôle XAML WinRT interne fourni par le SDK Windows) dans une application WPF ciblant .NET Core 3.1 :
 
 * Il montre comment héberger un contrôle [InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) et un contrôle [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar) à l’aide de [contrôles wrappés](xaml-islands.md#wrapped-controls) disponibles dans le Windows Community Toolkit. Ces contrôles wrappent l’interface et les fonctionnalités d’un petit ensemble de contrôles XAML WinRT utiles. Vous pouvez les ajouter directement à l’aire de conception de votre projet WPF ou Windows Forms, puis les utiliser comme tout autre contrôle WPF ou Windows Forms dans le concepteur.
 
@@ -25,11 +25,14 @@ Cet article montre deux façons d’héberger un contrôle XAML WinRT standard
 
 Cet article montre comment héberger des contrôles XAML WinRT dans une application WPF. Toutefois, sachez que le processus est similaire pour une application Windows Forms.
 
+> [!NOTE]
+> L’utilisation de XAML Islands pour héberger des contrôles XAML WinRT dans des applications WPF et Windows Forms est pris en charge seulement dans les applications ciblant .NET Core 3.x. XAML Islands n’est pas encore pris en charge dans les applications ciblant .NET 5 ou n’importe quelle version du .NET Framework.
+
 ## <a name="required-components"></a>Composants requis
 
 Pour héberger un contrôle XAML WinRT dans une application WPF (ou Windows Forms), vous aurez besoin des composants suivants dans votre solution. Cet article fournit des instructions sur la création de chacun de ces composants.
 
-* **Le projet et le code source de votre application**. L’utilisation du contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles XAML WinRT personnalisés est uniquement prise en charge dans les applications ciblant .NET Core 3.x.
+* **Le projet et le code source de votre application**. L’utilisation du contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles XAML WinRT personnalisés est actuellement prise en charge seulement dans les applications ciblant .NET Core 3.x.
 
 * **Un projet d’application UWP qui définit une classe Application racine dérivant de XamlApplication**. Votre projet WPF ou Windows Forms doit avoir accès à une instance de la classe [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) fournie par le Windows Community Toolkit afin qu’il puisse découvrir et charger des contrôles XAML UWP personnalisés. À cette fin, la méthode recommandée consiste à définir cet objet dans un projet d’application UWP distinct qui fait partie de la solution pour votre application WPF ou Windows Forms. 
 
@@ -317,9 +320,12 @@ Les instructions suivantes montrent comment empaqueter tous les composants de la
 > [!NOTE]
 > Si vous choisissez de ne pas empaqueter votre application dans un [package MSIX](/windows/msix) pour la déployer, [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) doit être installé sur les ordinateurs qui exécutent votre application.
 
-1. Ajoutez un nouveau [projet d’empaquetage d’application Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) à votre solution. À mesure que vous créez le projet, sélectionnez **Windows 10, version 1903 (10.0; Build 18362)** pour la **Version cible** et la **Version minimale**.
+1. Ajoutez un nouveau [projet d’empaquetage d’application Windows](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) à votre solution. Lorsque vous créez le projet, sélectionnez les mêmes **version cible** et **version minimale** que celles que vous avez sélectionnées pour le projet UWP.
 
 2. Dans le projet d’empaquetage, cliquez avec le bouton droit sur le nœud **Applications**, puis choisissez **Ajouter une référence**. Dans la liste des projets, sélectionnez le projet WPF dans votre solution, puis cliquez sur **OK**.
+
+    > [!NOTE]
+    > Si vous voulez publier votre application dans le Microsoft Store, vous devez ajouter une référence au projet UWP dans le projet de packaging.
 
 3. Configurez votre solution afin qu’elle cible une plateforme spécifique, telle que x86 ou x64. Cette opération est nécessaire pour générer l’application WPF dans un package MSIX à l’aide du projet de création de packages d’applications Windows.
 
@@ -329,7 +335,7 @@ Les instructions suivantes montrent comment empaqueter tous les composants de la
     4. Dans la boîte de dialogue **Nouvelle plateforme de solution**, sélectionnez **x64** ou **x86** (la même plateforme que celle que vous avez sélectionnée pour **Plateforme de la solution active**), puis cliquez sur **OK**.
     5. Fermez les boîtes de dialogue ouvertes.
 
-5. Générez et exécutez le projet d’empaquetage. Vérifiez que l’application WPF s’exécute et que le contrôle personnalisé UWP s’affiche comme prévu.
+5. Générez et exécutez le projet d’empaquetage. Vérifiez que l’application WPF s’exécute et que le contrôle UWP s’affiche comme prévu.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

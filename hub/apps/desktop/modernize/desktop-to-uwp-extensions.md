@@ -8,16 +8,16 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b88f65ba45a2b8a79d822eba525733550f965372
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 91b5e975c40b7c9642cd452b3c67045c7be1127d
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860171"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668715"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau à Windows 10 et UWP
 
-Si votre application de bureau comporte une [identité de package](modernize-packaged-apps.md), vous pouvez utiliser des extensions pour intégrer votre application à Windows 10 à l’aide d’extensions prédéfinies dans le [manifeste du package](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
+Si votre application de bureau comporte une [identité de package](modernize-packaged-apps.md), vous pouvez utiliser des extensions pour intégrer votre application à Windows 10 en utilisant des [extensions prédéfinies dans le manifeste du package](/uwp/schemas/appxpackage/uapmanifestschema/extensions).
 
 Par exemple, utilisez une extension pour créer une exception de pare-feu, faites de votre application l’application par défaut pour un type de fichier, ou pointez des vignettes de l’écran de démarrage vers votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
 

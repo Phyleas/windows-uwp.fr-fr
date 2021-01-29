@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cdfdf9b7396943e3ee5345249f38a35d48beb128
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 16dc1b59147cb937a09eb085c716ebac0e1cef7b
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253620"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922737"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>Héberger un contrôle XAML WinRT personnalisé dans une application WPF à l’aide de XAML Islands
 
@@ -21,11 +21,14 @@ Cet article montre comment utiliser le contrôle [WindowsXamlHost](/windows/comm
 
 Bien que cet article montre comment effectuer cette opération dans une application WPF, le processus est similaire pour une application Windows Forms. Pour une vue d’ensemble de l’hébergement de contrôles XAML WinRT dans des applications WPF et Windows Forms, consultez [cet article](xaml-islands.md#wpf-and-windows-forms-applications).
 
+> [!NOTE]
+> L’utilisation de XAML Islands pour héberger des contrôles XAML WinRT dans des applications WPF et Windows Forms est pris en charge seulement dans les applications ciblant .NET Core 3.x. XAML Islands n’est pas encore pris en charge dans les applications ciblant .NET 5 ou n’importe quelle version du .NET Framework.
+
 ## <a name="required-components"></a>Composants requis
 
 Pour héberger un contrôle XAML WinRT personnalisé dans une application WPF (ou Windows Forms), vous aurez besoin des composants suivants dans votre solution. Cet article fournit des instructions sur la création de chacun de ces composants.
 
-* **Le projet et le code source de votre application**. L’utilisation du contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles personnalisés est uniquement prise en charge dans les applications ciblant .NET Core 3.x. Ce scénario n’est pas pris en charge dans les applications qui ciblent le .NET Framework.
+* **Le projet et le code source de votre application**. L’utilisation du contrôle [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) pour héberger des contrôles personnalisés est uniquement prise en charge dans les applications ciblant .NET Core 3.x.
 
 * **Contrôle XAML WinRT personnalisé**. Vous aurez besoin du code source du contrôle personnalisé que vous souhaitez héberger pour pouvoir le compiler avec votre application. En général, le contrôle personnalisé est défini dans un projet de bibliothèque de classes UWP que vous référencez dans la même solution que votre projet WPF ou Windows Forms.
 
@@ -322,7 +325,18 @@ Les instructions suivantes montrent comment empaqueter tous les composants de la
 
 2. Dans le projet d’empaquetage, cliquez avec le bouton droit sur le nœud **Applications**, puis choisissez **Ajouter une référence**. Dans la liste des projets, sélectionnez le projet WPF dans votre solution, puis cliquez sur **OK**.
 
-3. Générez et exécutez le projet d’empaquetage. Vérifiez que l’application WPF s’exécute et que le contrôle personnalisé UWP s’affiche comme prévu.
+    > [!NOTE]
+    > Si vous voulez publier votre application dans le Microsoft Store, vous devez ajouter une référence au projet UWP dans le projet de packaging.
+
+3. Configurez votre solution afin qu’elle cible une plateforme spécifique, telle que x86 ou x64. Cette opération est nécessaire pour générer l’application WPF dans un package MSIX à l’aide du projet de création de packages d’applications Windows.
+
+    1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nœud de la solution, puis sélectionnez **Propriétés** -> **Propriétés de la configuration** -> **Gestionnaire de configurations**.
+    2. Sous **Plateforme de la solution active**, sélectionnez **x64** ou **x86**.
+    3. Dans la ligne de votre projet WPF, dans la colonne **Plateforme**, sélectionnez **Nouveau**.
+    4. Dans la boîte de dialogue **Nouvelle plateforme de solution**, sélectionnez **x64** ou **x86** (la même plateforme que celle que vous avez sélectionnée pour **Plateforme de la solution active**), puis cliquez sur **OK**.
+    5. Fermez les boîtes de dialogue ouvertes.
+
+4. Générez et exécutez le projet d’empaquetage. Vérifiez que l’application WPF s’exécute et que le contrôle personnalisé UWP s’affiche comme prévu.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

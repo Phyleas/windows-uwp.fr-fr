@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, administration de système python, automatisation de fichier python, scripts python sur windows, configurer python sur windows, environnement de développement python sur windows, environnement de développement python sur windows, python avec powershell, scripts python pour tâches du système de fichiers
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: a8f13243f3501b2af42d38c13bff580be2e5b42a
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253676"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691324"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Bien démarrer avec Python pour l’écriture de scripts et l’automatisation sur Windows
 
@@ -176,6 +176,9 @@ Commençons par un script simple qui parcourt une arborescence de répertoires e
 
 Félicitations ! Vous venez d’écrire un script d’administration de systèmes automatisé qui lit le répertoire et les fichiers que vous avez créés et utilise Python pour afficher, puis imprimer, la structure de répertoires dans son propre fichier texte.
 
+> [!NOTE]
+> Si vous ne parvenez pas à installer Python 3 à partir du Microsoft Store, consultez ce [problème](https://github.com/MicrosoftDocs/windows-uwp/issues/2901) pour obtenir un exemple montrant comment gérer les cheminspour cet exemple de script.
+
 ## <a name="example-script-to-modify-all-files-in-a-directory"></a>Exemple de script permettant de modifier tous les fichiers d’un répertoire
 
 Cet exemple utilise les fichiers et répertoires que vous venez de créer, en renommant chacun des fichiers en ajoutant la date de dernière modification du fichier au début du nom de fichier.
@@ -210,7 +213,7 @@ Cet exemple utilise les fichiers et répertoires que vous venez de créer, en re
 
 3. Testez votre script update-filenames.py en l’exécutant : `python3 update-filenames.py`. Puis, exécutez à nouveau votre script list-directory-contents.py : `python3 list-directory-contents.py`
 
-4. Vous devez normalement voir une sortie similaire à celle-ci :
+4. La sortie doit ressembler à ceci :
 
     ```powershell
     Renaming: ..\food\fruits\banana.txt to: ..\food\fruits\2019-07-18 12.24.46.385185_banana.txt

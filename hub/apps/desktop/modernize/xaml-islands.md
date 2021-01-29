@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 752b02f4bbf6faaca1fd04007c85cfe41f6c28f9
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: b8cb2670c09c5a93d2edd67e3f338a33eeb488ad
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671548"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922755"
 ---
 # <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML WinRT dans des applications de bureau (XAML Islands)
 
@@ -40,12 +40,12 @@ Les conditions requises du runtime pour XAML Islands sont les suivantes :
 
 ## <a name="wpf-and-windows-forms-applications"></a>Applications WPF et Windows Forms
 
+> [!NOTE]
+> L’utilisation de XAML Islands pour héberger des contrôles XAML WinRT dans des applications WPF et Windows Forms est pris en charge seulement dans les applications ciblant .NET Core 3.x. XAML Islands n’est pas encore pris en charge dans les applications ciblant .NET 5 ou n’importe quelle version du .NET Framework.
+
 Nous recommandons que les applications WPF et Windows Forms utilisent les contrôles .NET XAML Island disponibles dans le Windows Community Toolkit. Ces contrôles fournissent un modèle objet qui imite les propriétés, méthodes et événements des contrôles XAML WinRT correspondants ou qui vous donne accès à ces éléments. Ils gèrent également des comportements tels que la navigation au clavier et les changements de disposition.
 
 Il existe deux ensembles de contrôles XAML Island pour les applications WPF et Windows Forms : les *contrôles wrappés* et les *contrôles hôtes*. 
-
-> [!NOTE]
-> L’utilisation de XAML Islands pour héberger des contrôles XAML WinRT personnalisés est uniquement prise en charge dans les applications WPF et Windows Forms ciblant .NET Core 3.x. XAML Islands n’est pas pris en charge dans les applications qui ciblent le .NET Framework.
 
 ### <a name="wrapped-controls"></a>Contrôles wrappés
 
