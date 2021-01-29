@@ -1,42 +1,56 @@
 ---
-description: Étendez les fonctionnalités de base de Cortana avec les commandes vocales qui activent une application Windows et exécutent une seule action.
-title: Interactions avec Cortana
+description: Étendez les fonctionnalités de base de **Cortana** avec les commandes vocales qui lancent et exécutent une seule action dans une application Windows.
+title: Interactions Cortana dans les applications Windows
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
 keywords: Cortana, canevas Cortana, conception Cortana, interface utilisateur, commandes vocales, VCD
-ms.date: 09/24/2020
+ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 270c3e4838c6edc3ac0aedc7092a545028ceff86
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: fca4da482585ddd4b7f9d54008c1905e372ca030
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032192"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988731"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Interactions Cortana dans les applications Windows
 
-Cortana propose une infrastructure d’extensibilité robuste et complète qui vous permet d’incorporer en toute transparence des fonctionnalités de votre application ou service dans l’expérience Cortana.
+>[!WARNING]
+> Cette fonctionnalité n’est plus prise en charge à partir de la mise à jour Windows 10 2020 (version 2004, nom de nom « 20H1 »).
 
-## <a name="weve-moved"></a>Nous avons déménagé !
+Étendez les fonctionnalités de base de **Cortana** avec les commandes vocales qui lancent et exécutent une seule action dans une application Windows.
 
-Toute la documentation développeur relative aux fonctionnalités et services Cortana est désormais disponible via le [Centre de développement Cortana](https://developer.microsoft.com/cortana).
+L’application cible peut être lancée au premier plan (l’application prend le focus et **Cortana** est fermée) ou activée en arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application), en fonction de la complexité de l’interaction. En règle générale, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaires sont mieux gérées dans une application de premier plan, tandis que les commandes de base peuvent être gérées dans **Cortana** via une application en arrière-plan. 
 
-Pour commencer, consultez la [vue d’ensemble du kit de compétences Cortana](/cortana/skills/overview).
+En intégrant les fonctionnalités de base de votre application et en fournissant un point d’entrée central permettant à l’utilisateur d’accomplir la plupart des tâches sans ouvrir votre application directement, **Cortana** devient une liaison entre votre application et l’utilisateur. Le fait de fournir ce raccourci vers les fonctionnalités d’application et de réduire le besoin de basculer entre les applications peut faire gagner beaucoup de temps et d’efforts à l’utilisateur.
 
-Pour savoir comment étendre Cortana avec les fonctionnalités d’une application Windows à l’aide des commandes vocales, consultez [commandes vocales Cortana](/cortana/voice-commands/vcd). 
+> [!NOTE]
+> Une commande vocale est un énoncé unique avec un but spécifique, défini dans un fichier de définition de commande vocale (VCD), dirigé vers une application installée via **Cortana**.
+>
+> Un fichier VCD définit une ou plusieurs commandes vocales, chacune avec un objectif unique.
+>
+> Les définitions de commandes vocales peuvent varier en complexité. Ils peuvent prendre en charge n’importe quel caractère à partir d’une seule et même énoncée à une collection d’énoncés de langage naturel plus flexibles, qui dénotent le même objectif.
+
+## <a name="other-speech-and-conversation-components"></a>Autres composants de reconnaissance vocale et de conversation
+
+### <a name="speech-voice-and-conversation-in-windows-10"></a>Discours, voix et conversation dans Windows 10
+
+Pour plus d’informations sur la façon dont les différentes infrastructures de développement Windows assurent la reconnaissance vocale, la synthèse vocale et la prise en charge des conversations pour les développeurs qui créent des applications Windows, consultez [parole, voix et conversation dans Windows 10](/windows/apps/speech) .
+
+### <a name="cortana-skills-kit"></a>Cortana Skills Kit (Kit de compétences Cortana)
+
+Consultez le [Kit de compétences Cortana](/cortana/skills/) si vous souhaitez étendre Cortana en ajoutant vos propres compétences permettant aux utilisateurs d’interagir avec votre **service** via Cortana. [**Avis de désapprobation :** dans le cadre de notre objectif de transformer les expériences de productivité modernes en incorporant Cortana profondément dans Microsoft 365, nous mettons à niveau le kit de compétences Cortana pour les consommateurs (plateforme de développement) et toutes les compétences créées sur cette plateforme.]
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [**Éléments et attributs d’un fichier VCD v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+* [Éléments et attributs d’un fichier VCD v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
-**Concepteurs**
-* [Recommandations en matière de conception de fonctions vocales](speech-interactions.md)
-* [Recommandations en matière de conception de commandes vocales pour Cortana](/cortana/voice-commands/voicecommand-design-guidelines)
+### <a name="designers"></a>Concepteurs
 
-**Exemples**
-* [Exemple de commande vocale Cortana](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
- 
+* [Instructions de conception de Cortana](cortana-design-guidelines.md)
 
- 
+### <a name="samples"></a>Exemples
+
+* [Exemple de commande vocale Cortana](https://go.microsoft.com/fwlink/p/?LinkID=619899)

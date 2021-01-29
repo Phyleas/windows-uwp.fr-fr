@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 773ff1da19116a088d52a11dfc3180ea271efe82
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: a1d931e98f21160badb7a8c2603a580c2adfd682
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339717"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988741"
 ---
 # <a name="walkthrough-of-creating-a-c-or-visual-basic-windows-runtime-component-and-calling-it-from-javascript"></a>Procédure pas à pas pour créer un composant C# ou Visual Basic et l’appeler à partir de JavaScript
 
@@ -34,13 +34,16 @@ En externe, les membres de votre type peuvent exposer uniquement les types de Wi
 - Windows 10
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
+> [!NOTE]
+> Les projets plateforme Windows universelle (UWP) utilisant JavaScript ne sont pas pris en charge dans Visual Studio 2019. Consultez [JavaScript et machine à écrire dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). Pour suivre cette rubrique, nous vous recommandons d’utiliser Visual Studio 2017. Consultez [JavaScript dans Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
+
 ## <a name="creating-a-simple-windows-runtime-class"></a>Création d’une classe Windows Runtime simple
 
 Cette section crée une application UWP JavaScript et ajoute à la solution un projet de composant Visual Basic ou C# Windows Runtime. Il montre comment définir un type de Windows Runtime, créer une instance du type à partir de JavaScript et appeler des membres statiques et d’instance. L’affichage visuel de l’exemple d’application est délibérément de clé basse afin de garder le focus sur le composant.
 
-1. Dans Visual Studio, créez un projet JavaScript : dans la barre de menus, choisissez **Fichier &gt; Nouveau &gt; Projet**. Dans la section **Modèles installés** de la boîte de dialogue **Nouveau projet** , sélectionnez **JavaScript** , **Windows** , puis **Universel**. (Si Windows n’est pas disponible, vérifiez que vous utilisez Windows 8 ou une version ultérieure.) Choisissez le modèle **Application vide** et nommez le projet SampleApp.
-2.  Créez le projet de composant : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution SampleApp et choisissez **Ajouter** , puis **Nouveau projet** pour ajouter un projet en C# ou Visual Basic à la solution. Dans la section **Modèles installés** de la boîte de dialogue **Ajouter un nouveau projet** , sélectionnez **Visual Basic** ou **Visual C#** , **Windows** , puis **Universel**. Choisissez le modèle **Composant Windows Runtime** et nommez le projet **SampleComponent**.
-3.  Remplacez le nom de la classe par **Example**. Notez que la classe est marquée comme **public sealed** par défaut ( **Public NotInheritable** en Visual Basic). Toutes les classes Windows Runtime que vous exposez à partir de votre composant doivent être sealed.
+1. Dans Visual Studio, créez un projet JavaScript : dans la barre de menus, choisissez **Fichier &gt; Nouveau &gt; Projet**. Dans la section **Modèles installés** de la boîte de dialogue **Nouveau projet**, sélectionnez **JavaScript**, **Windows**, puis **Universel**. (Si Windows n’est pas disponible, vérifiez que vous utilisez Windows 8 ou une version ultérieure.) Choisissez le modèle **Application vide** et nommez le projet SampleApp.
+2.  Créez le projet de composant : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution SampleApp et choisissez **Ajouter**, puis **Nouveau projet** pour ajouter un projet en C# ou Visual Basic à la solution. Dans la section **Modèles installés** de la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez **Visual Basic** ou **Visual C#**, **Windows**, puis **Universel**. Choisissez le modèle **Composant Windows Runtime** et nommez le projet **SampleComponent**.
+3.  Remplacez le nom de la classe par **Example**. Notez que la classe est marquée comme **public sealed** par défaut (**Public NotInheritable** en Visual Basic). Toutes les classes Windows Runtime que vous exposez à partir de votre composant doivent être sealed.
 4.  Ajoutez deux membres simples à la classe, une méthode **static** (méthode **Shared** en Visual Basic) et une propriété d’instance :
 
     > [!div class="tabbedCodeSnippets"]
@@ -69,7 +72,7 @@ Cette section crée une application UWP JavaScript et ajoute à la solution un p
     > ```
 
 5.  Facultatif : pour activer IntelliSense pour les membres récemment ajoutés, dans l’Explorateur de solutions, ouvrez le menu contextuel du projet SampleComponent, puis choisissez **Générer**.
-6.  Dans l’Explorateur de solutions, dans le projet JavaScript, ouvrez le menu contextuel de **Références** , puis choisissez **Ajouter une référence** pour ouvrir le **Gestionnaire de références**. Sélectionnez **Projets** , puis **Solution**. Activez la case à cocher du projet SampleComponent et cliquez sur **OK** pour ajouter une référence.
+6.  Dans l’Explorateur de solutions, dans le projet JavaScript, ouvrez le menu contextuel de **Références**, puis choisissez **Ajouter une référence** pour ouvrir le **Gestionnaire de références**. Sélectionnez **Projets**, puis **Solution**. Activez la case à cocher du projet SampleComponent et cliquez sur **OK** pour ajouter une référence.
 
 ## <a name="call-the-component-from-javascript"></a>Appeler le composant à partir de JavaScript
 
@@ -365,7 +368,7 @@ var runtimeButton2 = document.getElementById("runtimeButton2");
 runtimeButton2.addEventListener("click", runtime2, false);
 ```
 
-Pour exécuter l’application, appuyez sur la touche F5. Cliquez sur **Runtime 1** , puis sur **Runtime 2**. Le gestionnaire d’événements JavaScript indique la première modification apportée à la collection. La deuxième modification, toutefois, présente une clé dupliquée. Les utilisateurs des dictionnaires .NET Framework s’attendent à ce que la méthode Add lève une exception, et c’est ce qui se produit. JavaScript gère l’exception .NET.
+Pour exécuter l’application, appuyez sur la touche F5. Cliquez sur **Runtime 1**, puis sur **Runtime 2**. Le gestionnaire d’événements JavaScript indique la première modification apportée à la collection. La deuxième modification, toutefois, présente une clé dupliquée. Les utilisateurs des dictionnaires .NET Framework s’attendent à ce que la méthode Add lève une exception, et c’est ce qui se produit. JavaScript gère l’exception .NET.
 
 > **Remarque**  Vous ne pouvez pas afficher le message de l’exception à partir du code JavaScript. Le texte du message est remplacé par une trace de la pile. Pour plus d’informations, consultez « levée des exceptions » dans création de composants Windows Runtime en C# et Visual Basic.
 

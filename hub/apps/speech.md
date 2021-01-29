@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Reconnaissance vocale dans Windows 10, discours, voix, conversation, applications vocales Win32, applications vocales UWP, applications vocales WPF, applications vocales WinForms
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: d810f08a2db60309e4528167bcb4bddc95d850c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d157d33316925db6112ab892e13b2c849cfcaa5d
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174153"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988701"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Discours, voix et conversation dans Windows 10
 
@@ -72,13 +72,15 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       **Services de reconnaissance vocale Azure**
 
-      Concevez, créez et testez des sites Web accessibles avec Azure Speech services.
+      Intégrer le traitement vocal dans des applications et des services.
 
       [Reconnaissance vocale](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
       [Synthèse vocale](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
       
       [Traduction vocale](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
+
+      [Reconnaissance de l’orateur](https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/)
 
       [Assistants virtuels de la voix en premier](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
@@ -87,16 +89,21 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
    :::column span="2":::
       **Fonctionnalités héritées**
 
-      Versions héritées, déconseillées et/ou non prises en charge de la technologie Microsoft Speech.
+      Versions héritées, déconseillées et/ou non prises en charge de Microsoft Speech and conversation Technology.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
+      [Cortana Skills Kit](/cortana/skills/) (Kit de compétences Cortana)
+
+      Dans le cadre de notre objectif de transformer les expériences de productivité modernes en incorporant Cortana profondément dans Microsoft 365, nous allons mettre à niveau le kit de compétences Cortana pour les consommateurs (plateforme de développement) et toutes les compétences basées sur cette plateforme.
+   :::column-end:::
+   :::column:::
+
       [Agent Microsoft](/windows/win32/lwef/microsoft-agent)
 
       [Kit de développement logiciel (SDK) Microsoft Speech application (SASDK) version 1,0](https://www.microsoft.com/download/details.aspx?id=2200)
-   :::column-end:::
-   :::column:::
+
       [API Microsoft Speech (SAPI) 5,3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
       [API Microsoft Speech (SAPI) 5,4](/previous-versions/windows/desktop/ee125663(v=vs.85))

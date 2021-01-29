@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd8fdccc62dc45928085c53fa3f5b32fe9db98c
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 155fd01b16f93ac8419282e5b2256f7e8a939a7f
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860160"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988751"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Procédure pas à pas pour créer un composant C++/CX/Windows Runtime et l’appeler à partir de JavaScript ou C#
 
@@ -272,7 +272,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 Si vous souhaitez créer un client C#, vous pouvez ignorer cette section.
 
 > [!NOTE]
-> Les projets plateforme Windows universelle (UWP) ne sont pas pris en charge dans Visual Studio 2019. Consultez [JavaScript et machine à écrire dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). Pour suivre cette section, nous vous recommandons d’utiliser Visual Studio 2017. Consultez [JavaScript dans Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
+> Les projets plateforme Windows universelle (UWP) utilisant JavaScript ne sont pas pris en charge dans Visual Studio 2019. Consultez [JavaScript et machine à écrire dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). Pour suivre cette section, nous vous recommandons d’utiliser Visual Studio 2017. Consultez [JavaScript dans Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
 
 ### <a name="to-create-a-javascript-project"></a>Pour créer un projet JavaScript
 1. Dans Explorateur de solutions (dans Visual Studio 2017 ; Voir la **Remarque** ci-dessus), ouvrez le menu contextuel du nœud solution et choisissez **Ajouter, nouveau projet**.
