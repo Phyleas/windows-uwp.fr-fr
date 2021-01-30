@@ -8,12 +8,12 @@ keywords: Cortana, canevas Cortana, conception Cortana, interface utilisateur, c
 ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fca4da482585ddd4b7f9d54008c1905e372ca030
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: ca9f77d10f6e22d4e244b102cb8b85e1f75113fc
+ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988731"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057560"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Interactions Cortana dans les applications Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "98988731"
 
 Étendez les fonctionnalités de base de **Cortana** avec les commandes vocales qui lancent et exécutent une seule action dans une application Windows.
 
-L’application cible peut être lancée au premier plan (l’application prend le focus et **Cortana** est fermée) ou activée en arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application), en fonction de la complexité de l’interaction. En règle générale, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaires sont mieux gérées dans une application de premier plan, tandis que les commandes de base peuvent être gérées dans **Cortana** via une application en arrière-plan. 
+L’application cible peut être lancée au premier plan (l’application prend le focus et **Cortana** est fermée) ou activée en arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application), en fonction de la complexité de l’interaction. En règle générale, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaires sont mieux gérées dans une application de premier plan, tandis que les commandes de base peuvent être gérées dans **Cortana** via une application en arrière-plan.
 
 En intégrant les fonctionnalités de base de votre application et en fournissant un point d’entrée central permettant à l’utilisateur d’accomplir la plupart des tâches sans ouvrir votre application directement, **Cortana** devient une liaison entre votre application et l’utilisateur. Le fait de fournir ce raccourci vers les fonctionnalités d’application et de réduire le besoin de basculer entre les applications peut faire gagner beaucoup de temps et d’efforts à l’utilisateur.
 
@@ -45,12 +45,6 @@ Consultez le [Kit de compétences Cortana](/cortana/skills/) si vous souhaitez �
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Éléments et attributs d’un fichier VCD v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
-
-### <a name="designers"></a>Concepteurs
-
-* [Instructions de conception de Cortana](cortana-design-guidelines.md)
-
-### <a name="samples"></a>Exemples
-
-* [Exemple de commande vocale Cortana](https://go.microsoft.com/fwlink/p/?LinkID=619899)
+- [Éléments et attributs d’un fichier VCD v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Instructions de conception de Cortana](cortana-design-guidelines.md)
+- [Exemple de commande vocale Cortana](https://go.microsoft.com/fwlink/p/?LinkID=619899)

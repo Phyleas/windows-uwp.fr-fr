@@ -8,12 +8,12 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: Cortana, conception
 ms.localizationpriority: medium
-ms.openlocfilehash: 008a2612b808f1ca9dac5d55fd4472f23d39cef3
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 0d1f27c2e70ce8bf9d77f07dd0871cf09a441bdc
+ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "99041504"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057570"
 ---
 # <a name="cortana-design-guidelines"></a>Recommandations relatives à la conception de Cortana
 
@@ -26,7 +26,7 @@ Ces instructions et recommandations décrivent comment votre application peut ut
 
 Bien que l’utilisateur ait l’impression que **Cortana** contribue à rendre le processus plus clair et facile que possible, il est préférable que **Cortana** soit aussi explicite qu’il s’agit de votre application qui accomplit la tâche.
 
-Nous utilisons une application de planification et de gestion de voyage nommée **Adventure Works** intégrée dans l’interface utilisateur de **Cortana** , illustrée ici, pour illustrer la plupart des concepts et fonctionnalités que nous abordons.
+Nous utilisons une application de planification et de gestion de voyage nommée **Adventure Works** intégrée dans l’interface utilisateur de **Cortana** , illustrée ici, pour illustrer la plupart des concepts et fonctionnalités que nous abordons. Pour plus d’informations, consultez l' [exemple de commande vocale Cortana](https://go.microsoft.com/fwlink/p/?LinkID=619899).
 
 :::image type="content" source="images/cortana/cortana-overview.png" alt-text="Capture d’écran de la zone de dessin Cortana":::
 
@@ -179,9 +179,9 @@ Nous explorons ces étapes plus en détail ici.
 
 ### <a name="handoff"></a>Handoff
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Capture d’écran de la zone de travail Cortana pour le workflow de l’application en arrière-plan Cortana de bout en bout à l’aide d’AdventureWorks-aller à l’annulation de la remise":::*AdventureWorks « annuler le trajet » sans écran de remise*
+:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Capture d’écran de la zone de travail Cortana pour le workflow de l’application en arrière-plan Cortana de bout en bout à l’aide d’AdventureWorks voyage à venir sans aucun transfert":::*AdventureWorks « prochain voyage » sans écran de remise*
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="Capture d’écran de la zone de travail Cortana pour le workflow de l’application en arrière-plan Cortana de bout en bout à l’aide d’AdventureWorks-aller au retour":::*AdventureWorks « annuler le trajet » avec l’écran de remise*
+:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="Capture d’écran de la zone de travail Cortana pour le workflow de l’application en arrière-plan Cortana de bout en bout à l’aide d’AdventureWorks voyage à venir avec le transfert":::*AdventureWorks « prochain voyage » avec écran de remise*
 
 Les tâches qui prennent moins de 500 ms pour répondre à votre application et qui ne nécessitent aucune information supplémentaire de la part de l’utilisateur peuvent être effectuées sans aucune participation supplémentaire de **Cortana**, à l’exception de l’écran de saisie semi-automatique.
 
@@ -350,4 +350,6 @@ Lorsque l’une des erreurs suivantes se produit, **Cortana** affiche le même m
 
 ## <a name="related-articles"></a>Articles connexes
 
-[Interactions Cortana dans les applications Windows](cortana-interactions.md)
+- [Interactions Cortana dans les applications Windows](cortana-interactions.md)
+- [Éléments et attributs d’un fichier VCD v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Exemple de commande vocale Cortana](https://go.microsoft.com/fwlink/p/?LinkID=619899)
