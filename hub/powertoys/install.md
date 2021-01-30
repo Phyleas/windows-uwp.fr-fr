@@ -4,29 +4,21 @@ description: Installez les PowerToys, un ensemble d’utilitaires pour la person
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: c695be3784ff2145788e4887b5f9022fcc7a6999
-ms.sourcegitcommit: ea1115b921d18c7bbddc95dba9275568ff57af02
+ms.openlocfilehash: d0018e69e5a107baa595e4d3dd05a924257551a8
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97794225"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077217"
 ---
 # <a name="install-powertoys"></a>Installer les PowerToys
 
-Il existe plusieurs façons d’installer les PowerToys :
-
-- **[Fichier exécutable Windows. exe](#install-with-windows-executable-file)** *(recommandé)*
-- [Gestionnaire de package Windows](#install-with-windows-package-manager-preview) *(version préliminaire)*
-- [Outils d’installation pilotés par la communauté](#community-driven-install-tools) *(non pris en charge officiellement)*
-
-## <a name="requirements"></a>Configuration requise
-
-- Windows 10 1803 (Build 17134) ou version ultérieure.
-- [Runtime de bureau .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). Le programme d’installation des PowerToys gère cette exigence.
-
-Pour vous assurer que votre ordinateur répond à ces exigences, vérifiez votre version de Windows 10 et votre numéro de build en sélectionnant la **⊞ Win** *(touche Windows)*  +  **R**, puis tapez **winver**, puis sélectionnez **OK**. (Ou entrez la commande `ver` dans l’invite de commandes Windows). Vous pouvez [mettre à jour vers la dernière version de Windows](ms-settings:windowsupdate) dans le menu **paramètres** .
+Nous vous recommandons d’installer PowerToys à l’aide du bouton exécutable Windows lié ci-dessous, mais d’autres méthodes d’installation sont également répertoriées si vous préférez utiliser un gestionnaire de package.
 
 ## <a name="install-with-windows-executable-file"></a>Installer avec le fichier exécutable Windows
+
+> [!div class="nextstepaction"]
+> [Installer les PowerToys](https://aka.ms/installpowertoys)
 
 Pour installer les PowerToys à l’aide d’un fichier exécutable Windows :
 
@@ -36,7 +28,19 @@ Pour installer les PowerToys à l’aide d’un fichier exécutable Windows :
 4. Sélectionnez le `PowerToysSetup-0.##.#-x64.exe` fichier pour télécharger le programme d’installation de l’exécutable PowerToys.
 5. Une fois téléchargé, ouvrez le fichier exécutable et suivez les invites d’installation.
 
-**Actuellement, il s’agit de la méthode d’installation recommandée.**
+## <a name="requirements"></a>Conditions requises
+
+- Windows 10 1803 (Build 17134) ou version ultérieure.
+- [Runtime de bureau .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). Le programme d’installation des PowerToys gère cette exigence.
+- architecture x64 actuellement prise en charge. La prise en charge ARM et x86 sera disponible à une date ultérieure.
+
+Pour vous assurer que votre ordinateur répond à ces exigences, vérifiez votre version de Windows 10 et votre numéro de build en sélectionnant la **⊞ Win** *(touche Windows)*  +  **D**, puis tapez **winver**, puis sélectionnez **OK**. (Ou entrez la commande `ver` dans l’invite de commandes Windows). Vous pouvez [mettre à jour vers la dernière version de Windows](ms-settings:windowsupdate) dans le menu **paramètres** .
+
+## <a name="alternative-install-methods"></a>Autres méthodes d’installation
+
+<!--  - **[Windows executable .exe file](#install-with-windows-executable-file)** *(Recommended)* -->
+- [Gestionnaire de package Windows](#install-with-windows-package-manager-preview) *(version préliminaire)*
+- [Outils d’installation pilotés par la communauté](#community-driven-install-tools) *(non pris en charge officiellement)*
 
 ## <a name="install-with-windows-package-manager-preview"></a>Installer avec le gestionnaire de package Windows (version préliminaire)
 

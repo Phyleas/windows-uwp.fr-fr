@@ -5,12 +5,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 10/13/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e42b9f35866f07a07122043ced803045bf99d6
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 85c64cd4baed7be9edde0dfc008ab90c1d537ca4
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011872"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077227"
 ---
 # <a name="developer-mode-features-and-debugging"></a>Fonctionnalités et débogage du mode développeur
 
@@ -28,12 +28,13 @@ Cette image montre les fonctionnalités du mode développeur pour Windows 10 :
 
 Pour en savoir plus sur Portail d’appareil, consultez [Vue d’ensemble du portail d’appareil Windows](/windows/uwp/debug-test-perf/device-portal.md).
 
+
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
-- [Portail d’appareil pour Bureau](/windows/uwp/debug-test-perf/device-portal-desktop.md)
+- [Portail d’appareil pour Bureau](/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Portail d’appareil pour HoloLens](/windows/mixed-reality/using-the-windows-device-portal)
-- [Portail d’appareil pour IoT](/windows/iot-core/manage-your-device/DevicePortal)
-- [Portail d’appareil pour appareils mobiles](/windows/uwp/debug-test-perf/device-portal-mobile.md)
-- [Portail d’appareil pour Xbox](/windows/xbox-apps/device-portal-xbox.md)
+- [Portail d’appareil pour IoT](/windows/iot-core/manage-your-device/deviceportal)
+- [Portail d’appareil pour appareils mobiles](/windows/uwp/debug-test-perf/device-portal-mobile)
+- [Portail d’appareil pour Xbox](/windows/uwp/xbox-apps/device-portal-xbox)
 
 Si vous rencontrez des difficultés pour activer le mode développeur ou le portail d’appareil, consultez le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour chercher des solutions à ces problèmes, ou visitez la page relatif à l’[échec de l’installation du package Mode développeur](#failure-to-install-developer-mode-package) pour plus d’informations et pour savoir quelles bases de connaissances WSUS autoriser afin de débloquer le package Mode développeur.
 
