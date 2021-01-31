@@ -1,4 +1,4 @@
-- name: Vue d’ensemble
+- name: Vue d'ensemble
   href: index.md
 - name: Notions de base de la conception
   items:
@@ -499,19 +499,19 @@
       href: input/cortana-interactions.md
       items:
         - name: Recommandations en matière de conception
-          href: /cortana/voice-commands/voicecommand-design-guidelines
+          href: input/cortana-design-guidelines.md
         - name: Activer une application au premier plan
-          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+          href: input/cortana-launch-a-foreground-app-with-voice-commands.md
         - name: Modifier les listes d’expressions de définition des commandes vocales (VCD)
-          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+          href: input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md
         - name: Lancer une application en arrière-plan
-          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+          href: input/cortana-launch-a-background-app-with-voice-commands.md
         - name: Interagir avec une application en arrière-plan
-          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
+          href: input/cortana-interact-with-a-background-app.md
         - name: Lien ciblé à partir d’une application en arrière-plan
-          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
+          href: input/cortana-deep-link-into-your-app.md
         - name: Prendre en charge des commandes vocales en langage naturel
-          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+          href: input/cortana-support-natural-language-voice-commands.md
     - name: Entrées multiples
       href: input/multiple-input-design-guidelines.md
     - name: Injection d’entrée
@@ -540,7 +540,7 @@
       href: devices/designing-for-MR.md
 - name: Facilité d'utilisation
   items:
-    - name: Vue d’ensemble
+    - name: Vue d'ensemble
       href: usability/index.md
     - name: Accessibilité
       href: accessibility/accessibility.md
