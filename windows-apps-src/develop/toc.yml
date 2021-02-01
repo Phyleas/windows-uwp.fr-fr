@@ -825,6 +825,8 @@
           href: ../csharp-winrt/index.md
         - name: "Démonstration\_: Générer une projection .NET\_5.0 à partir d’un composant C++/WinRT"
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
+        - name: Créer un composant C#/WinRT et le consommer à partir de C++/WinRT
+          href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
         - name: Objets agiles
           href: ../csharp-winrt/agile-objects.md
     - name: Sécurité
