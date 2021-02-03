@@ -747,7 +747,7 @@
       items:
         - name: Introduction
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: Prendre en main
+        - name: Prise en main
           href: ../cpp-and-winrt-apis/get-started.md
         - name: Nouveautés
           href: ../cpp-and-winrt-apis/news.md
@@ -827,6 +827,8 @@
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
         - name: Créer un composant C#/WinRT et le consommer à partir de C++/WinRT
           href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
+        - name: Diagnostiquer les erreurs de composant
+          href: ../csharp-winrt/authoring-diagnostics.md
         - name: Objets agiles
           href: ../csharp-winrt/agile-objects.md
     - name: Sécurité
