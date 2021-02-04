@@ -4,18 +4,18 @@ description: Utilitaire de gestion de fenêtres permettant d’organiser et d’
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00b849e19d3ae8fcf76e1f2a63dc1915353aad30
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: b1f417307c173e868284254c0a1721e4e6ef5536
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97612121"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534433"
 ---
 # <a name="fancyzones-utility"></a>Utilitaire FancyZones
 
 FancyZones est un utilitaire de gestion de fenêtres permettant d’organiser et d’aligner des fenêtres dans des dispositions efficaces afin d’améliorer la vitesse de votre flux de travail et de restaurer rapidement les dispositions. FancyZones permet à l’utilisateur de définir un ensemble d’emplacements de fenêtre pour un ordinateur de bureau qui sont des cibles de glissement pour Windows.  Quand l’utilisateur fait glisser une fenêtre dans une zone, la fenêtre est redimensionnée et repositionnée pour remplir cette zone.  
 
-![Capture d’écran FancyZones](../images/pt-fancy-zones2.png)
+![Capture d’écran de FancyZones](../images/pt-fancy-zones2.png)
 
 ## <a name="getting-started"></a>Prise en main
 
@@ -35,17 +35,17 @@ Si vous avez des applications qui sont élevées, exécutez en mode administrate
 
 ## <a name="choose-your-layout-layout-editor"></a>Choisir votre disposition (éditeur de disposition)
 
-Lors du premier lancement, l’éditeur de zones présente une liste de mises en page qui peuvent être ajustées par le nombre de fenêtres sur le moniteur. Le choix d’une disposition présente un aperçu de cette disposition sur l’analyse. La sélection de appliquer définit la disposition du moniteur.  
+Lors du premier lancement, l’éditeur de zones présente une liste de mises en page qui peuvent être ajustées par le nombre de fenêtres sur le moniteur. Le choix d’une disposition présente un aperçu de cette disposition sur l’analyse. La disposition sélectionnée est appliquée automatiquement.  
 
 ![Capture d’écran du sélecteur FancyZones](../images/pt-fancyzones-picker.png)
 
-Si plusieurs affichages sont en cours d’utilisation, l’éditeur détecte les moniteurs disponibles et les affiche pour l’utilisateur. L’analyse choisie est alors la cible de la disposition sélectionnée lorsqu’elle est appliquée.
+Si plusieurs affichages sont en cours d’utilisation, l’éditeur détecte les moniteurs disponibles et les affiche pour l’utilisateur. L’analyse choisie est alors la cible de la disposition sélectionnée.
 
 ![Moniteurs multiples du sélecteur FancyZones](../images/pt-fancyzones-multimon.png)
 
 ### <a name="space-around-zones"></a>Espace autour des zones
 
-La case à cocher **afficher l’espace autour des zones** vous permet de déterminer le type de bordure ou de marge entourant chaque fenêtre FancyZone. Le champ **espace autour des zones** vous permet de définir une valeur personnalisée pour la largeur de la bordure.
+La bascule **afficher l’espace autour des zones** vous permet de déterminer le type de bordure ou de marge entourant chaque fenêtre FancyZone. Le champ **espace autour des zones** vous permet de définir une valeur personnalisée pour la largeur de la bordure.
 
 La **distance pour mettre en surbrillance les zones adjacentes** vous permet de définir une valeur personnalisée pour la quantité d’espace entre les fenêtres FancyZone jusqu’à ce qu’elles soient réparties ou avant que les deux soient mises en surbrillance, ce qui leur permet de fusionner.
 
@@ -55,19 +55,19 @@ Avec l’éditeur de zones ouvert, activez et désactivez la case à cocher **af
 
 ### <a name="creating-a-custom-layout"></a>Création d’une disposition personnalisée
 
-L’éditeur de zones prend également en charge la création et l’enregistrement de dispositions personnalisées. Sélectionnez l’onglet **personnalisé** en regard de **modèles** dans le menu supérieur de l’éditeur de zones.
+L’éditeur de zones prend également en charge la création et l’enregistrement de dispositions personnalisées. Sélectionnez le bouton **+ créer une disposition** en bas à droite.
   
-Il existe deux façons de créer des dispositions de zone personnalisées : la disposition de fenêtre et la disposition de table. Ils peuvent également être considérés comme des modèles d’addition et de soustraction.  
+Il existe deux façons de créer des dispositions de zone personnalisées : disposition de **grille** et disposition de **canevas** . Elles peuvent également être considérées comme des modèles de soustraction et d’addition.  
 
-Le modèle de disposition de fenêtre additive commence par une disposition vierge et prend en charge l’ajout de zones qui peuvent être déplacées et redimensionnées de façon similaire à Windows.
-
-![Mode de l’éditeur de fenêtre FancyZones](../images/pt-fancyzones-windoweditor.png)
-
-Le modèle de disposition de table soustrait commence par une disposition de table et permet de créer des zones en fractionnant et en fusionnant des zones, puis en redimensionnant la reliure entre les zones.
+Le modèle de **grille** soustrait commence par une grille de trois colonnes et permet de créer des zones en fractionnant et en fusionnant des zones, en redimensionnant la reliure entre les zones comme vous le souhaitez.
 
 Pour fusionner deux zones, sélectionnez et maintenez le bouton gauche de la souris et faites glisser la souris jusqu’à ce qu’une deuxième zone soit sélectionnée, puis relâchez le bouton et un menu contextuel s’affiche.
 
-![Mode de l’éditeur de table FancyZones](../images/pt-fancyzones-tableeditor.png)
+![Mode de l’éditeur de table FancyZones](../images/pt-fancyzones-grideditor.png)
+
+Le modèle de **canevas** additif commence par une disposition vierge et prend en charge l’ajout de zones qui peuvent être déplacées et redimensionnées de façon similaire à Windows.
+
+![Mode de l’éditeur de fenêtre FancyZones](../images/pt-fancyzones-canvaseditor.png)
 
 ## <a name="snapping-a-window-to-two-or-more-zones"></a>Alignement d’une fenêtre sur au moins deux zones
 

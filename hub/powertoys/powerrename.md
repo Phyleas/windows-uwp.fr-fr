@@ -4,12 +4,12 @@ description: Extension du shell Windows pour le changement de nom des fichiers e
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e06685b6948ed3d3935c69a8b4dafeb9ecc2ea
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 3c751624c93fec5996885c766e73b5ab1849fd4c
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691334"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534388"
 ---
 # <a name="powerrename-utility"></a>Utilitaire PowerRename
 
@@ -44,6 +44,8 @@ Entrez le texte pour remplacer la *recherche de* valeur entrée précédemment q
 ### <a name="options---use-regular-expressions"></a>Options-utiliser des expressions régulières
 
 Si elle est activée, la valeur de recherche est interprétée comme une [expression régulière](https://wikipedia.org/wiki/Regular_expression) (Regex). La valeur de remplacement peut également contenir des variables Regex (voir les exemples ci-dessous).  Si cette option n’est pas activée, la valeur de recherche est interprétée comme du texte brut à remplacer par le texte figurant dans le champ remplacer.
+
+Pour plus d’informations sur l' `Use Boost library` option dans le menu paramètres pour les fonctionnalités Regex étendues, consultez la [section expressions régulières](#regular-expressions).
 
 ### <a name="options---case-sensitive"></a>Options-respect de la casse
 
@@ -139,6 +141,8 @@ Pour activer les expressions régulières, activez la case à cocher « utilise
 
 **Remarque :** Vous souhaiterez probablement vérifier « Rechercher toutes les occurrences » lors de l’utilisation d’expressions régulières.
 
+Pour utiliser la [Bibliothèque Boost](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) au lieu de la bibliothèque standard, activez l' `Use Boost library` option dans les paramètres PowerToys. Il active des fonctionnalités étendues, telles que `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)` , qui ne sont pas prises en charge par la bibliothèque standard.
+
 ### <a name="examples-of-regular-expressions"></a>Exemples d’expressions régulières
 
 #### <a name="simple-matching-examples"></a>Exemples de correspondances simples
@@ -164,6 +168,7 @@ Pour activer les expressions régulières, activez la case à cocher « utilise
 | `(.*).png`   | `$1_foo.png`   | Ajoute « \_ foo » au nom de fichier existant  |
 | `(.*)`       | `$1.txt`        | Ajoute l’extension « . txt » au nom de fichier existant |
 | `(^\w+\.$)|(^\w+$)` | `$2.txt` | Ajoute l’extension « . txt » au nom de fichier existant uniquement si elle n’a pas d’extension |
+|  `(\d\d)-(\d\d)-(\d\d\d\d)` | `$3-$2-$1` | Déplacez les nombres dans le nom de fichier : « 29-03-2020 » devient « 2020-03-29 » |
 
 ### <a name="additional-resources-for-learning-regular-expressions"></a>Ressources supplémentaires pour l’apprentissage d’expressions régulières
 

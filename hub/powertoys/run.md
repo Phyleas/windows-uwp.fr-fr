@@ -4,16 +4,16 @@ description: Un lancement rapide pour les utilisateurs avec pouvoir qui contient
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be1d54946ec2286d95dbe7d4518a631efd471e9
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: 126c38cd98f0d8ff1102c7f53f14cb95ec7e38c5
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618528"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534398"
 ---
 # <a name="powertoys-run-utility"></a>Utilitaire d’exécution PowerToys
 
-L’exécution d’PowerToys est un lancement rapide pour les utilisateurs avec pouvoir qui contient des fonctionnalités supplémentaires sans sacrifier les performances. Il est open source et modulaire pour les plug-ins supplémentaires.
+L’exécution d’PowerToys est un lancement rapide pour les utilisateurs avec pouvoir qui contient des fonctionnalités supplémentaires sans sacrifier les performances. Il s’agit d’un utilitaire open source et modulaire qui peut recevoir des plug-ins supplémentaires.
 
 Pour utiliser PowerToys Run, sélectionnez <kbd></kbd> + <kbd>espace</kbd> Alt et commencez à taper !
 
@@ -21,7 +21,7 @@ Pour utiliser PowerToys Run, sélectionnez <kbd></kbd> + <kbd>espace</kbd> Alt e
 
 ![Démonstration d’exécution des applications avec PowerToys](../images/pt-powerrun-demo.gif)
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 - Windows 10 version 1903 ou ultérieure
 - Après l’installation, les PowerToys doivent être activés et en cours d’exécution en arrière-plan pour que cet utilitaire fonctionne
@@ -75,6 +75,22 @@ Celles-ci forcent l’exécution des PowerToys dans des plug-ins ciblés uniquem
   | `//` | URL uniquement. Exemple `//docs.microsoft.com` pour que votre navigateur par défaut accède à https://docs.microsoft.com |
   | `<` | Processus en cours d’exécution uniquement. Exemple `<outlook` de recherche de tous les processus qui contiennent Outlook |
   | `>` | Commande shell uniquement. Exemple `>ping localhost` de requête ping |
+  | `:` | Clés de Registre uniquement. Exemple `:hkcu` de recherche de la clé de registre HKEY_CURRENT_USER |
+  | `!` | Services Windows uniquement. Exemple `!alu` de recherche du service de passerelle de la couche application à démarrer ou à arrêter |
+
+## <a name="system-commands"></a>Commandes système
+
+Avec PowerToys v 0.31 et on, vous pouvez désormais exécuter des actions au niveau du système.
+
+  | **Clé d’action**   |   **Action** |
+  | ------------------ | ---------------------------------------------------------------------------------|
+  | `Shutdown` | Arrête l’ordinateur |
+  | `Restart` | Redémarre l’ordinateur |
+  | `Sign Out` | Signe l’extraction de l’utilisateur actuel |
+  | `Lock` | Verrouille l’ordinateur |
+  | `Sleep` | Met l’ordinateur en veille |
+  | `Hibernate` | Met l’ordinateur en veille prolongée |
+  | `Empty Recycle Bin` | Vide la corbeille |
 
 ## <a name="indexer-settings"></a>Paramètres de l’indexeur
 
