@@ -2,17 +2,17 @@
 description: Découvrez comment commencer à créer des applications de bureau pour les PC Windows, notamment comment choisir la plateforme idéale pour les nouvelles applications et comment moderniser des applications existantes pour Windows 10.
 title: Créer des applications de bureau pour les PC Windows
 ms.topic: article
-ms.date: 9/10/2020
+ms.date: 02/03/2021
 keywords: développement d’applications de bureau Win32 pour Windows
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 554869625c0db7a2a19dc7c01837e47029bd28e6
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: 2518d838ca41e5ca2faa6dbd5697d64ea9257922
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97214266"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534368"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Créer des applications de bureau pour les PC Windows
 
@@ -66,7 +66,7 @@ Pour une comparaison détaillée de ces plateformes ainsi que des ressources sup
 
 En pensant à l’avenir, nous faisons évoluer les plateformes de développement d’applications Windows avec la bibliothèque de l’interface utilisateur Windows (WinUI) et Project Reunion.
 
-* **WinUI** constitue un framework d’expérience utilisateur natif pour les applications Windows 10. WinUI était initialement une boîte à outils qui offrait des versions nouvelles et mises à jour des contrôles UWP pour les applications UWP ciblant des versions de bas niveau de Windows 10. WinUI s’est depuis étendue et, à partir de WinUI 3 (actuellement en préversion), est devenue la plateforme d’interface utilisateur native moderne pour les applications Windows 10 sur UWP, .NET et Win32. 
+* **WinUI** constitue un framework d’expérience utilisateur natif pour les applications Windows 10. Au départ, WinUI était une boîte à outils qui offrait des versions nouvelles et mises à jour des contrôles WinRT pour les applications UWP ciblant des versions de bas niveau de Windows 10. À partir de WinUI 3 (encore en préversion), l’objectif de l’interface WinUI est de devenir l’infrastructure d’interface utilisateur native de premier plan pour les applications Windows 10 sur les plateformes UWP, .NET et Win32.
 
     Pour plus d’informations, consultez [Bibliothèque d’interface utilisateur Windows (WinUI)](../winui/index.md).
 
