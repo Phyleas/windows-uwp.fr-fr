@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Reconnaissance vocale dans Windows 10, discours, voix, conversation, applications vocales Win32, applications vocales UWP, applications vocales WPF, applications vocales WinForms
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: d157d33316925db6112ab892e13b2c849cfcaa5d
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 0051ecb0556b72f768c142f04c38f3f34b2dd334
+ms.sourcegitcommit: 99a3f996a57ecc5df7382fb46bc9b8ba75614a53
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988701"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99579010"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Discours, voix et conversation dans Windows 10
 
@@ -43,7 +43,8 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
 
       [Agents de conversation](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Commandes vocales Cortana](/cortana/voice-commands/vcd)
+      [Commandes vocales Cortana](/cortana/voice-commands/vcd)<br>
+      (non pris en charge dans Windows 10 2020 Update et versions ultérieures)
    :::column-end:::
    :::column:::
       ![Applications de plateforme Win32](images/platform-win32.png)
@@ -96,7 +97,7 @@ Cette page fournit des informations sur la façon dont les différentes infrastr
    :::column:::
       [Cortana Skills Kit](/cortana/skills/) (Kit de compétences Cortana)
 
-      Dans le cadre de notre objectif de transformer les expériences de productivité modernes en incorporant Cortana profondément dans Microsoft 365, nous allons mettre à niveau le kit de compétences Cortana pour les consommateurs (plateforme de développement) et toutes les compétences basées sur cette plateforme.
+      Dans le cadre de notre objectif de transformer les expériences de productivité modernes en incorporant Cortana profondément dans [Microsoft 365](/microsoft-365/admin/misc/cortana-integration), nous retirons la plate-forme de développement du kit de compétences Cortana et toutes les compétences générées sur cette plateforme.
    :::column-end:::
    :::column:::
 
