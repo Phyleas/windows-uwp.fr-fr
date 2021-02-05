@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5c5b4867d8a58779aa716245130a468374054288
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 3db6ce85e81f4478a9776cec6a4e38caee0a2c9c
+ms.sourcegitcommit: a7d49538d7ad762d34d41579fdfad2fb4422d667
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860121"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061416"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>Nouveautés de Windows 10 pour les développeurs, build 18362
 
@@ -101,10 +101,10 @@ HoloLens 2 a été récemment annoncé. Regardez cette [série de vidéos sur la
 
 Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à des questions sur le développement, la culture d’équipe et l’histoire de Windows.
 
-* [Raymond Chen sur le développement et l’histoire de Windows](https://www.youtube.com/playlist?list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)
+* [Raymond Chen sur le développement et l’histoire de Windows](https://www.youtube.com/watch?v=teV0gjCacug&list=PLlrxD0HtieHge3_8Dm48C0Ns61I6bHThc)
 
-* [Larry Osterman sur le développement et l’histoire de Windows](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPUkYGpJU0RzvY6PBSEA4K)
+* [Larry Osterman sur le développement et l’histoire de Windows](https://www.youtube.com/watch?v=_34CokLwodE&list=PLlrxD0HtieHhDTjMijDOd0BSJcpSFabfE)
 
-* [Aaron Gustafson sur les applications web progressives](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [Chris Heilmann sur VS Code](https://www.youtube.com/watch?v=cYRn5ONWAqo&list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx)
 
-* [Chris Heilmann sur l’outil webhint](https://www.youtube.com/playlist?list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [Aaron Gustafson sur les applications web progressives](https://www.youtube.com/watch?v=ks3CYvPBO2k&ab_channel=MicrosoftDeveloper)

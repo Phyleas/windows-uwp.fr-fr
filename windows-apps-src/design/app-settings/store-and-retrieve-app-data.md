@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4736c598e18bc4f1225a7fa8e0488c3601420c
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 9f00a056085b6b1f4315a19d223c21c7a4cd6638
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031462"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077237"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Stocker et récupérer des paramètres et autres données d’application
 
@@ -31,12 +31,12 @@ Utilisez les paramètres pour stocker les préférences de l’utilisateur et le
 
 Voici les types de données que vous pouvez utiliser pour les paramètres d’application :
 
-- **UInt8** , **Int16** , **UInt16** , **Int32** , **UInt32** , **Int64** , **UInt64** , **Single** , **Double**
+- **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
 - **Booléen**
-- **Char16** , **String**
+- **Char16**, **String**
 - [**DateTime**](/uwp/api/Windows.Foundation.DateTime), [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
     - Pour C#/.NET, utilisez : [**System.DateTimeOffset**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0), [**System.TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
-- **GUID** , [**Point**](/uwp/api/Windows.Foundation.Point), [**Size**](/uwp/api/Windows.Foundation.Size), [**Rect**](/uwp/api/Windows.Foundation.Rect)
+- **GUID**, [**Point**](/uwp/api/Windows.Foundation.Point), [**Size**](/uwp/api/Windows.Foundation.Size), [**Rect**](/uwp/api/Windows.Foundation.Rect)
 - [**ApplicationDataCompositeValue**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) : ensemble de paramètres d’application associés qui doivent être sérialisés et désérialisés de façon atomique. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
 
 ### <a name="files"></a>Fichiers
@@ -152,6 +152,10 @@ async void ReadTimestamp()
 
 ## <a name="roaming-data"></a>Données d’itinérance
 
+> [!WARNING]
+> Il a été [annoncé](/windows/deployment/planning/windows-10-deprecated-features) qu’à compte de Windows 10, version 1909, la fonctionnalité PSE (Package State Roaming) sera retirée à l’occasion d’une future mise à jour. PSE permet aux développeurs non Microsoft d’accéder aux données itinérantes sur les appareils, ce qui permet aux développeurs d’applications UWP d’écrire des données dans Windows et de les synchroniser avec d’autres instanciations de Windows pour l’utilisateur concerné.
+> 
+>En remplacement de PSR, il est recommandé d’utiliser [Azure App Service](/azure/app-service/). Azure App Service est largement pris en charge, bien documenté, fiable et prend en charge les scénarios interplateformes/inter-écosystèmes comme iOS, Android et le web.
 
 Si vous utilisez des données itinérantes dans votre application, vos utilisateurs peuvent facilement maintenir les données de votre application synchronisées sur les différents appareils. Si un utilisateur installe votre application sur plusieurs périphériques, le système d’exploitation maintient les données d’application synchronisées, ce qui réduit le nombre de tâches de configuration de l’application que l’utilisateur doit effectuer sur ses autres périphériques. De même, l’itinérance permet aux utilisateurs de reprendre une tâche (par exemple, composer une liste) à l’endroit même où ils l’ont abandonnée, y compris sur un autre périphérique. Le système d’exploitation réplique les données itinérantes sur le Cloud quand elles sont mises à jour et les synchronise sur les autres périphériques sur lesquels l’application est installée.
 
@@ -160,6 +164,8 @@ Le système d’exploitation limite la taille des données d’application que c
 Les données itinérantes d’une application sont disponibles dans le Cloud du moment où l’utilisateur y a accédé à partir d’un appareil dans le délai imparti. Si l’utilisateur n’exécute pas une application au-delà de ce délai, ses données itinérantes sont supprimées du Cloud. Si un utilisateur désinstalle une application, ses données itinérantes ne sont pas supprimées automatiquement du Cloud : elles sont préservées. De ce fait, si l’utilisateur réinstalle l’application dans les délais, les données itinérantes sont synchronisées à partir du Cloud.
 
 ### <a name="roaming-data-dos-and-donts"></a>Pratiques conseillées et déconseillées en matière de données itinérantes
+
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
 
 - Utilisez l’itinérance pour les préférences utilisateur et les personnalisations, les liens et les petits fichiers de données. Par exemple, utilisez l’itinérance pour conserver la couleur d’arrière-plan choisie par un utilisateur sur tous les appareils.
 - Utilisez l’itinérance pour permettre aux utilisateurs de poursuivre une tâche sur plusieurs périphériques. Par exemple, utilisez l’itinérance pour des données d’application telles que le contenu d’un e-mail à l’état de brouillon ou la dernière page consultée dans une application de lecture.
@@ -173,23 +179,33 @@ Les données itinérantes d’une application sont disponibles dans le Cloud du 
 
 ### <a name="roaming-pre-requisites"></a>Conditions préalables d’itinérance
 
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
+
 Tous les utilisateurs peuvent bénéficier de l’itinérance des données d’application s’ils utilisent un compte Microsoft pour se connecter à leur appareil. Toutefois, les utilisateurs et les administrateurs de stratégie de groupe peuvent désactiver l’itinérance des données d’application sur un appareil à tout moment. Si un utilisateur décide de ne pas utiliser un compte Microsoft ou s’il désactive les fonctionnalités d’itinérance des données, il peut continuer à se servir de votre application. Toutefois, les données d’application sont gérées de manière locale sur chaque appareil.
 
-Les données stockées dans [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) sont transférées uniquement si un utilisateur a « approuvé » un appareil. Si un appareil n’est pas approuvé, les données sécurisées dans ce coffre ne seront pas itinérantes.
+Les données stockées dans [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) sont transférées uniquement si un utilisateur a « approuvé » un appareil. Si un appareil n’est pas approuvé, les données sécurisées dans ce coffre ne seront pas itinérantes.
 
 ### <a name="conflict-resolution"></a>Résolution de conflits
+
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
 
 L’itinérance des données d’application n’est pas prévue pour être utilisée sur plusieurs appareils à la fois. Si un conflit se produit durant la synchronisation en raison du changement d’une unité de données sur deux appareils, le système favorise toujours la valeur écrite en dernier. Cette précaution garantit que l’application exploite les informations les plus récentes. Si l’unité de données est un composite de paramètre, la résolution des conflits se produit au niveau de l’unité du paramètre ; en d’autres termes, le composite possédant le changement le plus récent est synchronisé.
 
 ### <a name="when-to-write-data"></a>Quand écrire les données
 
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
+
 Selon la durée de vie prévue du paramètre, les données doivent être écrites à différents moments. Les données d’application qui changent rarement ou lentement doivent être écrites immédiatement. Toutefois, les données d’application qui évoluent fréquemment doivent être écrites seulement à intervalles réguliers (par exemple toutes les 5 minutes) et durant la suspension de l’application. Par exemple, une application de musique peut écrire le paramètre « chanson actuelle » au début de chaque nouvelle chanson, mais la position réelle dans la chanson doit être écrite uniquement au moment de l’interruption.
 
 ### <a name="excessive-usage-protection"></a>Protection contre une utilisation excessive
 
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
+
 Le système possède divers mécanismes de protection pour éviter une utilisation inappropriée des ressources. Si les données d’application ne se transfèrent pas comme prévu, il est probable que l’appareil a été provisoirement limité. Cette situation est en général automatiquement résolue en attendant quelque temps, et aucune mesure n’est nécessaire.
 
 ### <a name="versioning"></a>Contrôle de version
+
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
 
 Les données d’application peuvent utiliser le contrôle de version pour passer d’une structure de données à une autre. Le numéro de version est différent de la version de l’application ; il peut être défini comme bon vous semble. Même si ce n’est pas obligatoire, il est vivement conseillé d’utiliser des numéros de version croissants. En effet, des complications (notamment des pertes de données) peuvent se produire si vous essayez d’effectuer un transfert vers un numéro de version de données inférieur représentant des données plus récentes.
 
@@ -197,14 +213,17 @@ Les données d’application ne sont itinérantes qu’entre les applications in
 
 ### <a name="testing-and-tools"></a>Test et outils
 
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
+
 Les développeurs peuvent verrouiller leur appareil pour déclencher une synchronisation des données d’application itinérantes. Si les données d’application ne semblent pas se transférer après un intervalle de temps donné, vérifiez les éléments suivants :
 
 - Vos données itinérantes ne dépassent pas la taille maximale (pour plus d’informations, voir [**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota)).
 - Vos fichiers sont fermés et publiés correctement.
 - Il existe au moins deux appareils qui exécutent la même version de l’application.
 
-
 ### <a name="register-to-receive-notification-when-roaming-data-changes"></a>S’inscrire pour recevoir les notifications sur les changements de données en itinérance
+
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
 
 Pour utiliser des données d’application itinérante, vous devez vous inscrite aux modifications de données itinérantes et récupérer les conteneurs de données itinérantes afin de pouvoir lire et écrire des paramètres.
 
@@ -237,6 +256,8 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 ```
 
 ### <a name="create-and-retrieve-roaming-settings"></a>Créer et récupérer des paramètres d’itinérance
+
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
 
 Utilisez la propriété [**ApplicationDataContainer.Values**](/uwp/api/windows.storage.applicationdatacontainer.values) pour accéder aux paramètres inclus dans le conteneur `roamingSettings` abordé dans la section précédente. Cet exemple crée un paramètre nommé `exampleSetting` et une valeur composite nommée `composite`.
 
@@ -282,6 +303,8 @@ else
 
 ### <a name="create-and-retrieve-roaming-files"></a>Créer et récupérer des fichiers d’itinérance
 
+> Consultez la note importante concernant les [données itinérantes](#roaming-data).
+
 Pour créer et mettre à jour un fichier dans le magasin de données d’application itinérantes, faites appel à des API de fichier telles que [**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) et [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync). Cet exemple crée un fichier appelé `dataFile.txt` dans le conteneur `roamingFolder`, puis écrit la date et l’heure actuelles dans le fichier. La valeur **replaceExisting** de l’énumération [**CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) indique de remplacer le fichier s’il existe.
 
 ```csharp
@@ -313,7 +336,6 @@ async void ReadTimestamp()
    }
 }
 ```
-
 
 ## <a name="temporary-app-data"></a>Données d’application temporaires
 

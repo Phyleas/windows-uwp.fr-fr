@@ -1,34 +1,33 @@
 ---
-Description: Le lecteur multimédia permet d’afficher et d’écouter des fichiers vidéo, audio et image.
-title: Lecteur multimédia
+description: La lecture de contenu multimédia consiste à visionner une vidéo et à écouter du son via des expériences en mode intégré ou plein écran dédié.
+title: Lecteurs multimédias
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
-label: Media player
+label: Media playback controls
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7f575f22a56c7c97700e1949494848402d239c6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a1471eb468e85bb1c4706c5432e38e501c4c1469
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218692"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534408"
 ---
-# <a name="media-player"></a>Lecteur multimédia
+# <a name="media-players"></a>Lecteurs multimédias
 
+La lecture de contenu multimédia consiste à visionner une vidéo et à écouter du son via des expériences en mode intégré (incorporé dans une page ou avec un groupe d’autres contrôles) ou plein écran dédié.
 
-
-Le lecteur multimédia permet d’afficher et d’écouter des fichiers vidéo et audio. La lecture de fichiers multimédias peut se faire « inline » (insérée dans une page ou dans un groupe d’autres contrôles) ou dans un affichage plein écran dédié. Vous pouvez modifier le jeu de boutons du lecteur, modifier l’arrière-plan de la barre de contrôle et organiser les dispositions selon vos besoins. N’oubliez pas que les utilisateurs s’attendent à un ensemble de contrôles de base (lecture/pause, retour rapide, avance rapide).
+Les utilisateurs s’attendent à disposer d’un jeu de contrôle de base, tel que lecture/pause, piste précédente, piste suivante, que vous pouvez modifier selon vos besoins (notamment les boutons du lecteur multimédia, l’arrière-plan de la barre de contrôle ainsi que l’organisation et la disposition des contrôles).
 
 ![Élément multimédia avec contrôles de transport](images/controls/mtc_double_video_inprod.png)
 
 > **API importantes** : [classe MediaPlayerElement class](/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [classe MediaTransportControls](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
 
-
-> [!NOTE]
-> **MediaPlayerElement** est uniquement disponible dans Windows 10, version 1607 ou ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) à la place. Toutes les recommandations de cette page s’appliquent à MediaElement également.
+> [!Important]
+> **MediaPlayerElement** est uniquement disponible dans Windows 10, version 1607 ou ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser le contrôle [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) à la place. Toutes les suggestions ici présentes s’appliquent également à MediaElement.
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -97,9 +96,9 @@ La disposition des contrôles sur deux lignes (voir ci-dessous) est recommandée
 ### <a name="set-the-media-source"></a>Définir la source du média
 Pour lire des fichiers sur le réseau ou des fichiers incorporés dans l’application, définissez la propriété [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) sur un [MediaSource](/uwp/api/windows.media.core.mediasource) avec le chemin du fichier.
 
-**Conseil**  Pour ouvrir des fichiers à partir d’Internet, vous devez déclarer la fonctionnalité **Internet (Client)** dans le manifeste de votre application (Package.appxmanifest). Pour plus d’informations sur la déclaration des fonctionnalités, voir [Déclarations des fonctionnalités d’application](../../packaging/app-capability-declarations.md).
+**Conseil** Pour ouvrir des fichiers à partir d’Internet, vous devez déclarer la fonctionnalité **Internet (Client)** dans le manifeste de votre application (fichier Package.appxmanifest). Pour plus d’informations sur la déclaration des fonctionnalités, voir [Déclarations des fonctionnalités d’application](../../packaging/app-capability-declarations.md).
 
- 
+ 
 
 Ce code tente de définir la propriété [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) de [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) défini en XAML sur le chemin d’un fichier entré dans un [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox).
 

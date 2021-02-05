@@ -1,19 +1,19 @@
 ---
 description: Améliorez votre application de bureau pour les utilisateurs de Windows 10 avec les API Windows Runtime.
 title: Appeler des API Windows Runtime dans les applications de bureau
-ms.date: 08/20/2019
+ms.date: 01/28/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bf460b8c05f1dbb274aa9015e6b892339df9f634
-ms.sourcegitcommit: 21a76fc02ae261f609a2dbb7a56c5de25844c068
+ms.openlocfilehash: 2dc56597dccf00a15ffc672f60ca2e1f0936f14f
+ms.sourcegitcommit: 6f15cc14e0c4c13999c862664fa7a70de8730b74
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93381389"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98981868"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>Appeler des API Windows Runtime dans les applications de bureau
 
@@ -31,9 +31,9 @@ Il existe plusieurs options pour les projets .NET :
 * Pour les versions précédente antérieures de .NET, vous pouvez installer le package NuGet `Microsoft.Windows.SDK.Contracts` pour ajouter toutes les références nécessaires à votre projet. Cette option est prise en charge dans les projets qui ciblent Windows 10 version 1803 ou ultérieure.
 * Si votre projet cible à la fois .NET 5 Preview 8 (ou ultérieures) et les versions antérieures de .NET, vous pouvez configurer le fichier de projet de sorte qu’il utilise les deux options.
 
-### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>Versions .NET 5 Preview 8 et ultérieures : utiliser l’option moniker de framework cible 
+### <a name="net-5-use-the-target-framework-moniker-option"></a>.NET 5 : utiliser l’option moniker de framework cible
 
-Cette option est uniquement prise en charge dans les projets qui utilisent .NET 5 Preview 8 (ou une version ultérieure) et ciblent Windows 10 version 1809 ou une version de système d’exploitation ultérieure. Pour plus d’informations sur ce scénario, consultez [ce billet de blog](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
+Cette option est uniquement prise en charge dans les projets qui utilisent .NET 5 (ou une version ultérieure) et ciblent Windows 10 version 1809 ou une version de système d’exploitation ultérieure. Pour plus d’informations sur ce scénario, consultez [ce billet de blog](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. Votre projet étant ouvert dans Visual Studio, cliquez dessus avec le bouton droit dans l’**Explorateur de solutions**, puis sélectionnez **Modifier le fichier de projet**. Votre fichier de projet doit se présenter comme suit.
 

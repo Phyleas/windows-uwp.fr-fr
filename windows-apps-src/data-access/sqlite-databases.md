@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp, SQLite, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: ba2bcf104bd1fee9657e83f7a20334522fa0450c
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 045f327622c93d7d4c1653492e54b7939ee919a2
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860206"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077247"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de données SQLite dans une application UWP
 Vous pouvez utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil de l’utilisateur. Ce guide vous explique comment procéder.
@@ -35,7 +35,7 @@ Nous vous recommandons d’utiliser Entity Framework Core ou la [bibliothèque
 
 Entity Framework (EF) est un mappeur relationnel objet qui vous permet de travailler avec des données relationnelles en utilisant des objets propres au domaine. Si vous avez déjà utilisé cette infrastructure pour travailler avec des données dans d’autres applications .NET, vous pouvez migrer ce code vers une application UWP. Il fonctionnera avec les changements appropriés apportés à la chaîne de connexion.
 
-Pour essayer, consultez [Bien démarrer avec EF Core sur la plateforme Windows universelle (UWP) avec une nouvelle base de données](/ef/core/get-started/uwp/getting-started).
+Pour l’essayer, consultez [Bien démarrer avec EF Core](/ef/core/get-started/overview/first-app).
 
 ### <a name="sqlite-library"></a>Bibliothèque SQLite
 

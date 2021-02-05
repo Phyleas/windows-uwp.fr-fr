@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36397e64215bfe4b57aac32e9eccc94182495688
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c84595a8d5aadfb22f84a5fe780e93b9518490dc
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033302"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534478"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
@@ -41,7 +41,7 @@ Voici une liste par fonction des contrôles XAML courants que vous pouvez utilis
 ## <a name="appbars-and-commands"></a>Barres d’applications et commandes
 
 ### <a name="app-bar"></a>Barre de l’application
-Barre d’outils pour afficher les commandes spécifiques à l’application. Voir Barre de commandes.
+Barre d’outils pour afficher les commandes spécifiques à l’application. Voir [Barre de commandes](#command-bar).
 
 Référence : [AppBar](/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
 
@@ -105,7 +105,7 @@ Référence : [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 Conception et procédure : [Guide de contrôle Boutons](buttons.md) 
 
 ### <a name="hyperlink"></a>Hyperlink
-Voir bouton Lien hypertexte.
+Voir [Bouton Lien hypertexte](#hyperlink-button).
 
 ### <a name="hyperlink-button"></a>Bouton Lien hypertexte
 Un bouton qui apparaît sous la forme d’un texte balisé et ouvre l’URI spécifié dans un navigateur.
@@ -248,7 +248,7 @@ Conception et procédure : [Contrôles de calendrier, de date et d’heure](dat
 ## <a name="flyouts"></a>Menus volants
 
 ### <a name="context-menu"></a>Menu contextuel
-Voir Menu volant et Menu contextuel.
+Voir [Menu volant](#menu-flyout) et [Menu contextuel](#popup-menu).
 
 ### <a name="flyout"></a>Menu volant
 Affiche un message nécessitant une action de la part de l’utilisateur. (Contrairement à une boîte de dialogue, un menu volant ne crée pas de fenêtre distincte et ne bloque pas l’action des autres utilisateurs.)
@@ -416,7 +416,7 @@ Panneau de disposition qui prend en charge l’organisation des éléments enfan
 Référence : [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid)
  
 ### <a name="panning-scroll-viewer"></a>Visionneuse à mouvement panoramique
-Voir Visionneuse à défilement.
+Voir [Visionneuse à défilement](#scroll-viewer).
 
 ### <a name="relativepanel"></a>RelativePanel
 Panneau qui vous permet de positionner et d’aligner des objets enfants les uns par rapport aux autres ou par rapport au panneau parent.
@@ -433,7 +433,7 @@ Panneau qui vous permet de positionner et d’aligner des objets enfants les uns
 Référence : [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)
 
 ### <a name="scroll-bar"></a>Scroll bar
-Voir Visionneuse à défilement. (ScrollBar est un élément de ScrollViewer. En règle générale, il n’est pas utilisé en tant que contrôle autonome.)
+Voir [Visionneuse à défilement](#scroll-viewer). (ScrollBar est un élément de ScrollViewer. En règle générale, il n’est pas utilisé en tant que contrôle autonome.)
 
 Référence : [ScrollBar](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
  
@@ -511,23 +511,28 @@ Contrôle de conteneur qui applique une taille spécifique à son contenu.
 Référence : [Viewbox](/uwp/api/Windows.UI.Xaml.Controls.Viewbox)
  
 ### <a name="zooming-scroll-viewer"></a>Visionneuse à défilement avec zoom
-Voir Visionneuse à défilement.
+Voir [Visionneuse à défilement](#scroll-viewer).
 
 ## <a name="media-controls"></a>Contrôles multimédias
 
 ### <a name="audio"></a>Audio
-Voir Élément multimédia.
 
-### <a name="media-element"></a>Élément multimédia
+Voir [Élément Lecteur multimédia](#media-player-element).
+
+### <a name="media-player-element"></a>Élément Lecteur multimédia
+
 Contrôle qui lit du contenu audio et vidéo.
 
 ```xaml
-<MediaElement x:Name="myMediaElement"/>
+<MediaPlayerElement x:Name="myMediaPlayerElement"/>
 ```
 
-Référence : [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
+> [!Important]
+> **MediaPlayerElement** est uniquement disponible dans Windows 10, version 1607 ou ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser le contrôle [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) à la place.
 
-Conception et procédure : [Guide de contrôle Élément multimédia](media-playback.md)
+Référence : [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)
+
+Conception et procédure : [Lecture de contenu multimédia](media-playback.md)
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 Contrôle qui fournit les contrôles de lecture pour un MediaElement.
@@ -540,12 +545,12 @@ Contrôle qui fournit les contrôles de lecture pour un MediaElement.
 
 Référence : [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
-Conception et procédure : [Guide de contrôle Élément multimédia](media-playback.md) 
+Conception et procédure : [Lecture de contenu multimédia](media-playback.md)
 
 Exemple de code : [Exemple de contrôles de transport multimédias](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)
 
 ### <a name="video"></a>Vidéo
-Voir Élément multimédia.
+Voir [Élément Lecteur multimédia](#media-player-element).
 
 ## <a name="navigation"></a>Navigation
 
@@ -666,7 +671,7 @@ Conception et procédure : [Contrôles de texte](text-controls.md), [Guide de c
 Exemple de code : [Exemple de migration AutoSuggestBox](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
 
 ### <a name="multi-line-text-box"></a>Zone de texte de plusieurs lignes
-Voir Zone de texte.
+Voir [Zone de texte](#text-box).
 
 ### <a name="password-box"></a>Zone de mot de passe
 Contrôle pour la saisie des mots de passe.
@@ -698,13 +703,13 @@ Conception et procédure : [Contrôles de texte](text-controls.md), [Guide de c
 Exemple de code : [Exemple de texte XAML](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### <a name="search-box"></a>Zone de recherche
-Voir Zone de suggestion automatique.
+Voir [Zone de suggestion automatique](#auto-suggest-box).
 
 ### <a name="single-line-text-box"></a>Zone de texte d’une ligne
-Voir Zone de texte.
+Voir [Zone de texte](#text-box).
 
 ### <a name="static-textparagraph"></a>Paragraphe/texte statique
-Voir Bloc de texte.
+Voir [Bloc de texte](#text-block).
 
 ### <a name="text-block"></a>Bloc de texte
 Contrôle qui affiche du texte.
