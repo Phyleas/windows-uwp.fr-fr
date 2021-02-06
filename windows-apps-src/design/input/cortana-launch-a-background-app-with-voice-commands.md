@@ -5,17 +5,19 @@ ms.assetid: e2c7eae3-6beb-4156-92a5-474bba53451e
 ms.date: 09/24/2019
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: 9331a87eb6a7f2f8a09beb57f82540518993806a
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: f1ed51107f41318cecf2d8fea73484713b4b837c
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057767"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606064"
 ---
 # <a name="activate-a-background-app-in-cortana-using-voice-commands"></a>Activer une application en arrière-plan dans Cortana à l’aide de commandes vocales  
 
 >[!WARNING]
 > Cette fonctionnalité n’est plus prise en charge à partir de la mise à jour Windows 10 2020 (version 2004, nom de nom « 20H1 »).
+>
+> Consultez [Cortana dans Microsoft 365](/microsoft-365/admin/misc/cortana-integration) pour savoir comment Cortana transforme les expériences de productivité modernes.
 
 Outre l’utilisation des commandes vocales dans **Cortana** pour accéder aux fonctionnalités du système, vous pouvez également étendre **Cortana** avec les fonctionnalités et fonctionnalités de votre application (en tant que tâche en arrière-plan) à l’aide de commandes vocales qui spécifient une action ou une commande à exécuter. Quand une application gère une commande vocale en arrière-plan, elle ne prend pas le focus. Au lieu de cela, elle retourne tous les commentaires et résultats via le canevas **Cortana** et la voix **Cortana** .  
 
@@ -93,7 +95,7 @@ Si vous ne fournissez pas les versions de ressources recommandées, l’expérie
 Les versions des ressources sont utilisées pour adapter les modifications suivantes dans l’expérience utilisateur.  
 - Préférences utilisateur  
 - Infirmité  
-- Type d’appareil  
+- Type d'appareil  
 - Emplacement  
 
 Pour plus d’informations sur les ressources d’image pour les facteurs de contraste et d’échelle élevés, consultez la page instructions pour les éléments multimédias en mosaïque et en icônes située dans [msdn.Microsoft.com/Windows/UWP/Controls-and-Patterns/Tiles-and-notifications-App-Assets](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast).  

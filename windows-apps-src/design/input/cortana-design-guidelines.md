@@ -8,17 +8,19 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: Cortana, conception
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1f27c2e70ce8bf9d77f07dd0871cf09a441bdc
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: b7711f9fd653bbd635582a0b2268a5eb0ed7417b
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057570"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606084"
 ---
 # <a name="cortana-design-guidelines"></a>Recommandations relatives à la conception de Cortana
 
 >[!WARNING]
 > Cette fonctionnalité n’est plus prise en charge à partir de la mise à jour Windows 10 2020 (version 2004, nom de nom « 20H1 »).
+>
+> Consultez [Cortana dans Microsoft 365](/microsoft-365/admin/misc/cortana-integration) pour savoir comment Cortana transforme les expériences de productivité modernes.
 
 Ces instructions et recommandations décrivent comment votre application peut utiliser **Cortana** de manière optimale pour interagir avec l’utilisateur, l’aider à effectuer une tâche et communiquer clairement comment elle se produit.
 
@@ -338,7 +340,7 @@ Si l’entité est affichée, ou si elle a été référencée avant l’activat
 | ENTITÉ AFFICHÉE/ENTITÉ LUE AU PRÉALABLE         | J’ai annulé ce voyage.                       | A annulé ce voyage.               |
 | ENTITÉ NON AFFICHÉE/ENTITÉ NON LUE SUR LA FORME PRÉCÉDENTE | J’ai annulé votre voyage à Vegas Technical Conference. | « Conférence technique Vegas » annulée. |
 
-### <a name="error"></a>Erreur
+### <a name="error"></a>Error
 
 :::image type="content" source="images/cortana/e2e-canceltrip-error.png" alt-text="Capture d’écran de la zone de travail Cortana pour le workflow de l’application en arrière-plan Cortana de bout en bout avec l’erreur d’annulation de parcours":::AdventureWorks *« Annuler le trajet »*
 

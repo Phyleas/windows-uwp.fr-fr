@@ -5,17 +5,19 @@ ms.assetid: e42917dc-aece-4880-813f-80b897f9126c
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: 111f945c548d34f614305e31c1c79ce9197f0925
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 835a2f60d2b86e5bef49195d4f937fa844f4d921
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057758"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606074"
 ---
 # <a name="interact-with-a-background-app-in-cortana"></a>Interagir avec une application en arrière-plan dans Cortana
 
 >[!WARNING]
 > Cette fonctionnalité n’est plus prise en charge à partir de la mise à jour Windows 10 2020 (version 2004, nom de nom « 20H1 »).
+>
+> Consultez [Cortana dans Microsoft 365](/microsoft-365/admin/misc/cortana-integration) pour savoir comment Cortana transforme les expériences de productivité modernes.
 
 Activez l’interaction utilisateur avec une application en arrière-plan, par le biais de la saisie vocale et texte dans le canevas **Cortana** , lors de l’exécution d’une commande vocale.
 
@@ -32,7 +34,7 @@ Cortana prend en charge un flux de travail tour à tour complet avec votre appli
 - Avancement
 - Confirmation
 - Lever les ambiguïtés
-- Erreur
+- Error
 
 ## <a name="composing-feedback-strings"></a>Composition de chaînes de commentaires
 

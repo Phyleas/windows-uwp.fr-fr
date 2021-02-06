@@ -8,17 +8,19 @@ keywords: Cortana, canevas Cortana, conception Cortana, interface utilisateur, c
 ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ca9f77d10f6e22d4e244b102cb8b85e1f75113fc
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 6187022f4fcce254d142c61f1c2fe222c11bd8a5
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057560"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606044"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Interactions Cortana dans les applications Windows
 
 >[!WARNING]
 > Cette fonctionnalité n’est plus prise en charge à partir de la mise à jour Windows 10 2020 (version 2004, nom de nom « 20H1 »).
+>
+> Consultez [Cortana dans Microsoft 365](/microsoft-365/admin/misc/cortana-integration) pour savoir comment Cortana transforme les expériences de productivité modernes.
 
 Étendez les fonctionnalités de base de **Cortana** avec les commandes vocales qui lancent et exécutent une seule action dans une application Windows.
 

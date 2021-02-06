@@ -5,17 +5,19 @@ ms.assetid: e4bf3714-6f62-466f-9e7c-3b03ee86a117
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: a9df2d107482234fa8783d92a1f4fbb075e7d505
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 6e4e1b30d7d6e259ff66cdccebeed325ded57c18
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057754"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606014"
 ---
 # <a name="activate-a-foreground-app-with-voice-commands-through-cortana"></a>Activer une application au premier plan avec les commandes vocales via Cortana
 
 >[!WARNING]
 > Cette fonctionnalité n’est plus prise en charge à partir de la mise à jour Windows 10 2020 (version 2004, nom de nom « 20H1 »).
+>
+> Consultez [Cortana dans Microsoft 365](/microsoft-365/admin/misc/cortana-integration) pour savoir comment Cortana transforme les expériences de productivité modernes.
 
 En plus d’utiliser des commandes vocales dans **Cortana** pour accéder aux fonctionnalités du système, vous pouvez également étendre **Cortana** avec les fonctionnalités et fonctionnalités de votre application. À l’aide de commandes vocales, votre application peut être activée au premier plan et une action ou une commande exécutée dans l’application.
 

@@ -7,17 +7,19 @@ ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: 94f3d6323649737f978128e442c95449bce94075
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 7716d4d623653c6b2d943135f2e2cf1ac9a40343
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057755"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99605994"
 ---
 # <a name="support-natural-language-voice-commands-in-cortana"></a>Prendre en charge des commandes vocales en langage naturel dans Cortana
 
 >[!WARNING]
 > Cette fonctionnalité n’est plus prise en charge à partir de la mise à jour Windows 10 2020 (version 2004, nom de nom « 20H1 »).
+>
+> Consultez [Cortana dans Microsoft 365](/microsoft-365/admin/misc/cortana-integration) pour savoir comment Cortana transforme les expériences de productivité modernes.
 
 Étendez **Cortana** avec des commandes vocales plus flexibles et plus naturelles qui permettent à un utilisateur d’indiquer le nom de votre application n’importe où dans la commande.
 
@@ -142,7 +144,7 @@ Lorsque vous déclarez un élément **ListenFor** où **RequireAppName** est «�
     <ListenFor RequireAppName="ExplicitlySpecified">Find {searchPhrase} {builtin:AppName}</ListenFor>
     ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 La prise en charge d’une plus grande variation de la façon dont une commande vocale peut être intégrée à un utilisateur dans **Cortana** augmente également la convivialité générale de votre application.
 
