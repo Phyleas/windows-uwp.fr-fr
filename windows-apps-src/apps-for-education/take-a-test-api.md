@@ -6,18 +6,22 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, éducation
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a5d2749531e12ef7ce9b44cd6598c38cd089db
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: d4ed3bf3062deac308b9ed39ff7be709bcee4af3
+ms.sourcegitcommit: 3be258523c5ee3666498d6a98ed2648b27b2907d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031522"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99973099"
 ---
 # <a name="take-a-test-javascript-api"></a>API JavaScript Examen
 
 [Un test](/education/windows/take-tests-in-windows-10) est une application UWP basée sur un navigateur qui rend les évaluations en ligne verrouillées pour les tests à grande importance, ce qui permet aux enseignants de se concentrer sur le contenu d’évaluation plutôt que sur la façon de fournir un environnement de test sécurisé. Pour ce faire, il utilise une API JavaScript qui peut être utilisée par n’importe quelle application Web. L’API Take-a-test prend en charge la [norme API du navigateur SBAC](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour les tests de base courants les plus importants.
 
 Pour plus d’informations sur l’application elle-même, consultez la [référence technique de l’application Take a test](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) . Pour obtenir de l’aide pour la résolution des problèmes, voir [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
+
+> [!NOTE]
+> Cet article contient des références au terme liste rouge, un terme que Microsoft n’utilise plus. Lorsque le terme sera supprimé du logiciel, nous le supprimerons de cet article.
+
 
 ## <a name="reference-documentation"></a>Documentation de référence
 Les API Take a test existent dans les espaces de noms suivants. Notez que toutes les API dépendent d’un objet global `SecureBrowser` .
@@ -240,7 +244,7 @@ Interroge si une fonctionnalité est activée ou désactivée.
 **Paramètres**  
 `feature` -Chaîne permettant de déterminer la capacité à interroger. Les chaînes de fonctionnalité valides sont « screenMonitoring », « Printing » et « textSuggestions » (non-respect de la casse).
 
-**Valeur renvoyée**  
+**Valeur de retour**  
 Cette fonction retourne soit un objet JavaScript, soit un littéral au format : `{<feature>:true|false}` . **true** si la fonctionnalité d’interrogation est activée, **false** si la fonctionnalité n’est pas activée ou si la chaîne de capacité n’est pas valide.
 
 **Configuration requise** Windows 10, version 1703
@@ -277,7 +281,7 @@ Vérifie si la session active est connectée à distance.
 `Boolean SecureBrowser.security.isRemoteSession();`
 
 **Valeur de retour**  
-**true** si la session active est distante ; sinon, **false** .
+**true** si la session active est distante ; sinon, **false**.
 
 **Configuration requise**  
 Windows 10, version 1709
@@ -293,7 +297,7 @@ Vérifie si la session active est en cours d’exécution au sein d’une machin
 `Boolean SecureBrowser.security.isVMSession();`
 
 **Valeur de retour**  
-**true** si la session active est en cours d’exécution sur un ordinateur virtuel, sinon **false** .
+**true** si la session active est en cours d’exécution sur un ordinateur virtuel, sinon **false**.
 
 **Remarques**  
 Cette vérification de l’API ne peut détecter que les sessions de machines virtuelles qui s’exécutent dans certains hyperviseurs qui implémentent les API appropriées
