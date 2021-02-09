@@ -1,26 +1,26 @@
 ---
 description: Créer un composant Windows Runtime avec C#/WinRT et le consommer à partir d’une application native
-title: Créer un composant/WinRT C# et le consommer à partir de C++/WinRT
+title: Créer un composant C#/WinRT et le consommer à partir de C++/WinRT
 ms.date: 01/28/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d489e293ca40aa38c27e4c3e19bba6f8a6705e3b
-ms.sourcegitcommit: 6f15cc14e0c4c13999c862664fa7a70de8730b74
+ms.openlocfilehash: 9f5157f97163a72ccce1ce9fc3f560fb4e16b1df
+ms.sourcegitcommit: 61a874d00991f7ca06466a99a557ef0777bd0f7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98987092"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99989649"
 ---
 # <a name="walkthrough-create-a-cwinrt-component-and-consume-it-from-cwinrt"></a>Procédure pas à pas : créer un composant/WinRT C# et le consommer à partir de C++/WinRT
 
 > [!NOTE]
-> La prise en charge de la création de/WinRT C# décrite dans cet article est actuellement en version préliminaire à partir de C#/WinRT version 1.1.1. À partir de cette version, il est destiné à être utilisé uniquement pour les commentaires et l’évaluation.
+> La prise en charge de la création de/WinRT C# décrite dans cet article est actuellement en version préliminaire à partir de C#/WinRT version 1.1.2-version 1.1.2.210208.6. À partir de cette version, il est destiné à être utilisé uniquement pour les commentaires et l’évaluation.
 
-C#/WinRT permet aux développeurs .NET 5 de créer leurs propres composants Windows Runtime en C# à l’aide d’un projet de bibliothèque de classes. Les composants créés peuvent être utilisés dans les applications de bureau natives avec une référence de package ou avec une référence de fichier **. winmd** .
+C#/WinRT permet aux développeurs .NET 5 de créer leurs propres composants Windows Runtime en C# à l’aide d’un projet de bibliothèque de classes. Les composants créés peuvent être utilisés dans les applications de bureau natives en tant que référence de package ou en tant que référence de projet avec quelques modifications.
 
-Cette procédure pas à pas montre comment vous pouvez utiliser C#/WinRT pour créer vos propres types de Windows Runtime, les empaqueter en tant que composant Windows Runtime et utiliser le composant à partir d’une application console C++/WinRT.
+Cette procédure pas à pas montre comment créer un composant Windows Runtime simple à l’aide de C#/WinRT, distribuer le composant en tant que package NuGet et utiliser le composant à partir d’une application console C++/WinRT. Vous trouverez un exemple de code pour cette procédure pas à pas sur GitHub [ici](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo).
 
-Lors de la création de votre composant d’exécution, suivez les instructions et les restrictions de type décrites dans [cet article](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) en interne, les types de Windows Runtime dans votre composant peuvent utiliser toutes les fonctionnalités .net autorisées dans une application UWP. Pour plus d’informations, consultez [.net pour les applications UWP](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true). En externe, les membres de votre type peuvent exposer uniquement les types de Windows Runtime pour leurs paramètres et valeurs de retour.
+Lors de la création de votre composant d’exécution, suivez les instructions et les restrictions de type décrites dans [cet article.](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) En interne, les types de Windows Runtime dans votre composant peuvent utiliser toutes les fonctionnalités .NET autorisées dans une application UWP. Pour plus d’informations, consultez [.net pour les applications UWP](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true). En externe, les membres de votre type peuvent exposer uniquement les types de Windows Runtime pour leurs paramètres et valeurs de retour.
 
 > [!NOTE]
 > Certains types [de Windows Runtime mappés aux types .net](../winrt-components/net-framework-mappings-of-windows-runtime-types.md#uwp-types-that-map-to-net-types-with-a-different-name-andor-namespace). Ces types .NET peuvent être utilisés dans l’interface publique de votre composant Windows Runtime et s’affichent pour les utilisateurs du composant en tant que types de Windows Runtime correspondants.
@@ -37,19 +37,12 @@ Cette procédure pas à pas nécessite les outils et composants suivants :
 
 Commencez par créer un nouveau projet dans Visual Studio 2019. Sélectionnez le modèle de projet **bibliothèque de classes (.net Core)** et nommez-le **AuthoringDemo**. Vous devrez apporter les modifications et les ajouts suivants au projet :
 
-1. Installez la dernière version du [package NuGet C#/WinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/).
-
-    a. Dans Explorateur de solutions, cliquez avec le bouton droit sur le nœud du projet et sélectionnez **gérer les packages NuGet**.
-
-    b. Recherchez le package NuGet **Microsoft. Windows. CsWinRT** et installez la version la plus récente. Cette procédure pas à pas utilise C#/WinRT version 1.1.1.
-
-2. Mettez à jour le `TargetFramework` dans le fichier **AuthoringDemo. csproj** et ajoutez les éléments suivants au `PropertyGroup` :
+1. Mettez à jour le `TargetFramework` dans le fichier **AuthoringDemo. csproj** et ajoutez les éléments suivants au `PropertyGroup` :
 
     ```xml
     <PropertyGroup>
         <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
         <Platforms>x64</Platforms>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
     </PropertyGroup>
     ```
 
@@ -58,25 +51,25 @@ Commencez par créer un nouveau projet dans Visual Studio 2019. Sélectionnez le
     - **.net 5.0-Windows 10.0.18362.0**
     - **.net 5.0-Windows 10.0.19041.0**
 
-    Vous devez également spécifier un `AssemblyVersion` pour votre composant Windows Runtime.
+2. Installez la dernière version du [package NuGet C#/WinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/1.1.2-prerelease.210208.6).
 
-3. Ajoutez un nouvel `PropertyGroup` élément qui définit plusieurs propriétés **CsWinRT** .
+    a. Dans Explorateur de solutions, cliquez avec le bouton droit sur le nœud du projet et sélectionnez **gérer les packages NuGet**.
+
+    b. Recherchez le package NuGet **Microsoft. Windows. CsWinRT** et installez la version la plus récente. Cette procédure pas à pas utilise C#/WinRT version 1.1.2-version 1.1.2.210208.6.
+
+3. Ajoutez un nouvel `PropertyGroup` élément qui définit plusieurs propriétés C#/WinRT.
 
     ```xml
     <PropertyGroup>   
         <CsWinRTComponent>true</CsWinRTComponent>
         <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
-        <CsWinRTEnableLogging>true</CsWinRTEnableLogging>
-        <GeneratedFilesDir Condition="'$(GeneratedFilesDir)'==''">$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'Generated Files'))</GeneratedFilesDir>
     </PropertyGroup>
       ```
 
-      Voici quelques détails sur les propriétés de cet exemple. Pour obtenir la liste complète des propriétés de projet CsWinRT, reportez-vous à la [documentation NuGet CsWinRT.](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md)
+      Voici quelques détails sur les propriétés de cet exemple. Pour obtenir la liste complète des propriétés de projet C#/WinRT, reportez-vous à la [documentation c#/WinRT NuGet.](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md)
 
     - La `CsWinRTComponent` propriété spécifie que votre projet est un composant Windows Runtime, afin qu’un fichier WinMD soit généré pour le composant.
     - La `CsWinRTWindowsMetadata` propriété fournit une source pour les métadonnées Windows. Cela est requis depuis la version 1.1.1.
-    - La `CsWinRTEnableLogging` propriété génère un fichier **log.txt** avec une sortie détaillée lors de la génération du composant d’exécution.
-    - La `GeneratedFilesDir` propriété est requise pour générer le fichier **. winmd** dans le répertoire de sortie de droite. Cela est requis depuis la version 1.1.1.
 
 4. Vous pouvez créer vos classes d’exécution à l’aide des fichiers **de classe de bibliothèque (. cs)** . Cliquez avec le bouton droit sur le fichier **Class1.cs** et renommez-le **example.cs**. Ajoutez le code suivant à ce fichier, qui ajoute une méthode et une propriété publique à la classe d’exécution. N’oubliez pas de marquer toutes les classes que vous souhaitez exposer dans le composant d’exécution **public**.
 
@@ -99,41 +92,25 @@ Commencez par créer un nouveau projet dans Visual Studio 2019. Sélectionnez le
 
 ## <a name="generate-a-nuget-package-for-the-component"></a>Générer un package NuGet pour le composant
 
-Pour distribuer le composant d’exécution en tant que package NuGet, vous devez apporter les modifications suivantes au projet **AuthoringDemo** . Si vous choisissez de ne pas générer un package NuGet pour votre composant, les applications natives peuvent également utiliser le composant à l’aide d’une référence directe au fichier **. winmd** généré, comme indiqué dans la section suivante.
+Ensuite, générez un package NuGet pour le composant. Lorsque vous générez le package, C#/WinRT configure le composant et les assemblys d’hébergement dans le package en vue d’une utilisation à partir d’applications natives.
 
-1. Ajoutez un fichier de cibles afin que les applications natives puissent faire référence au package NuGet généré et utiliser votre composant. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **AuthoringDemo** et sélectionnez **Ajouter-> nouvel élément**. Recherchez le modèle de **fichier XML** , puis nommez le fichier **AuthoringDemo. targets**.
+Il existe plusieurs façons de générer le package NuGet :
 
-    > [!NOTE]
-    > Le fichier de cibles **doit** être nommé à l’aide de votre nom de composant, avec le format *YourComponentName. targets*.
-
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-        <Import Project="$(MSBuildThisDirectory)AuthoringDemo.CsWinRT.targets" />
-    </Project> 
-    ```
-
-   Le fichier **AuthoringDemo. CsWinRT. targets** importé sera ajouté au package NuGet, ce qui configure le package avec les assemblys d’hébergement/WinRT C# pour permettre la consommation à partir d’applications natives.  
-
-2. Ajoutez les éléments suivants au fichier projet **AuthoringDemo. csproj** .
+* Si vous souhaitez générer un package NuGet chaque fois que vous générez le projet, ajoutez la propriété suivante au fichier projet **AuthoringDemo** , puis régénérez le projet.
 
     ```xml
     <PropertyGroup>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
-
-    <ItemGroup>
-        <Content Include="AuthoringDemo.targets" PackagePath="build;buildTransitive"/>
-    </ItemGroup>
     ```
 
-    Ces propriétés génèrent un package NuGet pour votre composant et incluent les cibles CsWinRT dans le package en vue d’une utilisation à partir d’applications natives.
+* Vous pouvez également générer un package NuGet en cliquant avec le bouton droit sur le projet **AuthoringDemo** dans **Explorateur de solutions** et en sélectionnant **Pack**.
 
-3. Générez à nouveau le projet **AuthoringDemo** . Vous devez maintenant voir dans la sortie de génération que le package NuGet « AuthoringDemo. 1.0.0. nupkg » a été créé avec succès.
+Lorsque vous générez le package, la fenêtre de **génération** doit indiquer que le package NuGet `AuthoringDemo.1.0.0.nupkg` a été créé avec succès.
 
 ## <a name="consume-the-component-in-cwinrt"></a>Utiliser le composant en C++/WinRT
 
-Les composants de Windows Runtime créés en C#/WinRT peuvent être consommés à partir d’applications natives avec quelques modifications. Les étapes suivantes montrent comment appeler le composant créé ci-dessus dans une application console native.
+Les composants de Windows Runtime créés en C#/WinRT peuvent être consommés à partir d’applications natives avec quelques modifications. Les étapes suivantes montrent comment appeler le composant créé ci-dessus dans une application console native. 
 
 1. Ajoutez un nouveau projet d' **application console C++/WinRT** à votre solution. Notez que ce projet peut également faire partie d’une autre solution si vous le souhaitez.
 
@@ -143,17 +120,31 @@ Les composants de Windows Runtime créés en C#/WinRT peuvent être consommés �
 
     c. Nommez le nouveau projet **CppConsoleApp** , puis cliquez sur **créer**.
 
-2. Ajoutez une référence au composant AuthoringDemo. Vous pouvez ajouter une référence de package au package NuGet généré à partir de la section précédente, ou une référence directe à **AuthoringDemo. winmd**.
+2. Ajoutez une référence au composant AuthoringDemo, sous la forme d’un package NuGet ou d’une référence de projet.
 
-    - **Option 1 (référence du package)**: cliquez avec le bouton droit sur le projet **CppConsoleApp** , puis sélectionnez **gérer les packages NuGet**. Vous devrez peut-être configurer les sources de votre package pour ajouter une référence au package NuGet AuthoringDemo. Pour ce faire, cliquez sur l’icône Paramètres dans le gestionnaire de package NuGet et ajoutez une source de package au chemin d’accès approprié.
+    - **Option 1 (référence du package)**:  
+
+        a. Cliquez avec le bouton droit sur le projet **CppConsoleApp** , puis sélectionnez **gérer les packages NuGet**. Vous devrez peut-être configurer les sources de votre package pour ajouter une référence au package NuGet AuthoringDemo. Pour ce faire, cliquez sur l’icône **paramètres** dans le gestionnaire de package NuGet et ajoutez une source de package au chemin d’accès approprié.
 
         ![Paramètres NuGet](images/nuget-sources-settings.png)
 
-        Après avoir configuré vos sources de package, recherchez le package **AuthoringDemo** , puis cliquez sur **installer**.
+        b. Après avoir configuré vos sources de package, recherchez le package **AuthoringDemo** , puis cliquez sur **installer**.
 
         ![Installer le package NuGet](images/install-authoring-nuget.png)
 
-    - **Option 2 (référence directe)**: cliquez avec le bouton droit sur le projet **CppConsoleApp** , puis cliquez sur **référence de >**. Sélectionnez l’onglet **Parcourir** , puis recherchez et sélectionnez le fichier **AuthoringDemo. winmd** à partir de la sortie de génération du projet **AuthoringDemo** .
+    - **Option 2 (référence du projet)**:
+        
+        a. Cliquez avec le bouton droit sur le projet **CppConsoleApp** et sélectionnez **Ajouter** une  ->  **référence**. Sous le nœud **projets** , ajoutez une référence au projet **AuthoringDemo** . À partir de cette version préliminaire, vous devrez également ajouter une référence de fichier à **AuthoringDemo. winmd** à partir du nœud **Parcourir** . Le fichier winmd généré se trouve dans le répertoire de sortie du projet **AuthoringDemo** .
+
+        b. Pour cette version préliminaire, vous devrez également ajouter le groupe de propriétés suivant à **CppConsoleApp. vcxproj**. Pour modifier le fichier projet d’application native, commencez par cliquer avec le bouton droit sur le nœud de projet **CppConsoleApp** et sélectionnez **décharger le projet**.
+
+        ```xml
+        <PropertyGroup>
+            <TargetFrameworkVersion>net5.0</TargetFrameworkVersion>
+            <TargetFramework>native</TargetFramework>
+            <TargetRuntime>Native</TargetRuntime>
+        </PropertyGroup>
+        ```
 
 3. Pour faciliter l’hébergement du composant, vous devrez ajouter un runtimeconfig.jssur le fichier et un fichier manifeste. Pour plus d’informations sur l’hébergement de composants managés, reportez-vous à [ces documents d’hébergement](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md).
 
@@ -191,19 +182,9 @@ Les composants de Windows Runtime créés en C#/WinRT peuvent être consommés �
 
     Le fichier manifeste est requis pour les applications non empaquetées. Dans ce fichier, spécifiez vos classes d’exécution à l’aide des entrées d’inscriptions de classe activables comme indiqué ci-dessus.
 
-4. Modifiez le fichier projet natif pour inclure les fichiers runtimeconfig et manifest dans le déploiement du projet. Cliquez avec le bouton droit sur le projet, puis cliquez sur **décharger le projet**. Une fois le projet déchargé, cliquez de nouveau avec le bouton droit sur le projet et sélectionnez **modifier le fichier projet**. Recherchez les entrées pour **WinRT.Host.runtimeconfig.jssur** et **CppConsoleApp.exe. manifest**, puis ajoutez la `DeploymentContent` propriété comme indiqué ci-dessous.
+4. Modifiez le projet de façon à inclure les runtimeconfig.jssur et les fichiers manifeste dans la sortie lors du déploiement du projet. Pour les fichiers **WinRT.Host.runtimeconfig.js** et **CppConsoleApp.exe. manifest** , cliquez sur le fichier dans **Explorateur de solutions** et affectez à la propriété **content** la **valeur true**. Voici un exemple de ce à quoi cela ressemble.
 
-    ```xml
-    <ItemGroup>
-        <None Include="WinRT.Host.runtimeconfig.json">
-            <DeploymentContent>true</DeploymentContent>
-        </None>
-
-        <Manifest Include="CppConsoleApp.exe.manifest">
-            <DeploymentContent>true</DeploymentContent>
-        </Manifest>
-    </ItemGroup> 
-    ```
+    ![Déployer du contenu](images/deploy-content.png)
 
 5. Ouvrez **pch. h** sous les fichiers d’en-tête du projet, puis ajoutez la ligne de code suivante pour inclure votre composant.
 
@@ -237,5 +218,6 @@ Les composants de Windows Runtime créés en C#/WinRT peuvent être consommés �
 
 ## <a name="related-topics"></a>Rubriques connexes
 
+- [Exemple de code](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo)
 - [Création de composants](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md)
 - [Hébergement de composants managés](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md)
