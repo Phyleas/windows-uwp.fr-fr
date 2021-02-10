@@ -1,4 +1,4 @@
-- name: Vue d'ensemble
+- name: Vue d’ensemble
   href: index.md
 - name: Notions de base de la conception
   items:
@@ -78,8 +78,6 @@
       href: controls-and-patterns/controls-and-events-intro.md
     - name: Introduction à l’exécution des commandes
       href: controls-and-patterns/commanding.md
-    - name: Index des contrôles par fonction
-      href: controls-and-patterns/controls-by-function.md
     - name: Entrée élémentaire
       items:
         - name: Boutons
@@ -254,7 +252,7 @@
       href: style/typography.md
     - name: Icônes
       items:
-        - name: Vue d’ensemble
+        - name: Vue d'ensemble
           href: style/icons.md
         - name: Icônes et logos d’application
           href: style/app-icons-and-logos.md
@@ -540,7 +538,7 @@
       href: devices/designing-for-MR.md
 - name: Facilité d'utilisation
   items:
-    - name: Vue d'ensemble
+    - name: Vue d’ensemble
       href: usability/index.md
     - name: Accessibilité
       href: accessibility/accessibility.md
