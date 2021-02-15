@@ -4,12 +4,12 @@ description: Installez les PowerToys, un ensemble d’utilitaires pour la person
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: 3effdd927b89a53b2ff92efeb422fb32293f98ba
-ms.sourcegitcommit: 447382282a6f549825480c2ff5b3cec9568d0e47
+ms.openlocfilehash: 7b6cf15e7d21eca9e24fcc2d81f9409b2cd94b6f
+ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99624628"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100524985"
 ---
 # <a name="install-powertoys"></a>Installer les PowerToys
 
@@ -28,7 +28,7 @@ Pour installer les PowerToys à l’aide d’un fichier exécutable Windows :
 4. Sélectionnez le `PowerToysSetup-0.##.#-x64.exe` fichier pour télécharger le programme d’installation de l’exécutable PowerToys.
 5. Une fois téléchargé, ouvrez le fichier exécutable et suivez les invites d’installation.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 - Windows 10 1803 (Build 17134) ou version ultérieure.
 - [Runtime de bureau .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). Le programme d’installation des PowerToys gère cette exigence.
@@ -78,6 +78,7 @@ Si vous rencontrez des problèmes lors de l’installation ou de la mise à nive
 Pour installer les PowerToys à l’aide de [Scoop](https://scoop.sh/), exécutez la commande suivante à partir de la ligne de commande/PowerShell :
 
 ```powershell
+scoop bucket add extras
 scoop install powertoys
 ```
 
