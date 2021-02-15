@@ -747,7 +747,7 @@
       items:
         - name: Introduction
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: Prise en main
+        - name: Prendre en main
           href: ../cpp-and-winrt-apis/get-started.md
         - name: Nouveautés
           href: ../cpp-and-winrt-apis/news.md
@@ -825,7 +825,7 @@
           href: ../csharp-winrt/index.md
         - name: "Démonstration\_: Générer une projection .NET\_5.0 à partir d’un composant C++/WinRT"
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
-        - name: Créer un composant C#/WinRT et le consommer à partir de C++/WinRT
+        - name: "Démonstration\_: Créer un composant C#/WinRT et le consommer à partir de C++/WinRT"
           href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
         - name: Diagnostiquer les erreurs de composant
           href: ../csharp-winrt/authoring-diagnostics.md
